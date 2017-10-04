@@ -20,3 +20,10 @@ Editing or adding content
 ------------------------------
 
 The starting point for content can be found at source/index.html.md.  A reference for the Markdown syntax used in Slate can be found at https://github.com/lord/slate/wiki/Markdown-Syntax.
+
+Publishing to GitHub Pages
+------------------------------
+
+Run `./deploy.sh`
+
+Your changes should now be live on http://reachlocal.github.io/api-docs
