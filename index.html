@@ -1,0 +1,848 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;java&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="java">java</a>
+        </div>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#initial-setup" class="toc-h2 toc-link" data-title="Authentication">Initial Setup</a>
+                  </li>
+                  <li>
+                    <a href="#requesting-access-and-refresh-tokens" class="toc-h2 toc-link" data-title="Authentication">Requesting Access and Refresh Tokens</a>
+                  </li>
+                  <li>
+                    <a href="#refresh-access-token" class="toc-h2 toc-link" data-title="Authentication">Refresh Access Token</a>
+                  </li>
+                  <li>
+                    <a href="#security-considerations" class="toc-h2 toc-link" data-title="Authentication">Security Considerations</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#contacts" class="toc-h1 toc-link" data-title="Contacts">Contacts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-contacts" class="toc-h2 toc-link" data-title="Contacts">Get All Contacts</a>
+                  </li>
+                  <li>
+                    <a href="#create-or-update-contact" class="toc-h2 toc-link" data-title="Contacts">Create or Update Contact</a>
+                  </li>
+              </ul>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h1 id='errors'>Errors</h1>
+<p>The ReachLocal API uses standard HTTP status codes to communicate errors</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>OK - Everything went as planned.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request - Something in your header or request body was malformed.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized - Necessary credentials were either missing or invalid.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found - The object you’re requesting doesn’t exist.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests - You are calling our APIs more frequently than we allow.</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>Server Error - Something went wrong on our end.</td>
+</tr>
+</tbody></table>
+
+<p>In addition to the status code, the HTTP body of the response will also contain a JSON representation of the error.</p>
+<h1 id='authentication'>Authentication</h1>
+<p>During initial setup the Reach Local API will make a GET request to the registered redirect_uri address with a code parameter.  This code is the authorization token to be used during the REQUEST ACCESS TOKEN section.</p>
+<h2 id='initial-setup'>Initial Setup</h2>
+<p>This needs to be performed once or if latest refresh token if somehow lost. This process will allow you to retrieve an authorization token which can be used to request an access token and refresh token.</p>
+
+<p>In a browser go to </p>
+
+<p><code>https://externalapi.reachlocal.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p>
+
+<p>Where CLIENT_ID is provided during implementation.  REDIRECT_URI is a URL provided by the client at implementation time and stored with the OAuth provided.</p>
+
+<p>If done correctly you’ll see a login screen. Enter the credentials that were provided at account setup time.  These are the same credentials used to authenticate with the Edge application.</p>
+
+<p><img src="images/login.png" alt="login screen" /></p>
+
+<p>Upon successful authentication, you will be shown our terms of service which you must agree to. Then you’ll be redirected to the REDIRECT_URI along with an authorization token that expires in 10 minutes. If you fail to use it before it expires then you must repeat these steps again.</p>
+
+<p>Use the authorization token to request an access and refresh token.</p>
+<h2 id='requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/oauth/token"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n\t\"</span><span class="s2">client_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">CLIENT_ID</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">client_secret</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">CLIENT_SECRET</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">AUTHORIZATION_TOKEN</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">grant_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">authorization_code</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">redirect_uri</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">REDIRECT_URI</span><span class="se">\"\n</span><span class="s2">}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"code\": \"AUTHORIZATION_TOKEN\",\n\t\"grant_type\": \"authorization_code\",\n\t\"redirect_uri\": \"REDIRECT_URI\"\n}"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/oauth/token"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://externalapi.reachlocal.com/oauth/token <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "client_id": "CLIENT_ID",
+    "client_secret": "CLIENT_SECRET",
+    "code": "AUTHORIZATION_TOKEN",
+    "grant_type": "authorization_code",
+    "redirect_uri": "REDIRECT_URI"
+}'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8821d2a47a88d1cbaced1043aee73ccc4608d7cacb068c0eb09e468e91cdb49b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5d59deea16599eb316a63989a9974568da4f5570e7ef9969c693f0b1ce1052cb"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495549720</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>You’ll use the authorization token from above to request an initial access token and refresh token. The access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup. NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</p>
+<h2 id='refresh-access-token'>Refresh Access Token</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/oauth/token"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n\t\"</span><span class="s2">client_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">CLIENT_ID</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">client_secret</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">CLIENT_SECRET</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">grant_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">refresh_token</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">refresh_token</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">REFRESH_TOKEN</span><span class="se">\"\n</span><span class="s2">}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\": \"refresh_token\",\n\t\"refresh_token\": \"REFRESH_TOKEN\"\n}"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/oauth/token"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url https://externalapi.qa.reachlocal.com/oauth/token <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --data <span class="s1">'{\n   "client_id": "CLIENT_ID",\n "client_secret": "CLIENT_SECRET",\n "grant_type": "refresh_token",\n    "refresh_token": "REFRESH_TOKEN"\n}'</span>
+<span class="o">}</span><span class="s1">'
+</span></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b28b310f73caa88d6968c380ccb85434f4f6379162e01d1bade4b62a62762c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f2b8a81ca929a4df4d40fe8bb36a379761f91242ac3b26957e3e0a6696235233"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1504822139</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>Every API request must include an access token in the authorization header. This access token expires every 2 hours. When the token expires you’ll receive a 401 HTTP status code. You can request a new access token by using the refresh token you were given with your previous access token. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup.</p>
+<h2 id='security-considerations'>Security Considerations</h2>
+<p>Refresh Tokens are long-lived. This means when a client gets one from a server, this token must be stored securely to keep it from being used by potential attackers, for this reason, it is not safe to store them in the browser. If a Refresh Token is leaked, it may be used to obtain new Access Tokens (and access protected resources) until it is blacklisted. Refresh Tokens must be issued to a single authenticated client to prevent the use of leaked tokens by other parties. Access Tokens must also be kept secret, but due to its shorter life, security considerations are less critical.</p>
+<h1 id='contacts'>Contacts</h1><h2 id='get-all-contacts'>Get All Contacts</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/api/contacts?gmaid=GMAID"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/api/contacts?gmaid=GMAID"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://externalapi.reachlocal.com/api/contacts?gmaid=GMAID'</span> <span class="se">\</span>
+  --header <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"476 Sally Extensions"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"South Keely"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cm_contact_state_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States Minor Outlying Islands"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.user1@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Possimus omnis laudantium qui. Cum numquam autem eius doloremque officia tempora. Voluptas cupiditate ratione dolor illum quidem. Magni corporis autem. Ducimus et nihil quae sint dolorem facilis quibusdam."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_home"</span><span class="p">:</span><span class="w"> </span><span class="s2">"141-723-0803"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(659) 169-1441 x49696"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"933.612.2269 x0341"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47696"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mississippi"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_401"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User1, Example"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56440 Norbert Burg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lake Lesly"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cm_contact_state_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.user2@example.org"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accusamus odio voluptatem aut optio culpa sed alias. Fugiat qui quas quis voluptas. Neque non aut veritatis repudiandae."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_home"</span><span class="p">:</span><span class="w"> </span><span class="s2">"902-674-1712"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(897) 736-6456 x756"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(863) 452-5688"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59255"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Virginia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_411"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User2, Example"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all contacts.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://externalapi.reachlocal.com/api/contacts</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gmaid</td>
+<td>yes</td>
+<td>none</td>
+<td>The global master advertiser id (for example, USA_142687).</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>no</td>
+<td>500</td>
+<td>The number of records to display per page.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>1</td>
+<td>The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.</td>
+</tr>
+<tr>
+<td>updated_after</td>
+<td>no</td>
+<td>none</td>
+<td>Specifies the lower bound for the earliest date and time when searching for contacts.  All contacts returned in the response will have been either created or updated after this datetime.  The format expected is ISO8601.</td>
+</tr>
+</tbody></table>
+<h3 id='contact-response-body'>Contact Response Body</h3>
+<p>The body of the API response will be a JSON array of contact objects.</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact_id</td>
+<td>String</td>
+<td>no</td>
+<td>A string uniquely identifying this contact.</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>String</td>
+<td>yes</td>
+<td>The first name of the contact.</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>String</td>
+<td>yes</td>
+<td>The last name of the contact.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>yes</td>
+<td>The display name of this contact.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>yes</td>
+<td>The email address of the contact.</td>
+</tr>
+<tr>
+<td>company</td>
+<td>String</td>
+<td>yes</td>
+<td>The company name for this contact.</td>
+</tr>
+<tr>
+<td>phone_home</td>
+<td>String</td>
+<td>yes</td>
+<td>The home phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_work</td>
+<td>String</td>
+<td>yes</td>
+<td>The work phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_mobile</td>
+<td>String</td>
+<td>yes</td>
+<td>The mobile phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_fax</td>
+<td>String</td>
+<td>yes</td>
+<td>The fax phone number for this contact.</td>
+</tr>
+<tr>
+<td>address1</td>
+<td>String</td>
+<td>yes</td>
+<td>The first address line for this contact.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td>yes</td>
+<td>The city for this contact.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>String</td>
+<td>yes</td>
+<td>The state for this contact.</td>
+</tr>
+<tr>
+<td>postal</td>
+<td>String</td>
+<td>yes</td>
+<td>The postal code for this contact.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>yes</td>
+<td>The country for this contact.</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>String</td>
+<td>yes</td>
+<td>Free form text notes entered by end users for the contact.</td>
+</tr>
+<tr>
+<td>cm_contact_state_code</td>
+<td>String</td>
+<td>no</td>
+<td>The status of the contact.  Valid values are pending_contact, active_lead, client and none.</td>
+</tr>
+</tbody></table>
+<h3 id='pagination-headers'>Pagination Headers</h3>
+<p>In the event that there are more than one page of results, there will be a link header present in the HTTP response.  There will be multiple values for this header.  Each value is comprised of a URI and a link relation type (rel).</p>
+
+<p>If there is only one page of results, this header will not be included in the response.</p>
+
+<p>Not all link relation types will be present in all responses.  For example, the “first”  and “prev” link relation types will not be present on the first page of a result set and “last” and “next” will not be present on the last.</p>
+
+<table><thead>
+<tr>
+<th>Link Relation Type</th>
+<th>Interpretation of URI</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first</td>
+<td>The URI of the first page of this result set</td>
+</tr>
+<tr>
+<td>prev</td>
+<td>The URI of the previous page of this result set.</td>
+</tr>
+<tr>
+<td>next</td>
+<td>The URI of the next page of this result set.</td>
+</tr>
+<tr>
+<td>last</td>
+<td>The URI of the last page of this result set.</td>
+</tr>
+</tbody></table>
+<h2 id='create-or-update-contact'>Create or Update Contact</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.qa.reachlocal.com/api/contacts"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">gmaid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USA_142687</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">contact</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">first_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Example</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">last_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">User</span><span class="se">\"</span><span class="s2">,     </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">example.user@example.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">tags</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\"</span><span class="s2">apples</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">oranges</span><span class="se">\"</span><span class="s2">]}}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\"gmaid\": \"USA_142687\",\"contact\":{\"first_name\":\"Example\",\"last_name\":\"User\",\"email\":\"example.user@example.com\",\"tags\":[\"apples\", \"oranges\"]}}"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.qa.reachlocal.com/api/contacts"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url https://externalapi.qa.reachlocal.com/api/contacts <span class="se">\</span>
+  --header <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --data <span class="s1">'{"gmaid": "GMAID","contact":{"first_name":"Example","last_name":"User","email":"example.user@example.com","tags":["apples", "oranges"]}}'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"cm_contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cm_contact_state_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.user@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_home"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_mobile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User, Example"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint is used to create or update an existing contact.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://externalapi.reachlocal.com/api/contacts</code></p>
+<h3 id='post-body-parameters'>Post Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gmaid</td>
+<td>yes</td>
+<td>The global master advertiser id (for example, USA_142687).</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>yes</td>
+<td>A JSON hash representing the attributes for the contact.</td>
+</tr>
+</tbody></table>
+
+<p>The contact attributes must include at least one of the following fields: email, phone_home, phone_work or phone_mobile.</p>
+
+<table><thead>
+<tr>
+<th>Contact Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name</td>
+<td>The first name of the contact.</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>The last name of the contact.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The display name of this contact.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address of the contact.</td>
+</tr>
+<tr>
+<td>company</td>
+<td>The company name for this contact.</td>
+</tr>
+<tr>
+<td>phone_home</td>
+<td>The home phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_work</td>
+<td>The work phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_mobile</td>
+<td>The mobile phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_fax</td>
+<td>The fax phone number for this contact.</td>
+</tr>
+<tr>
+<td>address1</td>
+<td>The first address line for this contact.</td>
+</tr>
+<tr>
+<td>address2</td>
+<td>The second address line for this contact.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city for this contact.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The state for this contact.</td>
+</tr>
+<tr>
+<td>postal</td>
+<td>The postal code for this contact.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>The country for this contact.</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>Free form text notes entered by end users for the contact.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status field accepts one of the following exact values: new, prospect, customer or other.  If no status is present, the status field is empty, or if the value doesn&#39;t match, that contact status will be set to new.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>A JSON array of strings representing tags assigned to this contact.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="java">java</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
