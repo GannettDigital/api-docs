@@ -23,6 +23,7 @@ includes:
   - total_track
   - keyword
   - lead_detail
+  - youtube
 
 search: false
 ---
