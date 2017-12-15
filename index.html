@@ -283,6 +283,9 @@
                   <li>
                     <a href="#lead-details-report" class="toc-h2 toc-link" data-title="Client Reporting">Lead Details Report</a>
                   </li>
+                  <li>
+                    <a href="#youtube-report" class="toc-h2 toc-link" data-title="Client Reporting">YouTube Report</a>
+                  </li>
               </ul>
           </li>
       </div>
@@ -866,7 +869,12 @@
 </tbody></table>
 <h1 id='client-reporting'>Client Reporting</h1><h2 id='authorization'>Authorization</h2>
 <p>All requests must include an <a href="#authentication">Authorization</a> header.</p>
-<h2 id='display-activity-report'>Display Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
+
+<p>The email address used to obtain the OAuth access token must be associated with the GMAID of the requested advertiser.  If it is not, the API will return an HTTP response with status code 403 and the following body</p>
+<pre class="highlight plaintext"><code>{
+    "message": "Forbidden"
+}
+</code></pre><h2 id='display-activity-report'>Display Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
 URI Format:             /client_reports/display_activity/[gmaid]?[query_params]
 </code></pre><h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the Display Activity report for a given advertiser.</p>
@@ -3517,7 +3525,220 @@ https://api.reachlocalservices.com/api/client_reports/lead_detail/USA_105569?&am
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-08T17:55:17.000Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre><h2 id='youtube-report'>YouTube Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
+URI Format:             /client_reports/youtube/[gmaid]?[query_params]
+</code></pre><h3 id='usage'>Usage</h3>
+<p>Use GET to retrieve information for the YouTube report for a given advertiser.</p>
+
+<p>The data returned will include impressions, views, clicks, view-through rate, click-through rate, cost per view, and eCPM organized by campaign.</p>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>Restricts the results to those ocurring on or after this date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Restricts the results to those ocurring on or before this date.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id[]</code></td>
+<td>Restrict results to one or more specific campaigns</td>
+</tr>
+<tr>
+<td><code>campaign_status[]</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+</tr>
+<tr>
+<td><code>campaign_cycle</code></td>
+<td>Restrict results to a single campaign cycle</td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>Use <code>calendar_month</code> or <code>calendar_week</code> to roll up the data points into calendar intervals (default is 1 day per interval)</td>
+</tr>
+</tbody></table>
+
+<p>To specify a date range:</p>
+
+<ul>
+<li>Specify start_date and end_date.</li>
+<li>When specifying a <code>campaign_cycle</code>, do not use date range params.</li>
+</ul>
+<h3 id='examples'>Examples:</h3>
+<blockquote>
+<p>Retrieve data for a specific range of dates</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/api/client_reports/youtube/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific campaign starting on a certain date</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+https://api.reachlocalservices.com/api/client_reports/youtube/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific campaign cycle</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/api/client_reports/youtube/USA_105569?campaign_cycle=USA_100
+</code></pre>
+<blockquote>
+<p>Retrieve data for campaigns that are stopped and running</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/api/client_reports/youtube/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Response Description</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="s2">"report_type"</span><span class="p">:</span> <span class="s2">"youtube"</span><span class="p">,</span>                             <span class="c1">// Report Type</span>
+  <span class="s2">"report_date"</span><span class="p">:</span> <span class="s2">"2017-07-26"</span><span class="p">,</span>                          <span class="c1">// Date Report was Run</span>
+  <span class="s2">"earliest_date_available"</span><span class="p">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>              <span class="c1">// Earliest Date Data is Available</span>
+  <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-05-01"</span><span class="p">,</span>                           <span class="c1">// Start Date of Report</span>
+  <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-05-02"</span><span class="p">,</span>                             <span class="c1">// End Date of Report</span>
+  <span class="s2">"time_zone"</span><span class="p">:</span> <span class="s2">"America/Los_Angeles"</span><span class="p">,</span>                   <span class="c1">// Time Zone of Report</span>
+  <span class="s2">"interval_size"</span><span class="p">:</span> <span class="s2">"day"</span><span class="p">,</span>                               <span class="c1">// Interval Size Report is Broken Into</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>                                    <span class="c1">// Currenty of Report</span>
+  <span class="s2">"report_data"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"campaigns"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Two Nine North PPC"</span><span class="p">,</span>                   <span class="c1">// Campaign Name</span>
+        <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_2134071"</span><span class="p">,</span>     <span class="c1">// Global Master Campaign ID</span>
+        <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-10-05"</span><span class="p">,</span>                     <span class="c1">// Start Date of Campaign</span>
+        <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-07-17"</span><span class="p">,</span>                       <span class="c1">// End Date of Campaign</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"display"</span><span class="p">,</span>                              <span class="c1">// Type of Campaign</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"ended"</span><span class="p">,</span>                              <span class="c1">// Campaign Status</span>
+        <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-05-01"</span><span class="p">,</span>                 <span class="c1">// Start Date For Interval</span>
+            <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">1410</span><span class="p">,</span>                        <span class="c1">// Impressions For Interval</span>
+            <span class="s2">"views"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                 <span class="c1">// Views For Interval</span>
+            <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span>                               <span class="c1">// Clicks For Interval</span>
+            <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">100.37</span><span class="p">,</span>                            <span class="c1">// Spend For Interval</span>
+            <span class="s2">"vtr"</span><span class="p">:</span> <span class="mf">3.9</span><span class="p">,</span>                                 <span class="c1">// View-through Rate For Interval</span>
+            <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.82</span><span class="p">,</span>                                <span class="c1">// Click-through Rate For Interval</span>
+            <span class="s2">"cpv"</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>                                 <span class="c1">// Cost Per View For Interval</span>
+            <span class="s2">"eCPM"</span><span class="p">:</span> <span class="mf">1.5</span>                                 <span class="c1">// Effective Cost Per Mille</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"impression_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                          <span class="c1">// Impression Breakdowns</span>
+      <span class="s2">"age_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                               <span class="c1">// Age Breakdowns of Impressions</span>
+        <span class="s2">"18-24"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 18-24</span>
+        <span class="s2">"25-34"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 25-34</span>
+        <span class="s2">"35-44"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 35-44</span>
+        <span class="s2">"45-54"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 45-54</span>
+        <span class="s2">"55-64"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 55-64</span>
+        <span class="s2">"65+"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                     <span class="c1">// Age 65+</span>
+        <span class="s2">"total"</span><span class="p">:</span> <span class="mi">900</span>                                    <span class="c1">// Total Impressions</span>
+      <span class="p">},</span>
+      <span class="s2">"gender_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                            <span class="c1">// Gender Breakdowns of Impressions</span>
+        <span class="s2">"male"</span><span class="p">:</span> <span class="p">{</span>                                       
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>                                 <span class="c1">// Total Male Impressions</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">40.0</span>                               <span class="c1">// Percent Male Impressions</span>
+        <span class="p">},</span>
+        <span class="s2">"female"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>                                 <span class="c1">// Total Female Impressions</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">40.0</span>                               <span class="c1">// Percent Female Impressions</span>
+        <span class="p">},</span>
+        <span class="s2">"unknown"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>                                 <span class="c1">// Total Gender Not Reported Impressions</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">20.0</span>                               <span class="c1">// Percent Gender Not Reported Impressions</span>
+        <span class="p">},</span>
+        <span class="s2">"total"</span><span class="p">:</span> <span class="mi">1000</span>                                   <span class="c1">// Total Gender Impressions</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"view_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                                <span class="c1">// View Breakdowns</span>
+      <span class="s2">"age_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                               <span class="c1">// Age Breakdowns of Views</span>
+        <span class="s2">"18-24"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 18-24</span>
+        <span class="s2">"25-34"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 25-34</span>
+        <span class="s2">"35-44"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 35-44</span>
+        <span class="s2">"45-54"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 45-54</span>
+        <span class="s2">"55-64"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 55-64</span>
+        <span class="s2">"65+"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                     <span class="c1">// Age 65+</span>
+        <span class="s2">"total"</span><span class="p">:</span> <span class="mi">900</span>                                    <span class="c1">// Total Views</span>
+      <span class="p">},</span>
+      <span class="s2">"gender_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                            <span class="c1">// Gender Breakdowns of Views</span>
+        <span class="s2">"male"</span><span class="p">:</span> <span class="p">{</span>                                       
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>                                 <span class="c1">// Total Male Views</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">40.0</span>                               <span class="c1">// Percent Male Views</span>
+        <span class="p">},</span>
+        <span class="s2">"female"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>                                 <span class="c1">// Total Female Views</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">40.0</span>                               <span class="c1">// Percent Female Views</span>
+        <span class="p">},</span>
+        <span class="s2">"unknown"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>                                 <span class="c1">// Total Gender Not Reported Views</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">20.0</span>                               <span class="c1">// Percent Gender Not Reported Views</span>
+        <span class="p">},</span>
+        <span class="s2">"total"</span><span class="p">:</span> <span class="mi">1000</span>                                   <span class="c1">// Total Gender Views</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"click_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                               <span class="c1">// Click Breakdowns</span>
+      <span class="s2">"age_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                               <span class="c1">// Age Breakdowns of Clicks</span>
+        <span class="s2">"18-24"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 18-24</span>
+        <span class="s2">"25-34"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 25-34</span>
+        <span class="s2">"35-44"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 35-44</span>
+        <span class="s2">"45-54"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 45-54</span>
+        <span class="s2">"55-64"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                   <span class="c1">// Age 55-64</span>
+        <span class="s2">"65+"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>                                     <span class="c1">// Age 65+</span>
+        <span class="s2">"total"</span><span class="p">:</span> <span class="mi">900</span>                                    <span class="c1">// Total Clicks</span>
+      <span class="p">},</span>
+      <span class="s2">"gender_breakdowns"</span><span class="p">:</span> <span class="p">{</span>                            <span class="c1">// Gender Breakdowns of Clicks</span>
+        <span class="s2">"male"</span><span class="p">:</span> <span class="p">{</span>                                       
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>                                 <span class="c1">// Total Male Clicks</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">40.0</span>                               <span class="c1">// Percent Male Clicks</span>
+        <span class="p">},</span>
+        <span class="s2">"female"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>                                 <span class="c1">// Total Female Clicks</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">40.0</span>                               <span class="c1">// Percent Female Clicks</span>
+        <span class="p">},</span>
+        <span class="s2">"unknown"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"total"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>                                 <span class="c1">// Total Gender Not Reported Clicks</span>
+          <span class="s2">"percent"</span><span class="p">:</span> <span class="mf">20.0</span>                               <span class="c1">// Percent Gender Not Reported Clicks</span>
+        <span class="p">},</span>
+        <span class="s2">"total"</span><span class="p">:</span> <span class="mi">1000</span>                                   <span class="c1">// Total Gender Clicks</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"totals"</span><span class="p">:</span> <span class="p">{</span>                                         <span class="c1">// Overall Totals for Report</span>
+      <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">1410</span><span class="p">,</span>                              <span class="c1">// Overall Impressions</span>
+      <span class="s2">"views"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                       <span class="c1">// Overall Views</span>
+      <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span>                                     <span class="c1">// Overall Clicks</span>
+      <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">100.37</span><span class="p">,</span>                                  <span class="c1">// Overall Spend</span>
+      <span class="s2">"vtr"</span><span class="p">:</span> <span class="mf">3.9</span><span class="p">,</span>                                       <span class="c1">// Overall View-through Rate</span>
+      <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.82</span><span class="p">,</span>                                      <span class="c1">// Overall Click-through Rate</span>
+      <span class="s2">"cpv"</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>                                       <span class="c1">// Overall Cost per View</span>
+      <span class="s2">"eCPM"</span><span class="p">:</span> <span class="mf">1.5</span>                                       <span class="c1">// Overall Effective Cost Per Mille</span>
+    <span class="p">},</span>
+    <span class="s2">"totals_per_interval"</span><span class="p">:</span> <span class="p">[</span>                            <span class="c1">// Overall Totals Per Interval</span>
+      <span class="p">{</span>
+        <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-05-01"</span><span class="p">,</span>                     <span class="c1">// Start Date of Interval</span>
+        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">1410</span><span class="p">,</span>                            <span class="c1">// Impressions for Interval</span>
+        <span class="s2">"views"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                     <span class="c1">// Views for Interval</span>
+        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span>                                   <span class="c1">// Clicks for Interval</span>
+        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">100.37</span><span class="p">,</span>                                <span class="c1">// Spend for Interval</span>
+        <span class="s2">"vtr"</span><span class="p">:</span> <span class="mf">3.9</span><span class="p">,</span>                                     <span class="c1">// View-through Rate for Interval</span>
+        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.82</span><span class="p">,</span>                                    <span class="c1">// Click-through Rate for Interval</span>
+        <span class="s2">"cpv"</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>                                     <span class="c1">// Cost Per View for Interval</span>
+        <span class="s2">"eCPM"</span><span class="p">:</span> <span class="mf">1.5</span>                                     <span class="c1">// Effective Cost Per Mille for Interval</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_187198"</span><span class="p">,</span>          <span class="c1">// Global Master Advertiser ID</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/api/client_reports/youtube/USA_187198?end_date=2017-05-02&amp;start_date=2017-05-01"</span>
+<span class="p">}</span>
+</code></pre>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
