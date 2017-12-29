@@ -36,42 +36,42 @@ To specify a date range:
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_105569?start_date=2016-12-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_105569?campaign_cycle=USA_100
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?campaign_cycle=USA_100
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-12-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-12-01&end_date=2016-12-31&include_cycles=true
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-12-01&end_date=2016-12-31&include_cycles=true
 ```
 
 > Example Response:
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_125992?start_date=2017-01-26&end_date=2017-01-30
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?start_date=2017-01-26&end_date=2017-01-30
 ```
 
 ```javascript
@@ -520,7 +520,7 @@ https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_1259
     ]
   },
   "global_master_advertiser_id": "USA_125992",
-  "location": "https://api.reachlocalservices.com/api/client_reports/facebook_campaign/USA_125992?start_date=2017-01-26&end_date=2017-01-30",
+  "location": "https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?start_date=2017-01-26&end_date=2017-01-30",
   "available_campaigns": [
     {
       "name": "FB Leads | Pleasant Hill Coin | Holiday Jewelry Sale",

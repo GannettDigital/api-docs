@@ -37,35 +37,35 @@ To specify a date range:
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/display_activity/USA_105569?start_date=2016-12-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/display_activity/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/display_activity/USA_105569?campaign_cycle=USA_100
+https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=USA_100
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/display_activity/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
-https://api.reachlocalservices.com/api/client_reports/search_activity/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true
+https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true
 ```
 
 > Response Description with Cycles
@@ -132,7 +132,7 @@ https://api.reachlocalservices.com/api/client_reports/search_activity/USA_105569
     ]
   },
   "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/api/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id=USA_14&range=cycle",
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id=USA_14&range=cycle",
   "available_campaigns": [                     // All campaigns for advertiser
     {
       "name": "Ad_Campaign_1",                 // Name of campaign
@@ -211,7 +211,7 @@ https://api.reachlocalservices.com/api/client_reports/search_activity/USA_105569
     ]
   },
   "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/api/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id=USA_14&range=cycle",
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id=USA_14&range=cycle",
   "available_campaigns": [                     // All campaigns for advertiser
     {
       "name": "Ad_Campaign_1",                 // Name of campaign
@@ -411,7 +411,7 @@ https://api.reachlocalservices.com/api/client_reports/search_activity/USA_105569
     ]
   },
   "global_master_advertiser_id": "USA_123",
-  "location": "https://api.reachlocalservices.com/api/client_reports/display_activity/USA_123?start_date=2017-01-11&end_date=2017-01-13",
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_123?start_date=2017-01-11&end_date=2017-01-13",
   "available_campaigns": [
     {
       "name": "Drain Cleaning",

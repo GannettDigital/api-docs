@@ -33,21 +33,21 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/keyword/USA_105569?start_date=2016-12-01&end_date=2016-12-31&page=1&page_size=15
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?start_date=2016-12-01&end_date=2016-12-31&page=1&page_size=15
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/keyword/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/keyword/USA_105569?&campaign_status[]=running&start_date=2016-10-01&end_date=2016-12-31&campaign_status[]=stopped&page=1&page_size=15
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_status[]=running&start_date=2016-10-01&end_date=2016-12-31&campaign_status[]=stopped&page=1&page_size=15
 ```
 
 > Response Description
@@ -77,7 +77,7 @@ https://api.reachlocalservices.com/api/client_reports/keyword/USA_105569?&campai
     },
   },
   "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/api/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id=USA_14&page=1&page_size=15",
+  "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id=USA_14&page=1&page_size=15",
   "available_campaigns": [                  // All campaigns for advertiser
     {
       "name": "Ad_Campaign_1",              // Name of campaign
@@ -139,7 +139,7 @@ https://api.reachlocalservices.com/api/client_reports/keyword/USA_105569?&campai
     }
   },
   "global_master_advertiser_id": "USA_123",
-  "location": "https://api.reachlocalservices.com/api/client_reports/keyword/USA_123?interval_type=day&number_of_intervals=30&range=custom&status%5B%5D=stopped&page=1&page_size=15",
+  "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_123?interval_type=day&number_of_intervals=30&range=custom&status%5B%5D=stopped&page=1&page_size=15",
   "available_campaigns": [
     {
       "name": "Stopped Campaign",

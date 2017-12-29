@@ -27,7 +27,7 @@ None
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/api/client_reports/advertiser_contact_info/USA_105569
+https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569
 ```
 
 > Response when found:
@@ -35,7 +35,7 @@ https://api.reachlocalservices.com/api/client_reports/advertiser_contact_info/US
 ```json
 {
   "global_master_advertiser_id": "USA_105569",
-  "location": "https://api.reachlocalservices.com/api/client_reports/advertiser_contact_info/USA_105569",
+  "location": "https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569",
   "contact_data": [
     {
       "global_master_advertiser_id": "USA_105569",
@@ -53,7 +53,7 @@ https://api.reachlocalservices.com/api/client_reports/advertiser_contact_info/US
 ```json
 {
   "global_master_advertiser_id": "USA_105569",
-  "location": "https://api.reachlocalservices.com/api/client_reports/advertiser_contact_info/USA_105569",
+  "location": "https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569",
   "contact_data": [
     {}
   ]

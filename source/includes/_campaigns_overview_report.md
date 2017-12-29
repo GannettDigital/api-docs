@@ -49,7 +49,7 @@ None
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/api/client_reports/campaigns_overview/USA_105569
+"https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_105569
 ```
 
 > The above command returns JSON structured similar to the following:
@@ -97,7 +97,7 @@ curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
     ],
   },
   "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/api/client_reports/campaigns_overview/USA_105569", // URL location of this report
+  "location": "https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_105569", // URL location of this report
   "data_import_status": {
      "DailyCampaignActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
      "Campaign": "2016-12-07T20:11:44.000Z"                 // Table last updated
@@ -107,7 +107,7 @@ curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
 
 ```
 curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/api/client_reports/campaigns_overview/USA_123"
+"https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_123"
 ```
 
 > The above command returns JSON structured similar to the following:
@@ -228,7 +228,7 @@ curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
     ]
   },
   "global_master_advertiser_id": "USA_123",
-  "location": "https://api.reachlocalservices.com/api/client_reports/campaigns_overview/USA_123",
+  "location": "https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_123",
   "data_import_status": {
     "DailyCampaignActivity": null,
     "Campaign": null
