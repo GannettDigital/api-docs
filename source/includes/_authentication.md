@@ -8,11 +8,15 @@ This needs to be performed once or if latest refresh token if somehow lost. This
 
 In order to obtain OAuth authentication tokens, it is first necessary to register your application with Reach Local.  As part of this registration, you will obtain a client id and a client secret token.  The client id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.  The client secret is a secret known only to the application and the authorization server.  As part of provisioning a new integration with our OAuth provider, a redirect URI must be provided by the client.  Please contact Reach Local at apiservices@reachlocal.com in order to obtain a client id and client secret.
 
-Once you have obtained the necessary OAuth tokens, in a browser go to 
+## Web Application Authentication Method
+
+Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to 
 
 `https://externalapi.reachlocal.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
 
 Where CLIENT_ID is provided during implementation.  REDIRECT_URI is a URL provided by the client at implementation time and stored with the OAuth provided.
+
+This link is generally provided as a login link.
 
 If done correctly you’ll see a login screen. Enter the credentials that were provided at account setup time.  These are the same credentials used to authenticate with the Edge application.
 
@@ -22,7 +26,8 @@ Upon successful authentication, you will be shown our terms of service which you
 
 Use the authorization token to request an access and refresh token.
 
-## Requesting Access and Refresh Tokens
+### Requesting Access and Refresh Tokens
+
 ```ruby
 require 'uri'
 require 'net/http'
@@ -60,11 +65,11 @@ curl -X POST \
   https://externalapi.reachlocal.com/oauth/token \
   -H 'content-type: application/json' \
   -d '{
-	"client_id": "CLIENT_ID",
-	"client_secret": "CLIENT_SECRET",
-	"code": "AUTHORIZATION_TOKEN",
-	"grant_type": "authorization_code",
-	"redirect_uri": "REDIRECT_URI"
+  "client_id": "CLIENT_ID",
+  "client_secret": "CLIENT_SECRET",
+  "code": "AUTHORIZATION_TOKEN",
+  "grant_type": "authorization_code",
+  "redirect_uri": "REDIRECT_URI"
 }'
 ```
 > The above command returns JSON structured like this:
@@ -80,7 +85,70 @@ curl -X POST \
 
 ```
 
-You’ll use the authorization token from above to request an initial access token and refresh token. The access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup. NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.
+This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token. 
+
+NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.
+
+## Direct Authentication method
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://externalapi.reachlocal.com/oauth/token")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Post.new(url)
+request["Content-Type"] = 'application/json'
+request.body = "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\":\"password\",\n\t\"username\":\"USERNAME\",\n\t\"password\":\"PASSWORD\"\n}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```java
+OkHttpClient client = new OkHttpClient();
+
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\":\"password\",\n\t\"username\":\"USERNAME\",\n\t\"password\":\"PASSWORD\"\n}");
+Request request = new Request.Builder()
+  .url("https://externalapi.reachlocal.com/oauth/token")
+  .post(body)
+  .addHeader("Content-Type", "application/json")
+  .build();
+
+Response response = client.newCall(request).execute();
+```
+
+```shell
+curl --request POST \
+  --url https://externalapi.reachlocal.com/oauth/token \
+  --header 'Content-Type: application/json' \
+  --data '{
+      "client_id": "CLIENT_ID",
+      "client_secret": "CLIENT_SECRET",
+      "grant_type":"password",
+      "username":"USERNAME",
+      "password":"PASSWORD"
+    }'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "access_token": "8821d2a47a88d1cbaced1043aee73ccc4608d7cacb068c0eb09e468e91cdb49b",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "5d59deea16599eb316a63989a9974568da4f5570e7ef9969c693f0b1ce1052cb",
+  "created_at": 1495549720
+}
+```
+
+OAuth 2 provides a "password" grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn't desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token. 
+
+NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.  Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
 
 ## Refresh Access Token
 ```ruby
@@ -119,7 +187,12 @@ Response response = client.newCall(request).execute();
 curl --request POST \
   --url https://externalapi.qa.reachlocal.com/oauth/token \
   --header 'content-type: application/json' \
-  --data '{\n	"client_id": "CLIENT_ID",\n	"client_secret": "CLIENT_SECRET",\n	"grant_type": "refresh_token",\n	"refresh_token": "REFRESH_TOKEN"\n}'
+  --data '{
+      "client_id": "CLIENT_ID",
+      "client_secret": "CLIENT_SECRET",
+      "grant_type": "refresh_token",
+      "refresh_token": "REFRESH_TOKEN"
+    }'
 }'
 ```
 > The above command returns JSON structured like this:
