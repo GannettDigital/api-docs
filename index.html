@@ -229,7 +229,10 @@
                     <a href="#initial-setup" class="toc-h2 toc-link" data-title="Authentication">Initial Setup</a>
                   </li>
                   <li>
-                    <a href="#requesting-access-and-refresh-tokens" class="toc-h2 toc-link" data-title="Authentication">Requesting Access and Refresh Tokens</a>
+                    <a href="#web-application-authentication-method" class="toc-h2 toc-link" data-title="Authentication">Web Application Authentication Method</a>
+                  </li>
+                  <li>
+                    <a href="#direct-authentication-method" class="toc-h2 toc-link" data-title="Authentication">Direct Authentication method</a>
                   </li>
                   <li>
                     <a href="#refresh-access-token" class="toc-h2 toc-link" data-title="Authentication">Refresh Access Token</a>
@@ -348,12 +351,14 @@
 <p>This needs to be performed once or if latest refresh token if somehow lost. This process will allow you to retrieve an authorization token which can be used to request an access token and refresh token.</p>
 
 <p>In order to obtain OAuth authentication tokens, it is first necessary to register your application with Reach Local.  As part of this registration, you will obtain a client id and a client secret token.  The client id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.  The client secret is a secret known only to the application and the authorization server.  As part of provisioning a new integration with our OAuth provider, a redirect URI must be provided by the client.  Please contact Reach Local at apiservices@reachlocal.com in order to obtain a client id and client secret.</p>
-
-<p>Once you have obtained the necessary OAuth tokens, in a browser go to </p>
+<h2 id='web-application-authentication-method'>Web Application Authentication Method</h2>
+<p>Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to </p>
 
 <p><code>https://externalapi.reachlocal.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p>
 
 <p>Where CLIENT_ID is provided during implementation.  REDIRECT_URI is a URL provided by the client at implementation time and stored with the OAuth provided.</p>
+
+<p>This link is generally provided as a login link.</p>
 
 <p>If done correctly you’ll see a login screen. Enter the credentials that were provided at account setup time.  These are the same credentials used to authenticate with the Edge application.</p>
 
@@ -362,7 +367,7 @@
 <p>Upon successful authentication, you will be shown our terms of service which you must agree to. Then you’ll be redirected to the REDIRECT_URI along with an authorization token that expires in 10 minutes. If you fail to use it before it expires then you must repeat these steps again.</p>
 
 <p>Use the authorization token to request an access and refresh token.</p>
-<h2 id='requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<h3 id='requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/oauth/token"</span><span class="p">)</span>
@@ -392,11 +397,11 @@
   https://externalapi.reachlocal.com/oauth/token <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
-    "client_id": "CLIENT_ID",
-    "client_secret": "CLIENT_SECRET",
-    "code": "AUTHORIZATION_TOKEN",
-    "grant_type": "authorization_code",
-    "redirect_uri": "REDIRECT_URI"
+  "client_id": "CLIENT_ID",
+  "client_secret": "CLIENT_SECRET",
+  "code": "AUTHORIZATION_TOKEN",
+  "grant_type": "authorization_code",
+  "redirect_uri": "REDIRECT_URI"
 }'</span>
 </code></pre>
 <blockquote>
@@ -411,7 +416,58 @@
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<p>You’ll use the authorization token from above to request an initial access token and refresh token. The access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup. NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</p>
+<p>This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token. </p>
+
+<p>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</p>
+<h2 id='direct-authentication-method'>Direct Authentication method</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/oauth/token"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n\t\"</span><span class="s2">client_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">CLIENT_ID</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">client_secret</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">CLIENT_SECRET</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">grant_type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">password</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">username</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">USERNAME</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">password</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">PASSWORD</span><span class="se">\"\n</span><span class="s2">}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\":\"password\",\n\t\"username\":\"USERNAME\",\n\t\"password\":\"PASSWORD\"\n}"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/oauth/token"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url https://externalapi.reachlocal.com/oauth/token <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  --data <span class="s1">'{
+      "client_id": "CLIENT_ID",
+      "client_secret": "CLIENT_SECRET",
+      "grant_type":"password",
+      "username":"USERNAME",
+      "password":"PASSWORD"
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8821d2a47a88d1cbaced1043aee73ccc4608d7cacb068c0eb09e468e91cdb49b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5d59deea16599eb316a63989a9974568da4f5570e7ef9969c693f0b1ce1052cb"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495549720</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token. </p>
+
+<p>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.  Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p>
 <h2 id='refresh-access-token'>Refresh Access Token</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
@@ -441,7 +497,12 @@
 </code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://externalapi.qa.reachlocal.com/oauth/token <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  --data <span class="s1">'{\n   "client_id": "CLIENT_ID",\n "client_secret": "CLIENT_SECRET",\n "grant_type": "refresh_token",\n    "refresh_token": "REFRESH_TOKEN"\n}'</span>
+  --data <span class="s1">'{
+      "client_id": "CLIENT_ID",
+      "client_secret": "CLIENT_SECRET",
+      "grant_type": "refresh_token",
+      "refresh_token": "REFRESH_TOKEN"
+    }'</span>
 <span class="o">}</span><span class="s1">'
 </span></code></pre>
 <blockquote>
