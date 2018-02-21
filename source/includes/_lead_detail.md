@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/lead_detail/[gmaid]?[query_params]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/lead_detail/[gmaid]?[query_params] |
 
 ### Usage
 Use GET to retrieve information for the Lead Details report for a given advertiser.
@@ -33,7 +32,7 @@ To specify a date range:
    - Specify start_date and end_date.
    - When specifying a `campaign_cycle`, do not use date range params.
 
-### Exampless:
+### Examples:
 
 > Retrieve data for a specific range of dates
 

@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/facebook_campaign/[gmaid]?[query_params]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/facebook_campaign/[gmaid]?[query_params] |
 
 ### Usage
 Use GET to retrieve information for the Facebook Campaign Report for a given advertiser.

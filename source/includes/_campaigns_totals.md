@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/campaigns_totals/[gmaid]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/campaigns_totals/[gmaid] |
 
 The data returned will include count of running campaigns and leads for all campaign types over the last 30 days.
 

@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/advertiser_contact_info/[gmaid]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/advertiser_contact_info/[gmaid] |
 
 ### Usage
 Use GET to retrieve contact information for a given advertiser.

@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/keyword/[gmaid]?[query_params]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/keyword/[gmaid]?[query_params] |
 
 ### Usage
 Use GET to retrieve information for the Keyword report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.

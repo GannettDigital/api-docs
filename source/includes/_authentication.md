@@ -12,7 +12,7 @@ In order to obtain OAuth authentication tokens, it is first necessary to registe
 
 Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to 
 
-`https://externalapi.reachlocal.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
+`https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
 
 Where CLIENT_ID is provided during implementation.  REDIRECT_URI is a URL provided by the client at implementation time and stored with the OAuth provided.
 
@@ -32,7 +32,7 @@ Use the authorization token to request an access and refresh token.
 require 'uri'
 require 'net/http'
 
-url = URI("https://externalapi.reachlocal.com/oauth/token")
+url = URI("https://api.reachlocalservices.com/oauth/token")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -52,7 +52,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"code\": \"AUTHORIZATION_TOKEN\",\n\t\"grant_type\": \"authorization_code\",\n\t\"redirect_uri\": \"REDIRECT_URI\"\n}");
 Request request = new Request.Builder()
-  .url("https://externalapi.reachlocal.com/oauth/token")
+  .url("https://api.reachlocalservices.com/oauth/token")
   .post(body)
   .addHeader("content-type", "application/json")
   .build();
@@ -62,7 +62,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X POST \
-  https://externalapi.reachlocal.com/oauth/token \
+  https://api.reachlocalservices.com/oauth/token \
   -H 'content-type: application/json' \
   -d '{
   "client_id": "CLIENT_ID",
@@ -95,7 +95,7 @@ NOTE: When you request / refresh an access token you’ll be provided with a new
 require 'uri'
 require 'net/http'
 
-url = URI("https://externalapi.reachlocal.com/oauth/token")
+url = URI("https://api.reachlocalservices.com/oauth/token")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -113,7 +113,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\":\"password\",\n\t\"username\":\"USERNAME\",\n\t\"password\":\"PASSWORD\"\n}");
 Request request = new Request.Builder()
-  .url("https://externalapi.reachlocal.com/oauth/token")
+  .url("https://api.reachlocalservices.com/oauth/token")
   .post(body)
   .addHeader("Content-Type", "application/json")
   .build();
@@ -123,7 +123,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request POST \
-  --url https://externalapi.reachlocal.com/oauth/token \
+  --url https://api.reachlocalservices.com/oauth/token \
   --header 'Content-Type: application/json' \
   --data '{
       "client_id": "CLIENT_ID",
@@ -155,7 +155,7 @@ NOTE: When you request / refresh an access token you’ll be provided with a new
 require 'uri'
 require 'net/http'
 
-url = URI("https://externalapi.reachlocal.com/oauth/token")
+url = URI("https://api.reachlocalservices.com/oauth/token")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -175,7 +175,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\": \"refresh_token\",\n\t\"refresh_token\": \"REFRESH_TOKEN\"\n}");
 Request request = new Request.Builder()
-  .url("https://externalapi.reachlocal.com/oauth/token")
+  .url("https://api.reachlocalservices.com/oauth/token")
   .post(body)
   .addHeader("content-type", "application/json")
   .build();
@@ -185,7 +185,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request POST \
-  --url https://externalapi.qa.reachlocal.com/oauth/token \
+  --url https://api.reachlocalservices.com/oauth/token \
   --header 'content-type: application/json' \
   --data '{
       "client_id": "CLIENT_ID",
@@ -210,6 +210,7 @@ curl --request POST \
 
 Every API request must include an access token in the authorization header. This access token expires every 2 hours. When the token expires you’ll receive a 401 HTTP status code. You can request a new access token by using the refresh token you were given with your previous access token. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup.
 
+![Oauth flow](/images/oauth_flow.png)
 
 ## Security Considerations
 
