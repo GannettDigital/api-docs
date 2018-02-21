@@ -9,7 +9,8 @@
 ### Usage
 Use GET to retrieve information for the YouTube report for a given advertiser.
 
-The data returned will include impressions, views, clicks, view-through rate, click-through rate, cost per view, and eCPM organized by campaign.
+The data returned will include impressions, views, clicks, view-through rate, click-through rate, cost per view, and eCPM organized by campaign,
+and also broken out by age, gender, and device type.
 
 ### Parameters
 
@@ -106,7 +107,7 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_s
         "total": 900                                    // Total Impressions
       },
       "gender_breakdowns": {                            // Gender Breakdowns of Impressions
-        "male": {                                       
+        "male": {
           "total": 400,                                 // Total Male Impressions
           "percent": 40.0                               // Percent Male Impressions
         },
@@ -119,6 +120,20 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_s
           "percent": 20.0                               // Percent Gender Not Reported Impressions
         },
         "total": 1000                                   // Total Gender Impressions
+      },
+      "device_breakdowns": {                            // Device Breakdowns of Impressions
+        "desktop": {
+          "total": 400,                                 // Total Desktop Impressions
+          "percent": 40.0                               // Percent Desktop Impressions
+        },
+        "mobile": {
+          "total": 400,                                 // Total Mobile Impressions
+          "percent": 40.0                               // Percent Desktop Impressions
+        },
+        "tablet": {
+          "total": 200,                                 // Total Tablet Impressions
+          "percent": 20.0                               // Percent Tablet Impressions
+        }
       }
     },
     "view_breakdowns": {                                // View Breakdowns
@@ -132,7 +147,7 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_s
         "total": 900                                    // Total Views
       },
       "gender_breakdowns": {                            // Gender Breakdowns of Views
-        "male": {                                       
+        "male": {
           "total": 400,                                 // Total Male Views
           "percent": 40.0                               // Percent Male Views
         },
@@ -145,6 +160,20 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_s
           "percent": 20.0                               // Percent Gender Not Reported Views
         },
         "total": 1000                                   // Total Gender Views
+      },
+      "device_breakdowns": {                            // Device Breakdowns of Views
+        "desktop": {
+          "total": 400,                                 // Total Desktop Views
+          "percent": 40.0                               // Percent Desktop Views
+        },
+        "mobile": {
+          "total": 400,                                 // Total Mobile Views
+          "percent": 40.0                               // Percent Desktop Views
+        },
+        "tablet": {
+          "total": 200,                                 // Total Tablet Views
+          "percent": 20.0                               // Percent Tablet Views
+        }
       }
     },
     "click_breakdowns": {                               // Click Breakdowns
@@ -158,7 +187,7 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_s
         "total": 900                                    // Total Clicks
       },
       "gender_breakdowns": {                            // Gender Breakdowns of Clicks
-        "male": {                                       
+        "male": {
           "total": 400,                                 // Total Male Clicks
           "percent": 40.0                               // Percent Male Clicks
         },
@@ -171,6 +200,20 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_s
           "percent": 20.0                               // Percent Gender Not Reported Clicks
         },
         "total": 1000                                   // Total Gender Clicks
+      },
+      "device_breakdowns": {                            // Device Breakdowns of Clicks
+        "desktop": {
+          "total": 400,                                 // Total Desktop Clicks
+          "percent": 40.0                               // Percent Desktop Clicks
+        },
+        "mobile": {
+          "total": 400,                                 // Total Mobile Clicks
+          "percent": 40.0                               // Percent Desktop Clicks
+        },
+        "tablet": {
+          "total": 200,                                 // Total Tablet Clicks
+          "percent": 20.0                               // Percent Tablet Clicks
+        }
       }
     },
     "totals": {                                         // Overall Totals for Report

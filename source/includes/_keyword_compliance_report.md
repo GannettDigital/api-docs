@@ -52,7 +52,7 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&cam
 
 ```javascript
 {
-    "report_type": "keyword_google",                            // Type of report
+    "report_type": "google_keyword",                            // Type of report
     "report_date": "2018-01-25",                                // Date report ran
     "earliest_date_available": "2017-06-25",                    // How far back data is available
     "start_date": "2018-01-10",                                 // Start date of report
