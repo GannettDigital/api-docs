@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/total_track/[gmaid]?[query_params]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/total_track/[gmaid]?[query_params] |
 
 ### Usage
 Use GET to retrieve information for the TotalTrack report for a given advertiser.

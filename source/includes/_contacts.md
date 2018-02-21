@@ -142,7 +142,7 @@ last | The URI of the last page of this result set.
 require 'uri'
 require 'net/http'
 
-url = URI("https://externalapi.qa.reachlocal.com/api/contacts")
+url = URI("https://externalapi.reachlocal.com/api/contacts")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -164,7 +164,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\"gmaid\": \"USA_142687\",\"contact\":{\"first_name\":\"Example\",\"last_name\":\"User\",\"email\":\"example.user@example.com\",\"tags\":[\"apples\", \"oranges\"]}}");
 Request request = new Request.Builder()
-  .url("https://externalapi.qa.reachlocal.com/api/contacts")
+  .url("https://externalapi.reachlocal.com/api/contacts")
   .post(body)
   .addHeader("accept", "application/json")
   .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")
@@ -176,7 +176,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request POST \
-  --url https://externalapi.qa.reachlocal.com/api/contacts \
+  --url https://externalapi.reachlocal.com/api/contacts \
   --header 'accept: application/json' \
   --header 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
   --header 'content-type: application/json' \
