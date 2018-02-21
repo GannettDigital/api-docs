@@ -354,7 +354,7 @@
 <h2 id='web-application-authentication-method'>Web Application Authentication Method</h2>
 <p>Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to </p>
 
-<p><code>https://externalapi.reachlocal.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p>
+<p><code>https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p>
 
 <p>Where CLIENT_ID is provided during implementation.  REDIRECT_URI is a URL provided by the client at implementation time and stored with the OAuth provided.</p>
 
@@ -370,7 +370,7 @@
 <h3 id='requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/oauth/token"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
@@ -387,14 +387,14 @@
 <span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
 <span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"code\": \"AUTHORIZATION_TOKEN\",\n\t\"grant_type\": \"authorization_code\",\n\t\"redirect_uri\": \"REDIRECT_URI\"\n}"</span><span class="o">);</span>
 <span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/oauth/token"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/oauth/token"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">build</span><span class="o">();</span>
 
 <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  https://externalapi.reachlocal.com/oauth/token <span class="se">\</span>
+  https://api.reachlocalservices.com/oauth/token <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
   "client_id": "CLIENT_ID",
@@ -422,7 +422,7 @@
 <h2 id='direct-authentication-method'>Direct Authentication method</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/oauth/token"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 
@@ -437,14 +437,14 @@
 <span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
 <span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\":\"password\",\n\t\"username\":\"USERNAME\",\n\t\"password\":\"PASSWORD\"\n}"</span><span class="o">);</span>
 <span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/oauth/token"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/oauth/token"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">build</span><span class="o">();</span>
 
 <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url https://externalapi.reachlocal.com/oauth/token <span class="se">\</span>
+  --url https://api.reachlocalservices.com/oauth/token <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --data <span class="s1">'{
       "client_id": "CLIENT_ID",
@@ -471,7 +471,7 @@
 <h2 id='refresh-access-token'>Refresh Access Token</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/oauth/token"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
@@ -488,14 +488,14 @@
 <span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
 <span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\": \"refresh_token\",\n\t\"refresh_token\": \"REFRESH_TOKEN\"\n}"</span><span class="o">);</span>
 <span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/oauth/token"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/oauth/token"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">build</span><span class="o">();</span>
 
 <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url https://externalapi.qa.reachlocal.com/oauth/token <span class="se">\</span>
+  --url https://api.reachlocalservices.com/oauth/token <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   --data <span class="s1">'{
       "client_id": "CLIENT_ID",
@@ -518,6 +518,8 @@
 
 </span></code></pre>
 <p>Every API request must include an access token in the authorization header. This access token expires every 2 hours. When the token expires you’ll receive a 401 HTTP status code. You can request a new access token by using the refresh token you were given with your previous access token. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup.</p>
+
+<p><img src="images/oauth_flow.png" alt="Oauth flow" /></p>
 <h2 id='security-considerations'>Security Considerations</h2>
 <p>Refresh Tokens are long-lived. This means when a client gets one from a server, this token must be stored securely to keep it from being used by potential attackers, for this reason, it is not safe to store them in the browser. If a Refresh Token is leaked, it may be used to obtain new Access Tokens (and access protected resources) until it is blacklisted. Refresh Tokens must be issued to a single authenticated client to prevent the use of leaked tokens by other parties. Access Tokens must also be kept secret, but due to its shorter life, security considerations are less critical.</p>
 <h1 id='contacts'>Contacts</h1><h2 id='get-all-contacts'>Get All Contacts</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
@@ -776,7 +778,7 @@
 <h2 id='create-or-update-contact'>Create or Update Contact</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.qa.reachlocal.com/api/contacts"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/api/contacts"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
@@ -795,7 +797,7 @@
 <span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
 <span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\"gmaid\": \"USA_142687\",\"contact\":{\"first_name\":\"Example\",\"last_name\":\"User\",\"email\":\"example.user@example.com\",\"tags\":[\"apples\", \"oranges\"]}}"</span><span class="o">);</span>
 <span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.qa.reachlocal.com/api/contacts"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/api/contacts"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
@@ -804,7 +806,7 @@
 
 <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url https://externalapi.qa.reachlocal.com/api/contacts <span class="se">\</span>
+  --url https://externalapi.reachlocal.com/api/contacts <span class="se">\</span>
   --header <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -941,13 +943,22 @@
 <h1 id='client-reporting'>Client Reporting</h1><h2 id='authorization'>Authorization</h2>
 <p>All requests must include an <a href="#authentication">Authorization</a> header.</p>
 
-<p>The email address used to obtain the OAuth access token must be associated with the GMAID of the requested advertiser.  If it is not, the API will return an HTTP response with status code 403 and the following body</p>
-<pre class="highlight plaintext"><code>{
-    "message": "Forbidden"
-}
-</code></pre><h2 id='display-activity-report'>Display Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/display_activity/[gmaid]?[query_params]
-</code></pre><h3 id='usage'>Usage</h3>
+<p>The email address used to obtain the OAuth access token must be associated with the GMAID of the requested advertiser.  If it is not, the API will return an HTTP response with status code 403 and the following body:</p>
+
+<p><code>{ &quot;message&quot;: &quot;Forbidden&quot; }</code></p>
+<h2 id='display-activity-report'>Display Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/display_activity/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the Display Activity report for a given advertiser.</p>
 
 <p>The data returned will include impressions, remarketing impressions, custom targeting impressions, clicks, spend and CPM values organized by campaign and campaign_cycle.</p>
@@ -1434,9 +1445,19 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='search-activity-report'>Search Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/search_activity/[gmaid]?[query_params]
-</code></pre><h3 id='usage'>Usage</h3>
+</span></code></pre><h2 id='search-activity-report'>Search Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/search_activity/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the Search Activity report for a given advertiser.</p>
 
 <p>The data returned will include impressions, leads, clicks, calls, web_events, emails, and spend values organized by campaign and campaign_cycle.</p>
@@ -1838,9 +1859,19 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre><h2 id='facebook-campaign-report'>Facebook Campaign Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/facebook_campaign/[gmaid]?[query_params]
-</code></pre><h3 id='usage'>Usage</h3>
+</span></code></pre><h2 id='facebook-campaign-report'>Facebook Campaign Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/facebook_campaign/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the Facebook Campaign Report for a given advertiser.</p>
 
 <p>The data returned will include values for spend, reach, impressions, clicks, button clicks, link clicks and inline link clicks, organized by campaign and campaign_cycle.</p>
@@ -2404,9 +2435,19 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
 <span class="p">}</span>
 
 
-</code></pre><h2 id='campaigns-overview-report'>Campaigns Overview Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/campaigns_overview/[gmaid]
-</code></pre><h4 id='usage'>Usage</h4>
+</code></pre><h2 id='campaigns-overview-report'>Campaigns Overview Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/campaigns_overview/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h4 id='usage'>Usage</h4>
 <p>Use GET to retrieve information for the Campaigns Overview report.</p>
 
 <p>The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.</p>
@@ -2629,9 +2670,19 @@ URI Format:             /client_reports/campaigns_overview/[gmaid]
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='campaigns-totals-report'>Campaigns Totals Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/campaigns_totals/[gmaid]
-</code></pre>
+</span></code></pre><h2 id='campaigns-totals-report'>Campaigns Totals Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/campaigns_totals/[gmaid]</td>
+</tr>
+</tbody></table>
+
 <p>The data returned will include count of running campaigns and leads for all campaign types over the last 30 days.</p>
 <h3 id='parameters'>Parameters</h3>
 <p>None</p>
@@ -2679,9 +2730,19 @@ https://api.reachlocalservices.com/client_reports/campaigns_totals/USA_105569
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='advertiser-contact-info'>Advertiser Contact Info</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/advertiser_contact_info/[gmaid]
-</code></pre><h3 id='usage'>Usage</h3>
+</span></code></pre><h2 id='advertiser-contact-info'>Advertiser Contact Info</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/advertiser_contact_info/[gmaid]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve contact information for a given advertiser.</p>
 
 <p>The data returned will include name, email and phone contact information.</p>
@@ -2735,9 +2796,19 @@ https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_10
     </span><span class="p">{}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='totaltrack-report'>TotalTrack Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/total_track/[gmaid]?[query_params]
-</code></pre><h3 id='usage'>Usage</h3>
+</span></code></pre><h2 id='totaltrack-report'>TotalTrack Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/total_track/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the TotalTrack report for a given advertiser.</p>
 
 <p>The data returned will include leads, clicks, calls, web_events and email values organized by campaign and campaign_cycle.</p>
@@ -3087,9 +3158,19 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-25T20:13:23.000Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='keyword-report'>Keyword Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/keyword/[gmaid]?[query_params]
-</code></pre><h3 id='usage'>Usage</h3>
+</span></code></pre><h2 id='keyword-report'>Keyword Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/keyword/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the Keyword report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.</p>
 
 <p>The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters <code>page</code> and <code>page_size</code>.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.</p>
@@ -3257,9 +3338,19 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campai
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04T21:23:49.000Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='lead-details-report'>Lead Details Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/lead_detail/[gmaid]?[query_params]
-</code></pre><h3 id='usage'>Usage</h3>
+</span></code></pre><h2 id='lead-details-report'>Lead Details Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/lead_detail/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the Lead Details report for a given advertiser.</p>
 
 <p>The report will contains calls, emails, web events, and chats broken down by day or month.
@@ -3307,7 +3398,7 @@ Finally, the report will have a break down for calls by hour for each day of the
 <li>Specify start_date and end_date.</li>
 <li>When specifying a <code>campaign_cycle</code>, do not use date range params.</li>
 </ul>
-<h3 id='exampless'>Exampless:</h3>
+<h3 id='examples'>Examples:</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
@@ -3596,9 +3687,19 @@ https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?&amp;ca
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-08T17:55:17.000Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='youtube-report'>YouTube Report</h2><h3 id='resource-overview'>Resource Overview</h3><pre class="highlight plaintext"><code>Available Methods:      GET
-URI Format:             /client_reports/youtube/[gmaid]?[query_params]
-</code></pre><h3 id='usage'>Usage</h3>
+</span></code></pre><h2 id='youtube-report'>YouTube Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/youtube/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the YouTube report for a given advertiser.</p>
 
 <p>The data returned will include impressions, views, clicks, view-through rate, click-through rate, cost per view, and eCPM organized by campaign.</p>
