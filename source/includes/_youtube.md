@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/youtube/[gmaid]?[query_params]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/youtube/[gmaid]?[query_params] |
 
 ### Usage
 Use GET to retrieve information for the YouTube report for a given advertiser.

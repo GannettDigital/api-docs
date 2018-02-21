@@ -2,10 +2,9 @@
 
 ### Resource Overview
 
-```
-Available Methods:      GET
-URI Format:             /client_reports/campaigns_overview/[gmaid]
-```
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/campaigns_overview/[gmaid]?[query_params] |
 
 #### Usage
 Use GET to retrieve information for the Campaigns Overview report.
