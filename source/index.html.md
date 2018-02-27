@@ -25,6 +25,7 @@ includes:
   - lead_detail
   - youtube
   - edge_webhook
+  - capture_external_event_api
 
 search: false
 ---
