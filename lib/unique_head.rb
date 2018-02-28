@@ -9,7 +9,6 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     friendly_text = text.parameterize
     @head_count[friendly_text] ||= 0
     @head_count[friendly_text] += 1
-    puts "HEADER #{text} #{@head_count}" 
     if @head_count[friendly_text] > 1
       friendly_text += "-#{@head_count[friendly_text]}"
     end

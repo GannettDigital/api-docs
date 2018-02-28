@@ -2,7 +2,6 @@ require 'nokogiri'
 
 def toc_data(page_content)
   html_doc = Nokogiri::HTML::DocumentFragment.parse(page_content)
-puts "HERE"
   # get a flat list of headers
   headers = []
   html_doc.css('h1, h2, h3').each do |header|
