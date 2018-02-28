@@ -24,6 +24,8 @@ includes:
   - keyword
   - lead_detail
   - youtube
+  - search_compliance_report
+  - keyword_compliance_report
   - edge_webhook
   - capture_external_event_api
 
