@@ -309,9 +309,6 @@
             <a href="#capture-external-event" class="toc-h1 toc-link" data-title="Capture External Event">Capture External Event</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#authorization-capture" class="toc-h2 toc-link" data-title="Capture External Event">Authorization - Capture</a>
-                  </li>
-                  <li>
                     <a href="#create-chat-event" class="toc-h2 toc-link" data-title="Capture External Event">Create Chat Event</a>
                   </li>
               </ul>
@@ -5046,12 +5043,6 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp
 </tbody></table>
 <h1 id='capture-external-event'>Capture External Event</h1>
 <p>Capture External Event API is a public ReachLocal external interface for vendors to use.</p>
-<h2 id='authorization-capture'>Authorization - Capture</h2>
-<p>All requests must include an <a href="#authentication">Authorization</a> header.</p>
-
-<p>The email address used to obtain the OAuth access token must be associated with the GMAID of the requested advertiser.  If it is not, the API will return an HTTP response with status code 403 and the following body:</p>
-
-<p><code>{ &quot;message&quot;: &quot;Forbidden&quot; }</code></p>
 <h2 id='create-chat-event'>Create Chat Event</h2>
 <p>This endpoint is used to create a chat event.</p>
 <h3 id='http-request'>HTTP Request</h3>
@@ -5159,7 +5150,7 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp
 <td>yes</td>
 <td>string</td>
 <td>no</td>
-<td>The full text of the chat.</td>
+<td>The full transcript of the chat.</td>
 </tr>
 <tr>
 <td>chatVisitorEmail</td>
