@@ -87,7 +87,7 @@ curl -X POST \
 
 This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token. 
 
-NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.
+**NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.**
 
 ## Direct Authentication method
 
@@ -148,7 +148,9 @@ curl --request POST \
 
 OAuth 2 provides a "password" grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn't desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token. 
 
-NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.  Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
+Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
+
+**NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.**
 
 ## Refresh Access Token
 ```ruby
@@ -209,6 +211,8 @@ curl --request POST \
 ```
 
 Every API request must include an access token in the authorization header. This access token expires every 2 hours. When the token expires you’ll receive a 401 HTTP status code. You can request a new access token by using the refresh token you were given with your previous access token. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup.
+
+**NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.**
 
 ![Oauth flow](/images/oauth_flow.png)
 
