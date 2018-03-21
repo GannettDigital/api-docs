@@ -195,7 +195,6 @@ curl --request POST \
       "grant_type": "refresh_token",
       "refresh_token": "REFRESH_TOKEN"
     }'
-}'
 ```
 > The above command returns JSON structured like this:
 
