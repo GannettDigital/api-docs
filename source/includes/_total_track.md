@@ -35,35 +35,35 @@ To specify a date range:
 > Retrieve data for a specific range of dates
 
 ```
-curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
-curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
-curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=USA_100
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
-curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
 
 ```
-curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true
 ```
 
