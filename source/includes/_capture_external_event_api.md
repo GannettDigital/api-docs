@@ -62,7 +62,7 @@ curl -X POST \
         "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",          
         "chatDuration": 261.58,
         "chatSummary": "Do you have any specials going on?",
-        "chatTextFull": "u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
+        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
         "chatVisitorEmail": "minneapple@gmail.com",
         "chatVisitorName": "Bob",
         "chatVisitorPhone": "6592009999"
@@ -90,7 +90,7 @@ curl -X POST \
         "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",          
         "chatDuration": 261.58,
         "chatSummary": "Do you have any specials going on?",
-        "chatTextFull": "u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
+        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
         "chatVisitorEmail": "minneapple@gmail.com",
         "chatVisitorName": "Bob",
         "chatVisitorPhone": "6592009999"
@@ -124,7 +124,7 @@ request["authorization"] = 'Token test_token'
 request["Cache-Control"] = 'no-cache'
 request["Postman-Token"] = 'd2af928d-7ef3-5186-74a8-bb657a31a198'
 request["Content-Type"] = 'application/json'
-request.body = "{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"123456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"
+request.body = "{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"123456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"
 
 response = http.request(request)
 puts response.read_body
@@ -139,7 +139,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n");
+RequestBody body = RequestBody.create(mediaType, "{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n");
 Request request = new Request.Builder()
   .url("https://api.reachlocalservices.com/capture_events/chats")
   .post(body)
