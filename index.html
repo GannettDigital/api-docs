@@ -298,6 +298,14 @@
               </ul>
           </li>
           <li>
+            <a href="#identity" class="toc-h1 toc-link" data-title="Identity">Identity</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#show-identity" class="toc-h2 toc-link" data-title="Identity">Show identity</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#edge-webhook" class="toc-h1 toc-link" data-title="Edge Webhook">Edge Webhook</a>
               <ul class="toc-list-h2">
                   <li>
@@ -432,7 +440,7 @@
 </span></code></pre>
 <p>This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token. </p>
 
-<p>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</p>
+<p><strong>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</strong></p>
 <h2 id='direct-authentication-method'>Direct Authentication method</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
@@ -481,7 +489,9 @@
 </span></code></pre>
 <p>OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token. </p>
 
-<p>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.  Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p>
+<p>Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p>
+
+<p><strong>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</strong></p>
 <h2 id='refresh-access-token'>Refresh Access Token</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
@@ -517,8 +527,7 @@
       "grant_type": "refresh_token",
       "refresh_token": "REFRESH_TOKEN"
     }'</span>
-<span class="o">}</span><span class="s1">'
-</span></code></pre>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -532,6 +541,8 @@
 
 </span></code></pre>
 <p>Every API request must include an access token in the authorization header. This access token expires every 2 hours. When the token expires you’ll receive a 401 HTTP status code. You can request a new access token by using the refresh token you were given with your previous access token. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup.</p>
+
+<p><strong>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</strong></p>
 
 <p><img src="images/oauth_flow.png" alt="Oauth flow" /></p>
 <h2 id='security-considerations'>Security Considerations</h2>
@@ -1025,31 +1036,31 @@
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign cycle</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=USA_100
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;include_cycles=true
 </code></pre>
 <blockquote>
@@ -1524,31 +1535,31 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign cycle</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?campaign_cycle=USA_100"
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;include_cycles=true"
 </code></pre>
 <blockquote>
@@ -1935,37 +1946,37 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign cycle</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?campaign_cycle=USA_100
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-12-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-12-01&amp;end_date=2016-12-31&amp;include_cycles=true
 </code></pre>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?start_date=2017-01-26&amp;end_date=2017-01-30
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
   <span class="s2">"report_type"</span><span class="p">:</span> <span class="s2">"facebook_campaign"</span><span class="p">,</span>
@@ -2503,7 +2514,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
 </ul>
 <h3 id='parameters'>Parameters</h3>
 <p>None</p>
-<h3 id='example'>Example:</h3><pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<h3 id='example'>Example:</h3><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_105569
 </code></pre>
 <blockquote>
@@ -2557,7 +2568,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
      <span class="s2">"Campaign"</span><span class="p">:</span> <span class="s2">"2016-12-07T20:11:44.000Z"</span>                 <span class="c1">// Table last updated</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre><pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+</code></pre><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_123"
 </code></pre>
 <blockquote>
@@ -2700,7 +2711,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
 <p>The data returned will include count of running campaigns and leads for all campaign types over the last 30 days.</p>
 <h3 id='parameters'>Parameters</h3>
 <p>None</p>
-<h3 id='examples'>Examples:</h3><pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<h3 id='examples'>Examples:</h3><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/campaigns_totals/USA_105569
 </code></pre>
 <blockquote>
@@ -2780,7 +2791,7 @@ https://api.reachlocalservices.com/client_reports/campaigns_totals/USA_105569
 <blockquote>
 <p>Retrieve contact info data</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569
 </code></pre>
 <blockquote>
@@ -2875,31 +2886,31 @@ https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_10
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign cycle</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=USA_100
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;include_cycles=true
 </code></pre>
 <blockquote>
@@ -3234,19 +3245,19 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/keyword/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/keyword/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campaign_status[]=running&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;campaign_status[]=stopped&amp;page=1&amp;page_size=15
 </code></pre>
 <blockquote>
@@ -3416,25 +3427,25 @@ Finally, the report will have a break down for calls by hour for each day of the
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign cycle</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?campaign_cycle=USA_100
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
@@ -3763,25 +3774,25 @@ and also broken out by age, gender, and device type.</p>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/youtube/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/youtube/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign cycle</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/youtube/USA_105569?campaign_cycle=USA_100
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
@@ -4032,31 +4043,31 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&amp;campai
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign cycle</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105569?campaign_cycle=USA_100"
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H Authorization: OAUTH_ACCESS_TOKEN" \
+<pre class="highlight plaintext"><code>curl -g -H Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;include_cycles=true"
 </code></pre>
 <blockquote>
@@ -4327,19 +4338,19 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15"
 </code></pre>
 <blockquote>
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -g -H "Authorization: OAUTH_ACCESS_TOKEN \
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp;campaign_status[]=running&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;campaign_status[]=stopped&amp;page=1&amp;page_size=15"
 </code></pre>
 <blockquote>
@@ -4378,7 +4389,136 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp
     <span class="s2">"page_size"</span><span class="p">:</span> <span class="mi">1</span>                                              <span class="c1">// page size used to generate this data</span>
 <span class="p">}</span>
 
-</code></pre><h1 id='edge-webhook'>Edge Webhook</h1>
+</code></pre><h1 id='identity'>Identity</h1>
+<p>The identity endpoint is used to gain insight into what resources are accessible by a user.</p>
+<h2 id='show-identity'>Show identity</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.qa.reachlocalservices.com/identities/EMAIL_ADDRESS"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.qa.reachlocalservices.com/identities/EMAIL_ADDRESS"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url https://api.qa.reachlocalservices.com/identities/EMAIL_ADDRESS <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"bu_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">449848</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL_ADDRESS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"authorized_advertisers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awesome Advertiser"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_224767"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Corporation"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_142687"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/identities/[email address]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
+<p>This endpoint retreives the identity of the provided user email address.</p>
+<h3 id='response-body'>Response Body</h3>
+<p>The body of the API response will be a JSON objects.</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bu_id</td>
+<td>Number</td>
+<td>no</td>
+<td>The unique business user id.</td>
+</tr>
+<tr>
+<td>user</td>
+<td>String</td>
+<td>no</td>
+<td>The email address of the business user.</td>
+</tr>
+<tr>
+<td>business_id</td>
+<td>Number</td>
+<td>no</td>
+<td>The unique business id that this business user belongs to.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>no</td>
+<td>The region that this business user belongs.</td>
+</tr>
+<tr>
+<td>authorized_advertisers</td>
+<td>Array</td>
+<td>no</td>
+<td>An array of JSON advertiser objects.</td>
+</tr>
+</tbody></table>
+
+<p>The advertiser is a JSON object.</p>
+
+<table><thead>
+<tr>
+<th>Advertiser Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>no</td>
+<td>The name of the advertiser.</td>
+</tr>
+<tr>
+<td>gmaid</td>
+<td>String</td>
+<td>no</td>
+<td>The global master advertiser id of the advertiser.</td>
+</tr>
+</tbody></table>
+<h1 id='edge-webhook'>Edge Webhook</h1>
 <p>Edge has an automation feature that is capable of triggering on “New Lead for New Contact” and “New Lead for Existing Contact” events.  When either of these events occur, this webhook integration will trigger and POST the Lead Event JSON Payload to a URL configured for the webhook.  Create a webhook using the integrations account setting.</p>
 
 <p><img src="images/webhook.png" alt="Integrations webhook" /></p>
@@ -5178,11 +5318,9 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp
 
 curl -X POST <span class="se">\</span>
   https://api.reachlocalservices.com/capture_events/chats <span class="se">\</span>
-  -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Postman-Token: 37301914-7914-da1c-66ab-9ea0066ae3fb'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token test_token'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
   -d <span class="s1">'{
   "eventTime": "2017-03-10T01:19:23Z",
   "accountId": "123456789",
@@ -5192,7 +5330,7 @@ curl -X POST <span class="se">\</span>
         "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",          
         "chatDuration": 261.58,
         "chatSummary": "Do you have any specials going on?",
-        "chatTextFull": "u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
+        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
         "chatVisitorEmail": "minneapple@gmail.com",
         "chatVisitorName": "Bob",
         "chatVisitorPhone": "6592009999"
@@ -5206,11 +5344,9 @@ curl -X POST <span class="se">\</span>
 
 curl -X POST <span class="se">\</span>
   https://api.reachlocalservices.com/capture_events/chats <span class="se">\</span>
-  -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Postman-Token: 37301914-7914-da1c-66ab-9ea0066ae3fb'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token test_token'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
   -d <span class="s1">'{
   "eventTime": "2017-03-10T01:19:23Z",
   "accountId": "123456789",
@@ -5220,7 +5356,7 @@ curl -X POST <span class="se">\</span>
         "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",          
         "chatDuration": 261.58,
         "chatSummary": "Do you have any specials going on?",
-        "chatTextFull": "u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
+        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
         "chatVisitorEmail": "minneapple@gmail.com",
         "chatVisitorName": "Bob",
         "chatVisitorPhone": "6592009999"
@@ -5247,11 +5383,9 @@ curl -X POST <span class="se">\</span>
 
 <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Token test_token'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"Cache-Control"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'no-cache'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"Postman-Token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'d2af928d-7ef3-5186-74a8-bb657a31a198'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
 <span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">eventTime</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-03-10T01:19:23Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">accountId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123456789</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:  </span><span class="se">\n</span><span class="s2">    {</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">NanoRep</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">visitId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bd4567f4-9b90-42e6-b282-7767af1ba581</span><span class="se">\"</span><span class="s2">,          </span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatDuration</span><span class="se">\"</span><span class="s2">: 261.58,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatSummary</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Do you have any specials going on?</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatTextFull</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorEmail</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">minneapple@gmail.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorName</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Bob</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorPhone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">6592009999</span><span class="se">\"\n</span><span class="s2">    }</span><span class="se">\n</span><span class="s2">       </span><span class="se">\n</span><span class="s2">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">eventTime</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-03-10T01:19:23Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">accountId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123456789</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:  </span><span class="se">\n</span><span class="s2">    {</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">NanoRep</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">visitId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bd4567f4-9b90-42e6-b282-7767af1ba581</span><span class="se">\"</span><span class="s2">,          </span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatDuration</span><span class="se">\"</span><span class="s2">: 261.58,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatSummary</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Do you have any specials going on?</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatTextFull</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\u</span><span class="s2">000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?</span><span class="se">\u</span><span class="s2">000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorEmail</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">minneapple@gmail.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorName</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Bob</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorPhone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">6592009999</span><span class="se">\"\n</span><span class="s2">    }</span><span class="se">\n</span><span class="s2">       </span><span class="se">\n</span><span class="s2">}</span><span class="se">\n</span><span class="s2">"</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
@@ -5263,14 +5397,12 @@ curl -X POST <span class="se">\</span>
 <span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
 
 <span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
-<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"</span><span class="o">);</span>
 <span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
   <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/capture_events/chats"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Token test_token"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Cache-Control"</span><span class="o">,</span> <span class="s">"no-cache"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Postman-Token"</span><span class="o">,</span> <span class="s">"7e05e080-4568-2af8-04a0-241b574e3cc0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">build</span><span class="o">();</span>
 
