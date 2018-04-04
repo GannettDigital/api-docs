@@ -260,6 +260,9 @@
                     <a href="#authorization" class="toc-h2 toc-link" data-title="Client Reporting">Authorization</a>
                   </li>
                   <li>
+                    <a href="#api-rate-limits" class="toc-h2 toc-link" data-title="Client Reporting">API Rate LImits</a>
+                  </li>
+                  <li>
                     <a href="#display-activity-report" class="toc-h2 toc-link" data-title="Client Reporting">Display Activity Report</a>
                   </li>
                   <li>
@@ -971,6 +974,16 @@
 <p>The email address used to obtain the OAuth access token must be associated with the GMAID of the requested advertiser.  If it is not, the API will return an HTTP response with status code 403 and the following body:</p>
 
 <p><code>{ &quot;message&quot;: &quot;Forbidden&quot; }</code></p>
+<h2 id='api-rate-limits'>API Rate LImits</h2>
+<p>ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests / second.</p>
+
+<p>If you exceed the rate limit allowance your request will be rejected. An <code>HTTP 429 (Too Many Requests)​</code> response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.</p>
+
+<p>Example response body for throttled request</p>
+
+<p><code>{ &quot;message&quot;: &quot;Too Many Requests&quot; }</code></p>
+
+<p>We reserve the right to alter rate limits other functionality to prevent abuse, spam, denial-of-service attacks, or other security issues. Where possible we&#39;ll return a descriptive error message, but the nature of this type of rate limiting often prevents us from providing more information.</p>
 <h2 id='display-activity-report'>Display Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
 <tr>
