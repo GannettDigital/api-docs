@@ -25,7 +25,7 @@ None
 > Retrieve contact info data
 
 ```
-curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569
 ```
 

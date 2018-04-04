@@ -48,11 +48,9 @@ chatVisitorPhone | yes | string | no | The phone number for this chat visitor.
 
 curl -X POST \
   https://api.reachlocalservices.com/capture_events/chats \
-  -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 37301914-7914-da1c-66ab-9ea0066ae3fb' \
   -H 'accept: application/json' \
-  -H 'authorization: Token test_token' \
+  -H 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
   -d '{
   "eventTime": "2017-03-10T01:19:23Z",
   "accountId": "123456789",
@@ -76,11 +74,9 @@ curl -X POST \
 
 curl -X POST \
   https://api.reachlocalservices.com/capture_events/chats \
-  -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 37301914-7914-da1c-66ab-9ea0066ae3fb' \
   -H 'accept: application/json' \
-  -H 'authorization: Token test_token' \
+  -H 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
   -d '{
   "eventTime": "2017-03-10T01:19:23Z",
   "accountId": "123456789",
@@ -120,9 +116,7 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Post.new(url)
 request["accept"] = 'application/json'
-request["authorization"] = 'Token test_token'
-request["Cache-Control"] = 'no-cache'
-request["Postman-Token"] = 'd2af928d-7ef3-5186-74a8-bb657a31a198'
+request["authorization"] = 'Bearer OAUTH_ACCESS_TOKEN'
 request["Content-Type"] = 'application/json'
 request.body = "{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"123456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"
 
@@ -144,9 +138,7 @@ Request request = new Request.Builder()
   .url("https://api.reachlocalservices.com/capture_events/chats")
   .post(body)
   .addHeader("accept", "application/json")
-  .addHeader("authorization", "Token test_token")
-  .addHeader("Cache-Control", "no-cache")
-  .addHeader("Postman-Token", "7e05e080-4568-2af8-04a0-241b574e3cc0")
+  .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Content-Type", "application/json")
   .build();
 

@@ -47,7 +47,7 @@ None
 ### Example:
 
 ```
-curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_105569
 ```
 
@@ -105,7 +105,7 @@ curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
 ```
 
 ```
-curl -H "Authorization: OAUTH_ACCESS_TOKEN" \
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_123"
 ```
 
