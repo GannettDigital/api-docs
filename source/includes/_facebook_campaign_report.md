@@ -118,6 +118,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             "spend": 27.1,
             "video_avg_percent_watched_actions": 0,
             "video_p100_watched_actions": 0,
+            "leads": 40,
             "cpc": 6.78,
             "cpm": 70.76,
             "ctr": 1.04
@@ -147,6 +148,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             "spend": 25.9,
             "video_avg_percent_watched_actions": 0,
             "video_p100_watched_actions": 0,
+            "leads": 40,
             "cpc": 1.99,
             "cpm": 58.47,
             "ctr": 2.93
@@ -176,6 +178,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             "spend": 25.76,
             "video_avg_percent_watched_actions": 0,
             "video_p100_watched_actions": 0,
+            "leads": 40,
             "cpc": 4.29,
             "cpm": 60.19,
             "ctr": 1.4
@@ -205,6 +208,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             "spend": 25.86,
             "video_avg_percent_watched_actions": 0,
             "video_p100_watched_actions": 0,
+            "leads": 40,
             "cpc": 3.23,
             "cpm": 59.18,
             "ctr": 1.83
@@ -234,6 +238,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             "spend": 26.4,
             "video_avg_percent_watched_actions": 0,
             "video_p100_watched_actions": 0,
+            "leads": 40,
             "cpc": 3.77,
             "cpm": 63.01,
             "ctr": 1.67
@@ -345,6 +350,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "age_Unknown_gender_unknown": 0
       },
       "impressions": 2110,                      // individual metric totals across all campaigns and intervals
+      "leads": 200,
       "call_to_action_clicks": 0,
       "clicks": 38,
       "social_clicks": 4,
@@ -396,6 +402,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "spend": 27.1,
         "video_avg_percent_watched_actions": 0,
         "video_p100_watched_actions": 0,
+        "leads": 40,
         "cpc": 6.78,
         "cpm": 70.76,
         "ctr": 1.04
@@ -425,6 +432,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "spend": 25.9,
         "video_avg_percent_watched_actions": 0,
         "video_p100_watched_actions": 0,
+        "leads": 40,
         "cpc": 1.99,
         "cpm": 58.47,
         "ctr": 2.93
@@ -454,6 +462,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "spend": 25.76,
         "video_avg_percent_watched_actions": 0,
         "video_p100_watched_actions": 0,
+        "leads": 40,
         "cpc": 4.29,
         "cpm": 60.19,
         "ctr": 1.4
@@ -483,6 +492,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "spend": 25.86,
         "video_avg_percent_watched_actions": 0,
         "video_p100_watched_actions": 0,
+        "leads": 40,
         "cpc": 3.23,
         "cpm": 59.18,
         "ctr": 1.83
@@ -512,6 +522,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "spend": 26.4,
         "video_avg_percent_watched_actions": 0,
         "video_p100_watched_actions": 0,
+        "leads": 40,
         "cpc": 3.77,
         "cpm": 63.01,
         "ctr": 1.67
