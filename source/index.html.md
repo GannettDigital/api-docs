@@ -29,6 +29,7 @@ includes:
   - identity
   - edge_webhook
   - capture_external_event_api
+  - call_connect
 
 search: false
 ---
