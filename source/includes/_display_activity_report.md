@@ -9,7 +9,7 @@
 ### Usage
 Use GET to retrieve information for the Display Activity report for a given advertiser.
 
-The data returned will include impressions, remarketing impressions, custom targeting impressions, clicks, spend and CPM values organized by campaign and campaign_cycle.
+The data returned will include impressions, remarketing impressions, custom targeting impressions, clicks, spend, CPM, walk-ins, and CPW values organized by campaign and campaign_cycle.
 
 ### Parameters
 
@@ -101,7 +101,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
                 "clicks": 45,                        // Clicks for interval
                 "spend": 18,                         // Spend for interval
                 "cpm": 3.05,                         // CPM for interval
-                "ctr": 57.69                         // Click through rate
+                "ctr": 57.69,                        // Click through rate
+                "walk_ins": 1,                       // Walk-ins
+                "cpw": 18.0                          // Cost per Walk-in
               },
             ]
           }
@@ -115,7 +117,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "clicks": 85,                         // Total click events
       "spend": 18,                          // Total spend
       "cpm": 4.05,                          // Total CPM
-      "ctr": 57.69                          // Click through rate
+      "walk_ins": 1,                        // Total Walk-ins
+      "ctr": 57.69,                         // Click through rate
+      "cpw": 18.0                           // Total Cost per Walk-in
     },
     "totals_per_interval": [                // Totals per interval (over multiple campaigns)
       {
@@ -126,7 +130,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "clicks": 85,                       // Total clicks for interval
         "spend": 18,                        // Total spend for interval
         "cpm": 4.05.                        // Total cpm for interval
-        "ctr": 57.69                        // Click through rate
+        "ctr": 57.69,                       // Click through rate
+        "walk_ins": 1,                      // Total Walk-ins for interval
+        "cpw": 52.37                        // Total Cost per Walk-ins for interval
       }
     ]
   },
@@ -139,17 +145,13 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "status": "running",
       "cycles": [                              // All cycles for advertiser
         {
-          "campaign_cycle": "USA_1",        // Identifier for cycle
+          "campaign_cycle": "USA_1",           // Identifier for cycle
           "start_date": "2016-10-10",          // Start date of cycle
           "end_date": "2016-10-14",            // End date of cycle
         }
       ]
     }
-  ],
-  "data_import_status": {
-     "DailyCampaignActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
-     "Campaign": "2016-12-07T20:11:44.000Z"                 // Table last updated
-  }
+  ]
 }
 ```
 >  Response Description without Cycles
@@ -172,7 +174,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "start_date": "2016-07-10",          // Start date for campaign
         "end_date": "2016-10-24",            // End date for campaign
         "type": "display",                   // Type of campaign
-        "intervals": [                   // Data for specified interval
+        "intervals": [                       // Data for specified interval
           {
             "start_date": "2016-10-10",          // Start date of interval
             "impressions": 78,                   // Impressions for interval
@@ -181,8 +183,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             "clicks": 45,                        // Clicks for interval
             "spend": 18,                         // Spend for interval
             "cpm": 3.05,                         // CPM for interval
-            "ctr" : 57.69                        // Click through rate
-            
+            "ctr" : 57.69,                       // Click through rate
+            "walk_ins": 1,                       // Walk-ins
+            "cpw": 18.0                          // Cost per Walk-in
           },
         ]
       }
@@ -194,7 +197,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "clicks": 85,                         // Total click events
       "spend": 18,                          // Total spend
       "cpm": 4.05,                          // Total CPM
-      "ctr": 57.69                          // Click through rate
+      "walk_ins": 1,                        // Total Walk-ins
+      "ctr": 57.69,                         // Click through rate
+      "cpw": 18.0                           // Total Cost per Walk-in
     },
     "totals_per_interval": [                // Totals per interval (over multiple campaigns)
       {
@@ -218,261 +223,166 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "status": "running",
       "cycles": [                              // All cycles for advertiser
         {
-          "campaign_cycle": "USA_1",        // Identifier for cycle
+          "campaign_cycle": "USA_1",           // Identifier for cycle
           "start_date": "2016-10-10",          // Start date of cycle
           "end_date": "2016-10-14",            // End date of cycle
         }
       ]
     }
-  ],
-  "data_import_status": {
-     "DailyCampaignActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
-     "Campaign": "2016-12-07T20:11:44.000Z"                 // Table last updated
-  }
+  ]
 }
 ```
 
-> Example Response (with cycles):
+> Example Response (without cycles):
 
 ```json
 {
-  "report_type": "display_activity",
-  "report_date": "2017-01-24",
-  "earliest_date_available": "2016-01-01",
-  "start_date": "2017-01-11",
-  "end_date": "2017-01-13",
-  "time_zone": "America/Los_Angeles",
-  "interval_size": "day",
-  "currency": "USD",
-  "report_data": {
-    "campaigns": [
-      {
-        "name": "Drain Cleaning",
-        "global_master_campaign_id": "USA_1",
-        "start_date": "2016-11-14",
-        "end_date": "2017-01-13",
-        "type": "display",
-        "status": "running",
-        "intervals": [
-          {
-            "start_date": "2017-01-11",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          },
-          {
-            "start_date": "2017-01-12",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          },
-          {
-            "start_date": "2017-01-13",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          }
+    "report_type": "display_activity",
+    "report_date": "2018-03-29",
+    "earliest_date_available": "2018-02-25",
+    "start_date": "2018-03-09",
+    "end_date": "2018-03-09",
+    "time_zone": "America/Los_Angeles",
+    "interval_size": "day",
+    "currency": "USD",
+    "report_data": {
+        "campaigns": [
+            {
+                "name": "GeoFence I Bliss Orthodontics",
+                "global_master_campaign_id": "USA_2270088",
+                "start_date": "2017-11-28",
+                "end_date": null,
+                "type": "display",
+                "status": "running",
+                "intervals": [
+                    {
+                        "start_date": "2018-03-09",
+                        "impressions": 2466,
+                        "remarketing_impressions": 0,
+                        "custom_targeting_impressions": 2466,
+                        "clicks": 3,
+                        "spend": 16.66,
+                        "ctr": 0.12,
+                        "cpm": 6.76,
+                        "walk_ins": 1,
+                        "cpw": 16.66
+                    }
+                ]
+            },
+            {
+                "name": "Retargeting | Bliss Orthodontics | Orthodontics",
+                "global_master_campaign_id": "USA_1880940",
+                "start_date": "2017-12-16",
+                "end_date": null,
+                "type": "display",
+                "status": "running",
+                "intervals": [
+                    {
+                        "start_date": "2018-03-09",
+                        "impressions": 4207,
+                        "remarketing_impressions": 23,
+                        "custom_targeting_impressions": 4184,
+                        "clicks": 12,
+                        "spend": 17.2,
+                        "ctr": 0.29,
+                        "cpm": 4.09,
+                        "walk_ins": 0,
+                        "cpw": 0
+                    }
+                ]
+            }
+        ],
+        "totals": {
+            "impressions": 6673,
+            "remarketing_impressions": 23,
+            "custom_targeting_impressions": 6650,
+            "clicks": 15,
+            "spend": 33.86,
+            "cpm": 5.07,
+            "walk_ins": 1,
+            "ctr": 0.22,
+            "cpw": 33.86
+        },
+        "totals_per_interval": [
+            {
+                "start_date": "2018-03-09",
+                "impressions": 6673,
+                "remarketing_impressions": 23,
+                "custom_targeting_impressions": 6650,
+                "clicks": 15,
+                "spend": 33.86,
+                "ctr": 0.22,
+                "cpm": 5.07,
+                "walk_ins": 1,
+                "cpw": 33.86
+            }
         ]
-      },
-      {
-        "name": "Stopped Campaign",
-        "global_master_campaign_id": "USA_3",
-        "start_date": "2016-11-14",
-        "end_date": "2017-01-13",
-        "type": "display",
-        "status": "stopped",
-        "intervals": [
-          {
-            "start_date": "2017-01-11",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          },
-          {
-            "start_date": "2017-01-12",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          },
-          {
-            "start_date": "2017-01-13",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          }
-        ]
-      },
-      {
-        "name": "Ended Campaign",
-        "global_master_campaign_id": "USA_4",
-        "start_date": "2016-11-14",
-        "end_date": "2017-01-13",
-        "type": "display",
-        "status": "ended",
-        "intervals": [
-          {
-            "start_date": "2017-01-11",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          },
-          {
-            "start_date": "2017-01-12",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          },
-          {
-            "start_date": "2017-01-13",
-            "impressions": 200,
-            "remarketing_impressions": 60,
-            "custom_targeting_impressions": 140,
-            "clicks": 30,
-            "spend": 75.5,
-            "cpm": 377.5,
-            "ctr": 57.69
-          }
-        ]
-      }
-    ],
-    "totals": {
-      "impressions": 1800,
-      "remarketing_impressions": 540,
-      "custom_targeting_impressions": 1260,
-      "clicks": 270,
-      "spend": 679.5,
-      "cpm": 377.5,
-      "ctr": 57.69
     },
-    "totals_per_interval": [
-      {
-        "start_date": "2017-01-11",
-        "impressions": 600,
-        "remarketing_impressions": 180,
-        "custom_targeting_impressions": 420,
-        "clicks": 90,
-        "spend": 226.5,
-        "cpm": 377.5,
-        "ctr": 57.69
-      },
-      {
-        "start_date": "2017-01-12",
-        "impressions": 600,
-        "remarketing_impressions": 180,
-        "custom_targeting_impressions": 420,
-        "clicks": 90,
-        "spend": 226.5,
-        "cpm": 377.5,
-        "ctr": 57.69
-      },
-      {
-        "start_date": "2017-01-13",
-        "impressions": 600,
-        "remarketing_impressions": 180,
-        "custom_targeting_impressions": 420,
-        "clicks": 90,
-        "spend": 226.5,
-        "cpm": 377.5,
-        "ctr": 57.69
-      }
+    "global_master_advertiser_id": "USA_148363",
+    "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_148363?end_date=2018-03-09&start_date=2018-03-09",
+    "available_campaigns": [
+        {
+            "name": "GeoFence I Bliss Orthodontics",
+            "global_master_campaign_id": "USA_2270088",
+            "status": "running",
+            "cycles": [
+                {
+                    "campaign_cycle": "USA_2406928",
+                    "start_date": "2017-11-28",
+                    "end_date": "2017-12-28",
+                    "name": "GeoFence I Bliss Orthodontics"
+                },
+                {
+                    "campaign_cycle": "USA_2428675",
+                    "start_date": "2017-12-28",
+                    "end_date": "2018-01-28",
+                    "name": "GeoFence I Bliss Orthodontics"
+                },
+                {
+                    "campaign_cycle": "USA_2450043",
+                    "start_date": "2018-01-28",
+                    "end_date": "2018-02-27",
+                    "name": "GeoFence I Bliss Orthodontics"
+                },
+                {
+                    "campaign_cycle": "USA_2473076",
+                    "start_date": "2018-02-27",
+                    "end_date": null,
+                    "name": "GeoFence I Bliss Orthodontics"
+                }
+            ]
+        },
+        {
+            "name": "Retargeting | Bliss Orthodontics | Orthodontics",
+            "global_master_campaign_id": "USA_1880940",
+            "status": "running",
+            "cycles": [
+                {
+                    "campaign_cycle": "USA_2419473",
+                    "start_date": "2017-12-16",
+                    "end_date": "2018-01-16",
+                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
+                },
+                {
+                    "campaign_cycle": "USA_2442711",
+                    "start_date": "2018-01-16",
+                    "end_date": "2018-02-17",
+                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
+                },
+                {
+                    "campaign_cycle": "USA_2464872",
+                    "start_date": "2018-02-17",
+                    "end_date": "2018-03-20",
+                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
+                },
+                {
+                    "campaign_cycle": "USA_2487638",
+                    "start_date": "2018-03-20",
+                    "end_date": null,
+                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
+                }
+            ]
+        }
     ]
-  },
-  "global_master_advertiser_id": "USA_123",
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_123?start_date=2017-01-11&end_date=2017-01-13",
-  "available_campaigns": [
-    {
-      "name": "Drain Cleaning",
-      "global_master_campaign_id": "USA_1",
-      "status": "running",
-      "cycles": [
-        {
-          "campaign_cycle": "USA_10",
-          "start_date": "2016-11-14",
-          "end_date": "2016-12-14",
-          "name": "Drain Cleaning"
-        },
-        {
-          "campaign_cycle": "USA_11",
-          "start_date": "2016-12-14",
-          "end_date": "2017-01-13",
-          "name": "Drain Cleaning"
-        }
-      ]
-    },
-    {
-      "name": "Stopped Campaign",
-      "global_master_campaign_id": "USA_3",
-      "status": "stopped",
-      "cycles": [
-        {
-          "campaign_cycle": "USA_30",
-          "start_date": "2016-11-14",
-          "end_date": "2016-12-14",
-          "name": "Stopped Campaign"
-        },
-        {
-          "campaign_cycle": "USA_31",
-          "start_date": "2016-12-14",
-          "end_date": "2017-01-13",
-          "name": "Stopped Campaign"
-        }
-      ]
-    },
-    {
-      "name": "Ended Campaign",
-      "global_master_campaign_id": "USA_4",
-      "status": "ended",
-      "cycles": [
-        {
-          "campaign_cycle": "USA_40",
-          "start_date": "2016-11-14",
-          "end_date": "2016-12-14",
-          "name": "Ended Campaign"
-        },
-        {
-          "campaign_cycle": "USA_41",
-          "start_date": "2016-12-14",
-          "end_date": "2017-01-13",
-          "name": "Ended Campaign"
-        }
-      ]
-    }
-  ],
-  "data_import_status": {
-    "DailyCampaignActivity": "2017-01-13T21:04:12.000Z",
-    "Campaign": null
-  }
 }
 ```
