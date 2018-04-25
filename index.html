@@ -324,6 +324,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#call-connect" class="toc-h1 toc-link" data-title="Call Connect">Call Connect</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="Call Connect">Create</a>
+                  </li>
+              </ul>
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
@@ -999,7 +1007,7 @@
 <h3 id='usage'>Usage</h3>
 <p>Use GET to retrieve information for the Display Activity report for a given advertiser.</p>
 
-<p>The data returned will include impressions, remarketing impressions, custom targeting impressions, clicks, spend and CPM values organized by campaign and campaign_cycle.</p>
+<p>The data returned will include impressions, remarketing impressions, custom targeting impressions, clicks, spend, CPM, walk-ins, and CPW values organized by campaign and campaign_cycle.</p>
 <h3 id='parameters'>Parameters</h3>
 <p>When using the GET method, the results can be filtered using these parameters:</p>
 
@@ -1110,7 +1118,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
                 <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>                        <span class="c1">// Clicks for interval</span>
                 <span class="s2">"spend"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>                         <span class="c1">// Spend for interval</span>
                 <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">3.05</span><span class="p">,</span>                         <span class="c1">// CPM for interval</span>
-                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span>                         <span class="c1">// Click through rate</span>
+                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span><span class="p">,</span>                        <span class="c1">// Click through rate</span>
+                <span class="s2">"performance_impressions"</span><span class="p">:</span> <span class="mi">21268</span><span class="p">,</span>    <span class="c1">// Performance (video) impressions</span>
+                <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                          <span class="c1">// Calls for interval</span>
+                <span class="s2">"video_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                    <span class="c1">// Video Views (started) for interval</span>
+                <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                <span class="c1">// Video Views (completed) for interval</span>
+                <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>            <span class="c1">// Click-Through Form Submissions</span>
+                <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>            <span class="c1">// View-Through Form Submissions</span>
+                <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>         <span class="c1">// Click-Through Priority Page Views</span>
+                <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>         <span class="c1">// View-Through Priority Page Views</span>
+                <span class="s2">"view_complete_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>             <span class="c1">// Percent of vidoes completed</span>
+                <span class="s2">"view_through_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1">// View Through Rate (percent)</span>
+                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                       <span class="c1">// Walk-ins</span>
+                <span class="s2">"cpw"</span><span class="p">:</span> <span class="mf">18.0</span>                          <span class="c1">// Cost per Walk-in</span>
+                <span class="s2">"cost_per_call"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                  <span class="c1">// Cost per Call</span>
+                <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mf">17.87</span>         <span class="c1">// Cost per Form Submission</span>
               <span class="p">},</span>
             <span class="p">]</span>
           <span class="p">}</span>
@@ -1124,7 +1146,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>                         <span class="c1">// Total click events</span>
       <span class="s2">"spend"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>                          <span class="c1">// Total spend</span>
       <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.05</span><span class="p">,</span>                          <span class="c1">// Total CPM</span>
-      <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span>                          <span class="c1">// Click through rate</span>
+      <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span><span class="p">,</span>                         <span class="c1">// Click through rate</span>
+      <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                        <span class="c1">// Total Walk-ins</span>
+      <span class="s2">"performance_impressions"</span><span class="p">:</span> <span class="mi">64213</span><span class="p">,</span>     <span class="c1">// Total Peformance Impressions</span>
+      <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                           <span class="c1">// Total Calls</span>
+      <span class="s2">"video_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                     <span class="c1">// Total Video View</span>
+      <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                 <span class="c1">// Total Completed Video Views</span>
+      <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>             <span class="c1">// Total Click-Through Form Submissions</span>
+      <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>             <span class="c1">// Total View-Through Form Submissions</span>
+      <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>          <span class="c1">// Total Click-Through Priority Page Views</span>
+      <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>          <span class="c1">// Total View-Through Priority Page Views</span>
+      <span class="s2">"view_through_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>               <span class="c1">// Total View-Through Rate (percent)</span>
+      <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>             <span class="c1">// Total Video Completion Rate (percent)</span>
+      <span class="s2">"cpw"</span><span class="p">:</span> <span class="mf">18.0</span>                           <span class="c1">// Total Cost per Walk-in</span>
+      <span class="s2">"cost_per_call"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                   <span class="c1">// Total Cost per Call</span>
+      <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mf">78.21</span>          <span class="c1">// Total Cost per Form Submission</span>
     <span class="p">},</span>
     <span class="s2">"totals_per_interval"</span><span class="p">:</span> <span class="p">[</span>                <span class="c1">// Totals per interval (over multiple campaigns)</span>
       <span class="p">{</span>
@@ -1134,8 +1170,22 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         <span class="s2">"custom_targeting_impressions"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="c1">// Total custom targeting impressions for interval</span>
         <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>                       <span class="c1">// Total clicks for interval</span>
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>                        <span class="c1">// Total spend for interval</span>
-        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.05</span><span class="p">.</span>                        <span class="c1">// Total cpm for interval</span>
-        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span>                        <span class="c1">// Click through rate</span>
+        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.05</span><span class="p">,</span>                        <span class="c1">// Total cpm for interval</span>
+        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span><span class="p">,</span>                       <span class="c1">// Click through rate</span>
+        <span class="s2">"performance_impressions"</span><span class="p">:</span> <span class="mi">21268</span><span class="p">,</span>   <span class="c1">// Performance (video) impressions</span>
+        <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                         <span class="c1">// Total Calls for interval</span>
+        <span class="s2">"video_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                   <span class="c1">// Total Video Views (started) for interval</span>
+        <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>               <span class="c1">// Total Video Views (completed) for interval</span>
+        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>           <span class="c1">// Total Click-Through Form Submissions for interval</span>
+        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>           <span class="c1">// Total View-Through Form Submissions for interval</span>
+        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>        <span class="c1">// Total Click-Through Priority Page Views for interval</span>
+        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>        <span class="c1">// Total View-Through Priority Page Views for interval</span>
+        <span class="s2">"view_complete_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>            <span class="c1">// Total Percent of vidoes completed for interval</span>
+        <span class="s2">"view_through_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>             <span class="c1">// Total View Through Rate (percent) for interval</span>
+        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                      <span class="c1">// Total Walk-ins for interval</span>
+        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mf">52.37</span>                        <span class="c1">// Total Cost per Walk-ins for interval</span>
+        <span class="s2">"cost_per_call"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                 <span class="c1">// Total Cost per Call for interval</span>
+        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mf">17.87</span>        <span class="c1">// Total Cost per Form Submission for interval</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
@@ -1148,17 +1198,13 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
       <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>                              <span class="c1">// All cycles for advertiser</span>
         <span class="p">{</span>
-          <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_1"</span><span class="p">,</span>        <span class="c1">// Identifier for cycle</span>
+          <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_1"</span><span class="p">,</span>           <span class="c1">// Identifier for cycle</span>
           <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-10-10"</span><span class="p">,</span>          <span class="c1">// Start date of cycle</span>
           <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-10-14"</span><span class="p">,</span>            <span class="c1">// End date of cycle</span>
         <span class="p">}</span>
       <span class="p">]</span>
     <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"data_import_status"</span><span class="p">:</span> <span class="p">{</span>
-     <span class="s2">"DailyCampaignActivity"</span><span class="p">:</span> <span class="s2">"2016-12-07T20:11:44.000Z"</span><span class="p">,</span>   <span class="c1">// Table last updated</span>
-     <span class="s2">"Campaign"</span><span class="p">:</span> <span class="s2">"2016-12-07T20:11:44.000Z"</span>                 <span class="c1">// Table last updated</span>
-  <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
 <blockquote>
@@ -1181,7 +1227,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-07-10"</span><span class="p">,</span>          <span class="c1">// Start date for campaign</span>
         <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-10-24"</span><span class="p">,</span>            <span class="c1">// End date for campaign</span>
         <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"display"</span><span class="p">,</span>                   <span class="c1">// Type of campaign</span>
-        <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>                   <span class="c1">// Data for specified interval</span>
+        <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>                       <span class="c1">// Data for specified interval</span>
           <span class="p">{</span>
             <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-10-10"</span><span class="p">,</span>          <span class="c1">// Start date of interval</span>
             <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">78</span><span class="p">,</span>                   <span class="c1">// Impressions for interval</span>
@@ -1190,8 +1236,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>                        <span class="c1">// Clicks for interval</span>
             <span class="s2">"spend"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>                         <span class="c1">// Spend for interval</span>
             <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">3.05</span><span class="p">,</span>                         <span class="c1">// CPM for interval</span>
-            <span class="s2">"ctr"</span> <span class="p">:</span> <span class="mf">57.69</span>                        <span class="c1">// Click through rate</span>
-
+            <span class="s2">"ctr"</span> <span class="p">:</span> <span class="mf">57.69</span><span class="p">,</span>                       <span class="c1">// Click through rate</span>
+            <span class="s2">"performance_impressions"</span><span class="p">:</span> <span class="mi">21268</span><span class="p">,</span>    <span class="c1">// Performance (video) impressions</span>
+            <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                          <span class="c1">// Calls for interval</span>
+            <span class="s2">"video_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                    <span class="c1">// Video Views (started) for interval</span>
+            <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                <span class="c1">// Video Views (completed) for interval</span>
+            <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>            <span class="c1">// Click-Through Form Submissions</span>
+            <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>            <span class="c1">// View-Through Form Submissions</span>
+            <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>         <span class="c1">// Click-Through Priority Page Views</span>
+            <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>         <span class="c1">// View-Through Priority Page Views</span>
+            <span class="s2">"view_complete_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>             <span class="c1">// Percent of vidoes completed</span>
+            <span class="s2">"view_through_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1">// View Through Rate (percent)</span>
+            <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                       <span class="c1">// Walk-ins</span>
+            <span class="s2">"cpw"</span><span class="p">:</span> <span class="mf">18.0</span>                          <span class="c1">// Cost per Walk-in</span>
+            <span class="s2">"cost_per_call"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                  <span class="c1">// Cost per Call</span>
+            <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mf">17.87</span>         <span class="c1">// Cost per Form Submission</span>
           <span class="p">},</span>
         <span class="p">]</span>
       <span class="p">}</span>
@@ -1203,7 +1262,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>                         <span class="c1">// Total click events</span>
       <span class="s2">"spend"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>                          <span class="c1">// Total spend</span>
       <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.05</span><span class="p">,</span>                          <span class="c1">// Total CPM</span>
-      <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span>                          <span class="c1">// Click through rate</span>
+      <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span><span class="p">,</span>                         <span class="c1">// Click through rate</span>
+      <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                        <span class="c1">// Total Walk-ins</span>
+      <span class="s2">"performance_impressions"</span><span class="p">:</span> <span class="mi">64213</span><span class="p">,</span>     <span class="c1">// Total Peformance Impressions</span>
+      <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                           <span class="c1">// Total Calls</span>
+      <span class="s2">"video_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                     <span class="c1">// Total Video View</span>
+      <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                 <span class="c1">// Total Completed Video Views</span>
+      <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>             <span class="c1">// Total Click-Through Form Submissions</span>
+      <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>             <span class="c1">// Total View-Through Form Submissions</span>
+      <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>          <span class="c1">// Total Click-Through Priority Page Views</span>
+      <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>          <span class="c1">// Total View-Through Priority Page Views</span>
+      <span class="s2">"view_through_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>               <span class="c1">// Total View-Through Rate (percent)</span>
+      <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>             <span class="c1">// Total Video Completion Rate (percent)</span>
+      <span class="s2">"cpw"</span><span class="p">:</span> <span class="mf">18.0</span>                           <span class="c1">// Total Cost per Walk-in</span>
+      <span class="s2">"cost_per_call"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                   <span class="c1">// Total Cost per Call</span>
+      <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mf">78.21</span>          <span class="c1">// Total Cost per Form Submission</span>
     <span class="p">},</span>
     <span class="s2">"totals_per_interval"</span><span class="p">:</span> <span class="p">[</span>                <span class="c1">// Totals per interval (over multiple campaigns)</span>
       <span class="p">{</span>
@@ -1214,7 +1287,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>                       <span class="c1">// Total clicks for interval</span>
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>                        <span class="c1">// Total spend for interval</span>
         <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.05</span><span class="p">,</span>                        <span class="c1">// Total cpm for interval</span>
-        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span>                        <span class="c1">// Click through rate</span>
+        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span><span class="p">,</span>                       <span class="c1">// Click through rate</span>
+        <span class="s2">"performance_impressions"</span><span class="p">:</span> <span class="mi">21268</span><span class="p">,</span>   <span class="c1">// Performance (video) impressions</span>
+        <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                         <span class="c1">// Total Calls for interval</span>
+        <span class="s2">"video_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                   <span class="c1">// Total Video Views (started) for interval</span>
+        <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>               <span class="c1">// Total Video Views (completed) for interval</span>
+        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>           <span class="c1">// Total Click-Through Form Submissions for interval</span>
+        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>           <span class="c1">// Total View-Through Form Submissions for interval</span>
+        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>        <span class="c1">// Total Click-Through Priority Page Views for interval</span>
+        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>        <span class="c1">// Total View-Through Priority Page Views for interval</span>
+        <span class="s2">"view_complete_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>            <span class="c1">// Total Percent of vidoes completed for interval</span>
+        <span class="s2">"view_through_rate"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>             <span class="c1">// Total View Through Rate (percent) for interval</span>
+        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                      <span class="c1">// Total Walk-ins for interval for interval</span>
+        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                           <span class="c1">// Total Cost per Walk-in for interval</span>
+        <span class="s2">"cost_per_call"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                 <span class="c1">// Total Cost per Call for interval</span>
+        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mf">17.87</span>        <span class="c1">// Total Cost per Form Submission for interval</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
@@ -1227,21 +1314,17 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
       <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>                              <span class="c1">// All cycles for advertiser</span>
         <span class="p">{</span>
-          <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_1"</span><span class="p">,</span>        <span class="c1">// Identifier for cycle</span>
+          <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_1"</span><span class="p">,</span>           <span class="c1">// Identifier for cycle</span>
           <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-10-10"</span><span class="p">,</span>          <span class="c1">// Start date of cycle</span>
           <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-10-14"</span><span class="p">,</span>            <span class="c1">// End date of cycle</span>
         <span class="p">}</span>
       <span class="p">]</span>
     <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"data_import_status"</span><span class="p">:</span> <span class="p">{</span>
-     <span class="s2">"DailyCampaignActivity"</span><span class="p">:</span> <span class="s2">"2016-12-07T20:11:44.000Z"</span><span class="p">,</span>   <span class="c1">// Table last updated</span>
-     <span class="s2">"Campaign"</span><span class="p">:</span> <span class="s2">"2016-12-07T20:11:44.000Z"</span>                 <span class="c1">// Table last updated</span>
-  <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
 <blockquote>
-<p>Example Response (with cycles):</p>
+<p>Example Response (without cycles):</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"report_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display_activity"</span><span class="p">,</span><span class="w">
@@ -1270,7 +1353,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-12"</span><span class="p">,</span><span class="w">
@@ -1280,7 +1377,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13"</span><span class="p">,</span><span class="w">
@@ -1290,7 +1401,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -1310,7 +1435,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-12"</span><span class="p">,</span><span class="w">
@@ -1320,7 +1459,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13"</span><span class="p">,</span><span class="w">
@@ -1330,7 +1483,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -1350,7 +1517,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-12"</span><span class="p">,</span><span class="w">
@@ -1360,7 +1541,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13"</span><span class="p">,</span><span class="w">
@@ -1370,7 +1565,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+            </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1393,7 +1602,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">226.5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+        </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-12"</span><span class="p">,</span><span class="w">
@@ -1403,7 +1626,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">226.5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+        </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13"</span><span class="p">,</span><span class="w">
@@ -1413,7 +1650,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">226.5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="w">
+        </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.69</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"performance_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">21268</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"video_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_submissions_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_submissions_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority_page_views_ct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority_page_views_vt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"view_complete_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"view_through_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_per_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_per_submission"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.87</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -1431,57 +1682,87 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
           </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-14"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drain Cleaning"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_11"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-14"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drain Cleaning"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+        </span><span class="s2">"totals_per_interval"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-09"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">6673</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"remarketing_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"custom_targeting_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">6650</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.86</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.22</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cpm"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.07</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"walk_ins"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cpw"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.86</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stopped Campaign"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_3"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stopped"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_148363"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.reachlocalservices.com/client_reports/display_activity/USA_148363?end_date=2018-03-09&amp;start_date=2018-03-09"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_30"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-14"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-14"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stopped Campaign"</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GeoFence I Bliss Orthodontics"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2270088"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2406928"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-28"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-28"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GeoFence I Bliss Orthodontics"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2428675"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-28"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-28"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GeoFence I Bliss Orthodontics"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2450043"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-28"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GeoFence I Bliss Orthodontics"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2473076"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GeoFence I Bliss Orthodontics"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_31"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-14"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stopped Campaign"</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retargeting | Bliss Orthodontics | Orthodontics"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_1880940"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2419473"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-16"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-16"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retargeting | Bliss Orthodontics | Orthodontics"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2442711"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-16"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-17"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retargeting | Bliss Orthodontics | Orthodontics"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2464872"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-17"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-20"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retargeting | Bliss Orthodontics | Orthodontics"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2487638"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-20"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retargeting | Bliss Orthodontics | Orthodontics"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ended Campaign"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_4"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ended"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_40"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-14"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-14"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ended Campaign"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_41"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-14"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ended Campaign"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"data_import_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"DailyCampaignActivity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-13T21:04:12.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='search-activity-report'>Search Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -2035,6 +2316,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">27.1</span><span class="p">,</span>
             <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
             <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">6.78</span><span class="p">,</span>
             <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">70.76</span><span class="p">,</span>
             <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.04</span>
@@ -2064,6 +2346,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">25.9</span><span class="p">,</span>
             <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
             <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">1.99</span><span class="p">,</span>
             <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">58.47</span><span class="p">,</span>
             <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">2.93</span>
@@ -2093,6 +2376,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">25.76</span><span class="p">,</span>
             <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
             <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">4.29</span><span class="p">,</span>
             <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">60.19</span><span class="p">,</span>
             <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.4</span>
@@ -2122,6 +2406,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">25.86</span><span class="p">,</span>
             <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
             <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">3.23</span><span class="p">,</span>
             <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">59.18</span><span class="p">,</span>
             <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.83</span>
@@ -2151,6 +2436,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
             <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">26.4</span><span class="p">,</span>
             <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
             <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">3.77</span><span class="p">,</span>
             <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">63.01</span><span class="p">,</span>
             <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.67</span>
@@ -2262,6 +2548,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         <span class="s2">"age_Unknown_gender_unknown"</span><span class="p">:</span> <span class="mi">0</span>
       <span class="p">},</span>
       <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">2110</span><span class="p">,</span>                      <span class="c1">// individual metric totals across all campaigns and intervals</span>
+      <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
       <span class="s2">"call_to_action_clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
       <span class="s2">"social_clicks"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
@@ -2313,6 +2600,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">27.1</span><span class="p">,</span>
         <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
         <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">6.78</span><span class="p">,</span>
         <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">70.76</span><span class="p">,</span>
         <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.04</span>
@@ -2342,6 +2630,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">25.9</span><span class="p">,</span>
         <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
         <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">1.99</span><span class="p">,</span>
         <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">58.47</span><span class="p">,</span>
         <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">2.93</span>
@@ -2371,6 +2660,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">25.76</span><span class="p">,</span>
         <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
         <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">4.29</span><span class="p">,</span>
         <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">60.19</span><span class="p">,</span>
         <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.4</span>
@@ -2400,6 +2690,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">25.86</span><span class="p">,</span>
         <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
         <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">3.23</span><span class="p">,</span>
         <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">59.18</span><span class="p">,</span>
         <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.83</span>
@@ -2429,6 +2720,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">26.4</span><span class="p">,</span>
         <span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
         <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">3.77</span><span class="p">,</span>
         <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">63.01</span><span class="p">,</span>
         <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.67</span>
@@ -5413,6 +5705,128 @@ curl -X POST <span class="se">\</span>
 <span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"NanoRep\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"</span><span class="o">);</span>
 <span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
   <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/capture_events/chats"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+
+<span class="cm">/* HTTP Response Status: 200 */</span>
+</code></pre><h1 id='call-connect'>Call Connect</h1>
+<p>The Call Connect endpoint is used to create a phone call between a visitor and
+an advertiser. The advertiser&#39;s phone number is determined using the given visit
+ID.</p>
+<h2 id='create'>Create</h2><h3 id='http-request'>HTTP Request</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>POST</td>
+<td>https://api.reachlocalservices.com/call_connect</td>
+</tr>
+</tbody></table>
+<h3 id='http-response-codes'>HTTP Response Codes</h3>
+<table><thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Validation Error</td>
+</tr>
+</tbody></table>
+<h3 id='post-body-parameters'>Post Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>description</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The topic of the call (e.g building a fireplace, fixing a toaster).</td>
+</tr>
+<tr>
+<td>visitId</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The ID of the visit that triggered the call connection.</td>
+</tr>
+<tr>
+<td>visitorName</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The name of the visitor.</td>
+</tr>
+<tr>
+<td>visitorPhone</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The phone number of the visitor. No specific format is required.</td>
+</tr>
+</tbody></table>
+<h3 id='examples'>Examples:</h3><pre class="highlight shell tab-shell"><code><span class="c"># Sample cURL for the Create POST request:</span>
+
+curl -X POST <span class="se">\</span>
+  https://api.reachlocalservices.com/call_connect <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "description": "creating an example",
+  "visitId": "92a2e98d-a51c-4cb0-aec8-495a14470821",
+  "visitorName": "John Doe",
+  "visitorPhone": "(111) 222-3333"
+}'</span>
+
+<span class="c"># HTTP Response Status: 200</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="c1"># Sample Ruby for the Create Chat POST request:</span>
+
+<span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/call_connect"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">creating an example</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">visitId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">92a2e98d-a51c-4cb0-aec8-495a14470821</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">visitorName</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">John Doe</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">visitorPhone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">(111) 222-3333</span><span class="se">\"</span><span class="s2">}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+
+<span class="c1"># HTTP Response Status: 200</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="cm">/* Sample Java for the Create POST request: */</span>
+
+<span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\"description\": \"creating an example\", \"visitId\": \"92a2e98d-a51c-4cb0-aec8-495a14470821\", \"visitorName\": \"John Doe\", \"visitorPhone\": \"(111) 222-3333\"}"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/call_connect"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
