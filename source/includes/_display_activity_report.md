@@ -102,8 +102,20 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
                 "spend": 18,                         // Spend for interval
                 "cpm": 3.05,                         // CPM for interval
                 "ctr": 57.69,                        // Click through rate
+                "performance_impressions": 21268,    // Performance (video) impressions
+                "calls": 0,                          // Calls for interval
+                "video_views": 0,                    // Video Views (started) for interval
+                "completed_views": 0,                // Video Views (completed) for interval
+                "form_submissions_ct": 2,            // Click-Through Form Submissions
+                "form_submissions_vt": 5,            // View-Through Form Submissions
+                "priority_page_views_ct": 0,         // Click-Through Priority Page Views
+                "priority_page_views_vt": 0,         // View-Through Priority Page Views
+                "view_complete_rate": 0,             // Percent of vidoes completed
+                "view_through_rate": 0,              // View Through Rate (percent)
                 "walk_ins": 1,                       // Walk-ins
                 "cpw": 18.0                          // Cost per Walk-in
+                "cost_per_call": 0,                  // Cost per Call
+                "cost_per_submission": 17.87         // Cost per Form Submission
               },
             ]
           }
@@ -117,9 +129,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "clicks": 85,                         // Total click events
       "spend": 18,                          // Total spend
       "cpm": 4.05,                          // Total CPM
-      "walk_ins": 1,                        // Total Walk-ins
       "ctr": 57.69,                         // Click through rate
+      "walk_ins": 1,                        // Total Walk-ins
+      "performance_impressions": 64213,     // Total Peformance Impressions
+      "calls": 0,                           // Total Calls
+      "video_views": 0,                     // Total Video View
+      "completed_views": 0,                 // Total Completed Video Views
+      "form_submissions_ct": 3,             // Total Click-Through Form Submissions
+      "form_submissions_vt": 5,             // Total View-Through Form Submissions
+      "priority_page_views_ct": 0,          // Total Click-Through Priority Page Views
+      "priority_page_views_vt": 0,          // Total View-Through Priority Page Views
+      "view_through_rate": 0,               // Total View-Through Rate (percent)
+      "video_complete_rate": 0,             // Total Video Completion Rate (percent)
       "cpw": 18.0                           // Total Cost per Walk-in
+      "cost_per_call": 0,                   // Total Cost per Call
+      "cost_per_submission": 78.21          // Total Cost per Form Submission
     },
     "totals_per_interval": [                // Totals per interval (over multiple campaigns)
       {
@@ -129,10 +153,22 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "custom_targeting_impressions": 45, // Total custom targeting impressions for interval
         "clicks": 85,                       // Total clicks for interval
         "spend": 18,                        // Total spend for interval
-        "cpm": 4.05.                        // Total cpm for interval
+        "cpm": 4.05,                        // Total cpm for interval
         "ctr": 57.69,                       // Click through rate
+        "performance_impressions": 21268,   // Performance (video) impressions
+        "calls": 0,                         // Total Calls for interval
+        "video_views": 0,                   // Total Video Views (started) for interval
+        "completed_views": 0,               // Total Video Views (completed) for interval
+        "form_submissions_ct": 2,           // Total Click-Through Form Submissions for interval
+        "form_submissions_vt": 5,           // Total View-Through Form Submissions for interval
+        "priority_page_views_ct": 0,        // Total Click-Through Priority Page Views for interval
+        "priority_page_views_vt": 0,        // Total View-Through Priority Page Views for interval
+        "view_complete_rate": 0,            // Total Percent of vidoes completed for interval
+        "view_through_rate": 0,             // Total View Through Rate (percent) for interval
         "walk_ins": 1,                      // Total Walk-ins for interval
         "cpw": 52.37                        // Total Cost per Walk-ins for interval
+        "cost_per_call": 0,                 // Total Cost per Call for interval
+        "cost_per_submission": 17.87        // Total Cost per Form Submission for interval
       }
     ]
   },
@@ -184,8 +220,20 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             "spend": 18,                         // Spend for interval
             "cpm": 3.05,                         // CPM for interval
             "ctr" : 57.69,                       // Click through rate
+            "performance_impressions": 21268,    // Performance (video) impressions
+            "calls": 0,                          // Calls for interval
+            "video_views": 0,                    // Video Views (started) for interval
+            "completed_views": 0,                // Video Views (completed) for interval
+            "form_submissions_ct": 2,            // Click-Through Form Submissions
+            "form_submissions_vt": 5,            // View-Through Form Submissions
+            "priority_page_views_ct": 0,         // Click-Through Priority Page Views
+            "priority_page_views_vt": 0,         // View-Through Priority Page Views
+            "view_complete_rate": 0,             // Percent of vidoes completed
+            "view_through_rate": 0,              // View Through Rate (percent)
             "walk_ins": 1,                       // Walk-ins
             "cpw": 18.0                          // Cost per Walk-in
+            "cost_per_call": 0,                  // Cost per Call
+            "cost_per_submission": 17.87         // Cost per Form Submission
           },
         ]
       }
@@ -197,9 +245,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "clicks": 85,                         // Total click events
       "spend": 18,                          // Total spend
       "cpm": 4.05,                          // Total CPM
-      "walk_ins": 1,                        // Total Walk-ins
       "ctr": 57.69,                         // Click through rate
+      "walk_ins": 1,                        // Total Walk-ins
+      "performance_impressions": 64213,     // Total Peformance Impressions
+      "calls": 0,                           // Total Calls
+      "video_views": 0,                     // Total Video View
+      "completed_views": 0,                 // Total Completed Video Views
+      "form_submissions_ct": 3,             // Total Click-Through Form Submissions
+      "form_submissions_vt": 5,             // Total View-Through Form Submissions
+      "priority_page_views_ct": 0,          // Total Click-Through Priority Page Views
+      "priority_page_views_vt": 0,          // Total View-Through Priority Page Views
+      "view_through_rate": 0,               // Total View-Through Rate (percent)
+      "video_complete_rate": 0,             // Total Video Completion Rate (percent)
       "cpw": 18.0                           // Total Cost per Walk-in
+      "cost_per_call": 0,                   // Total Cost per Call
+      "cost_per_submission": 78.21          // Total Cost per Form Submission
     },
     "totals_per_interval": [                // Totals per interval (over multiple campaigns)
       {
@@ -210,7 +270,21 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "clicks": 85,                       // Total clicks for interval
         "spend": 18,                        // Total spend for interval
         "cpm": 4.05,                        // Total cpm for interval
-        "ctr": 57.69                        // Click through rate
+        "ctr": 57.69,                       // Click through rate
+        "performance_impressions": 21268,   // Performance (video) impressions
+        "calls": 0,                         // Total Calls for interval
+        "video_views": 0,                   // Total Video Views (started) for interval
+        "completed_views": 0,               // Total Video Views (completed) for interval
+        "form_submissions_ct": 2,           // Total Click-Through Form Submissions for interval
+        "form_submissions_vt": 5,           // Total View-Through Form Submissions for interval
+        "priority_page_views_ct": 0,        // Total Click-Through Priority Page Views for interval
+        "priority_page_views_vt": 0,        // Total View-Through Priority Page Views for interval
+        "view_complete_rate": 0,            // Total Percent of vidoes completed for interval
+        "view_through_rate": 0,             // Total View Through Rate (percent) for interval
+        "walk_ins": 0,                      // Total Walk-ins for interval for interval
+        "cpw": 0,                           // Total Cost per Walk-in for interval
+        "cost_per_call": 0,                 // Total Cost per Call for interval
+        "cost_per_submission": 17.87        // Total Cost per Form Submission for interval
       }
     ]
   },
@@ -237,71 +311,360 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
 
 ```json
 {
-    "report_type": "display_activity",
-    "report_date": "2018-03-29",
-    "earliest_date_available": "2018-02-25",
-    "start_date": "2018-03-09",
-    "end_date": "2018-03-09",
-    "time_zone": "America/Los_Angeles",
-    "interval_size": "day",
-    "currency": "USD",
-    "report_data": {
-        "campaigns": [
-            {
-                "name": "GeoFence I Bliss Orthodontics",
-                "global_master_campaign_id": "USA_2270088",
-                "start_date": "2017-11-28",
-                "end_date": null,
-                "type": "display",
-                "status": "running",
-                "intervals": [
-                    {
-                        "start_date": "2018-03-09",
-                        "impressions": 2466,
-                        "remarketing_impressions": 0,
-                        "custom_targeting_impressions": 2466,
-                        "clicks": 3,
-                        "spend": 16.66,
-                        "ctr": 0.12,
-                        "cpm": 6.76,
-                        "walk_ins": 1,
-                        "cpw": 16.66
-                    }
-                ]
-            },
-            {
-                "name": "Retargeting | Bliss Orthodontics | Orthodontics",
-                "global_master_campaign_id": "USA_1880940",
-                "start_date": "2017-12-16",
-                "end_date": null,
-                "type": "display",
-                "status": "running",
-                "intervals": [
-                    {
-                        "start_date": "2018-03-09",
-                        "impressions": 4207,
-                        "remarketing_impressions": 23,
-                        "custom_targeting_impressions": 4184,
-                        "clicks": 12,
-                        "spend": 17.2,
-                        "ctr": 0.29,
-                        "cpm": 4.09,
-                        "walk_ins": 0,
-                        "cpw": 0
-                    }
-                ]
-            }
-        ],
-        "totals": {
-            "impressions": 6673,
-            "remarketing_impressions": 23,
-            "custom_targeting_impressions": 6650,
-            "clicks": 15,
-            "spend": 33.86,
-            "cpm": 5.07,
-            "walk_ins": 1,
-            "ctr": 0.22,
-            "cpw": 33.86
+  "report_type": "display_activity",
+  "report_date": "2017-01-24",
+  "earliest_date_available": "2016-01-01",
+  "start_date": "2017-01-11",
+  "end_date": "2017-01-13",
+  "time_zone": "America/Los_Angeles",
+  "interval_size": "day",
+  "currency": "USD",
+  "report_data": {
+    "campaigns": [
+      {
+        "name": "Drain Cleaning",
+        "global_master_campaign_id": "USA_1",
+        "start_date": "2016-11-14",
+        "end_date": "2017-01-13",
+        "type": "display",
+        "status": "running",
+        "intervals": [
+          {
+            "start_date": "2017-01-11",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          },
+          {
+            "start_date": "2017-01-12",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          },
+          {
+            "start_date": "2017-01-13",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          }
+        ]
+      },
+      {
+        "name": "Stopped Campaign",
+        "global_master_campaign_id": "USA_3",
+        "start_date": "2016-11-14",
+        "end_date": "2017-01-13",
+        "type": "display",
+        "status": "stopped",
+        "intervals": [
+          {
+            "start_date": "2017-01-11",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          },
+          {
+            "start_date": "2017-01-12",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          },
+          {
+            "start_date": "2017-01-13",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          }
+        ]
+      },
+      {
+        "name": "Ended Campaign",
+        "global_master_campaign_id": "USA_4",
+        "start_date": "2016-11-14",
+        "end_date": "2017-01-13",
+        "type": "display",
+        "status": "ended",
+        "intervals": [
+          {
+            "start_date": "2017-01-11",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          },
+          {
+            "start_date": "2017-01-12",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          },
+          {
+            "start_date": "2017-01-13",
+            "impressions": 200,
+            "remarketing_impressions": 60,
+            "custom_targeting_impressions": 140,
+            "clicks": 30,
+            "spend": 75.5,
+            "cpm": 377.5,
+            "ctr": 57.69,
+            "performance_impressions": 21268,
+            "calls": 0,
+            "video_views": 0,
+            "completed_views": 0,
+            "form_submissions_ct": 2,
+            "form_submissions_vt": 5,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "view_complete_rate": 0,
+            "view_through_rate": 0,
+            "walk_ins": 0,
+            "cpw": 0,
+            "cost_per_call": 0,
+            "cost_per_submission": 17.87
+          }
+        ]
+      }
+    ],
+    "totals": {
+      "impressions": 1800,
+      "remarketing_impressions": 540,
+      "custom_targeting_impressions": 1260,
+      "clicks": 270,
+      "spend": 679.5,
+      "cpm": 377.5,
+      "ctr": 57.69
+    },
+    "totals_per_interval": [
+      {
+        "start_date": "2017-01-11",
+        "impressions": 600,
+        "remarketing_impressions": 180,
+        "custom_targeting_impressions": 420,
+        "clicks": 90,
+        "spend": 226.5,
+        "cpm": 377.5,
+        "ctr": 57.69,
+        "performance_impressions": 21268,
+        "calls": 0,
+        "video_views": 0,
+        "completed_views": 0,
+        "form_submissions_ct": 2,
+        "form_submissions_vt": 5,
+        "priority_page_views_ct": 0,
+        "priority_page_views_vt": 0,
+        "view_complete_rate": 0,
+        "view_through_rate": 0,
+        "walk_ins": 0,
+        "cpw": 0,
+        "cost_per_call": 0,
+        "cost_per_submission": 17.87
+      },
+      {
+        "start_date": "2017-01-12",
+        "impressions": 600,
+        "remarketing_impressions": 180,
+        "custom_targeting_impressions": 420,
+        "clicks": 90,
+        "spend": 226.5,
+        "cpm": 377.5,
+        "ctr": 57.69,
+        "performance_impressions": 21268,
+        "calls": 0,
+        "video_views": 0,
+        "completed_views": 0,
+        "form_submissions_ct": 2,
+        "form_submissions_vt": 5,
+        "priority_page_views_ct": 0,
+        "priority_page_views_vt": 0,
+        "view_complete_rate": 0,
+        "view_through_rate": 0,
+        "walk_ins": 0,
+        "cpw": 0,
+        "cost_per_call": 0,
+        "cost_per_submission": 17.87
+      },
+      {
+        "start_date": "2017-01-13",
+        "impressions": 600,
+        "remarketing_impressions": 180,
+        "custom_targeting_impressions": 420,
+        "clicks": 90,
+        "spend": 226.5,
+        "cpm": 377.5,
+        "ctr": 57.69,
+        "performance_impressions": 21268,
+        "calls": 0,
+        "video_views": 0,
+        "completed_views": 0,
+        "form_submissions_ct": 2,
+        "form_submissions_vt": 5,
+        "priority_page_views_ct": 0,
+        "priority_page_views_vt": 0,
+        "view_complete_rate": 0,
+        "view_through_rate": 0,
+        "walk_ins": 0,
+        "cpw": 0,
+        "cost_per_call": 0,
+        "cost_per_submission": 17.87
+      }
+    ]
+  },
+  "global_master_advertiser_id": "USA_123",
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_123?start_date=2017-01-11&end_date=2017-01-13",
+  "available_campaigns": [
+    {
+      "name": "Drain Cleaning",
+      "global_master_campaign_id": "USA_1",
+      "status": "running",
+      "cycles": [
+        {
+          "campaign_cycle": "USA_10",
+          "start_date": "2016-11-14",
+          "end_date": "2016-12-14",
+          "name": "Drain Cleaning"
         },
         "totals_per_interval": [
             {
