@@ -13,7 +13,7 @@ includes:
   - errors
   - authentication
   - contacts
-  - client_reporting
+  - reporting
   - display_activity_report
   - search_activity_report
   - facebook_campaign_report
@@ -26,6 +26,10 @@ includes:
   - youtube
   - search_compliance_report
   - keyword_compliance_report
+  - capture_discovery
+  - capture_unique_domains
+  - capture_top_referrers
+  - capture_site_status
   - identity
   - edge_webhook
   - capture_external_event_api
