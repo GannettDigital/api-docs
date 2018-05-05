@@ -254,49 +254,61 @@
               </ul>
           </li>
           <li>
-            <a href="#client-reporting" class="toc-h1 toc-link" data-title="Client Reporting">Client Reporting</a>
+            <a href="#reporting" class="toc-h1 toc-link" data-title="Reporting">Reporting</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#authorization" class="toc-h2 toc-link" data-title="Client Reporting">Authorization</a>
+                    <a href="#authorization" class="toc-h2 toc-link" data-title="Reporting">Authorization</a>
                   </li>
                   <li>
-                    <a href="#api-rate-limits" class="toc-h2 toc-link" data-title="Client Reporting">API Rate LImits</a>
+                    <a href="#api-rate-limits" class="toc-h2 toc-link" data-title="Reporting">API Rate LImits</a>
                   </li>
                   <li>
-                    <a href="#display-activity-report" class="toc-h2 toc-link" data-title="Client Reporting">Display Activity Report</a>
+                    <a href="#display-activity-report" class="toc-h2 toc-link" data-title="Reporting">Display Activity Report</a>
                   </li>
                   <li>
-                    <a href="#search-activity-report" class="toc-h2 toc-link" data-title="Client Reporting">Search Activity Report</a>
+                    <a href="#search-activity-report" class="toc-h2 toc-link" data-title="Reporting">Search Activity Report</a>
                   </li>
                   <li>
-                    <a href="#facebook-campaign-report" class="toc-h2 toc-link" data-title="Client Reporting">Facebook Campaign Report</a>
+                    <a href="#facebook-campaign-report" class="toc-h2 toc-link" data-title="Reporting">Facebook Campaign Report</a>
                   </li>
                   <li>
-                    <a href="#campaigns-overview-report" class="toc-h2 toc-link" data-title="Client Reporting">Campaigns Overview Report</a>
+                    <a href="#campaigns-overview-report" class="toc-h2 toc-link" data-title="Reporting">Campaigns Overview Report</a>
                   </li>
                   <li>
-                    <a href="#campaigns-totals-report" class="toc-h2 toc-link" data-title="Client Reporting">Campaigns Totals Report</a>
+                    <a href="#campaigns-totals-report" class="toc-h2 toc-link" data-title="Reporting">Campaigns Totals Report</a>
                   </li>
                   <li>
-                    <a href="#advertiser-contact-info" class="toc-h2 toc-link" data-title="Client Reporting">Advertiser Contact Info</a>
+                    <a href="#advertiser-contact-info" class="toc-h2 toc-link" data-title="Reporting">Advertiser Contact Info</a>
                   </li>
                   <li>
-                    <a href="#totaltrack-report" class="toc-h2 toc-link" data-title="Client Reporting">TotalTrack Report</a>
+                    <a href="#totaltrack-report" class="toc-h2 toc-link" data-title="Reporting">TotalTrack Report</a>
                   </li>
                   <li>
-                    <a href="#keyword-report" class="toc-h2 toc-link" data-title="Client Reporting">Keyword Report</a>
+                    <a href="#keyword-report" class="toc-h2 toc-link" data-title="Reporting">Keyword Report</a>
                   </li>
                   <li>
-                    <a href="#lead-details-report" class="toc-h2 toc-link" data-title="Client Reporting">Lead Details Report</a>
+                    <a href="#lead-details-report" class="toc-h2 toc-link" data-title="Reporting">Lead Details Report</a>
                   </li>
                   <li>
-                    <a href="#youtube-report" class="toc-h2 toc-link" data-title="Client Reporting">YouTube Report</a>
+                    <a href="#youtube-report" class="toc-h2 toc-link" data-title="Reporting">YouTube Report</a>
                   </li>
                   <li>
-                    <a href="#google-search-report" class="toc-h2 toc-link" data-title="Client Reporting">Google Search Report</a>
+                    <a href="#google-search-report" class="toc-h2 toc-link" data-title="Reporting">Google Search Report</a>
                   </li>
                   <li>
-                    <a href="#google-keyword-report" class="toc-h2 toc-link" data-title="Client Reporting">Google Keyword Report</a>
+                    <a href="#google-keyword-report" class="toc-h2 toc-link" data-title="Reporting">Google Keyword Report</a>
+                  </li>
+                  <li>
+                    <a href="#discovery" class="toc-h2 toc-link" data-title="Reporting">Discovery</a>
+                  </li>
+                  <li>
+                    <a href="#unique-domains" class="toc-h2 toc-link" data-title="Reporting">Unique Domains</a>
+                  </li>
+                  <li>
+                    <a href="#top-referrers" class="toc-h2 toc-link" data-title="Reporting">Top Referrers</a>
+                  </li>
+                  <li>
+                    <a href="#site-status" class="toc-h2 toc-link" data-title="Reporting">Site Status</a>
                   </li>
               </ul>
           </li>
@@ -980,7 +992,7 @@
 <td>A JSON array of strings representing tags assigned to this contact.</td>
 </tr>
 </tbody></table>
-<h1 id='client-reporting'>Client Reporting</h1><h2 id='authorization'>Authorization</h2>
+<h1 id='reporting'>Reporting</h1><h2 id='authorization'>Authorization</h2>
 <p>All requests must include an <a href="#authentication">Authorization</a> header.</p>
 
 <p>The email address used to obtain the OAuth access token must be associated with the GMAID of the requested advertiser.  If it is not, the API will return an HTTP response with status code 403 and the following body:</p>
@@ -4698,7 +4710,741 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp
     <span class="s2">"page_size"</span><span class="p">:</span> <span class="mi">1</span>                                              <span class="c1">// page size used to generate this data</span>
 <span class="p">}</span>
 
-</code></pre><h1 id='identity'>Identity</h1>
+</code></pre><h2 id='discovery'>Discovery</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=USA_142687"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=USA_142687"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=USA_142687'</span> <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"20180102-20180103"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180103-20180104"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180104-20180105"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180105-20180106"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180106-20180107"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180107-20180108"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180108-20180109"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180109-20180110"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180110-20180111"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAID"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNKNOWN"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Call"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_1778719"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180111-20180112"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECT"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">35270</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEARCH"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">26108</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTHER"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">7002</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIAL"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6615</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONRLPAID"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEARCH"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3522</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECTORY"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONRLPAID"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTHER"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">561</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INFLUENCED"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECT"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">963</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_154581"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180112-20180113"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180113-20180114"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180114-20180114"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"generated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-04T17:03:33Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This data is a count of each Capture event grouped by master campaign ID, referrer type, and referrer source.
+This API endpoint is used to populate the Marketing Activity Report in client center.</p>
+<h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/capture_reports/discovery?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTime</td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or after this date and time.</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or before this date and time.</td>
+</tr>
+<tr>
+<td>gmaid</td>
+<td>Yes</td>
+<td>Restrict results to the specified advertiser</td>
+</tr>
+<tr>
+<td>bucket</td>
+<td>No</td>
+<td>place results in buckets</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<p>The body of the API response depend on whether the bucket parameter is present.</p>
+
+<p>Whether it&#39;s present or not, the response will contain a result object along with a generated_at field.</p>
+
+<p>The generated_at field is the date and time the report was generated.</p>
+
+<p>The result object will contain an array of count objects</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group</td>
+<td>String</td>
+<td>no</td>
+<td>INFLUENCED or ORGANIC</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>no</td>
+<td>SEARCH, DIRECT, OTHER, UNKNOWN or SOCIAL</td>
+</tr>
+<tr>
+<td>event_counts</td>
+<td>Array</td>
+<td>no</td>
+<td>An array of event_count objects</td>
+</tr>
+<tr>
+<td>master_campaign_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>The campaign to which the events are attributed.</td>
+</tr>
+</tbody></table>
+
+<p>The event_count object</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>no</td>
+<td>TouchPoint or Contact</td>
+</tr>
+<tr>
+<td>sub_type</td>
+<td>String</td>
+<td>no</td>
+<td>The type of event; Visit, Post, Chat or Call</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Integer</td>
+<td>no</td>
+<td>The count of the number of events</td>
+</tr>
+</tbody></table>
+<h2 id='unique-domains'>Unique Domains</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/capture_reports/unique-domains?gmaid=USA_142687"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/capture_reports/unique-domains?gmaid=USA_142687"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/capture_reports/unique-domains?gmaid=USA_142687'</span> <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin.example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1281</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns a list of unique domains that are being tracked for a given advertiser in the past 14 days. The data returned is a list of unique domains along with corresponding visit counts.</p>
+<h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/capture_reports/unique-domains?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gmaid</td>
+<td>Yes</td>
+<td>Restrict results to the specified advertiser</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<p>The body of the API response is an array of unique domain objects.</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>String</td>
+<td>no</td>
+<td>The unique domain corresponding to the count</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Integer</td>
+<td>no</td>
+<td>The total visit counts to the specified domain in the last 14 days.</td>
+</tr>
+</tbody></table>
+<h2 id='top-referrers'>Top Referrers</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/capture_reports/top-referrers?gmaid=USA_142687&amp;startTime=2016-01-01T00:00:00Z&amp;endTime=2017-11-2921T23:59:01Z"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/capture_reports/top-referrers?gmaid=USA_142687&amp;startTime=2016-01-01T00:00:00Z&amp;endTime=2017-11-2921T23:59:01Z"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/capture_reports/top-referrers?gmaid=USA_142687&amp;startTime=2016-01-01T00:00:00Z&amp;endTime=2017-11-2921T23:59:01Z'</span> <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_142687"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"top_referrers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"referrer_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR_1302643"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"top_referrers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"referrer_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"referrer_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTHER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"top_referrers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"referrer_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachedgetesting.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEARCH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"top_referrers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"referrer_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_90000416"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"top_referrers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"referrer_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_90000410"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"top_referrers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"referrer_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an object that describes when an advertiser received the first and most recent event of type call, chat, email, post or visit.</p>
+<h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/capture_reports/top-referrers?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTime</td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or after this date and time.</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or before this date and time.</td>
+</tr>
+<tr>
+<td>gmaid</td>
+<td>Yes</td>
+<td>Restrict results to the specified advertiser</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<p>The body of the API response is an array of source objects.</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td>The type of campaign SEARCH, OTHER, DIRECT</td>
+</tr>
+<tr>
+<td>master_campaign_id</td>
+<td>String</td>
+<td>No</td>
+<td>The master campaign id</td>
+</tr>
+<tr>
+<td>is_paid</td>
+<td>boolean</td>
+<td>No</td>
+<td>Is the campaign a paid campaign</td>
+</tr>
+<tr>
+<td>top_referrers</td>
+<td>Array</td>
+<td>No</td>
+<td>An array of top referrer objects</td>
+</tr>
+</tbody></table>
+
+<p>The top referrer object</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>referrer_host</td>
+<td>String</td>
+<td>No</td>
+<td>The hostname</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Integer</td>
+<td>No</td>
+<td>The count of referrals from the specified host</td>
+</tr>
+</tbody></table>
+<h2 id='site-status'>Site Status</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/capture_reports/site-status?gmaid=USA_142687"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/capture_reports/site-status?gmaid=USA_142687"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/capture_reports/site-status?gmaid=USA_142687'</span> <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-15T15:36:52Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-26T22:47:12Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"chat"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-23T21:55:40Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-18T19:48:12Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-22T01:50:10Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-30T17:02:44Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"post"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-22T01:50:41Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-30T17:03:38Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"visit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-15T16:16:38Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-02T16:55:15Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an object that describes when an advertiser received the first and most recent event of type call, chat, email, post or visit.</p>
+<h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/capture_reports/site-status?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gmaid</td>
+<td>Yes</td>
+<td>Restrict results to the specified advertiser</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<p>The body of the API response is an array of unique domain objects.</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>String</td>
+<td>no</td>
+<td>The unique domain corresponding to the count</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Integer</td>
+<td>no</td>
+<td>The total visit counts to the specified domain in the last 14 days.</td>
+</tr>
+</tbody></table>
+<h1 id='identity'>Identity</h1>
 <p>The identity endpoint is used to gain insight into what resources are accessible by a user.</p>
 <h2 id='show-identity'>Show identity</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
