@@ -115,7 +115,8 @@ curl --request GET \
     ]
 }
 ```
-Returns an object that describes when an advertiser received the first and most recent event of type call, chat, email, post or visit.
+Describes the distribution of referrers for an advertiser for a given time period as well as attributing the source
+of the referral.  This API endpoint is the data source for the Traffic Detail Report report in client center.
 
 ### Resource Overview
 
@@ -140,7 +141,7 @@ The body of the API response is an array of source objects.
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
 name | String | Yes | The type of campaign SEARCH, OTHER, DIRECT
-master_campaign_id | String | No | The master campaign id 
+master_campaign_id | String | Yes | The master campaign id 
 is_paid | boolean | No | Is the campaign a paid campaign
 top_referrers | Array | No | An array of top referrer objects
 
