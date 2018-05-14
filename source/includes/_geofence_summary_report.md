@@ -161,6 +161,40 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&c
                                     }
                                 ]
                             }
+                        ],
+                        "conversion_fences": [                              // Conversion Fences for Interval
+                            {
+                                "name": "Sample",                     
+                                "conversion_fence_id": 1744,                // Conversion Fence Name
+                                "walk_ins": 0,                              // Walk-ins for Conversion Fence
+                                "cpw": 0,                                   // Cost Per Walk-in for Conversion Fence
+                                "geofences": [                              // GeoFences for Conversion Fence
+                                    {
+                                        "name": "Larry H. Miller Toyota",   // GeoFence Name
+                                        "geofence_id": 7396,                // GeoFence ID
+                                        "cpw": 0,                           // Cost Per Walk-in for GeoFence
+                                        "walk_ins": 0                       // Walk-ins for GeoFence for Conversion Fence
+                                    },
+                                    {
+                                        "name": "Miller Toyota of Anaheim",
+                                        "geofence_id": 11511,
+                                        "cpw": 0,
+                                        "walk_ins": 0
+                                    },
+                                    {
+                                        "name": "Crown Toyota",
+                                        "geofence_id": 12785,
+                                        "cpw": 0,
+                                        "walk_ins": 0
+                                    },
+                                    {
+                                        "name": "Tustin Toyota",
+                                        "geofence_id": 17926,
+                                        "cpw": 0,
+                                        "walk_ins": 0
+                                    }
+                                ]
+                            }
                         ]
                     }
                 ]
