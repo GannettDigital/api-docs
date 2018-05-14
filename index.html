@@ -5450,7 +5450,7 @@ of the referral.  This API endpoint is the data source for the Traffic Detail Re
 <h2 id='show-identity'>Show identity</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.qa.reachlocalservices.com/identities/EMAIL_ADDRESS"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/identities/EMAIL_ADDRESS"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 
@@ -5463,7 +5463,7 @@ of the referral.  This API endpoint is the data source for the Traffic Detail Re
 </code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
 
 <span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.qa.reachlocalservices.com/identities/EMAIL_ADDRESS"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/identities/EMAIL_ADDRESS"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">get</span><span class="o">()</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
@@ -5471,7 +5471,7 @@ of the referral.  This API endpoint is the data source for the Traffic Detail Re
 
 <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url https://api.qa.reachlocalservices.com/identities/EMAIL_ADDRESS <span class="se">\</span>
+  --url https://api.reachlocalservices.com/identities/EMAIL_ADDRESS <span class="se">\</span>
   --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
 </code></pre>
