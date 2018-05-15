@@ -24,6 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`geofence[]`| Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section|
+|`conversion_fence[]`| Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section|
 
 To specify a date range:
 
@@ -216,7 +217,12 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&c
         "totals": {                                                     // Overall Totals for Report
             "impressions": 25947,                                       // Overall Impressions
             "walk_ins": 0,                                              // Overall Walk-ins
-            "ctr": 0.22                                                 // Overall Click-through Rate
+            "ctr": 0.22,                                                // Overall Click-through Rate
+            "clicks": 57,                                               // Overall Clicks
+            "cpc": 2.24,                                                // Overall Cost Per Click
+            "cpw": 0,                                                   // Overall Cost Per Walk-in
+            "cpm": 4.92,                                                // Overall CPM
+            "spend": 127.64                                             // Overall Spend
         },
         "available_geofences": [                                        // GeoFences Available for Report
             {
@@ -234,6 +240,12 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&c
             {
                 "geofence_id": 17926,
                 "geofence_name": "Tustin Toyota"
+            }
+        ],
+        "available_conversion_fences": [                                // Conversion Fences Available
+            {
+                "conversion_fence_id": 1744,                            // Conversion Fence ID
+                "conversion_fence_name": "Sample"                       // Conversion Fence Name
             }
         ]
     }
