@@ -299,6 +299,9 @@
                     <a href="#google-keyword-report" class="toc-h2 toc-link" data-title="Reporting">Google Keyword Report</a>
                   </li>
                   <li>
+                    <a href="#geofence-summary-report" class="toc-h2 toc-link" data-title="Reporting">GeoFence Summary Report</a>
+                  </li>
+                  <li>
                     <a href="#discovery" class="toc-h2 toc-link" data-title="Reporting">Discovery</a>
                   </li>
                   <li>
@@ -4710,6 +4713,283 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp
     <span class="s2">"page_size"</span><span class="p">:</span> <span class="mi">1</span>                                              <span class="c1">// page size used to generate this data</span>
 <span class="p">}</span>
 
+</code></pre><h2 id='geofence-summary-report'>GeoFence Summary Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/geofence_summary/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
+<p>Use GET to retrieve information for the GeoFence Summary Report for a given advertiser.</p>
+
+<p>The data returned will include impressions, walk_ins, ctr, clicks, cpc, cpw, cpm, and spend organized by campaign
+and broken down by geofence and conversion_fence.</p>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>Restricts the results to those ocurring on or after this date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Restricts the results to those ocurring on or before this date.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id[]</code></td>
+<td>Restrict results to one or more specific campaigns</td>
+</tr>
+<tr>
+<td><code>campaign_status[]</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>Use <code>calendar_month</code> or <code>calendar_week</code> to roll up the data points into calendar intervals (default is 1 day per interval)</td>
+</tr>
+<tr>
+<td><code>geofence[]</code></td>
+<td>Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section</td>
+</tr>
+<tr>
+<td><code>conversion_fence[]</code></td>
+<td>Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section</td>
+</tr>
+</tbody></table>
+
+<p>To specify a date range:</p>
+
+<ul>
+<li>Specify start_date and end_date.</li>
+</ul>
+<h3 id='examples'>Examples:</h3>
+<blockquote>
+<p>Retrieve data for a specific range of dates</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?start_date=2016-12-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific campaign starting on a certain date</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
+https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?global_master_campaign_id[]=USA_14&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Retrieve data for campaigns that are stopped and running</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Response Description</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"report_type"</span><span class="p">:</span> <span class="s2">"geofence_summary"</span><span class="p">,</span>                                  <span class="c1">// Report Type</span>
+    <span class="s2">"report_date"</span><span class="p">:</span> <span class="s2">"2018-05-14"</span><span class="p">,</span>                                        <span class="c1">// Date Report was Run</span>
+    <span class="s2">"earliest_date_available"</span><span class="p">:</span> <span class="s2">"2018-03-29"</span><span class="p">,</span>                            <span class="c1">// Earliest Date Data is Available</span>
+    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-04-28"</span><span class="p">,</span>                                         <span class="c1">// Start Date of Report</span>
+    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2018-04-28"</span><span class="p">,</span>                                           <span class="c1">// End Date of Report</span>
+    <span class="s2">"time_zone"</span><span class="p">:</span> <span class="s2">"America/Los_Angeles"</span><span class="p">,</span>                                 <span class="c1">// Time Zone of Report</span>
+    <span class="s2">"interval_size"</span><span class="p">:</span> <span class="s2">"day"</span><span class="p">,</span>                                             <span class="c1">// Interval Size Report is Broken Into</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>                                                  <span class="c1">// Currenty of Report</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_185490"</span><span class="p">,</span>                        <span class="c1">// Global Master Advertiser ID for Report</span>
+    <span class="s2">"report_data"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"campaigns"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Retargeting | Test"</span><span class="p">,</span>                           <span class="c1">// Campaign Name</span>
+                <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_2062049"</span><span class="p">,</span>             <span class="c1">// Global Master Campaign ID</span>
+                <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-03-03"</span><span class="p">,</span>                             <span class="c1">// Start Date of Campaign</span>
+                <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>                                       <span class="c1">// End Date of Campaign</span>
+                <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"display"</span><span class="p">,</span>                                      <span class="c1">// Type of Campaign</span>
+                <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>  
+                    <span class="p">{</span>
+                        <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-04-28"</span><span class="p">,</span>                     <span class="c1">// Start Date for Interval</span>
+                        <span class="s2">"geofences"</span><span class="p">:</span> <span class="p">[</span>                                  <span class="c1">// GeoFences for Interval</span>
+                            <span class="p">{</span>
+                                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">3549</span><span class="p">,</span>                    <span class="c1">// Impressions for Interval</span>
+                                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                          <span class="c1">// Walk-ins for Interval</span>
+                                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>                             <span class="c1">// Click-through Rate For Interval</span>
+                                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Larry H. Miller Toyota"</span><span class="p">,</span>       <span class="c1">// GeoFence Name</span>
+                                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">7396</span><span class="p">,</span>                    <span class="c1">// GeoFence ID</span>
+                                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>                            <span class="c1">// Clicks for Interval</span>
+                                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">2.49</span><span class="p">,</span>                            <span class="c1">// Cost Per Click for Interval</span>
+                                <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                               <span class="c1">// Cost Per Walk-in for Interval</span>
+                                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.92</span><span class="p">,</span>                            <span class="c1">// CPM for Interval</span>
+                                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">17.45</span><span class="p">,</span>                         <span class="c1">// Spend for Interval</span>
+                                <span class="s2">"conversion_fences"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// Conversion Fence Breakdown of GeoFence</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Sample"</span><span class="p">,</span>               <span class="c1">// Conversion Fence Name</span>
+                                        <span class="s2">"conversion_fence_id"</span><span class="p">:</span> <span class="mi">1744</span><span class="p">,</span>    <span class="c1">// Conversion Fence ID</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                  <span class="c1">// Walk-ins for Conversion Fence</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                       <span class="c1">// Cost Per Walk-in for Conversion Fence</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">17.45</span>                  <span class="c1">// Spend for Conversion Fence</span>
+                                    <span class="p">}</span>
+                                <span class="p">]</span>
+                            <span class="p">},</span>
+                            <span class="p">{</span>
+                                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">7137</span><span class="p">,</span>
+                                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.07</span><span class="p">,</span>
+                                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Miller Toyota of Anaheim"</span><span class="p">,</span>
+                                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">11511</span><span class="p">,</span>
+                                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">6.99</span><span class="p">,</span>
+                                <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.9</span><span class="p">,</span>
+                                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">34.96</span><span class="p">,</span>
+                                <span class="s2">"conversion_fences"</span><span class="p">:</span> <span class="p">[</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Sample"</span><span class="p">,</span>
+                                        <span class="s2">"conversion_fence_id"</span><span class="p">:</span> <span class="mi">1744</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">34.96</span>
+                                    <span class="p">}</span>
+                                <span class="p">]</span>
+                            <span class="p">},</span>
+                            <span class="p">{</span>
+                                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">9859</span><span class="p">,</span>
+                                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.31</span><span class="p">,</span>
+                                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Crown Toyota"</span><span class="p">,</span>
+                                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">12785</span><span class="p">,</span>
+                                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+                                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">1.58</span><span class="p">,</span>
+                                <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.98</span><span class="p">,</span>
+                                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">49.11</span><span class="p">,</span>
+                                <span class="s2">"conversion_fences"</span><span class="p">:</span> <span class="p">[</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"None"</span><span class="p">,</span>
+                                        <span class="s2">"conversion_fence_id"</span><span class="p">:</span> <span class="mi">1744</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">49.11</span>
+                                    <span class="p">}</span>
+                                <span class="p">]</span>
+                            <span class="p">},</span>
+                            <span class="p">{</span>
+                                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">5402</span><span class="p">,</span>
+                                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.26</span><span class="p">,</span>
+                                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Tustin Toyota"</span><span class="p">,</span>
+                                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">17926</span><span class="p">,</span>
+                                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">1.87</span><span class="p">,</span>
+                                <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.84</span><span class="p">,</span>
+                                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">26.13</span><span class="p">,</span>
+                                <span class="s2">"conversion_fences"</span><span class="p">:</span> <span class="p">[</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"None"</span><span class="p">,</span>
+                                        <span class="s2">"conversion_fence_id"</span><span class="p">:</span> <span class="mi">1744</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">26.13</span>
+                                    <span class="p">}</span>
+                                <span class="p">]</span>
+                            <span class="p">}</span>
+                        <span class="p">],</span>
+                        <span class="s2">"conversion_fences"</span><span class="p">:</span> <span class="p">[</span>                              <span class="c1">// Conversion Fences for Interval</span>
+                            <span class="p">{</span>
+                                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Sample"</span><span class="p">,</span>                     
+                                <span class="s2">"conversion_fence_id"</span><span class="p">:</span> <span class="mi">1744</span><span class="p">,</span>                <span class="c1">// Conversion Fence Name</span>
+                                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                              <span class="c1">// Walk-ins for Conversion Fence</span>
+                                <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                   <span class="c1">// Cost Per Walk-in for Conversion Fence</span>
+                                <span class="s2">"geofences"</span><span class="p">:</span> <span class="p">[</span>                              <span class="c1">// GeoFences for Conversion Fence</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Larry H. Miller Toyota"</span><span class="p">,</span>   <span class="c1">// GeoFence Name</span>
+                                        <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">7396</span><span class="p">,</span>                <span class="c1">// GeoFence ID</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                           <span class="c1">// Cost Per Walk-in for GeoFence</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span>                       <span class="c1">// Walk-ins for GeoFence for Conversion Fence</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Miller Toyota of Anaheim"</span><span class="p">,</span>
+                                        <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">11511</span><span class="p">,</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Crown Toyota"</span><span class="p">,</span>
+                                        <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">12785</span><span class="p">,</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Tustin Toyota"</span><span class="p">,</span>
+                                        <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">17926</span><span class="p">,</span>
+                                        <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">}</span>
+                                <span class="p">]</span>
+                            <span class="p">}</span>
+                        <span class="p">]</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"totals_per_interval"</span><span class="p">:</span> <span class="p">[</span>                                        <span class="c1">// Overall Totals Per Interval</span>
+            <span class="p">{</span>
+                <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-04-28"</span><span class="p">,</span>                             <span class="c1">// Start Date of Interval</span>
+                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">25947</span><span class="p">,</span>                                   <span class="c1">// Impressions for Interval</span>
+                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                          <span class="c1">// Walk-ins for Interval</span>
+                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.22</span><span class="p">,</span>                                            <span class="c1">// Click-through Rate for Interval</span>
+                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">57</span><span class="p">,</span>                                           <span class="c1">// Clicks for Interval</span>
+                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">2.24</span><span class="p">,</span>                                            <span class="c1">// Cost Per Click for Interval</span>
+                <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                               <span class="c1">// Cost Per Walk-in for Interval</span>
+                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.92</span><span class="p">,</span>                                            <span class="c1">// CPM for Interval</span>
+                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">127.64</span>                                         <span class="c1">// Spend for Interval</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"totals"</span><span class="p">:</span> <span class="p">{</span>                                                     <span class="c1">// Overall Totals for Report</span>
+            <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">25947</span><span class="p">,</span>                                       <span class="c1">// Overall Impressions</span>
+            <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                              <span class="c1">// Overall Walk-ins</span>
+            <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.22</span><span class="p">,</span>                                                <span class="c1">// Overall Click-through Rate</span>
+            <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">57</span><span class="p">,</span>                                               <span class="c1">// Overall Clicks</span>
+            <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">2.24</span><span class="p">,</span>                                                <span class="c1">// Overall Cost Per Click</span>
+            <span class="s2">"cpw"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                                   <span class="c1">// Overall Cost Per Walk-in</span>
+            <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">4.92</span><span class="p">,</span>                                                <span class="c1">// Overall CPM</span>
+            <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">127.64</span>                                             <span class="c1">// Overall Spend</span>
+        <span class="p">},</span>
+        <span class="s2">"available_geofences"</span><span class="p">:</span> <span class="p">[</span>                                        <span class="c1">// GeoFences Available for Report</span>
+            <span class="p">{</span>
+                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">7396</span><span class="p">,</span>                                    <span class="c1">// GeoFence ID</span>
+                <span class="s2">"geofence_name"</span><span class="p">:</span> <span class="s2">"Larry H. Miller Toyota"</span>               <span class="c1">// GeoFence Name</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">11511</span><span class="p">,</span>
+                <span class="s2">"geofence_name"</span><span class="p">:</span> <span class="s2">"Miller Toyota of Anaheim"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">12785</span><span class="p">,</span>
+                <span class="s2">"geofence_name"</span><span class="p">:</span> <span class="s2">"Crown Toyota"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"geofence_id"</span><span class="p">:</span> <span class="mi">17926</span><span class="p">,</span>
+                <span class="s2">"geofence_name"</span><span class="p">:</span> <span class="s2">"Tustin Toyota"</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"available_conversion_fences"</span><span class="p">:</span> <span class="p">[</span>                                <span class="c1">// Conversion Fences Available</span>
+            <span class="p">{</span>
+                <span class="s2">"conversion_fence_id"</span><span class="p">:</span> <span class="mi">1744</span><span class="p">,</span>                            <span class="c1">// Conversion Fence ID</span>
+                <span class="s2">"conversion_fence_name"</span><span class="p">:</span> <span class="s2">"Sample"</span>                       <span class="c1">// Conversion Fence Name</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre><h2 id='discovery'>Discovery</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
