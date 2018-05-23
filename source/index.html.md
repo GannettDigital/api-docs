@@ -26,6 +26,7 @@ includes:
   - youtube
   - search_compliance_report
   - keyword_compliance_report
+  - geofence_summary_report
   - capture_discovery
   - capture_unique_domains
   - capture_top_referrers
