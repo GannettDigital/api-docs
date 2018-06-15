@@ -77,18 +77,26 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&c
                 "intervals": [  
                     {
                         "start_date": "2018-04-28",                     // Start Date for Interval
+                        "impressions": 3549,                            // Impressions for Interval
+                        "walk_ins": 0,                                  // Walk-ins for Interval
+                        "ctr": 0.2,                                     // Click-through Rate For Interval
+                        "clicks": 7,                                    // Clicks for Interval
+                        "cpc": 2.49,                                    // Cost Per Click for Interval
+                        "cpw": 0,                                       // Cost Per Walk-in For Interval
+                        "cpm": 4.92,                                    // CPM for Interval
+                        "spend": 17.45,                                 // Spend for Interval
                         "geofences": [                                  // GeoFences for Interval
                             {
-                                "impressions": 3549,                    // Impressions for Interval
-                                "walk_ins": 0,                          // Walk-ins for Interval
-                                "ctr": 0.2,                             // Click-through Rate For Interval
+                                "impressions": 3549,                    // Impressions for GeoFence
+                                "walk_ins": 0,                          // Walk-ins for GeoFence
+                                "ctr": 0.2,                             // Click-through Rate For GeoFence
                                 "name": "Larry H. Miller Toyota",       // GeoFence Name
                                 "geofence_id": 7396,                    // GeoFence ID
-                                "clicks": 7,                            // Clicks for Interval
-                                "cpc": 2.49,                            // Cost Per Click for Interval
-                                "cpw": 0,                               // Cost Per Walk-in for Interval
-                                "cpm": 4.92,                            // CPM for Interval
-                                "spend": 17.45,                         // Spend for Interval
+                                "clicks": 7,                            // Clicks for GeoFence
+                                "cpc": 2.49,                            // Cost Per Click for GeoFence
+                                "cpw": 0,                               // Cost Per Walk-in for GeoFence
+                                "cpm": 4.92,                            // CPM for GeoFence
+                                "spend": 17.45,                         // Spend for GeoFence
                                 "conversion_fences": [                  // Conversion Fence Breakdown of GeoFence
                                     {
                                         "name": "Sample",               // Conversion Fence Name
