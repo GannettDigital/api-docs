@@ -77,11 +77,11 @@ The **`counts`** object contains an unread object which contains unread counts f
 
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
-calls      | Integer  | no | Unread call leads count occurring within the last 30 days.
-chats      | Integer  | no | Unread chat leads count occurring within the last 30 days.
-emails     | Integer  | no | Unread email leads count occurring within the last 30 days.
-web_events | Integer  | no | Unread web_event leads count occurring within the last 30 days.
-total      | Integer  | no | Total number leads for the requested GMAID (sum of calls, chats, emails, and web_events).
+calls      | Integer  | no | Unread call count occurring within the last 30 days.
+chats      | Integer  | no | Unread chat count occurring within the last 30 days.
+emails     | Integer  | no | Unread email count occurring within the last 30 days.
+web_events | Integer  | no | Count of unread web events occurring within the last 30 days.
+total      | Integer  | no | Total number of leads for the requested GMAID (sum of calls, chats, emails, and web_events).
 user_total | Integer  | no | Total unread leads count for the requested email across all GMAIDs.
 
 The **`lead_events`** object contains data pertaining to a lead. Below are definitions for each of the properties.

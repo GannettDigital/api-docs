@@ -10,7 +10,6 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["Authorization"] = 'Bearer OAUTH_ACCESS_TOKEN'
-request["email"] = 'EMAIL_ADDRESS'
 request["Cache-Control"] = 'no-cache'
 
 response = http.request(request)
@@ -24,7 +23,6 @@ Request request = new Request.Builder()
   .url("https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=USA_58561")
   .get()
   .addHeader("Authorization", "Bearer OAUTH_ACCESS_TOKEN")
-  .addHeader("email", "EMAIL_ADDRESS")
   .addHeader("Cache-Control", "no-cache")
   .build();
 
@@ -35,7 +33,6 @@ Response response = client.newCall(request).execute();
 curl -X GET \
   --url ' https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=GMAID' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN' \
-  --header 'email: EMAIL_ADDRESS' \
   --header 'Content-Type: application/json'
 ```
 

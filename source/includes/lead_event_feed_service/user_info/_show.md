@@ -11,7 +11,6 @@ http = Net::HTTP.new(url.host, url.port)
 request = Net::HTTP::Get.new(url)
 request["accept"] = 'application/json'
 request["authorization"] = 'Bearer OAUTH_ACCESS_TOKEN'
-request["email"] = 'EMAIL_ADDRESS'
 
 response = http.request(request)
 puts response.read_body
@@ -25,7 +24,6 @@ Request request = new Request.Builder()
   .get()
   .addHeader("accept", "application/json")
   .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")
-  .addHeader("email", "EMAIL_ADDRESS")
   .build();
 
 Response response = client.newCall(request).execute();
@@ -35,7 +33,6 @@ Response response = client.newCall(request).execute();
 curl -X GET \
   --url ' https://api.reachlocalservices.com/leads/user_info' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN' \
-  --header 'email: EMAIL_ADDRESS' \
   --header 'Content-Type: application/json'
 ```
 

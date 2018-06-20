@@ -10,7 +10,6 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Put.new(url)
 request["Authorization"] = 'token lambda_token'
-request["email"] = 'EMAIL_ADDRESS'
 request["Content-Type"] = 'application/json'
 request["Cache-Control"] = 'no-cache'
 request.body = "{\n\t\"read\":\"true\",\n\t\"flagged\":\"true\"\n}"
@@ -28,7 +27,6 @@ Request request = new Request.Builder()
   .url("https://api.reachlocalservices.com/leads/chat_events/123.json")
   .put(body)
   .addHeader("Authorization", "token lambda_token")
-  .addHeader("email", "EMAIL_ADDRESS")
   .addHeader("Content-Type", "application/json")
   .addHeader("Cache-Control", "no-cache")
   .build();
@@ -42,7 +40,6 @@ curl -X PUT \
   -H 'Authorization: token lambda_token' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
-  -H 'email: EMAIL_ADDRESS' \
   -d '{
 	"read":"true",
 	"flagged":"true"
