@@ -15,6 +15,7 @@ includes:
   - contacts
   - reporting
   - display_activity_report
+  - display_creative_report
   - search_activity_report
   - facebook_campaign_report
   - campaigns_overview_report
