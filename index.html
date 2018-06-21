@@ -266,6 +266,9 @@
                     <a href="#display-activity-report" class="toc-h2 toc-link" data-title="Reporting">Display Activity Report</a>
                   </li>
                   <li>
+                    <a href="#display-creative-report" class="toc-h2 toc-link" data-title="Reporting">Display Creative Report</a>
+                  </li>
+                  <li>
                     <a href="#search-activity-report" class="toc-h2 toc-link" data-title="Reporting">Search Activity Report</a>
                   </li>
                   <li>
@@ -1783,7 +1786,286 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='search-activity-report'>Search Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+</span></code></pre><h2 id='display-creative-report'>Display Creative Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/display_creative/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
+<p>Use GET to retrieve information for the Display Creative Report for a given advertiser.</p>
+
+<p>The data returned will include spend, impressions, clicks, click-through rate (ctr), cost per thousand (cpm), cost per click (cpc), walk-ins, click-through form submissions, view-through form submissions, cost per submission, click-through priority page views, and view-through priority page views organized by campaign and broken down by creative type and creative size.</p>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>Restricts the results to those ocurring on or after this date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Restricts the results to those ocurring on or before this date.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id[]</code></td>
+<td>Restrict results to one or more specific campaigns</td>
+</tr>
+<tr>
+<td><code>campaign_status[]</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+</tr>
+<tr>
+<td><code>campaign_cycle</code></td>
+<td>Restrict results to a single campaign cycle</td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>Use <code>calendar_month</code> or <code>calendar_week</code> to roll up the data points into calendar intervals (default is 1 day per interval)</td>
+</tr>
+</tbody></table>
+
+<p>To specify a date range:</p>
+
+<ul>
+<li>Specify start_date and end_date.</li>
+<li>When specifying a <code>campaign_cycle</code>, do not use date range params.</li>
+</ul>
+<h3 id='examples'>Examples:</h3>
+<blockquote>
+<p>Retrieve data for a specific range of dates</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?start_date=2018-05-01&amp;end_date=2018-05-01
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific campaign starting on a certain date</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?global_master_campaign_id[]=USA_2375336&amp;start_date=2018-05-01&amp;end_date=2018-05-01
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific campaign cycle</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?campaign_cycle=USA_2522849
+</code></pre>
+<blockquote>
+<p>Retrieve data for campaigns that are stopped and running</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2018-05-01&amp;end_date=2018-05-01
+</code></pre>
+<blockquote>
+<p>Response Description</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"report_type"</span><span class="p">:</span> <span class="s2">"display_creative"</span><span class="p">,</span>                                          <span class="c1">// Type Of Report</span>
+    <span class="s2">"report_date"</span><span class="p">:</span> <span class="s2">"2018-06-13"</span><span class="p">,</span>                                                <span class="c1">// Date Report Ran</span>
+    <span class="s2">"earliest_date_available"</span><span class="p">:</span> <span class="s2">"2017-12-04"</span><span class="p">,</span>                                    <span class="c1">// How Far Back Data is Available</span>
+    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-05-01"</span><span class="p">,</span>                                                 <span class="c1">// Start Date of Report</span>
+    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2018-05-01"</span><span class="p">,</span>                                                   <span class="c1">// End Date of Report</span>
+    <span class="s2">"time_zone"</span><span class="p">:</span> <span class="s2">"America/Los_Angeles"</span><span class="p">,</span>                                         <span class="c1">// Time Zone</span>
+    <span class="s2">"interval_size"</span><span class="p">:</span> <span class="s2">"day"</span><span class="p">,</span>                                                     <span class="c1">// Interval Size ('day', 'calendar_week' or 'calendar_month')</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_126034"</span><span class="p">,</span>                                <span class="c1">// Global Master Advertiser (GMAID) for report</span>
+    <span class="s2">"report_data"</span><span class="p">:</span> <span class="p">{</span>                                                            <span class="c1">// Report Details</span>
+        <span class="s2">"campaigns"</span><span class="p">:</span> <span class="p">[</span>                                                          <span class="c1">// All Data for Campaigns</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"GeoFence | FCS | Lee County Oncology Competitors"</span><span class="p">,</span>     <span class="c1">// Campaign Name</span>
+                <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_2375336"</span><span class="p">,</span>                     <span class="c1">// Identifier for Campaign</span>
+                <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-05-01"</span><span class="p">,</span>                                     <span class="c1">// Start Date for Campaign</span>
+                <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>                                               <span class="c1">// End Date for Campaign</span>
+                <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"display"</span><span class="p">,</span>                                              <span class="c1">// Type of Campaign</span>
+                <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>                                            <span class="c1">// Campaign Status</span>
+                <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>                                                  <span class="c1">// Data for Specified Interval</span>
+                    <span class="p">{</span>
+                        <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-05-01"</span><span class="p">,</span>                             <span class="c1">// Start Date of Interval</span>
+                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">16.68</span><span class="p">,</span>                                         <span class="c1">// Spend for Interval</span>
+                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">3029</span><span class="p">,</span>                                    <span class="c1">// Impressions for Interval</span>
+                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                            <span class="c1">// Clicks for Interval</span>
+                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.13</span><span class="p">,</span>                                            <span class="c1">// Spend for Interval</span>
+                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.51</span><span class="p">,</span>                                            <span class="c1">// Cost per Thousand for Interval</span>
+                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">4.17</span><span class="p">,</span>                                            <span class="c1">// Cost per Click for Interval</span>
+                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>                                         <span class="c1">// Walk-ins for Interval</span>
+                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                               <span class="c1">// Click-Through Form Submissions</span>
+                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                               <span class="c1">// View-Through Form Submissions</span>
+                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                               <span class="c1">// Cost per Form Submission</span>
+                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                            <span class="c1">// Click-Through Priority Page Views</span>
+                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                            <span class="c1">// View-Through Priority Page Views</span>
+                        <span class="s2">"creative_types"</span><span class="p">:</span> <span class="p">[</span>                                     <span class="c1">// Creative Types for Interval</span>
+                            <span class="p">{</span>
+                                <span class="s2">"creative_type"</span><span class="p">:</span> <span class="s2">"Rich Media"</span><span class="p">,</span>                  <span class="c1">// Creative Type</span>
+                                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">16.68</span><span class="p">,</span>                                 <span class="c1">// Spend for Creative Type</span>
+                                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">3029</span><span class="p">,</span>                            <span class="c1">// Impressions for Creative Type</span>
+                                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                    <span class="c1">// Clicks for Creative Type</span>
+                                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.13</span><span class="p">,</span>                                    <span class="c1">// Click-Through Rate for Creative Type</span>
+                                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.51</span><span class="p">,</span>                                    <span class="c1">// Cost per Thousand for Creative Type</span>
+                                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">4.17</span><span class="p">,</span>                                    <span class="c1">// Cost per Click for Creative Type</span>
+                                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>                                 <span class="c1">// Walk-ins for Creative Type</span>
+                                <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                       <span class="c1">// Click-Through Form Submissions</span>
+                                <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                       <span class="c1">// View-Through Form Submissions</span>
+                                <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                       <span class="c1">// Cost per Form Submission</span>
+                                <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                    <span class="c1">// Click-Through Priority Page Views</span>
+                                <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                    <span class="c1">// View-Through Priority Page Views</span>
+                                <span class="s2">"creative_sizes"</span><span class="p">:</span> <span class="p">[</span>                             <span class="c1">// Creative Sizes for Creative Type</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"160x600"</span><span class="p">,</span>             <span class="c1">// Creative Size</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>                           <span class="c1">// Spend for Creative Size</span>
+                                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>                      <span class="c1">// Impressions for Creative Size</span>
+                                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                            <span class="c1">// Clicks for Creative Size</span>
+                                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                               <span class="c1">// Click-Through Rate for Creative Size</span>
+                                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">6.33</span><span class="p">,</span>                            <span class="c1">// Cost per Thousand for Creative Size</span>
+                                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                               <span class="c1">// Cost per Click for Creative Size</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                          <span class="c1">// Walk-ins for Creative Size</span>
+                                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>               <span class="c1">// Click-Through Form Submissions</span>
+                                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>               <span class="c1">// View-Through Form Submissions</span>
+                                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>               <span class="c1">// Cost per Submission</span>
+                                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>            <span class="c1">// Click-Through Priority Page Views</span>
+                                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>             <span class="c1">// View-Through Priority Page Views</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"250x250"</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+                                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"300x50"</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">0.58</span><span class="p">,</span>
+                                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">106</span><span class="p">,</span>
+                                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.94</span><span class="p">,</span>
+                                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">,</span>
+                                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">0.58</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"300x250"</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">5.55</span><span class="p">,</span>
+                                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">1026</span><span class="p">,</span>
+                                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.41</span><span class="p">,</span>
+                                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">5.55</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"320x50"</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">8.73</span><span class="p">,</span>
+                                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">1571</span><span class="p">,</span>
+                                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.06</span><span class="p">,</span>
+                                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.55</span><span class="p">,</span>
+                                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">8.73</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"320x480"</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+                                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.89</span><span class="p">,</span>
+                                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">},</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"728x90"</span><span class="p">,</span>
+                                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">1.37</span><span class="p">,</span>
+                                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">251</span><span class="p">,</span>
+                                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
+                                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.46</span><span class="p">,</span>
+                                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">1.37</span><span class="p">,</span>
+                                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>
+                                    <span class="p">}</span>
+                                <span class="p">]</span>
+                            <span class="p">}</span>
+                        <span class="p">]</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"totals_per_interval"</span><span class="p">:</span> <span class="p">[</span>                                                <span class="c1">// Totals per Interval (over multiple campaigns)</span>
+            <span class="p">{</span>
+                <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2018-05-01"</span><span class="p">,</span>                                     <span class="c1">// Start Date of Interval</span>
+                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">16.68</span><span class="p">,</span>                                                 <span class="c1">// Total Spend for Interval</span>
+                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">3029</span><span class="p">,</span>                                            <span class="c1">// Total Impressions for interval</span>
+                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                                    <span class="c1">// Total Clicks for Interval</span>
+                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.13</span><span class="p">,</span>                                                    <span class="c1">// Total Click-Through rate for Interval</span>
+                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.51</span><span class="p">,</span>                                                    <span class="c1">// Total Cost per Thousand for Interval</span>
+                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">4.17</span><span class="p">,</span>                                                    <span class="c1">// Total Cost per Click for Interval</span>
+                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>                                                 <span class="c1">// Total Walk-ins for Interval</span>
+                <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                       <span class="c1">// Total Click-Through Form Submissions</span>
+                <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                       <span class="c1">// Total View-Through Form Submissions</span>
+                <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                       <span class="c1">// Total Cost per Submission</span>
+                <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                    <span class="c1">// Total Click-Through Priority Page Views</span>
+                <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>                                     <span class="c1">// Total View-Through Priority Page Views</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"totals"</span><span class="p">:</span> <span class="p">{</span>                                                             <span class="c1">// Total Data</span>
+            <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">16.68</span><span class="p">,</span>                                                     <span class="c1">// Total Spend</span>
+            <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">3029</span><span class="p">,</span>                                                <span class="c1">// Total Impressions</span>
+            <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                                        <span class="c1">// Total Clicks</span>
+            <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.13</span><span class="p">,</span>                                                        <span class="c1">// Total Click-Through Rate</span>
+            <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">5.51</span><span class="p">,</span>                                                        <span class="c1">// Total Cost per Thousand</span>
+            <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">4.17</span><span class="p">,</span>                                                        <span class="c1">// Total Cost per Click</span>
+            <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>                                                     <span class="c1">// Total Walk-ins</span>
+            <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                           <span class="c1">// Total Click-Through Form Submissions</span>
+            <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                           <span class="c1">// Total View-Through Form Submissions</span>
+            <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                           <span class="c1">// Total Cost per Submission</span>
+            <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                        <span class="c1">// Total Click-Through Priority Page Views</span>
+            <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>                                         <span class="c1">// Total View-Through Priority Page Views</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre><h2 id='search-activity-report'>Search Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
 <tr>
 <th>Method</th>
