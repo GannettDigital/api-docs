@@ -32,6 +32,31 @@ includes:
   - capture_unique_domains
   - capture_top_referrers
   - capture_site_status
+  - lead_event_feed_service/overview
+  # - lead_event_feed_service/leads/leads_object
+  # - lead_event_feed_service/leads/index
+  - lead_event_feed_service/call_events/call_events_object
+  - lead_event_feed_service/call_events/index
+  - lead_event_feed_service/call_events/show
+  - lead_event_feed_service/call_events/update
+  - lead_event_feed_service/call_events/destroy
+  - lead_event_feed_service/chat_events/chat_events_object
+  - lead_event_feed_service/chat_events/index
+  - lead_event_feed_service/chat_events/show
+  - lead_event_feed_service/chat_events/update
+  - lead_event_feed_service/chat_events/destroy
+  - lead_event_feed_service/web_events/web_events_object
+  - lead_event_feed_service/web_events/index
+  - lead_event_feed_service/web_events/show
+  - lead_event_feed_service/web_events/update
+  - lead_event_feed_service/web_events/destroy
+  - lead_event_feed_service/email_events/email_events_object
+  - lead_event_feed_service/email_events/index
+  - lead_event_feed_service/email_events/show
+  - lead_event_feed_service/email_events/update
+  - lead_event_feed_service/email_events/destroy
+  - lead_event_feed_service/user_info/user_info_object
+  - lead_event_feed_service/user_info/show
   - identity
   - edge_webhook
   - capture_external_event_api
