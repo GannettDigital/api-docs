@@ -37,7 +37,7 @@ chatSummary | yes | string | no | A summary of the chat.
 chatTextFull | yes | string | no | The full transcript of the chat.
 chatVisitorEmail |yes | string | no | The email address of the visitor.
 chatVisitorName | yes | string | no | The name of the chat visitor.
-chatVisitorPhone | yes | string | no | The phone number for this chat visitor.
+chatVisitorPhone | no | string | no | The phone number for this chat visitor.
 
 ### Examples:
 
