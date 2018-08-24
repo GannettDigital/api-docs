@@ -12,12 +12,12 @@ toc_footers:
 includes:
   - errors
   - authentication
-  - contacts
   - reporting
   - display_activity_report
   - display_creative_report
   - search_activity_report
   - facebook_campaign_report
+  - campaigns
   - campaigns_overview_report
   - campaigns_totals
   - advertiser_contact_info
@@ -33,8 +33,8 @@ includes:
   - capture_top_referrers
   - capture_site_status
   - lead_event_feed_service/overview
-  # - lead_event_feed_service/leads/leads_object
-  # - lead_event_feed_service/leads/index
+  - lead_event_feed_service/leads/leads_object
+  - lead_event_feed_service/leads/index
   - lead_event_feed_service/call_events/call_events_object
   - lead_event_feed_service/call_events/index
   - lead_event_feed_service/call_events/show
