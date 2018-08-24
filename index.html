@@ -248,39 +248,6 @@
               </ul>
           </li>
           <li>
-            <a href="#contacts" class="toc-h1 toc-link" data-title="Contacts">Contacts</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-contacts" class="toc-h2 toc-link" data-title="Contacts">Get All Contacts</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request" class="toc-h3 toc-link" data-title="Contacts">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#query-parameters" class="toc-h3 toc-link" data-title="Contacts">Query Parameters</a>
-                          </li>
-                          <li>
-                            <a href="#contact-response-body" class="toc-h3 toc-link" data-title="Contacts">Contact Response Body</a>
-                          </li>
-                          <li>
-                            <a href="#pagination-headers" class="toc-h3 toc-link" data-title="Contacts">Pagination Headers</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                    <a href="#create-or-update-contact" class="toc-h2 toc-link" data-title="Contacts">Create or Update Contact</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request-2" class="toc-h3 toc-link" data-title="Contacts">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#post-body-parameters" class="toc-h3 toc-link" data-title="Contacts">Post Body Parameters</a>
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#reporting" class="toc-h1 toc-link" data-title="Reporting">Reporting</a>
               <ul class="toc-list-h2">
                   <li>
@@ -354,6 +321,23 @@
                           </li>
                           <li>
                             <a href="#examples" class="toc-h3 toc-link" data-title="Reporting">Examples:</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#campaigns-report" class="toc-h2 toc-link" data-title="Reporting">Campaigns Report</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Reporting">Resource Overview</a>
+                          </li>
+                          <li>
+                            <a href="#usage" class="toc-h3 toc-link" data-title="Reporting">Usage</a>
+                          </li>
+                          <li>
+                            <a href="#parameters" class="toc-h3 toc-link" data-title="Reporting">Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#example" class="toc-h3 toc-link" data-title="Reporting">Example:</a>
                           </li>
                       </ul>
                   </li>
@@ -585,6 +569,17 @@
           <li>
             <a href="#lead-event-feed-service" class="toc-h1 toc-link" data-title="Lead Event Feed Service">Lead Event Feed Service</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#leads" class="toc-h2 toc-link" data-title="Lead Event Feed Service">Leads</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#the-leads-object" class="toc-h3 toc-link" data-title="Lead Event Feed Service">The Leads Object</a>
+                          </li>
+                          <li>
+                            <a href="#get-leads" class="toc-h3 toc-link" data-title="Lead Event Feed Service">GET Leads</a>
+                          </li>
+                      </ul>
+                  </li>
                   <li>
                     <a href="#call-events" class="toc-h2 toc-link" data-title="Lead Event Feed Service">Call Events</a>
                       <ul class="toc-list-h3">
@@ -999,424 +994,6 @@
 <p><img src="images/oauth_flow.png" alt="Oauth flow" /></p>
 <h2 id='security-considerations'>Security Considerations</h2>
 <p>Refresh Tokens are long-lived. This means when a client gets one from a server, this token must be stored securely to keep it from being used by potential attackers, for this reason, it is not safe to store them in the browser. If a Refresh Token is leaked, it may be used to obtain new Access Tokens (and access protected resources) until it is blacklisted. Refresh Tokens must be issued to a single authenticated client to prevent the use of leaked tokens by other parties. Access Tokens must also be kept secret, but due to its shorter life, security considerations are less critical.</p>
-<h1 id='contacts'>Contacts</h1><h2 id='get-all-contacts'>Get All Contacts</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/api/contacts?gmaid=GMAID"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
-
-<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/api/contacts?gmaid=GMAID"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-
-<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://externalapi.reachlocal.com/api/contacts?gmaid=GMAID'</span> <span class="se">\</span>
-  --header <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  --header <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"476 Sally Extensions"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"South Keely"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cm_contact_state_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States Minor Outlying Islands"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.user1@example.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Possimus omnis laudantium qui. Cum numquam autem eius doloremque officia tempora. Voluptas cupiditate ratione dolor illum quidem. Magni corporis autem. Ducimus et nihil quae sint dolorem facilis quibusdam."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_home"</span><span class="p">:</span><span class="w"> </span><span class="s2">"141-723-0803"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(659) 169-1441 x49696"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"933.612.2269 x0341"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47696"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mississippi"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_401"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User1, Example"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56440 Norbert Burg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lake Lesly"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cm_contact_state_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.user2@example.org"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accusamus odio voluptatem aut optio culpa sed alias. Fugiat qui quas quis voluptas. Neque non aut veritatis repudiandae."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_home"</span><span class="p">:</span><span class="w"> </span><span class="s2">"902-674-1712"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(897) 736-6456 x756"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(863) 452-5688"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59255"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Virginia"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_411"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User2, Example"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all contacts.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://externalapi.reachlocal.com/api/contacts</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>gmaid</td>
-<td>yes</td>
-<td>none</td>
-<td>The global master advertiser id (for example, USA_142687).</td>
-</tr>
-<tr>
-<td>per_page</td>
-<td>no</td>
-<td>500</td>
-<td>The number of records to display per page.</td>
-</tr>
-<tr>
-<td>page</td>
-<td>no</td>
-<td>1</td>
-<td>The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.</td>
-</tr>
-<tr>
-<td>updated_after</td>
-<td>no</td>
-<td>none</td>
-<td>Specifies the lower bound for the earliest date and time when searching for contacts.  All contacts returned in the response will have been either created or updated after this datetime.  The format expected is ISO8601.</td>
-</tr>
-</tbody></table>
-<h3 id='contact-response-body'>Contact Response Body</h3>
-<p>The body of the API response will be a JSON array of contact objects.</p>
-
-<table><thead>
-<tr>
-<th>Field Name</th>
-<th>Datatype</th>
-<th>Nullable</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>contact_id</td>
-<td>String</td>
-<td>no</td>
-<td>A string uniquely identifying this contact.</td>
-</tr>
-<tr>
-<td>first_name</td>
-<td>String</td>
-<td>yes</td>
-<td>The first name of the contact.</td>
-</tr>
-<tr>
-<td>last_name</td>
-<td>String</td>
-<td>yes</td>
-<td>The last name of the contact.</td>
-</tr>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>yes</td>
-<td>The display name of this contact.</td>
-</tr>
-<tr>
-<td>email</td>
-<td>String</td>
-<td>yes</td>
-<td>The email address of the contact.</td>
-</tr>
-<tr>
-<td>company</td>
-<td>String</td>
-<td>yes</td>
-<td>The company name for this contact.</td>
-</tr>
-<tr>
-<td>phone_home</td>
-<td>String</td>
-<td>yes</td>
-<td>The home phone number for this contact.</td>
-</tr>
-<tr>
-<td>phone_work</td>
-<td>String</td>
-<td>yes</td>
-<td>The work phone number for this contact.</td>
-</tr>
-<tr>
-<td>phone_mobile</td>
-<td>String</td>
-<td>yes</td>
-<td>The mobile phone number for this contact.</td>
-</tr>
-<tr>
-<td>phone_fax</td>
-<td>String</td>
-<td>yes</td>
-<td>The fax phone number for this contact.</td>
-</tr>
-<tr>
-<td>address1</td>
-<td>String</td>
-<td>yes</td>
-<td>The first address line for this contact.</td>
-</tr>
-<tr>
-<td>city</td>
-<td>String</td>
-<td>yes</td>
-<td>The city for this contact.</td>
-</tr>
-<tr>
-<td>state</td>
-<td>String</td>
-<td>yes</td>
-<td>The state for this contact.</td>
-</tr>
-<tr>
-<td>postal</td>
-<td>String</td>
-<td>yes</td>
-<td>The postal code for this contact.</td>
-</tr>
-<tr>
-<td>country</td>
-<td>String</td>
-<td>yes</td>
-<td>The country for this contact.</td>
-</tr>
-<tr>
-<td>notes</td>
-<td>String</td>
-<td>yes</td>
-<td>Free form text notes entered by end users for the contact.</td>
-</tr>
-<tr>
-<td>cm_contact_state_code</td>
-<td>String</td>
-<td>no</td>
-<td>The status of the contact.  Valid values are pending_contact, active_lead, client and none.</td>
-</tr>
-</tbody></table>
-<h3 id='pagination-headers'>Pagination Headers</h3>
-<p>In the event that there are more than one page of results, there will be a link header present in the HTTP response.  There will be multiple values for this header.  Each value is comprised of a URI and a link relation type (rel).</p>
-
-<p>If there is only one page of results, this header will not be included in the response.</p>
-
-<p>Not all link relation types will be present in all responses.  For example, the “first”  and “prev” link relation types will not be present on the first page of a result set and “last” and “next” will not be present on the last.</p>
-
-<table><thead>
-<tr>
-<th>Link Relation Type</th>
-<th>Interpretation of URI</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>first</td>
-<td>The URI of the first page of this result set</td>
-</tr>
-<tr>
-<td>prev</td>
-<td>The URI of the previous page of this result set.</td>
-</tr>
-<tr>
-<td>next</td>
-<td>The URI of the next page of this result set.</td>
-</tr>
-<tr>
-<td>last</td>
-<td>The URI of the last page of this result set.</td>
-</tr>
-</tbody></table>
-<h2 id='create-or-update-contact'>Create or Update Contact</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://externalapi.reachlocal.com/api/contacts"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">gmaid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USA_142687</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">contact</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">first_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Example</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">last_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">User</span><span class="se">\"</span><span class="s2">,     </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">example.user@example.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">tags</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\"</span><span class="s2">apples</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">oranges</span><span class="se">\"</span><span class="s2">]}}"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
-
-<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
-<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\"gmaid\": \"USA_142687\",\"contact\":{\"first_name\":\"Example\",\"last_name\":\"User\",\"email\":\"example.user@example.com\",\"tags\":[\"apples\", \"oranges\"]}}"</span><span class="o">);</span>
-<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://externalapi.reachlocal.com/api/contacts"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-
-<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url https://externalapi.reachlocal.com/api/contacts <span class="se">\</span>
-  --header <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  --header <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
-  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  --data <span class="s1">'{"gmaid": "GMAID","contact":{"first_name":"Example","last_name":"User","email":"example.user@example.com","tags":["apples", "oranges"]}}'</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"cm_contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cm_contact_state_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.user@example.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_home"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_mobile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User, Example"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint is used to create or update an existing contact.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://externalapi.reachlocal.com/api/contacts</code></p>
-<h3 id='post-body-parameters'>Post Body Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>gmaid</td>
-<td>yes</td>
-<td>The global master advertiser id (for example, USA_142687).</td>
-</tr>
-<tr>
-<td>contact</td>
-<td>yes</td>
-<td>A JSON hash representing the attributes for the contact.</td>
-</tr>
-</tbody></table>
-
-<p>The contact attributes must include at least one of the following fields: email, phone_home, phone_work or phone_mobile.</p>
-
-<table><thead>
-<tr>
-<th>Contact Field</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>first_name</td>
-<td>The first name of the contact.</td>
-</tr>
-<tr>
-<td>last_name</td>
-<td>The last name of the contact.</td>
-</tr>
-<tr>
-<td>name</td>
-<td>The display name of this contact.</td>
-</tr>
-<tr>
-<td>email</td>
-<td>The email address of the contact.</td>
-</tr>
-<tr>
-<td>company</td>
-<td>The company name for this contact.</td>
-</tr>
-<tr>
-<td>phone_home</td>
-<td>The home phone number for this contact.</td>
-</tr>
-<tr>
-<td>phone_work</td>
-<td>The work phone number for this contact.</td>
-</tr>
-<tr>
-<td>phone_mobile</td>
-<td>The mobile phone number for this contact.</td>
-</tr>
-<tr>
-<td>phone_fax</td>
-<td>The fax phone number for this contact.</td>
-</tr>
-<tr>
-<td>address1</td>
-<td>The first address line for this contact.</td>
-</tr>
-<tr>
-<td>address2</td>
-<td>The second address line for this contact.</td>
-</tr>
-<tr>
-<td>city</td>
-<td>The city for this contact.</td>
-</tr>
-<tr>
-<td>state</td>
-<td>The state for this contact.</td>
-</tr>
-<tr>
-<td>postal</td>
-<td>The postal code for this contact.</td>
-</tr>
-<tr>
-<td>country</td>
-<td>The country for this contact.</td>
-</tr>
-<tr>
-<td>notes</td>
-<td>Free form text notes entered by end users for the contact.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>The status field accepts one of the following exact values: new, prospect, customer or other.  If no status is present, the status field is empty, or if the value doesn&#39;t match, that contact status will be set to new.</td>
-</tr>
-<tr>
-<td>tags</td>
-<td>A JSON array of strings representing tags assigned to this contact.</td>
-</tr>
-</tbody></table>
 <h1 id='reporting'>Reporting</h1><h2 id='authorization'>Authorization</h2>
 <p>All requests must include an <a href="#authentication">Authorization</a> header.</p>
 
@@ -3485,6 +3062,121 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
 <span class="p">}</span>
 
 
+</code></pre><h2 id='campaigns-report'>Campaigns Report</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/campaigns/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='usage'>Usage</h3>
+<p>A list of filtered Campaigns and Campaign Cycles for a given report type and advertiser.  (Cycles are not included for keyword_report)</p>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required?</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>report_type</td>
+<td>Required</td>
+<td>Only campaigns appropriate for this type of report will be returned.  Allowed values are <code>facebook_campaign</code>, <code>display_activity</code>, <code>search_activity</code>, <code>youtube</code>, <code>campaigns_overview</code>, <code>keyword</code>, <code>google_keyword</code> and <code>geofence_summary</code>.</td>
+</tr>
+<tr>
+<td>global_master_campaign_id[]</td>
+<td>Optional</td>
+<td>Restrict results to one or more specific campaigns</td>
+</tr>
+<tr>
+<td>campaign_status[]</td>
+<td>Optional</td>
+<td>Restrict results to campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='example'>Example:</h3><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured similar to the following:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_142687"</span><span class="p">,</span>
+    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview"</span><span class="p">,</span>
+    <span class="s2">"report_campaigns"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 1"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426871"</span><span class="p">,</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
+            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268711"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-04-26"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-06-04"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 1"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268712"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-06-04"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-06-27"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 2"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 2"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426872"</span><span class="p">,</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
+            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268721"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2014-02-26"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 3"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 3"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426873"</span><span class="p">,</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
+            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268731"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-05-02"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-06-02"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 4"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268732"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-06-02"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-07-02"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 5"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268733"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-07-02"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-08-15"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 6"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268734"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-08-15"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 7"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 </code></pre><h2 id='campaigns-overview-report'>Campaigns Overview Report</h2><h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
 <tr>
@@ -6436,6 +6128,139 @@ of the referral.  This API endpoint is the data source for the Traffic Detail Re
 </tbody></table>
 <h1 id='lead-event-feed-service'>Lead Event Feed Service</h1>
 <p>Lead Event Feed Service is an API that allows users to retrieve lead details for call, chat, web, and email events.</p>
+<h2 id='leads'>Leads</h2>
+<p><strong><code>Leads</code></strong> object contains unread counts for each of the lead event types.</p>
+<h3 id='the-leads-object'>The Leads Object</h3>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"unread"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"user_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>An object containing unread counts with properties defined as follows:</p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>calls</td>
+<td>Integer</td>
+<td>no</td>
+<td>Unread call count occurring within the last 30 days.</td>
+</tr>
+<tr>
+<td>chats</td>
+<td>Integer</td>
+<td>no</td>
+<td>Unread chat count occurring within the last 30 days.</td>
+</tr>
+<tr>
+<td>emails</td>
+<td>Integer</td>
+<td>no</td>
+<td>Unread email count occurring within the last 30 days.</td>
+</tr>
+<tr>
+<td>web_events</td>
+<td>Integer</td>
+<td>no</td>
+<td>Count of unread web events occurring within the last 30 days.</td>
+</tr>
+<tr>
+<td>total</td>
+<td>Integer</td>
+<td>no</td>
+<td>Total number of leads for the requested GMAID (sum of calls, chats, emails, and web_events).</td>
+</tr>
+<tr>
+<td>user_total</td>
+<td>Integer</td>
+<td>no</td>
+<td>Total unread leads count for the requested email across all GMAIDs.</td>
+</tr>
+</tbody></table>
+<h3 id='get-leads'>GET Leads</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/leads?global_master_advertiser_id=GMAID"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/leads?global_master_advertiser_id=GMAID"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  --url <span class="s1">' https://api.reachlocalservices.com/leads?global_master_advertiser_id=GMAID'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"unread"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves unread counts for lead events.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p><code>GET https://api.reachlocalservices.com/leads</code></p>
+
+<p><strong>Query Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>yes</td>
+<td>none</td>
+<td>The global master advertiser id (for example, USA_142687).</td>
+</tr>
+</tbody></table>
 <h2 id='call-events'>Call Events</h2>
 <p><strong><code>Call Events</code></strong> object returns call data for potential customers placing calls to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p>
 <h3 id='the-call-events-object'>The Call Events Object</h3>
