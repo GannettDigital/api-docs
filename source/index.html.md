@@ -67,4 +67,4 @@ search: false
 
 # Introduction
 
-Our RESTful API provides for programatic access to Reach Local resources.
+This describes the resources that make up the official Reach Local REST API.  If you have any problems or requests please contact [ReachLocal API support](mailto: apiservices@reachlocal.com).
