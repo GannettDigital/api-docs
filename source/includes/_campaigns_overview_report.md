@@ -4,16 +4,16 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/campaigns_overview/[gmaid]?[query_params] |
+| GET | /client_reports/campaigns_overview/[gmaid]|
 
 #### Usage
 Use GET to retrieve information for the Campaigns Overview report.
 
-The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.
+The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.  Campaign are limited to those that have had activity within the previous year.  This means that a campaign that ended 13 months prior will not be included in the campaign list section.
 
 The performance metrics for the last 30 days are across all active campaigns and will include:
 
-- Total Impresssions
+- Total Impressions
 - Total Clicks
 - Total Calls
 - Total Emails
