@@ -3186,18 +3186,18 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
 </thead><tbody>
 <tr>
 <td>GET</td>
-<td>/client_reports/campaigns_overview/[gmaid]?[query_params]</td>
+<td>/client_reports/campaigns_overview/[gmaid]</td>
 </tr>
 </tbody></table>
 <h4 id='usage'>Usage</h4>
 <p>Use GET to retrieve information for the Campaigns Overview report.</p>
 
-<p>The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.</p>
+<p>The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.  Campaign are limited to those that have had activity within the previous year.  This means that a campaign that ended 13 months prior will not be included in the campaign list section.</p>
 
 <p>The performance metrics for the last 30 days are across all active campaigns and will include:</p>
 
 <ul>
-<li>Total Impresssions</li>
+<li>Total Impressions</li>
 <li>Total Clicks</li>
 <li>Total Calls</li>
 <li>Total Emails</li>
