@@ -36,6 +36,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
         {
             "name": "Advertiser Campaign 1",
             "global_master_campaign_id": "USA_1426871",
+            "campaign_type": "search",
             "status": "running",
             "cycles": [
                 {
@@ -55,6 +56,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
         {
             "name": "Advertiser Campaign 2",
             "global_master_campaign_id": "USA_1426872",
+            "campaign_type": "chat",
             "status": "running",
             "cycles": [
                 {
@@ -69,6 +71,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "name": "Advertiser Campaign 3",
             "global_master_campaign_id": "USA_1426873",
             "status": "running",
+            "campaign_type": "other",
             "cycles": [
                 {
                     "campaign_cycle": "USA_14268731",
