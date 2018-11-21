@@ -374,7 +374,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
       "video_p100_watched_actions": 0,
       "cpc": 3.45,
       "cpm": 62.09,
-      "ctr": 1.8
+      "ctr": 1.8,
+      "average_daily_reach": 406.8
     },
     "totals_per_interval": [                // per-metric totals for interval across all campaigns
       {
