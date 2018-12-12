@@ -21,9 +21,18 @@ When using the GET method, the results can be filtered using these parameters:
 
 ### Example:
 
+> Retrieve data for a specific report_type
+
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview
+```
+
+> Retrieve data for a specific report_type as well as for running and stopped campaigns
+
+```
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview&campaign_status[]=running,stopped
 ```
 
 > The above command returns JSON structured similar to the following:

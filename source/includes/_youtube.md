@@ -20,8 +20,8 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|
 |`start_date`|Restricts the results to those ocurring on or after this date.|
 |`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
 |`campaign_cycle`|Restrict results to a single campaign cycle|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 
@@ -57,7 +57,7 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?campaign_cy
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Response Description
