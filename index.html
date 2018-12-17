@@ -1045,11 +1045,11 @@
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -1094,7 +1094,7 @@ https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?ca
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
@@ -1208,7 +1208,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&amp;global_master_campaign_id=USA_14&amp;range=cycle"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&amp;global_master_campaign_id[]=USA_14&amp;range=cycle"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                     <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>                 <span class="c1">// Name of campaign</span>
@@ -1324,7 +1324,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&amp;global_master_campaign_id=USA_14&amp;range=cycle"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&amp;global_master_campaign_id[]=USA_14&amp;range=cycle"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                     <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>                 <span class="c1">// Name of campaign</span>
@@ -1817,11 +1817,11 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -1862,7 +1862,7 @@ https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?ca
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2018-05-01&amp;end_date=2018-05-01
+https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?&amp;campaign_status[]=running,stopped&amp;start_date=2018-05-01&amp;end_date=2018-05-01
 </code></pre>
 <blockquote>
 <p>Response Description</p>
@@ -2096,11 +2096,11 @@ https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?&a
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -2145,7 +2145,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?cam
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
-https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
+https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
@@ -2246,7 +2246,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?campaign_cycle=45&amp;global_master_campaign_id=USA_14&amp;range=cycle"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?campaign_cycle=45&amp;global_master_campaign_id[]=USA_14&amp;range=cycle"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>              <span class="c1">// Name of campaign</span>
@@ -2510,11 +2510,11 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -2556,7 +2556,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?c
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-12-01&amp;end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-12-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
@@ -2869,7 +2869,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
       <span class="s2">"video_p100_watched_actions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">3.45</span><span class="p">,</span>
       <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">62.09</span><span class="p">,</span>
-      <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.8</span>
+      <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.8</span><span class="p">,</span>
+      <span class="s2">"average_daily_reach"</span><span class="p">:</span> <span class="mf">406.8</span>
     <span class="p">},</span>
     <span class="s2">"totals_per_interval"</span><span class="p">:</span> <span class="p">[</span>                <span class="c1">// per-metric totals for interval across all campaigns</span>
       <span class="p">{</span>
@@ -3102,8 +3103,18 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
 <td>Restrict results to campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>.</td>
 </tr>
 </tbody></table>
-<h3 id='example'>Example:</h3><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+<h3 id='example'>Example:</h3>
+<blockquote>
+<p>Retrieve data for a specific report_type</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific report_type as well as for running and stopped campaigns</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview&amp;campaign_status[]=running,stopped
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured similar to the following:</p>
@@ -3576,11 +3587,11 @@ https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_10
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -3625,7 +3636,7 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaig
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/total_track/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/total_track/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
@@ -3692,7 +3703,7 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=45&amp;global_master_campaign_id=USA_14&amp;range=cycle"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=45&amp;global_master_campaign_id[]=USA_14&amp;range=cycle"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>              <span class="c1">// Name of campaign</span>
@@ -3768,7 +3779,7 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=45&amp;global_master_campaign_id=USA_14&amp;range=cycle"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=45&amp;global_master_campaign_id[]=USA_14&amp;range=cycle"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>              <span class="c1">// Name of campaign</span>
@@ -3938,11 +3949,11 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>page_size</code></td>
@@ -3978,7 +3989,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?global_mast
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campaign_status[]=running&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;campaign_status[]=stopped&amp;page=1&amp;page_size=15
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15
 </code></pre>
 <blockquote>
 <p>Response Description</p>
@@ -4007,7 +4018,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campai
     <span class="p">},</span>
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&amp;global_master_campaign_id=USA_14&amp;page=1&amp;page_size=15"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&amp;global_master_campaign_id[]=USA_14&amp;page=1&amp;page_size=15"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>              <span class="c1">// Name of campaign</span>
@@ -4121,11 +4132,11 @@ Finally, the report will have a break down for calls by hour for each day of the
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -4166,7 +4177,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?campaig
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Response Description</p>
@@ -4274,7 +4285,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?&amp;ca
     <span class="p">],</span>
   <span class="p">}</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"http://dweb2270.dev.wh.reachlocal.com/client_reports/lead_detail/USA_105569?campaign_cycle=45&amp;global_master_campaign_id=USA_14&amp;range=cycle"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"http://dweb2270.dev.wh.reachlocal.com/client_reports/lead_detail/USA_105569?campaign_cycle=45&amp;global_master_campaign_id[]=USA_14&amp;range=cycle"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>              <span class="c1">// Name of campaign</span>
@@ -4468,11 +4479,11 @@ and also broken out by age, gender, and device type.</p>
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -4513,7 +4524,7 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?campaign_cy
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Response Description</p>
@@ -4733,11 +4744,11 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&amp;campai
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>campaign_cycle</code></td>
@@ -4782,7 +4793,7 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
+https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31"
 </code></pre>
 <blockquote>
 <p>Retrieve data for a specific campaign starting on a certain date with cycle nesting</p>
@@ -4835,7 +4846,7 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_105569"</span><span class="p">,</span> <span class="c1">//Identifier for advertiser</span>
-  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"http://dweb2270.dev.wh.reachlocal.com/client_reports/google_search_activity/USA_105569?campaign_cycle=45&amp;global_master_campaign_id=USA_14&amp;range=cycle"</span><span class="p">,</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"http://dweb2270.dev.wh.reachlocal.com/client_reports/google_search_activity/USA_105569?campaign_cycle=45&amp;global_master_campaign_id[]=USA_14&amp;range=cycle"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>              <span class="c1">// Name of campaign</span>
@@ -5031,11 +5042,11 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>page_size</code></td>
@@ -5071,7 +5082,7 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?glob
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
-https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp;campaign_status[]=running&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;campaign_status[]=stopped&amp;page=1&amp;page_size=15"
+https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15"
 </code></pre>
 <blockquote>
 <p>Response Description</p>
@@ -5145,11 +5156,11 @@ and broken down by geofence and conversion_fence.</p>
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
-<td>Restrict results to one or more specific campaigns</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma seperated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>interval_size</code></td>
@@ -5157,11 +5168,11 @@ and broken down by geofence and conversion_fence.</p>
 </tr>
 <tr>
 <td><code>geofence[]</code></td>
-<td>Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section</td>
+<td>Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section. This should be a comma seperated string. Ex: geofence[]=1,2</td>
 </tr>
 <tr>
 <td><code>conversion_fence[]</code></td>
-<td>Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section</td>
+<td>Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section. This should be a comma seperated string. Ex: conversion_fence[]=1,2</td>
 </tr>
 </tbody></table>
 
@@ -5187,7 +5198,13 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?gl
 <p>Retrieve data for campaigns that are stopped and running</p>
 </blockquote>
 <pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&amp;campaign_status[]=running&amp;campaign_status[]=stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Retrieve data for specific geofences and conversion_fences</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&amp;goefence[]=1,2&amp;conversion_fence[]=1,2&amp;start_date=2016-10-01&amp;end_date=2016-12-31
 </code></pre>
 <blockquote>
 <p>Response Description</p>
