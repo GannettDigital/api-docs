@@ -19,8 +19,8 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|
 |`start_date`|Restricts the results to those ocurring on or after this date.|
 |`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
 |`page_size`|Restrict number of keywords in result.  Default is 15 |
 |`page`|Specifies which page of results to return.  Default is 1 |
 |`sort_by`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`.  Default: `keyword`|
@@ -46,7 +46,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?global_mast
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_status[]=running&start_date=2016-10-01&end_date=2016-12-31&campaign_status[]=stopped&page=1&page_size=15
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15
 ```
 
 > Response Description
@@ -76,7 +76,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
     },
   },
   "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id=USA_14&page=1&page_size=15",
+  "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&page=1&page_size=15",
   "available_campaigns": [                  // All campaigns for advertiser
     {
       "name": "Ad_Campaign_1",              // Name of campaign

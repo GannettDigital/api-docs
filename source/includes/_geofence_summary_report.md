@@ -20,11 +20,11 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|
 |`start_date`|Restricts the results to those ocurring on or after this date.|
 |`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
-|`geofence[]`| Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section|
-|`conversion_fence[]`| Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section|
+|`geofence[]`| Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section. This should be a comma seperated string. Ex: geofence[]=1,2|
+|`conversion_fence[]`| Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section. This should be a comma seperated string. Ex: conversion_fence[]=1,2|
 
 To specify a date range:
 
@@ -50,7 +50,14 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?gl
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31
+```
+
+> Retrieve data for specific geofences and conversion_fences
+
+```
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&goefence[]=1,2&conversion_fence[]=1,2&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Response Description

@@ -19,8 +19,8 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|
 |`start_date`|Restricts the results to those ocurring on or after this date.|
 |`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
 |`campaign_cycle`|Restrict results to a single campaign cycle|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`include_cycles`|Set to true or false on whether to include cycle nesting.  Default value is false.|
@@ -57,7 +57,7 @@ https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?ca
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?&campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
@@ -173,7 +173,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     ]
   },
   "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id=USA_14&range=cycle",
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle",
   "available_campaigns": [                     // All campaigns for advertiser
     {
       "name": "Ad_Campaign_1",                 // Name of campaign
@@ -289,7 +289,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     ]
   },
   "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id=USA_14&range=cycle",
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle",
   "available_campaigns": [                     // All campaigns for advertiser
     {
       "name": "Ad_Campaign_1",                 // Name of campaign
