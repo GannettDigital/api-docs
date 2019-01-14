@@ -1,0 +1,297 @@
+## Get Contact Interactions for an Advertiser
+
+This endpoint returns contact interactions for an advertiser.  The results are paginated.  If there is no data for a particular attribute, it will not be present in the results.
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10&page_size=5")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["Authorization"] = 'OAUTH_ACCESS_TOKEN'
+
+response = http.request(request)
+puts response.read_body
+```
+
+```java
+OkHttpClient client = new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10&page_size=5")
+  .get()
+  .addHeader("Authorization", "OAUTH_ACCESS_TOKEN")
+  .build();
+
+Response response = client.newCall(request).execute();
+```
+
+```shell
+curl --request GET \
+  --url 'https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10&page_size=5' \
+  --header 'Authorization: OAUTH_ACCESS_TOKEN'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "global_master_advertiser_id": "USA_142687",
+    "page_size": 5,
+    "page": 1,
+    "total_pages": 5,
+    "next_page_location": "https://api.qa.reachlocalservices.com/crm/contact_interactions?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=USA_142687&page=2&page_size=5",
+    "contact_interactions": [
+        {
+            "campaign_id": 26330,
+            "campaign_name": "Direct Site Traffic",
+            "id": 1013941,
+            "archived_at": "2019-01-07T12:46:17-08:00",
+            "created_at": "2019-01-07T12:46:17-08:00",
+            "occured_at": "2019-01-07T12:46:14-08:00",
+            "tags": [
+                "Direct Site Traffic",
+                "Facebook | Danziger | Mesothelioma"
+            ],
+            "event_type": "form",
+            "contact_id": 9941,
+            "status": "pending_contact",
+            "display_name": "asdf",
+            "contact": {
+                "status": "pending_contact",
+                "id": 9941,
+                "created_at": "2017-11-16T11:11:04-08:00",
+                "tags": [
+                    "Direct Site Traffic"
+                ],
+                "first_name": "asdf",
+                "last_name": "",
+                "email": "asdf@asdf.com",
+                "phone_work": "asdf",
+                "archived_at": "2018-08-14T08:18:10-07:00"
+            },
+            "form": {
+                "sub_type": "FormEmail",
+                "full_message": "Message:\nasdf",
+                "message": "asdf",
+                "extra_fields": {}
+            }
+        },
+        {
+            "campaign_id": 26330,
+            "campaign_name": "Direct Site Traffic",
+            "id": 1013951,
+            "archived_at": "2019-01-07T13:26:09-08:00",
+            "created_at": "2019-01-07T13:26:09-08:00",
+            "occured_at": "2019-01-07T13:26:05-08:00",
+            "tags": [
+                "Direct Site Traffic",
+                "Facebook | Danziger | Mesothelioma"
+            ],
+            "event_type": "form",
+            "contact_id": 9941,
+            "status": "pending_contact",
+            "display_name": "asdf",
+            "contact": {
+                "status": "pending_contact",
+                "id": 9941,
+                "created_at": "2017-11-16T11:11:04-08:00",
+                "tags": [
+                    "Direct Site Traffic"
+                ],
+                "first_name": "asdf",
+                "last_name": "",
+                "email": "asdf@asdf.com",
+                "phone_work": "asdf",
+                "archived_at": "2018-08-14T08:18:10-07:00"
+            },
+            "form": {
+                "sub_type": "FormEmail",
+                "full_message": "Message:\nasdf",
+                "message": "asdf",
+                "extra_fields": {}
+            }
+        },
+        {
+            "campaign_id": 26330,
+            "campaign_name": "Direct Site Traffic",
+            "id": 1015321,
+            "created_at": "2019-01-08T13:43:31-08:00",
+            "occured_at": "2019-01-08T13:43:27-08:00",
+            "tags": [
+                "Direct Site Traffic",
+                "Facebook | Danziger | Mesothelioma"
+            ],
+            "event_type": "form",
+            "contact_id": 869271,
+            "status": "pending_contact",
+            "display_name": "Victer",
+            "contact": {
+                "status": "pending_contact",
+                "id": 869271,
+                "created_at": "2019-01-08T13:43:31-08:00",
+                "tags": [
+                    "Direct Site Traffic"
+                ],
+                "first_name": "Victer",
+                "last_name": "",
+                "email": "victer@j.com",
+                "phone_work": ""
+            },
+            "form": {
+                "sub_type": "FormEmail",
+                "full_message": "Message:\nhi",
+                "message": "hi",
+                "extra_fields": {}
+            }
+        },
+        {
+            "campaign_id": 26330,
+            "campaign_name": "Direct Site Traffic",
+            "id": 1016011,
+            "created_at": "2019-01-09T10:18:41-08:00",
+            "occured_at": "2019-01-09T10:18:37-08:00",
+            "tags": [
+                "Direct Site Traffic",
+                "Facebook | Danziger | Mesothelioma"
+            ],
+            "event_type": "form",
+            "contact_id": 869921,
+            "status": "pending_contact",
+            "display_name": "Webtest",
+            "contact": {
+                "status": "pending_contact",
+                "id": 869921,
+                "created_at": "2019-01-09T10:18:41-08:00",
+                "tags": [
+                    "Direct Site Traffic"
+                ],
+                "first_name": "Webtest",
+                "last_name": "",
+                "email": "webtest@l.com",
+                "phone_work": ""
+            },
+            "form": {
+                "sub_type": "FormEmail",
+                "full_message": "Message:\nhi",
+                "message": "hi",
+                "extra_fields": {}
+            }
+        },
+        {
+            "campaign_id": 26330,
+            "campaign_name": "Direct Site Traffic",
+            "id": 1016031,
+            "created_at": "2019-01-09T10:20:49-08:00",
+            "occured_at": "2019-01-09T10:20:46-08:00",
+            "tags": [
+                "Direct Site Traffic",
+                "Facebook | Danziger | Mesothelioma"
+            ],
+            "event_type": "form",
+            "contact_id": 869931,
+            "status": "pending_contact",
+            "display_name": "b",
+            "contact": {
+                "status": "pending_contact",
+                "id": 869931,
+                "created_at": "2019-01-09T10:20:49-08:00",
+                "tags": [
+                    "Direct Site Traffic"
+                ],
+                "first_name": "b",
+                "last_name": "",
+                "email": "b@l.com",
+                "phone_work": ""
+            },
+            "form": {
+                "sub_type": "FormEmail",
+                "full_message": "Message:\nhi",
+                "message": "hi",
+                "extra_fields": {}
+            }
+        }
+    ]
+}
+```
+
+
+### HTTP Request
+
+`GET https://api.reachlocalservices.com/crm/contact_interactions`
+
+### Query Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- |-------- | -----------
+global\_master\_advertiser\_id | yes | none | The global master advertiser id (for example, USA_142687).
+created\_after\_date | yes | none | Specifies the lower bound for the earliest date and time when searching for contact interactions.  All records returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.
+created\_before\_date | yes | none | Specifies the upper bound for the latest date and time when searching for contact interactions.  All records returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.
+page | no | 1 | The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.
+page_size | no | 25 | The number of records to display per page.
+
+### Contact Response Body
+The body of the API response will contain metadata and a JSON array of contact interaction objects.
+
+#### MetaData
+Field Name | Description
+---------- | -----------
+global\_master\_advertiser\_id | Global Master Advertiser ID of the contact interactions requested
+page_size | Max number of contact interactions returned in each page of results
+page | Current page number being displayed
+total_pages | Total number of pages of results
+next\_page\_location | Complete URL that can be used to retrieve the next page of results.  Will be null if there are no more pages.
+
+#### Contact Interaction
+
+Field | Type | Nullable | Description
+--------- | -------- |-------- |--------
+id | Integer | no | An integer uniquely identifying this contact interaction.
+contact_id | Integer | no | An integer uniquely identifying the contact to which this contact interaction belongs.
+campaign_id | Integer | no | An integer uniquely identifying the campaign that this contact interaction is attributed to.
+campaign_name |  String| no | The name of the campaign that this contact interaction is attributed to.
+archived_at | Datetime | yes | The date and time which this contact interaction was archived.
+created_at | Datetime | no | The date and time which this contact interaction was created.
+important_at | Datetime | yes | The date and time which this contact interaction was marked important.
+occured_at | Datetime | no | The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.
+read_at | Datetime | yes | The date and time which this contact interaction was marked read.
+display_name | String | no | The display name of the contact interaction.
+event_type| String | no | The type of the contact interaction . Valid values are **chat**, **call** and **form**.
+status | String | no | The status of the associated contact.  Valid values are **pending_contact**, **active_contact interaction**, **client** and **none**.
+notes | String | yes | Free form text notes entered by end users onto the contact interaction .
+tags | Array of String | yes | When present represents a collection of tags use for applying ad-hoc categorization and collation of contact interaction s.
+contact | Contact | no | The contact to which this contact interaction belongs.  See the contacts page of this document for details
+
+Depending on the type of contact interaction (see the `event_type` attribute), the payload will also include one of the following:
+
+##### Chat
+Field | Type | Nullable | Description
+--------- | -------- |-------- |--------
+summary | String | yes | A freeform text description of the chat.
+transcript | Array of ChatTranscripts | no | An ordered array of chat transcript objects.
+
+###### ChatTranscript Object
+Field | Type | Nullable | Description
+--------- | -------- |-------- |--------
+id | Integer | no | A sequential id of the line chat transcript.  It uniquely identifies a line of the chat transcript within this contact interaction.
+timestamp | String | no |The date and time that the external chat API registered for this line of the chat transcript.
+from | String | no | The display name of the member of the chat who sent this message.
+message | String | no |The message body of this line of the chat transcript.
+
+##### Call
+Field | Type | Nullable | Description
+--------- | -------- |-------- |--------
+occured_at | Datetime | no | The date and time that the call occurred.
+duration | Integer | no | The duration of the call in seconds.
+recording_url | String | no | The URL address to an audio recording of the call.
+
+##### Form Fill
+Field | Type | Nullable | Description
+--------- | -------- |-------- |--------
+sub_type | String | no | The subtype of the form.  Valid values are **FormPost** and **FormEmail**.
+full_message | String | no | The full form message
+subject | String | yes |
+extra_fields | Array of String | yes |
