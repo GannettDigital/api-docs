@@ -1,6 +1,8 @@
 ## Get Contact Interactions for an Advertiser
+This endpoint supports integration with CRM products. It returns all interaction by a contacts (aka leads)for an advertiser in a given time period. It requires the the following parameters for a successful response Gmaid (advertise ID), created_before date and created_after_date.
+The response is organized by campaigns with the interactions/leads nested within. Please note that the response includes the associated contact information and its associated meta data. The recommended usage is to call the Contacts endpoint to seed your CRM with contacts followed by a call to the contacts interactions endpoint with the exact time period to receive the interactions/leads. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.
 
-This endpoint returns contact interactions for an advertiser.  The results are paginated.  If there is no data for a particular attribute, it will not be present in the results.
+Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them into your CRM from this endpoint will cause duplicates.
 
 ```ruby
 require 'uri'

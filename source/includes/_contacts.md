@@ -1,7 +1,7 @@
 # CRM
 ## Get Contacts for an Advertiser
 
-This endpoint returns contacts for an advertiser.  The results are paginated.  If there is no data for a particular attribute, it will not be present in the results.
+This endpoint supports integration with CRM products. It returns unique contacts for an advertiser for a given time period. It requires the the following parameters for a successful response Gmaid (advertise ID), created_before date and created_after_date. The recommended usage pattern is a one time call for your desired time period to fetch all your contacts followed by recurrent calls limited to a day. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.
 
 ```ruby
 require 'uri'
