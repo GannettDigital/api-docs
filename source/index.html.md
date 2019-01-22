@@ -34,6 +34,7 @@ includes:
   - capture_site_status
   - contacts
   - contact_interactions
+  - crm_webhooks
   - lead_event_feed_service/overview
   - lead_event_feed_service/leads/leads_object
   - lead_event_feed_service/leads/index
