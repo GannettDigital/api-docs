@@ -8,7 +8,7 @@ Please note that the contact information in this endpoint is for linking the int
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10&page_size=5")
+url = URI("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -23,7 +23,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10&page_size=5")
+  .url("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10")
   .get()
   .addHeader("Authorization", "OAUTH_ACCESS_TOKEN")
   .build();
@@ -33,7 +33,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request GET \
-  --url 'https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10&page_size=5' \
+  --url 'https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&created_after_date=2019-01-01&created_before_date=2019-01-10' \
   --header 'Authorization: OAUTH_ACCESS_TOKEN'
 ```
 
@@ -42,10 +42,9 @@ curl --request GET \
 ```json
 {
     "global_master_advertiser_id": "USA_142687",
-    "page_size": 5,
     "page": 1,
     "total_pages": 5,
-    "next_page_location": "https://api.qa.reachlocalservices.com/crm/contact_interactions?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=USA_142687&page=2&page_size=5",
+    "next_page_location": "https://api.qa.reachlocalservices.com/crm/contact_interactions?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=USA_142687&page=2",
     "contact_interactions": [
         {
             "campaign_id": 26330,
@@ -216,6 +215,7 @@ curl --request GET \
                 "extra_fields": {}
             }
         }
+        ...
     ]
 }
 ```
@@ -233,7 +233,6 @@ global\_master\_advertiser\_id | yes | none | The global master advertiser id (f
 created\_after\_date | yes | none | Specifies the lower bound for the earliest date and time when searching for contact interactions.  All records returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.
 created\_before\_date | yes | none | Specifies the upper bound for the latest date and time when searching for contact interactions.  All records returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.
 page | no | 1 | The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.
-page_size | no | 25 | The number of records to display per page.
 
 ### Contact Response Body
 The body of the API response will contain metadata and a JSON array of contact interaction objects.
@@ -242,7 +241,6 @@ The body of the API response will contain metadata and a JSON array of contact i
 Field Name | Description
 ---------- | -----------
 global\_master\_advertiser\_id | Global Master Advertiser ID of the contact interactions requested
-page_size | Max number of contact interactions returned in each page of results
 page | Current page number being displayed
 total_pages | Total number of pages of results
 next\_page\_location | Complete URL that can be used to retrieve the next page of results.  Will be null if there are no more pages.
