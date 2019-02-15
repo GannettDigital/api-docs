@@ -220,6 +220,9 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#terms-and-conditions" class="toc-h1 toc-link" data-title="Terms And Conditions">Terms And Conditions</a>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
           <li>
@@ -567,6 +570,67 @@
               </ul>
           </li>
           <li>
+            <a href="#crm" class="toc-h1 toc-link" data-title="CRM">CRM</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-contacts-for-an-advertiser" class="toc-h2 toc-link" data-title="CRM">Get Contacts for an Advertiser</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#http-request" class="toc-h3 toc-link" data-title="CRM">HTTP Request</a>
+                          </li>
+                          <li>
+                            <a href="#query-parameters" class="toc-h3 toc-link" data-title="CRM">Query Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#contact-response-body" class="toc-h3 toc-link" data-title="CRM">Contact Response Body</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#get-contact-interactions-for-an-advertiser" class="toc-h2 toc-link" data-title="CRM">Get Contact Interactions for an Advertiser</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#http-request" class="toc-h3 toc-link" data-title="CRM">HTTP Request</a>
+                          </li>
+                          <li>
+                            <a href="#query-parameters" class="toc-h3 toc-link" data-title="CRM">Query Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#contact-response-body" class="toc-h3 toc-link" data-title="CRM">Contact Response Body</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#register-crm-webhooks" class="toc-h2 toc-link" data-title="CRM">Register CRM Webhooks</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#http-request" class="toc-h3 toc-link" data-title="CRM">HTTP Request</a>
+                          </li>
+                          <li>
+                            <a href="#query-parameters" class="toc-h3 toc-link" data-title="CRM">Query Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#response-body" class="toc-h3 toc-link" data-title="CRM">Response Body</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#de-register-crm-webhook" class="toc-h2 toc-link" data-title="CRM">De-register CRM Webhook</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#http-request-2" class="toc-h3 toc-link" data-title="CRM">HTTP Request</a>
+                          </li>
+                          <li>
+                            <a href="#response-status-code" class="toc-h3 toc-link" data-title="CRM">Response Status Code</a>
+                          </li>
+                          <li>
+                            <a href="#response-body-2" class="toc-h3 toc-link" data-title="CRM">Response Body</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#lead-event-feed-service" class="toc-h1 toc-link" data-title="Lead Event Feed Service">Lead Event Feed Service</a>
               <ul class="toc-list-h2">
                   <li>
@@ -774,6 +838,12 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>This describes the resources that make up the official Reach Local REST API.  If you have any problems or requests please contact <a href="mailto:%20apiservices@reachlocal.com">ReachLocal API support</a>.</p>
+<h1 id='terms-and-conditions'>Terms And Conditions</h1>
+<p>Use of any ReachLocal, Inc. (“ReachLocal”) Application Program Interface(s) (collectively, the “API Service”) is subject to the ReachLocal Inc. Online Marketing Services Terms and Conditions as set forth at www.reachlocal.com/tc (the “Marketing Services Terms”), including, without limitation, the Client Center Product Terms, and any other applicable agreement between you and ReachLocal. ReachLocal provides the API Service as an extension of the Client Center software and reserves the exclusive right to limit or revoke access to the API Service at any time and for any reason.</p>
+
+<p>Your download, transfer and/or removal of any information through the API Service is solely at your own risk. ReachLocal is not responsible for the safety, security or legality of the transmission of your data or of your or any third-party’s platform or system to which you transmit the data. Due to technical processing and transmission requirements of the API Service, your information is transferred unencrypted and may involve (a) transmissions over various networks and (b) changes to conform and adapt to technical requirements of connecting to various networks, systems or devices. </p>
+
+<p>THE API SERVICE IS PROVIDED ON AN &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; BASIS, WITHOUT ANY WARRANTY OF ANY KIND AND WITHOUT ANY GUARANTEE OF CONTINUOUS OR UNINTERRUPTED AVAILABILITY. IN ADDITION TO THE DISCLAIMERS SET FORTH IN THE MARKETING SERVICES TERMS, REACHLOCAL (I) MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE ACCURACY OR COMPLETENESS OF ANY INFORMATION PROVIDED TO YOU BY OR ON BEHALF OF REACHLOCAL (INCLUDING ANY REPORTING, ANALYTICS AND SIMILAR INFORMATION) OR ANY CONTENT AVAILABLE ON OR THROUGH THE API SERVICE; AND (II) IS NOT RESPONSIBLE FOR ANY ERRORS, DEFECTS OR DOWNTIME CAUSED BY YOUR USE OF THE API SERVICE.</p>
 <h1 id='errors'>Errors</h1>
 <p>The ReachLocal API uses standard HTTP status codes to communicate errors</p>
 
@@ -6144,6 +6214,928 @@ of the referral.  This API endpoint is the data source for the Traffic Detail Re
 <td>Integer</td>
 <td>no</td>
 <td>The total visit counts to the specified domain in the last 14 days.</td>
+</tr>
+</tbody></table>
+<h1 id='crm'>CRM</h1><h2 id='get-contacts-for-an-advertiser'>Get Contacts for an Advertiser</h2>
+<p>This endpoint supports integration with CRM products. It returns unique contacts for an advertiser for a given time period. It requires the the following parameters for a successful response Gmaid (advertise ID), created_before date and created_after_date. The recommended usage pattern is a one time call for your desired time period to fetch all your contacts followed by recurrent calls limited to a day. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/crm/contacts?global_master_advertiser_id=USA_142687&amp;created_after_date=2019-01-01&amp;created_before_date=2019-01-10"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'OAUTH_ACCESS_TOKEN'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/crm/contacts?global_master_advertiser_id=USA_142687&amp;created_after_date=2019-01-01&amp;created_before_date=2019-01-10"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/crm/contacts?global_master_advertiser_id=USA_142687&amp;created_after_date=2019-01-01&amp;created_before_date=2019-01-10'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_142687"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next_page_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.reachlocalservices.com/crm/contacts?created_after_date=2019-01-01&amp;created_before_date=2019-01-10&amp;global_master_advertiser_id=USA_142687&amp;page=2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">862741</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-04T15:24:31Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jatinm"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jasm"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jatiin@k.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"536633367"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21700 Oxnard st"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suite 1600"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woodland hills"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91367"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States of America"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">864211</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-04T18:21:53Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Presideo"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pre@k.com"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">868881</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-08T18:42:53Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"TRACY WONG'S FERRARI DEALERSHIP"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kiara"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kiara@l.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869231</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-08T20:51:03Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sachin"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arora"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sachinarora82@yahoo.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8054042151"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8610 Oakdale Ave"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Winnetka"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91306"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States Minor Outlying Islands"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869271</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-08T21:43:31Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Direct Site Traffic"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victer"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"victer@j.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.reachlocalservices.com/crm/contacts</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>yes</td>
+<td>none</td>
+<td>The global master advertiser id (for example, USA_142687).</td>
+</tr>
+<tr>
+<td>created_after_date</td>
+<td>yes</td>
+<td>none</td>
+<td>Specifies the lower bound for the earliest date and time when searching for contacts.  All contacts returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.</td>
+</tr>
+<tr>
+<td>created_before_date</td>
+<td>yes</td>
+<td>none</td>
+<td>Specifies the upper bound for the latest date and time when searching for contacts.  All contacts returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>1</td>
+<td>The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.</td>
+</tr>
+</tbody></table>
+<h3 id='contact-response-body'>Contact Response Body</h3>
+<p>The body of the API response will contain metadata and a JSON array of contact objects.</p>
+<h4 id='metadata'>MetaData</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>Global Master Advertiser ID of the contacts requested</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Current page number being displayed</td>
+</tr>
+<tr>
+<td>total_pages</td>
+<td>Total number of pages of results</td>
+</tr>
+<tr>
+<td>next_page_location</td>
+<td>Complete URL that can be used to retrieve the next page of results.  Will be null if there are no more pages.</td>
+</tr>
+</tbody></table>
+<h4 id='contact'>Contact</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>no</td>
+<td>An integer uniquely identifying this contact.</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>String</td>
+<td>yes</td>
+<td>The first name of the contact.</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>String</td>
+<td>yes</td>
+<td>The last name of the contact.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>yes</td>
+<td>The email address of the contact.</td>
+</tr>
+<tr>
+<td>company</td>
+<td>String</td>
+<td>yes</td>
+<td>The company name for this contact.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>yes</td>
+<td>The title for this contact.</td>
+</tr>
+<tr>
+<td>phone_home</td>
+<td>String</td>
+<td>yes</td>
+<td>The home phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_work</td>
+<td>String</td>
+<td>yes</td>
+<td>The work phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_mobile</td>
+<td>String</td>
+<td>yes</td>
+<td>The mobile phone number for this contact.</td>
+</tr>
+<tr>
+<td>phone_fax</td>
+<td>String</td>
+<td>yes</td>
+<td>The fax phone number for this contact.</td>
+</tr>
+<tr>
+<td>address1</td>
+<td>String</td>
+<td>yes</td>
+<td>The first address line for this contact.</td>
+</tr>
+<tr>
+<td>address2</td>
+<td>String</td>
+<td>yes</td>
+<td>The second address line for this contact.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td>yes</td>
+<td>The city for this contact.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>String</td>
+<td>yes</td>
+<td>The state for this contact.</td>
+</tr>
+<tr>
+<td>postal</td>
+<td>String</td>
+<td>yes</td>
+<td>The postal code for this contact.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>yes</td>
+<td>The country for this contact.</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>String</td>
+<td>yes</td>
+<td>Free form text notes entered by end users for the contact.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Array of String</td>
+<td>yes</td>
+<td>When present represents a collection of tags use for applying ad-hoc categorization and collation of contacts.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>no</td>
+<td>The status of the contact.  Valid values are <strong>pending_contact</strong>, <strong>active_lead</strong>, <strong>client</strong> and <strong>none</strong>.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>Datetime</td>
+<td>no</td>
+<td>The date and time which this contact was created.</td>
+</tr>
+<tr>
+<td>archived_at</td>
+<td>Datetime</td>
+<td>yes</td>
+<td>The date and time which this contact was archived.</td>
+</tr>
+</tbody></table>
+<h2 id='get-contact-interactions-for-an-advertiser'>Get Contact Interactions for an Advertiser</h2>
+<p>This endpoint supports integration with CRM products. It returns all interaction by a contacts (aka leads)for an advertiser in a given time period. It requires the the following parameters for a successful response Gmaid (advertise ID), created_before date and created_after_date.
+The response is organized by campaigns with the interactions/leads nested within. Please note that the response includes the associated contact information and its associated meta data. The recommended usage is to call the Contacts endpoint to seed your CRM with contacts followed by a call to the contacts interactions endpoint with the exact time period to receive the interactions/leads. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p>
+
+<p>Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them into your CRM from this endpoint will cause duplicates.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&amp;created_after_date=2019-01-01&amp;created_before_date=2019-01-10"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'OAUTH_ACCESS_TOKEN'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&amp;created_after_date=2019-01-01&amp;created_before_date=2019-01-10"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=USA_142687&amp;created_after_date=2019-01-01&amp;created_before_date=2019-01-10'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_142687"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next_page_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qa.reachlocalservices.com/crm/contact_interactions?created_after_date=2019-01-01&amp;created_before_date=2019-01-10&amp;global_master_advertiser_id=USA_142687&amp;page=2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contact_interactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26330</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1013941</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T12:46:17-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T12:46:17-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"occured_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T12:46:14-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Facebook | Danziger | Mesothelioma"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9941</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9941</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T11:11:04-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Direct Site Traffic"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf@asdf.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-14T08:18:10-07:00"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"form"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FormEmail"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"full_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message:</span><span class="se">\n</span><span class="s2">asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"extra_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26330</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1013951</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T13:26:09-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T13:26:09-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"occured_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T13:26:05-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Facebook | Danziger | Mesothelioma"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9941</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9941</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T11:11:04-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Direct Site Traffic"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf@asdf.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-14T08:18:10-07:00"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"form"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FormEmail"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"full_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message:</span><span class="se">\n</span><span class="s2">asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"extra_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26330</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1015321</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-08T13:43:31-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"occured_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-08T13:43:27-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Facebook | Danziger | Mesothelioma"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869271</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victer"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869271</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-08T13:43:31-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Direct Site Traffic"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victer"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"victer@j.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"form"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FormEmail"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"full_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message:</span><span class="se">\n</span><span class="s2">hi"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hi"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"extra_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26330</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1016011</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-09T10:18:41-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"occured_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-09T10:18:37-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Facebook | Danziger | Mesothelioma"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869921</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Webtest"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869921</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-09T10:18:41-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Direct Site Traffic"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Webtest"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webtest@l.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"form"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FormEmail"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"full_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message:</span><span class="se">\n</span><span class="s2">hi"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hi"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"extra_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26330</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1016031</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-09T10:20:49-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"occured_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-09T10:20:46-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Direct Site Traffic"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Facebook | Danziger | Mesothelioma"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869931</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">869931</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-09T10:20:49-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Direct Site Traffic"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b@l.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone_work"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"form"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FormEmail"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"full_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message:</span><span class="se">\n</span><span class="s2">hi"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hi"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"extra_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.reachlocalservices.com/crm/contact_interactions</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>yes</td>
+<td>none</td>
+<td>The global master advertiser id (for example, USA_142687).</td>
+</tr>
+<tr>
+<td>created_after_date</td>
+<td>yes</td>
+<td>none</td>
+<td>Specifies the lower bound for the earliest date and time when searching for contact interactions.  All records returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.</td>
+</tr>
+<tr>
+<td>created_before_date</td>
+<td>yes</td>
+<td>none</td>
+<td>Specifies the upper bound for the latest date and time when searching for contact interactions.  All records returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>1</td>
+<td>The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.</td>
+</tr>
+</tbody></table>
+<h3 id='contact-response-body'>Contact Response Body</h3>
+<p>The body of the API response will contain metadata and a JSON array of contact interaction objects.</p>
+<h4 id='metadata'>MetaData</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>Global Master Advertiser ID of the contact interactions requested</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Current page number being displayed</td>
+</tr>
+<tr>
+<td>total_pages</td>
+<td>Total number of pages of results</td>
+</tr>
+<tr>
+<td>next_page_location</td>
+<td>Complete URL that can be used to retrieve the next page of results.  Will be null if there are no more pages.</td>
+</tr>
+</tbody></table>
+<h4 id='contact-interaction'>Contact Interaction</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>no</td>
+<td>An integer uniquely identifying this contact interaction.</td>
+</tr>
+<tr>
+<td>contact_id</td>
+<td>Integer</td>
+<td>no</td>
+<td>An integer uniquely identifying the contact to which this contact interaction belongs.</td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>Integer</td>
+<td>no</td>
+<td>An integer uniquely identifying the campaign that this contact interaction is attributed to.</td>
+</tr>
+<tr>
+<td>campaign_name</td>
+<td>String</td>
+<td>no</td>
+<td>The name of the campaign that this contact interaction is attributed to.</td>
+</tr>
+<tr>
+<td>archived_at</td>
+<td>Datetime</td>
+<td>yes</td>
+<td>The date and time which this contact interaction was archived.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>Datetime</td>
+<td>no</td>
+<td>The date and time which this contact interaction was created.</td>
+</tr>
+<tr>
+<td>important_at</td>
+<td>Datetime</td>
+<td>yes</td>
+<td>The date and time which this contact interaction was marked important.</td>
+</tr>
+<tr>
+<td>occured_at</td>
+<td>Datetime</td>
+<td>no</td>
+<td>The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.</td>
+</tr>
+<tr>
+<td>read_at</td>
+<td>Datetime</td>
+<td>yes</td>
+<td>The date and time which this contact interaction was marked read.</td>
+</tr>
+<tr>
+<td>display_name</td>
+<td>String</td>
+<td>no</td>
+<td>The display name of the contact interaction.</td>
+</tr>
+<tr>
+<td>event_type</td>
+<td>String</td>
+<td>no</td>
+<td>The type of the contact interaction . Valid values are <strong>chat</strong>, <strong>call</strong> and <strong>form</strong>.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>no</td>
+<td>The status of the associated contact.  Valid values are <strong>pending_contact</strong>, <strong>active_contact interaction</strong>, <strong>client</strong> and <strong>none</strong>.</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>String</td>
+<td>yes</td>
+<td>Free form text notes entered by end users onto the contact interaction .</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Array of String</td>
+<td>yes</td>
+<td>When present represents a collection of tags use for applying ad-hoc categorization and collation of contact interaction s.</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>Contact</td>
+<td>no</td>
+<td>The contact to which this contact interaction belongs.  See the contacts page of this document for details</td>
+</tr>
+</tbody></table>
+
+<p>Depending on the type of contact interaction (see the <code>event_type</code> attribute), the payload will also include one of the following:</p>
+<h5 id='chat'>Chat</h5>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>summary</td>
+<td>String</td>
+<td>yes</td>
+<td>A freeform text description of the chat.</td>
+</tr>
+<tr>
+<td>transcript</td>
+<td>Array of ChatTranscripts</td>
+<td>no</td>
+<td>An ordered array of chat transcript objects.</td>
+</tr>
+</tbody></table>
+<h6 id='chattranscript-object'>ChatTranscript Object</h6>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>no</td>
+<td>A sequential id of the line chat transcript.  It uniquely identifies a line of the chat transcript within this contact interaction.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>no</td>
+<td>The date and time that the external chat API registered for this line of the chat transcript.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>String</td>
+<td>no</td>
+<td>The display name of the member of the chat who sent this message.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>no</td>
+<td>The message body of this line of the chat transcript.</td>
+</tr>
+</tbody></table>
+<h5 id='call'>Call</h5>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>occured_at</td>
+<td>Datetime</td>
+<td>no</td>
+<td>The date and time that the call occurred.</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Integer</td>
+<td>no</td>
+<td>The duration of the call in seconds.</td>
+</tr>
+<tr>
+<td>recording_url</td>
+<td>String</td>
+<td>no</td>
+<td>The URL address to an audio recording of the call.</td>
+</tr>
+</tbody></table>
+<h5 id='form-fill'>Form Fill</h5>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sub_type</td>
+<td>String</td>
+<td>no</td>
+<td>The subtype of the form.  Valid values are <strong>FormPost</strong> and <strong>FormEmail</strong>.</td>
+</tr>
+<tr>
+<td>full_message</td>
+<td>String</td>
+<td>no</td>
+<td>The full form message</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>String</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>extra_fields</td>
+<td>Array of String</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='register-crm-webhooks'>Register CRM Webhooks</h2>
+<p>This endpoint supports integration with CRM products. It enables registrtation for webhook callbacks when new contacts or contact interactions occur.  It requires the the following parameters for a successful response Gmaid (advertiser ID).</p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/crm/webhooks?global_master_advertiser_id=USA_142687"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{ </span><span class="se">\"</span><span class="s2">event_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">new_contact</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">url</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">https://my.webhook.site/new_contact</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">authorization</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">token jokin</span><span class="se">\"</span><span class="s2"> }"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OOkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{ \"event_type\": \"new_contact\", \"url\": \"https://my.webhook.site/new_contact\", \"authorization\": \"token jokin\" }"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/crm/webhooks?global_master_advertiser_id=USA_142687"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/crm/webhooks?global_master_advertiser_id=USA_142687'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  --data <span class="s1">'{ "event_type": "new_contact", "url": "https://my.webhook.site/9995ad74-3c32-4e6c-aa8f-25da0fd419d9/new_contact", "authorization": "token jokin" }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84+USA_142687"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This ID will be needed in the event the user chooses to de-register the webhook.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.reachlocalservices.com/crm/webhooks</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>yes</td>
+<td>none</td>
+<td>The global master advertiser id (for example, USA_142687).</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<p>The body of the API response will the id of the webhook.</p>
+<h4 id='metadata'>MetaData</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>identifier of the webhook registration.</td>
+</tr>
+</tbody></table>
+<h2 id='de-register-crm-webhook'>De-register CRM Webhook</h2>
+<p>This endpoint De-registers a webhook created using the above register webhook method.  The ID returned by the register method is used to de-register the webhook.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/crm/webhooks/84+USA_142687"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Delete</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/crm/webhooks/84+USA_142687"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
+  --url <span class="s1">'https://api.reachlocalservices.com/crm/webhooks/84+USA_142687'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84+USA_142687"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>DELETE https://api.reachlocalservices.com/crm/webhooks/[id]</code></p>
+<h3 id='response-status-code'>Response Status Code</h3>
+<p>A response status code of 200 indicates that the webhook was successfully de-registered.
+A response status code of 404 indicates that the webhook ID was not found.</p>
+<h3 id='response-body-2'>Response Body</h3>
+<p>The body of the API response will the id of the webhook that was deleted.</p>
+<h4 id='metadata-2'>MetaData</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>identifier of the webhook registration.</td>
 </tr>
 </tbody></table>
 <h1 id='lead-event-feed-service'>Lead Event Feed Service</h1>
