@@ -71,4 +71,31 @@ search: false
 
 # Introduction
 
+Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.
+
+We have 3 major types of reporting API offerings; API, Webhooks and Integration apps.
+
+<img alt='API' src='/images/api.png' height=200 width=200 />
+<img alt='Webhook' src='/images/webhook_icon.png' height=200 width=200 />
+<img alt='Integration' src='/images/integration.png' height=200 width=200 />
+
+* API (Interface to the data – through a request & response interchange between applications)
+  * APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product. 
+
+
+* Webhooks (Event driven interface to the data – automated exchange based on specific event or rules occurring)
+  * Webhooks to contact creation on the LocaliQ platform
+  * Webhooks to interaction occurring on your campaign; call, chat, web & email events.
+
+
+
+* Integrations (API and/or Web hooks with a specific purpose)
+  * CRM integrations (for Contacts and Leads)
+  * FranConnect Integration (coming soon)
+
+
+
+This site describes the resources that make up the LocaliQ reporting REST API offerings. For questions or general information, please contact  LocaliQ API Support
+
+
 This describes the resources that make up the official Reach Local REST API.  If you have any problems or requests please contact [ReachLocal API support](mailto: apiservices@reachlocal.com).
