@@ -8,9 +8,11 @@ This needs to be performed once or if latest refresh token if somehow lost. This
 
 In order to obtain OAuth authentication tokens, it is first necessary to register your application with Reach Local.  As part of this registration, you will obtain a client id and a client secret token.  The client id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.  The client secret is a secret known only to the application and the authorization server.  As part of provisioning a new integration with our OAuth provider, a redirect URI must be provided by the client.  Please contact Reach Local at apiservices@reachlocal.com in order to obtain a client id and client secret.
 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 ## Web Application Authentication Method
 
-Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to 
+Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to
 
 `https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
 
@@ -85,7 +87,7 @@ curl -X POST \
 
 ```
 
-This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token. 
+This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token.
 
 **NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.**
 
@@ -146,7 +148,7 @@ curl --request POST \
 }
 ```
 
-OAuth 2 provides a "password" grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn't desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token. 
+OAuth 2 provides a "password" grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn't desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token.
 
 Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
 
@@ -218,4 +220,3 @@ Every API request must include an access token in the authorization header. This
 ## Security Considerations
 
 Refresh Tokens are long-lived. This means when a client gets one from a server, this token must be stored securely to keep it from being used by potential attackers, for this reason, it is not safe to store them in the browser. If a Refresh Token is leaked, it may be used to obtain new Access Tokens (and access protected resources) until it is blacklisted. Refresh Tokens must be issued to a single authenticated client to prevent the use of leaked tokens by other parties. Access Tokens must also be kept secret, but due to its shorter life, security considerations are less critical.
-
