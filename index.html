@@ -223,41 +223,44 @@
             <a href="#terms-and-conditions" class="toc-h1 toc-link" data-title="Terms And Conditions">Terms And Conditions</a>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#api-access" class="toc-h1 toc-link" data-title="API Access">API Access</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#initial-setup" class="toc-h2 toc-link" data-title="Authentication">Initial Setup</a>
+                    <a href="#step-1-authentication" class="toc-h2 toc-link" data-title="API Access">Step 1: Authentication</a>
                   </li>
                   <li>
-                    <a href="#web-application-authentication-method" class="toc-h2 toc-link" data-title="Authentication">Web Application Authentication Method</a>
+                    <a href="#step-2-authorization" class="toc-h2 toc-link" data-title="API Access">Step 2: Authorization</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#requesting-access-and-refresh-tokens" class="toc-h3 toc-link" data-title="Authentication">Requesting Access and Refresh Tokens</a>
+                            <a href="#authorization-token-user-login-method" class="toc-h3 toc-link" data-title="API Access">Authorization Token (User login method)</a>
+                          </li>
+                          <li>
+                            <a href="#requesting-access-and-refresh-tokens" class="toc-h3 toc-link" data-title="API Access">Requesting Access and Refresh Tokens</a>
+                          </li>
+                          <li>
+                            <a href="#authorization-token-direct-access-method" class="toc-h3 toc-link" data-title="API Access">Authorization Token (Direct access method)</a>
+                          </li>
+                          <li>
+                            <a href="#request-new-access-token" class="toc-h3 toc-link" data-title="API Access">Request New Access Token</a>
+                          </li>
+                          <li>
+                            <a href="#security-considerations" class="toc-h3 toc-link" data-title="API Access">Security Considerations</a>
+                          </li>
+                          <li>
+                            <a href="#api-rate-limits" class="toc-h3 toc-link" data-title="API Access">API Rate Limits</a>
                           </li>
                       </ul>
                   </li>
-                  <li>
-                    <a href="#direct-authentication-method" class="toc-h2 toc-link" data-title="Authentication">Direct Authentication method</a>
-                  </li>
-                  <li>
-                    <a href="#refresh-access-token" class="toc-h2 toc-link" data-title="Authentication">Refresh Access Token</a>
-                  </li>
-                  <li>
-                    <a href="#security-considerations" class="toc-h2 toc-link" data-title="Authentication">Security Considerations</a>
-                  </li>
               </ul>
+          </li>
+          <li>
+            <a href="#error-codes" class="toc-h1 toc-link" data-title="Error Codes">Error Codes</a>
           </li>
           <li>
             <a href="#reporting" class="toc-h1 toc-link" data-title="Reporting">Reporting</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#authorization" class="toc-h2 toc-link" data-title="Reporting">Authorization</a>
-                  </li>
-                  <li>
-                    <a href="#api-rate-limits" class="toc-h2 toc-link" data-title="Reporting">API Rate LImits</a>
                   </li>
                   <li>
                     <a href="#display-activity-report" class="toc-h2 toc-link" data-title="Reporting">Display Activity Report</a>
@@ -849,7 +852,7 @@
 <li><p>API (Interface to the data – through a request &amp; response interchange between applications)</p>
 
 <ul>
-<li>APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product. </li>
+<li>APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product.</li>
 </ul></li>
 <li><p>Webhooks (Event driven interface to the data – automated exchange based on specific event or rules occurring)</p>
 
@@ -872,69 +875,39 @@
 <p>Your download, transfer and/or removal of any information through the API Service is solely at your own risk. ReachLocal is not responsible for the safety, security or legality of the transmission of your data or of your or any third-party’s platform or system to which you transmit the data. Due to technical processing and transmission requirements of the API Service, your information is transferred unencrypted and may involve (a) transmissions over various networks and (b) changes to conform and adapt to technical requirements of connecting to various networks, systems or devices. </p>
 
 <p>THE API SERVICE IS PROVIDED ON AN &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; BASIS, WITHOUT ANY WARRANTY OF ANY KIND AND WITHOUT ANY GUARANTEE OF CONTINUOUS OR UNINTERRUPTED AVAILABILITY. IN ADDITION TO THE DISCLAIMERS SET FORTH IN THE MARKETING SERVICES TERMS, REACHLOCAL (I) MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE ACCURACY OR COMPLETENESS OF ANY INFORMATION PROVIDED TO YOU BY OR ON BEHALF OF REACHLOCAL (INCLUDING ANY REPORTING, ANALYTICS AND SIMILAR INFORMATION) OR ANY CONTENT AVAILABLE ON OR THROUGH THE API SERVICE; AND (II) IS NOT RESPONSIBLE FOR ANY ERRORS, DEFECTS OR DOWNTIME CAUSED BY YOUR USE OF THE API SERVICE.</p>
-<h1 id='errors'>Errors</h1>
-<p>The ReachLocal API uses standard HTTP status codes to communicate errors</p>
+<h1 id='api-access'>API Access</h1>
+<p>We have a two-step access process; authentication and authorization.</p>
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>OK - Everything went as planned.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>Bad Request - Something in your header or request body was malformed.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized - Necessary credentials were either missing or invalid.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden - The end user is authenticated, but is not authorized to access the requested resource.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found - The object you’re requesting doesn’t exist.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests - You are calling our APIs more frequently than we allow.</td>
-</tr>
-<tr>
-<td>5xx</td>
-<td>Server Error - Something went wrong on our end.</td>
-</tr>
-</tbody></table>
+<ul>
+<li><p>The authentication process registers your application to a business user email.</p></li>
+<li><p>The authorization process determines the advertising data the business user is allowed to access.</p></li>
+</ul>
 
-<p>In addition to the status code, the HTTP body of the response will also contain a JSON representation of the error.</p>
-<h1 id='authentication'>Authentication</h1>
-<p>During initial setup the Reach Local API will make a GET request to the registered redirect_uri address with a code parameter.  This code is the authorization token to be used during the REQUEST ACCESS TOKEN section.</p>
-<h2 id='initial-setup'>Initial Setup</h2>
-<p>This needs to be performed once or if latest refresh token if somehow lost. This process will allow you to retrieve an authorization token which can be used to request an access token and refresh token.</p>
+<p>Note: Business user’s access to advertiser’s data (GMAIDs) is maintained through Campaign Central/Corp.</p>
+<h2 id='step-1-authentication'>Step 1: Authentication</h2>
+<p>The first step is to register your application with Reach Local. Please contact your account manager, DMC or <a href="apiservices@reachlocal.com">LocaliQ API Support</a> to request API access.</p>
 
-<p>In order to obtain OAuth authentication tokens, it is first necessary to register your application with Reach Local.  As part of this registration, you will obtain a client id and a client secret token.  The client id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.  The client secret is a secret known only to the application and the authorization server.  As part of provisioning a new integration with our OAuth provider, a redirect URI must be provided by the client.  Please contact Reach Local at apiservices@reachlocal.com in order to obtain a client id and client secret.</p>
-<h2 id='web-application-authentication-method'>Web Application Authentication Method</h2>
-<p>Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to </p>
+<p>You will get a response within 1 business day. The response email will contain a Client Id and a Client Secret token.</p>
+
+<ul>
+<li><p>The Client Id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.</p></li>
+<li><p>The client secret is a secret known only to the application and the authorization server.</p></li>
+</ul>
+<h2 id='step-2-authorization'>Step 2: Authorization</h2>
+<p>The second step involves receiving an Authorization token, which is then used to request an Access and Refresh token. <strong>There are two ways to receive an Authorization token: User login method and Direct access method.</strong></p>
+<h3 id='authorization-token-user-login-method'>Authorization Token (User login method)</h3>
+<p>Through a browser initiate the authorization with your Client Id and Client Secret tokens [Step 1] and your REDIRECT_URI (the redirect URI is where all API related responses will be sent)</p>
 
 <p><code>https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p>
 
-<p>Where CLIENT_ID is provided during implementation.  REDIRECT_URI is a URL provided by the client at implementation time and stored with the OAuth provided.</p>
-
-<p>This link is generally provided as a login link.</p>
-
-<p>If done correctly you’ll see a login screen. Enter the credentials that were provided at account setup time.  These are the same credentials used to authenticate with the Edge application.</p>
+<p>This will bring up the Reach Local login screen. Please enter your Reach Local credentials; the ones that were provided to you at account setup time.</p>
 
 <p><img src="images/login.png" alt="login screen" /></p>
 
-<p>Upon successful authentication, you will be shown our terms of service which you must agree to. Then you’ll be redirected to the REDIRECT_URI along with an authorization token that expires in 10 minutes. If you fail to use it before it expires then you must repeat these steps again.</p>
-
-<p>Use the authorization token to request an access and refresh token.</p>
-<h3 id='requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<p>Upon successful authentication, you will be redirected to the REDIRECT_URI along with an Authorization token. This token expires in 10 minutes.</p>
+<h3 id='requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h3>
+<p>Please use the Authorization token to request an Access and Refresh token.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
@@ -982,11 +955,11 @@
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495549720</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
-<p>This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token. </p>
+</span></code></pre><h3 id='authorization-token-direct-access-method'>Authorization Token (Direct access method)</h3>
+<p>Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange a username and password for an Access token directly. This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.</p>
 
-<p><strong>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</strong></p>
-<h2 id='direct-authentication-method'>Direct Authentication method</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<p>Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
@@ -1031,13 +1004,14 @@
   </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5d59deea16599eb316a63989a9974568da4f5570e7ef9969c693f0b1ce1052cb"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495549720</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token. </p>
+</span></code></pre><h3 id='request-new-access-token'>Request New Access Token</h3>
+<ul>
+<li><p>The Access token should be passed in the authorization header for all API requests. This Access token expires every 2 hours. If the token has expired, all API calls will receive a 401 HTTP status code response.</p></li>
+<li><p>You can request a new Access token by using the Refresh token. It is very important that you save the Refresh token for this purpose. If your Refresh token is lost, you would have to authenticate and authorize again [Step 1 and Step 2] to obtain a new Access token and Refresh token.</p></li>
+</ul>
 
-<p>Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p>
-
-<p><strong>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</strong></p>
-<h2 id='refresh-access-token'>Refresh Access Token</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<p><img src="images/oauth_flow.png" alt="Oauth flow" /></p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
@@ -1084,30 +1058,72 @@
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1504822139</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
-<p>Every API request must include an access token in the authorization header. This access token expires every 2 hours. When the token expires you’ll receive a 401 HTTP status code. You can request a new access token by using the refresh token you were given with your previous access token. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup.</p>
+</span></code></pre><h3 id='security-considerations'>Security Considerations</h3>
+<p>Refresh tokens are long-lived.</p>
 
-<p><strong>NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.</strong></p>
+<p>This means when you must store it securely to keep it from being used by potential attacker. For this reason, it is not safe to store them in the browser. If a Refresh token is leaked, it may be used to obtain new Access tokens (and access protected resources) until it is blacklisted.</p>
 
-<p><img src="images/oauth_flow.png" alt="Oauth flow" /></p>
-<h2 id='security-considerations'>Security Considerations</h2>
-<p>Refresh Tokens are long-lived. This means when a client gets one from a server, this token must be stored securely to keep it from being used by potential attackers, for this reason, it is not safe to store them in the browser. If a Refresh Token is leaked, it may be used to obtain new Access Tokens (and access protected resources) until it is blacklisted. Refresh Tokens must be issued to a single authenticated client to prevent the use of leaked tokens by other parties. Access Tokens must also be kept secret, but due to its shorter life, security considerations are less critical.</p>
+<p>Access tokens must also be kept secret, but due to its shorter life, security considerations are less critical.</p>
+
+<p>The email address used to obtain the OAuth Access token must be associated with the GMAID of the requested advertiser. If it is not, the API will return an HTTP response with status code 403 and the following body:</p>
+
+<p><code>{ &quot;name&quot;: &quot;not_authorized&quot;, &quot;message&quot;: &quot;You are not permitted to perform this action.&quot; }</code></p>
+<h3 id='api-rate-limits'>API Rate Limits</h3>
+<p>ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.</p>
+
+<p>If you exceed the rate limit allowance, your request will be rejected. An <code>HTTP 429 (Too Many Requests)​</code> response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.</p>
+
+<p>Example response body for throttled request:</p>
+
+<p><code>{ &quot;message&quot;: &quot;Too Many Requests&quot; }</code></p>
+
+<p>We reserve the right to alter rate limits and other functionality to prevent abuse, spam, denial-of-service attacks, or other security issues. Where possible, we&#39;ll return a descriptive error message, but the nature of this type of rate limiting often prevents us from providing more information.</p>
+<h1 id='error-codes'>Error Codes</h1>
+<p>The ReachLocal API uses standard HTTP status codes to communicate errors</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>OK - Everything went as planned.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request - Something in your header or request body was malformed.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized - Necessary credentials were either missing or invalid.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden - The end user is authenticated, but is not authorized to access the requested resource.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found - The object you’re requesting doesn’t exist.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests - You are calling our APIs more frequently than we allow.</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>Server Error - Something went wrong on our end.</td>
+</tr>
+</tbody></table>
+
+<p>In addition to the status code, the HTTP body of the response will also contain a JSON representation of the error.</p>
 <h1 id='reporting'>Reporting</h1><h2 id='authorization'>Authorization</h2>
 <p>All requests must include an <a href="#authentication">Authorization</a> header.</p>
 
 <p>The email address used to obtain the OAuth access token must be associated with the GMAID of the requested advertiser.  If it is not, the API will return an HTTP response with status code 403 and the following body:</p>
 
 <p><code>{ &quot;name&quot;: &quot;not_authorized&quot;, &quot;message&quot;: &quot;You are not permitted to perform this action.&quot; }</code></p>
-<h2 id='api-rate-limits'>API Rate LImits</h2>
-<p>ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests / second.</p>
-
-<p>If you exceed the rate limit allowance your request will be rejected. An <code>HTTP 429 (Too Many Requests)​</code> response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.</p>
-
-<p>Example response body for throttled request</p>
-
-<p><code>{ &quot;message&quot;: &quot;Too Many Requests&quot; }</code></p>
-
-<p>We reserve the right to alter rate limits other functionality to prevent abuse, spam, denial-of-service attacks, or other security issues. Where possible we&#39;ll return a descriptive error message, but the nature of this type of rate limiting often prevents us from providing more information.</p>
 <h2 id='display-activity-report'>Display Activity Report</h2><h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
 <tr>
