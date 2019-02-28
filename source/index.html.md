@@ -11,8 +11,8 @@ toc_footers:
 
 includes:
   - terms_and_conditions
-  - errors
   - authentication
+  - errors
   - reporting
   - display_activity_report
   - display_creative_report
@@ -80,7 +80,7 @@ We have 3 major types of reporting API offerings; API, Webhooks and Integration 
 <img alt='Integration' src='/images/integration.png' height=200 width=200 />
 
 * API (Interface to the data – through a request & response interchange between applications)
-  * APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product. 
+  * APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product.
 
 * Webhooks (Event driven interface to the data – automated exchange based on specific event or rules occurring)
   * Webhooks to contact creation on the LocaliQ platform

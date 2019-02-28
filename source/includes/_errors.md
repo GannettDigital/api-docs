@@ -1,4 +1,4 @@
-# Errors
+# Error Codes
 
 The ReachLocal API uses standard HTTP status codes to communicate errors
 
