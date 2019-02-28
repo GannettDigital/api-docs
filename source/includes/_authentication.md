@@ -1,32 +1,42 @@
-# Authentication
+# API Access
 
-During initial setup the Reach Local API will make a GET request to the registered redirect_uri address with a code parameter.  This code is the authorization token to be used during the REQUEST ACCESS TOKEN section.
+We have a two-step access process; authentication and authorization.
 
-## Initial Setup
+* The authentication process registers your application to a business user email.
 
-This needs to be performed once or if latest refresh token if somehow lost. This process will allow you to retrieve an authorization token which can be used to request an access token and refresh token.
+* The authorization process determines the advertising data the business user is allowed to access.
 
-In order to obtain OAuth authentication tokens, it is first necessary to register your application with Reach Local.  As part of this registration, you will obtain a client id and a client secret token.  The client id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.  The client secret is a secret known only to the application and the authorization server.  As part of provisioning a new integration with our OAuth provider, a redirect URI must be provided by the client.  Please contact Reach Local at apiservices@reachlocal.com in order to obtain a client id and client secret.
+Note: Business user’s access to advertiser’s data (GMAIDs) is maintained through Campaign Central/Corp.
 
-## Web Application Authentication Method
+## Step 1: Authentication
 
-Once you have obtained the necessary OAuth tokens (CLIENT_ID and CLIENT_SECRET), in a browser go to 
+The first step is to register your application with Reach Local. Please contact your account manager, DMC or [LocaliQ API Support](apiservices@reachlocal.com) to request API access.
+
+You will get a response within 1 business day. The response email will contain a Client Id and a Client Secret token.
+
+* The Client Id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.
+
+* The client secret is a secret known only to the application and the authorization server.
+
+## Step 2: Authorization
+
+The second step involves receiving an Authorization token, which is then used to request an Access and Refresh token. **There are two ways to receive an Authorization token: User login method and Direct access method.**
+
+### Authorization Token (User login method)
+
+Through a browser initiate the authorization with your Client Id and Client Secret tokens [Step 1] and your REDIRECT_URI (the redirect URI is where all API related responses will be sent)
 
 `https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
 
-Where CLIENT_ID is provided during implementation.  REDIRECT_URI is a URL provided by the client at implementation time and stored with the OAuth provided.
-
-This link is generally provided as a login link.
-
-If done correctly you’ll see a login screen. Enter the credentials that were provided at account setup time.  These are the same credentials used to authenticate with the Edge application.
+This will bring up the Reach Local login screen. Please enter your Reach Local credentials; the ones that were provided to you at account setup time.
 
 ![login screen](/images/login.png)
 
-Upon successful authentication, you will be shown our terms of service which you must agree to. Then you’ll be redirected to the REDIRECT_URI along with an authorization token that expires in 10 minutes. If you fail to use it before it expires then you must repeat these steps again.
-
-Use the authorization token to request an access and refresh token.
+Upon successful authentication, you will be redirected to the REDIRECT_URI along with an Authorization token. This token expires in 10 minutes.
 
 ### Requesting Access and Refresh Tokens
+
+Please use the Authorization token to request an Access and Refresh token.
 
 ```ruby
 require 'uri'
@@ -84,12 +94,12 @@ curl -X POST \
 }
 
 ```
+### Authorization Token (Direct access method)
 
-This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to reauthenticate and obtain a new authorization token which can be used to obtain a new access_token and refresh_token. 
+Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a "password" grant type which can be used to exchange a username and password for an Access token directly. This method is easier to use for straight API integrations where user interaction isn't desired or possible.
 
-**NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.**
+Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
 
-## Direct Authentication method
 
 ```ruby
 require 'uri'
@@ -146,13 +156,14 @@ curl --request POST \
 }
 ```
 
-OAuth 2 provides a "password" grant type which can be used to exchange a username and password for an access token directly.  This method is easier to use for straight API integrations where user interaction isn't desired or possible.  This access token is what you’ll pass in the authorization header for any report API request. The refresh token is what you will use to request a new access token when it expires. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial authentication request to obtain a new access token and refresh token. 
+### Request New Access Token
 
-Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
+* The Access token should be passed in the authorization header for all API requests. This Access token expires every 2 hours. If the token has expired, all API calls will receive a 401 HTTP status code response.
 
-**NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.**
+* You can request a new Access token by using the Refresh token. It is very important that you save the Refresh token for this purpose. If your Refresh token is lost, you would have to authenticate and authorize again [Step 1 and Step 2] to obtain a new Access token and Refresh token.
 
-## Refresh Access Token
+![Oauth flow](/images/oauth_flow.png)
+
 ```ruby
 require 'uri'
 require 'net/http'
@@ -209,13 +220,26 @@ curl --request POST \
 
 ```
 
-Every API request must include an access token in the authorization header. This access token expires every 2 hours. When the token expires you’ll receive a 401 HTTP status code. You can request a new access token by using the refresh token you were given with your previous access token. It is very important that you save the refresh token otherwise you won’t be able to request a new access token. If this ever happens then you need to repeat the initial setup.
+### Security Considerations
 
-**NOTE: When you request / refresh an access token you’ll be provided with a new refresh token.**
+Refresh tokens are long-lived.
 
-![Oauth flow](/images/oauth_flow.png)
+This means when you must store it securely to keep it from being used by potential attacker. For this reason, it is not safe to store them in the browser. If a Refresh token is leaked, it may be used to obtain new Access tokens (and access protected resources) until it is blacklisted.
 
-## Security Considerations
+Access tokens must also be kept secret, but due to its shorter life, security considerations are less critical.
 
-Refresh Tokens are long-lived. This means when a client gets one from a server, this token must be stored securely to keep it from being used by potential attackers, for this reason, it is not safe to store them in the browser. If a Refresh Token is leaked, it may be used to obtain new Access Tokens (and access protected resources) until it is blacklisted. Refresh Tokens must be issued to a single authenticated client to prevent the use of leaked tokens by other parties. Access Tokens must also be kept secret, but due to its shorter life, security considerations are less critical.
+The email address used to obtain the OAuth Access token must be associated with the GMAID of the requested advertiser. If it is not, the API will return an HTTP response with status code 403 and the following body:
 
+`{ "name": "not_authorized", "message": "You are not permitted to perform this action." }`
+
+### API Rate Limits
+
+ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.
+
+If you exceed the rate limit allowance, your request will be rejected. An ```HTTP 429 (Too Many Requests)​``` response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.
+
+Example response body for throttled request:
+
+`{ "message": "Too Many Requests" }`
+
+We reserve the right to alter rate limits and other functionality to prevent abuse, spam, denial-of-service attacks, or other security issues. Where possible, we'll return a descriptive error message, but the nature of this type of rate limiting often prevents us from providing more information.
