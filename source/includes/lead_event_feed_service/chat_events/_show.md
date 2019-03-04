@@ -1,4 +1,4 @@
-### Retrieve a Chat Event
+**Retrieve a Chat Event**
 
 ```ruby
 require 'uri'

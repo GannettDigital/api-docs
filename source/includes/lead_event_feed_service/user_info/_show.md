@@ -1,4 +1,4 @@
-### Retrieve User Info
+**Retrieve User Info**
 
 ```ruby
 require 'uri'

@@ -1,4 +1,4 @@
-### List Email Events
+**List Email Events**
 
 ```ruby
 require 'uri'

@@ -1,4 +1,4 @@
-## Campaigns Totals Report
+## Campaigns Totals
 
 ### Resource Overview
 
@@ -7,7 +7,7 @@
 | GET | /client_reports/campaigns_totals/[gmaid] |
 
 The data returned will include count of running campaigns and leads for all campaign types over the last 30 days.
-
+### API Name: Campaigns Totals Report
 ### Parameters
 
 None

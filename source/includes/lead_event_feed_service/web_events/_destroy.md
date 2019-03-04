@@ -1,4 +1,4 @@
-### Delete a Web Event
+**Delete a Web Event**
 
 ```ruby
 require 'uri'

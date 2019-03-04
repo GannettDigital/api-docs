@@ -1,7 +1,7 @@
-## Leads
+### Leads
 **`Leads`** object contains unread counts for each of the lead event types.
 
-### The Leads Object
+**The Leads Object**
 
 > Example Response:
 

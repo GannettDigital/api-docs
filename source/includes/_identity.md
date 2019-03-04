@@ -1,4 +1,4 @@
-# Identity
+## Identity
 
 The identity endpoint is used to gain insight into what resources are accessible by a user.
 
@@ -67,7 +67,7 @@ curl --request GET \
 | GET | /identities/[email address] |
 
 ### Usage
-This endpoint retreives the identity of the provided user email address.
+This endpoint retrieves the identity of the provided user email address.
 
 ### Response Body
 The body of the API response will be a JSON objects.

@@ -1,4 +1,4 @@
-### Retrieve a Call Event
+**Retrieve a Call Event**
 
 ```ruby
 require 'uri'

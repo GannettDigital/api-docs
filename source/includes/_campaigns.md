@@ -1,11 +1,11 @@
-## Campaigns Report
+## Campaigns & Cycles
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/campaigns/[gmaid]?[query_params] |
-
+### API Name: Campaigns Report
 ### Usage
 A list of filtered Campaigns and Campaign Cycles for a given report type and advertiser.  (Cycles are not included for keyword_report)
 

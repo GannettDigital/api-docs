@@ -1,4 +1,4 @@
-### Update a Call Event
+**Update a Call Event**
 
 ```ruby
 require 'uri'

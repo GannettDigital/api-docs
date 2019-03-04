@@ -1,11 +1,11 @@
-## GeoFence Summary Report
+## GeoFence Campaign Metrics
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/geofence_summary/[gmaid]?[query_params] |
-
+### API Name: GeoFence Summary Report
 ### Usage
 Use GET to retrieve information for the GeoFence Summary Report for a given advertiser.
 
@@ -18,13 +18,13 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Function |
 |---|---|
-|`start_date`|Restricts the results to those ocurring on or after this date.|
-|`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
+|`start_date`|Restricts the results to those occurring on or after this date.|
+|`end_date`|Restricts the results to those occurring on or before this date.|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
-|`geofence[]`| Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section. This should be a comma seperated string. Ex: geofence[]=1,2|
-|`conversion_fence[]`| Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section. This should be a comma seperated string. Ex: conversion_fence[]=1,2|
+|`geofence[]`| Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section. This should be a comma separated string. Ex: geofence[]=1,2|
+|`conversion_fence[]`| Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section. This should be a comma separated string. Ex: conversion_fence[]=1,2|
 
 To specify a date range:
 
@@ -71,7 +71,7 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&g
     "end_date": "2018-04-28",                                           // End Date of Report
     "time_zone": "America/Los_Angeles",                                 // Time Zone of Report
     "interval_size": "day",                                             // Interval Size Report is Broken Into
-    "currency": "USD",                                                  // Currenty of Report
+    "currency": "USD",                                                  // Currency of Report
     "global_master_advertiser_id": "USA_185490",                        // Global Master Advertiser ID for Report
     "report_data": {
         "campaigns": [
