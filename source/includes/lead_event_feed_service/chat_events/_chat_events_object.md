@@ -1,7 +1,7 @@
-## Chat Events
+### Chat Events
 **`Chat Events`** object returns chat data for potential customers using chat to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.
 
-### The Chat Events Object
+**The Chat Events Object**
 
 > Example Response:
 

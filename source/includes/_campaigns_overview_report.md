@@ -1,11 +1,11 @@
-## Campaigns Overview Report
+## Campaigns Overview
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/campaigns_overview/[gmaid]|
-
+### API Name: Campaigns Overview Report
 #### Usage
 Use GET to retrieve information for the Campaigns Overview report.
 

@@ -1,7 +1,7 @@
-## User Info
+### User Info
 **`User Info`** object contains business information for the authenticated user.
 
-### The User Info Object
+**The User Info Object**
 
 > Example Response:
 

@@ -1,4 +1,4 @@
-### GET Leads
+**GET Leads**
 
 ```ruby
 require 'uri'

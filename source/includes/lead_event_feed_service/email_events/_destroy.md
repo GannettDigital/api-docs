@@ -1,4 +1,4 @@
-### Delete an Email Event
+**Delete an Email Event**
 
 ```ruby
 require 'uri'

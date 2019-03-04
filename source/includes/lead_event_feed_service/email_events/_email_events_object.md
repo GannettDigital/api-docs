@@ -1,7 +1,7 @@
-## Email Events
+### Email Events
 **`Email Events`** object returns call data for potential customers using email to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.
 
-### The Email Events Object
+**The Email Events Object**
 
 > Example Response:
 

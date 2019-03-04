@@ -1,4 +1,4 @@
-### List Call Events
+**List Call Events**
 
 ```ruby
 require 'uri'

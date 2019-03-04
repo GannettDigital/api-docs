@@ -1,4 +1,4 @@
-### Update a Chat Event
+**Update a Chat Event**
 
 ```ruby
 require 'uri'
