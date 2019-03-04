@@ -1,4 +1,4 @@
-# Edge Webhook
+## Edge Webhook
 
 Edge has an automation feature that is capable of triggering on “New Lead for New Contact” and “New Lead for Existing Contact” events.  When either of these events occur, this webhook integration will trigger and POST the Lead Event JSON Payload to a URL configured for the webhook.  Create a webhook using the integrations account setting.
 
@@ -370,5 +370,5 @@ Field | Type | Nullable | Description
 --------- | -------- |-------- |--------
 sub_type | String | no | The subtype of the form.  Valid values are **FormPost** and **FormEmail**.
 full_message | String | no | The full form message
-subject | String | yes | 
+subject | String | yes |
 extra_fields | Array of String | yes |

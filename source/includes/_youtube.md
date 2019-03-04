@@ -1,11 +1,11 @@
-## YouTube Report
+## YouTube Campaign Metrics
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/youtube/[gmaid]?[query_params] |
-
+### API Name: YouTube Report
 ### Usage
 Use GET to retrieve information for the YouTube report for a given advertiser.
 
@@ -18,10 +18,10 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Function |
 |---|---|
-|`start_date`|Restricts the results to those ocurring on or after this date.|
-|`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
+|`start_date`|Restricts the results to those occurring on or after this date.|
+|`end_date`|Restricts the results to those occurring on or before this date.|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |`campaign_cycle`|Restrict results to a single campaign cycle|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 
@@ -71,7 +71,7 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&campaign_s
   "end_date": "2017-05-02",                             // End Date of Report
   "time_zone": "America/Los_Angeles",                   // Time Zone of Report
   "interval_size": "day",                               // Interval Size Report is Broken Into
-  "currency": "USD",                                    // Currenty of Report
+  "currency": "USD",                                    // Currency of Report
   "report_data": {
     "campaigns": [
       {

@@ -1,4 +1,4 @@
-### Delete a Chat Event
+**Delete a Chat Event**
 
 ```ruby
 require 'uri'

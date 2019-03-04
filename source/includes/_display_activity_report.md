@@ -1,11 +1,11 @@
-## Display Activity Report
+## Display Campaign Metrics
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/display_activity/[gmaid]?[query_params] |
-
+### API Name: Display Activity Report
 ### Usage
 Use GET to retrieve information for the Display Activity report for a given advertiser.
 
@@ -17,10 +17,10 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Function |
 |---|---|
-|`start_date`|Restricts the results to those ocurring on or after this date.|
-|`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
+|`start_date`|Restricts the results to those occurring on or after this date.|
+|`end_date`|Restricts the results to those occurring on or before this date.|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |`campaign_cycle`|Restrict results to a single campaign cycle|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`include_cycles`|Set to true or false on whether to include cycle nesting.  Default value is false.|
@@ -110,7 +110,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
                 "form_submissions_vt": 5,            // View-Through Form Submissions
                 "priority_page_views_ct": 0,         // Click-Through Priority Page Views
                 "priority_page_views_vt": 0,         // View-Through Priority Page Views
-                "view_complete_rate": 0,             // Percent of vidoes completed
+                "view_complete_rate": 0,             // Percent of videos completed
                 "view_through_rate": 0,              // View Through Rate (percent)
                 "walk_ins": 1,                       // Walk-ins
                 "cpw": 18.0                          // Cost per Walk-in
@@ -131,7 +131,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "cpm": 4.05,                          // Total CPM
       "ctr": 57.69,                         // Click through rate
       "walk_ins": 1,                        // Total Walk-ins
-      "performance_impressions": 64213,     // Total Peformance Impressions
+      "performance_impressions": 64213,     // Total Performance Impressions
       "calls": 0,                           // Total Calls
       "video_views": 0,                     // Total Video View
       "completed_views": 0,                 // Total Completed Video Views
@@ -163,7 +163,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "form_submissions_vt": 5,           // Total View-Through Form Submissions for interval
         "priority_page_views_ct": 0,        // Total Click-Through Priority Page Views for interval
         "priority_page_views_vt": 0,        // Total View-Through Priority Page Views for interval
-        "view_complete_rate": 0,            // Total Percent of vidoes completed for interval
+        "view_complete_rate": 0,            // Total Percent of videos completed for interval
         "view_through_rate": 0,             // Total View Through Rate (percent) for interval
         "walk_ins": 1,                      // Total Walk-ins for interval
         "cpw": 52.37                        // Total Cost per Walk-ins for interval
@@ -228,7 +228,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             "form_submissions_vt": 5,            // View-Through Form Submissions
             "priority_page_views_ct": 0,         // Click-Through Priority Page Views
             "priority_page_views_vt": 0,         // View-Through Priority Page Views
-            "view_complete_rate": 0,             // Percent of vidoes completed
+            "view_complete_rate": 0,             // Percent of videos completed
             "view_through_rate": 0,              // View Through Rate (percent)
             "walk_ins": 1,                       // Walk-ins
             "cpw": 18.0                          // Cost per Walk-in
@@ -279,7 +279,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "form_submissions_vt": 5,           // Total View-Through Form Submissions for interval
         "priority_page_views_ct": 0,        // Total Click-Through Priority Page Views for interval
         "priority_page_views_vt": 0,        // Total View-Through Priority Page Views for interval
-        "view_complete_rate": 0,            // Total Percent of vidoes completed for interval
+        "view_complete_rate": 0,            // Total Percent of videos completed for interval
         "view_through_rate": 0,             // Total View Through Rate (percent) for interval
         "walk_ins": 0,                      // Total Walk-ins for interval for interval
         "cpw": 0,                           // Total Cost per Walk-in for interval

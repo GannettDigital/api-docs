@@ -1,7 +1,7 @@
-## Call Events
+### Call Events
 **`Call Events`** object returns call data for potential customers placing calls to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.
 
-### The Call Events Object
+**The Call Events Object**
 
 > Example Response:
 

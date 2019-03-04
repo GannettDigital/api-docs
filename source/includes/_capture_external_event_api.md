@@ -1,4 +1,4 @@
-# Capture External Event
+## Capture External Event
 
 Capture External Event API is a public ReachLocal external interface for vendors to use.
 
@@ -16,7 +16,7 @@ This endpoint is used to create a chat event.
 | Status Code | Description
 |---|---|
 | 200 | Successful
-| 400 | Validation Error 
+| 400 | Validation Error
 
 ### Post Body Parameters
 
@@ -65,7 +65,7 @@ curl -X POST \
         "chatVisitorName": "Bob",
         "chatVisitorPhone": "6592009999"
     }
-       
+
 }
 '
 # HTTP Response Status: 200
@@ -91,7 +91,7 @@ curl -X POST \
         "chatVisitorName": "Bob",
         "chatVisitorPhone": "6592009999"
     }
-       
+
 }
 '
 

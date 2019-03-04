@@ -1,4 +1,4 @@
-### Update a Email Event
+**Update a Email Event**
 
 ```ruby
 require 'uri'

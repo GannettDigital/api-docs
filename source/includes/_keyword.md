@@ -1,11 +1,11 @@
-## Keyword Report
+## Keyword Performance Metrics
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/keyword/[gmaid]?[query_params] |
-
+### API Name: Keyword Report
 ### Usage
 Use GET to retrieve information for the Keyword report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.
 
@@ -17,10 +17,10 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Function |
 |---|---|
-|`start_date`|Restricts the results to those ocurring on or after this date.|
-|`end_date`|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma seperated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma seperated string. Ex: campaign_status[]=running,stopped|
+|`start_date`|Restricts the results to those occurring on or after this date.|
+|`end_date`|Restricts the results to those occurring on or before this date.|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |`page_size`|Restrict number of keywords in result.  Default is 15 |
 |`page`|Specifies which page of results to return.  Default is 1 |
 |`sort_by`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`.  Default: `keyword`|

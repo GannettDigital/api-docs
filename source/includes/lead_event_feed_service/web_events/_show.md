@@ -1,4 +1,4 @@
-### Retrieve a Web Event
+**Retrieve a Web Event**
 
 ```ruby
 require 'uri'

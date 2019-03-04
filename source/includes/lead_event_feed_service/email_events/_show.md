@@ -1,4 +1,4 @@
-### Retrieve an Email Event
+**Retrieve an Email Event**
 
 ```ruby
 require 'uri'

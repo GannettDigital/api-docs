@@ -1,4 +1,4 @@
-### List Chat Events
+**List Chat Events**
 
 ```ruby
 require 'uri'

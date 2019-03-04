@@ -1,7 +1,7 @@
-## Web Events
+### Web Events
 **`Web Events`** object returns web data for potential customers using the web to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.
 
-### The Web Events Object
+**The Web Events Object**
 
 > Example Response:
 

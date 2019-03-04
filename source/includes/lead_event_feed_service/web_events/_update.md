@@ -1,4 +1,4 @@
-### Update a Web Event
+**Update a Web Event**
 
 ```ruby
 require 'uri'

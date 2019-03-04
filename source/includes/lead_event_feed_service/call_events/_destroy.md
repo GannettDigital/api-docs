@@ -1,4 +1,4 @@
-### Delete a Call Event
+**Delete a Call Event**
 
 ```ruby
 require 'uri'
