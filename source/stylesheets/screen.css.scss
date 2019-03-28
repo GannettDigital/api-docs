@@ -58,8 +58,8 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
 
   // language selector for mobile devices
   .lang-selector {
@@ -73,7 +73,8 @@ html, body {
   // This is the logo at the top of the ToC
   &>img {
     display: block;
-    max-width: 100%;
+    width: 124px;
+    padding: 30px $nav-padding;
   }
 
   &>.search {
@@ -143,7 +144,15 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 40px;
+
+    &.toc-h2-li {
+      line-height: 32px;
+    }
+
+    &.toc-h3-li {
+      line-height: 28px;
+    }
   }
 
   li {
@@ -157,6 +166,7 @@ html, body {
   .toc-link.active {
     background-color: $nav-active-bg;
     color: $nav-active-text;
+    border-left: 3px solid $liq-orange;
   }
 
   // this is parent links of the currently selected ToC entry
@@ -215,10 +225,11 @@ html, body {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: none;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.87);
   transition-property: background;
   transition-timing-function: linear;
   transition-duration: 130ms;
+  border-left: 3px solid transparent;
 }
 
 // button to show navigation on mobile devices
@@ -358,7 +369,7 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 24px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
@@ -375,7 +386,7 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
+    font-size: 20px;
     margin-top: 4em;
     margin-bottom: 0;
     border-top: 1px solid #ccc;
@@ -393,7 +404,7 @@ html, body {
 
   h3, h4, h5, h6 {
     @extend %header-font;
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
   }
