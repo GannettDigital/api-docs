@@ -1,4 +1,4 @@
-## Google Search Report
+### Google Search Report
 
 ### Resource Overview
 
