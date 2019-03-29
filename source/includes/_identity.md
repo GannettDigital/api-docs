@@ -2,7 +2,7 @@
 
 The identity endpoint is used to gain insight into what resources are accessible by a user.
 
-## Show identity
+### Show identity
 
 ```ruby
 require 'uri'

@@ -2,7 +2,7 @@
 
 Capture External Event API is a public ReachLocal external interface for vendors to use.
 
-## Create Chat Event
+### Create Chat Event
 
 This endpoint is used to create a chat event.
 

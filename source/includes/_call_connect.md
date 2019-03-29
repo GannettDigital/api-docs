@@ -4,7 +4,7 @@ The Call Connect endpoint is used to create a phone call between a visitor and
 an advertiser. The advertiser's phone number is determined using the given visit
 ID.
 
-## Create
+### Create
 
 ### HTTP Request
 

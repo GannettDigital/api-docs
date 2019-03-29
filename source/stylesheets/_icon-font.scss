@@ -10,6 +10,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: UnifySans;
+  src: font-url('UnifySans_W_Rg.woff2') format('woff2'),
+    font-url('UnifySans_W_Rg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: UnifySans;
+  src: font-url('UnifySans_W_Bd.woff2') format('woff2'),
+    font-url('UnifySans_W_Bd.woff') format('woff');
+  font-weight: bold;
+  font-style: bold;
+}
+
 %icon {
   font-family: 'slate';
   speak: none;
