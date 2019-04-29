@@ -32,7 +32,7 @@ https://api.reachlocalservices.com/client_reports/campaigns_totals/USA_105569
     "campaigns": 1,                            // Total running campaigns
     "leads": 1234                              // Total leads for ALL campaigns
   },
-  "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
+  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/campaigns_totals/USA_105569", // URL location of this report
   "data_import_status": {
      "DailyCampaignActivity": "2016-12-07T20:11:44.000Z",   // Table last updated

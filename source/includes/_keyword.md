@@ -75,7 +75,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
       "ctr": 0.8                        // Total call events
     },
   },
-  "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
+  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&page=1&page_size=15",
   "available_campaigns": [                  // All campaigns for advertiser
     {

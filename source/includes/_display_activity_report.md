@@ -172,7 +172,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       }
     ]
   },
-  "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
+  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle",
   "available_campaigns": [                     // All campaigns for advertiser
     {
@@ -288,7 +288,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       }
     ]
   },
-  "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
+  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle",
   "available_campaigns": [                     // All campaigns for advertiser
     {

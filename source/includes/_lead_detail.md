@@ -167,7 +167,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?&campai
       }
     ],
   }
-  "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
+  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/lead_detail/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&range=cycle",
   "available_campaigns": [                  // All campaigns for advertiser
     {
