@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - terms_and_conditions
   - authentication
+  - identity
   - api
   - campaigns
   - campaigns_overview_report
