@@ -81,7 +81,7 @@ https://api.reachlocalservices.com/client_reports/google_keyword/USA_105569?&cam
     },
     "global_master_advertiser_id": "USA_2247",                  // Global master advertiser id
     "page": 1,                                                  // Page number of this data
-    "page_size": 1                                              // page size used to generate this data
+    "page_size": 1                                              // Page size used to generate this data
 }
 
 ```

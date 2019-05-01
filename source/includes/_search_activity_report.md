@@ -116,30 +116,30 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       "device_breakdowns": {                // Breakdown by device
         "impressions": {
           "desktop": {
-            "total": 20,                    // total impressions for desktop
-            "percent": 33.33                // percent of all impressions
+            "total": 20,                    // Total impressions for desktop
+            "percent": 33.33                // Percent of all impressions
           },
           "mobile": {
-            "total": 20,                    // total impressions for mobile
-            "percent": 33.33                // percent of all impression
+            "total": 20,                    // Total impressions for mobile
+            "percent": 33.33                // Percent of all impression
           },
           "tablet": {
-            "total": 20,                    // total impressions for tablet
-            "percent": 33.33                // percent of all impression
+            "total": 20,                    // Total impressions for tablet
+            "percent": 33.33                // Percent of all impression
           }
         },
         "clicks": {
           "desktop": {
-            "total": 20,                    // total impressions for desktop
-            "percent": 33.33                // percent of all clicks
+            "total": 20,                    // Total impressions for desktop
+            "percent": 33.33                // Percent of all clicks
           },
           "mobile": {
-            "total": 20,                    // total impressions for mobile
-            "percent": 33.33                // percent of all clicks
+            "total": 20,                    // Total impressions for mobile
+            "percent": 33.33                // Percent of all clicks
           },
           "tablet": {
-            "total": 20,                    // total impressions for tablet
-            "percent": 33.33                // percent of all clicks
+            "total": 20,                    // Total impressions for tablet
+            "percent": 33.33                // Percent of all clicks
           }
         }
       }
@@ -159,7 +159,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       }
     ]
   },
-  "global_master_advertiser_id": "USA_105569", //Identifier for advertiser
+  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&range=cycle",
   "available_campaigns": [                  // All campaigns for advertiser
     {

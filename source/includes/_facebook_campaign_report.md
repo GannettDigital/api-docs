@@ -94,8 +94,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "status": "ended",
         "intervals": [
           {
-            "start_date": "2017-01-26",         // interval start date
-            "impressions": 383,                 // metrics for this interval
+            "start_date": "2017-01-26",         // Interval start date
+            "impressions": 383,                 // Metrics for this interval
             "call_to_action_clicks": 0,
             "clicks": 4,
             "social_clicks": 0,
@@ -246,8 +246,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         ]
       }
     ],
-    "totals": {                             //totals across all intervals
-      "reach_breakdown": {                  // reach broken down by gender, age, device, etc
+    "totals": {                             // Totals across all intervals
+      "reach_breakdown": {                  // Reach broken down by gender, age, device, etc
         "none": 2034,
         "age_18-24_gender_male": 58,
         "age_18-24_gender_female": 62,
@@ -281,7 +281,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "age_Unknown_gender_female": 0,
         "age_Unknown_gender_unknown": 0
       },
-      "impressions_breakdown": {            // impressions broken down by gender, age, device, etc
+      "impressions_breakdown": {            // Impressions broken down by gender, age, device, etc
         "none": 2110,
         "age_18-24_gender_male": 59,
         "age_18-24_gender_female": 66,
@@ -315,7 +315,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "age_Unknown_gender_female": 0,
         "age_Unknown_gender_unknown": 0
       },
-      "clicks_breakdown": {                     // clicks broken down by gender, age, device, etc
+      "clicks_breakdown": {                     // Clicks broken down by gender, age, device, etc
         "none": 38,
         "age_18-24_gender_male": 2,
         "age_18-24_gender_female": 1,
@@ -349,7 +349,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
         "age_Unknown_gender_female": 0,
         "age_Unknown_gender_unknown": 0
       },
-      "impressions": 2110,                      // individual metric totals across all campaigns and intervals
+      "impressions": 2110,                      // Individual metric totals across all campaigns and intervals
       "leads": 200,
       "call_to_action_clicks": 0,
       "clicks": 38,
@@ -377,7 +377,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
       "ctr": 1.8,
       "average_daily_reach": 406.8
     },
-    "totals_per_interval": [                // per-metric totals for interval across all campaigns
+    "totals_per_interval": [                // Per-metric totals for interval across all campaigns
       {
         "start_date": "2017-01-26",
         "impressions": 383,

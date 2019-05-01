@@ -12,16 +12,20 @@ toc_footers:
 includes:
   - terms_and_conditions
   - authentication
+  - identity
   - api
   - campaigns
   - campaigns_overview_report
   - campaigns_totals
   - display_activity_report
   - display_creative_report
-  - facebook_campaign_report
   - geofence_summary_report
+  - search_activity_report
+  - search_compliance_report
   - keyword
   - keyword_compliance_report
+  - facebook_campaign_report
+  - youtube
   - lead_detail
   - lead_event_feed_service/overview
   - lead_event_feed_service/leads/leads_object
@@ -48,25 +52,16 @@ includes:
   - lead_event_feed_service/web_events/destroy
   - lead_event_feed_service/user_info/user_info_object
   - lead_event_feed_service/user_info/show
-  - search_activity_report
-  - search_compliance_report
-  - youtube
+  - capture_external_event_api
+  - capture_discovery
+  - capture_top_referrers
+  - total_track
   - webhooks
   - edge_webhook  
   - integrations
   - contacts
   - contact_interactions
   - crm_webhooks
-  - general_apis
-  - advertiser_contact_info
-  - call_connect
-  - capture_external_event_api
-  - capture_discovery
-  - identity
-  - capture_unique_domains
-  - capture_site_status
-  - capture_top_referrers
-  - total_track
   - errors
 
 search: false
