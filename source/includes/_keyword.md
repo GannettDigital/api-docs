@@ -25,6 +25,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`page`|Specifies which page of results to return.  Default is 1 |
 |`sort_by`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`.  Default: `keyword`|
 |`sort_dir`|Specifies the sort direction.  Can be either `asc` or `desc`. Default: `asc`|
+|`types[]`|Specifies the campaign type of keyword.  Can be either `search` or `display`. Default: `search`|
 
 ### Examples:
 
@@ -63,6 +64,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
     "keywords": [                           // Keyword data
       {
         "keyword": "beach home",        // Keyword
+        "type": "search",               // Type for Keyword
         "impressions": 25,              // Impressions for Keyword
         "clicks": 20,                   // Clicks for Keyword
         "ctr": 0.8                      // CTR for Keyword
@@ -107,24 +109,28 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
     "keywords": [
       {
         "keyword": "beach",
+        "type": "search",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
       },
       {
         "keyword": "cruise",
+        "type": "search",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
       },
       {
         "keyword": "ocean",
+        "type": "search",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
       },
       {
         "keyword": "vacation",
+        "type": "display",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
