@@ -7,7 +7,7 @@
 | GET | /client_reports/keyword/[gmaid]?[query_params] |
 ### API Name: Keyword Report
 ### Usage
-Use GET to retrieve information for the Keyword report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.
+Use GET to retrieve information for the Keyword report.  Data can be returned for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.
 
 The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters `page` and `page_size`.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
 
@@ -25,7 +25,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`page`|Specifies which page of results to return.  Default is 1 |
 |`sort_by`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`.  Default: `keyword`|
 |`sort_dir`|Specifies the sort direction.  Can be either `asc` or `desc`. Default: `asc`|
-|`types[]`|Specifies the campaign type of keyword.  Can be either `search` or `display`. Default: `search`|
+|`types[]`|Specifies the campaign type of keyword.  Can be `search` and `display`. Default: `search` Ex: types[]=display,search|
 
 ### Examples:
 
@@ -48,6 +48,13 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?global_mast
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15
+```
+
+> Retrieve data for both search and display campaigns
+
+```
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?types[]=display,search&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15
 ```
 
 > Response Description
@@ -81,16 +88,17 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
   "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&page=1&page_size=15",
   "available_campaigns": [                  // All campaigns for advertiser
     {
-      "name": "Ad_Campaign_1",              // Name of campaign
-      "global_master_campaign_id": "USA_11",// Identifier for campaign
+        "global_master_campaign_id": "USA_3", // Identifier for campaign
+        "name": "Stopped Campaign",           // Campaign Name
+        "campaign_type": "display",           // Campaign Type
+        "status": "stopped",                  // Status of Campaign
+        "organization": "gannett",            // Organization Campaign is from
+        "start_date": "2019-09-07",           // Start Date of Campaign
+        "end_date": "2019-10-07"              // End Date of Campaign
     }
   ],
   "page": 1,                                // Page number of this data
   "page_size": 15,                          // page size used to generate this data
-  "data_import_status": {
-     "KeywordActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
-     "Campaign": "2016-12-07T20:11:44.000Z"           // Table last updated
-  }
 }
 
 ```
@@ -147,16 +155,16 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
   "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_123?interval_type=day&number_of_intervals=30&range=custom&status%5B%5D=stopped&page=1&page_size=15",
   "available_campaigns": [
     {
-      "name": "Stopped Campaign",
-      "global_master_campaign_id": "USA_3",
-      "status": "stopped"
+        "global_master_campaign_id": "USA_3",
+        "name": "Stopped Campaign",
+        "campaign_type": "display",
+        "status": "stopped",
+        "organization": "gannett",
+        "start_date": "2019-09-07",
+        "end_date": "2019-10-07"
     }
   ],
   "page": 1,
-  "page_size": 15,
-  "data_import_status": {
-    "KeywordActivity": "2017-01-04T21:23:49.000Z",
-    "Campaign": "2017-01-04T21:23:49.000Z"
-  }
+  "page_size": 15
 }
 ```
