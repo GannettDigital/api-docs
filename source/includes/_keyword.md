@@ -1,19 +1,13 @@
-## Keyword Performance Metrics
+## Keyword Performance Metrics API
 
-### Resource Overview
+### Summary
+This endpoint retrieves the totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword for a specific time period. Keyword metrics are available for both traditional SEM and Display retargeting campaign types. Data is returned in pages, controlled by the parameterspageandpage_size. The first page is page 1. Default values of 1 and 15 will be used if not specified.
 
-| Method | URI Format |
-|---|---|
-| GET | /client_reports/keyword/[gmaid]?[query_params] |
-### API Name: Keyword Report
-### Usage
-Use GET to retrieve information for the Keyword report.  Data can be returned for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.
-
-The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters `page` and `page_size`.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
+### Recommended usage pattern
+The API supports up to 2 years of data retrieval between the start_date and end_date request parameters. For daily metrics, please call the API with a day’s time window. Keywords metrics arenot expected to change for campaigns that have ended and for after a period of 30 days.Data is sorted in alphabetical order by keyword.
 
 ### Parameters
-
-When using the GET method, the results can be filtered using these parameters:
+The API accepts the request parameters listed below
 
 | Param | Function |
 |---|---|
@@ -26,6 +20,11 @@ When using the GET method, the results can be filtered using these parameters:
 |`sort_by`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`.  Default: `keyword`|
 |`sort_dir`|Specifies the sort direction.  Can be either `asc` or `desc`. Default: `asc`|
 |`types[]`|Specifies the campaign type of keyword.  Can be `search` and `display`. Default: `search` Ex: types[]=display,search|
+
+### Resource Overview
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/keyword/[gmaid]?[query_params] |
 
 ### Examples:
 
