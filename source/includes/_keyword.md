@@ -1,30 +1,31 @@
-## Keyword Performance Metrics API
-
-### Summary
-This endpoint retrieves the totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword for a specific time period. Keyword metrics are available for both traditional SEM and Display retargeting campaign types. Data is returned in pages, controlled by the parameterspageandpage_size. The first page is page 1. Default values of 1 and 15 will be used if not specified.
-
-### Recommended usage pattern
-The API supports up to 2 years of data retrieval between the start_date and end_date request parameters. For daily metrics, please call the API with a day’s time window. Keywords metrics arenot expected to change for campaigns that have ended and for after a period of 30 days.Data is sorted in alphabetical order by keyword.
-
-### Parameters
-The API accepts the request parameters listed below
-
-| Param | Function |
-|---|---|
-|`start_date`|Restricts the results to those occurring on or after this date.|
-|`end_date`|Restricts the results to those occurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
-|`page_size`|Restrict number of keywords in result.  Default is 15 |
-|`page`|Specifies which page of results to return.  Default is 1 |
-|`sort_by`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`.  Default: `keyword`|
-|`sort_dir`|Specifies the sort direction.  Can be either `asc` or `desc`. Default: `asc`|
-|`types[]`|Specifies the campaign type of keyword.  Can be `search` and `display`. Default: `search` Ex: types[]=display,search|
+## Keyword Performance Metrics
 
 ### Resource Overview
+
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/keyword/[gmaid]?[query_params] |
+### API Name: Keyword Report
+### Usage
+Use GET to retrieve information for the Keyword report.  Data can be returned for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.
+
+The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters `page` and `page_size`.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
+
+### Parameters
+
+When using the GET method, the results can be filtered using these parameters:
+
+| Parameter | Required | Default | Description |
+|---|---|---|---|
+|`start_date`|Yes|--|Restricts the results to those occurring on or after this date.|
+|`end_date`|Yes|--|Restricts the results to those occurring on or before this date.|
+|`global_master_campaign_id[]`|No|All|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|No|All|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|`page_size`|No|15|Restrict number of keywords in result. |
+|`page`|No|1|Specifies which page of results to return. |
+|`sort_by`|No|`keyword`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`. |
+|`sort_dir`|No|`asc`|Specifies the sort direction.  Can be either `asc` or `desc`. |
+|`types[]`|No|`search`|Specifies the campaign type of keyword.  Can be `search` and `display`. Ex: types[]=display,search|
 
 ### Examples:
 
