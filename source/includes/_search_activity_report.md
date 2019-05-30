@@ -30,6 +30,122 @@ To specify a date range:
    - Specify start_date and end_date.
    - When specifying a `campaign_cycle`, do not use date range params.
 
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`report_type`|String|Type of report.|
+|`report_date`|String|Date report ran.|
+|`earliest_date_available`|String|How far back data is available.|
+|`start_date`|String|Start date of report.|
+|`end_date`|String|End date of report.|
+|`time_zone`|String|Time Zone.|
+|`interval_size`|String|Interval Size ('day', 'calendar_week' or 'calendar_month').|
+|`currency`|String|Currency for Advertiser.|
+|`report_data`|Object|Report details ('campaigns', 'totals', 'totals_per_interval').|
+|`global_master_advertiser_id`|String|Identifier for advertiser.|
+|`location`|String||
+|`available_campaigns`|Array|All campaigns for advertiser.|
+|`data_import_status`|Object|Timestamp of last updates of tables.|
+
+
+#### Report Data Campaigns Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`name`|String|Campaign name.|
+|`global_master_campaign_id`|String|Identifier for campaign.|
+|`start_date`|String|Start date for campaign.|
+|`end_date`|String|End date for campaign.|
+|`type`|String|Type of campaign.|
+|`intervals`|Array|Data for specified interval.|
+
+#### Campaign Intervals Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`start_date`|String|Start date of interval.|
+|`impressions`|Integer|Impressions for interval.|
+|`leads`|Integer|Leads for interval.|
+|`clicks`|Integer|Clicks for interval.|
+|`calls`|Integer|Calls for interval.|
+|`web_events`|Integer|Web events for interval.|
+|`emails`|Integer|Emails for interval.|
+|`spend`|Integer|Spend for interval.|
+|`ctr`|Integer|Click through rate for interval.|
+|`cpc`|Integer|Cost per click for interval.|
+
+#### Report Data Totals Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`impressions`|Integer|Total impressions.|
+|`leads`|Integer|Total leads.|
+|`clicks`|Integer|Total click events.|
+|`calls`|Integer|Total call events.|
+|`web_events`|Integer|Total web events.|
+|`emails`|Integer|Total email events.|
+|`spend`|Integer|Total spend.|
+|`ctr`|Integer|Total click through rate.|
+|`cpc`|Integer|Toal cost per click.|
+|`device_breakdowns`|Object|Object containing Impressions and Clicks totals.|
+
+#### Totals Device Breakdowns Impressions Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`desktop`|Object|Total and percent of total for impressions of desktop.|
+|`mobile`|Object|Total and percent of total for impressions of mobile.|
+|`tablet`|Object|Total and percent of total for impressions of tablet.|
+
+#### Totals Device Breakdowns Clicks Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`desktop`|Object|Total and percent of total for clicks of desktop.|
+|`mobile`|Object|Total and percent of total for clicks of mobile.|
+|`tablet`|Object|Total and percent of total for clicks of tablet.|
+
+#### Report Data Totals Per Interval Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`start_date`|String|Start date of interval.|
+|`impressions`|Integer|Total impressions for.| interval
+|`leads`|Integer|Total leads for interval.|
+|`clicks`|Integer|Total clicks for interval.|
+|`calls`|Integer|Total calls for interval.|
+|`web_events`|Integer|Total web events for interval.|
+|`emails`|Integer|Total emails for interval.|
+|`spend`|Integer|Total spend for interval.|
+|`ctr`|Integer| Total click through rate for.| interval
+|`cpc`|Integer|Total cost per click for interval.|
+
+#### Available Campaigns Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`name`|String|Name of campaign.|
+|`global_master_campaign_id`|String|Identifier for campaign.|
+|`status`|String|Status for campaign.|
+|`cycles`|Array|All cycles for advertiser.|
+
+#### Available Campaigns Cycles Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`campaign_cycle`|Integer|Identifier for cycle.|
+|`start_date`|String|Start date of cycle.|
+|`end_date`|String|End date of cycle.|
+|`name`|String|Name of cycle.|
+
+#### Data Import Status Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`DailyCampaignActivity`|String|Table last updated.|
+|`Campaign`|String|Table last updated.|
+
+
 ### Examples:
 
 > Retrieve data for a specific range of dates

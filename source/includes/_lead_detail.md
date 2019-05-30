@@ -32,6 +32,80 @@ To specify a date range:
    - Specify start_date and end_date.
    - When specifying a `campaign_cycle`, do not use date range params.
 
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`report_type`|String|Type of report.|
+|`report_date`|String|Date report ran.|
+|`earliest_date_available`|String|How far back data is available.|
+|`start_date`|String|Start date of report.|
+|`end_date`|String|End date of report.|
+|`time_zone`|String|Time Zone.|
+|`interval_size`|String|Interval size for report.|
+|`report_data`|Object|Report details.|
+|`global_master_advertiser_id`|String|Identifier for advertiser.|
+|`location`|URL||
+|`available_campaigns`||All campaigns for advertiser.|
+|`data_import_status`|Object|Timestamp of the last update for tables.|
+
+#### Report Data Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`totals_per_interval`|Array|Lead totals broken down by day or month.|
+|`call_duration`|Array|Call duration data. ('duration' duration range in seconds, 'totals' total calls for duration)|
+|`totals`|Object|Totals.|
+|`calls_by_time_and_day`|Object|Call by hour by day. (day of week, hour of day)|
+
+#### Report Data Totals Per Interval Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`start_date`|String|Start date for interval.|
+|`calls`|Integer|Calls for interval.|
+|`emails`|Integer|Emails for interval.|
+|`web_events`|Integer|Web events for interval.|
+|`chats`|Integer|Chats for interval.|
+
+#### Report Data Totals Per Interval Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`calls`|Integer|Total calls.|
+|`unique_calls`|Integer|Total unique calls.|
+|`calls_connected`|Integer|Total calls connected.|
+|`average_call_length`|Integer|Total average call length.|
+|`emails`|Integer|Total emails.|
+|`web_events`|Integer|Total web events.|
+|`chats`|Integer|Total chats.|
+|`leads`|Integer|Total leads.|
+
+#### Available Campaigns Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`name`|String|Name of campaign.|
+|`global_master_campaign_id`|String|Identifier for campaign.|
+|`status`|String|Status for campaign.|
+|`cycles`|Array|All cycles for advertiser.|
+
+#### Available Campaigns Cycles Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`campaign_cycle`|String|Identifier for cycle.|
+|`start_date`|String|Start date of cycle.|
+|`end_date`|String|End date of cycle.|
+|`name`|String|Name of cycle.|
+
+#### Data Import Status Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`DailyCampaignActivity`|String|Table last updated.|
+|`Campaign`|String|Table last updated.|
+|`Call`|String|Table last updated.|
+
 ### Examples:
 
 > Retrieve data for a specific range of dates

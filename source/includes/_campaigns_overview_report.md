@@ -44,6 +44,73 @@ The campaign list section will list all (both active and inactive) campaigns wit
 
 None
 
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`report_type`|String|Type of report.|
+|`report_date`|String|Date report ran.|
+|`start_date`|String|Start Date.|
+|`end_date`|String|End Date.|
+|`time_zone`|String|Time Zone of Data.|
+|`currency`|String|Currency of report.|
+|`report_data`|Object of Totals and Campaigns|Report details object containing Totals object and Campaigns array.|
+|`global_master_advertiser_id`|String|Identifier for advertiser.|
+|`location`|URL|URL location of this report.|
+|`data_import_status`|Object|Object containing DailyCampaignActivity and Campaign.|
+
+#### Report Data Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`totals`|Object|Object of totals details.|
+|`campaigns`|Array|Array of campaigns with campaign details.|
+
+#### Report Data Totals Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`impressions`|Integer|Total impressions.|
+|`clicks`|Integer|Total click events.|
+|`calls`|Integer|Total call events.|
+|`emails`|Integer|Total email events.|
+|`web_events`|Integer|Total web events.|
+|`chats`|Integer|Total chat events.|
+
+#### Report Data Campaigns Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`name`|String|Campaign name.|
+|`global_master_campaign_id`|String|Identifier for campaign.|
+|`type`|String|Type of campaign.|
+|`source`|String|Source of campaign.|
+|`currency`|String|Type of currency used.|
+|`start_date`|String|Start date for campaign.|
+|`end_date`|String|End date for campaign.|
+|`status`|String|campaign status.|
+|`cycles`|String|Data for cycles.|
+
+#### Report Data Campaigns Cycles Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`campaign_cycle`|String|Identifier for cycle.|
+|`start_date`|String|Start date for cycle.|
+|`end_date`|String|End date for cycle.|
+|`impressions`|Integer|Total Impressions for cycle.|
+|`clicks`|Integer|Total Clicks for cycle.|
+|`leads`|Integer|Total Leads for cycle.|
+|`spend`|Integer|Total Spend/Cost of cycle.|
+|`budget`|Integer|Total Budget of cycle.|
+
+#### Data Import Status Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`DailyCampaignActivity`|String|Table last updated.|
+|`Campaign`|String|Table last updated.|
+
+
 ### Example:
 
 ```
