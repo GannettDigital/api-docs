@@ -32,6 +32,7 @@ To specify a date range:
    - Specify start_date and end_date.
    - When specifying a `campaign_cycle`, do not use date range params.
 
+### Response Data Details
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -42,22 +43,24 @@ To specify a date range:
 |`end_date`|String|End date of report.|
 |`time_zone`|String|Time Zone.|
 |`interval_size`|String|Interval size for report.|
-|`report_data`|Object|Report details.|
+|`report_data`|Object|[Report Data Object.](#leadreportdata)|
 |`global_master_advertiser_id`|String|Identifier for advertiser.|
 |`location`|URL||
-|`available_campaigns`||All campaigns for advertiser.|
-|`data_import_status`|Object|Timestamp of the last update for tables.|
+|`available_campaigns`|Array|All campaigns for advertiser. [Available Campaigns Array.](#leadavailablecampaigns)|
+|`data_import_status`|Object|Timestamp of the last update for tables. [Data Import Status Object.](#leaddataimport)|
 
-#### Report Data Details
+<a name="leadreportdata"></a>
+#### Report Data Object
 
 | Field Name | Datatype | Description |
 |---|---|---|
-|`totals_per_interval`|Array|Lead totals broken down by day or month.|
+|`totals_per_interval`|Array|Lead totals broken down by day or month. [Totals Per Interval Array.](#leadtotalsinterval)|
 |`call_duration`|Array|Call duration data. ('duration' duration range in seconds, 'totals' total calls for duration)|
-|`totals`|Object|Totals.|
+|`totals`|Object|Totals. [Totals Object.](#leadtotals)|
 |`calls_by_time_and_day`|Object|Call by hour by day. (day of week, hour of day)|
 
-#### Report Data Totals Per Interval Details
+<a name="leadtotalsinterval"></a>
+#### Totals Per Interval Array
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -67,7 +70,8 @@ To specify a date range:
 |`web_events`|Integer|Web events for interval.|
 |`chats`|Integer|Chats for interval.|
 
-#### Report Data Totals Per Interval Details
+<a name="leadtotals"></a>
+#### Totals Object
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -80,16 +84,18 @@ To specify a date range:
 |`chats`|Integer|Total chats.|
 |`leads`|Integer|Total leads.|
 
-#### Available Campaigns Details
+<a name="leadavailablecampaigns"></a>
+#### Available Campaigns Array
 
 | Field Name | Datatype | Description |
 |---|---|---|
 |`name`|String|Name of campaign.|
 |`global_master_campaign_id`|String|Identifier for campaign.|
 |`status`|String|Status for campaign.|
-|`cycles`|Array|All cycles for advertiser.|
+|`cycles`|Array|All cycles for advertiser. [Cycles Array.](#leadcycles)|
 
-#### Available Campaigns Cycles Details
+<a name="leadcycles"></a>
+#### Cycles Array
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -98,7 +104,8 @@ To specify a date range:
 |`end_date`|String|End date of cycle.|
 |`name`|String|Name of cycle.|
 
-#### Data Import Status Details
+<a name="leaddataimport"></a>
+#### Data Import Status Object
 
 | Field Name | Datatype | Description |
 |---|---|---|
