@@ -11,7 +11,7 @@ Use GET to retrieve information for the Campaigns Overview report.
 
 The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.  Campaign are limited to those that have had activity within the previous year.  This means that a campaign that ended 13 months prior will not be included in the campaign list section.
 
-The performance metrics for the last 30 days are across all active campaigns and will include:
+The performance metrics for the last 30 days are across all running campaigns and will include:
 
 - Total Impressions
 - Total Clicks
@@ -20,7 +20,7 @@ The performance metrics for the last 30 days are across all active campaigns and
 - Total Web Events
 - Total Chat Events
 
-The campaign list section will list all (both active and inactive) campaigns with the following information for each campaign in the list:
+The campaign list section will list all (both running, stopped and ended) campaigns with the following information for each campaign in the list:
 
 - Campaign Name
 - Campaign ID (global_master_campaign_id)
@@ -43,6 +43,79 @@ The campaign list section will list all (both active and inactive) campaigns wit
 ### Parameters
 
 None
+
+### Response Data Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`report_type`|String|Type of report.|
+|`report_date`|String|Date report ran.|
+|`start_date`|String|Start Date.|
+|`end_date`|String|End Date.|
+|`time_zone`|String|Time Zone of Data.|
+|`currency`|String|Currency of report.|
+|`report_data`|Object|Report details object containing Totals object and Campaigns array. [Report Data Object](#campaignreportdata)|
+|`global_master_advertiser_id`|String|Identifier for advertiser.|
+|`location`|URL|URL location of this report.|
+|`data_import_status`|Object|Object containing DailyCampaignActivity and Campaign. [Data Import Status Object] (#campaigndataimport)|
+
+<a name="campaignreportdata"></a>
+#### Report Data Object
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`totals`|Object|Object of totals details. [Totals Object](#campaigntotals)|
+|`campaigns`|Array|Array of campaigns with campaign details. [Campaigns Object](#campaignsdetails)|
+
+<a name="campaigntotals"></a>
+#### Totals Object (Running campaign performance totals for the last 30 days )
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`impressions`|Integer|Total impressions.|
+|`clicks`|Integer|Total click events.|
+|`calls`|Integer|Total call events.|
+|`emails`|Integer|Total email events.|
+|`web_events`|Integer|Total web events.|
+|`chats`|Integer|Total chat events.|
+
+<a name="campaignsdetails"></a>
+#### Campaigns Object
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`name`|String|Campaign name.|
+|`global_master_campaign_id`|String|Identifier for campaign.|
+|`type`|String|Type of campaign.|
+|`source`|String|Source of campaign.|
+|`currency`|String|Type of currency used.|
+|`start_date`|String|Start date for campaign.|
+|`end_date`|String|End date for campaign.|
+|`status`|String|campaign status.|
+|`cycles`|Object|Data for cycles. [Cycles Object](#campaignscycles)|
+
+<a name="campaignscycles"></a>
+#### Cycles Object
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`campaign_cycle`|String|Identifier for cycle.|
+|`start_date`|String|Start date for cycle.|
+|`end_date`|String|End date for cycle.|
+|`impressions`|Integer|Total Impressions for cycle.|
+|`clicks`|Integer|Total Clicks for cycle.|
+|`leads`|Integer|Total Leads for cycle.|
+|`spend`|Integer|Total Spend/Cost of cycle.|
+|`budget`|Integer|Total Budget of cycle.|
+
+<a name="campaigndataimport"></a>
+#### Data Import Status Object
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`DailyCampaignActivity`|String|Table last updated.|
+|`Campaign`|String|Table last updated.|
+
 
 ### Example:
 
