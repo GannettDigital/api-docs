@@ -306,6 +306,9 @@
                             <a href="#api-campaigns-overview-parameters" class="toc-h3 toc-link" data-title="API">Parameters</a>
                           </li>
                           <li class="toc-h3-li">
+                            <a href="#api-campaigns-overview-response-data-details" class="toc-h3 toc-link" data-title="API">Response Data Details</a>
+                          </li>
+                          <li class="toc-h3-li">
                             <a href="#api-campaigns-overview-example" class="toc-h3 toc-link" data-title="API">Example:</a>
                           </li>
                       </ul>
@@ -401,6 +404,9 @@
                           </li>
                           <li class="toc-h3-li">
                             <a href="#api-search-campaign-metrics-parameters" class="toc-h3 toc-link" data-title="API">Parameters</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-search-campaign-metrics-response-data-details" class="toc-h3 toc-link" data-title="API">Response Data Details</a>
                           </li>
                           <li class="toc-h3-li">
                             <a href="#api-search-campaign-metrics-examples" class="toc-h3 toc-link" data-title="API">Examples:</a>
@@ -511,6 +517,9 @@
                           </li>
                           <li class="toc-h3-li">
                             <a href="#api-lead-details-parameters" class="toc-h3 toc-link" data-title="API">Parameters</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-lead-details-response-data-details" class="toc-h3 toc-link" data-title="API">Response Data Details</a>
                           </li>
                           <li class="toc-h3-li">
                             <a href="#api-lead-details-examples" class="toc-h3 toc-link" data-title="API">Examples:</a>
@@ -1231,7 +1240,7 @@
 
 <p>The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.  Campaign are limited to those that have had activity within the previous year.  This means that a campaign that ended 13 months prior will not be included in the campaign list section.</p>
 
-<p>The performance metrics for the last 30 days are across all active campaigns and will include:</p>
+<p>The performance metrics for the last 30 days are across all running campaigns and will include:</p>
 
 <ul>
 <li>Total Impressions</li>
@@ -1242,7 +1251,7 @@
 <li>Total Chat Events</li>
 </ul>
 
-<p>The campaign list section will list all (both active and inactive) campaigns with the following information for each campaign in the list:</p>
+<p>The campaign list section will list all (both running, stopped and ended) campaigns with the following information for each campaign in the list:</p>
 
 <ul>
 <li>Campaign Name</li>
@@ -1268,6 +1277,255 @@
 </ul>
 <h3 id='api-campaigns-overview-parameters'>Parameters</h3>
 <p>None</p>
+<h3 id='api-campaigns-overview-response-data-details'>Response Data Details</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>report_type</code></td>
+<td>String</td>
+<td>Type of report.</td>
+</tr>
+<tr>
+<td><code>report_date</code></td>
+<td>String</td>
+<td>Date report ran.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start Date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End Date.</td>
+</tr>
+<tr>
+<td><code>time_zone</code></td>
+<td>String</td>
+<td>Time Zone of Data.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>String</td>
+<td>Currency of report.</td>
+</tr>
+<tr>
+<td><code>report_data</code></td>
+<td>Object</td>
+<td>Report details object containing Totals object and Campaigns array. <a href="#campaignreportdata">Report Data Object</a></td>
+</tr>
+<tr>
+<td><code>global_master_advertiser_id</code></td>
+<td>String</td>
+<td>Identifier for advertiser.</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>URL</td>
+<td>URL location of this report.</td>
+</tr>
+<tr>
+<td><code>data_import_status</code></td>
+<td>Object</td>
+<td>Object containing DailyCampaignActivity and Campaign. <a href="#campaigndataimport">Data Import Status Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="campaignreportdata"></a></p>
+<h4 id='api-campaigns-overview-response-data-details-report-data-object'>Report Data Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>totals</code></td>
+<td>Object</td>
+<td>Object of totals details. <a href="#campaigntotals">Totals Object</a></td>
+</tr>
+<tr>
+<td><code>campaigns</code></td>
+<td>Array</td>
+<td>Array of campaigns with campaign details. <a href="#campaignsdetails">Campaigns Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="campaigntotals"></a></p>
+<h4 id='api-campaigns-overview-response-data-details-totals-object-running-campaign-performance-totals-for-the-last-30-days'>Totals Object (Running campaign performance totals for the last 30 days )</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>impressions</code></td>
+<td>Integer</td>
+<td>Total impressions.</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Integer</td>
+<td>Total click events.</td>
+</tr>
+<tr>
+<td><code>calls</code></td>
+<td>Integer</td>
+<td>Total call events.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td>Integer</td>
+<td>Total email events.</td>
+</tr>
+<tr>
+<td><code>web_events</code></td>
+<td>Integer</td>
+<td>Total web events.</td>
+</tr>
+<tr>
+<td><code>chats</code></td>
+<td>Integer</td>
+<td>Total chat events.</td>
+</tr>
+</tbody></table>
+
+<p><a name="campaignsdetails"></a></p>
+<h4 id='api-campaigns-overview-response-data-details-campaigns-object'>Campaigns Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Campaign name.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id</code></td>
+<td>String</td>
+<td>Identifier for campaign.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>Type of campaign.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>String</td>
+<td>Source of campaign.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>String</td>
+<td>Type of currency used.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date for campaign.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End date for campaign.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>String</td>
+<td>campaign status.</td>
+</tr>
+<tr>
+<td><code>cycles</code></td>
+<td>Object</td>
+<td>Data for cycles. <a href="#campaignscycles">Cycles Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="campaignscycles"></a></p>
+<h4 id='api-campaigns-overview-response-data-details-cycles-object'>Cycles Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>campaign_cycle</code></td>
+<td>String</td>
+<td>Identifier for cycle.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date for cycle.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End date for cycle.</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Integer</td>
+<td>Total Impressions for cycle.</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Integer</td>
+<td>Total Clicks for cycle.</td>
+</tr>
+<tr>
+<td><code>leads</code></td>
+<td>Integer</td>
+<td>Total Leads for cycle.</td>
+</tr>
+<tr>
+<td><code>spend</code></td>
+<td>Integer</td>
+<td>Total Spend/Cost of cycle.</td>
+</tr>
+<tr>
+<td><code>budget</code></td>
+<td>Integer</td>
+<td>Total Budget of cycle.</td>
+</tr>
+</tbody></table>
+
+<p><a name="campaigndataimport"></a></p>
+<h4 id='api-campaigns-overview-response-data-details-data-import-status-object'>Data Import Status Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>DailyCampaignActivity</code></td>
+<td>String</td>
+<td>Table last updated.</td>
+</tr>
+<tr>
+<td><code>Campaign</code></td>
+<td>String</td>
+<td>Table last updated.</td>
+</tr>
+</tbody></table>
 <h3 id='api-campaigns-overview-example'>Example:</h3><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.reachlocalservices.com/client_reports/campaigns_overview/USA_105569
 </code></pre>
@@ -2912,6 +3170,486 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&a
 <li>Specify start_date and end_date.</li>
 <li>When specifying a <code>campaign_cycle</code>, do not use date range params.</li>
 </ul>
+<h3 id='api-search-campaign-metrics-response-data-details'>Response Data Details</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>report_type</code></td>
+<td>String</td>
+<td>Type of report.</td>
+</tr>
+<tr>
+<td><code>report_date</code></td>
+<td>String</td>
+<td>Date report ran.</td>
+</tr>
+<tr>
+<td><code>earliest_date_available</code></td>
+<td>String</td>
+<td>How far back data is available.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date of report.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End date of report.</td>
+</tr>
+<tr>
+<td><code>time_zone</code></td>
+<td>String</td>
+<td>Time Zone.</td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>String</td>
+<td>Interval Size (&#39;day&#39;, &#39;calendar_week&#39; or &#39;calendar_month&#39;).</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>String</td>
+<td>Currency for Advertiser.</td>
+</tr>
+<tr>
+<td><code>report_data</code></td>
+<td>Object</td>
+<td><a href="#searchreportdata">Report Data Object.</a></td>
+</tr>
+<tr>
+<td><code>global_master_advertiser_id</code></td>
+<td>String</td>
+<td>Identifier for advertiser.</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td><code>available_campaigns</code></td>
+<td>Array</td>
+<td>All campaigns for advertiser. <a href="#searchavailablecampaigns">Available Campaigns Array.</a></td>
+</tr>
+<tr>
+<td><code>data_import_status</code></td>
+<td>Object</td>
+<td>Timestamp of last updates of tables. <a href="#searchdataimportstatus">Data Import Status Object.</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="searchreportdata"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-report-data-object'>Report Data Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>campaigns</code></td>
+<td>Array</td>
+<td>All data for campigns. <a href="#searchcampaigns">Campaigns Array.</a></td>
+</tr>
+<tr>
+<td><code>totals</code></td>
+<td>Object</td>
+<td>Totals data. <a href="#searchtotals">Totals Details.</a></td>
+</tr>
+<tr>
+<td><code>totals_per_interval</code></td>
+<td>Array</td>
+<td>Totals per interval over multiple campaigns. <a href="#searchtotalsperinterval">Totals Per Interval Details.</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="searchcampaigns"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-campaigns-array'>Campaigns Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Campaign name.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id</code></td>
+<td>String</td>
+<td>Identifier for campaign.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date for campaign.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End date for campaign.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>Type of campaign.</td>
+</tr>
+<tr>
+<td><code>intervals</code></td>
+<td>Array</td>
+<td>Data for specified interval. <a href="#searchintervals">Intervals Array.</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="searchintervals"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-intervals-array'>Intervals Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date of interval.</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Integer</td>
+<td>Impressions for interval.</td>
+</tr>
+<tr>
+<td><code>leads</code></td>
+<td>Integer</td>
+<td>Leads for interval.</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Integer</td>
+<td>Clicks for interval.</td>
+</tr>
+<tr>
+<td><code>calls</code></td>
+<td>Integer</td>
+<td>Calls for interval.</td>
+</tr>
+<tr>
+<td><code>web_events</code></td>
+<td>Integer</td>
+<td>Web events for interval.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td>Integer</td>
+<td>Emails for interval.</td>
+</tr>
+<tr>
+<td><code>spend</code></td>
+<td>Integer</td>
+<td>Spend for interval.</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Integer</td>
+<td>Click through rate for interval.</td>
+</tr>
+<tr>
+<td><code>cpc</code></td>
+<td>Integer</td>
+<td>Cost per click for interval.</td>
+</tr>
+</tbody></table>
+
+<p><a name="searchtotals"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-totals-object'>Totals Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>impressions</code></td>
+<td>Integer</td>
+<td>Total impressions.</td>
+</tr>
+<tr>
+<td><code>leads</code></td>
+<td>Integer</td>
+<td>Total leads.</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Integer</td>
+<td>Total click events.</td>
+</tr>
+<tr>
+<td><code>calls</code></td>
+<td>Integer</td>
+<td>Total call events.</td>
+</tr>
+<tr>
+<td><code>web_events</code></td>
+<td>Integer</td>
+<td>Total web events.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td>Integer</td>
+<td>Total email events.</td>
+</tr>
+<tr>
+<td><code>spend</code></td>
+<td>Integer</td>
+<td>Total spend.</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Integer</td>
+<td>Total click through rate.</td>
+</tr>
+<tr>
+<td><code>cpc</code></td>
+<td>Integer</td>
+<td>Toal cost per click.</td>
+</tr>
+<tr>
+<td><code>device_breakdowns</code></td>
+<td>Object</td>
+<td>Details breakdown by device. <a href="#searchdevicebreakdowns">Device Breakdowns Object.</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="searchdevicebreakdowns"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-device-breakdowns-object'>Device Breakdowns Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Impressions</td>
+<td>Object</td>
+<td>Device breakdown of impressions. <a href="#searchimpressions">Impressions Object.</a></td>
+</tr>
+<tr>
+<td>Clicks</td>
+<td>Object</td>
+<td>Device breakdown of clicks. <a href="#searchclicks">Clicks Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="searchimpressions"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-impressions-object'>Impressions Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>desktop</code></td>
+<td>Object</td>
+<td>Total and percent of total for impressions of desktop.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>Object</td>
+<td>Total and percent of total for impressions of mobile.</td>
+</tr>
+<tr>
+<td><code>tablet</code></td>
+<td>Object</td>
+<td>Total and percent of total for impressions of tablet.</td>
+</tr>
+</tbody></table>
+
+<p><a name="searchclicks"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-clicks-object'>Clicks Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>desktop</code></td>
+<td>Object</td>
+<td>Total and percent of total for clicks of desktop.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>Object</td>
+<td>Total and percent of total for clicks of mobile.</td>
+</tr>
+<tr>
+<td><code>tablet</code></td>
+<td>Object</td>
+<td>Total and percent of total for clicks of tablet.</td>
+</tr>
+</tbody></table>
+
+<p><a name="searchtotalsperinterval"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-totals-per-interval-array'>Totals Per Interval Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date of interval.</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Integer</td>
+<td>Total impressions for.</td>
+</tr>
+<tr>
+<td><code>leads</code></td>
+<td>Integer</td>
+<td>Total leads for interval.</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Integer</td>
+<td>Total clicks for interval.</td>
+</tr>
+<tr>
+<td><code>calls</code></td>
+<td>Integer</td>
+<td>Total calls for interval.</td>
+</tr>
+<tr>
+<td><code>web_events</code></td>
+<td>Integer</td>
+<td>Total web events for interval.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td>Integer</td>
+<td>Total emails for interval.</td>
+</tr>
+<tr>
+<td><code>spend</code></td>
+<td>Integer</td>
+<td>Total spend for interval.</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Integer</td>
+<td>Total click through rate for.</td>
+</tr>
+<tr>
+<td><code>cpc</code></td>
+<td>Integer</td>
+<td>Total cost per click for interval.</td>
+</tr>
+</tbody></table>
+
+<p><a name="searchavailablecampaigns"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-available-campaigns-array'>Available Campaigns Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Name of campaign.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id</code></td>
+<td>String</td>
+<td>Identifier for campaign.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>String</td>
+<td>Status for campaign.</td>
+</tr>
+<tr>
+<td><code>cycles</code></td>
+<td>Array</td>
+<td>All cycles for advertiser. <a href="#searchcycles">Cycles Array.</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="searchcycles"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-cycles-array'>Cycles Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>campaign_cycle</code></td>
+<td>Integer</td>
+<td>Identifier for cycle.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date of cycle.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End date of cycle.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Name of cycle.</td>
+</tr>
+</tbody></table>
+
+<p><a name="searchdataimportstatus"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-data-import-status-object'>Data Import Status Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>DailyCampaignActivity</code></td>
+<td>String</td>
+<td>Table last updated.</td>
+</tr>
+<tr>
+<td><code>Campaign</code></td>
+<td>String</td>
+<td>Table last updated.</td>
+</tr>
+</tbody></table>
 <h3 id='api-search-campaign-metrics-examples'>Examples:</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
@@ -4770,6 +5508,281 @@ Finally, the report will have a break down for calls by hour for each day of the
 <li>Specify start_date and end_date.</li>
 <li>When specifying a <code>campaign_cycle</code>, do not use date range params.</li>
 </ul>
+<h3 id='api-lead-details-response-data-details'>Response Data Details</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>report_type</code></td>
+<td>String</td>
+<td>Type of report.</td>
+</tr>
+<tr>
+<td><code>report_date</code></td>
+<td>String</td>
+<td>Date report ran.</td>
+</tr>
+<tr>
+<td><code>earliest_date_available</code></td>
+<td>String</td>
+<td>How far back data is available.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date of report.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End date of report.</td>
+</tr>
+<tr>
+<td><code>time_zone</code></td>
+<td>String</td>
+<td>Time Zone.</td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>String</td>
+<td>Interval size for report.</td>
+</tr>
+<tr>
+<td><code>report_data</code></td>
+<td>Object</td>
+<td><a href="#leadreportdata">Report Data Object.</a></td>
+</tr>
+<tr>
+<td><code>global_master_advertiser_id</code></td>
+<td>String</td>
+<td>Identifier for advertiser.</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>URL</td>
+<td></td>
+</tr>
+<tr>
+<td><code>available_campaigns</code></td>
+<td>Array</td>
+<td>All campaigns for advertiser. <a href="#leadavailablecampaigns">Available Campaigns Array.</a></td>
+</tr>
+<tr>
+<td><code>data_import_status</code></td>
+<td>Object</td>
+<td>Timestamp of the last update for tables. <a href="#leaddataimport">Data Import Status Object.</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="leadreportdata"></a></p>
+<h4 id='api-lead-details-response-data-details-report-data-object'>Report Data Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>totals_per_interval</code></td>
+<td>Array</td>
+<td>Lead totals broken down by day or month. <a href="#leadtotalsinterval">Totals Per Interval Array.</a></td>
+</tr>
+<tr>
+<td><code>call_duration</code></td>
+<td>Array</td>
+<td>Call duration data. (&#39;duration&#39; duration range in seconds, &#39;totals&#39; total calls for duration)</td>
+</tr>
+<tr>
+<td><code>totals</code></td>
+<td>Object</td>
+<td>Totals. <a href="#leadtotals">Totals Object.</a></td>
+</tr>
+<tr>
+<td><code>calls_by_time_and_day</code></td>
+<td>Object</td>
+<td>Call by hour by day. (day of week, hour of day)</td>
+</tr>
+</tbody></table>
+
+<p><a name="leadtotalsinterval"></a></p>
+<h4 id='api-lead-details-response-data-details-totals-per-interval-array'>Totals Per Interval Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date for interval.</td>
+</tr>
+<tr>
+<td><code>calls</code></td>
+<td>Integer</td>
+<td>Calls for interval.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td>Integer</td>
+<td>Emails for interval.</td>
+</tr>
+<tr>
+<td><code>web_events</code></td>
+<td>Integer</td>
+<td>Web events for interval.</td>
+</tr>
+<tr>
+<td><code>chats</code></td>
+<td>Integer</td>
+<td>Chats for interval.</td>
+</tr>
+</tbody></table>
+
+<p><a name="leadtotals"></a></p>
+<h4 id='api-lead-details-response-data-details-totals-object'>Totals Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>calls</code></td>
+<td>Integer</td>
+<td>Total calls.</td>
+</tr>
+<tr>
+<td><code>unique_calls</code></td>
+<td>Integer</td>
+<td>Total unique calls.</td>
+</tr>
+<tr>
+<td><code>calls_connected</code></td>
+<td>Integer</td>
+<td>Total calls connected.</td>
+</tr>
+<tr>
+<td><code>average_call_length</code></td>
+<td>Integer</td>
+<td>Total average call length.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td>Integer</td>
+<td>Total emails.</td>
+</tr>
+<tr>
+<td><code>web_events</code></td>
+<td>Integer</td>
+<td>Total web events.</td>
+</tr>
+<tr>
+<td><code>chats</code></td>
+<td>Integer</td>
+<td>Total chats.</td>
+</tr>
+<tr>
+<td><code>leads</code></td>
+<td>Integer</td>
+<td>Total leads.</td>
+</tr>
+</tbody></table>
+
+<p><a name="leadavailablecampaigns"></a></p>
+<h4 id='api-lead-details-response-data-details-available-campaigns-array'>Available Campaigns Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Name of campaign.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id</code></td>
+<td>String</td>
+<td>Identifier for campaign.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>String</td>
+<td>Status for campaign.</td>
+</tr>
+<tr>
+<td><code>cycles</code></td>
+<td>Array</td>
+<td>All cycles for advertiser. <a href="#leadcycles">Cycles Array.</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="leadcycles"></a></p>
+<h4 id='api-lead-details-response-data-details-cycles-array'>Cycles Array</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>campaign_cycle</code></td>
+<td>String</td>
+<td>Identifier for cycle.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start date of cycle.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End date of cycle.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Name of cycle.</td>
+</tr>
+</tbody></table>
+
+<p><a name="leaddataimport"></a></p>
+<h4 id='api-lead-details-response-data-details-data-import-status-object'>Data Import Status Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>DailyCampaignActivity</code></td>
+<td>String</td>
+<td>Table last updated.</td>
+</tr>
+<tr>
+<td><code>Campaign</code></td>
+<td>String</td>
+<td>Table last updated.</td>
+</tr>
+<tr>
+<td><code>Call</code></td>
+<td>String</td>
+<td>Table last updated.</td>
+</tr>
+</tbody></table>
 <h3 id='api-lead-details-examples'>Examples:</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
