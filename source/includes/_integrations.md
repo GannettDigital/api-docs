@@ -1,4 +1,4 @@
-# CRM Integration (BETA)
+# CRM Integration
 
 ![Integration](/images/integration.png)
 
