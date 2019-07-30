@@ -7,7 +7,7 @@
 | GET | /client_reports/keyword/[gmaid]?[query_params] |
 ### API Name: Keyword Report
 ### Usage
-Use GET to retrieve information for the Keyword report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.
+Use GET to retrieve information for the Keyword report.  Data can be returned for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.
 
 The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters `page` and `page_size`.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
 
@@ -15,16 +15,17 @@ The data returned will include totals for number of keywords, impressions, click
 
 When using the GET method, the results can be filtered using these parameters:
 
-| Param | Function |
-|---|---|
-|`start_date`|Restricts the results to those occurring on or after this date.|
-|`end_date`|Restricts the results to those occurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
-|`page_size`|Restrict number of keywords in result.  Default is 15 |
-|`page`|Specifies which page of results to return.  Default is 1 |
-|`sort_by`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`.  Default: `keyword`|
-|`sort_dir`|Specifies the sort direction.  Can be either `asc` or `desc`. Default: `asc`|
+| Parameter | Required | Default | Description |
+|---|---|---|---|
+|`start_date`|Yes|--|Restricts the results to those occurring on or after this date.|
+|`end_date`|Yes|--|Restricts the results to those occurring on or before this date.|
+|`global_master_campaign_id[]`|No|All|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|`campaign_status[]`|No|All|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|`page_size`|No|15|Restrict number of keywords in result. |
+|`page`|No|1|Specifies which page of results to return. |
+|`sort_by`|No|`keyword`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`. |
+|`sort_dir`|No|`asc`|Specifies the sort direction.  Can be either `asc` or `desc`. |
+|`types[]`|No|`search`|Specifies the campaign type of keyword.  Can be `search` and `display`. Ex: types[]=display,search|
 
 ### Examples:
 
@@ -49,6 +50,13 @@ curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15
 ```
 
+> Retrieve data for both search and display campaigns
+
+```
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?types[]=display,search&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15
+```
+
 > Response Description
 
 ```javascript
@@ -63,6 +71,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
     "keywords": [                           // Keyword data
       {
         "keyword": "beach home",        // Keyword
+        "type": "search",               // Type for Keyword
         "impressions": 25,              // Impressions for Keyword
         "clicks": 20,                   // Clicks for Keyword
         "ctr": 0.8                      // CTR for Keyword
@@ -79,16 +88,17 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
   "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&page=1&page_size=15",
   "available_campaigns": [                  // All campaigns for advertiser
     {
-      "name": "Ad_Campaign_1",              // Name of campaign
-      "global_master_campaign_id": "USA_11",// Identifier for campaign
+        "global_master_campaign_id": "USA_3", // Identifier for campaign
+        "name": "Stopped Campaign",           // Campaign Name
+        "campaign_type": "display",           // Campaign Type
+        "status": "stopped",                  // Status of Campaign
+        "organization": "gannett",            // Organization Campaign is from
+        "start_date": "2019-09-07",           // Start Date of Campaign
+        "end_date": "2019-10-07"              // End Date of Campaign
     }
   ],
   "page": 1,                                // Page number of this data
   "page_size": 15,                          // page size used to generate this data
-  "data_import_status": {
-     "KeywordActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
-     "Campaign": "2016-12-07T20:11:44.000Z"           // Table last updated
-  }
 }
 
 ```
@@ -107,24 +117,28 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
     "keywords": [
       {
         "keyword": "beach",
+        "type": "search",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
       },
       {
         "keyword": "cruise",
+        "type": "search",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
       },
       {
         "keyword": "ocean",
+        "type": "search",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
       },
       {
         "keyword": "vacation",
+        "type": "display",
         "impressions": 2300,
         "clicks": 230,
         "ctr": 10
@@ -141,16 +155,16 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&campaign_s
   "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_123?interval_type=day&number_of_intervals=30&range=custom&status%5B%5D=stopped&page=1&page_size=15",
   "available_campaigns": [
     {
-      "name": "Stopped Campaign",
-      "global_master_campaign_id": "USA_3",
-      "status": "stopped"
+        "global_master_campaign_id": "USA_3",
+        "name": "Stopped Campaign",
+        "campaign_type": "display",
+        "status": "stopped",
+        "organization": "gannett",
+        "start_date": "2019-09-07",
+        "end_date": "2019-10-07"
     }
   ],
   "page": 1,
-  "page_size": 15,
-  "data_import_status": {
-    "KeywordActivity": "2017-01-04T21:23:49.000Z",
-    "Campaign": "2017-01-04T21:23:49.000Z"
-  }
+  "page_size": 15
 }
 ```
