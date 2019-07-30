@@ -51,11 +51,15 @@ curl --request GET \
     "authorized_advertisers": [
         {
             "name": "Awesome Advertiser",
-            "gmaid": "USA_224767"
+            "platform": "USA",
+            "gmaid": "USA_224767",
+            "hipaa_protected": false
         },
         {
             "name": "ACME Corporation",
-            "gmaid": "USA_142687"
+            "platform": "USA",
+            "gmaid": "USA_142687",
+            "hipaa_protected": false
         }
     ]
 }
@@ -85,4 +89,6 @@ The advertiser is a JSON object.
 Advertiser Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
 name | String | no | The name of the advertiser.
+platform | String | no | The platform for the advertiser.
 gmaid | String | no | The global master advertiser id of the advertiser.
+hipaa_protected | String | no | The advertiser's HIPAA protection status
