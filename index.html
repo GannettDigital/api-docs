@@ -999,11 +999,15 @@
     </span><span class="s2">"authorized_advertisers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awesome Advertiser"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_224767"</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_224767"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Corporation"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_142687"</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_142687"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1081,10 +1085,22 @@
 <td>The name of the advertiser.</td>
 </tr>
 <tr>
+<td>platform</td>
+<td>String</td>
+<td>no</td>
+<td>The platform for the advertiser.</td>
+</tr>
+<tr>
 <td>gmaid</td>
 <td>String</td>
 <td>no</td>
 <td>The global master advertiser id of the advertiser.</td>
+</tr>
+<tr>
+<td>hipaa_protected</td>
+<td>String</td>
+<td>no</td>
+<td>The advertiser&#39;s HIPAA protection status</td>
 </tr>
 </tbody></table>
 <h1 id='api'>API</h1>
@@ -4314,7 +4330,7 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
 </tr>
 </tbody></table>
 <h3 id='api-keyword-performance-metrics-api-name-keyword-report'>API Name: Keyword Report</h3><h3 id='api-keyword-performance-metrics-usage'>Usage</h3>
-<p>Use GET to retrieve information for the Keyword report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.</p>
+<p>Use GET to retrieve information for the Keyword report.  Data can be returned for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.</p>
 
 <p>The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters <code>page</code> and <code>page_size</code>.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.</p>
 <h3 id='api-keyword-performance-metrics-parameters'>Parameters</h3>
@@ -4322,41 +4338,65 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
 
 <table><thead>
 <tr>
-<th>Param</th>
-<th>Function</th>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><code>start_date</code></td>
+<td>Yes</td>
+<td>--</td>
 <td>Restricts the results to those occurring on or after this date.</td>
 </tr>
 <tr>
 <td><code>end_date</code></td>
+<td>Yes</td>
+<td>--</td>
 <td>Restricts the results to those occurring on or before this date.</td>
 </tr>
 <tr>
 <td><code>global_master_campaign_id[]</code></td>
+<td>No</td>
+<td>All</td>
 <td>Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td><code>campaign_status[]</code></td>
+<td>No</td>
+<td>All</td>
 <td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>. This should be a comma separated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td><code>page_size</code></td>
-<td>Restrict number of keywords in result.  Default is 15</td>
+<td>No</td>
+<td>15</td>
+<td>Restrict number of keywords in result.</td>
 </tr>
 <tr>
 <td><code>page</code></td>
-<td>Specifies which page of results to return.  Default is 1</td>
+<td>No</td>
+<td>1</td>
+<td>Specifies which page of results to return.</td>
 </tr>
 <tr>
 <td><code>sort_by</code></td>
-<td>Specifies what column to sort by.  Valid columns are: <code>keyword</code>, <code>clicks</code>, <code>impressions</code>, and <code>ctr</code>.  Default: <code>keyword</code></td>
+<td>No</td>
+<td><code>keyword</code></td>
+<td>Specifies what column to sort by.  Valid columns are: <code>keyword</code>, <code>clicks</code>, <code>impressions</code>, and <code>ctr</code>.</td>
 </tr>
 <tr>
 <td><code>sort_dir</code></td>
-<td>Specifies the sort direction.  Can be either <code>asc</code> or <code>desc</code>. Default: <code>asc</code></td>
+<td>No</td>
+<td><code>asc</code></td>
+<td>Specifies the sort direction.  Can be either <code>asc</code> or <code>desc</code>.</td>
+</tr>
+<tr>
+<td><code>types[]</code></td>
+<td>No</td>
+<td><code>search</code></td>
+<td>Specifies the campaign type of keyword.  Can be <code>search</code> and <code>display</code>. Ex: types[]=display,search</td>
 </tr>
 </tbody></table>
 <h3 id='api-keyword-performance-metrics-examples'>Examples:</h3>
@@ -4379,6 +4419,12 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?global_mast
 https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campaign_status[]=running,stopped&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15
 </code></pre>
 <blockquote>
+<p>Retrieve data for both search and display campaigns</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/keyword/USA_105569?types[]=display,search&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;page=1&amp;page_size=15
+</code></pre>
+<blockquote>
 <p>Response Description</p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
@@ -4392,6 +4438,7 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campai
     <span class="s2">"keywords"</span><span class="p">:</span> <span class="p">[</span>                           <span class="c1">// Keyword data</span>
       <span class="p">{</span>
         <span class="s2">"keyword"</span><span class="p">:</span> <span class="s2">"beach home"</span><span class="p">,</span>        <span class="c1">// Keyword</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"search"</span><span class="p">,</span>               <span class="c1">// Type for Keyword</span>
         <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>              <span class="c1">// Impressions for Keyword</span>
         <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>                   <span class="c1">// Clicks for Keyword</span>
         <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.8</span>                      <span class="c1">// CTR for Keyword</span>
@@ -4408,16 +4455,17 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campai
   <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&amp;global_master_campaign_id[]=USA_14&amp;page=1&amp;page_size=15"</span><span class="p">,</span>
   <span class="s2">"available_campaigns"</span><span class="p">:</span> <span class="p">[</span>                  <span class="c1">// All campaigns for advertiser</span>
     <span class="p">{</span>
-      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>              <span class="c1">// Name of campaign</span>
-      <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_11"</span><span class="p">,</span><span class="c1">// Identifier for campaign</span>
+        <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_3"</span><span class="p">,</span> <span class="c1">// Identifier for campaign</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Stopped Campaign"</span><span class="p">,</span>           <span class="c1">// Campaign Name</span>
+        <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"display"</span><span class="p">,</span>           <span class="c1">// Campaign Type</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"stopped"</span><span class="p">,</span>                  <span class="c1">// Status of Campaign</span>
+        <span class="s2">"organization"</span><span class="p">:</span> <span class="s2">"gannett"</span><span class="p">,</span>            <span class="c1">// Organization Campaign is from</span>
+        <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-09-07"</span><span class="p">,</span>           <span class="c1">// Start Date of Campaign</span>
+        <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2019-10-07"</span>              <span class="c1">// End Date of Campaign</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                                <span class="c1">// Page number of this data</span>
   <span class="s2">"page_size"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>                          <span class="c1">// page size used to generate this data</span>
-  <span class="s2">"data_import_status"</span><span class="p">:</span> <span class="p">{</span>
-     <span class="s2">"KeywordActivity"</span><span class="p">:</span> <span class="s2">"2016-12-07T20:11:44.000Z"</span><span class="p">,</span>   <span class="c1">// Table last updated</span>
-     <span class="s2">"Campaign"</span><span class="p">:</span> <span class="s2">"2016-12-07T20:11:44.000Z"</span>           <span class="c1">// Table last updated</span>
-  <span class="p">}</span>
 <span class="p">}</span>
 
 </code></pre>
@@ -4435,24 +4483,28 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campai
     </span><span class="s2">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"keyword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beach"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">2300</span><span class="p">,</span><span class="w">
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"keyword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cruise"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">2300</span><span class="p">,</span><span class="w">
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"keyword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">2300</span><span class="p">,</span><span class="w">
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"keyword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vacation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">2300</span><span class="p">,</span><span class="w">
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
@@ -4469,17 +4521,17 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?&amp;campai
   </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.reachlocalservices.com/client_reports/keyword/USA_123?interval_type=day&amp;number_of_intervals=30&amp;range=custom&amp;status%5B%5D=stopped&amp;page=1&amp;page_size=15"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"available_campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stopped Campaign"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_3"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stopped"</span><span class="w">
+        </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stopped Campaign"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stopped"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-07"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-07"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data_import_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"KeywordActivity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04T21:23:49.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04T21:23:49.000Z"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='api-keyword-performance-metrics-google-keyword-report'>Google Keyword Report</h3><h3 id='api-keyword-performance-metrics-resource-overview'>Resource Overview</h3>
 <table><thead>
