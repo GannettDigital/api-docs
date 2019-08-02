@@ -62,6 +62,7 @@ includes:
   - contacts
   - contact_interactions
   - crm_webhooks
+  - google_data_studio
   - errors
 
 search: false
