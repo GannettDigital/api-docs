@@ -89,4 +89,4 @@ We have 3 major types of reporting API offerings; API, Webhooks and Integration 
   * CRM integrations (for Contacts and Leads)
   * FranConnect Integration (coming soon)
 
-This site describes the resources that make up the LocaliQ reporting REST API offerings. For questions or general information, please contact [LocaliQ API Support](mailto: apiservices@reachlocal.com).
+This site describes the resources that make up the LocaliQ reporting REST API offerings. For questions or general information, please contact [LocaliQ API Support](mailto:apiservices@localiq.com).
