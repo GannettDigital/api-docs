@@ -9,6 +9,17 @@
 ### Usage
 A list of filtered Campaigns and Campaign Cycles for a given report type and advertiser.  (Cycles are not included for keyword_report)
 
+If using the `campaigns_overview` report_type, all campaign data for the account will be provided including both Paid Media and Offer-based campaigns.
+
+- Paid Media campaigns will include the associated `campaign_type`. Paid Media campaigns include:
+  - Chat
+  - Search
+  - Display
+  - TotalTrack
+  - Facebook
+  - YouTube
+- Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
+
 ### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
