@@ -28,11 +28,19 @@ Through a browser initiate the authorization with your Client Id and Client Secr
 
 `https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
 
-This will bring up the Reach Local login screen. Please enter your Reach Local credentials; the ones that were provided to you at account setup time.
+For user login: Please enter your business user credentials.
 
 ![login screen](/images/login.png)
 
 Upon successful authentication, you will be redirected to the REDIRECT_URI along with an Authorization token. This token expires in 10 minutes.
+
+**Note:**
+
+ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.
+
+If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (`https://reachsecurepay.com/client/index.php`) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team
+
+If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
 
 ### Requesting Access and Refresh Tokens
 
@@ -96,10 +104,17 @@ curl -X POST \
 ```
 ### Authorization Token (Direct access method)
 
-Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a "password" grant type which can be used to exchange a username and password for an Access token directly. This method is easier to use for straight API integrations where user interaction isn't desired or possible.
+Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a "password" grant type which can be used to exchange your business user credentials for an Access token directly. This method is easier to use for straight API integrations where user interaction isn't desired or possible.
 
 Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
 
+**Note:**
+
+ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.
+
+If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (`https://reachsecurepay.com/client/index.php`) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team
+
+If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
 
 ```ruby
 require 'uri'
