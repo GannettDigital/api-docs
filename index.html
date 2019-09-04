@@ -788,11 +788,19 @@
 
 <p><code>https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p>
 
-<p>This will bring up the Reach Local login screen. Please enter your Reach Local credentials; the ones that were provided to you at account setup time.</p>
+<p>For user login: Please enter your business user credentials.</p>
 
 <p><img src="images/login.png" alt="login screen" /></p>
 
 <p>Upon successful authentication, you will be redirected to the REDIRECT_URI along with an Authorization token. This token expires in 10 minutes.</p>
+
+<p><strong>Note:</strong></p>
+
+<p>ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.</p>
+
+<p>If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (<code>https://reachsecurepay.com/client/index.php</code>) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team</p>
+
+<p>If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).</p>
 <h3 id='api-access-step-2-authorization-requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h3>
 <p>Please use the Authorization token to request an Access and Refresh token.</p>
 <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
@@ -844,9 +852,17 @@
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre><h3 id='api-access-step-2-authorization-authorization-token-direct-access-method'>Authorization Token (Direct access method)</h3>
-<p>Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange a username and password for an Access token directly. This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.</p>
+<p>Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange your business user credentials for an Access token directly. This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.</p>
 
 <p>Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p>
+
+<p><strong>Note:</strong></p>
+
+<p>ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.</p>
+
+<p>If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (<code>https://reachsecurepay.com/client/index.php</code>) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team</p>
+
+<p>If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).</p>
 <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
@@ -9894,9 +9910,50 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
 
 <p><img src="images/webhook.png" alt="Integrations webhook" /></p>
 
-<p>When creating a webhook integration in Edge, a payload URL must be provided.  An additional optional authentication can be specified that will be included as a value in the POST request&#39;s header.</p>
+<p>When creating a webhook integration in Edge, the CRM provider should be asked for the Payload URL.</p>
 
 <p><img src="images/create_webhook.png" alt="Create webhook" /></p>
+
+<p>Webhook Components:</p>
+
+<ul>
+<li>Payload URL
+
+<ul>
+<li>A Payload URL (also called an Endpoint URL, Postback URL, or HTTP POST URL) is a place in the CRM where our data can be sent.</li>
+<li>We will not be able to send the data without a Payload URL.</li>
+</ul></li>
+<li>Payload URL Examples
+
+<ul>
+<li><code>https://api.crmprovider.com/contact</code></li>
+<li><code>https://www.crmprovider.net/lead/genericlead.asmx</code></li>
+<li><code>https://devdashboard.crmprovider.com/post/</code></li>
+</ul></li>
+<li>Authentication Header
+
+<ul>
+<li>This section is optional and will only be used if there is a token that needs to be included in the header of the API call. This would consist of identifiable information like an ID or a code provided by the CRM to ensure that whoever is trying to send the data is actually who they say they are.</li>
+</ul></li>
+<li>Which events should trigger a webhook?
+
+<ul>
+<li>Leads can be sent for New Contacts and/or Existing Contacts. Two webhooks would need to be created if an advertiser wanted to send data for both new and existing contacts, but the same information (Payload URL, Authentication Header, etc.) can be used for each.</li>
+</ul></li>
+<li>Which lead types should trigger a webhook?
+
+<ul>
+<li>Leads can be filtered to only send Calls, only Chats, only Forms &amp; Emails, or any combination of these three options.</li>
+</ul></li>
+<li>Payload Format
+
+<ul>
+<li>The format that we will send the data in. This can either be sent in JSON, which is the standard format, or in ADF/XML.</li>
+</ul></li>
+<li>The webhook can be set to Active by checking the box next to &quot;Active&quot;. If left unchecked, the webhook will not send data.</li>
+</ul>
+
+<p>All leads for an advertiser will be sent through the webhook and cannot be filtered by a specific campaign.</p>
 <h2 id='webhooks-lead-event-json-payload'>Lead Event JSON Payload</h2>
 <p>The lead event that triggered the webhook will be sent to the specified payload URL as an HTTP POST with a content type of application/json.</p>
 <h3 id='webhooks-lead-event-json-payload-lead-object'>Lead Object</h3>
