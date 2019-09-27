@@ -42,6 +42,8 @@ If you need to check if you have a Business User created or need to reset your p
 
 If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
 
+For HIPAA accounts: The business user must be authorized to view and access HIPAA on internal systems to access HIPAA data through the API. Please reach your account team to check and/or edit privileges on our platform. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+
 ### Requesting Access and Refresh Tokens
 
 Please use the Authorization token to request an Access and Refresh token.
@@ -115,6 +117,8 @@ ReachLocal credentials: Business User credentials are provided to you by your ac
 If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (`https://reachsecurepay.com/client/index.php`) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team
 
 If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
+
+For HIPAA accounts: The business user must be authorized to view and access HIPAA on internal systems to access HIPAA data through the API. Please reach your account team to check and/or edit privileges on our platform. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
 
 ```ruby
 require 'uri'
