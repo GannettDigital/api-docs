@@ -2,7 +2,7 @@
 
 ![Integration](/images/integration.png)
 
-We have APIs, Webhooks and apps on the Zapier marketplace to support CRM integrations.
+We have APIs, Webhooks and apps on the Zapier marketplace to support CRM integrations. HIPAA Compliant.
 
 **API (Interface to the data)**
 

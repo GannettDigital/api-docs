@@ -42,7 +42,9 @@ If you need to check if you have a Business User created or need to reset your p
 
 If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
 
-For HIPAA accounts: The business user must be authorized to view and access HIPAA on internal systems to access HIPAA data through the API. Please reach your account team to check and/or edit privileges on our platform. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+
+This control applies to APIs that provide data that are classified as HIPAA and protected by law.
 
 ### Requesting Access and Refresh Tokens
 
@@ -118,7 +120,9 @@ If you need to check if you have a Business User created or need to reset your p
 
 If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
 
-For HIPAA accounts: The business user must be authorized to view and access HIPAA on internal systems to access HIPAA data through the API. Please reach your account team to check and/or edit privileges on our platform. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+
+This control applies to APIs that provide data that are classified as HIPAA and protected by law.
 
 ```ruby
 require 'uri'
