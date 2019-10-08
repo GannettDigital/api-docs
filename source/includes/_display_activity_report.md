@@ -173,21 +173,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     ]
   },
   "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle",
-  "available_campaigns": [                     // All campaigns for advertiser
-    {
-      "name": "Ad_Campaign_1",                 // Name of campaign
-      "global_master_campaign_id": "USA_11",   // Identifier for campaign
-      "status": "running",
-      "cycles": [                              // All cycles for advertiser
-        {
-          "campaign_cycle": "USA_1",           // Identifier for cycle
-          "start_date": "2016-10-10",          // Start date of cycle
-          "end_date": "2016-10-14",            // End date of cycle
-        }
-      ]
-    }
-  ]
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle"
 }
 ```
 >  Response Description without Cycles
@@ -289,21 +275,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     ]
   },
   "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle",
-  "available_campaigns": [                     // All campaigns for advertiser
-    {
-      "name": "Ad_Campaign_1",                 // Name of campaign
-      "global_master_campaign_id": "USA_11",   // Identifier for campaign
-      "status": "running",
-      "cycles": [                              // All cycles for advertiser
-        {
-          "campaign_cycle": "USA_1",           // Identifier for cycle
-          "start_date": "2016-10-10",          // Start date of cycle
-          "end_date": "2016-10-14",            // End date of cycle
-        }
-      ]
-    }
-  ]
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle"
 }
 ```
 
@@ -653,99 +625,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     ]
   },
   "global_master_advertiser_id": "USA_123",
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_123?start_date=2017-01-11&end_date=2017-01-13",
-  "available_campaigns": [
-    {
-      "name": "Drain Cleaning",
-      "global_master_campaign_id": "USA_1",
-      "status": "running",
-      "cycles": [
-        {
-          "campaign_cycle": "USA_10",
-          "start_date": "2016-11-14",
-          "end_date": "2016-12-14",
-          "name": "Drain Cleaning"
-        },
-        "totals_per_interval": [
-            {
-                "start_date": "2018-03-09",
-                "impressions": 6673,
-                "remarketing_impressions": 23,
-                "custom_targeting_impressions": 6650,
-                "clicks": 15,
-                "spend": 33.86,
-                "ctr": 0.22,
-                "cpm": 5.07,
-                "walk_ins": 1,
-                "cpw": 33.86
-            }
-        ]
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_123?start_date=2017-01-11&end_date=2017-01-13"
     },
     "global_master_advertiser_id": "USA_148363",
-    "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_148363?end_date=2018-03-09&start_date=2018-03-09",
-    "available_campaigns": [
-        {
-            "name": "GeoFence I Bliss Orthodontics",
-            "global_master_campaign_id": "USA_2270088",
-            "status": "running",
-            "cycles": [
-                {
-                    "campaign_cycle": "USA_2406928",
-                    "start_date": "2017-11-28",
-                    "end_date": "2017-12-28",
-                    "name": "GeoFence I Bliss Orthodontics"
-                },
-                {
-                    "campaign_cycle": "USA_2428675",
-                    "start_date": "2017-12-28",
-                    "end_date": "2018-01-28",
-                    "name": "GeoFence I Bliss Orthodontics"
-                },
-                {
-                    "campaign_cycle": "USA_2450043",
-                    "start_date": "2018-01-28",
-                    "end_date": "2018-02-27",
-                    "name": "GeoFence I Bliss Orthodontics"
-                },
-                {
-                    "campaign_cycle": "USA_2473076",
-                    "start_date": "2018-02-27",
-                    "end_date": null,
-                    "name": "GeoFence I Bliss Orthodontics"
-                }
-            ]
-        },
-        {
-            "name": "Retargeting | Bliss Orthodontics | Orthodontics",
-            "global_master_campaign_id": "USA_1880940",
-            "status": "running",
-            "cycles": [
-                {
-                    "campaign_cycle": "USA_2419473",
-                    "start_date": "2017-12-16",
-                    "end_date": "2018-01-16",
-                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
-                },
-                {
-                    "campaign_cycle": "USA_2442711",
-                    "start_date": "2018-01-16",
-                    "end_date": "2018-02-17",
-                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
-                },
-                {
-                    "campaign_cycle": "USA_2464872",
-                    "start_date": "2018-02-17",
-                    "end_date": "2018-03-20",
-                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
-                },
-                {
-                    "campaign_cycle": "USA_2487638",
-                    "start_date": "2018-03-20",
-                    "end_date": null,
-                    "name": "Retargeting | Bliss Orthodontics | Orthodontics"
-                }
-            ]
-        }
-    ]
+    "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_148363?end_date=2018-03-09&start_date=2018-03-09"
 }
 ```

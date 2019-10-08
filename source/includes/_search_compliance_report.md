@@ -112,22 +112,7 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
     ]
   },
   "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/google_search_activity/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&range=cycle",
-  "available_campaigns": [                  // All campaigns for advertiser
-    {
-      "name": "Ad_Campaign_1",              // Name of campaign
-      "global_master_campaign_id": "USA_11",// Identifier for campaign
-      "status": "running",                  // Status for campaign
-      "cycles": [                           // All cycles for advertiser
-        {
-          "campaign_cycle": USA_100,        // Identifier for cycle
-          "start_date": "2016-10-10",       // Start date of cycle
-          "end_date": "2016-10-14",         // End date of cycle
-          "name": "Ad_Campaign_1"           // Name of cycle
-        }
-      ]
-    }
-  ]
+  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/google_search_activity/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&range=cycle"
 }
 
 ```
@@ -190,88 +175,7 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
     ]
   },
   "global_master_advertiser_id": "USA_187198",
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/google_search_activity/USA_187198?end_date=2017-05-02&start_date=2017-05-01",
-  "available_campaigns": [
-    {
-      "name": "Two Nine North PPC",
-      "global_master_campaign_id": "USA_2134071",
-      "status": "ended",
-      "cycles": [
-        {
-          "campaign_cycle": "USA_2134071",
-          "start_date": "2016-10-05",
-          "end_date": "2016-10-10",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2138911",
-          "start_date": "2016-10-10",
-          "end_date": "2016-11-08",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2156076",
-          "start_date": "2016-11-09",
-          "end_date": "2016-12-07",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2173471",
-          "start_date": "2016-12-10",
-          "end_date": "2017-01-09",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2190204",
-          "start_date": "2017-01-09",
-          "end_date": "2017-02-14",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2191481",
-          "start_date": "2017-01-12",
-          "end_date": "2017-06-16",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2208246",
-          "start_date": "2017-02-14",
-          "end_date": "2017-03-17",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2227384",
-          "start_date": "2017-03-17",
-          "end_date": "2017-04-18",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2247602",
-          "start_date": "2017-04-18",
-          "end_date": "2017-05-20",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2268974",
-          "start_date": "2017-05-20",
-          "end_date": "2017-06-15",
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2289593",
-          "start_date": "2017-06-16",
-          "end_date": null,
-          "name": "Two Nine North PPC"
-        },
-        {
-          "campaign_cycle": "USA_2290678",
-          "start_date": "2017-06-19",
-          "end_date": "2017-07-17",
-          "name": "Two Nine North PPC"
-        }
-      ]
-    }
-  ]
+  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/google_search_activity/USA_187198?end_date=2017-05-02&start_date=2017-05-01"
 }
 
 ```

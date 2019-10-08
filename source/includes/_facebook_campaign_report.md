@@ -531,40 +531,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?s
     ]
   },
   "global_master_advertiser_id": "USA_125992",
-  "location": "https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?start_date=2017-01-26&end_date=2017-01-30",
-  "available_campaigns": [
-    {
-      "name": "FB Leads | Pleasant Hill Coin | Holiday Jewelry Sale",
-      "global_master_campaign_id": "USA_2144914",
-      "status": "ended",
-      "cycles": [
-        {
-          "campaign_cycle": "USA_2144914",
-          "start_date": "2016-11-04",
-          "end_date": "2016-12-05",
-          "name": "FB Leads | Pleasant Hill Coin | Holiday Jewelry Sale"
-        },
-        {
-          "campaign_cycle": "USA_2168697",
-          "start_date": "2016-12-05",
-          "end_date": "2017-01-05",
-          "name": "FB Leads | Pleasant Hill Coin | Holiday Jewelry Sale"
-        },
-        {
-          "campaign_cycle": "USA_2185247",
-          "start_date": "2017-01-05",
-          "end_date": "2017-02-05",
-          "name": "FB Leads | Pleasant Hill Coin | Holiday Jewelry Sale"
-        },
-        {
-          "campaign_cycle": "USA_2202247",
-          "start_date": "2017-02-06",
-          "end_date": "2017-03-08",
-          "name": "FB Leads | Pleasant Hill Coin | Holiday Jewelry Sale"
-        }
-      ]
-    }
-  ]
+  "location": "https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_125992?start_date=2017-01-26&end_date=2017-01-30"
 }
 
 
