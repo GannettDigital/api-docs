@@ -127,21 +127,6 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
   },
   "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&range=cycle",
-  "available_campaigns": [                  // All campaigns for advertiser
-    {
-      "name": "Ad_Campaign_1",              // Name of campaign
-      "global_master_campaign_id": "USA_11",// Identifier for campaign
-      "status": "running",                  // Status for campaign
-      "cycles": [                           // All cycles for advertiser
-        {
-          "campaign_cycle": USA_100,        // Identifier for cycle
-          "start_date": "2016-10-10",       // Start date of cycle
-          "end_date": "2016-10-14",         // End date of cycle
-          "name": "Ad_Campaign_1"           // Name of cycle
-        }
-      ]
-    }
-  ],
   "data_import_status": {
      "DailyCampaignActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
      "Campaign": "2016-12-07T20:11:44.000Z"                 // Table last updated
@@ -204,21 +189,6 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
   },
   "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/total_track/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&range=cycle",
-  "available_campaigns": [                  // All campaigns for advertiser
-    {
-      "name": "Ad_Campaign_1",              // Name of campaign
-      "global_master_campaign_id": "USA_11",// Identifier for campaign
-      "status": "running",                  // Status for campaign
-      "cycles": [                           // All cycles for advertiser
-        {
-          "campaign_cycle": USA_100,        // Identifier for cycle
-          "start_date": "2016-10-10",       // Start date of cycle
-          "end_date": "2016-10-14",         // End date of cycle
-          "name": "Ad_Campaign_1"           // Name of cycle
-        }
-      ]
-    }
-  ],
   "data_import_status": {
      "DailyCampaignActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
      "Campaign": "2016-12-07T20:11:44.000Z"                 // Table last updated
@@ -313,27 +283,6 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
   },
   "global_master_advertiser_id": "USA_123",
   "location": "https://api.reachlocalservices.com/client_reports/total_track/USA_123?start_date=2016-12-01&end_date=2016-12-31",
-  "available_campaigns": [
-    {
-      "name": "TotalTrack Campaign",
-      "global_master_campaign_id": "USA_5",
-      "status": "running",
-      "cycles": [
-        {
-          "campaign_cycle": "USA_50",
-          "start_date": "2016-11-26",
-          "end_date": "2016-12-26",
-          "name": "TotalTrack Campaign"
-        },
-        {
-          "campaign_cycle": "USA_51",
-          "start_date": "2016-12-26",
-          "end_date": "2017-01-25",
-          "name": "TotalTrack Campaign"
-        }
-      ]
-    }
-  ],
   "data_import_status": {
     "DailyCampaignActivity": "2017-01-25T20:24:32.000Z",
     "Campaign": "2017-01-25T20:13:23.000Z"
