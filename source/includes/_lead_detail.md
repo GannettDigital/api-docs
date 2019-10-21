@@ -46,7 +46,6 @@ To specify a date range:
 |`report_data`|Object|[Report Data Object.](#leadreportdata)|
 |`global_master_advertiser_id`|String|Identifier for advertiser.|
 |`location`|URL||
-|`available_campaigns`|Array|All campaigns for advertiser. [Available Campaigns Array.](#leadavailablecampaigns)|
 |`data_import_status`|Object|Timestamp of the last update for tables. [Data Import Status Object.](#leaddataimport)|
 
 <a name="leadreportdata"></a>
@@ -250,21 +249,6 @@ https://api.reachlocalservices.com/client_reports/lead_detail/USA_105569?&campai
   }
   "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/lead_detail/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&range=cycle",
-  "available_campaigns": [                  // All campaigns for advertiser
-    {
-      "name": "Ad_Campaign_1",              // Name of campaign
-      "global_master_campaign_id": "USA_11",// Identifier for campaign
-      "status": "running",                  // Status for campaign
-      "cycles": [                           // All cycles for advertiser
-        {
-          "campaign_cycle": USA_100,        // Identifier for cycle
-          "start_date": "2016-10-10",       // Start date of cycle
-          "end_date": "2016-10-14",         // End date of cycle
-          "name": "Ad_Campaign_1"           // Name of cycle
-        }
-      ]
-    }
-  ],
   "data_import_status": {
      "DailyCampaignActivity": "2016-12-07T20:11:44.000Z",   // Table last updated
      "Campaign": "2016-12-07T20:11:44.000Z",                // Table last updated

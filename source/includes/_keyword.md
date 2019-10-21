@@ -86,17 +86,6 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?types[]=dis
   },
   "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
   "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_105569?campaign_cycle=45&global_master_campaign_id[]=USA_14&page=1&page_size=15",
-  "available_campaigns": [                  // All campaigns for advertiser
-    {
-        "global_master_campaign_id": "USA_3", // Identifier for campaign
-        "name": "Stopped Campaign",           // Campaign Name
-        "campaign_type": "display",           // Campaign Type
-        "status": "stopped",                  // Status of Campaign
-        "organization": "gannett",            // Organization Campaign is from
-        "start_date": "2019-09-07",           // Start Date of Campaign
-        "end_date": "2019-10-07"              // End Date of Campaign
-    }
-  ],
   "page": 1,                                // Page number of this data
   "page_size": 15,                          // page size used to generate this data
 }
@@ -153,17 +142,6 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?types[]=dis
   },
   "global_master_advertiser_id": "USA_123",
   "location": "https://api.reachlocalservices.com/client_reports/keyword/USA_123?interval_type=day&number_of_intervals=30&range=custom&status%5B%5D=stopped&page=1&page_size=15",
-  "available_campaigns": [
-    {
-        "global_master_campaign_id": "USA_3",
-        "name": "Stopped Campaign",
-        "campaign_type": "display",
-        "status": "stopped",
-        "organization": "gannett",
-        "start_date": "2019-09-07",
-        "end_date": "2019-10-07"
-    }
-  ],
   "page": 1,
   "page_size": 15
 }
