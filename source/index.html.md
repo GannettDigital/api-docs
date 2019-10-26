@@ -53,6 +53,7 @@ includes:
   - lead_event_feed_service/user_info/user_info_object
   - lead_event_feed_service/user_info/show
   - capture_external_event_api
+  - apex_chat
   - capture_discovery
   - capture_top_referrers
   - total_track
