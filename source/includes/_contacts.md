@@ -3,10 +3,9 @@
 
 **Parameters:** It requires the following parameters for a successful response: GMAID (advertiser ID), created_before date and created_after_date.
 
-**Recommended usage pattern:** A one-time call to the API to fetch all past interactions recorded by the LocaliQ platform., followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.
+**Recommended usage pattern:** A one-time call to the API to fetch all past interactions recorded by the LocaliQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.
 
 Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them as contacts into your CRM from this endpoint will cause duplicates.
-
 
 ```ruby
 require 'uri'
