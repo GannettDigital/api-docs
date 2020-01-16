@@ -12,9 +12,9 @@ NOTE: There is an additional monthly subscription cost through Zapier® The cost
 
 With the LOCALiQ App you can get contacts and contact interactions for ingestion into the CRM of your choice. The CRM must also have an app available on Zapier®.
 
-Contacts: This HIPAA Compliant endpoint supports integration with CRM products. It delivers contact data (first name, last name, email and/or phone number) generated for an advertiser in near real-time.
+Contacts: This trigger supports integration with CRM products. It delivers contact data (first name, last name, email, phone number, etc.) generated for an advertiser in near real-time.
 
-Contact Interactions: This HIPAA Compliant endpoint supports integration with CRM products. It delivers all interactions (or leads) generated for an advertiser in near real-time.
+Contact Interactions: This trigger supports integration with CRM products. It delivers all interactions (or leads) generated for an advertiser in near real-time.
 
 **Recommended Usage Pattern:**
 
