@@ -61,6 +61,7 @@ includes:
   - integrations
   - contacts
   - contact_interactions
+  - zapier
   - crm_webhooks
   - google_data_studio
   - errors
@@ -82,11 +83,11 @@ We have 3 major types of reporting API offerings; API, Webhooks and Integration 
   * APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product.
 
 * Webhooks (Event driven interface to the data – automated exchange based on specific event or rules occurring)
-  * Webhooks to contact creation on the LocaliQ platform
+  * Webhooks to contact creation on the LOCALiQ platform
   * Webhooks to interaction occurring on your campaign; call, chat, web & email events.
 
 * Integrations (API and/or Web hooks with a specific purpose)
   * CRM integrations (for Contacts and Leads)
   * FranConnect Integration (coming soon)
 
-This site describes the resources that make up the LocaliQ reporting REST API offerings. For questions or general information, please contact [LocaliQ API Support](mailto:apiservices@localiq.com).
+This site describes the resources that make up the LOCALiQ reporting REST API offerings. For questions or general information, please contact [LOCALiQ API Support](mailto:apiservices@localiq.com).
