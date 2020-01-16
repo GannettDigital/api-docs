@@ -679,6 +679,9 @@
                       </ul>
                   </li>
                   <li class="toc-h2-li">
+                    <a href="#crm-integration-localiq-app-on-zapier" class="toc-h2 toc-link" data-title="CRM Integration">LOCALiQ App on Zapier®</a>
+                  </li>
+                  <li class="toc-h2-li">
                     <a href="#crm-integration-register-crm-webhooks" class="toc-h2 toc-link" data-title="CRM Integration">Register CRM Webhooks</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
@@ -745,7 +748,7 @@
 <li><p>Webhooks (Event driven interface to the data – automated exchange based on specific event or rules occurring)</p>
 
 <ul>
-<li>Webhooks to contact creation on the LocaliQ platform</li>
+<li>Webhooks to contact creation on the LOCALiQ platform</li>
 <li>Webhooks to interaction occurring on your campaign; call, chat, web &amp; email events.</li>
 </ul></li>
 <li><p>Integrations (API and/or Web hooks with a specific purpose)</p>
@@ -756,7 +759,7 @@
 </ul></li>
 </ul>
 
-<p>This site describes the resources that make up the LocaliQ reporting REST API offerings. For questions or general information, please contact <a href="mailto:apiservices@localiq.com">LocaliQ API Support</a>.</p>
+<p>This site describes the resources that make up the LOCALiQ reporting REST API offerings. For questions or general information, please contact <a href="mailto:apiservices@localiq.com">LOCALiQ API Support</a>.</p>
 <h1 id='terms-and-conditions'>Terms And Conditions</h1>
 <p>Use of any ReachLocal, Inc. (“ReachLocal”) Application Program Interface(s) (collectively, the “API Service”) is subject to the ReachLocal Inc. Online Marketing Services Terms and Conditions as set forth at www.reachlocal.com/tc (the “Marketing Services Terms”), including, without limitation, the Client Center Product Terms, and any other applicable agreement between you and ReachLocal. ReachLocal provides the API Service as an extension of the Client Center software and reserves the exclusive right to limit or revoke access to the API Service at any time and for any reason.</p>
 
@@ -773,7 +776,7 @@
 
 <p>Note: Business user’s access to advertiser’s data (GMAIDs) is maintained through Campaign Central/Corp.</p>
 <h2 id='api-access-step-1-authentication'>Step 1: Authentication</h2>
-<p>The first step is to register your application with Reach Local. Please contact your account manager, DMC or <a href="mailto:apiservices@localiq.com">LocaliQ API Support</a> to request API access.</p>
+<p>The first step is to register your application with Reach Local. Please contact your account manager, DMC or <a href="mailto:apiservices@localiq.com">LOCALiQ API Support</a> to request API access.</p>
 
 <p>You will get a response within 1 business day. The response email will contain a Client Id and a Client Secret token.</p>
 
@@ -10210,7 +10213,7 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
 
 <p><strong>Parameters:</strong> It requires the following parameters for a successful response: GMAID (advertiser ID), created_before date and created_after_date.</p>
 
-<p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LocaliQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p>
+<p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LOCALiQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p>
 
 <p>Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them as contacts into your CRM from this endpoint will cause duplicates.</p>
 <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
@@ -10516,7 +10519,7 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
 
 <p><strong>Parameters:</strong> It requires the following parameters for a successful response: GMAID (advertiser ID), created_before date and created_after_date. An optional <code>event_type</code> parameter can be specified, to limit results to one of <code>chat</code>, <code>call</code>, or <code>form</code>.</p>
 
-<p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LocaliQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p>
+<p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LOCALiQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p>
 
 <p>Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them as contacts into your CRM from this endpoint will cause duplicates.</p>
 
@@ -11015,8 +11018,46 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
 <td></td>
 </tr>
 </tbody></table>
+<h2 id='crm-integration-localiq-app-on-zapier'>LOCALiQ App on Zapier®</h2>
+<p><strong>Summary:</strong> Zapier® is a tool that allows two systems to exchange data without any coding. LOCALiQ makes available a lead app on the Zapier® platform. You can reach out to <a href="mailto:apiservices@localiq.com">LOCALiQ API Support</a> to request access.</p>
+
+<ul>
+<li>The LOCALiQ Zapier® app can be used at no additional cost.</li>
+<li>Zapier® offers a free trial if you would like to test this solution.</li>
+<li>The setup can be be completed by client or CSM.</li>
+</ul>
+
+<p>NOTE: There is an additional monthly subscription cost through Zapier® The cost depends on the number of leads sent per month and the number of leads transmitted between the systems (which Zapier® refers to as &quot;Tasks&quot;). Pricing information for Zapier® can be found <a href="https://zapier.com/pricing">here</a>.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<p>With the LOCALiQ App you can get contacts and contact interactions for ingestion into the CRM of your choice. The CRM must also have an app available on Zapier®.</p>
+
+<p>Contacts: This trigger supports integration with CRM products. It delivers contact data (first name, last name, email, phone number, etc.) generated for an advertiser in near real-time.</p>
+
+<p>Contact Interactions: This trigger supports integration with CRM products. It delivers all interactions (or leads) generated for an advertiser in near real-time.</p>
+
+<p><strong>Recommended Usage Pattern:</strong></p>
+
+<p>How to Create a Zap:</p>
+
+<p>1) Click &quot;Make a New Zap!&quot; button in the upper right-hand corner of the Zapier® Dashboard</p>
+
+<p>2) Pick the LOCALiQ Contacts or Contact Interactions option as your Trigger</p>
+
+<p>3) Choose the Action to map data to the receiving system (this could either be your CRM&#39;s app or a POST to an endpoint)</p>
+
+<p>4) Enable the Zap and your are done!</p>
+
+<p>Also see: <a href="https://zapier.com/help/create/basics/learn-key-concepts-in-zapier">Learn key concepts in Zapier®</a></p>
+
+<p><strong>Example:</strong></p>
+
+<p>The image below is an example Zap between the LOCALiQ leads app and Google sheets.</p>
+
+<p><img src="images/zapier_to_google_sheets.png" alt="Integrations webhook" /></p>
 <h2 id='crm-integration-register-crm-webhooks'>Register CRM Webhooks</h2>
-<p><strong>Webhook option:</strong> We also have a Webhook to receive contacts in real time as they are recorded in the LocaliQ platform. Our endpoint enables registration for webhook callbacks when new contacts or contact interactions occur. It requires the following parameters for a successful response: GMAID (advertiser ID).</p>
+<p><strong>Webhook option:</strong> We also have a Webhook to receive contacts in real time as they are recorded in the LOCALiQ platform. Our endpoint enables registration for webhook callbacks when new contacts or contact interactions occur. It requires the following parameters for a successful response: GMAID (advertiser ID).</p>
 
 <p><strong>Zapier App:</strong> The contact webhook is available as an &quot;invitee only&quot; integration on the Zapier marketplace. https://zapier.com/apps/integrations/</p>
 <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
