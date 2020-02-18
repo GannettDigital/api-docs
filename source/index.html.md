@@ -19,6 +19,7 @@ includes:
   - campaigns_totals
   - display_activity_report
   - display_creative_report
+  - unified_display_report
   - geofence_summary_report
   - search_activity_report
   - search_compliance_report

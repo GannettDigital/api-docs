@@ -6,6 +6,9 @@
 |---|---|
 | GET | /client_reports/display_activity/[gmaid]?[query_params] |
 ### API Name: Display Activity Report
+
+**Note:** We recommend users to migrate to the [Unified Display API](#unified_display) in place of this API as this API will no longer be updated.
+
 ### Usage
 Use GET to retrieve information for the Display Activity report for a given advertiser.
 
