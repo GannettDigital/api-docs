@@ -371,6 +371,32 @@
                       </ul>
                   </li>
                   <li class="toc-h2-li">
+                    <a href="#api-unified-display-campaign-metrics-new" class="toc-h2 toc-link" data-title="API">Unified Display Campaign Metrics - NEW</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#api-unified-display-campaign-metrics-new-resource-overview" class="toc-h3 toc-link" data-title="API">Resource Overview</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-unified-display-campaign-metrics-new-api-name-unified-display-report" class="toc-h3 toc-link" data-title="API">API Name: Unified Display Report</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-unified-display-campaign-metrics-new-summary" class="toc-h3 toc-link" data-title="API">Summary</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-unified-display-campaign-metrics-new-usage" class="toc-h3 toc-link" data-title="API">Usage</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-unified-display-campaign-metrics-new-parameters" class="toc-h3 toc-link" data-title="API">Parameters</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-unified-display-campaign-metrics-new-response-data-details" class="toc-h3 toc-link" data-title="API">Response Data Details</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-unified-display-campaign-metrics-new-examples" class="toc-h3 toc-link" data-title="API">Examples:</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="toc-h2-li">
                     <a href="#api-geofence-campaign-metrics" class="toc-h2 toc-link" data-title="API">GeoFence Campaign Metrics</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
@@ -1862,7 +1888,9 @@ https://api.reachlocalservices.com/client_reports/campaigns_totals/USA_105569
 <td>/client_reports/display_activity/[gmaid]?[query_params]</td>
 </tr>
 </tbody></table>
-<h3 id='api-display-campaign-metrics-api-name-display-activity-report'>API Name: Display Activity Report</h3><h3 id='api-display-campaign-metrics-usage'>Usage</h3>
+<h3 id='api-display-campaign-metrics-api-name-display-activity-report'>API Name: Display Activity Report</h3>
+<p><strong>Note:</strong> We recommend users to migrate to the <a href="#unified_display">Unified Display API</a> in place of this API as this API will no longer be updated.</p>
+<h3 id='api-display-campaign-metrics-usage'>Usage</h3>
 <p>Use GET to retrieve information for the Display Activity report for a given advertiser.</p>
 
 <p>The data returned will include impressions, remarketing impressions, custom targeting impressions, clicks, spend, CPM, walk-ins, and CPW values organized by campaign and campaign_cycle.</p>
@@ -2516,7 +2544,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
 <td>/client_reports/display_creative/[gmaid]?[query_params]</td>
 </tr>
 </tbody></table>
-<h3 id='api-creative-ad-metrics-api-name-display-creative-report'>API Name: Display Creative Report</h3><h3 id='api-creative-ad-metrics-usage'>Usage</h3>
+<h3 id='api-creative-ad-metrics-api-name-display-creative-report'>API Name: Display Creative Report</h3>
+<p><strong>Note:</strong> We recommend users to migrate to the <a href="#unified_display">Unified Display API</a> in place of this API as this API will no longer be updated.</p>
+<h3 id='api-creative-ad-metrics-usage'>Usage</h3>
 <p>Use GET to retrieve information for the Display Creative Report for a given advertiser.</p>
 
 <p>The data returned will include spend, impressions, clicks, click-through rate (ctr), cost per thousand (cpm), cost per click (cpc), walk-ins, click-through form submissions, view-through form submissions, cost per submission, click-through priority page views, and view-through priority page views organized by campaign and broken down by creative type and creative size.</p>
@@ -2781,6 +2811,1705 @@ https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?&a
             <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                        <span class="c1">// Total Click-Through Priority Page Views</span>
             <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mi">0</span>                                         <span class="c1">// Total View-Through Priority Page Views</span>
         <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre><h2 id='api-unified-display-campaign-metrics-new'>Unified Display Campaign Metrics - NEW</h2>
+<p><a name="unified_display"></a></p>
+<h3 id='api-unified-display-campaign-metrics-new-resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/unified_display/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='api-unified-display-campaign-metrics-new-api-name-unified-display-report'>API Name: Unified Display Report</h3><h3 id='api-unified-display-campaign-metrics-new-summary'>Summary</h3>
+<p>This is a new Display Metrics API that can be used by customers that have Display campaigns from either the ReachLocal or Gannett brand. All metrics are reported at the creative level, and aggregated at the Interval/Campaign level for ReachLocal brand or Line Item level for the Gannett brand. When data is unavailable, corresponding property will not be present in the response. For example, if we do not have data for a <code>creative_type</code> or <code>creative_size</code>, it will not be present in the response.</p>
+
+<p><strong>Note:</strong> We recommend users to migrate to this API in place of the Display Activity API and Display Creative API as they will no longer be updated.</p>
+<h3 id='api-unified-display-campaign-metrics-new-usage'>Usage</h3>
+<p>Use GET to retrieve information for the Unified Display API that will retrieve metrics on display campaigns. Data can be returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below.</p>
+<h3 id='api-unified-display-campaign-metrics-new-parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>Yes</td>
+<td>--</td>
+<td>Restricts the results to those occurring on or after this date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Yes</td>
+<td>--</td>
+<td>Restricts the results to those occurring on or before this date.</td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>No</td>
+<td>none</td>
+<td>Specifies the type of interval: <code>none</code>, <code>day</code>, <code>calendar_week</code>, or <code>calendar_month</code></td>
+</tr>
+</tbody></table>
+<h3 id='api-unified-display-campaign-metrics-new-response-data-details'>Response Data Details</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>api_name</code></td>
+<td>String</td>
+<td>Name of the API.</td>
+</tr>
+<tr>
+<td><code>api_run_date</code></td>
+<td>String</td>
+<td>Date report was run.</td>
+</tr>
+<tr>
+<td><code>earliest_date_available</code></td>
+<td>String</td>
+<td>How far back data is available.</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>Start Date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>End Date.</td>
+</tr>
+<tr>
+<td><code>time_zone</code></td>
+<td>String</td>
+<td>Time Zone of Data.</td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>String</td>
+<td>Interval Size (<code>none</code>, <code>day</code>, <code>calendar_week</code>, or `calendar_month).</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>String</td>
+<td>Currency for Advertiser.</td>
+</tr>
+<tr>
+<td><code>global_master_advertiser_id</code></td>
+<td>String</td>
+<td>Identifier for Advertiser.</td>
+</tr>
+<tr>
+<td><code>advertiser_name</code></td>
+<td>String</td>
+<td>Name of Advertiser.</td>
+</tr>
+<tr>
+<td><code>report_data</code></td>
+<td>Object</td>
+<td><a href="#udlineitemsreportdata">Report Data Object (with Line Items)</a> or <a href="#udcampaignsreportdata">Report Data Object (with Campaigns)</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="udlineitemsreportdata"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-report-data-object-with-line-items'>Report Data Object (with Line Items)</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>totals</code></td>
+<td>Object</td>
+<td>Object of totals details. <a href="#udtotals">Totals Object</a></td>
+</tr>
+<tr>
+<td><code>intervals</code></td>
+<td>Object</td>
+<td>Object of intervals details. <a href="#udintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td><code>campaigns</code></td>
+<td>Object</td>
+<td>Object of campaigns details. <a href="#udcampaigns">Campaigns Object</a></td>
+</tr>
+<tr>
+<td><code>line_items</code></td>
+<td>Object</td>
+<td>Object of line items details. <a href="#udlineitems">Line Items Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="udcampaignsreportdata"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-report-data-object-with-campaigns'>Report Data Object (with Campaigns)</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>totals</code></td>
+<td>Object</td>
+<td>Object of totals details. <a href="#udtotals">Totals Object</a></td>
+</tr>
+<tr>
+<td><code>campaigns</code></td>
+<td>Object</td>
+<td>Object of campaigns details. <a href="#udcampaigns">Campaigns Object</a></td>
+</tr>
+<tr>
+<td><code>line_items</code></td>
+<td>Object</td>
+<td>Object of line items details. <a href="#udlineitems">Line Items Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="udtotals"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-totals-object'>Totals Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>clicks</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total clicks</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total impressions</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click-through Rate</td>
+</tr>
+<tr>
+<td><code>video_full_screen</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Full-Screen Video Views</td>
+</tr>
+<tr>
+<td><code>video_mute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Muted Video Views</td>
+</tr>
+<tr>
+<td><code>video_unmute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Unmuted Video Views</td>
+</tr>
+<tr>
+<td><code>video_pause</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Paused Video Views</td>
+</tr>
+<tr>
+<td><code>video_resume</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Resumed Video Views</td>
+</tr>
+<tr>
+<td><code>video_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views</td>
+</tr>
+<tr>
+<td><code>total_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Conversions</td>
+</tr>
+<tr>
+<td><code>click_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Click-Through Conversions</td>
+</tr>
+<tr>
+<td><code>view_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of View-Through Conversions</td>
+</tr>
+<tr>
+<td><code>video_played_to_25_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 25 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_50_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 50 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_75_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 75 percent</td>
+</tr>
+<tr>
+<td><code>completed_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Completed Views</td>
+</tr>
+<tr>
+<td><code>video_complete_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Rate of Video Completion vs Partial Views</td>
+</tr>
+<tr>
+<td><code>view_thru_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>View-Through Rate</td>
+</tr>
+</tbody></table>
+
+<p><a name="udintervals"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-intervals-object'>Intervals Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>No</td>
+<td>Start Date of interval</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Number of clicks for interval</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Number of impressions for interval</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Click-through Rate for interval</td>
+</tr>
+<tr>
+<td><code>video_full_screen</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Full-Screen Video Views</td>
+</tr>
+<tr>
+<td><code>video_mute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Muted Video Views</td>
+</tr>
+<tr>
+<td><code>video_unmute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Unmuted Video Views</td>
+</tr>
+<tr>
+<td><code>video_pause</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Paused Video Views</td>
+</tr>
+<tr>
+<td><code>video_resume</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Resumed Video Views</td>
+</tr>
+<tr>
+<td><code>video_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views</td>
+</tr>
+<tr>
+<td><code>total_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Conversions</td>
+</tr>
+<tr>
+<td><code>click_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Click-Through Conversions</td>
+</tr>
+<tr>
+<td><code>view_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of View-Through Conversions</td>
+</tr>
+<tr>
+<td><code>video_played_to_25_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 25 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_50_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 50 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_75_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 75 percent</td>
+</tr>
+<tr>
+<td><code>completed_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Completed Views</td>
+</tr>
+<tr>
+<td><code>video_complete_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Rate of Video Completion vs Partial Views</td>
+</tr>
+<tr>
+<td><code>view_thru_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>View-Through Rate</td>
+</tr>
+</tbody></table>
+
+<p><a name="udcampaigns"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-campaigns-object'>Campaigns Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>No</td>
+<td>Campaign Name</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id</code></td>
+<td>String</td>
+<td>No</td>
+<td>Unique Identifier for Campaign</td>
+</tr>
+<tr>
+<td><code>organization</code></td>
+<td>String</td>
+<td>No</td>
+<td>Either <code>reachlocal</code> or <code>gannett</code></td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>No</td>
+<td>Campaign Start Date</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Campaign End Date</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>No</td>
+<td>Type of Campaign</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>String</td>
+<td>No</td>
+<td>Status of Campaign</td>
+</tr>
+<tr>
+<td><code>spend</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Spend for Campaign</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Impressions for Campaign</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Clicks for Campaign</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click-through Rate of Campaign</td>
+</tr>
+<tr>
+<td><code>cpm</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click Per Thousand Impressions for Campaign</td>
+</tr>
+<tr>
+<td><code>cpc</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Cost Per Click for Campaign</td>
+</tr>
+<tr>
+<td><code>walk_ins</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Walk-ins for Campaign</td>
+</tr>
+<tr>
+<td><code>cost_per_view</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Cost Per View for Campaign</td>
+</tr>
+<tr>
+<td><code>form_submissions_ct</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total For Submission Click Through for Campaign</td>
+</tr>
+<tr>
+<td><code>form_submissions_vt</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Form Submission View Through for Campaign</td>
+</tr>
+<tr>
+<td><code>website_visits_vt</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Website Visits View Through for Campaign</td>
+</tr>
+<tr>
+<td><code>cost_per_submission</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Cost Per Submission for Campaign</td>
+</tr>
+<tr>
+<td><code>priority_page_views_ct</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Priority Page View Click Through for Campaign</td>
+</tr>
+<tr>
+<td><code>priority_page_views_vt</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Priority Page View Through for Campaign</td>
+</tr>
+<tr>
+<td><code>video_full_screen</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Full-Screen Video Views</td>
+</tr>
+<tr>
+<td><code>video_mute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Muted Video Views</td>
+</tr>
+<tr>
+<td><code>video_unmute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Unmuted Video Views</td>
+</tr>
+<tr>
+<td><code>video_pause</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Paused Video Views</td>
+</tr>
+<tr>
+<td><code>video_resume</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Resumed Video Views</td>
+</tr>
+<tr>
+<td><code>video_views</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Number of Video Views</td>
+</tr>
+<tr>
+<td><code>total_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Conversions</td>
+</tr>
+<tr>
+<td><code>click_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Click-Through Conversions</td>
+</tr>
+<tr>
+<td><code>view_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of View-Through Conversions</td>
+</tr>
+<tr>
+<td><code>video_played_to_25_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 25 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_50_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 50 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_75_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 75 percent</td>
+</tr>
+<tr>
+<td><code>completed_views</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Completed Views for Campaign</td>
+</tr>
+<tr>
+<td><code>video_complete_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Video Completion Rate</td>
+</tr>
+<tr>
+<td><code>view_thru_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total View-Through Rate</td>
+</tr>
+<tr>
+<td><code>creatives</code></td>
+<td>Object</td>
+<td>--</td>
+<td>Object of creatives details. <a href="#udcampaigncreatives">Campaign Creatives Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="udlineitems"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-line-items-object'>Line Items Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>No</td>
+<td>Name of Line Item</td>
+</tr>
+<tr>
+<td><code>line_item_id</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Identifier of Line Item</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Impressions for Line Item</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Clicks for Line Item</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click-through Rate of Line Item</td>
+</tr>
+<tr>
+<td><code>universal_interaction_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Rate for Line Item</td>
+</tr>
+<tr>
+<td><code>universal_interaction_time</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Time for Line Item</td>
+</tr>
+<tr>
+<td><code>hover_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Hover Rate for Line Item</td>
+</tr>
+<tr>
+<td><code>attention_quality</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Attention Quality for Line Item</td>
+</tr>
+<tr>
+<td><code>intervals</code></td>
+<td>Object</td>
+<td>--</td>
+<td>Object of line items intervals. <a href="#udlineitemintervals">Line Item Intervals Object</a></td>
+</tr>
+<tr>
+<td><code>creatives</code></td>
+<td>Object</td>
+<td>--</td>
+<td>Object of line items creatives. <a href="#udlineitemcreatives">Line Item Creatives Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="udlineitemintervals"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-line-items-intervals-object'>Line Items Intervals Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>No</td>
+<td>Start Date of Interval</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Impressions for Interval</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Clicks for Interval</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click-through Rate of Interval</td>
+</tr>
+<tr>
+<td><code>universal_interaction_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Rate for Interval</td>
+</tr>
+<tr>
+<td><code>universal_interaction_time</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Time for Interval</td>
+</tr>
+<tr>
+<td><code>hover_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Hover Rate for Interval</td>
+</tr>
+<tr>
+<td><code>attention_quality</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Attention Quality for Interval</td>
+</tr>
+<tr>
+<td><code>video_full_screen</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Full-Screen Video Views</td>
+</tr>
+<tr>
+<td><code>video_mute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Muted Video Views</td>
+</tr>
+<tr>
+<td><code>video_unmute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Unmuted Video Views</td>
+</tr>
+<tr>
+<td><code>video_pause</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Paused Video Views</td>
+</tr>
+<tr>
+<td><code>video_resume</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Resumed Video Views</td>
+</tr>
+<tr>
+<td><code>video_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views</td>
+</tr>
+<tr>
+<td><code>total_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Conversions</td>
+</tr>
+<tr>
+<td><code>click_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Click-Through Conversions</td>
+</tr>
+<tr>
+<td><code>view_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of View-Through Conversions</td>
+</tr>
+<tr>
+<td><code>video_played_to_25_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 25 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_50_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 50 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_75_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 75 percent</td>
+</tr>
+<tr>
+<td><code>completed_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Completed Views</td>
+</tr>
+<tr>
+<td><code>video_complete_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Rate of Video Completion vs Partial Views</td>
+</tr>
+<tr>
+<td><code>view_thru_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>View-Through Rate</td>
+</tr>
+</tbody></table>
+
+<p><a name="udlineitemcreatives"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-line-items-creatives-object'>Line Items Creatives Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>creative_id</code></td>
+<td>String</td>
+<td>No</td>
+<td>Identifier for Creative</td>
+</tr>
+<tr>
+<td><code>publisher_id</code></td>
+<td>String</td>
+<td>No</td>
+<td>Identifier for Publisher</td>
+</tr>
+<tr>
+<td><code>publisher_name</code></td>
+<td>String</td>
+<td>No</td>
+<td>Name of Publisher</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>No</td>
+<td>Name of Creative</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Impressions for Creative</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Clicks for Creative</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click-through Rate of Creative</td>
+</tr>
+<tr>
+<td><code>universal_interaction_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Rate for Creative</td>
+</tr>
+<tr>
+<td><code>universal_interaction_time</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Time for Creative</td>
+</tr>
+<tr>
+<td><code>hover_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Hover Rate for Creative</td>
+</tr>
+<tr>
+<td><code>attention_quality</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Attention Quality for Creative</td>
+</tr>
+<tr>
+<td><code>video_full_screen</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Full-Screen Video Views</td>
+</tr>
+<tr>
+<td><code>video_mute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Muted Video Views</td>
+</tr>
+<tr>
+<td><code>video_unmute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Unmuted Video Views</td>
+</tr>
+<tr>
+<td><code>video_pause</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Paused Video Views</td>
+</tr>
+<tr>
+<td><code>video_resume</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Resumed Video Views</td>
+</tr>
+<tr>
+<td><code>video_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views</td>
+</tr>
+<tr>
+<td><code>total_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Conversions</td>
+</tr>
+<tr>
+<td><code>click_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Click-Through Conversions</td>
+</tr>
+<tr>
+<td><code>view_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of View-Through Conversions</td>
+</tr>
+<tr>
+<td><code>video_played_to_25_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 25 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_50_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 50 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_75_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 75 percent</td>
+</tr>
+<tr>
+<td><code>completed_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Completed Views</td>
+</tr>
+<tr>
+<td><code>video_complete_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Rate of Video Completion vs Partial Views</td>
+</tr>
+<tr>
+<td><code>view_thru_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>View-Through Rate</td>
+</tr>
+<tr>
+<td><code>intervals</code></td>
+<td>Object</td>
+<td>--</td>
+<td>Object of line items creatives intervals. <a href="#udlineitemscreativesintervals">Line Items Creatives Intervals Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="udcampaigncreatives"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-campaign-creatives-object'>Campaign Creatives Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>creative_id</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Identifier for Creative</td>
+</tr>
+<tr>
+<td><code>publisher_id</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Identifier for Publisher</td>
+</tr>
+<tr>
+<td><code>publisher_name</code></td>
+<td>String</td>
+<td>No</td>
+<td>Name of Publisher</td>
+</tr>
+<tr>
+<td><code>creative_name</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Name of Creative</td>
+</tr>
+<tr>
+<td><code>creative_type</code></td>
+<td>String</td>
+<td>No</td>
+<td>Type of Creative</td>
+</tr>
+<tr>
+<td><code>creative_size</code></td>
+<td>String</td>
+<td>No</td>
+<td>Size of Creative</td>
+</tr>
+<tr>
+<td><code>spend</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Spend for Campaign</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Impressions for Interval</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Clicks for Interval</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click-through Rate of Interval</td>
+</tr>
+<tr>
+<td><code>cpm</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click Per Thousand Impressions for Interval</td>
+</tr>
+<tr>
+<td><code>cpc</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Cost Per Click for Interval</td>
+</tr>
+<tr>
+<td><code>walk_ins</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Walk-ins for Interval</td>
+</tr>
+<tr>
+<td><code>cost_per_view</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Cost Per View for Campaign</td>
+</tr>
+<tr>
+<td><code>form_submissions_ct</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total For Submission Click Through for Campaign</td>
+</tr>
+<tr>
+<td><code>form_submissions_vt</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Form Submission View Through for Campaign</td>
+</tr>
+<tr>
+<td><code>website_visits_vt</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Website Visits View Through for Campaign</td>
+</tr>
+<tr>
+<td><code>cost_per_submission</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Cost Per Submission for Campaign</td>
+</tr>
+<tr>
+<td><code>priority_page_views_ct</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Priority Page View Click Through for Campaign</td>
+</tr>
+<tr>
+<td><code>priority_page_views_vt</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Priority Page View Through for Campaign</td>
+</tr>
+<tr>
+<td><code>video_full_screen</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Full-Screen Video Views</td>
+</tr>
+<tr>
+<td><code>video_mute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Muted Video Views</td>
+</tr>
+<tr>
+<td><code>video_unmute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Unmuted Video Views</td>
+</tr>
+<tr>
+<td><code>video_pause</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Paused Video Views</td>
+</tr>
+<tr>
+<td><code>video_resume</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Resumed Video Views</td>
+</tr>
+<tr>
+<td><code>video_views</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Number of Video Views</td>
+</tr>
+<tr>
+<td><code>total_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Conversions</td>
+</tr>
+<tr>
+<td><code>click_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Click-Through Conversions</td>
+</tr>
+<tr>
+<td><code>view_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of View-Through Conversions</td>
+</tr>
+<tr>
+<td><code>video_played_to_25_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 25 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_50_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 50 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_75_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 75 percent</td>
+</tr>
+<tr>
+<td><code>completed_views</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Completed Views for Campaign</td>
+</tr>
+<tr>
+<td><code>video_complete_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total Video Completion Rate</td>
+</tr>
+<tr>
+<td><code>view_thru_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Total View-Through Rate</td>
+</tr>
+</tbody></table>
+
+<p><a name="udlineitemscreativesintervals"></a></p>
+<h4 id='api-unified-display-campaign-metrics-new-response-data-details-line-items-creatives-intervals-object'>Line Items Creatives Intervals Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>String</td>
+<td>No</td>
+<td>Start Date of Interval</td>
+</tr>
+<tr>
+<td><code>impressions</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Impressions for Interval</td>
+</tr>
+<tr>
+<td><code>clicks</code></td>
+<td>Int</td>
+<td>No</td>
+<td>Total Clicks for Interval</td>
+</tr>
+<tr>
+<td><code>ctr</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Click-through Rate of Interval</td>
+</tr>
+<tr>
+<td><code>universal_interaction_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Rate for Interval</td>
+</tr>
+<tr>
+<td><code>universal_interaction_time</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Overall Universal Interaction Time for Interval</td>
+</tr>
+<tr>
+<td><code>hover_rate</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Hover Rate for Interval</td>
+</tr>
+<tr>
+<td><code>attention_quality</code></td>
+<td>Float</td>
+<td>No</td>
+<td>Attention Quality for Interval</td>
+</tr>
+<tr>
+<td><code>video_full_screen</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Full-Screen Video Views</td>
+</tr>
+<tr>
+<td><code>video_mute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Muted Video Views</td>
+</tr>
+<tr>
+<td><code>video_unmute</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Unmuted Video Views</td>
+</tr>
+<tr>
+<td><code>video_pause</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Paused Video Views</td>
+</tr>
+<tr>
+<td><code>video_resume</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Resumed Video Views</td>
+</tr>
+<tr>
+<td><code>video_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views</td>
+</tr>
+<tr>
+<td><code>total_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Conversions</td>
+</tr>
+<tr>
+<td><code>click_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Click-Through Conversions</td>
+</tr>
+<tr>
+<td><code>view_through_conversions</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of View-Through Conversions</td>
+</tr>
+<tr>
+<td><code>video_played_to_25_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 25 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_50_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 50 percent</td>
+</tr>
+<tr>
+<td><code>video_played_to_75_pct</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Video Views Played to 75 percent</td>
+</tr>
+<tr>
+<td><code>completed_views</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Number of Completed Views</td>
+</tr>
+<tr>
+<td><code>video_complete_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>Rate of Video Completion vs Partial Views</td>
+</tr>
+<tr>
+<td><code>view_thru_rate</code></td>
+<td>Float</td>
+<td>Yes</td>
+<td>View-Through Rate</td>
+</tr>
+</tbody></table>
+<h3 id='api-unified-display-campaign-metrics-new-examples'>Examples:</h3>
+<blockquote>
+<p>Retrieve data for a specific range of dates</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/unified_display/USA_123?start_date=2016-12-01&amp;end_date=2016-12-31
+</code></pre>
+<blockquote>
+<p>Retrieve data with intervals</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/unified_display/USA_123?start_date=2016-12-01&amp;end_date=2016-12-31&amp;interval_size=day
+</code></pre>
+<blockquote>
+<p>Response Description (with Line Items)</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"api_name"</span><span class="p">:</span> <span class="s2">"unified_display"</span><span class="p">,</span>                                         <span class="c1">// Name of the API</span>
+    <span class="s2">"api_run_date"</span><span class="p">:</span> <span class="s2">"2019-08-29"</span><span class="p">,</span>                                          <span class="c1">// Date report was run</span>
+    <span class="s2">"earliest_date_available"</span><span class="p">:</span> <span class="s2">"2019-04-20"</span><span class="p">,</span>                               <span class="c1">// How far back data is available</span>
+    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-08-19"</span><span class="p">,</span>                                            <span class="c1">// Start date of report</span>
+    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2019-08-20"</span><span class="p">,</span>                                              <span class="c1">// End date of report</span>
+    <span class="s2">"time_zone"</span><span class="p">:</span> <span class="s2">"America/Los_Angeles"</span><span class="p">,</span>                                    <span class="c1">// Time Zone</span>
+    <span class="s2">"interval_size"</span><span class="p">:</span> <span class="s2">"day"</span><span class="p">,</span>                                                <span class="c1">// Interval Size ('none', 'day', 'calendar_week' or 'calendar_month')</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>                                                     <span class="c1">// Currency of Report</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_123"</span><span class="p">,</span>                              <span class="c1">// Identifier for advertiser</span>
+    <span class="s2">"advertiser_name"</span><span class="p">:</span> <span class="s2">"TEST"</span><span class="p">,</span>                                             <span class="c1">// Name for advertiser</span>
+    <span class="s2">"report_data"</span><span class="p">:</span> <span class="p">{</span>                                                       <span class="c1">// Report details</span>
+        <span class="s2">"totals"</span><span class="p">:</span> <span class="p">{</span>                                                        <span class="c1">// Total data</span>
+            <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                                   <span class="c1">// Total clicks</span>
+            <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                              <span class="c1">// Total impressions</span>
+            <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span>                                                     <span class="c1">// Total click-through rate</span>
+        <span class="p">},</span>
+        <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>                                                     <span class="c1">// Data for specified interval</span>
+            <span class="p">{</span>
+                <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-08-19"</span><span class="p">,</span>                                <span class="c1">// Start date of interval</span>
+                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                               <span class="c1">// Clicks for interval</span>
+                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                          <span class="c1">// Impressions for interval</span>
+                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                                <span class="c1">// Click-through rate</span>
+                <span class="s2">"video_full_screen"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                  <span class="c1">// Number of full-screen video views for interval</span>
+                <span class="s2">"video_mute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                         <span class="c1">// Number of muted video views for interval</span>
+                <span class="s2">"video_unmute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                       <span class="c1">// Number of unmuted video views for interval</span>
+                <span class="s2">"video_pause"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Number of paused video views for interval</span>
+                <span class="s2">"video_resume"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                       <span class="c1">// Number of resumed video views for interval</span>
+                <span class="s2">"video_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Number of video views for interval</span>
+                <span class="s2">"total_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                  <span class="c1">// Number of conversions for interval</span>
+                <span class="s2">"click_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of click-through conversions for interval</span>
+                <span class="s2">"view_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                           <span class="c1">// Number of view-through conversions for interval</span>
+                <span class="s2">"video_played_to_25_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Number of video views played to 25 percent for interval</span>
+                <span class="s2">"video_played_to_50_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Number of video views played to 50 percent for interval</span>
+                <span class="s2">"video_played_to_75_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Number of video views played to 75 percent for interval</span>
+                <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                    <span class="c1">// Number of completed views for interval</span>
+                <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Rate of video completion vs partial views for interval</span>
+                <span class="s2">"view_thru_rate"</span><span class="p">:</span> <span class="mf">0.0</span>                                      <span class="c1">// View-through rate for interval</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"campaigns"</span><span class="p">:</span> <span class="p">[],</span>                                                   <span class="c1">// All data for campaigns</span>
+        <span class="s2">"line_items"</span><span class="p">:</span> <span class="p">[</span>                                                    <span class="c1">// All data for line items</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Test"</span><span class="p">,</span>                                            <span class="c1">// Name of line item</span>
+                <span class="s2">"line_item_id"</span><span class="p">:</span> <span class="mi">1516054</span><span class="p">,</span>                                   <span class="c1">// Identifier of line item</span>
+                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                          <span class="c1">// Total impressions for line item</span>
+                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                               <span class="c1">// Total clicks for line item</span>
+                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                                <span class="c1">// Overall click-through rate of line item</span>
+                <span class="s2">"universal_interaction_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                         <span class="c1">// Overall universal interaction rate of line item</span>
+                <span class="s2">"universal_interaction_time"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                         <span class="c1">// Overall universal interaction time for line item</span>
+                <span class="s2">"hover_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                         <span class="c1">// Hover rate for line item</span>
+                <span class="s2">"attention_quality"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                  <span class="c1">// Attention quality for line item</span>
+                <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>                                             <span class="c1">// Data for specified interval</span>
+                    <span class="p">{</span>
+                        <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-08-19"</span><span class="p">,</span>                        <span class="c1">// Start date of interval</span>
+                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                  <span class="c1">// Impressions for interval</span>
+                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                       <span class="c1">// Clicks for interval</span>
+                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Click-through rate</span>
+                        <span class="s2">"universal_interaction_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                 <span class="c1">// Overall universal interaction rate for interval</span>
+                        <span class="s2">"universal_interaction_time"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                 <span class="c1">// Overall universal interaction time for interval</span>
+                        <span class="s2">"hover_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Hover rate for interval</span>
+                        <span class="s2">"attention_quality"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Attention quality for interval</span>
+                        <span class="s2">"video_full_screen"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of full-screen video views for interval</span>
+                        <span class="s2">"video_mute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Number of muted video views for interval</span>
+                        <span class="s2">"video_unmute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                               <span class="c1">// Number of unmuted video views for interval</span>
+                        <span class="s2">"video_pause"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Number of paused video views for interval</span>
+                        <span class="s2">"video_resume"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                               <span class="c1">// Number of resumed video views for interval</span>
+                        <span class="s2">"video_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Number of video views for interval</span>
+                        <span class="s2">"total_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of conversions for interval</span>
+                        <span class="s2">"click_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                  <span class="c1">// Number of click-through conversions for interval</span>
+                        <span class="s2">"view_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                   <span class="c1">// Number of view-through conversions for interval</span>
+                        <span class="s2">"video_played_to_25_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 25 percent for interval</span>
+                        <span class="s2">"video_played_to_50_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 50 percent for interval</span>
+                        <span class="s2">"video_played_to_75_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 75 percent for interval</span>
+                        <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                            <span class="c1">// Number of completed views for interval</span>
+                        <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                        <span class="c1">// Rate of video completion vs partial view for interval</span>
+                        <span class="s2">"view_thru_rate"</span><span class="p">:</span> <span class="mf">0.0</span>                              <span class="c1">// View-through rate</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">"creatives"</span><span class="p">:</span> <span class="p">[</span>                                             <span class="c1">// All data for creatives</span>
+                    <span class="p">{</span>
+                        <span class="s2">"creative_id"</span><span class="p">:</span> <span class="mi">12881938</span><span class="p">,</span>                           <span class="c1">// Identifier for creative</span>
+                        <span class="s2">"publisher_id"</span><span class="p">:</span> <span class="mi">1777</span><span class="p">,</span>                              <span class="c1">// Identifier for publisher</span>
+                        <span class="s2">"publisher_name"</span><span class="p">:</span> <span class="s2">"Simpli.fi Remarketing"</span><span class="p">,</span>         <span class="c1">// Name of publisher</span>
+                        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Test"</span><span class="p">,</span>                                    <span class="c1">// Name of creative</span>
+                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                  <span class="c1">// Total impressions for creative</span>
+                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                       <span class="c1">// Total clicks for creative</span>
+                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Overall click-through rate for creative</span>
+                        <span class="s2">"universal_interaction_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                 <span class="c1">// Overall universal interaction rate for creative</span>
+                        <span class="s2">"universal_interaction_time"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                 <span class="c1">// Overall universal interaction time for creative</span>
+                        <span class="s2">"hover_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Hover rate for creative</span>
+                        <span class="s2">"attention_quality"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Attention quality for creative</span>
+                        <span class="s2">"video_full_screen"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of full-screen video views for creative</span>
+                        <span class="s2">"video_mute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Number of muted video views for creative</span>
+                        <span class="s2">"video_unmute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                               <span class="c1">// Number of unmuted video views for creative</span>
+                        <span class="s2">"video_pause"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Number of paused video views for creative</span>
+                        <span class="s2">"video_resume"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                               <span class="c1">// Number of resumed video views for creative</span>
+                        <span class="s2">"video_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Number of video views for creative</span>
+                        <span class="s2">"total_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of conversions for creative</span>
+                        <span class="s2">"click_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                  <span class="c1">// Number of click-through conversions for creative</span>
+                        <span class="s2">"view_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                   <span class="c1">// Number of view-through conversions for creative</span>
+                        <span class="s2">"video_played_to_25_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 25 percent for creative</span>
+                        <span class="s2">"video_played_to_50_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 50 percent for creative</span>
+                        <span class="s2">"video_played_to_75_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 75 percent for creative</span>
+                        <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                            <span class="c1">// Number of completed views for creative</span>
+                        <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                        <span class="c1">// View Rte of video completion vs partial views for creative</span>
+                        <span class="s2">"view_thru_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// View-through rate</span>
+                        <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>                                     <span class="c1">// Data for specified interval</span>
+                            <span class="p">{</span>
+                                <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-08-19"</span><span class="p">,</span>                <span class="c1">// Start date of interval</span>
+                                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                          <span class="c1">// Total impressions for interval</span>
+                                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                               <span class="c1">// Total clicks for interval</span>
+                                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Overall click-through rate of interval</span>
+                                <span class="s2">"universal_interaction_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>         <span class="c1">// Overall universal interaction rate for interval</span>
+                                <span class="s2">"universal_interaction_time"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>         <span class="c1">// Overall universal interaction time for interval</span>
+                                <span class="s2">"hover_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                         <span class="c1">// Hover rate for interval</span>
+                                <span class="s2">"attention_quality"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                  <span class="c1">// Attention quality for interval</span>
+                                <span class="s2">"video_full_screen"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                  <span class="c1">// Number of full-screen video views for interval</span>
+                                <span class="s2">"video_mute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                         <span class="c1">// Number of muted video views for interval</span>
+                                <span class="s2">"video_unmute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                       <span class="c1">// Number of unmuted video views for interval</span>
+                                <span class="s2">"video_pause"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                        <span class="c1">// Number of paused video views for interval</span>
+                                <span class="s2">"video_resume"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                       <span class="c1">// Number of resumed video views for interval</span>
+                                <span class="s2">"video_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                        <span class="c1">// Number of video views for interval</span>
+                                <span class="s2">"total_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                  <span class="c1">// Number of conversions for interval</span>
+                                <span class="s2">"click_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>          <span class="c1">// Number of click-through conversions for interval</span>
+                                <span class="s2">"view_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>           <span class="c1">// Number of view-through conversions for interval</span>
+                                <span class="s2">"video_played_to_25_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>             <span class="c1">// Number of video views played to 25 percent for interval</span>
+                                <span class="s2">"video_played_to_50_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>             <span class="c1">// Number of video views played to 50 percent for interval</span>
+                                <span class="s2">"video_played_to_75_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>             <span class="c1">// Number of video views played to 75 percent for interval</span>
+                                <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                    <span class="c1">// Number of completed views for interval</span>
+                                <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                <span class="c1">// Rate of video completion vs partial views for interval</span>
+                                <span class="s2">"view_thru_rate"</span><span class="p">:</span> <span class="mf">0.0</span>                      <span class="c1">// View-through rate for interval</span>
+                            <span class="p">}</span>
+                        <span class="p">]</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Response Description (with Campaigns)</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"api_name"</span><span class="p">:</span> <span class="s2">"unified_display"</span><span class="p">,</span>                                         <span class="c1">// Name of the API</span>
+    <span class="s2">"api_run_date"</span><span class="p">:</span> <span class="s2">"2019-08-29"</span><span class="p">,</span>                                          <span class="c1">// Date report was run</span>
+    <span class="s2">"earliest_date_available"</span><span class="p">:</span> <span class="s2">"2019-07-15"</span><span class="p">,</span>                               <span class="c1">// How far back data is available</span>
+    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-08-19"</span><span class="p">,</span>                                            <span class="c1">// Start date of report</span>
+    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2019-08-20"</span><span class="p">,</span>                                              <span class="c1">// End date of report</span>
+    <span class="s2">"time_zone"</span><span class="p">:</span> <span class="s2">"Eastern Time (US &amp; Canada)"</span><span class="p">,</span>                             <span class="c1">// Time Zone</span>
+    <span class="s2">"interval_size"</span><span class="p">:</span> <span class="s2">"none"</span><span class="p">,</span>                                               <span class="c1">// Interval Size ('none','day', 'calendar_week' or 'calendar_month')</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"CAD"</span><span class="p">,</span>                                                     <span class="c1">// Currency of Report</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"CAN_123"</span><span class="p">,</span>                              <span class="c1">// Identifier for advertiser</span>
+    <span class="s2">"advertiser_name"</span><span class="p">:</span> <span class="s2">"Test"</span><span class="p">,</span>                                             <span class="c1">// Name for advertiser</span>
+    <span class="s2">"report_data"</span><span class="p">:</span> <span class="p">{</span>                                                       <span class="c1">// Report details</span>
+        <span class="s2">"totals"</span><span class="p">:</span> <span class="p">{</span>                                                        <span class="c1">// Total data</span>
+            <span class="s2">"clicks"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                                 <span class="c1">// Total clicks</span>
+            <span class="s2">"impressions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                            <span class="c1">// Total impressions</span>
+            <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                                    <span class="c1">// Total click-through rate</span>
+            <span class="s2">"video_full_screen"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                      <span class="c1">// Total number of full-screen video views</span>
+            <span class="s2">"video_mute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                             <span class="c1">// Total number of muted video views</span>
+            <span class="s2">"video_unmute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                           <span class="c1">// Total number of unmuted video views</span>
+            <span class="s2">"video_pause"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                            <span class="c1">// Total number of paused video views</span>
+            <span class="s2">"video_resume"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                           <span class="c1">// Total number of resumed video views</span>
+            <span class="s2">"video_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                            <span class="c1">// Total number of video views</span>
+            <span class="s2">"total_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                      <span class="c1">// Total number of conversions</span>
+            <span class="s2">"click_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                              <span class="c1">// Total number of click-through conversions</span>
+            <span class="s2">"view_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                               <span class="c1">// Total number of view-through conversions</span>
+            <span class="s2">"video_played_to_25_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Total number of video views played to 25 percent</span>
+            <span class="s2">"video_played_to_50_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Total number of video views played to 50 percent</span>
+            <span class="s2">"video_played_to_75_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Total number of video views played to 75 percent</span>
+            <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Total number of completed views</span>
+            <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                    <span class="c1">// Total rate of video completion vs partial views</span>
+            <span class="s2">"view_thru_rate"</span><span class="p">:</span> <span class="mf">0.0</span>                                          <span class="c1">// Total view-through rate</span>
+        <span class="p">},</span>
+        <span class="s2">"campaigns"</span><span class="p">:</span> <span class="p">[</span>                                                     <span class="c1">// All data for campaigns</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Test"</span><span class="p">,</span>                                            <span class="c1">// Name of campaign</span>
+                <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"CAN_123"</span><span class="p">,</span>                    <span class="c1">// Identifier for campaign</span>
+                <span class="s2">"organization"</span><span class="p">:</span> <span class="s2">"reachlocal"</span><span class="p">,</span>                              <span class="c1">// Either 'reachlocal' or 'gannett'</span>
+                <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-05-21"</span><span class="p">,</span>                                <span class="c1">// Campaign start date</span>
+                <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>                                          <span class="c1">// Campaign end date</span>
+                <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"display"</span><span class="p">,</span>                                         <span class="c1">// Type of campaign</span>
+                <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>                                       <span class="c1">// Status of campaign</span>
+                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                              <span class="c1">// Total spend for campaign</span>
+                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Total impressions for campaign</span>
+                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                             <span class="c1">// Total clicks for campaign</span>
+                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                                <span class="c1">// Overall click-through rate of campaign</span>
+                <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                                <span class="c1">// Overall click per thousand impressions for campaign</span>
+                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                                <span class="c1">// Cost per click for campaign</span>
+                <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                           <span class="c1">// Total walk-ins for campaign</span>
+                <span class="s2">"cost_per_view"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                        <span class="c1">// Total cost per view for campaign</span>
+                <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Total form submission click-through for campaign</span>
+                <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Total form submission view-through for campaign</span>
+                <span class="s2">"website_visits_vt"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                  <span class="c1">// Total website visits view-through for campaign</span>
+                <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                  <span class="c1">// Total cost per submission for campaign</span>
+                <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Total priority page view click-through for campaign</span>
+                <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Total priority page view-through for campaign</span>
+                <span class="s2">"video_full_screen"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                  <span class="c1">// Number of full-screen video views for campaign</span>
+                <span class="s2">"video_mute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                         <span class="c1">// Number of muted video views for campaign</span>
+                <span class="s2">"video_unmute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                       <span class="c1">// Number of unmuted video views for campaign</span>
+                <span class="s2">"video_pause"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Number of paused video views for campaign</span>
+                <span class="s2">"video_resume"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                       <span class="c1">// Number of resumed video views for campaign</span>
+                <span class="s2">"video_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Number of video views for campaign</span>
+                <span class="s2">"total_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                  <span class="c1">// Number of conversions for campaign</span>
+                <span class="s2">"click_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of click-through conversions for campaign</span>
+                <span class="s2">"view_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                           <span class="c1">// Number of view-through conversions for campaign</span>
+                <span class="s2">"video_played_to_25_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Number of video views played to 25 percent for campaign</span>
+                <span class="s2">"video_played_to_50_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Number of video views played to 50 percent for campaign</span>
+                <span class="s2">"video_played_to_75_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                             <span class="c1">// Number of video views played to 75 percent for campaign</span>
+                <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                    <span class="c1">// Number of completed views for campaign</span>
+                <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Rate of video completion vs partial views</span>
+                <span class="s2">"view_thru_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                     <span class="c1">// View-through rate</span>
+                <span class="s2">"creatives"</span><span class="p">:</span> <span class="p">[</span>                                             <span class="c1">// All data for creatives</span>
+                    <span class="p">{</span>
+                        <span class="s2">"creative_id"</span><span class="p">:</span> <span class="mi">1180668</span><span class="p">,</span>                            <span class="c1">// Identifier for creative</span>
+                        <span class="s2">"publisher_id"</span><span class="p">:</span> <span class="mi">49</span><span class="p">,</span>                                <span class="c1">// Identifier for publisher</span>
+                        <span class="s2">"publisher_name"</span><span class="p">:</span> <span class="s2">"Simpli.fi Remarketing"</span><span class="p">,</span>         <span class="c1">// Name of publisher</span>
+                        <span class="s2">"creative_name"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>                             <span class="c1">// Name of creative</span>
+                        <span class="s2">"creative_type"</span><span class="p">:</span> <span class="s2">"Third Party Ad"</span><span class="p">,</span>                 <span class="c1">// Type of creative</span>
+                        <span class="s2">"creative_size"</span><span class="p">:</span> <span class="s2">"160x600"</span><span class="p">,</span>                        <span class="c1">// Size of creative</span>
+                        <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                      <span class="c1">// Total spend for campaign</span>
+                        <span class="s2">"impressions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Total impressions for interval</span>
+                        <span class="s2">"clicks"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                     <span class="c1">// Total clicks for interval</span>
+                        <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Overall click-through rate of interval</span>
+                        <span class="s2">"cpm"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Overall click per thousand impressions for interval</span>
+                        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                        <span class="c1">// Cost per click for interval</span>
+                        <span class="s2">"walk_ins"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                   <span class="c1">// Total walk-ins for interval</span>
+                        <span class="s2">"cost_per_view"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                                <span class="c1">// Total cost per view for interval</span>
+                        <span class="s2">"form_submissions_ct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                        <span class="c1">// Total form submission click-through for interval</span>
+                        <span class="s2">"form_submissions_vt"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                        <span class="c1">// Total form submission view-through for interval</span>
+                        <span class="s2">"website_visits_vt"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">//Total website visits view-through for interval</span>
+                        <span class="s2">"cost_per_submission"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                          <span class="c1">// Total cost per submission for interval</span>
+                        <span class="s2">"priority_page_views_ct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Total priority page view click-through for interval</span>
+                        <span class="s2">"priority_page_views_vt"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Total priority page view-through for interval</span>
+                        <span class="s2">"video_full_screen"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of full-screen video views for creative</span>
+                        <span class="s2">"video_mute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                 <span class="c1">// Number of muted video views for creative</span>
+                        <span class="s2">"video_unmute"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                               <span class="c1">// Number of unmuted video views for creative</span>
+                        <span class="s2">"video_pause"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Number of paused video views for creative</span>
+                        <span class="s2">"video_resume"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                               <span class="c1">// Number of resumed video views for creative</span>
+                        <span class="s2">"video_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                                <span class="c1">// Number of video views for creative</span>
+                        <span class="s2">"total_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                          <span class="c1">// Number of conversions for creative</span>
+                        <span class="s2">"click_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                  <span class="c1">// Number of click-through conversions for creative</span>
+                        <span class="s2">"view_through_conversions"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                   <span class="c1">// Number of view-through conversions for creative</span>
+                        <span class="s2">"video_played_to_25_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 25 percent for creative</span>
+                        <span class="s2">"video_played_to_50_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 50  percent for creative</span>
+                        <span class="s2">"video_played_to_75_pct"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                     <span class="c1">// Number of video views played to 75 percent for creative</span>
+                        <span class="s2">"completed_views"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                            <span class="c1">// Number of completed views for creative</span>
+                        <span class="s2">"video_complete_rate"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>                        <span class="c1">// Rate of video completion vs partial views for creative</span>
+                        <span class="s2">"view_thru_rate"</span><span class="p">:</span> <span class="mf">0.0</span>                              <span class="c1">// View-through rate for creative</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"line_items"</span><span class="p">:</span> <span class="p">[]</span>                                                   <span class="c1">// All data for line items</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre><h2 id='api-geofence-campaign-metrics'>GeoFence Campaign Metrics</h2><h3 id='api-geofence-campaign-metrics-resource-overview'>Resource Overview</h3>
