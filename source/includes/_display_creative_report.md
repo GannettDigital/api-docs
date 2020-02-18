@@ -6,6 +6,9 @@
 |---|---|
 | GET | /client_reports/display_creative/[gmaid]?[query_params] |
 ### API Name: Display Creative Report
+
+**Note:** We recommend users to migrate to the [Unified Display API](#unified_display) in place of this API as this API will no longer be updated.
+
 ### Usage
 Use GET to retrieve information for the Display Creative Report for a given advertiser.
 
