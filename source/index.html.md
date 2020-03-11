@@ -27,6 +27,7 @@ includes:
   - keyword_compliance_report
   - facebook_campaign_report
   - youtube
+  - cvt_events
   - lead_detail
   - lead_event_feed_service/overview
   - lead_event_feed_service/leads/leads_object
