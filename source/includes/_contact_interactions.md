@@ -53,9 +53,9 @@ curl --request GET \
     "contact_interactions": [
         {
             "campaign_id": 26330,
+            "master_campaign_id": "2705608",
             "campaign_name": "Direct Site Traffic",
             "id": 1013941,
-            "archived_at": "2019-01-07T12:46:17-08:00",
             "created_at": "2019-01-07T12:46:17-08:00",
             "occured_at": "2019-01-07T12:46:14-08:00",
             "tags": [
@@ -77,20 +77,27 @@ curl --request GET \
                 "last_name": "",
                 "email": "asdf@asdf.com",
                 "phone_work": "asdf",
-                "archived_at": "2018-08-14T08:18:10-07:00"
+                "company": "Slate Quarry",
+                "address1": "123 Rubble Street",
+                "address2": "Suite 1",
+                "city": "Bedrock",
+                "state": "AZ",
+                "postal": "86046",
+                "country": "USA"
             },
             "form": {
                 "sub_type": "FormEmail",
+                "subject": "Hey",
                 "full_message": "Message:\nasdf",
                 "message": "asdf",
                 "extra_fields": {}
-            }
+            },
+            "archived_at": "2019-01-08T12:46:14-08:00"
         },
         {
             "campaign_id": 26330,
             "campaign_name": "Direct Site Traffic",
             "id": 1013951,
-            "archived_at": "2019-01-07T13:26:09-08:00",
             "created_at": "2019-01-07T13:26:09-08:00",
             "occured_at": "2019-01-07T13:26:05-08:00",
             "tags": [
@@ -112,14 +119,22 @@ curl --request GET \
                 "last_name": "",
                 "email": "asdf@asdf.com",
                 "phone_work": "asdf",
-                "archived_at": "2018-08-14T08:18:10-07:00"
+                "company": "Slate Quarry",
+                "address1": "123 Rubble Street",
+                "address2": "Suite 1",
+                "city": "Bedrock",
+                "state": "AZ",
+                "postal": "86046",
+                "country": "USA"
             },
             "form": {
                 "sub_type": "FormEmail",
+                "subject": "Hi",
                 "full_message": "Message:\nasdf",
                 "message": "asdf",
                 "extra_fields": {}
-            }
+            },
+            "archived_at": "2019-01-08T13:26:05-08:00"
         },
         {
             "campaign_id": 26330,
@@ -145,14 +160,23 @@ curl --request GET \
                 "first_name": "Victer",
                 "last_name": "",
                 "email": "victer@j.com",
-                "phone_work": ""
+                "phone_work": "",
+                "company": "Slate Quarry",
+                "address1": "234 Rubble Street",
+                "address2": "Suite 2",
+                "city": "Bedrock",
+                "state": "AZ",
+                "postal": "86046",
+                "country": "USA"
             },
             "form": {
                 "sub_type": "FormEmail",
+                "subject": "Hello",
                 "full_message": "Message:\nhi",
                 "message": "hi",
                 "extra_fields": {}
-            }
+            },
+            "archived_at": "2019-01-09T13:26:05-08:00"
         },
         {
             "campaign_id": 26330,
@@ -178,14 +202,23 @@ curl --request GET \
                 "first_name": "Webtest",
                 "last_name": "",
                 "email": "webtest@l.com",
-                "phone_work": ""
+                "phone_work": "",
+                "company": "Slate Quarry",
+                "address1": "345 Rubble Street",
+                "address2": "Suite 3",
+                "city": "Bedrock",
+                "state": "AZ",
+                "postal": "86046",
+                "country": "USA"
             },
             "form": {
                 "sub_type": "FormEmail",
+                "subject": "Good morning",
                 "full_message": "Message:\nhi",
                 "message": "hi",
                 "extra_fields": {}
-            }
+            },
+            "archived_at": "2019-01-10T10:18:37-08:00"
         },
         {
             "campaign_id": 26330,
@@ -211,14 +244,23 @@ curl --request GET \
                 "first_name": "b",
                 "last_name": "",
                 "email": "b@l.com",
-                "phone_work": ""
+                "phone_work": "",
+                "company": "Slate Quarry",
+                "address1": "456 Rubble Street",
+                "address2": "Suite 4",
+                "city": "Bedrock",
+                "state": "AZ",
+                "postal": "86046",
+                "country": "USA"
             },
             "form": {
                 "sub_type": "FormEmail",
+                "subject": "Good afternoon",
                 "full_message": "Message:\nhi",
                 "message": "hi",
                 "extra_fields": {}
-            }
+            },
+            "archived_at": "2019-01-10T10:18:37-08:00"
         }
         ...
     ]
