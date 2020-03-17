@@ -99,21 +99,18 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
             "intervals": [                                            // Array of intervals
               {
                 "date": "2019-09-30",             // Date of interval
-                "cvt_count": 4,                   // Count of CVT events in interval                  
                 "qualified_web_events": 4,        // Number of qualified web events     
                 "non_qualified_web_events": 0,    // Number of non-qualified web events
                 "high_web_events": 0              // Number of high web events
               },
               {
                 "date": "2019-10-07",
-                "cvt_count": 4,
                 "qualified_web_events": 4,
                 "non_qualified_web_events": 0,
                 "high_web_events": 0
               },
               {
                 "date": "2019-10-14",
-                "cvt_count": 1,
                 "qualified_web_events": 1,
                 "non_qualified_web_events": 0,
                 "high_web_events": 0
@@ -128,21 +125,18 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
             "intervals": [
               {
                 "date": "2019-09-30",
-                "cvt_count": 1,
                 "qualified_web_events": 1,
                 "non_qualified_web_events": 0,
                 "high_web_events": 1
               },
               {
                 "date": "2019-10-07",
-                "cvt_count": 1,
                 "qualified_web_events": 1,
                 "non_qualified_web_events": 0,
                 "high_web_events": 1
               },
               {
                 "date": "2019-10-14",
-                "cvt_count": 1,
                 "qualified_web_events": 0,
                 "non_qualified_web_events": 0,
                 "high_web_events": 1
