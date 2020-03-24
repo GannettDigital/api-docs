@@ -53,7 +53,13 @@ curl --request GET \
             "name": "Awesome Advertiser",
             "platform": "USA",
             "gmaid": "USA_224767",
-            "hipaa_protected": false
+            "hipaa_protected": false,
+            "business_id": 16240,
+            "business_name": "Montgomery_1",
+            "business_user_id": 451203,
+            "privilege_level": 3,
+            "advertiser_id": 224767,
+            "active_state": 2
         },
         {
             "name": "ACME Corporation",
@@ -92,3 +98,7 @@ name | String | no | The name of the advertiser.
 platform | String | no | The platform for the advertiser.
 gmaid | String | no | The global master advertiser id of the advertiser.
 hipaa_protected | String | no | The advertiser's HIPAA protection status
+business_id | Number | no | The unique business id that this advertiser belongs to.
+business_user_id | Number | no | The unique business_user id that is the primary user for this advertiser.
+adveritser_id | Number | no | The advertiser_id for this advertiser.  Not necessarily the same as the numerical portion of the gmaid.
+active_state | Number | no | 0: Advertiser not active.  1: Advertiser not active, but in grace period.  2: Advertiser is active.
