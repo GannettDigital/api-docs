@@ -135,8 +135,8 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
             ]
           },
           {
-            "web_event_name": "*New VDP Pages",
-            "web_event_url": "https://www.vistaford.com/searchnew.aspx",
+            "web_event_name": "*New Pages",
+            "web_event_url": "https://www.bookanappointment.com/searchnew.aspx",
             "cvt_type": "Request",
             "entry_type": 8,
             "intervals": [
