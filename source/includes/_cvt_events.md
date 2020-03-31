@@ -94,53 +94,77 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
           {
             "web_event_name": "*Book my appointment button clicked",  // Name of web event
             "web_event_url": "https://www.bookanappointment.com",     // Web event url
-            "cvt_type": 1,                                            // CVT Type
-            "entry_type":8,                                           // Entry Type
-            "intervals": [                                            // Array of intervals
-              {
-                "date": "2019-09-30",             // Date of interval
-                "qualified_web_events": 4,        // Number of qualified web events     
-                "non_qualified_web_events": 0,    // Number of non-qualified web events
-                "high_web_events": 0              // Number of high web events
-              },
-              {
-                "date": "2019-10-07",
-                "qualified_web_events": 4,
-                "non_qualified_web_events": 0,
-                "high_web_events": 0
-              },
-              {
-                "date": "2019-10-14",
-                "qualified_web_events": 1,
-                "non_qualified_web_events": 0,
-                "high_web_events": 0
-              }
+            "cvt_type": "Request",
+            "entry_type": 7,
+            "intervals": [
+                {
+                    "date": "2019-09-30",
+                    "non_qualified_web_events": 4
+                },
+                {
+                    "date": "2019-10-07",
+                    "non_qualified_web_events": 4
+                },
+                {
+                    "date": "2019-10-14",
+                    "non_qualified_web_events": 1
+                }
             ]
           },
           {
             "web_event_name": "*Request a callback form submitted",
             "web_event_url": "https://www.bookanappointment.com/callme",
-            "cvt_type": 2,
+            "cvt_type": "Submit",
             "entry_type": 8,
             "intervals": [
-              {
-                "date": "2019-09-30",
-                "qualified_web_events": 1,
-                "non_qualified_web_events": 0,
-                "high_web_events": 1
-              },
-              {
-                "date": "2019-10-07",
-                "qualified_web_events": 1,
-                "non_qualified_web_events": 0,
-                "high_web_events": 1
-              },
-              {
-                "date": "2019-10-14",
-                "qualified_web_events": 0,
-                "non_qualified_web_events": 0,
-                "high_web_events": 1
-              }
+                {
+                    "date": "2019-09-30",
+                    "qualified_web_events": 1,
+                    "high_web_events": 1
+                },
+                {
+                    "date": "2019-10-07",
+                    "qualified_web_events": 1,
+                    "high_web_events": 1
+                },
+                {
+                    "date": "2019-10-14",
+                    "qualified_web_events": 1,
+                    "high_web_events": 1
+                }
+            ]
+          },
+          {
+            "web_event_name": "*New VDP Pages",
+            "web_event_url": "https://www.vistaford.com/searchnew.aspx",
+            "cvt_type": "Request",
+            "entry_type": 8,
+            "intervals": [
+                {
+                    "date": "2020-02-01",
+                    "qualified_web_events": 2,
+                    "high_web_events": 0
+                },
+                {
+                    "date": "2020-02-03",
+                    "qualified_web_events": 1,
+                    "high_web_events": 0
+                },
+                {
+                    "date": "2020-02-04",
+                    "qualified_web_events": 1,
+                    "high_web_events": 0
+                },
+                {
+                    "date": "2020-02-05",
+                    "qualified_web_events": 2,
+                    "high_web_events": 0
+                },
+                {
+                    "date": "2020-02-08",
+                    "qualified_web_events": 2,
+                    "high_web_events": 0
+                }
             ]
           },
         ]
