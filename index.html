@@ -530,6 +530,26 @@
                       </ul>
                   </li>
                   <li class="toc-h2-li">
+                    <a href="#api-cvt-events" class="toc-h2 toc-link" data-title="API">CVT Events</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#api-cvt-events-resource-overview" class="toc-h3 toc-link" data-title="API">Resource Overview</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-cvt-events-api-name-cvt-events" class="toc-h3 toc-link" data-title="API">API Name: CVT Events</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-cvt-events-usage" class="toc-h3 toc-link" data-title="API">Usage</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-cvt-events-parameters" class="toc-h3 toc-link" data-title="API">Parameters</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#api-cvt-events-examples" class="toc-h3 toc-link" data-title="API">Examples:</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="toc-h2-li">
                     <a href="#api-lead-details" class="toc-h2 toc-link" data-title="API">Lead Details</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
@@ -1062,7 +1082,13 @@
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awesome Advertiser"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_224767"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16240</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Montgomery_1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">451203</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">224767</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Corporation"</span><span class="p">,</span><span class="w">
@@ -1162,6 +1188,30 @@
 <td>String</td>
 <td>no</td>
 <td>The advertiser&#39;s HIPAA protection status</td>
+</tr>
+<tr>
+<td>business_id</td>
+<td>Number</td>
+<td>no</td>
+<td>The unique business id that this advertiser belongs to.</td>
+</tr>
+<tr>
+<td>business_user_id</td>
+<td>Number</td>
+<td>no</td>
+<td>The unique business_user id that is the primary user for this advertiser.</td>
+</tr>
+<tr>
+<td>adveritser_id</td>
+<td>Number</td>
+<td>no</td>
+<td>The advertiser_id for this advertiser.  Not necessarily the same as the numerical portion of the gmaid.</td>
+</tr>
+<tr>
+<td>active_state</td>
+<td>Number</td>
+<td>no</td>
+<td>0: Advertiser not active.  1: Advertiser not active, but in grace period.  2: Advertiser is active.</td>
 </tr>
 </tbody></table>
 <h1 id='api'>API</h1>
@@ -6925,6 +6975,202 @@ https://api.reachlocalservices.com/client_reports/youtube/USA_105569?&amp;campai
   <span class="p">},</span>
   <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_187198"</span><span class="p">,</span>          <span class="c1">// Global Master Advertiser ID</span>
   <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/youtube/USA_187198?end_date=2017-05-02&amp;start_date=2017-05-01"</span>
+<span class="p">}</span>
+</code></pre><h2 id='api-cvt-events'>CVT Events</h2><h3 id='api-cvt-events-resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/cvt_events/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='api-cvt-events-api-name-cvt-events'>API Name: CVT Events</h3><h3 id='api-cvt-events-usage'>Usage</h3>
+<p>Use GET to retrieve web event activity for all CVT events for a given gmaid.</p>
+
+<p>The data returned will include web events from each campaign with web event name, web event url, and web event interval data of CVT counts, qualified and non-qualified web events, and high web events.</p>
+<h3 id='api-cvt-events-parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or after this date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or before this date.</td>
+</tr>
+<tr>
+<td><code>global_master_campaign_id[]</code></td>
+<td>No</td>
+<td>Restricts results to all campaigns with given master campaign id</td>
+</tr>
+<tr>
+<td><code>interval_size</code></td>
+<td>No</td>
+<td>Use <code>calendar_month</code> or <code>calendar_week</code> to roll up the data points into calendar intervals (default is 1 day per interval)</td>
+</tr>
+<tr>
+<td><code>campaign_status[]</code></td>
+<td>No</td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> or <code>ended</code></td>
+</tr>
+</tbody></table>
+
+<p>To specify a date range:</p>
+
+<ul>
+<li>Specify start_date and end_date.</li>
+</ul>
+<h3 id='api-cvt-events-examples'>Examples:</h3>
+<blockquote>
+<p>Retrieve data for a specific range of dates</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_date=2019-10-01&amp;end_date=2020-02-25'
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific master campaign id</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_date=2019-10-01&amp;end_date=2020-02-25&amp;global_master_campaign_id[]=USA_1' \
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific range of dates limited to ended campaigns</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_date=2019-10-01&amp;end_date=2020-02-25&amp;campaign_status[]=ended' \
+--header 'Authorization: reachanalyticsreportingservicetoken'
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific range of dates grouped by calendar week</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_date=2019-10-01&amp;end_date=2020-02-25&amp;interval_size=calendar_week' \
+</code></pre>
+<blockquote>
+<p>Retrieve data with all options together with results below</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_date=2019-10-01&amp;end_date=2020-02-25&amp;global_master_campaign_id[]=USA_1&amp;interval_size=calendar_week&amp;campaign_status[]=running' \
+</code></pre>
+<blockquote>
+<p>Response Description</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="s2">"report_type"</span><span class="p">:</span> <span class="s2">"cvt_events"</span><span class="p">,</span>                    <span class="c1">// Report Type</span>
+  <span class="s2">"report_date"</span><span class="p">:</span> <span class="s2">"2020-02-26"</span><span class="p">,</span>                    <span class="c1">// Date Report was Run</span>
+  <span class="s2">"earliest_date_available"</span><span class="p">:</span> <span class="s2">"2018-03-03"</span><span class="p">,</span>        <span class="c1">// Earliest Date Data is Available</span>
+  <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2019-10-01"</span><span class="p">,</span>                     <span class="c1">// Start Date of Report</span>
+  <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2020-02-25"</span><span class="p">,</span>                       <span class="c1">// End Date of Report</span>
+  <span class="s2">"time_zone"</span><span class="p">:</span> <span class="s2">"America/Los_Angeles"</span><span class="p">,</span>             <span class="c1">// Time Zone of Report    </span>
+  <span class="s2">"interval_size"</span><span class="p">:</span> <span class="s2">"calendar_week"</span><span class="p">,</span>               <span class="c1">// Interval Size Report is Broken Into</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>                              <span class="c1">// Currency of Report</span>
+  <span class="s2">"report_data"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"campaigns"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ad_Campaign_1"</span><span class="p">,</span>                  <span class="c1">// Campaign name</span>
+        <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1"</span><span class="p">,</span>     <span class="c1">// Identifier for campaign</span>
+        <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-07-10"</span><span class="p">,</span>               <span class="c1">// Start date for campaign</span>
+        <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-10-24"</span><span class="p">,</span>                 <span class="c1">// End date for campaign</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Search"</span><span class="p">,</span>                         <span class="c1">// Type of campaign</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>                      <span class="c1">// Current campaign status</span>
+        <span class="s2">"organization"</span><span class="p">:</span> <span class="s2">"reachlocal"</span><span class="p">,</span>             <span class="c1">// Organization</span>
+        <span class="s2">"web_events"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">"web_event_name"</span><span class="p">:</span> <span class="s2">"*Book my appointment button clicked"</span><span class="p">,</span>  <span class="c1">// Name of web event</span>
+            <span class="s2">"web_event_url"</span><span class="p">:</span> <span class="s2">"https://www.bookanappointment.com"</span><span class="p">,</span>     <span class="c1">// Web event url</span>
+            <span class="s2">"cvt_type"</span><span class="p">:</span> <span class="s2">"Request"</span><span class="p">,</span>
+            <span class="s2">"entry_type"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2019-09-30"</span><span class="p">,</span>
+                    <span class="s2">"non_qualified_web_events"</span><span class="p">:</span> <span class="mi">4</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2019-10-07"</span><span class="p">,</span>
+                    <span class="s2">"non_qualified_web_events"</span><span class="p">:</span> <span class="mi">4</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2019-10-14"</span><span class="p">,</span>
+                    <span class="s2">"non_qualified_web_events"</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="s2">"web_event_name"</span><span class="p">:</span> <span class="s2">"*Request a callback form submitted"</span><span class="p">,</span>
+            <span class="s2">"web_event_url"</span><span class="p">:</span> <span class="s2">"https://www.bookanappointment.com/callme"</span><span class="p">,</span>
+            <span class="s2">"cvt_type"</span><span class="p">:</span> <span class="s2">"Submit"</span><span class="p">,</span>
+            <span class="s2">"entry_type"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2019-09-30"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2019-10-07"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2019-10-14"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="s2">"web_event_name"</span><span class="p">:</span> <span class="s2">"*New Pages"</span><span class="p">,</span>
+            <span class="s2">"web_event_url"</span><span class="p">:</span> <span class="s2">"https://www.bookanappointment.com/searchnew.aspx"</span><span class="p">,</span>
+            <span class="s2">"cvt_type"</span><span class="p">:</span> <span class="s2">"Request"</span><span class="p">,</span>
+            <span class="s2">"entry_type"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="s2">"intervals"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2020-02-01"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2020-02-03"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2020-02-04"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2020-02-05"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2020-02-08"</span><span class="p">,</span>
+                    <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">"high_web_events"</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_123456"</span><span class="p">,</span>  <span class="c1">// Global Master Advertiser ID</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/cvt_events/USA_190076?campaign_status%5B%5D=running&amp;end_date=2020-02-25&amp;global_master_campaign_id%5B%5D=USA_2772377&amp;interval_size=calendar_week&amp;start_date=2019-10-01"</span>
 <span class="p">}</span>
 </code></pre><h2 id='api-lead-details'>Lead Details</h2><h3 id='api-lead-details-resource-overview'>Resource Overview</h3>
 <table><thead>
