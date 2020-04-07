@@ -1,4 +1,4 @@
-## CVT Events
+## Web Event Metrics
 
 ### Resource Overview
 
@@ -7,11 +7,18 @@
 |---|---|
 | GET | /client_reports/cvt_events/[gmaid]?[query_params]|
 
-### API Name: CVT Events
-### Usage
-Use GET to retrieve web event activity for all CVT events for a given gmaid.
+### API Name: CVT/Web Events
 
-The data returned will include web events from each campaign with web event name, web event url, and web event interval data of CVT counts, qualified and non-qualified web events, and high web events.
+### Summary
+
+This is an API that can be used by customers for whom we are pages of importance to you (CVT/Web Events). All metrics are reported against the CVT/Web Event.
+
+Web Events fall under two categories: 'Request' and 'Submit'. A 'Request' Web Event is usually informational, in some cases, it can have a post-click activity that can generate a lead. A 'Submit' CVT/Web Event is lead-generating. Metrics tied to a 'Request' CVT/Web Event are considered non-qualified, whereas metrics tied to a 'Submit' CVT/Web Event are considered qualified.
+
+### Usage
+Use GET to retrieve web event activity for all CVT/Web Events for a given gmaid.
+
+The data returned will include CVT/Web Events from each campaign with web event name, web event url, and metrics for the interval requested.
 
 ### Parameters
 
@@ -19,16 +26,70 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Required | Function |
 |---|---|---|
-|`start_date`|Yes|Restricts the results to those occurring on or after this date.|
-|`end_date`|Yes|Restricts the results to those occurring on or before this date.|
+|`start_date`|Yes|Restricts the results to metrics occurring on or after this date.|
+|`end_date`|Yes|Restricts the results to metrics occurring on or before this date.|
 |`global_master_campaign_id[]`|No|Restricts results to all campaigns with given master campaign id|
 |`interval_size`|No|Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`campaign_status[]`|No|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` or `ended`|
 
-
 To specify a date range:
 
    - Specify start_date and end_date.
+
+### Response Data Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`report_type`|String|Report Type.|
+|`report_date`|String|Date Report was Run.|
+|`earliest_date_available`|String|Earliest Date Data is Available.|
+|`start_date`|String|Start Date of Report.|
+|`end_date`|String|End Date of Report.|
+|`time_zone`|String|Time Zone of Report.|
+|`interval_size`|String|Interval Size Report is Broken Into.|
+|`currency`|String|Currency of Report.|
+|`report_data`|Object|[Report Data Object](#cvtreportdata).|
+
+<a name="cvtreportdata"></a>
+#### Report Data Object
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`campaigns`|Object|[Campaigns Object](#cvtcampaigns).|
+|`global_master_advertiser_id`|String|Global Master Advertiser ID.|
+|`location`|URL||
+
+<a name="cvtcampaigns"></a>
+#### Campaigns Object
+| Field Name | Datatype | Description |
+|---|---|---|
+|`name`|String|Campaign name.|
+|`global_master_campaign_id`|String|Identifier for campaign.|
+|`start_date`|String|Start date for campaign.|
+|`end_date`|String|End date for campaign.|
+|`type`|String|Type of campaign.|
+|`status`|String|Current campaign status.|
+|`organization`|String|Organization.|
+|`web_events`|Object|[Web Events Object](#cvtwebevents).|
+
+<a name="cvtwebevents"></a>
+#### Web Events Object
+| Field Name | Datatype | Description |
+|---|---|---|
+|`web_event_name`|String|Name of web event.|
+|`web_event_url`|URL|Web event url.|
+|`cvt_type`|String|`Request` or `Submit`.|
+|`entry_type`|Integer|`7` (does not generate a lead event) or `8` (generates a lead event).|
+|`intervals`|Object|[Intervals Object](#cvtintervals).|
+
+<a name="cvtintervals"></a>
+#### Intervals Object
+| Field Name | Datatype | Description |
+|---|---|---|
+|`date`|String|Date for interval|
+|`non_qualified_web_events`|Integer|A non-lead generating CVT/Web Event.|
+|`qualified_web_events`|Integer|A lead generating CVT/Web Event.|
+|`high_web_events`|Integer|A `Request` or `Submit` marked as high-value.|
 
 ### Examples:
 
@@ -51,7 +112,6 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_date=2019-10-01&end_date=2020-02-25&campaign_status[]=ended' \
---header 'Authorization: reachanalyticsreportingservicetoken'
 ```
 
 > Retrieve data for a specific range of dates grouped by calendar week
