@@ -11,12 +11,12 @@
 
 ### Summary
 
-This API can be used by customers who have our chat widget on their site. The API has metrics on the chat along with traffic information (Paid Campaign/Organic).
+This API can be used by customers who have our chat widget on their site. The API has metrics on each chat along with traffic information (Paid Campaign/Organic).
 
 ### Usage
 Use GET to retrieve information from the Chat Summary API. Data can be returned for a GMAID by a specific date range determined by start date and end date.
 
-Subtotals will be returned for each Master Campaign ID with chats in that date range.
+Subtotals will be returned for each Master Campaign ID with chat activity in the specified date range.
 
 Subtotals can be further aggregated given an interval, and will be totaled for `day`, `calendar_week`, or `calendar_month`. The first day of the interval will be used to denote the interval totals.
 
@@ -44,7 +44,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`end_date`|String|End date of report.|
 |`time_zone`|String|Time Zone.|
 |`interval_size`|String|Interval Size ('none', 'day', 'calendar_week' or 'calendar_month').|
-|`currency`|String|Current of report.|
+|`currency`|String|Currency Type of Monetary Values Returned in Report (Example: USD, AUD, CAD).|
 |`report_data`|Object|Report details. [Report Data Object](#chatreportdata).|
 |`global_master_advertiser_id`|String|Global Master Advertiser ID.|
 
@@ -129,7 +129,7 @@ https://api.reachlocalservices.com/client_reports/chat_summary/USA_123456?start_
     "end_date": "2020-02-25",                                          // End date of report
     "time_zone": "America/Los_Angeles",                                // Time Zone
     "interval_size": "none",                                           // Interval Size ('none', 'day', 'calendar_week' or 'calendar_month')
-    "currency": "USD",                                                 // Current of report
+    "currency": "USD",                                                 // Currency Type of Monetary Values Returned in Report (Example: USD, AUD, CAD). returned in report
     "report_data": {                                                   // Report details
         "campaigns": [                                                 // All data for campaigns
             {

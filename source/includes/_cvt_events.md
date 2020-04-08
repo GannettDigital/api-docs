@@ -11,9 +11,9 @@
 
 ### Summary
 
-This is an API that can be used by customers for whom we are pages of importance to you (CVT/Web Events). All metrics are reported against the CVT/Web Event.
+This is an API that can be used by customers who have indicated that certain pages or actions of specific importance will benefit the performance of campaigns through more informed and meaningful conversions. All metrics are reported against the CVT/Web Event.
 
-Web Events fall under two categories: 'Request' and 'Submit'. A 'Request' Web Event is usually informational, in some cases, it can have a post-click activity that can generate a lead. A 'Submit' CVT/Web Event is lead-generating. Metrics tied to a 'Request' CVT/Web Event are considered non-qualified, whereas metrics tied to a 'Submit' CVT/Web Event are considered qualified.
+Web Events fall under two categories: 'Request' and 'Submit'. A 'Request' Web Event is usually informational, in some cases, it can have a post-click activity that can generate a lead. A 'Submit' CVT/Web Event is lead-generating. Metrics tied to a 'Request' CVT/Web Event are considered 'non-qualified', whereas metrics tied to a 'Submit' CVT/Web Event are considered 'qualified'.
 
 ### Usage
 Use GET to retrieve web event activity for all CVT/Web Events for a given gmaid.
@@ -26,8 +26,8 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Required | Function |
 |---|---|---|
-|`start_date`|Yes|Restricts the results to metrics occurring on or after this date.|
-|`end_date`|Yes|Restricts the results to metrics occurring on or before this date.|
+|`start_date`|Yes|Restricts the results to events occurring on or after this date.|
+|`end_date`|Yes|Restricts the results to events occurring on or before this date.|
 |`global_master_campaign_id[]`|No|Restricts results to all campaigns with given master campaign id|
 |`interval_size`|No|Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`campaign_status[]`|No|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` or `ended`|
@@ -47,7 +47,7 @@ To specify a date range:
 |`end_date`|String|End Date of Report.|
 |`time_zone`|String|Time Zone of Report.|
 |`interval_size`|String|Interval Size Report is Broken Into.|
-|`currency`|String|Currency of Report.|
+|`currency`|String|Currency Type of Monetary Values Returned in Report (Example: USD, AUD, CAD).|
 |`report_data`|Object|[Report Data Object](#cvtreportdata).|
 
 <a name="cvtreportdata"></a>
@@ -139,7 +139,7 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
   "end_date": "2020-02-25",                       // End Date of Report
   "time_zone": "America/Los_Angeles",             // Time Zone of Report    
   "interval_size": "calendar_week",               // Interval Size Report is Broken Into
-  "currency": "USD",                              // Currency of Report
+  "currency": "USD",                              // Currency Type of Monetary Values Returned in Report (Example: USD, AUD, CAD).
   "report_data": {
     "campaigns": [
       {
