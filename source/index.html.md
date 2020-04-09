@@ -19,7 +19,6 @@ includes:
   - campaigns_totals
   - display_activity_report
   - display_creative_report
-  - unified_display_report
   - geofence_summary_report
   - search_activity_report
   - search_compliance_report
@@ -27,8 +26,6 @@ includes:
   - keyword_compliance_report
   - facebook_campaign_report
   - youtube
-  - cvt_events
-  - chat_summary
   - lead_detail
   - lead_event_feed_service/overview
   - lead_event_feed_service/leads/leads_object
@@ -59,6 +56,10 @@ includes:
   - capture_discovery
   - capture_top_referrers
   - total_track
+  - new_2020
+  - chat_summary
+  - unified_display_report
+  - cvt_events
   - webhooks
   - edge_webhook  
   - integrations
