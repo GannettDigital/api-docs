@@ -1,4 +1,4 @@
-## Unified Display Campaign Metrics - NEW
+## Unified Display Campaign Metrics
 <a name="unified_display"></a>
 ### Resource Overview
 
