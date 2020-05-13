@@ -14,7 +14,6 @@ includes:
   - authentication
   - identity
   - api
-  - campaigns
   - campaigns_overview_report
   - campaigns_totals
   - display_activity_report
@@ -57,6 +56,7 @@ includes:
   - capture_top_referrers
   - total_track
   - new_2020
+  - campaigns
   - chat_summary
   - unified_display_report
   - cvt_events
