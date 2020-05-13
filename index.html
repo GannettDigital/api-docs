@@ -274,26 +274,6 @@
             <a href="#api" class="toc-h1 toc-link" data-title="API">API</a>
               <ul class="toc-list-h2">
                   <li class="toc-h2-li">
-                    <a href="#api-campaigns-amp-cycles" class="toc-h2 toc-link" data-title="API">Campaigns &amp; Cycles</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#api-campaigns-amp-cycles-resource-overview" class="toc-h3 toc-link" data-title="API">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#api-campaigns-amp-cycles-api-name-campaigns-report" class="toc-h3 toc-link" data-title="API">API Name: Campaigns Report</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#api-campaigns-amp-cycles-usage" class="toc-h3 toc-link" data-title="API">Usage</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#api-campaigns-amp-cycles-parameters" class="toc-h3 toc-link" data-title="API">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#api-campaigns-amp-cycles-example" class="toc-h3 toc-link" data-title="API">Example:</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li class="toc-h2-li">
                     <a href="#api-campaigns-overview" class="toc-h2 toc-link" data-title="API">Campaigns Overview</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
@@ -619,6 +599,29 @@
           <li>
             <a href="#new-updated-2020" class="toc-h1 toc-link" data-title="New/Updated: 2020">New/Updated: 2020</a>
               <ul class="toc-list-h2">
+                  <li class="toc-h2-li">
+                    <a href="#new-updated-2020-campaigns-amp-cycles" class="toc-h2 toc-link" data-title="New/Updated: 2020">Campaigns &amp; Cycles</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#new-updated-2020-campaigns-amp-cycles-resource-overview" class="toc-h3 toc-link" data-title="New/Updated: 2020">Resource Overview</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#new-updated-2020-campaigns-amp-cycles-api-name-campaigns-report" class="toc-h3 toc-link" data-title="New/Updated: 2020">API Name: Campaigns Report</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#new-updated-2020-campaigns-amp-cycles-usage" class="toc-h3 toc-link" data-title="New/Updated: 2020">Usage</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#new-updated-2020-campaigns-amp-cycles-parameters" class="toc-h3 toc-link" data-title="New/Updated: 2020">Parameters</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#new-updated-2020-campaigns-amp-cycles-response-data-details" class="toc-h3 toc-link" data-title="New/Updated: 2020">Response Data Details</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#new-updated-2020-campaigns-amp-cycles-example" class="toc-h3 toc-link" data-title="New/Updated: 2020">Example:</a>
+                          </li>
+                      </ul>
+                  </li>
                   <li class="toc-h2-li">
                     <a href="#new-updated-2020-chat-summary" class="toc-h2 toc-link" data-title="New/Updated: 2020">Chat Summary</a>
                       <ul class="toc-list-h3">
@@ -1259,150 +1262,7 @@
 <ul>
 <li>APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product.</li>
 </ul>
-<h2 id='api-campaigns-amp-cycles'>Campaigns &amp; Cycles</h2><h3 id='api-campaigns-amp-cycles-resource-overview'>Resource Overview</h3>
-<table><thead>
-<tr>
-<th>Method</th>
-<th>URI Format</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>GET</td>
-<td>/client_reports/campaigns/[gmaid]?[query_params]</td>
-</tr>
-</tbody></table>
-<h3 id='api-campaigns-amp-cycles-api-name-campaigns-report'>API Name: Campaigns Report</h3><h3 id='api-campaigns-amp-cycles-usage'>Usage</h3>
-<p>A list of filtered Campaigns and Campaign Cycles for a given report type and advertiser.  (Cycles are not included for keyword_report)</p>
-
-<p>If using the <code>campaigns_overview</code> report_type, all campaign data for the account will be provided including both Paid Media and Offer-based campaigns.</p>
-
-<ul>
-<li>Paid Media campaigns will include the associated <code>campaign_type</code>. Paid Media campaigns include:
-
-<ul>
-<li>Search</li>
-<li>Display</li>
-<li>TotalTrack</li>
-<li>Social</li>
-<li>YouTube</li>
-</ul></li>
-<li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
-</ul>
-<h3 id='api-campaigns-amp-cycles-parameters'>Parameters</h3>
-<p>When using the GET method, the results can be filtered using these parameters:</p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Required?</th>
-<th>Function</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>report_type</td>
-<td>Required</td>
-<td>Only campaigns appropriate for this type of report will be returned.  Allowed values are <code>facebook_campaign</code>, <code>display_activity</code>, <code>search_activity</code>, <code>youtube</code>, <code>campaigns_overview</code>, <code>keyword</code>, <code>google_keyword</code> and <code>geofence_summary</code>.</td>
-</tr>
-<tr>
-<td>global_master_campaign_id[]</td>
-<td>Optional</td>
-<td>Restrict results to one or more specific campaigns</td>
-</tr>
-<tr>
-<td>campaign_status[]</td>
-<td>Optional</td>
-<td>Restrict results to campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>.</td>
-</tr>
-</tbody></table>
-<h3 id='api-campaigns-amp-cycles-example'>Example:</h3>
-<blockquote>
-<p>Retrieve data for a specific report_type</p>
-</blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview
-</code></pre>
-<blockquote>
-<p>Retrieve data for a specific report_type as well as for running and stopped campaigns</p>
-</blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview&amp;campaign_status[]=running,stopped
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured similar to the following:</p>
-</blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
-    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_142687"</span><span class="p">,</span>
-    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview"</span><span class="p">,</span>
-    <span class="s2">"report_campaigns"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 1"</span><span class="p">,</span>
-            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426871"</span><span class="p">,</span>
-            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"search"</span><span class="p">,</span>
-            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
-            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268711"</span><span class="p">,</span>
-                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-04-26"</span><span class="p">,</span>
-                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-06-04"</span><span class="p">,</span>
-                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 1"</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268712"</span><span class="p">,</span>
-                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-06-04"</span><span class="p">,</span>
-                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-06-27"</span><span class="p">,</span>
-                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 2"</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 2"</span><span class="p">,</span>
-            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426872"</span><span class="p">,</span>
-            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"chat"</span><span class="p">,</span>
-            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
-            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268721"</span><span class="p">,</span>
-                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2014-02-26"</span><span class="p">,</span>
-                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 3"</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-        <span class="p">{</span>
-            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 3"</span><span class="p">,</span>
-            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426873"</span><span class="p">,</span>
-            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
-            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"other"</span><span class="p">,</span>
-            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268731"</span><span class="p">,</span>
-                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-05-02"</span><span class="p">,</span>
-                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-06-02"</span><span class="p">,</span>
-                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 4"</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268732"</span><span class="p">,</span>
-                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-06-02"</span><span class="p">,</span>
-                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-07-02"</span><span class="p">,</span>
-                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 5"</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268733"</span><span class="p">,</span>
-                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-07-02"</span><span class="p">,</span>
-                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-08-15"</span><span class="p">,</span>
-                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 6"</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268734"</span><span class="p">,</span>
-                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-08-15"</span><span class="p">,</span>
-                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 7"</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</code></pre><h2 id='api-campaigns-overview'>Campaigns Overview</h2><h3 id='api-campaigns-overview-resource-overview'>Resource Overview</h3>
+<h2 id='api-campaigns-overview'>Campaigns Overview</h2><h3 id='api-campaigns-overview-resource-overview'>Resource Overview</h3>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -1467,6 +1327,7 @@
 <li>TotalTrack</li>
 <li>Facebook</li>
 <li>YouTube</li>
+<li>CVT/Web Events</li>
 </ul></li>
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
 </ul>
@@ -9585,7 +9446,259 @@ https://api.reachlocalservices.com/client_reports/total_track/USA_105569?global_
     </span><span class="s2">"Campaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-25T20:13:23.000Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='new-updated-2020'>New/Updated: 2020</h1><h2 id='new-updated-2020-chat-summary'>Chat Summary</h2><h3 id='new-updated-2020-chat-summary-resource-overview'>Resource Overview</h3>
+</span></code></pre><h1 id='new-updated-2020'>New/Updated: 2020</h1><h2 id='new-updated-2020-campaigns-amp-cycles'>Campaigns &amp; Cycles</h2><h3 id='new-updated-2020-campaigns-amp-cycles-resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/campaigns/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+<h3 id='new-updated-2020-campaigns-amp-cycles-api-name-campaigns-report'>API Name: Campaigns Report</h3><h3 id='new-updated-2020-campaigns-amp-cycles-usage'>Usage</h3>
+<p>A list of filtered Campaigns and Campaign Cycles for a given report type and advertiser.  (Cycles are not included for keyword_report)</p>
+
+<p>If using the <code>campaigns_overview</code> report_type, all campaign data for the account will be provided including both Paid Media and Offer-based campaigns.</p>
+
+<ul>
+<li>Paid Media campaigns will include the associated <code>campaign_type</code>. Paid Media campaigns include:
+
+<ul>
+<li>Chat</li>
+<li>Search</li>
+<li>Display</li>
+<li>TotalTrack</li>
+<li>Facebook</li>
+<li>YouTube</li>
+<li>CVT/Web Events</li>
+</ul></li>
+<li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
+</ul>
+<h3 id='new-updated-2020-campaigns-amp-cycles-parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required?</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>report_type</td>
+<td>Required</td>
+<td>Only campaigns appropriate for this type of report will be returned.  Allowed values are <code>facebook_campaign</code>, <code>display_activity</code>, <code>search_activity</code>, <code>youtube</code>, <code>campaigns_overview</code>, <code>keyword</code>, <code>google_keyword</code>, <code>geofence_summary</code>, <code>cvt</code>, and <code>addressable_geofence</code>.</td>
+</tr>
+<tr>
+<td>global_master_campaign_id[]</td>
+<td>Optional</td>
+<td>Restrict results to one or more specific campaigns</td>
+</tr>
+<tr>
+<td>campaign_status[]</td>
+<td>Optional</td>
+<td>Restrict results to campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='new-updated-2020-campaigns-amp-cycles-response-data-details'>Response Data Details</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>String</td>
+<td>Identifier for advertiser.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>URL</td>
+<td></td>
+</tr>
+<tr>
+<td>report_campaigns</td>
+<td>Object</td>
+<td><a href="#campaigns_reportcampaigns">Report Campaigns Object</a>.</td>
+</tr>
+</tbody></table>
+
+<p><a name="campaigns_reportcampaigns"></a></p>
+<h4 id='new-updated-2020-campaigns-amp-cycles-response-data-details-report-campaigns-object'>Report Campaigns Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of campaign.</td>
+</tr>
+<tr>
+<td>global_master_campaign_id</td>
+<td>String</td>
+<td>Identifier for campaign.</td>
+</tr>
+<tr>
+<td>campaign_type</td>
+<td>String</td>
+<td>Type of campaign.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Status of campaign.</td>
+</tr>
+<tr>
+<td>has_addressable_geofence</td>
+<td>Boolean</td>
+<td><code>True</code> or <code>False</code>.</td>
+</tr>
+<tr>
+<td>has_cvt</td>
+<td>Boolean</td>
+<td><code>True</code> or <code>False</code>.</td>
+</tr>
+<tr>
+<td>cycles</td>
+<td>Object</td>
+<td><a href="#campaigns_cycles">Cycles Object</a>.</td>
+</tr>
+</tbody></table>
+
+<p><a name="campaigns_cycles"></a></p>
+<h4 id='new-updated-2020-campaigns-amp-cycles-response-data-details-cycles-object'>Cycles Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaign_cycle</td>
+<td>String</td>
+<td>Identifier for campaign cycle.</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>Start date of campaign cycle.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>End date of campaign cycle.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of campaign cycle.</td>
+</tr>
+</tbody></table>
+<h3 id='new-updated-2020-campaigns-amp-cycles-example'>Example:</h3>
+<blockquote>
+<p>Retrieve data for a specific report_type</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific report_type as well as for running and stopped campaigns</p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview&amp;campaign_status[]=running,stopped
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured similar to the following:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"USA_142687"</span><span class="p">,</span>
+    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview"</span><span class="p">,</span>
+    <span class="s2">"report_campaigns"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 1"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426871"</span><span class="p">,</span>
+            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"search"</span><span class="p">,</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
+            <span class="s2">"has_addressable_geofence"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"has_cvt"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268711"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-04-26"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-06-04"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 1"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268712"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-06-04"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2016-06-27"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 2"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 2"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426872"</span><span class="p">,</span>
+            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"chat"</span><span class="p">,</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
+            <span class="s2">"has_addressable_geofence"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"has_cvt"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268721"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2014-02-26"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 3"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign 3"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"USA_1426873"</span><span class="p">,</span>
+            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"other"</span><span class="p">,</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"running"</span><span class="p">,</span>
+            <span class="s2">"has_addressable_geofence"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"has_cvt"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">"cycles"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268731"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-05-02"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-06-02"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 4"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268732"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-06-02"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-07-02"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 5"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268733"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-07-02"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2017-08-15"</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 6"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"campaign_cycle"</span><span class="p">:</span> <span class="s2">"USA_14268734"</span><span class="p">,</span>
+                    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2017-08-15"</span><span class="p">,</span>
+                    <span class="s2">"end_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Advertiser Campaign Cycle 7"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><h2 id='new-updated-2020-chat-summary'>Chat Summary</h2><h3 id='new-updated-2020-chat-summary-resource-overview'>Resource Overview</h3>
 <table><thead>
 <tr>
 <th>Method</th>
