@@ -12,11 +12,13 @@ A list of filtered Campaigns and Campaign Cycles for a given report type and adv
 If using the `campaigns_overview` report_type, all campaign data for the account will be provided including both Paid Media and Offer-based campaigns.
 
 - Paid Media campaigns will include the associated `campaign_type`. Paid Media campaigns include:
+  - Chat
   - Search
   - Display
   - TotalTrack
-  - Social
+  - Facebook
   - YouTube
+  - CVT/Web Events
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
 
 ### Parameters
@@ -25,9 +27,38 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Required? | Function |
 |---|---|---|
-| report_type | Required | Only campaigns appropriate for this type of report will be returned.  Allowed values are `facebook_campaign`, `display_activity`, `search_activity`, `youtube`, `campaigns_overview`, `keyword`, `google_keyword` and `geofence_summary`.|
+| report_type | Required | Only campaigns appropriate for this type of report will be returned.  Allowed values are `facebook_campaign`, `display_activity`, `search_activity`, `youtube`, `campaigns_overview`, `keyword`, `google_keyword`, `geofence_summary`, `cvt`, and `addressable_geofence`.|
 | global_master_campaign_id[] | Optional | Restrict results to one or more specific campaigns|
 | campaign_status[] | Optional | Restrict results to campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`.|
+
+### Response Data Details
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|global_master_advertiser_id|String|Identifier for advertiser.|
+|location|URL||
+|report_campaigns|Object|[Report Campaigns Object](#campaigns_reportcampaigns).|
+
+<a name="campaigns_reportcampaigns"></a>
+#### Report Campaigns Object
+| Field Name | Datatype | Description |
+|---|---|---|
+|name|String|Name of campaign.|
+|global_master_campaign_id|String|Identifier for campaign.|
+|campaign_type|String|Type of campaign.|
+|status|String|Status of campaign.|
+|has_addressable_geofence|Boolean|`True` or `False`.|
+|has_cvt|Boolean|`True` or `False`.|
+|cycles|Object|[Cycles Object](#campaigns_cycles).|
+
+<a name="campaigns_cycles"></a>
+#### Cycles Object
+| Field Name | Datatype | Description |
+|---|---|---|
+|campaign_cycle|String|Identifier for campaign cycle.|
+|start_date|String|Start date of campaign cycle.|
+|end_date|String|End date of campaign cycle.|
+|name|String|Name of campaign cycle.|
 
 ### Example:
 
@@ -57,6 +88,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "global_master_campaign_id": "USA_1426871",
             "campaign_type": "search",
             "status": "running",
+            "has_addressable_geofence": false,
+            "has_cvt": true,
             "cycles": [
                 {
                     "campaign_cycle": "USA_14268711",
@@ -77,6 +110,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "global_master_campaign_id": "USA_1426872",
             "campaign_type": "chat",
             "status": "running",
+            "has_addressable_geofence": false,
+            "has_cvt": true,
             "cycles": [
                 {
                     "campaign_cycle": "USA_14268721",
@@ -89,8 +124,10 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
         {
             "name": "Advertiser Campaign 3",
             "global_master_campaign_id": "USA_1426873",
-            "status": "running",
             "campaign_type": "other",
+            "status": "running",
+            "has_addressable_geofence": false,
+            "has_cvt": true,
             "cycles": [
                 {
                     "campaign_cycle": "USA_14268731",
