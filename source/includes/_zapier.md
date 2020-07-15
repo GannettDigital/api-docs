@@ -5,6 +5,7 @@
 - The LOCALiQ Zapier® app can be used at no additional cost.
 - Zapier® offers a free trial if you would like to test this solution.
 - The setup can be be completed by client or CSM.
+- Advertiser ids (GMAIDs) is maintained through Campaign Central/Corp and can be found in the general settings of your account settings.
 
 NOTE: There is an additional monthly subscription cost through Zapier® The cost depends on the number of leads sent per month and the number of leads transmitted between the systems (which Zapier® refers to as "Tasks"). Pricing information for Zapier® can be found [here](https://zapier.com/pricing).
 
