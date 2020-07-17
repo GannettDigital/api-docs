@@ -13919,11 +13919,15 @@ A response status code of 404 indicates that the webhook ID was not found.</p>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden - The end user is authenticated, but is not authorized to access the requested resource.</td>
+<td>Forbidden - The end user is authenticated, but is not authorized to access the requested resource. The API response will give information on why this is the case. Unauthorized permissions can be due to advertisers not being active or the user calling the API does not have privileges to access HIPAA info.</td>
 </tr>
 <tr>
 <td>404</td>
 <td>Not Found - The object you’re requesting doesn’t exist.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unprocessable Entity - There is a missing or invalid parameter. The API response will state what parameter needs attention.</td>
 </tr>
 <tr>
 <td>429</td>
