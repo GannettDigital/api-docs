@@ -80,6 +80,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 ```javascript
 {
+    "advertiser_name": "Best Business",
+    "advertiser_code": "1234567",
     "global_master_advertiser_id": "USA_142687",
     "location": "https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview",
     "report_campaigns": [
