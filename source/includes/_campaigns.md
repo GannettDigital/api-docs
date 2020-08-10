@@ -35,6 +35,8 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Field Name | Datatype | Description |
 |---|---|---|
+|advertiser_name|String|Name of advertiser.|
+|advertiser_code|String|Advertiser's code.|
 |global_master_advertiser_id|String|Identifier for advertiser.|
 |location|URL||
 |report_campaigns|Object|[Report Campaigns Object](#campaigns_reportcampaigns).|
