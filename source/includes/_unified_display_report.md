@@ -12,7 +12,7 @@ This is a new Display Metrics API that can be used by customers that have Displa
 
 **Note:** We recommend users to migrate to this API in place of the Display Activity API and Display Creative API as they will no longer be updated.
 
-**Note:** Moat Metrics are not supported after December 31, 2019. Any requests for date ranges after this will not include moat metrics. Date ranges that span beyond December 31, 2019 will show calculations based on start_date through December 31, 2019.
+**Note:** MOAT metrics are not supported after December 31, 2019. Any requests for date ranges after this will not include MOAT metrics. Date ranges that span beyond December 31, 2019 will show calculations based on start_date through December 31, 2019.
 
 ### Usage
 Use GET to retrieve information for the Unified Display API that will retrieve metrics on display campaigns. Data can be returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below.
@@ -158,10 +158,10 @@ When using the GET method, the results can be filtered using these parameters:
 |`impressions`|Int|No|Total Impressions for Line Item|
 |`clicks`|Int|No|Total Clicks for Line Item|
 |`ctr`|Float|No|Overall Click-through Rate of Line Item|
-|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Line Item|
-|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Line Item|
-|`hover_rate`|Float|No|Hover Rate for Line Item|
-|`attention_quality`|Float|No|Attention Quality for Line Item|
+|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Line Item (This MOAT metric was deprecated 12-31-2019)|
+|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Line Item (This MOAT metric was deprecated 12-31-2019)|
+|`hover_rate`|Float|No|Hover Rate for Line Item (This MOAT metric was deprecated 12-31-2019)|
+|`attention_quality`|Float|No|Attention Quality for Line Item (This MOAT metric was deprecated 12-31-2019)|
 |`intervals`|Object|--|Object of line items intervals. [Line Item Intervals Object](#udlineitemintervals)|
 |`creatives`|Object|--|Object of line items creatives. [Line Item Creatives Object](#udlineitemcreatives)|
 
@@ -173,10 +173,10 @@ When using the GET method, the results can be filtered using these parameters:
 |`impressions`|Int|No|Total Impressions for Interval|
 |`clicks`|Int|No|Total Clicks for Interval|
 |`ctr`|Float|No|Overall Click-through Rate of Interval|
-|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Interval|
-|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Interval|
-|`hover_rate`|Float|No|Hover Rate for Interval|
-|`attention_quality`|Float|No|Attention Quality for Interval|
+|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Interval (This MOAT metric was deprecated 12-31-2019)|
+|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Interval (This MOAT metric was deprecated 12-31-2019)|
+|`hover_rate`|Float|No|Hover Rate for Interval (This MOAT metric was deprecated 12-31-2019)|
+|`attention_quality`|Float|No|Attention Quality for Interval (This MOAT metric was deprecated 12-31-2019)|
 |`video_full_screen`|Float|Yes|Number of Full-Screen Video Views|
 |`video_mute`|Float|Yes|Number of Muted Video Views|
 |`video_unmute`|Float|Yes|Number of Unmuted Video Views|
@@ -204,10 +204,10 @@ When using the GET method, the results can be filtered using these parameters:
 |`impressions`|Int|No|Total Impressions for Creative|
 |`clicks`|Int|No|Total Clicks for Creative|
 |`ctr`|Float|No|Overall Click-through Rate of Creative|
-|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Creative|
-|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Creative|
-|`hover_rate`|Float|No|Hover Rate for Creative|
-|`attention_quality`|Float|No|Attention Quality for Creative|
+|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Creative (This MOAT metric was deprecated 12-31-2019)|
+|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Creative (This MOAT metric was deprecated 12-31-2019)|
+|`hover_rate`|Float|No|Hover Rate for Creative (This MOAT metric was deprecated 12-31-2019)|
+|`attention_quality`|Float|No|Attention Quality for Creative (This MOAT metric was deprecated 12-31-2019)|
 |`video_full_screen`|Float|Yes|Number of Full-Screen Video Views|
 |`video_mute`|Float|Yes|Number of Muted Video Views|
 |`video_unmute`|Float|Yes|Number of Unmuted Video Views|
@@ -273,10 +273,10 @@ When using the GET method, the results can be filtered using these parameters:
 |`impressions`|Int|No|Total Impressions for Interval|
 |`clicks`|Int|No|Total Clicks for Interval|
 |`ctr`|Float|No|Overall Click-through Rate of Interval|
-|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Interval|
-|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Interval|
-|`hover_rate`|Float|No|Hover Rate for Interval|
-|`attention_quality`|Float|No|Attention Quality for Interval|
+|`universal_interaction_rate`|Float|No|Overall Universal Interaction Rate for Interval (This MOAT metric was deprecated 12-31-2019)|
+|`universal_interaction_time`|Float|No|Overall Universal Interaction Time for Interval (This MOAT metric was deprecated 12-31-2019)|
+|`hover_rate`|Float|No|Hover Rate for Interval (This MOAT metric was deprecated 12-31-2019)|
+|`attention_quality`|Float|No|Attention Quality for Interval (This MOAT metric was deprecated 12-31-2019)|
 |`video_full_screen`|Float|Yes|Number of Full-Screen Video Views|
 |`video_mute`|Float|Yes|Number of Muted Video Views|
 |`video_unmute`|Float|Yes|Number of Unmuted Video Views|
