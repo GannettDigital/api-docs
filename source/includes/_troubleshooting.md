@@ -1,10 +1,12 @@
-# Troubleshooting
+## Troubleshooting
 
-## 400 - Bad Request
+### 400 - Bad Request
 
-### Invalid Grant
+#### Invalid Grant
 
-Invalid grant error messages can occur when a request is made for an access token with invalid credentials (username or password) or when a request is made to refresh an access token with an expired refresh token. An expired refresh token is one that has already been used to obtain an access token so it is no longer valid.
+Invalid grant error messages occurs when either:
+* A request is made for an access token with invalid credentials (username or password)
+* When a request is made to refresh an access token with an expired refresh token, one that has already been used to obtain an access token so it is no longer valid.
 
 To resolve this check your username and password for accuracy, then follow steps at [Requesting Access and Refresh Tokens](https://reachlocal.github.io/api-docs/#api-access-step-2-authorization-requesting-access-and-refresh-tokens) to request a new refresh token.
 
@@ -16,7 +18,7 @@ To resolve this check your username and password for accuracy, then follow steps
 }
 ```
 
-## 401 - Unauthorized
+### 401 - Unauthorized
 
 Unauthorized messages can occur when a request for a report endpoint is made using an expired token.
 
