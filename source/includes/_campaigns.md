@@ -35,6 +35,8 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Field Name | Datatype | Description |
 |---|---|---|
+|advertiser_name|String|Name of advertiser.|
+|advertiser_code|String|Non-unique identifier used for internal purposes.|
 |global_master_advertiser_id|String|Identifier for advertiser.|
 |location|URL||
 |report_campaigns|Object|[Report Campaigns Object](#campaigns_reportcampaigns).|
@@ -80,6 +82,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 ```javascript
 {
+    "advertiser_name": "Best Business",
+    "advertiser_code": "1234567",
     "global_master_advertiser_id": "USA_142687",
     "location": "https://api.reachlocalservices.com/client_reports/campaigns/USA_142687?report_type=campaigns_overview",
     "report_campaigns": [
