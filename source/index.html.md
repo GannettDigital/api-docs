@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - terms_and_conditions
   - authentication
+  - troubleshooting
   - identity
   - api
   - campaigns_overview_report
@@ -69,6 +70,7 @@ includes:
   - crm_webhooks
   - google_data_studio
   - errors
+  - troubleshooting
 
 search: false
 ---
