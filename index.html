@@ -3325,6 +3325,11 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&a
 <td>Impressions for interval.</td>
 </tr>
 <tr>
+<td><code>impression_share</code></td>
+<td>Integer</td>
+<td>Impression share for interval.</td>
+</tr>
+<tr>
 <td><code>leads</code></td>
 <td>Integer</td>
 <td>Leads for interval.</td>
@@ -3442,6 +3447,11 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&a
 <td>Device breakdown of impressions. <a href="#searchimpressions">Impressions Object.</a></td>
 </tr>
 <tr>
+<td>Impression Share</td>
+<td>Object</td>
+<td>Device breakdown of impression share. <a href="#searchimpressionshare">Impression Share Object.</a></td>
+</tr>
+<tr>
 <td>Clicks</td>
 <td>Object</td>
 <td>Device breakdown of clicks. <a href="#searchclicks">Clicks Object</a></td>
@@ -3471,6 +3481,32 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/USA_105569?&a
 <td><code>tablet</code></td>
 <td>Object</td>
 <td>Total and percent of total for impressions of tablet.</td>
+</tr>
+</tbody></table>
+
+<p><a name="searchimpressionshare"></a></p>
+<h4 id='api-search-campaign-metrics-response-data-details-impression-share-object'>Impression Share Object</h4>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>desktop</code></td>
+<td>Object</td>
+<td>Percent impression share of desktop.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>Object</td>
+<td>Percent impression share of mobile.</td>
+</tr>
+<tr>
+<td><code>tablet</code></td>
+<td>Object</td>
+<td>Percent impression share of tablet.</td>
 </tr>
 </tbody></table>
 
@@ -3698,6 +3734,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
           <span class="p">{</span>
             <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-10-10"</span><span class="p">,</span> <span class="c1">// Start date of interval</span>
             <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">78</span><span class="p">,</span>          <span class="c1">// Impressions for interval</span>
+            <span class="s2">"impression_share"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>  <span class="c1">// Impression share for interval</span>
             <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">310</span><span class="p">,</span>               <span class="c1">// Leads for interval</span>
             <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>               <span class="c1">// Clicks for interval</span>
             <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>                <span class="c1">// Calls for interval</span>
@@ -3705,8 +3742,25 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             <span class="s2">"emails"</span><span class="p">:</span> <span class="mi">73</span><span class="p">,</span>               <span class="c1">// Emails for interval</span>
             <span class="s2">"spend"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>                <span class="c1">// Spend for interval</span>
             <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">57.69</span><span class="p">,</span>               <span class="c1">// Click through rate for interval</span>
-            <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">0.4</span>                  <span class="c1">// Cost per click for interval</span>
-          <span class="p">},</span>
+            <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>                 <span class="c1">// Cost per click for interval</span>
+            <span class="s2">"device_breakdowns"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"impression_share"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"mobile"</span><span class="p">:</span> <span class="mf">45.89</span><span class="p">,</span>
+                  <span class="s2">"desktop"</span><span class="p">:</span> <span class="mf">51.71</span><span class="p">,</span>
+                  <span class="s2">"tablet"</span><span class="p">:</span> <span class="mf">57.14</span>
+              <span class="p">},</span>
+              <span class="s2">"impressions"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"mobile"</span><span class="p">:</span> <span class="mi">190</span><span class="p">,</span>
+                  <span class="s2">"desktop"</span><span class="p">:</span> <span class="mi">106</span><span class="p">,</span>
+                  <span class="s2">"tablet"</span><span class="p">:</span> <span class="mi">4</span>
+              <span class="p">},</span>
+              <span class="s2">"clicks"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"mobile"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                  <span class="s2">"desktop"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                  <span class="s2">"tablet"</span><span class="p">:</span> <span class="mi">0</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">],</span>
@@ -3755,6 +3809,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       <span class="p">{</span>
         <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2016-12-15"</span><span class="p">,</span>         <span class="c1">// Start date of interval</span>
         <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>                 <span class="c1">// Total impressions for interval</span>
+        <span class="s2">"impression_share"</span><span class="p">:</span> <span class="mf">45.73</span><span class="p">,</span>          <span class="c1">// Total impression share for interval</span>
         <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">360</span><span class="p">,</span>                       <span class="c1">// Total leads for interval</span>
         <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>                       <span class="c1">// Total clicks for interval</span>
         <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>                        <span class="c1">// Total calls for interval</span>
@@ -3762,7 +3817,24 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         <span class="s2">"emails"</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>                      <span class="c1">// Total emails for interval</span>
         <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">226.5</span><span class="p">,</span>                     <span class="c1">// Total spend for interval</span>
         <span class="s2">"ctr"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>                          <span class="c1">// Total click through rate for interval</span>
-        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">2.52</span>                         <span class="c1">// Total cost per click for interval</span>
+        <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">2.52</span><span class="p">,</span>                        <span class="c1">// Total cost per click for interval</span>
+        <span class="s2">"device_breakdowns"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"impression_share"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"mobile"</span><span class="p">:</span> <span class="mf">43.47</span><span class="p">,</span>
+              <span class="s2">"desktop"</span><span class="p">:</span> <span class="mf">50.26</span><span class="p">,</span>
+              <span class="s2">"tablet"</span><span class="p">:</span> <span class="mf">37.5</span>
+          <span class="p">},</span>
+          <span class="s2">"impressions"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"mobile"</span><span class="p">:</span> <span class="mi">323</span><span class="p">,</span>
+              <span class="s2">"desktop"</span><span class="p">:</span> <span class="mi">193</span><span class="p">,</span>
+              <span class="s2">"tablet"</span><span class="p">:</span> <span class="mi">3</span>
+          <span class="p">},</span>
+          <span class="s2">"clicks"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"mobile"</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+              <span class="s2">"desktop"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+              <span class="s2">"tablet"</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
@@ -3800,6 +3872,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1410</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.92</span><span class="p">,</span><span class="w">
             </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
             </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
@@ -3807,11 +3880,29 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.37</span><span class="p">,</span><span class="w">
             </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.82</span><span class="w">
+            </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.82</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"device_breakdowns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mf">45.89</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.71</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.14</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">190</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1156</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.92</span><span class="p">,</span><span class="w">
             </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w">
             </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3819,7 +3910,24 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">88.83</span><span class="p">,</span><span class="w">
             </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.67</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.65</span><span class="w">
+            </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.65</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"device_breakdowns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mf">45.89</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.71</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.14</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">190</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -3869,6 +3977,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1410</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.92</span><span class="p">,</span><span class="w">
         </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
         </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
@@ -3876,11 +3985,29 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.37</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.82</span><span class="w">
+        </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.82</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_breakdowns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mf">45.89</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.71</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.14</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">190</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1156</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mf">42.3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w">
         </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3888,7 +4015,24 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">88.83</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.67</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.65</span><span class="w">
+        </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.65</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_breakdowns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.03</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.14</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mf">85.71</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -4118,6 +4262,8 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/USA_105
 <p>Use GET to retrieve information for the Keyword report.  Data can be returned for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.</p>
 
 <p>The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters <code>page</code> and <code>page_size</code>.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.</p>
+
+<p><strong>Note: This API will not provide an Average page position from 1/1/2020 onward in the response.</strong></p>
 <h3 id='api-keyword-performance-metrics-parameters'>Parameters</h3>
 <p>When using the GET method, the results can be filtered using these parameters:</p>
 
@@ -4312,6 +4458,8 @@ https://api.reachlocalservices.com/client_reports/keyword/USA_105569?types[]=dis
 <p>Use GET to retrieve information for the Keyword Google Compliance Report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.</p>
 
 <p>The data returned will include google only totals for impressions, clicks, click-through-rate (CTR), media_cost, keywords, and average position.  It will also show breakdowns per keyword for clicks, media cost, impressions, average position, first page cost-per-click (CPC) and top page cost-per-click.  Data will be returned in pages, controlled by the parameters <code>page</code> and <code>page_size</code>.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.</p>
+
+<p><strong>Note: This API will not provide an Average page position from 1/1/2020 onward in the response.</strong></p>
 <h3 id='api-keyword-performance-metrics-parameters'>Parameters</h3>
 <p>When using the GET method, the results can be filtered using these parameters:</p>
 
