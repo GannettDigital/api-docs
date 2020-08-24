@@ -75,6 +75,7 @@ To specify a date range:
 |---|---|---|
 |`start_date`|String|Start date of interval.|
 |`impressions`|Integer|Impressions for interval.|
+|`impression_share`|Integer|Impression share for interval.|
 |`leads`|Integer|Leads for interval.|
 |`clicks`|Integer|Clicks for interval.|
 |`calls`|Integer|Calls for interval.|
@@ -105,6 +106,7 @@ To specify a date range:
 | Field Name | Datatype | Description |
 |---|---|---|
 |Impressions|Object|Device breakdown of impressions. [Impressions Object.](#searchimpressions)|
+|Impression Share|Object|Device breakdown of impression share. [Impression Share Object.](#searchimpressionshare)|
 |Clicks|Object|Device breakdown of clicks. [Clicks Object](#searchclicks)|
 
 <a name="searchimpressions"></a>
@@ -115,6 +117,15 @@ To specify a date range:
 |`desktop`|Object|Total and percent of total for impressions of desktop.|
 |`mobile`|Object|Total and percent of total for impressions of mobile.|
 |`tablet`|Object|Total and percent of total for impressions of tablet.|
+
+<a name="searchimpressionshare"></a>
+#### Impression Share Object
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|`desktop`|Object|Percent impression share of desktop.|
+|`mobile`|Object|Percent impression share of mobile.|
+|`tablet`|Object|Percent impression share of tablet.|
 
 <a name="searchclicks"></a>
 #### Clicks Object
@@ -231,6 +242,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
           {
             "start_date": "2016-10-10", // Start date of interval
             "impressions": 78,          // Impressions for interval
+            "impression_share": 47.92,  // Impression share for interval
             "leads": 310,               // Leads for interval
             "clicks": 45,               // Clicks for interval
             "calls": 85,                // Calls for interval
@@ -238,8 +250,25 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             "emails": 73,               // Emails for interval
             "spend": 18,                // Spend for interval
             "ctr": 57.69,               // Click through rate for interval
-            "cpc": 0.4                  // Cost per click for interval
-          },
+            "cpc": 0.4,                 // Cost per click for interval
+            "device_breakdowns": {
+              "impression_share": {
+                  "mobile": 45.89,
+                  "desktop": 51.71,
+                  "tablet": 57.14
+              },
+              "impressions": {
+                  "mobile": 190,
+                  "desktop": 106,
+                  "tablet": 4
+              },
+              "clicks": {
+                  "mobile": 16,
+                  "desktop": 4,
+                  "tablet": 0
+              }
+            }
+          }
         ]
       }
     ],
@@ -288,6 +317,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       {
         "start_date": "2016-12-15",         // Start date of interval
         "impressions": 600,                 // Total impressions for interval
+        "impression_share": 45.73,          // Total impression share for interval
         "leads": 360,                       // Total leads for interval
         "clicks": 90,                       // Total clicks for interval
         "calls": 30,                        // Total calls for interval
@@ -295,7 +325,24 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "emails": 120,                      // Total emails for interval
         "spend": 226.5,                     // Total spend for interval
         "ctr": 15,                          // Total click through rate for interval
-        "cpc": 2.52                         // Total cost per click for interval
+        "cpc": 2.52,                        // Total cost per click for interval
+        "device_breakdowns": {
+          "impression_share": {
+              "mobile": 43.47,
+              "desktop": 50.26,
+              "tablet": 37.5
+          },
+          "impressions": {
+              "mobile": 323,
+              "desktop": 193,
+              "tablet": 3
+          },
+          "clicks": {
+              "mobile": 23,
+              "desktop": 14,
+              "tablet": 0
+          }
+        }
       }
     ]
   },
@@ -335,6 +382,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
           {
             "start_date": "2017-05-01",
             "impressions": 1410,
+            "impression_share": 47.92,
             "leads": 4,
             "clicks": 55,
             "calls": 4,
@@ -342,11 +390,29 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             "emails": 0,
             "spend": 100.37,
             "ctr": 3.9,
-            "cpc": 1.82
+            "cpc": 1.82,
+            "device_breakdowns": {
+              "impression_share": {
+                  "mobile": 45.89,
+                  "desktop": 51.71,
+                  "tablet": 57.14
+              },
+              "impressions": {
+                  "mobile": 190,
+                  "desktop": 106,
+                  "tablet": 4
+              },
+              "clicks": {
+                  "mobile": 16,
+                  "desktop": 4,
+                  "tablet": 0
+              }
+            }
           },
           {
             "start_date": "2017-05-02",
             "impressions": 1156,
+            "impression_share": 47.92,
             "leads": 1,
             "clicks": 54,
             "calls": 1,
@@ -354,7 +420,24 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
             "emails": 0,
             "spend": 88.83,
             "ctr": 4.67,
-            "cpc": 1.65
+            "cpc": 1.65,
+            "device_breakdowns": {
+              "impression_share": {
+                  "mobile": 45.89,
+                  "desktop": 51.71,
+                  "tablet": 57.14
+              },
+              "impressions": {
+                  "mobile": 190,
+                  "desktop": 106,
+                  "tablet": 4
+              },
+              "clicks": {
+                  "mobile": 16,
+                  "desktop": 4,
+                  "tablet": 0
+              }
+            }
           }
         ]
       }
@@ -404,6 +487,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       {
         "start_date": "2017-05-01",
         "impressions": 1410,
+        "impression_share": 47.92,
         "leads": 4,
         "clicks": 55,
         "calls": 4,
@@ -411,11 +495,29 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "emails": 0,
         "spend": 100.37,
         "ctr": 3.9,
-        "cpc": 1.82
+        "cpc": 1.82,
+        "device_breakdowns": {
+          "impression_share": {
+              "mobile": 45.89,
+              "desktop": 51.71,
+              "tablet": 57.14
+          },
+          "impressions": {
+              "mobile": 190,
+              "desktop": 106,
+              "tablet": 4
+          },
+          "clicks": {
+              "mobile": 16,
+              "desktop": 4,
+              "tablet": 0
+          }
+        }
       },
       {
         "start_date": "2017-05-02",
         "impressions": 1156,
+        "impression_share": 42.3,
         "leads": 1,
         "clicks": 54,
         "calls": 1,
@@ -423,7 +525,24 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
         "emails": 0,
         "spend": 88.83,
         "ctr": 4.67,
-        "cpc": 1.65
+        "cpc": 1.65,
+        "device_breakdowns": {
+          "impression_share": {
+              "mobile": 39.03,
+              "desktop": 49.14,
+              "tablet": 85.71
+          },
+          "impressions": {
+              "mobile": 226,
+              "desktop": 114,
+              "tablet": 6
+          },
+          "clicks": {
+              "mobile": 15,
+              "desktop": 5,
+              "tablet": 1
+          }
+        }
       }
     ]
   },
