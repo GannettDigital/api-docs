@@ -11,6 +11,8 @@ Use GET to retrieve information for the Keyword report.  Data can be returned fo
 
 The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters `page` and `page_size`.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
 
+**Note: This API will not provide an Average page position from 1/1/2020 onward in the response.**
+
 ### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
