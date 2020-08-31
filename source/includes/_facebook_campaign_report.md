@@ -70,7 +70,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?g
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_99999?start_date=2020-06-26&end_date=2020-06-27
+https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start_date=2020-06-26&end_date=2020-06-27
 ```
 
 ```javascript
@@ -88,7 +88,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_99999?st
         "campaigns": [
             {
                 "name": "Boosted Posts",
-                "global_master_campaign_id": "USA_33333333",
+                "global_master_campaign_id": "TEST_2",
                 "start_date": "2020-05-07",
                 "end_date": null,
                 "type": "other",
@@ -159,7 +159,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_99999?st
             },
             {
                 "name": "Custom Social Ads",
-                "global_master_campaign_id": "USA_44444",
+                "global_master_campaign_id": "TEST_3",
                 "start_date": "2020-05-15",
                 "end_date": "2020-08-30",
                 "type": "other",
@@ -438,8 +438,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_99999?st
             }
         ]
     },
-    "global_master_advertiser_id": "USA_99999",
-    "location": "https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_99999?end_date=2020-06-27&start_date=2020-06-26"
+    "global_master_advertiser_id": "TEST_1",
+    "location": "https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?end_date=2020-06-27&start_date=2020-06-26"
 }
 
 ```
