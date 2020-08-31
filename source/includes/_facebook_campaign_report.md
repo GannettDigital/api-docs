@@ -70,7 +70,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_105569?g
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_235217?start_date=2020-06-26&end_date=2020-06-27
+https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_99999?start_date=2020-06-26&end_date=2020-06-27
 ```
 
 ```javascript
@@ -87,8 +87,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_235217?s
     "report_data": {
         "campaigns": [
             {
-                "name": "SMM | FFO | Boosted Posts",
-                "global_master_campaign_id": "USA_3049168",
+                "name": "Boosted Posts",
+                "global_master_campaign_id": "USA_33333333",
                 "start_date": "2020-05-07",
                 "end_date": null,
                 "type": "other",
@@ -158,8 +158,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_235217?s
                 ]
             },
             {
-                "name": "Custom Social Ads | FFO | Furniture Sales",
-                "global_master_campaign_id": "USA_3053988",
+                "name": "Custom Social Ads",
+                "global_master_campaign_id": "USA_44444",
                 "start_date": "2020-05-15",
                 "end_date": "2020-08-30",
                 "type": "other",
@@ -438,8 +438,8 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_235217?s
             }
         ]
     },
-    "global_master_advertiser_id": "USA_235217",
-    "location": "https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_235217?end_date=2020-06-27&start_date=2020-06-26"
+    "global_master_advertiser_id": "USA_99999",
+    "location": "https://api.reachlocalservices.com/client_reports/facebook_campaign/USA_99999?end_date=2020-06-27&start_date=2020-06-26"
 }
 
 ```
