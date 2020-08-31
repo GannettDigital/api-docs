@@ -33,3 +33,20 @@ To resolve this, follow steps at [Requesting Access and Refresh Tokens](https://
     "message": "Unauthorized"
 }
 ```
+
+### 403 - Forbidden
+
+#### HIPAA Permissions
+
+The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+
+This control applies to APIs that provide data that are classified as HIPAA and protected by law.
+
+### Example Response
+
+```javascript
+{
+    "name": "not_authorized",
+    "message": "You are not permitted to perform this action."
+}
+```
