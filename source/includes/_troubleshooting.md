@@ -13,12 +13,8 @@ Invalid grant error messages occurs when either:
 To resolve this check your username and password for accuracy, then follow steps at [Requesting Access and Refresh Tokens](https://reachlocal.github.io/api-docs/#api-access-step-2-authorization-requesting-access-and-refresh-tokens) to request a new refresh token.
 
 ### Example Response
-```javascript
-{
-    "error": "invalid_grant",
-    "error_description": "The provided authorization credentials are invalid. Refer to documentation at https://reachlocal.github.io/api-docs/#error-codes for further information."
-}
-```
+
+`{ "error": "invalid_grant", "error_description": "The provided authorization credentials are invalid. Refer to documentation at https://reachlocal.github.io/api-docs/#error-codes for further information." }`
 
 ### 401 - Unauthorized
 
@@ -28,8 +24,16 @@ To resolve this, follow steps at [Requesting Access and Refresh Tokens](https://
 
 ### Example Response
 
-```javascript
-{
-    "message": "Unauthorized"
-}
-```
+`{ "message": "Unauthorized" }`
+
+### 403 - Forbidden
+
+#### HIPAA Permissions
+
+The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+
+This control applies to APIs that provide data that are classified as HIPAA and protected by law.
+
+### Example Response
+
+`{ "name": "not_authorized", "message": "You are not permitted to perform this action." }`

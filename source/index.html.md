@@ -66,8 +66,10 @@ includes:
   - integrations
   - contacts
   - contact_interactions
-  - zapier
   - crm_webhooks
+  - zapier
+  - zapier_contacts
+  - zapier_contact_interactions
   - google_data_studio
   - errors
   - troubleshooting
