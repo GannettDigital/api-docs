@@ -27,7 +27,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`page`|No|1|Specifies which page of results to return. |
 |`sort_by`|No|`keyword`|Specifies what column to sort by.  Valid columns are: `keyword`, `clicks`, `impressions`, and `ctr`. |
 |`sort_dir`|No|`asc`|Specifies the sort direction.  Can be either `asc` or `desc`. |
-|`types[]`|No|`search`|Specifies the campaign type of keyword.  Can be `search` and `display`. Ex: types[]=display,search|
+|`types[]`|No|`search`|Specifies the campaign type of keyword.  Can be `search`, `display` or `xmedia`. Ex: types[]=display,search,xmedia|
 
 ### Examples:
 
