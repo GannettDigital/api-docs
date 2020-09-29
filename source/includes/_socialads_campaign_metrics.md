@@ -29,10 +29,22 @@ When using the GET method, the results can be filtered using these parameters:
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
-To specify a date range:
+**To specify a date range**
 
-- Specify start_date and end_date.
-- When specifying a **campaign_cycle**, do not use date range params.
+* Specify start_date and end_date.
+* When specifying a **campaign_cycle**, do not use date range params.
+
+**Valid Goal Type Ids**
+
+| Goal Type Id |Goal Types |
+|---|---|
+| 1 | CPL|
+| 2 | Calls|
+| 3 | Contacts|
+| 4 | Engagement|
+| 5 | Reach|
+| 6 | Contacts (Dynamic Ads - Automotive)|
+| 7 | Sales|
 
 ### Response Data Details
 
