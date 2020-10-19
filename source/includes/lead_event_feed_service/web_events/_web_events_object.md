@@ -22,8 +22,8 @@
             "id": 4,
             "event_id": "135",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1230",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "sale",
             "platform": "USA",
@@ -42,8 +42,8 @@
             "id": 562,
             "event_id": "2423",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1232",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "Soong peetch alay. (It's too late.)",
             "classification": "unclassified",
             "platform": "USA",
@@ -59,7 +59,7 @@
             "event_time": "2018-05-08T13:49:44.000Z"
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/web_events?global_master_advertiser_id=USA_123&per_page=50&last_event_seen=2018-05-06 19:51:02584&show_deleted=false"
+    "next_page": "https://api.reachlocalservices.com/leads/web_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-05-06 19:51:02584&show_deleted=false"
 }
 ```
 

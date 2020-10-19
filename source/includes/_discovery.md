@@ -1,10 +1,33 @@
-## Discovery
+### **Discovery**
+<a name="discovery"></a>
+
+This data is a count of each Capture event grouped by master campaign ID, referrer type, and referrer source.
+This API endpoint is used to populate the Marketing Activity Report in client center.
+
+### Resource Overview
+
+| Method | URI Format |
+|---|---|
+| GET | /capture_reports/discovery?[query_params] |
+
+### Parameters
+
+When using the GET method, the results can be filtered using these parameters:
+
+|Param|Required|Function|
+|---|---|---|
+|startTime|Yes|Restricts the results to those occurring on or after this date and time. If time is not specified, startTime will be the beginning of the day in UTC (T00:00:00Z)|
+|endTime|Yes|Restricts the results to those occurring on or before this date and time. If time is not specified, endTime will be the end of the day in UTC (T12:59:59Z)|
+|gmaid|Yes|Restrict results to the specified advertiser|
+|bucket|No|place results in buckets|
+
+### Response Data Details
 
 ```ruby
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=USA_142687")
+url = URI("https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -20,7 +43,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=USA_142687")
+  .url("https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1")
   .get()
   .addHeader("Authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Accept", "application/json")
@@ -31,12 +54,12 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request GET \
-  --url 'https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=USA_142687' \
+  --url 'https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1' \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
 ```
 
-> The above command returns JSON structured like this:
+> Example Response
 
 ```json
 {
@@ -87,7 +110,7 @@ curl --request GET \
                                 "count": 1
                             }
                         ],
-                        "master_campaign_id": "USA_1778719"
+                        "master_campaign_id": "TEST_1"
                     }
                 ]
             },
@@ -191,7 +214,7 @@ curl --request GET \
                                 "count": 963
                             }
                         ],
-                        "master_campaign_id": "USA_154581"
+                        "master_campaign_id": "TEST_1"
                     }
                 ]
             },
@@ -213,28 +236,6 @@ curl --request GET \
 }
 ```
 
-This data is a count of each Capture event grouped by master campaign ID, referrer type, and referrer source.
-This API endpoint is used to populate the Marketing Activity Report in client center.
-
-### Resource Overview
-
-| Method | URI Format |
-|---|---|
-| GET | /capture_reports/discovery?[query_params] |
-
-### Parameters
-
-When using the GET method, the results can be filtered using these parameters:
-
-| Param     | Required | Function |
-|-----------|-----|---|
-| startTime | Yes | Restricts the results to those occurring on or after this date and time. If time is not specified, startTime will be the beginning of the day in UTC (T00:00:00Z). |
-| endTime   | Yes | Restricts the results to those occurring on or before this date and time. If time is not specified, endTime will be the end of the day in UTC (T12:59:59Z). |
-| gmaid     | Yes | Restrict results to the specified advertiser |
-| bucket    | No  | place results in buckets |
-
-### Response Body
-
 The body of the API response depend on whether the bucket parameter is present.
 
 Whether it's present or not, the response will contain a result object along with a generated_at field.
@@ -243,16 +244,17 @@ The generated_at field is the date and time the report was generated.
 
 The result object will contain an array of count objects
 
-Field Name | Datatype | Nullable | Description
----------- | -------- | -------- | -----------
-group | String | no | INFLUENCED or ORGANIC
-type | String | no | SEARCH, DIRECT, OTHER, UNKNOWN or SOCIAL
-event_counts | Array | no | An array of event_count objects
-master_campaign_id | String | Yes | The campaign to which the events are attributed.
-The event_count object
+|Field Name|Datatype|Nullable|Description|
+|---|---|---|---|
+|group|String|no|INFLUENCED or ORGANIC|
+|type|String|no|SEARCH, DIRECT, OTHER, UNKNOWN or SOCIAL|
+|event_counts|Array|no|An array of event_count objects|
+|master_campaign_id|String|Yes|The campaign to which the events are attributed|
 
-Field Name | Datatype | Nullable | Description
----------- | -------- | -------- | -----------
-type | String | no | TouchPoint or Contact
-sub_type | String | no | The type of event; Visit, Post, Chat or Call
-count | Integer | no | The count of the number of events
+#### The event_count object
+
+|Field Name | Datatype | Nullable | Description|
+|---|---|---|---|
+|type|String|no|TouchPoint or Contact|
+|sub_type|String|no|The type of event; Visit, Post, Chat or Call|
+|count|Integer|no|The count of the number of events|

@@ -60,4 +60,6 @@ The following are valid event classification values:
 
 **HTTP Request**
 
-`PUT https://api.reachlocalservices.com/leads/web_events/[id]`
+| Method | URI Format |
+|---|---|
+| PUT | /leads/web_events/[id]|

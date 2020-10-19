@@ -1,51 +1,29 @@
 ## Capture External Event
 
-Capture External Event API is a public ReachLocal external interface for vendors to use.
-
-### Create Chat Event
-
-This endpoint is used to create a chat event.
-
-### HTTP Request
+### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| POST | https://api.reachlocalservices.com/capture_events/chats |
+| POST | /capture_events/chats |
 
-### HTTP Response Codes
-| Status Code | Description
+
+| HTTPS Response Code | Description
 |---|---|
 | 200 | Successful
 | 400 | Validation Error
 
-### Post Body Parameters
+**Usage**
 
-Parameter | Required | Datatype | Nullable | Description
---------- | -------- | -------- | -------- | -----------
-eventTime | yes  | string | no | The date/time in UTC that the chat started.
-accountId | yes  | string | no | A vendor supplied account identifier.
-data | yes | string | no | A JSON hash representing the attributes for the chat. See the following section for detail.
+Capture External Event API is a public ReachLocal external interface for vendors to use.
+This endpoint is used to create a chat event.
 
-This section defines the data parameter JSON hash.
+### Parameters
 
-Data Field | Required | Datatype | Nullable | Description
---------- | -------- | -------- | -------- | -----------
-provider | yes | string | no | The name of the service provider.
-visitId | yes | string | no | The Reach Local visitId of the chat user.
-chatDuration | yes | number | yes | The duration of the chat in seconds.
-chatSummary | yes | string | no | A summary of the chat.
-chatTextFull | yes | string | no | The full transcript of the chat.
-chatVisitorEmail |yes | string | no | The email address of the visitor.
-chatVisitorName | yes | string | no | The name of the chat visitor.
-chatVisitorPhone | no | string | no | The phone number for this chat visitor.
+> Examples
 
-### Examples:
-
-
+> Sample cURL for the Create Chat POST request:
 
 ``` shell
-# Sample cURL for the Create Chat POST request:
-
 curl -X POST \
   https://api.reachlocalservices.com/capture_events/chats \
   -H 'Content-Type: application/json' \
@@ -54,10 +32,10 @@ curl -X POST \
   -d '{
   "eventTime": "2017-03-10T01:19:23Z",
   "accountId": "123456789",
-  "data":  
+  "data":
     {
         "provider": "SomeCompany",
-        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",          
+        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",
         "chatDuration": 261.58,
         "chatSummary": "Do you have any specials going on?",
         "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
@@ -80,10 +58,10 @@ curl -X POST \
   -d '{
   "eventTime": "2017-03-10T01:19:23Z",
   "accountId": "123456789",
-  "data":  
+  "data":
     {
         "provider": null,
-        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",          
+        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",
         "chatDuration": 261.58,
         "chatSummary": "Do you have any specials going on?",
         "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
@@ -146,3 +124,24 @@ Response response = client.newCall(request).execute();
 
 /* HTTP Response Status: 200 */
 ```
+
+#### Post Body Parameters
+
+|Parameter | Required | Datatype | Nullable | Description|
+|---|---|---|---|---|
+|eventTime|yes|string|no|The date/time in UTC that the chat started|
+|accountId|yes|string|no|A vendor supplied account identifier|
+|data|yes|string|no|A JSON hash representing the attributes for the chat. See the following section for details|
+
+This section defines the data parameter JSON hash:
+
+|Data Field|Required|Datatype|Nullable|Description|
+|---|---|---|---|---|
+|provider|yes|string|no|The name of the service provider|
+|visitId|yes|string|no|The Reach Local visitId of the chat user|
+|chatDuration|yes|number|yes|The duration of the chat in seconds|
+|chatSummary|yes|string|no|A summary of the chat|
+|chatTextFull|yes|string|no|The full transcript of the chat|
+|chatVisitorEmail|yes|string|no|The email address of the visitor|
+|chatVisitorName|yes|string|no|The name of the chat visitor|
+|chatVisitorPhone|no|string|no|The phone number for this chat visitor|

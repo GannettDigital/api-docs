@@ -1,0 +1,144 @@
+### **Google Keyword Performance**
+
+### Resource Overview&nbsp;&nbsp;&nbsp;
+
+|Method|URI Format|
+|---|---|
+|GET|/client_reports/google_keyword/[gmaid]?[query_params]|
+
+**Usage**
+
+Use GET to retrieve information for the Keyword Google Compliance Report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.
+
+The data returned will include google only totals for impressions, clicks, click-through-rate (CTR), media_cost, keywords, and average position.  It will also show breakdowns per keyword for clicks, media cost, impressions, average position, first page cost-per-click (CPC) and top page cost-per-click.  Data will be returned in pages, controlled by the parameters page and page_size.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
+
+**Note: This API will not provide an Average page position from 1/1/2020 onward in the response.**
+
+### Parameters&nbsp;&nbsp;&nbsp;
+
+When using the GET method, the results can be filtered using these parameters:
+
+|Param|Function|
+|---|---|
+|start_date|Restricts the results to those occurring on or after this date|
+|end_date|Restricts the results to those occurring on or before this date|
+|global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
+|campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|page_size|Restrict number of keywords in result.  Default is 15|
+|page|Specifies which page of results to return.  Default is 1|
+|sort_by|Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc.  Default: keyword|
+|sort_dir|Specifies the sort direction.  Can be either asc or desc. Default: asc|
+
+### Response Data Details&nbsp;&nbsp;&nbsp;
+
+> Retrieve data for a specific range of dates
+
+```
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
+https://api.reachlocalservices.com/client_reports/google_keyword/TEST_1?start_date=2016-12-01&end_date=2016-12-31&page=1&page_size=15"
+```
+
+> Retrieve data for a specific campaign starting on a certain date
+
+```
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
+https://api.reachlocalservices.com/client_reports/google_keyword/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15"
+```
+
+> Retrieve data for campaigns that are stopped and running
+
+```
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
+https://api.reachlocalservices.com/client_reports/google_keyword/TEST_1?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31&page=1&page_size=15"
+```
+
+> Example Response
+
+```json
+{
+    "report_type": "google_keyword",
+    "report_date": "2020-10-15",
+    "earliest_date_available": "2020-01-01",
+    "start_date": "2020-10-10",
+    "end_date": "2020-10-10",
+    "time_zone": "America/Los_Angeles",
+    "report_data": {
+        "totals": {
+            "clicks": 17,
+            "media_cost": 918.68,
+            "impressions": 1065,
+            "ctr": 1.6,
+            "keywords": 2
+        },
+        "keywords": [
+            {
+                "keyword": "Keyword (Demo) 1 Location (Demo) 1",
+                "clicks": 6,
+                "media_cost": 0,
+                "impressions": 383,
+                "first_page_cpc": 7.34,
+                "top_page_cpc": 16
+            },
+            {
+                "keyword": "Keyword (Demo) 2 Location (Demo) 2",
+                "clicks": 11,
+                "media_cost": 0,
+                "impressions": 682,
+                "first_page_cpc": 7.34,
+                "top_page_cpc":15
+            }
+        ]
+    },
+    "global_master_advertiser_id": "TEST_1",
+    "location": "https://api.qa.reachlocalservices.com/client_reports/google_keyword/TEST_1?end_date=2020-10-10&start_date=2020-10-10",
+    "page": 1,
+    "page_size": 25
+}
+
+```
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|report_type|String|Name of the API|
+|report_date|String|Date report was run|
+|earliest_date_available|String|Earliest Data is Available|
+|start_date|String|Start date of report|
+|end_date|String|End date of report|
+|time_zone|String|Time Zone|
+|report_data|Object|Report details object containing Totals object and Campaigns array. [Report Data Object](#campaignreportdata)|
+|global_master_advertiser_id|String|Identifier for advertiser|
+|location|String|Location of this report|
+|page|Int|Page Number|
+|page_size|Int|Number of keywords on page|
+
+**Report Data Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|keywords|Keyword|Array of Keyword|
+|totals|Total|Total Object|
+
+**Keyword Object**
+
+|Field Name|Datatype|Nullable|Description|
+|---|---|---|---|
+|keyword|Int|No|Keyword Name|
+|type|Int|No|Keyword Type (search/display)|
+|clicks|Float|No|Clicks for Keyword|
+|media_cost|Float|No|cost|
+|impressions|Int|No|Impressions for Keyword|
+|ctr|Float|No|Click through Rate for Keyword|
+
+**Totals Object**
+
+|Field Name|Datatype|Nullable|Description|
+|---|---|---|---|
+|keywords|Int|No|Number of total keywords regardless of page|
+|clicks|Float|No|Overall Clicks|
+|media_cost|Float|No|cost|
+|impressions|Int|No|Overall Impressions|
+|ctr|Float|No|Overall Click through Rate|
+
+**Totals Per Interval Object**
+
+This is an Interval object for the whole report.

@@ -5,11 +5,11 @@
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/display_creative/[gmaid]?[query_params] |
-### API Name: Display Creative Report
 
 **Note:** We recommend users to migrate to the [Unified Display API](#unified_display) in place of this API as this API will no longer be updated.
 
-### Usage
+**Usage**
+
 Use GET to retrieve information for the Display Creative Report for a given advertiser.
 
 The data returned will include spend, impressions, clicks, click-through rate (ctr), cost per thousand (cpm), cost per click (cpc), walk-ins, click-through form submissions, view-through form submissions, cost per submission, click-through priority page views, and view-through priority page views organized by campaign and broken down by creative type and creative size.
@@ -20,51 +20,53 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Function |
 |---|---|
-|`start_date`|Restricts the results to those occurring on or after this date.|
-|`end_date`|Restricts the results to those occurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
-|`campaign_cycle`|Restrict results to a single campaign cycle|
-|`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
+|start_date|Restricts the results to those occurring on or after this date|
+|end_date|Restricts the results to those occurring on or before this date|
+|global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
+|campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|campaign_cycle|Restrict results to a single campaign cycle|
+|interval_size| Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval)|
+|<internal> markup_type|Optional unless markup_value present. Only supported value is 'percentage' </internal>|
+|<internal> markup_value| Optional unless markup_type present. "cost" fields (spend,CPC,CPM) will be marked up by this pecentage </internal>|
 
 To specify a date range:
 
    - Specify start_date and end_date.
    - When specifying a `campaign_cycle`, do not use date range params.
 
-### Examples:
+### Response Data Details
 
 > Retrieve data for a specific range of dates
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?start_date=2018-05-01&end_date=2018-05-01
+https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?start_date=2018-05-01&end_date=2018-05-01
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?global_master_campaign_id[]=USA_2375336&start_date=2018-05-01&end_date=2018-05-01
+https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2018-05-01&end_date=2018-05-01
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?campaign_cycle=USA_2522849
+https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?campaign_cycle=TEST_1
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?&campaign_status[]=running,stopped&start_date=2018-05-01&end_date=2018-05-01
+https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?&campaign_status[]=running,stopped&start_date=2018-05-01&end_date=2018-05-01
 ```
 
-> Response Description
+> Example Response
 
-```javascript
+```json
 {
     "report_type": "display_creative",                                          // Type Of Report
     "report_date": "2018-06-13",                                                // Date Report Ran
@@ -73,12 +75,12 @@ https://api.reachlocalservices.com/client_reports/display_creative/USA_126034?&c
     "end_date": "2018-05-01",                                                   // End Date of Report
     "time_zone": "America/Los_Angeles",                                         // Time Zone
     "interval_size": "day",                                                     // Interval Size ('day', 'calendar_week' or 'calendar_month')
-    "global_master_advertiser_id": "USA_126034",                                // Global Master Advertiser (GMAID) for report
+    "global_master_advertiser_id": "TEST_1",                                    // Global Master Advertiser (GMAID) for report
     "report_data": {                                                            // Report Details
         "campaigns": [                                                          // All Data for Campaigns
             {
                 "name": "GeoFence | FCS | Lee County Oncology Competitors",     // Campaign Name
-                "global_master_campaign_id": "USA_2375336",                     // Identifier for Campaign
+                "global_master_campaign_id": "TEST_1",                          // Identifier for Campaign
                 "start_date": "2018-05-01",                                     // Start Date for Campaign
                 "end_date": null,                                               // End Date for Campaign
                 "type": "display",                                              // Type of Campaign

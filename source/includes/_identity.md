@@ -52,7 +52,7 @@ curl --request GET \
         {
             "name": "Awesome Advertiser",
             "platform": "USA",
-            "gmaid": "USA_224767",
+            "gmaid": "TEST_1",
             "hipaa_protected": false,
             "business_id": 16240,
             "business_name": "Montgomery_1",
@@ -64,7 +64,7 @@ curl --request GET \
         {
             "name": "ACME Corporation",
             "platform": "USA",
-            "gmaid": "USA_142687",
+            "gmaid": "TEST_1",
             "hipaa_protected": false
         }
     ]

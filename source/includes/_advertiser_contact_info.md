@@ -26,18 +26,18 @@ None
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569
+https://api.reachlocalservices.com/client_reports/advertiser_contact_info/TEST_1
 ```
 
 > Response when found:
 
 ```json
 {
-  "global_master_advertiser_id": "USA_105569",
-  "location": "https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569",
+  "global_master_advertiser_id": "TEST_1",
+  "location": "https://api.reachlocalservices.com/client_reports/advertiser_contact_info/TEST_1",
   "contact_data": [
     {
-      "global_master_advertiser_id": "USA_105569",
+      "global_master_advertiser_id": "TEST_1",
       "name": "John Doe",
       "role": "Campaign Performance Consultant",
       "email": "john.doe@reachlocal.com",
@@ -51,8 +51,8 @@ https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_10
 
 ```json
 {
-  "global_master_advertiser_id": "USA_105569",
-  "location": "https://api.reachlocalservices.com/client_reports/advertiser_contact_info/USA_105569",
+  "global_master_advertiser_id": "TEST_1",
+  "location": "https://api.reachlocalservices.com/client_reports/advertiser_contact_info/TEST_1",
   "contact_data": [
     {}
   ]

@@ -14,7 +14,7 @@
     "authorized_advertisers": [
         {
             "name": "Superior Sales",
-            "gmaid": "USA_123",
+            "gmaid": "TEST_1",
             "hipaa_protected": false,
             "feed_types": [
                 "call_events",
@@ -24,7 +24,7 @@
         },
         {
             "name": "Lake Street Market",
-            "gmaid": "USA_124",
+            "gmaid": "TEST_1",
             "hipaa_protected": false,
             "feed_types": [
                 "call_events",

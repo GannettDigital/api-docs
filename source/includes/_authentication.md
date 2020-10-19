@@ -1,4 +1,4 @@
-# API Access
+# Getting Started
 
 We have a two-step access process; authentication and authorization.
 
@@ -8,7 +8,7 @@ We have a two-step access process; authentication and authorization.
 
 Note: Business user’s access to advertiser’s data (GMAIDs) is maintained through Campaign Central/Corp.
 
-## Step 1: Authentication
+## Step 1: Request API Access
 
 The first step is to register your application with Reach Local. Please contact your account manager, DMC or [LOCALiQ API Support](mailto:apiservices@localiq.com) to request API access.
 
@@ -18,7 +18,7 @@ You will get a response within 1 business day. The response email will contain a
 
 * The client secret is a secret known only to the application and the authorization server.
 
-## Step 2: Authorization
+## Step 2: Authorization/Authentication
 
 The second step involves receiving an Authorization token, which is then used to request an Access and Refresh token. **There are two ways to receive an Authorization token: User login method and Direct access method.**
 

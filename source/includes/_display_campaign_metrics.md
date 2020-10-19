@@ -5,11 +5,11 @@
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/display_activity/[gmaid]?[query_params] |
-### API Name: Display Activity Report
 
 **Note:** We recommend users to migrate to the [Unified Display API](#unified_display) in place of this API as this API will no longer be updated.
 
-### Usage
+**Usage**
+
 Use GET to retrieve information for the Display Activity report for a given advertiser.
 
 The data returned will include impressions, remarketing impressions, custom targeting impressions, clicks, spend, CPM, walk-ins, and CPW values organized by campaign and campaign_cycle.
@@ -20,54 +20,56 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Function |
 |---|---|
-|`start_date`|Restricts the results to those occurring on or after this date.|
-|`end_date`|Restricts the results to those occurring on or before this date.|
-|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
-|`campaign_cycle`|Restrict results to a single campaign cycle|
-|`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
-|`include_cycles`|Set to true or false on whether to include cycle nesting.  Default value is false.|
+|start_date|Restricts the results to those occurring on or after this date|
+|end_date|Restricts the results to those occurring on or before this date|
+|global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
+|campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|campaign_cycle|Restrict results to a single campaign cycle|
+|interval_size| Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval)|
+|include_cycles|Set to true or false on whether to include cycle nesting.  Default value is false|
+|<internal> markup_type|Only supported value is 'percentage' </internal>|
+|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
 To specify a date range:
 
    - Specify start_date and end_date.
-   - When specifying a `campaign_cycle`, do not use date range params.
+   - When specifying a campaign_cycle, do not use date range params.
 
-### Examples:
+### Response Data Details
 
 > Retrieve data for a specific range of dates
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?start_date=2016-12-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=USA_100
+https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?campaign_cycle=TEST_1
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31
+https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
-https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true
+https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true
 ```
 
 > Response Description with Cycles
@@ -86,13 +88,13 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     "campaigns": [                          // All data for campaigns
       {
         "name": "Ad_Campaign_1",             // Campaign name
-        "global_master_campaign_id": "USA_1",// Identifier for campaign
+        "global_master_campaign_id": "TEST_1",// Identifier for campaign
         "start_date": "2016-07-10",          // Start date for campaign
         "end_date": "2016-10-24",            // End date for campaign
         "type": "display",                   // Type of campaign
         "cycles": [                          // Data for cycles
           {
-            "campaign_cycle": "USA_1",       // Identifier for cycle
+            "campaign_cycle": "TEST_1",       // Identifier for cycle
             "start_date": "2016-10-10",      // Start date for cycle
             "end_date": "2016-10-14",        // End date for cycle
             "intervals": [                   // Data for specified interval
@@ -175,8 +177,8 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       }
     ]
   },
-  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle"
+  "global_master_advertiser_id": "TEST_1", // Identifier for advertiser
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
 }
 ```
 >  Response Description without Cycles
@@ -195,7 +197,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     "campaigns": [                          // All data for campaigns
       {
         "name": "Ad_Campaign_1",             // Campaign name
-        "global_master_campaign_id": "USA_1",// Identifier for campaign
+        "global_master_campaign_id": "TEST_1",// Identifier for campaign
         "start_date": "2016-07-10",          // Start date for campaign
         "end_date": "2016-10-24",            // End date for campaign
         "type": "display",                   // Type of campaign
@@ -277,8 +279,8 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       }
     ]
   },
-  "global_master_advertiser_id": "USA_105569", // Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_105569?campaign_cycle=ALL&global_master_campaign_id[]=USA_14&range=cycle"
+  "global_master_advertiser_id": "TEST_1", // Identifier for advertiser
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
 }
 ```
 
@@ -298,7 +300,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
     "campaigns": [
       {
         "name": "Drain Cleaning",
-        "global_master_campaign_id": "USA_1",
+        "global_master_campaign_id": "TEST_1",
         "start_date": "2016-11-14",
         "end_date": "2017-01-13",
         "type": "display",
@@ -380,7 +382,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       },
       {
         "name": "Stopped Campaign",
-        "global_master_campaign_id": "USA_3",
+        "global_master_campaign_id": "TEST_1",
         "start_date": "2016-11-14",
         "end_date": "2017-01-13",
         "type": "display",
@@ -462,7 +464,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       },
       {
         "name": "Ended Campaign",
-        "global_master_campaign_id": "USA_4",
+        "global_master_campaign_id": "TEST_1",
         "start_date": "2016-11-14",
         "end_date": "2017-01-13",
         "type": "display",
@@ -627,10 +629,10 @@ https://api.reachlocalservices.com/client_reports/search_activity/USA_105569?glo
       }
     ]
   },
-  "global_master_advertiser_id": "USA_123",
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_123?start_date=2017-01-11&end_date=2017-01-13"
+  "global_master_advertiser_id": "TEST_1",
+  "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?start_date=2017-01-11&end_date=2017-01-13"
     },
-    "global_master_advertiser_id": "USA_148363",
-    "location": "https://api.reachlocalservices.com/client_reports/display_activity/USA_148363?end_date=2018-03-09&start_date=2018-03-09"
+    "global_master_advertiser_id": "TEST_1",
+    "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?end_date=2018-03-09&start_date=2018-03-09"
 }
 ```
