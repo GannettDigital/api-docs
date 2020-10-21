@@ -1,7 +1,7 @@
 ### **Web Event Metrics**
 <a name="web_event_metrics"></a>
 
-### Resource Overview
+### Resource Overview&nbsp;&nbsp;&nbsp;
 
 
 | Method | URI Format |
@@ -20,7 +20,7 @@ Use GET to retrieve web event activity for all CVT/Web Events for a given gmaid.
 
 The data returned will include CVT/Web Events from each campaign with web event name, web event url, and metrics for the interval requested.
 
-### Parameters
+### Parameters&nbsp;&nbsp;&nbsp;
 
 When using the GET method, the results can be filtered using these parameters:
 
@@ -36,7 +36,7 @@ To specify a date range:
 
    - Specify start_date and end_date.
 
-### Response Data Details
+### Response Data Details&nbsp;&nbsp;&nbsp;
 
 > Retrieve data for a specific range of dates
 
@@ -362,7 +362,7 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
 |report_data|Object|[Report Data Object](#cvtreportdata)|
 
 <a name="cvtreportdata"></a>
-#### Report Data Object
+**Report Data Object**
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -371,7 +371,8 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
 |location|String|Location URL|
 
 <a name="cvtcampaigns"></a>
-#### Campaigns Object
+**Campaigns Object**
+
 | Field Name | Datatype | Description |
 |---|---|---|
 |name|String|Campaign name|
@@ -384,7 +385,8 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
 |web_events|Object|[Web Events Object](#cvtwebevents)|
 
 <a name="cvtwebevents"></a>
-#### Web Events Object
+**Web Events Object**
+
 | Field Name | Datatype | Description |
 |---|---|---|
 |web_event_name|String|Name of web event|
@@ -394,7 +396,8 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
 |intervals|Object|[Intervals Object](#cvtintervals)|
 
 <a name="cvtintervals"></a>
-#### Intervals Object
+**Intervals Object**
+
 | Field Name | Datatype | Description |
 |---|---|---|
 |date|String|Date for interval|

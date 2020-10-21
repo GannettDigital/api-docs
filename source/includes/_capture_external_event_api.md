@@ -1,4 +1,4 @@
-## Capture External Event
+## Capture External Event API
 
 ### Resource Overview
 

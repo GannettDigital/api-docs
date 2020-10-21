@@ -251,7 +251,7 @@ The result object will contain an array of count objects
 |event_counts|Array|no|An array of event_count objects|
 |master_campaign_id|String|Yes|The campaign to which the events are attributed|
 
-#### The event_count object
+**The event_count object**
 
 |Field Name | Datatype | Nullable | Description|
 |---|---|---|---|

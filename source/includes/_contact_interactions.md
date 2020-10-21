@@ -291,7 +291,7 @@ curl --request GET \
 
 The body of the API response will contain metadata and a JSON array of contact interaction objects.
 
-#### MetaData
+**MetaData**
 
 Field Name | Description
 ---------- | -----------
@@ -300,7 +300,7 @@ page | Current page number being displayed
 total_pages | Total number of pages of results
 next\_page\_location | Complete URL that can be used to retrieve the next page of results.  Will be null if there are no more pages.
 
-#### Contact Interaction
+**Contact Interaction**
 
 Field | Type | Nullable | Description
 --------- | -------- |-------- |--------
@@ -322,14 +322,14 @@ contact | Contact | no | The contact to which this contact interaction belongs. 
 
 Depending on the type of contact interaction (see the `event_type` attribute), the payload will also include one of the following:
 
-##### Chat
+**Chat**
 
 Field | Type | Nullable | Description
 --------- | -------- |-------- |--------
 summary | String | yes | A freeform text description of the chat.
 transcript | Array of ChatTranscripts | no | An ordered array of chat transcript objects.
 
-###### ChatTranscript Object
+**ChatTranscript Object**
 
 Field | Type | Nullable | Description
 --------- | -------- |-------- |--------
@@ -338,7 +338,7 @@ timestamp | String | no |The date and time that the external chat API registered
 from | String | no | The display name of the member of the chat who sent this message.
 message | String | no |The message body of this line of the chat transcript.
 
-##### Call
+**Call**
 
 Field | Type | Nullable | Description
 --------- | -------- |-------- |--------
@@ -346,7 +346,7 @@ occured_at | Datetime | no | The date and time that the call occurred.
 duration | Integer | no | The duration of the call in seconds.
 recording_url | String | no | The URL address to an audio recording of the call.
 
-##### Form Fill
+**Form Fill**
 
 Field | Type | Nullable | Description
 --------- | -------- |-------- |--------

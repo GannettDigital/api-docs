@@ -50,7 +50,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |global_master_advertiser_id|String|Identifier for advertiser|
 |location|String |URL location of this report|
 
-#### ReportData Object
+**ReportData Object**
 
 | Field Name | Datatype | Description |
 |---|---|---|

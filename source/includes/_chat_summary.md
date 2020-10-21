@@ -341,14 +341,16 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 |global_master_advertiser_id|String|Global Master Advertiser ID|
 
 <a name="chatreportdata"></a>
-#### Report Data Object
+**Report Data Object**
+
 |Field Name|Datatype|Description|
 |---|---|---|
 |campaigns|Object|Data for specified campaign. [Campaigns Object](#chatcampaigns)|
 |organic|Object|Data for organic. [Organic Object](#chatorganic)|
 
 <a name="chatcampaigns"></a>
-#### Campaigns Object
+**Campaigns Object**
+
 |Field Name|Datatype|Description|
 |---|---|---|
 |global_master_campaign_id|String|Identifier for campaign|
@@ -361,13 +363,14 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 |intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
 
 <a name="chatorganic"></a>
-#### Organic Object
+**Organic Object**
+
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
 
 <a name="chatintervals"></a>
-#### Intervals Object
+**Intervals Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|

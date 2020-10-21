@@ -364,7 +364,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |report_data|Object|[Report Data Object (with Line Items)](#udlineitemsreportdata) or [Report Data Object (with Campaigns)](#udcampaignsreportdata)|
 
 <a name="udlineitemsreportdata"></a>
-#### Report Data Object (with Line Items)
+**Report Data Object (with Line Items)**
+
 |Field Name|Datatype|Description|
 |---|---|---|---|
 |totals|Object|Object of totals details. [Totals Object](#udtotals)|
@@ -373,7 +374,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |line_items|Object|Object of line items details. [Line Items Object](#udlineitems)|
 
 <a name="udcampaignsreportdata"></a>
-#### Report Data Object (with Campaigns)
+**Report Data Object (with Campaigns)**
+
 |Field Name|Datatype|Description|
 |---|---|---|---|
 |totals|Object|Object of totals details. [Totals Object](#udtotals)|
@@ -381,7 +383,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |line_items|Object|Object of line items details. [Line Items Object](#udlineitems)|
 
 <a name="udtotals"></a>
-#### Totals Object
+**Totals Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |clicks|Int|No|Total clicks|
@@ -404,7 +407,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |view_thru_rate|Float|Yes|View-Through Rate|
 
 <a name="udintervals"></a>
-#### Intervals Object
+**Intervals Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |start_date|String|No|Start Date of interval|
@@ -428,7 +432,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |view_thru_rate|Float|Yes|View-Through Rate|
 
 <a name="udcampaigns"></a>
-#### Campaigns Object
+**Campaigns Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |name|String|No|Campaign Name|
@@ -470,7 +475,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |creatives|Object|--|Object of creatives details. [Campaign Creatives Object](#udcampaigncreatives)|
 
 <a name="udlineitems"></a>
-#### Line Items Object
+**Line Items Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |name|String|No|Name of Line Item|
@@ -486,7 +492,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |creatives|Object|--|Object of line items creatives. [Line Item Creatives Object](#udlineitemcreatives)|
 
 <a name="udlineitemintervals"></a>
-#### Line Items Intervals Object
+**Line Items Intervals Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |start_date|String|No|Start Date of Interval|
@@ -514,7 +521,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |view_thru_rate|Float|Yes|View-Through Rate|
 
 <a name="udlineitemcreatives"></a>
-#### Line Items Creatives Object
+**Line Items Creatives Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |creative_id|String|No|Identifier for Creative|
@@ -546,7 +554,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |intervals|Object|--|Object of line items creatives intervals. [Line Items Creatives Intervals Object](#udlineitemscreativesintervals)|
 
 <a name="udcampaigncreatives"></a>
-#### Campaign Creatives Object
+**Campaign Creatives Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |creative_id|Int|No|Identifier for Creative|
@@ -586,7 +595,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |view_thru_rate|Float|No|Total View-Through Rate|
 
 <a name="udlineitemscreativesintervals"></a>
-#### Line Items Creatives Intervals Object
+**Line Items Creatives Intervals Object**
+
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
 |start_date|String|No|Start Date of Interval|

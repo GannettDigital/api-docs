@@ -4,13 +4,13 @@
 Describes the distribution of referrers for an advertiser for a given time period as well as attributing the source
 of the referral.  This API endpoint is the data source for the Traffic Detail Report report in client center.
 
-### Resource Overview
+### Resource Overview&nbsp;
 
 | Method | URI Format |
 |---|---|
 | GET | /capture_reports/top-referrers?[query_params] |
 
-### Parameters
+### Parameters&nbsp;
 
 When using the GET method, the results can be filtered using these parameters:
 
@@ -20,7 +20,7 @@ When using the GET method, the results can be filtered using these parameters:
 | endTime   | Yes | Restricts the results to those occurring on or before this date and time. |
 | gmaid     | Yes | Restrict results to the specified advertiser |
 
-### Response Data Details
+### Response Data Details&nbsp;
 
 ```ruby
 require 'uri'
@@ -147,7 +147,7 @@ master_campaign_id | String | Yes | The master campaign id
 is_paid | boolean | No | Is the campaign a paid campaign
 top_referrers | Array | No | An array of top referrer objects
 
-The top referrer object
+**The top referrer object**
 
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------

@@ -386,7 +386,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |location|String|Location URL|
 
 <a name="campaignreportdata"></a>
-#### Report Data Object
+**Report Data Object**
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -394,7 +394,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |campaigns|Array|Array of campaigns with campaign details. [Campaigns Object](#campaignsdetails)|
 
 <a name="campaigntotals"></a>
-#### Totals Object (Running campaign performance totals for the last 30 days )
+**Totals Object** (Running campaign performance totals for the last 30 days )
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -406,7 +406,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |chats|Integer|Total chat events|
 
 <a name="campaignsdetails"></a>
-#### Campaigns Object
+**Campaigns Object**
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -421,7 +421,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |cycles|Object|Data for cycles. [Cycles Object](#campaignscycles)|
 
 <a name="campaignscycles"></a>
-#### Cycles Object
+**Cycles Object**
 
 | Field Name | Datatype | Description |
 |---|---|---|

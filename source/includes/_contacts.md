@@ -1,4 +1,5 @@
-## Contacts/Leads
+## Contacts/Lead APIs
+
 ### **Contacts**
 <a name="contacts"></a>
 
@@ -140,7 +141,8 @@ curl --request GET \
 
 The body of the API response will contain metadata and a JSON array of contact objects.
 
-#### MetaData
+**MetaData**
+
 Field Name | Description
 ---------- | -----------
 global\_master\_advertiser\_id | Global Master Advertiser ID of the contacts requested
@@ -148,7 +150,8 @@ page | Current page number being displayed
 total_pages | Total number of pages of results
 next\_page\_location | Complete URL that can be used to retrieve the next page of results.  Will be null if there are no more pages.
 
-#### Contact
+**Contact**
+
 Field | Type | Nullable | Description
 --------- | -------- |-------- |--------
 id | Integer | no |An integer uniquely identifying this contact.

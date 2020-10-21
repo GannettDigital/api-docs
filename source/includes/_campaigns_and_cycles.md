@@ -1,4 +1,4 @@
-## Campaigns
+## Campaigns APIs
 
 ### **Campaigns & Cycles**
 <a name="campaigns_and_cycles"></a>
@@ -192,7 +192,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |report_campaigns|Object|[Report Campaigns Object](#campaigns_reportcampaigns)|
 
 <a name="campaigns_reportcampaigns"></a>
-#### Report Campaigns Object
+**Report Campaigns Object**
+
 | Field Name | Datatype | Description |
 |---|---|---|
 |name|String|Name of campaign|
@@ -205,7 +206,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |cycles|Object|[Cycles Object](#campaigns_cycles)|
 
 <a name="campaigns_cycles"></a>
-#### Cycles Object
+**Cycles Object**
+
 | Field Name | Datatype | Description |
 |---|---|---|
 |campaign_cycle|String|Identifier for campaign cycle|

@@ -17,7 +17,13 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
       end
     end
 
-    return "<h#{header_level} id='#{friendly_text}'>#{remove_string(text)}</h#{header_level}>"
+    header = "<h#{header_level} id='#{friendly_text}'>#{remove_string(text)}</h#{header_level}>"
+
+    if header_level == 3 && text =~ /<strong>/
+      header = "#{header}<hr>"
+    end
+
+    return header
   end
 
   def paragraph(text)

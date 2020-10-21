@@ -164,7 +164,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |location|String|Location URL|
 
 <a name="leadreportdata"></a>
-#### Report Data Object
+**Report Data Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
@@ -174,7 +174,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |calls_by_time_and_day|Object|Call by hour by day. (day of week, hour of day)|
 
 <a name="leadtotalsinterval"></a>
-#### Totals Per Interval Array
+**Totals Per Interval Array**
 
 |Field Name|Datatype|Description|
 |---|---|---|
@@ -185,7 +185,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |chats|Integer|Chats for interval|
 
 <a name="leadtotals"></a>
-#### Totals Object
+**Totals Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
@@ -199,7 +199,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |leads|Integer|Total leads|
 
 <a name="leadcycles"></a>
-#### Cycles Array
+**Cycles Array**
 
 |Field Name|Datatype|Description|
 |---|---|---|
