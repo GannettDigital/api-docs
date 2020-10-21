@@ -1,7 +1,7 @@
 ### **Campaigns Overview**
 <a name="campaigns_overview"></a>
 
-### Resource Overview
+### Resource Overview&nbsp;
 
 | Method | URI Format |
 |---|---|
@@ -54,7 +54,7 @@ All campaign data for the account will be provided including both Paid Media and
   - CVT/Web Events
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
 
-### Parameters
+### Parameters&nbsp;
 
 None
 
@@ -65,7 +65,7 @@ None
 |markup_value| Yes | "cost" fields (spend & budget) will be marked up by this pecentage |
 
 
-### Response Data Details
+### Response Data Details&nbsp;
 
 > The following command returns an example JSON structure:
 

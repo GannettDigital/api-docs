@@ -1,7 +1,7 @@
 ### **Campaigns Totals**
 <a name="campaigns_totals"></a>
 
-### Resource Overview
+### Resource Overview&nbsp;&nbsp;
 
 | Method | URI Format |
 |---|---|
@@ -9,11 +9,11 @@
 
 The data returned will include count of running campaigns and leads for all campaign types over the last 30 days.
 
-### Parameters
+### Parameters&nbsp;&nbsp;
 
 None
 
-### Response Data Details
+### Response Data Details&nbsp;&nbsp;
 
 > The following command returns an example JSON structure:
 

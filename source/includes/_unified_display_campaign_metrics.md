@@ -1,7 +1,7 @@
 ### **Unified Display Campaign Metrics**
 <a name="unified_display"></a>
 
-### Resource Overview
+### Resource Overview&nbsp;
 
 |Method|URI Format|
 |---|---|
@@ -20,7 +20,7 @@ This is a Display Metrics API that can be used by customers that have Display ca
 
 Use GET to retrieve information for the Unified Display API that will retrieve metrics on display campaigns. Data can be returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below.
 
-### Parameters
+### Parameters&nbsp;
 
 When using the GET method, the results can be filtered using these parameters:
 
@@ -32,7 +32,7 @@ When using the GET method, the results can be filtered using these parameters:
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
-### Response Data Details
+### Response Data Details&nbsp;
 
 > Retrieve data for a specific range of dates
 

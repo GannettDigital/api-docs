@@ -100,16 +100,29 @@ We have 3 major types of reporting API offerings; APIs, Webhooks and Integration
 <img alt='Webhook' src='/images/webhook_icon.png' height=200 width=200 />
 <img alt='Integration' src='/images/integration.png' height=200 width=200 />
 
-* API (Interface to the data – through a request & response interchange between applications)
-  * APIs that serve up metrics for your Search, Display, and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product.
+**API**
 
-* Webhooks (Event driven interface to the data – automated exchange based on specific event or rules occurring)
-  * Webhooks for contact creation on the LOCALiQ platform
-  * Webhooks for interactions occurring on your campaign; call, chat, web & email events.
+  - Interface to the data – through a request & response interchange between applications
 
-* Integrations (API and/or Web hooks with a specific purpose)
-  * CRM integrations (Contacts and Leads)
-  * FranConnect Integration (coming soon)
+  - APIs that serve up metrics for your Search, Display, and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product. <br>
+
+
+**Webhooks**
+
+  - Event driven interface to the data – automated exchange based on specific event or rules occurring
+
+  - Webhooks for contact creation on the LOCALiQ platform
+
+  - Webhooks for interactions occurring on your campaign; call, chat, web & email events.
+
+
+**Integrations**
+
+  - API and/or Web hooks with a specific purpose
+
+  - CRM integrations (Contacts and Leads)
+
+  - FranConnect Integration (coming soon)
 
 This site describes the resources that make up the LOCALiQ reporting REST API offerings. For questions or general information, please contact us at:
 

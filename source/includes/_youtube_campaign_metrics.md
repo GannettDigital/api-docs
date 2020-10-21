@@ -1,7 +1,7 @@
 ### **YouTube Campaign Metrics**
 <a name="youtube_campaign_metrics"></a>
 
-### Resource Overview
+### Resource Overview&nbsp;
 
 |Method|URI Format|
 |---|---|
@@ -14,7 +14,7 @@ Use GET to retrieve information for the YouTube report for a given advertiser.
 The data returned will include impressions, views, clicks, view-through rate, click-through rate, cost per view, and eCPM organized by campaign,
 and also broken out by age, gender, and device type.
 
-### Parameters
+### Parameters&nbsp;
 
 When using the GET method, the results can be filtered using these parameters:
 
@@ -34,7 +34,7 @@ To specify a date range:
    - Specify start_date and end_date.
    - When specifying a campaign_cycle, do not use date range params.
 
-### Response Data Details
+### Response Data Details&nbsp;
 
 > Retrieve data for a specific range of dates
 
