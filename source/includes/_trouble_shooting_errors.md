@@ -2,7 +2,7 @@
 
 ### 400 - Bad Request
 
-#### Invalid Grant
+**Invalid Grant**
 
 > Example Response
 
@@ -38,7 +38,7 @@ To resolve this, follow steps at [Requesting Access and Refresh Tokens](https://
 { "name": "not_authorized", "message": "You are not permitted to perform this action." }
 ```
 
-#### HIPAA Permissions
+**HIPAA Permissions**
 
 The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
 

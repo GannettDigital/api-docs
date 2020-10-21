@@ -17,10 +17,10 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
       end
     end
 
-    header = "<h#{header_level} id='#{friendly_text}'>#{remove_string(text)}</h#{header_level}>"
-
-    if header_level == 3 && text =~ /<strong>/
-      header = "#{header}<hr>"
+    header = if header_level == 3 && text =~ /<strong>/
+      header = "<h#{header_level} id='#{friendly_text}' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'>#{remove_string(text)}</h#{header_level}>"
+    else
+      header = "<h#{header_level} id='#{friendly_text}'>#{remove_string(text)}</h#{header_level}>"
     end
 
     return header

@@ -141,4 +141,4 @@ https://api.reachlocalservices.com/client_reports/google_keyword/TEST_1?&campaig
 
 **Totals Per Interval Object**
 
-This is an Interval object for the whole report.
+This is an Interval object across all campaigns.

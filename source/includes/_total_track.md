@@ -252,4 +252,4 @@ https://api.reachlocalservices.com/client_reports/total_track/TEST_1?global_mast
 
 **Totals Per Interval Object**
 
-This is an Interval object for the whole report.
+This is an Interval object across all campaigns.

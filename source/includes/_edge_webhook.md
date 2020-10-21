@@ -3,11 +3,11 @@
 
 ### Registering the Webhook
 
-Edge has an automation feature that is capable of triggering on “New Lead for New Contact” and “New Lead for Existing Contact” events.  When either of these events occur, this webhook integration will trigger and POST the Lead Event JSON Payload to a URL configured for the webhook.  Create a webhook using the integrations account setting.
+Client Center has an automation feature that is capable of triggering on “New Lead for New Contact” and “New Lead for Existing Contact” events.  When either of these events occur, this webhook integration will trigger and POST the Lead Event JSON Payload to a URL configured for the webhook.  Create a webhook using the integrations account setting.
 
 ![Integrations webhook](/images/webhook.png)
 
-When creating a webhook integration in Edge, the CRM provider should be asked for the Payload URL.
+When creating a webhook integration in Client Center, the CRM provider should be asked for the Payload URL.
 
 ![Create webhook](/images/create_webhook.png)
 

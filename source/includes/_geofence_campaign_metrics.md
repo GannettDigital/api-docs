@@ -31,9 +31,6 @@ When using the GET method, the results can be filtered using these parameters:
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
-To specify a date range:
-
-   - Specify start_date and end_date.
 
 ### Response Data Details:
 
@@ -467,7 +464,7 @@ https://api.reachlocalservices.com/client_reports/geofence_summary/TEST_1?&goefe
 
 **Totals Per Interval Object**
 
-This is an Interval object for the whole report.
+This is an Interval object across all campaigns.
 
 **AvailableGeofence Object**
 

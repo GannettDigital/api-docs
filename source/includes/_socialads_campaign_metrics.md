@@ -487,4 +487,4 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
 
 **Totals Per Interval Object**
 
-This is an Interval object for the whole report.
+This is an Interval object across all campaigns.

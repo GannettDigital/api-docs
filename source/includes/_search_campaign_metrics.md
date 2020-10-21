@@ -318,7 +318,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_
 <a name="searchtotalsperinterval"></a>
 **Totals Per Interval Object**
 
-This is an Interval object for the whole report.
+This is an Interval object across all campaigns.
 
 <a name="searchcycles"></a>
 **Cycles Array**

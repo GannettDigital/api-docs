@@ -177,4 +177,4 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/TEST_1?
 <a name="googlesearchtotalsperinterval"></a>
 **Totals Per Interval Object**
 
-This is an Interval object for the whole date range.
+This is an Interval object across all campaigns.
