@@ -68,7 +68,8 @@ global\_master\_advertiser\_id | yes | none | The global master advertiser id (f
 **Response Data Details**
 The body of the API response will the id of the webhook.
 
-#### MetaData
+**MetaData**
+
 Field Name | Description
 ---------- | -----------
 id | identifier of the webhook registration.
@@ -133,7 +134,8 @@ A response status code of 404 indicates that the webhook ID was not found.
 
 The body of the API response will be the id of the webhook that was deleted.
 
-#### MetaData
+**MetaData**
+
 Field Name | Description
 ---------- | -----------
 id | identifier of the webhook registration.
