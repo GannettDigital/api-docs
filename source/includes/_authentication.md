@@ -6,7 +6,7 @@ We have a two-step access process; authentication and authorization.
 
 * The authorization process determines the advertising data the business user is allowed to access.
 
-Note: Business user’s access to advertiser’s data (GMAIDs) is maintained through Campaign Central/Corp.
+Note: Business user’s access to advertiser’s data (GMAIDs) is maintained through Campaign Central/Corp Portal.
 
 ## Step 1: Request API Access
 

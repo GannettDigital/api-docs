@@ -280,6 +280,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_
 
 <a name="searchdevicebreakdowns"></a>
 **Device Breakdowns Object**
+
 |Field Name|Datatype|Description|
 |---|---|---|
 |Impressions|Object|Device breakdown of impressions. [Impressions Object.](#searchimpressions)|
