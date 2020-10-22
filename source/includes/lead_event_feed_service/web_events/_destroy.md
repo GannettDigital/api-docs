@@ -46,8 +46,6 @@ This endpoint marks a web event as deleted.
 
 **HTTP Request**
 
-**HTTP Request**
-
 | Method | URI Format |
 |---|---|
 | DELETE | /leads/web_events/[id]|
