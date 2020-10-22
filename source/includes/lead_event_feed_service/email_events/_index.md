@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=USA_58561")
+url = URI("https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=TEST_1")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -20,7 +20,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=USA_58561")
+  .url("https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=TEST_1")
   .get()
   .addHeader("Authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Cache-Control", "no-cache")
@@ -55,8 +55,8 @@ curl -X GET \
             "id": 265,
             "event_id": "1196",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1231",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "Kill my boss? Do I dare live out the American dream?",
             "classification": "unclassified",
             "platform": "USA",
@@ -75,8 +75,8 @@ curl -X GET \
             "id": 555,
             "event_id": "2410",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1232",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "unclassified",
             "platform": "USA",
@@ -92,7 +92,7 @@ curl -X GET \
             "event_time": "2018-05-08T15:14:41.000Z"
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=USA_123&per_page=50&last_event_seen=2018-05-06 04:30:33584&show_deleted=false"
+    "next_page": "https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-05-06 04:30:33584&show_deleted=false"
 }
 ```
 
@@ -100,13 +100,15 @@ This endpoint retrieves email events.
 
 **HTTP Request**
 
-`GET https://api.reachlocalservices.com/leads/email_events`
+| Method | URI Format |
+|---|---|
+| GET | /leads/email_events|
 
 **Query Parameters**
 
 Parameter | Required | Default | Description
 --------- | -------- |-------- | -----------
-global_master_advertiser_id | yes | none | The global master advertiser id (for example, USA_142687).
+global_master_advertiser_id | yes | none | The global master advertiser id (for example, TEST_1).
 per_page | no | 50 | The number of records to display per page.
 last_event_seen | no | none | Returns lead_events generated prior to the specified date and time. The format expected is ISO8601.
 show_deleted | no | false | Boolean flag that when set to true queries for and only return events that have been marked as deleted.

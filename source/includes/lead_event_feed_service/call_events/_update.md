@@ -62,4 +62,6 @@ Events can be marked as **`read`**, **`flagged`**, and/or **`deleted`** by setti
 
 **HTTP Request**
 
-`PUT https://api.reachlocalservices.com/leads/call_events/[id]`
+| Method | URI Format |
+|---|---|
+| PUT | /leads/call_events/[id]|

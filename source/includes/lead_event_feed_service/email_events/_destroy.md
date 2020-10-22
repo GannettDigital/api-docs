@@ -46,4 +46,6 @@ This endpoint marks an email event as deleted.
 
 **HTTP Request**
 
-`DELETE https://api.reachlocalservices.com/leads/email_events/[id]`
+| Method | URI Format |
+|---|---|
+| DELETE | /leads/email_events/[id]|

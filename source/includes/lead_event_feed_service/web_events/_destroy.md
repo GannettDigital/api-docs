@@ -46,4 +46,6 @@ This endpoint marks a web event as deleted.
 
 **HTTP Request**
 
-`DELETE https://api.reachlocalservices.com/leads/web_events/[id]`
+| Method | URI Format |
+|---|---|
+| DELETE | /leads/web_events/[id]|

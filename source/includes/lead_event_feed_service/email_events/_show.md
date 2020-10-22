@@ -53,8 +53,8 @@ curl -X GET \
     "id": 123,
     "event_id": "608",
     "deleted": false,
-    "global_master_advertiser_id": "USA_123",
-    "global_master_campaign_id": "USA_1230",
+    "global_master_advertiser_id": "TEST_1",
+    "global_master_campaign_id": "TEST_1",
     "note": "",
     "classification": "unclassified",
     "platform": "USA",
@@ -75,4 +75,6 @@ This endpoint retrieves an email event.
 
 **HTTP Request**
 
-`GET https://api.reachlocalservices.com/leads/email_events/[id]`
+| Method | URI Format |
+|---|---|
+| GET | /leads/email_events/[id]|

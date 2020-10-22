@@ -47,7 +47,7 @@ curl -X GET \
     "authorized_advertisers": [
         {
             "name": "Superior Sales",
-            "gmaid": "USA_123",
+            "gmaid": "TEST_1",
             "hipaa_protected": false,
             "feed_types": [
                 "call_events",
@@ -57,7 +57,7 @@ curl -X GET \
         },
         {
             "name": "Lake Street Market",
-            "gmaid": "USA_124",
+            "gmaid": "TEST_1",
             "hipaa_protected": false,
             "feed_types": [
                 "call_events",
@@ -88,4 +88,6 @@ This endpoint retrieves business information for the authenticated user.
 
 **HTTP Request**
 
-`GET https://api.reachlocalservices.com/leads/user_info`
+| Method | URI Format |
+|---|---|
+| GET | /leads/user_info]|

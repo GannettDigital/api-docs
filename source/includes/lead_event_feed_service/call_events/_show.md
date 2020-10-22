@@ -53,8 +53,8 @@ curl -X GET \
     "id": 123,
     "event_id": "547",
     "deleted": false,
-    "global_master_advertiser_id": "USA_123",
-    "global_master_campaign_id": "USA_1230",
+    "global_master_advertiser_id": "TEST_1",
+    "global_master_campaign_id": "TEST_1",
     "note": "",
     "classification": "inquiry",
     "platform": "USA",
@@ -76,4 +76,6 @@ This endpoint retrieves a call event.
 
 **HTTP Request**
 
-`GET https://api.reachlocalservices.com/leads/call_events/[id]`
+| Method | URI Format |
+|---|---|
+| GET | /leads/call_events/[id]|

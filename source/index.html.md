@@ -11,25 +11,54 @@ toc_footers:
 
 includes:
   - terms_and_conditions
+
   - authentication
-  - troubleshooting
-  - identity
+  - trouble_shooting_errors
+
+  - release_notes
+
+  - api_overview
+
   - api
+  - campaigns_and_cycles
   - campaigns_overview_report
   - campaigns_totals
-  - display_activity_report
-  - display_creative_report
-  - geofence_summary_report
-  - search_activity_report
-  - search_compliance_report
-  - keyword
-  - keyword_compliance_report
-  - facebook_campaign_report
-  - youtube
+
+  - display
+  - unified_display_campaign_metrics
+  - geofence_campaign_metrics
+
+  - search
+  - keyword_performance_metrics
+  - search_campaign_metrics
+  - google_keyword_report
+  - google_search_report
+
+  - social
+  - socialads_campaign_metrics
+  - youtube_campaign_metrics
+
+  - traffic_metrics
+  - discovery
+  - top_referrers
+  - total_track
+  - web_events_metrics
+
+  - integrations
+  - capture_external_event_api
+  - contacts
+  - contact_interactions
+  - edge_webhook
+  - crm_webhooks
+  - lead_metrics
+  - chat_summary
   - lead_detail
+  - zapier
+
+  - deprecated_apis
+  - creative_ad_metrics
+  - display_campaign_metrics
   - lead_event_feed_service/overview
-  - lead_event_feed_service/leads/leads_object
-  - lead_event_feed_service/leads/index
   - lead_event_feed_service/call_events/call_events_object
   - lead_event_feed_service/call_events/index
   - lead_event_feed_service/call_events/show
@@ -45,34 +74,18 @@ includes:
   - lead_event_feed_service/email_events/show
   - lead_event_feed_service/email_events/update
   - lead_event_feed_service/email_events/destroy
+  - lead_event_feed_service/leads/leads_object
+  - lead_event_feed_service/leads/index
+  - lead_event_feed_service/user_info/user_info_object
+  - lead_event_feed_service/user_info/show
   - lead_event_feed_service/web_events/web_events_object
   - lead_event_feed_service/web_events/index
   - lead_event_feed_service/web_events/show
   - lead_event_feed_service/web_events/update
   - lead_event_feed_service/web_events/destroy
-  - lead_event_feed_service/user_info/user_info_object
-  - lead_event_feed_service/user_info/show
-  - capture_external_event_api
-  - capture_discovery
-  - capture_top_referrers
-  - total_track
-  - new_2020
-  - campaigns
-  - chat_summary
-  - unified_display_report
-  - cvt_events
-  - webhooks
-  - edge_webhook  
-  - integrations
-  - contacts
-  - contact_interactions
-  - crm_webhooks
-  - zapier
-  - zapier_contacts
-  - zapier_contact_interactions
-  - google_data_studio
+
   - errors
-  - troubleshooting
+  - trouble_shooting_errors
 
 search: false
 ---
@@ -81,21 +94,36 @@ search: false
 
 Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.
 
-We have 3 major types of reporting API offerings; API, Webhooks and Integration apps.
+We have 3 major approaches for providing data: APIs, Webhooks and Integration apps.
 
-<img alt='API' src='/images/api.png' height=200 width=200 />
-<img alt='Webhook' src='/images/webhook_icon.png' height=200 width=200 />
-<img alt='Integration' src='/images/integration.png' height=200 width=200 />
+<img alt='API' src='/images/api.png' height=180 width=180 />
+<img alt='Webhook' src='/images/webhook_icon.png' height=180 width=180 />
+<img alt='Integration' src='/images/integration.png' height=180 width=180 />
 
-* API (Interface to the data – through a request & response interchange between applications)
-  * APIs that serve up metrics for your Search, Display campaigns and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product.
+**API**
 
-* Webhooks (Event driven interface to the data – automated exchange based on specific event or rules occurring)
-  * Webhooks to contact creation on the LOCALiQ platform
-  * Webhooks to interaction occurring on your campaign; call, chat, web & email events.
+  - Interface to the data – through a request & response interchange between applications
 
-* Integrations (API and/or Web hooks with a specific purpose)
-  * CRM integrations (for Contacts and Leads)
-  * FranConnect Integration (coming soon)
+  - APIs that serve up metrics for your Search, Display, and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product. <br>
 
-This site describes the resources that make up the LOCALiQ reporting REST API offerings. For questions or general information, please contact [LOCALiQ API Support](mailto:apiservices@localiq.com).
+
+**Webhooks**
+
+  - Event driven interface to the data – automated exchange based on specific event or rules occurring
+
+  - Webhooks for contact creation on the LOCALiQ platform
+
+  - Webhooks for interactions occurring on your campaign; call, chat, web & email events.
+
+
+**Integrations**
+
+  - API and/or Web hooks with a specific purpose
+
+  - CRM integrations (Contacts and Leads)
+
+  - FranConnect Integration
+
+This site describes the resources that make up the LOCALiQ reporting REST API offerings. For questions or general information, please contact us at:
+
+**LOCALiQ API Support**: [apiservices@localiq.com](mailto:apiservices@localiq.com)

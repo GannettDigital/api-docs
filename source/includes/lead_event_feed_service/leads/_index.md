@@ -57,10 +57,12 @@ This endpoint retrieves unread counts for lead events.
 
 **HTTP Request**
 
-`GET https://api.reachlocalservices.com/leads`
+| Method | URI Format |
+|---|---|
+| GET | /leads]|
 
 **Query Parameters**
 
 Parameter | Required | Default | Description
 --------- | -------- |-------- | -----------
-global_master_advertiser_id | yes | none | The global master advertiser id (for example, USA_142687).
+global_master_advertiser_id | yes | none | The global master advertiser id (for example, TEST_1).

@@ -46,4 +46,6 @@ This endpoint marks a chat event as deleted.
 
 **HTTP Request**
 
-`DELETE https://api.reachlocalservices.com/leads/chat_events/[id]`
+| Method | URI Format |
+|---|---|
+| DELETE | /leads/chat_events/[id]|
