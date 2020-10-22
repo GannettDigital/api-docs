@@ -7,8 +7,6 @@
 |---|---|
 | GET | /client_reports/campaigns_overview/[gmaid]|
 
-**Usage**
-
 Use GET to retrieve the Campaigns Overview Report,
 
 The data returned will include campaign performance metrics for the last 30 days and a campaign list with additional details and breakdowns per cycle.  Campaign are limited to those that have had activity within the previous year.  This means that a campaign that ended 13 months prior will not be included in the campaign list section.

@@ -7,9 +7,6 @@
 |---|---|
 |GET|/client_reports/geofence_summary/[gmaid]?[query_params]|
 
-
-**Usage**
-
 Use GET to retrieve information for the GeoFence Summary Report for a given advertiser.
 
 The data returned will include impressions, walk_ins, ctr, clicks, cpc, cpw, cpm, and spend organized by campaign

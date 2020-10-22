@@ -7,8 +7,6 @@
 |---|---|
 |GET|/client_reports/search_activity/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve information for the Search Activity report for a given advertiser.
 
 The data returned will include impressions, leads, clicks, calls, web_events, emails, and spend values organized by campaign and campaign_cycle.

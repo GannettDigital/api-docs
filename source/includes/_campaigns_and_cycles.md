@@ -9,8 +9,6 @@
 |---|---|
 | GET | /client_reports/campaigns/[gmaid]?[query_params] |
 
-**Usage**
-
 A list of filtered Campaigns and Campaign Cycles for a given report type and advertiser.  (Cycles are not included for keyword_report)
 
 If using the `campaigns_overview` report_type, all campaign data for the account will be provided including both Paid Media and Offer-based campaigns.

@@ -8,13 +8,9 @@
 |---|---|
 | GET | /client_reports/cvt_events/[gmaid]?[query_params]|
 
-**Summary**
-
 This is an API that can be used by customers who have indicated that certain pages or actions of specific importance will benefit the performance of campaigns through more informed and meaningful conversions. All metrics are reported against the CVT/Web Event.
 
 Web Events fall under two categories: 'Request' and 'Submit'. A 'Request' Web Event is usually informational, in some cases, it can have a post-click activity that can generate a lead. A 'Submit' CVT/Web Event is lead-generating. Metrics tied to a 'Request' CVT/Web Event are considered 'non-qualified', whereas metrics tied to a 'Submit' CVT/Web Event are considered 'qualified'.
-
-**Usage**
 
 Use GET to retrieve web event activity for all CVT/Web Events for a given gmaid.
 

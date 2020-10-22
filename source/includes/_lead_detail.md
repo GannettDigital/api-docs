@@ -7,8 +7,6 @@
 |---|---|
 |GET|/client_reports/lead_detail/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve information for the Lead Details report for a given advertiser.
 
 The report will contains calls, emails, web events, and chats broken down by day or month.

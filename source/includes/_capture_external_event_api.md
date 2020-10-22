@@ -12,8 +12,6 @@
 | 200 | Successful
 | 400 | Validation Error
 
-**Usage**
-
 Capture External Event API is a public ReachLocal external interface for vendors to use.
 This endpoint is used to create a chat event.
 

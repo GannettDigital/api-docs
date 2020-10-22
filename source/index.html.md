@@ -25,8 +25,8 @@ includes:
   - campaigns_totals
 
   - display
-  - geofence_campaign_metrics
   - unified_display_campaign_metrics
+  - geofence_campaign_metrics
 
   - search
   - keyword_performance_metrics
@@ -94,11 +94,11 @@ search: false
 
 Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.
 
-We have 3 major types of reporting API offerings; APIs, Webhooks and Integration apps.
+We have 3 major approaches for providing data: APIs, Webhooks and Integration apps.
 
-<img alt='API' src='/images/api.png' height=200 width=200 />
-<img alt='Webhook' src='/images/webhook_icon.png' height=200 width=200 />
-<img alt='Integration' src='/images/integration.png' height=200 width=200 />
+<img alt='API' src='/images/api.png' height=180 width=180 />
+<img alt='Webhook' src='/images/webhook_icon.png' height=180 width=180 />
+<img alt='Integration' src='/images/integration.png' height=180 width=180 />
 
 **API**
 
@@ -122,7 +122,7 @@ We have 3 major types of reporting API offerings; APIs, Webhooks and Integration
 
   - CRM integrations (Contacts and Leads)
 
-  - FranConnect Integration (coming soon)
+  - FranConnect Integration
 
 This site describes the resources that make up the LOCALiQ reporting REST API offerings. For questions or general information, please contact us at:
 

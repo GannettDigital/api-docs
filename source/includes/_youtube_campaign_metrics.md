@@ -7,8 +7,6 @@
 |---|---|
 |GET|/client_reports/youtube/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve information for the YouTube report for a given advertiser.
 
 The data returned will include impressions, views, clicks, view-through rate, click-through rate, cost per view, and eCPM organized by campaign,

@@ -7,8 +7,6 @@
 |---|---|
 |GET|/client_reports/facebook_campaign/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve information for the SocialAds Campaign Report for a given advertiser.
 
 The data returned will include various metrics organized by campaign and campaign\_cycle.  If no values are present for a given metric, 0 is assumed, except for **offline_conversion_purchases**, **offline_conversion_purchases_value**, **cpsc** and **roas**, which will be omitted from the result if not present.

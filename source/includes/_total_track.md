@@ -7,8 +7,6 @@
 |---|---|
 |GET|/client_reports/total_track/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve information for the TotalTrack report for a given advertiser.
 
 The data returned will include leads, clicks, calls, web_events and email values organized by campaign and campaign_cycle.

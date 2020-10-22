@@ -7,8 +7,6 @@
 |---|---|
 |GET|/client_reports/keyword/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve information for the Keyword report.  Data can be returned for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.
 
 The data returned will include totals for number of keywords, impressions, clicks, and click-through-rate (CTR), as well as a breakdown for each keyword.  Data will be returned in pages, controlled by the parameters page and page_size.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.

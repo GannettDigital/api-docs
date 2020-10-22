@@ -8,11 +8,7 @@
 |---|---|
 |GET|/client_reports/chat_summary/[gmaid]?[query_params]|
 
-**Summary**
-
 This API can be used by customers who have our chat widget on their site. The API has metrics on each chat along with traffic information (Paid Campaign/Organic).
-
-**Usage**
 
 Use GET to retrieve information from the Chat Summary API. Data can be returned for a GMAID by a specific date range determined by start date and end date.
 

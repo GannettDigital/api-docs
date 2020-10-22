@@ -6,8 +6,6 @@
 |---|---|
 |GET|/client_reports/google_search_activity/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve the Google Search Activity Compliance report for a given advertiser.
 
 The data returned will include impressions, clicks, and media cost values organized by campaign and campaign_cycle.

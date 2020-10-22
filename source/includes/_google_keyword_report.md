@@ -6,8 +6,6 @@
 |---|---|
 |GET|/client_reports/google_keyword/[gmaid]?[query_params]|
 
-**Usage**
-
 Use GET to retrieve information for the Keyword Google Compliance Report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.
 
 The data returned will include google only totals for impressions, clicks, click-through-rate (CTR), media_cost, keywords, and average position.  It will also show breakdowns per keyword for clicks, media cost, impressions, average position, first page cost-per-click (CPC) and top page cost-per-click.  Data will be returned in pages, controlled by the parameters page and page_size.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
