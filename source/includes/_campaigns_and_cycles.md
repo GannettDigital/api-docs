@@ -11,7 +11,7 @@
 
 **Usage**
 
-A list of filtered Campaigns and Campaign Cycles for a given report type and advertiser.  (Cycles are not included for keyword_report)
+A list of filtered Campaigns, Campaign Cycles for a given report type and advertiser and Campaign Goals for every Campaign.  (Cycles are not included for keyword_report)
 
 If using the `campaigns_overview` report_type, all campaign data for the account will be provided including both Paid Media and Offer-based campaigns.
 
@@ -75,6 +75,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "end_date": null,
                     "name": "Gannett Display Campaign (Demo)"
                 }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
+                }
             ]
         },
         {
@@ -91,6 +97,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "start_date": "2020-10-10",
                     "end_date": null,
                     "name": "Display Campaign (Demo)"
+                }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
                 }
             ]
         },
@@ -109,7 +121,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "end_date": null,
                     "name": "Search Campaign (Demo)"
                 }
-            ]
+            ],
+            "goals": []
         },
         {
             "name": "Chat Campaign (Demo)",
@@ -125,6 +138,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "start_date": "2020-10-10",
                     "end_date": null,
                     "name": "Chat Campaign (Demo)"
+                }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
                 }
             ]
         },
@@ -143,6 +162,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "end_date": null,
                     "name": "Facebook Campaign (Demo)"
                 }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
+                }
             ]
         },
         {
@@ -160,6 +185,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "end_date": null,
                     "name": "Geofence Campaign (Demo)"
                 }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
+                }
             ]
         },
         {
@@ -176,6 +207,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "start_date": "2020-10-10",
                     "end_date": null,
                     "name": "Youtube Campaign (Demo)"
+                }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
                 }
             ]
         }
@@ -204,6 +241,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |has_addressable_geofence|Boolean|`True` or `False`|
 |has_cvt|Boolean|`True` or `False`|
 |cycles|Object|[Cycles Object](#campaigns_cycles)|
+|goals|Object|[Goals Object](#campaigns_goals)|
 
 <a name="campaigns_cycles"></a>
 **Cycles Object**
@@ -214,3 +252,11 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |start_date|String|Start date of campaign cycle|
 |end_date|String|End date of campaign cycle|
 |name|String|Name of campaign cycle|
+
+<a name="campaigns_goals"></a>
+**Goals Object**
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|goal_type_id|String|Identifier for campaign goal type|
+|goal_type|String|Name(Type) of goal type|
