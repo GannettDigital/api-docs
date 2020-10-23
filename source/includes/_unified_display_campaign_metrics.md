@@ -8,13 +8,15 @@
 |GET|/client_reports/unified_display/[gmaid]?[query_params]|
 
 
-This is a Display Metrics API that can be used by customers that have Display campaigns from either the ReachLocal or Gannett brand. All metrics are reported at the creative level, and aggregated at the Interval/Campaign level for ReachLocal brand or Line Item level for the Gannett brand. When data is unavailable, corresponding property will not be present in the response. For example, if we do not have data for a creative_type or creative_size, it will not be present in the response.
+This is a Display Metrics API that can be used by customers that have Display campaigns from either the ReachLocal or Gannett brand. Data is returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below. All metrics are reported at the creative level, and aggregated at the Interval/Campaign level for ReachLocal brand or Line Item level for the Gannett brand. When data is unavailable, corresponding property will not be present in the response. For example, if we do not have data for a creative_type or creative_size, it will not be present in the response.
 
-**Note:** We recommend users to migrate to this API in place of the Display Activity API and Display Creative API as they will no longer be updated.
+**Note:** Please note in some cases, the response might not have all of the creatives used in the campaign. This scenario is apparent when the total metrics for the campaign does not match the sum of the same metrics across every creative within the campaigns.
+
+We recommend you use the campaign totals from the response when reporting at the campaign level since it will include the creatives that may be missing in the response.
+
+**Note:** We recommend that users migrate to this API instead of using the Display Activity API and Display Creative API, as they will no longer be updated.
 
 **Note:** MOAT metrics are not supported after December 31, 2019. Any requests for date ranges after this will not include MOAT metrics. Date ranges that span beyond December 31, 2019 will show calculations based on start_date through December 31, 2019.
-
-Use GET to retrieve information for the Unified Display API that will retrieve metrics on display campaigns. Data can be returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below.
 
 ### Parameters&nbsp;
 
