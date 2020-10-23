@@ -1,4 +1,4 @@
-### **oogle Local Service Ads**
+### ** Google Local Service Ads**
 
 ### Resource Overview
 
