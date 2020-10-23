@@ -51,6 +51,7 @@ includes:
   - edge_webhook
   - crm_webhooks
   - lead_metrics
+  - google_local_service_ads
   - chat_summary
   - lead_detail
   - zapier
