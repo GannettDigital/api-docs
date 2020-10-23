@@ -140,6 +140,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
                         "cpm": 66.12,
                         "cpc": 0.32,
                         "cost_per_submission": 0.19,
+                        "div": 32.0,
+                        "cpdiv": 2.64,
                         "video_full_screen": 4,
                         "video_mute": 2,
                         "video_unmute": 4,
@@ -177,6 +179,8 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
                         "cpm": 19.82,
                         "cpc": 21.76,
                         "cost_per_submission": 7.25,
+                        "div": 32.0,
+                        "cpdiv": 2.64,
                         "video_full_screen": 2,
                         "video_mute": 0,
                         "video_unmute": 1,
@@ -470,6 +474,9 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |completed_views|Float|No|Total Completed Views for Campaign|
 |video_complete_rate|Float|No|Total Video Completion Rate|
 |view_thru_rate|Float|No|Total View-Through Rate|
+|cost_per_view|Float|No|Cost per View|
+|div|Float|No|Display-Influenced Visits|
+|cpdiv|Float|No|Cost per Display-Influenced Visit|
 |creatives|Object|--|Object of creatives details. [Campaign Creatives Object](#udcampaigncreatives)|
 
 <a name="udlineitems"></a>
@@ -517,6 +524,7 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |completed_views|Float|Yes|Number of Completed Views|
 |video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
 |view_thru_rate|Float|Yes|View-Through Rate|
+|cost_per_view|Float|No|Cost per View|
 
 <a name="udlineitemcreatives"></a>
 **Line Items Creatives Object**
@@ -549,6 +557,7 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |completed_views|Float|Yes|Number of Completed Views|
 |video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
 |view_thru_rate|Float|Yes|View-Through Rate|
+|cost_per_view|Float|No|Cost per View|
 |intervals|Object|--|Object of line items creatives intervals. [Line Items Creatives Intervals Object](#udlineitemscreativesintervals)|
 
 <a name="udcampaigncreatives"></a>
@@ -591,6 +600,9 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |completed_views|Float|No|Total Completed Views for Campaign|
 |video_complete_rate|Float|No|Total Video Completion Rate|
 |view_thru_rate|Float|No|Total View-Through Rate|
+|cost_per_view|Float|No|Cost per View|
+|div|Float|No|Display-Influenced Visits|
+|cpdiv|Float|No|Cost per Display-Influenced Visit|
 
 <a name="udlineitemscreativesintervals"></a>
 **Line Items Creatives Intervals Object**
@@ -620,4 +632,5 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 |completed_views|Float|Yes|Number of Completed Views|
 |video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
 |view_thru_rate|Float|Yes|View-Through Rate|
+|cost_per_view|Float|No|Cost per View|
 
