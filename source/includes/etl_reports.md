@@ -1,10 +1,9 @@
 ## ETL Reports
 
-### ETL Basics
+ETL (Extract-Transform-Load) reports are reports that can generate a large amount of data.  The data itself it not returned by the API.  The API returns a signed URL that can be used to download the data from cloud storage.  The URL expires 24 hours after it is generated.  To create an ETL Report, make a POST request, which will schedule an ETL job, and return a job ID.  Then make a GET request using the job ID to check the status of the job.  The status will be one of `scheduled`, `in_progress`, or `completed`.  If the status is `completed`, the response will also include the signed URL.
 
-ETL reports are reports that can generate a large amount of data.  The data itself it not returned by the API.  The API returns a signed URL that can be used to download the data from cloud storage.  The URL expires 24 hours after it is generated.  To create an ETL Report, make a POST request, which will schedule an ETL job, and return a job ID.  Then to a GET request using the job ID to check the status of the job.  The status will be one of `scheduled`, `in_progress`, or `completed`.  If the status is `completed`, the response will also include the signed URL.
 
-All requests require that the `email` header be set (as it automatically is when using the API Gateway).  The email address is stored when the etl job is created, and the show and index methods will only show jobs that match the email address of the header.
+### Resource Overview
 
 | Method | URI Format |
 |---|---|
@@ -13,31 +12,29 @@ All requests require that the `email` header be set (as it automatically is when
 | GET `index` | /client_reports/etl |
 
 
-## Resource Details
+### Resource Details
 
-### POST `create`
+#### POST `create`
 
-Use POST to schedule an ETL job.  The `report_type` and `report_params` params in the POST data are both required.  The contents of `report_params` will vary by report type, and will be validated immediately.
+Use POST to schedule an ETL job.  The `report_type` and `report_params` params in the POST data are both required.  The contents of `report_params` will vary by report type, and will be validated immediately.  The details for specific ETL reports are found in following sections.
 
-
-#### Example Call:
+> Example POST request to create ETL Report Job
 
 ```
-curl -L -X POST 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/etl' \
--H 'Authorization: token 3a686f207b6a01336b3a7a163e2cac68' \
--H 'email: rlaa@mail.com' \
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 -H 'Content-Type: application/json' \
+-X POST 'https://api.reachlocalservices.com/client_reports/etl' \
 --data-raw '{
 	"report_type": "etl_keyword_report",
 	"report_params": {
-		"gmaid": "USA_268859",
+		"gmaid": "USA_000000",
 		"start_date": "2020-07-04",
 		"end_date": "2020-07-07"
 	}
 }'
 ```
 
-#### Response:
+> Response
 
 ```javascript
 {
@@ -45,30 +42,28 @@ curl -L -X POST 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/etl
     "status": "scheduled",
     "report_type": "EtlKeywordReport",
     "params": {
-      "gmaid": "USA_268859",
+      "gmaid": "USA_000000",
       "start_date": "2020-07-04",
       "end_date": "2020-07-07"
     },
-    "requestor": "rlaa@mail.com",
+    "requestor": "email@test.com",
     "created_at": "2020-08-06T17:49:09.000Z",
     "updated_at": "2020-08-06T17:49:09.000Z"
 }
 ```
 
-### GET `show`
+#### GET `show`
 
-Use GET to retrieve details about an ETL job.  Note that only jobs created by the caller can be shown (as determined by the email header).
+Use GET to retrieve details about an ETL job.  Note that only jobs created by the caller can be shown (as determined by the credentials used to obtain the oauth token).
 
-#### Example Call:
+> Example Request to show ETL Report Job Status
 
 ```
-curl -L -X GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/etl/3' \
--H 'Authorization: token 3a686redacted' \
--H 'email: rlaa@mail.com' \
--H 'Content-Type: application/json'
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+'https://api.reachlocalservices.com/client_reports/etl/3'
 ```
 
-#### Response:
+> Response
 
 ```javascript
 {
@@ -79,46 +74,43 @@ curl -L -X GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/etl/
     "extract_duration": 8,
     "report_type": "EtlKeywordReport",
     "params": {
-      "gmaid": "USA_268859",
+      "gmaid": "USA_000000",
       "start_date": "2020-07-04",
       "end_date": "2020-07-07"
     },
-    "requestor": "rlaa@mail.com",
+    "requestor": "email@test.com",
     "created_at": "2020-08-05T13:57:14.000Z",
     "updated_at": "2020-08-05T14:00:26.000Z"
 }
 ```
 
-### GET `index`
+#### GET `index`
 
-Use GET to retrieve a list of etl_jobs.  Note that only jobs created by the caller will be shown (as determined by the email header).
+Use GET to retrieve a list of etl_jobs.  Note that only jobs created by the caller will be shown (as determined by the credentials used to obtain the oauth token).
 
-
-#### Example Call:
+> Example Request to list ETL Report Jobs
 
 ```
-curl -L -X GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/etl' \
--H 'Authorization: token 3a686f207b6a01336b3a7a163e2cac68' \
--H 'email: rlaa@mail.com' \
--H 'Content-Type: application/json'
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+'https://api.reachlocalservices.com/client_reports/etl' \
 ```
 
-#### Response:
+> Response
 
 ```javascript
 {
-    "etl_jobs": [
+    "elt_jobs": [
         {
             "id": 1,
             "status": "complete",
             "extract_duration": 8,
             "report_type": "EtlKeywordReport",
             "params": {
-              "gmaid": "USA_268859",
+              "gmaid": "USA_000000",
               "start_date": "2020-07-04",
               "end_date": "2020-07-07"
             },
-            "requestor": "rlaa@mail.com",
+            "requestor": "email@test.com",
             "created_at": "2020-08-05T13:47:14.000Z",
             "updated_at": "2020-08-06T15:53:06.000Z"
         },
@@ -128,15 +120,16 @@ curl -L -X GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/etl'
             "extract_duration": 8,
             "report_type": "EtlKeywordReport",
             "params": {
-              "gmaid": "USA_268859",
+              "gmaid": "USA_000000",
               "start_date": "2020-07-04",
               "end_date": "2020-07-07"
             },
-            "requestor": "rlaa@mail.com",
+            "requestor": "email@test.com",
             "created_at": "2020-08-05T13:54:34.000Z",
             "updated_at": "2020-08-05T14:00:26.000Z"
         }
     ]
 }
 ```
+
 
