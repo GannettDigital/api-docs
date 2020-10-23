@@ -22,8 +22,8 @@
             "id": 580,
             "event_id": "3182",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1232",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "unclassified",
             "platform": "USA",
@@ -44,8 +44,8 @@
             "id": 575,
             "event_id": "3177",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1232",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "unclassified",
             "platform": "USA",
@@ -63,7 +63,7 @@
             "transcript": "Laudantium omnis aut rem recusandae ab. Quasi culpa aspernatur itaque ut quisquam quidem placeat. Suscipit et facere minus vel. Cumque libero ut. Ut rem et beatae perspiciatis omnis."
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=USA_123&per_page=50&last_event_seen=2018-06-13 02:19:5122&show_deleted=false"
+    "next_page": "https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-06-13 02:19:5122&show_deleted=false"
 }
 ```
 

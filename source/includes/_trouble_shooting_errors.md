@@ -1,8 +1,14 @@
-## Troubleshooting
+## Troubleshooting Errors
 
 ### 400 - Bad Request
 
-#### Invalid Grant
+**Invalid Grant**
+
+> Example Response
+
+```json
+{ "error": "invalid_grant", "error_description": "The provided authorization credentials are invalid. Refer to documentation at https://reachlocal.github.io/api-docs/#error-codes for further information." }
+```
 
 Invalid grant error messages occurs when either:
 
@@ -12,28 +18,29 @@ Invalid grant error messages occurs when either:
 
 To resolve this check your username and password for accuracy, then follow steps at [Requesting Access and Refresh Tokens](https://reachlocal.github.io/api-docs/#api-access-step-2-authorization-requesting-access-and-refresh-tokens) to request a new refresh token.
 
-### Example Response
-
-`{ "error": "invalid_grant", "error_description": "The provided authorization credentials are invalid. Refer to documentation at https://reachlocal.github.io/api-docs/#error-codes for further information." }`
-
 ### 401 - Unauthorized
+
+> Example Response
+
+```json
+{ "message": "Unauthorized" }
+```
 
 Unauthorized messages can occur when a request for a report endpoint is made using an expired token.
 
 To resolve this, follow steps at [Requesting Access and Refresh Tokens](https://reachlocal.github.io/api-docs/#api-access-step-2-authorization-requesting-access-and-refresh-tokens)
 
-### Example Response
-
-`{ "message": "Unauthorized" }`
-
 ### 403 - Forbidden
 
-#### HIPAA Permissions
+> Example Response
+
+```json
+{ "name": "not_authorized", "message": "You are not permitted to perform this action." }
+```
+
+**HIPAA Permissions**
 
 The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
 
 This control applies to APIs that provide data that are classified as HIPAA and protected by law.
 
-### Example Response
-
-`{ "name": "not_authorized", "message": "You are not permitted to perform this action." }`

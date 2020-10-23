@@ -22,8 +22,8 @@
             "id": 265,
             "event_id": "1196",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1231",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "Kill my boss? Do I dare live out the American dream?",
             "classification": "unclassified",
             "platform": "USA",
@@ -42,8 +42,8 @@
             "id": 555,
             "event_id": "2410",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1232",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "unclassified",
             "platform": "USA",
@@ -59,7 +59,7 @@
             "event_time": "2018-05-08T15:14:41.000Z"
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=USA_123&per_page=50&last_event_seen=2018-05-06 04:30:33584&show_deleted=false"
+    "next_page": "https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-05-06 04:30:33584&show_deleted=false"
 }
 ```
 

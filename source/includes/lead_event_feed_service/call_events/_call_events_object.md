@@ -3,7 +3,7 @@
 
 **The Call Events Object**
 
-> Example Response:
+> Example Response
 
 ```json
 {
@@ -22,8 +22,8 @@
             "id": 5288,
             "event_id": "1589",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1231",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "other",
             "platform": "USA",
@@ -43,8 +43,8 @@
             "id": 5283,
             "event_id": "1579",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1231",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "unclassified",
             "platform": "USA",
@@ -61,7 +61,7 @@
             "caller_name": "Clovis Casper"
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/call_events?global_master_advertiser_id=USA_123&per_page=50&last_event_seen=2018-06-13 12:52:385023&show_deleted=false"
+    "next_page": "https://api.reachlocalservices.com/leads/call_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-06-13 12:52:385023&show_deleted=false"
 }
 ```
 
@@ -101,7 +101,7 @@ read                        | Boolean  | no | Indicates if the event has been re
 flagged                     | Boolean  | no | Allows user to flag an event.
 campaign_name               | String   | no | Campaign name.
 event_uri                   | String   | no | URI for event.
-source                      | String   | no | Campaign source.  
+source                      | String   | no | Campaign source.
 caller_phone_number         | String   | no | Caller phone number.
 call_recording_url          | String   | no | URL of the recorded call.
 event_time                  | String   | no | Date and time of the event.

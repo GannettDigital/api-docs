@@ -27,3 +27,42 @@ Publishing to GitHub Pages
 Run `./deploy.sh`
 
 Your changes should now be live on http://reachlocal.github.io/api-docs
+
+Internal Only Documentation
+-----------------------------------
+To tag parts of the doc as internal-only, tag the element with the \<internal>\</internal> tag.
+
+For example:
+```
+## <internal>Internal Only Heading</internal>
+
+This is a test example.  <internal>This is internal only.</internal>
+
+Example list:
+  - test1
+  - test2
+  - <internal>test3</internal>
+
+To hide the whole table:
+
+|<internal> Param | Required? | Function </internal>|
+|---|---|---|
+| global_master_campaign_id[] | Optional | global_master_campaign_id|
+| campaign_status[] | Optional | Campaign Status|
+
+To hide one row:
+
+| Param | Required? | Function |
+|---|---|---|
+| <internal>global_master_campaign_id[] | Optional | global_master_campaign_id</internal>|
+| campaign_status[] | Optional | Campaign Status|
+
+To hide codeblock:
+
+json
+<internal>
+{
+    "test": "1"
+}
+</internal>
+```

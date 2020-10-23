@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=USA_58561")
+url = URI("https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=TEST_1")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -20,7 +20,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=USA_58561")
+  .url("https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=TEST_1")
   .get()
   .addHeader("Authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Cache-Control", "no-cache")
@@ -55,8 +55,8 @@ curl -X GET \
             "id": 580,
             "event_id": "3182",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1232",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "unclassified",
             "platform": "USA",
@@ -77,8 +77,8 @@ curl -X GET \
             "id": 575,
             "event_id": "3177",
             "deleted": false,
-            "global_master_advertiser_id": "USA_123",
-            "global_master_campaign_id": "USA_1232",
+            "global_master_advertiser_id": "TEST_1",
+            "global_master_campaign_id": "TEST_1",
             "note": "",
             "classification": "unclassified",
             "platform": "USA",
@@ -96,7 +96,7 @@ curl -X GET \
             "transcript": "Laudantium omnis aut rem recusandae ab. Quasi culpa aspernatur itaque ut quisquam quidem placeat. Suscipit et facere minus vel. Cumque libero ut. Ut rem et beatae perspiciatis omnis."
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=USA_123&per_page=50&last_event_seen=2018-06-13 02:19:5122&show_deleted=false"
+    "next_page": "https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-06-13 02:19:5122&show_deleted=false"
 }
 ```
 
@@ -104,13 +104,15 @@ This endpoint retrieves chat events.
 
 **HTTP Request**
 
-`GET https://api.reachlocalservices.com/leads/chat_events`
+| Method | URI Format |
+|---|---|
+| GET | /leads/chat_events|
 
 **Query Parameters**
 
 Parameter | Required | Default | Description
 --------- | -------- |-------- | -----------
-global_master_advertiser_id | yes | none | The global master advertiser id (for example, USA_142687).
+global_master_advertiser_id | yes | none | The global master advertiser id (for example, TEST_1).
 per_page | no | 50 | The number of records to display per page.
 last_event_seen | no | none | Returns lead_events generated prior to the specified date and time. The format expected is ISO8601.
 show_deleted | no | false | Boolean flag that when set to true queries for and only return events that have been marked as deleted.
