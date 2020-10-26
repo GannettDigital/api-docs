@@ -854,8 +854,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 **Totals Per Interval Object**
 
-This is an Interval object for the whole report.
+This is an Interval object across all campaigns.
 
 **Totals by Creative Object**
 
-This is a Creative object for the whole report.
+This is a list of Creative objects across all campaigns.
