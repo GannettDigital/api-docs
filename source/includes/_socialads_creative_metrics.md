@@ -858,4 +858,4 @@ This is an Interval object across all campaigns.
 
 **Totals by Creative Object**
 
-This is a list of Creative objects across all campaigns.
+Totals for each creative across all campaigns and intervals.
