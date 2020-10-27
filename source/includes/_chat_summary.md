@@ -326,9 +326,10 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 }
 ```
 
+
+<internal>Example Response</internal>
+```json
 <internal>
-# Example Response
-```javascript
 {
     "api_name": "chat_summary",
     "api_run_date": "2020-03-18",
@@ -483,8 +484,8 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
     },
     "global_master_advertiser_id": "USA_172716"
 }
-```
 </internal>
+```
 
 
 |Field Name|Datatype|Description|
