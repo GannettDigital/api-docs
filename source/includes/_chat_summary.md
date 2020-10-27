@@ -520,7 +520,7 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
-<internal>|web_publisher_campaigns|Array|array of web_publisher_campaign objects [Web Publisher Campaign Object](#webpublishercampaign)|</internal>
+|<internal>web_publisher_campaigns|Array|array of web_publisher_campaign objects [Web Publisher Campaign Object](#webpublishercampaign)</internal>|
 
 <a name="chatorganic"></a>
 **Organic Object**
@@ -546,8 +546,9 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 <internal>
 <a name="webpublishercampaign"></a>
 **Web Publisher Campaign Object**
+</internal>
 
-|Field Name|Datatype|Description|
+|<internal>Field Name|Datatype|Description</internal>|
 |---|---|---|
 |web_publisher_campaign_id|Integer|Id of web publisher campaign|
 |name|String|Name of web publisher campaign|
@@ -558,4 +559,3 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 |external_account_name|String|Name of external account|
 |channel|String|Channel of the web publisher campaign|
 |intervals|Array|Data for specified interval. [Intervals Object](#chatintervals)|
-</internal>
