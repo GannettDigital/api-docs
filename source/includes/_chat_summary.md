@@ -18,6 +18,8 @@ Subtotals can be further aggregated given an interval, and will be totaled for d
 
 Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.
 
+<internal>Web_publisher_campaigns array will show the WPCS(offer name) with it's subtotatals attributed to that chat within a campaign (for only trusted users).</internal>
+
 ### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
@@ -324,6 +326,167 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 }
 ```
 
+<internal>
+# Example Response
+```javascript
+{
+    "api_name": "chat_summary",
+    "api_run_date": "2020-03-18",
+    "start_date": "2020-02-14",
+    "end_date": "2020-02-29",
+    "time_zone": "America/Los_Angeles",
+    "interval_size": "day",
+    "currency": "USD",
+    "report_data": {
+        "campaigns": [
+            {
+                "global_master_campaign_id": "USA_1777858",
+                "campaign_name": "Orange Paper CHAT",
+                "campaign_type": "chat",
+                "campaign_status": "ended",
+                "organization": "reachlocal",
+                "campaign_start_date": "2017-04-07",
+                "campaign_end_date": "2019-01-03",
+                "intervals": [
+                    {
+                        "start_date": "2020-02-19",
+                        "non_lead_chats": 0,
+                        "total_chats": 1,
+                        "chat_leads": 1,
+                        "chat_sales": 0,
+                        "chat_service": 0,
+                        "chat_other": 1,
+                        "call_connect": 0
+                    }
+                ]
+            },
+            {
+                "global_master_campaign_id": "USA_2705608",
+                "campaign_name": "Orange Paper TEST DO NOT DELETE - ALVIN",
+                "campaign_type": "search",
+                "campaign_status": "running",
+                "organization": "reachlocal",
+                "campaign_start_date": "2019-01-11",
+                "campaign_end_date": null,
+                "intervals": [
+                    {
+                        "start_date": "2020-02-14",
+                        "non_lead_chats": 0,
+                        "total_chats": 1,
+                        "chat_leads": 1,
+                        "chat_sales": 1,
+                        "chat_service": 0,
+                        "chat_other": 0,
+                        "call_connect": 0
+                    },
+                    {
+                        "start_date": "2020-02-25",
+                        "non_lead_chats": 0,
+                        "total_chats": 1,
+                        "chat_leads": 1,
+                        "chat_sales": 0,
+                        "chat_service": 0,
+                        "chat_other": 1,
+                        "call_connect": 0
+                    }
+                ],
+                "web_publisher_campaigns": [
+                    {
+                        "web_publisher_campaign_id": "USA_2808669",
+                        "name": "Google DMA",
+                        "tactic": "Google",
+                        "start_date": "2020-10-02",
+                        "end_date": null,
+                        "external_account_id": 1990521940,
+                        "external_account_name": "google_B1_A136048_1@reachlocal.biz",
+                        "channel": "search",
+                        "intervals": [
+                            {
+                                "start_date": "2020-09-02",
+                                "non_lead_chats": 0,
+                                "total_chats": 1,
+                                "chat_leads": 1,
+                                "chat_sales": 1,
+                                "chat_service": 0,
+                                "chat_other": 0,
+                                "call_connect": 0
+                            },
+                            {
+                                "start_date": "2020-09-04",
+                                "non_lead_chats": 0,
+                                "total_chats": 1,
+                                "chat_leads": 1,
+                                "chat_sales": 1,
+                                "chat_service": 0,
+                                "chat_other": 0,
+                                "call_connect": 0
+                            },
+                            {
+                                "start_date": "2020-09-06",
+                                "non_lead_chats": 0,
+                                "total_chats": 1,
+                                "chat_leads": 1,
+                                "chat_sales": 1,
+                                "chat_service": 0,
+                                "chat_other": 0,
+                                "call_connect": 0
+                            },
+                            {
+                                "start_date": "2020-09-08",
+                                "non_lead_chats": 0,
+                                "total_chats": 2,
+                                "chat_leads": 2,
+                                "chat_sales": 1,
+                                "chat_service": 1,
+                                "chat_other": 0,
+                                "call_connect": 0
+                            },
+                            {
+                                "start_date": "2020-09-09",
+                                "non_lead_chats": 0,
+                                "total_chats": 1,
+                                "chat_leads": 1,
+                                "chat_sales": 1,
+                                "chat_service": 0,
+                                "chat_other": 0,
+                                "call_connect": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "organic": {
+            "intervals": [
+                {
+                    "start_date": "2020-02-14",
+                    "non_lead_chats": 0,
+                    "total_chats": 2,
+                    "chat_leads": 2,
+                    "chat_sales": 2,
+                    "chat_service": 0,
+                    "chat_other": 0,
+                    "call_connect": 0
+                },
+                {
+                    "start_date": "2020-02-24",
+                    "non_lead_chats": 0,
+                    "total_chats": 3,
+                    "chat_leads": 3,
+                    "chat_sales": 2,
+                    "chat_service": 0,
+                    "chat_other": 0,
+                    "call_connect": 0
+                }
+            ]
+        }
+    },
+    "global_master_advertiser_id": "USA_172716"
+}
+```
+</internal>
+
+
 |Field Name|Datatype|Description|
 |---|---|---|
 |api_name|String|Name of the API|
@@ -357,6 +520,7 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
+<internal>|web_publisher_campaigns|Array|array of web_publisher_campaign objects [Web Publisher Campaign Object](#webpublishercampaign)|</internal>
 
 <a name="chatorganic"></a>
 **Organic Object**
@@ -378,3 +542,20 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 |chat_service|Integer|Number of chats marked as 'service'|
 |chat_other|Integer|Number of chats marked as 'other'|
 |call_connect|Integer|Number of calls connected|
+
+<internal>
+<a name="webpublishercampaign"></a>
+**Web Publisher Campaign Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|web_publisher_campaign_id|Integer|Id of web publisher campaign|
+|name|String|Name of web publisher campaign|
+|tactic|String|Tactic of web publisher campaign|
+|start_date|String|Start date of web publisher campaign|
+|end_date|String|End date of web publisher campaign|
+|external_account_id|String|External account id|
+|external_account_name|String|Name of external account|
+|channel|String|Channel of the web publisher campaign|
+|intervals|Array|Data for specified interval. [Intervals Object](#chatintervals)|
+</internal>
