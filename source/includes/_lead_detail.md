@@ -1,7 +1,7 @@
 ### **Lead Details**
 <a name="lead_details"></a>
 
-### Resource Overview
+### Resource Overview&nbsp;&nbsp;
 
 |Method|URI Format|
 |---|---|
@@ -14,7 +14,7 @@ It will also contain the number of calls broken down by call duration.
 A total section will contain all the calls, unique calls, calls connected, average call length, emails, web events, chats and leads for the date range specified.
 Finally, the report will have a break down for calls by hour for each day of the week.
 
-### Parameters
+### Parameters&nbsp;&nbsp;
 
 When using the GET method, the results can be filtered using these parameters:
 
@@ -33,7 +33,7 @@ To specify a date range:
    - Specify start_date and end_date.
    - When specifying a campaign_cycle, do not use date range params.
 
-### Response Data Details
+### Response Data Details&nbsp;&nbsp;
 
 > Retrieve data for a specific range of dates
 
