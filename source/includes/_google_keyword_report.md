@@ -16,16 +16,16 @@ The data returned will include google only totals for impressions, clicks, click
 
 When using the GET method, the results can be filtered using these parameters:
 
-|Param|Function|
-|---|---|
-|start_date|Restricts the results to those occurring on or after this date|
-|end_date|Restricts the results to those occurring on or before this date|
-|global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
-|campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
-|page_size|Restrict number of keywords in result.  Default is 15|
-|page|Specifies which page of results to return.  Default is 1|
-|sort_by|Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc.  Default: keyword|
-|sort_dir|Specifies the sort direction.  Can be either asc or desc. Default: asc|
+| Parameter | Required | Default | Description |
+|---|---|---|---|
+|start_date|Yes|--|Restricts the results to those occurring on or after this date.|
+|end_date|Yes|--|Restricts the results to those occurring on or before this date.|
+|global_master_campaign_id[]|No|All|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|campaign_status[]|No|All|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|page_size|No|15|Restrict number of keywords in result. |
+|page|No|1|Specifies which page of results to return. |
+|sort_by|No|keyword|Specifies what column to sort by.  Valid columns are: keyword, clicks, impressions, and ctr. |
+|sort_dir|No|asc|Specifies the sort direction.  Can be either asc or desc. |
 
 ### Response Data Details&nbsp;&nbsp;&nbsp;
 
