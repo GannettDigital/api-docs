@@ -328,6 +328,7 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 
 
 <internal>Example Response</internal>
+
 ```json
 <internal>
 {
