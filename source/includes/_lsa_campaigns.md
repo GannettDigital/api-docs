@@ -17,8 +17,8 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Required | Function |
 |---|---|---|
-|`start_date`| Yes | Restricts the results to those ocurring on or after this date.|
-|`end_date`| Yes | Restricts the results to those ocurring on or before this date.|
+|start_date| Yes | Restricts the results to those ocurring on or after this date.|
+|end_date| Yes | Restricts the results to those ocurring on or before this date.|
 
 To specify a date range:
 
