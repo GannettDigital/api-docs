@@ -93,6 +93,8 @@ search: false
 
 # Introduction
 
+<aside class="notice"><b>10/30/2020:</b> We have updated the format of our documentation. Please update your bookmarks. Thank you.</aside>
+
 Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.
 
 We have 3 major approaches for providing data: APIs, Webhooks and Integration apps.
