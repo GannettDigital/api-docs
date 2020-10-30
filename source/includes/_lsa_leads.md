@@ -20,7 +20,7 @@ When using the GET method, the results can be filtered using these parameters:
 |global_master_advertiser_id| Yes | Only leads for the specified advertiser will be returned.|
 |start_date| Yes | Restricts the results to those ocurring on or after this date.|
 |end_date| Yes | Restricts the results to those ocurring on or before this date.|
-|global_master_campaign_id| No | Restricts the results to those belonging to this campaign.|
+|global_master_campaign_id[]| No | Restricts the results to those belonging to these campaigns.|
 |per_page| No |Restrict number of leads in result.  Default is 50|
 |page| No |Specifies which page of results to return.  Default is 1|
 
@@ -78,6 +78,44 @@ https://api.reachlocalservices.com/leads/lsa_events?start_date=2020-09-27&end_da
             "charged": "0",
             "lead_price": "30",
             "campaign_name": "Sweet savings324049s"
+        }
+    ]
+}
+```
+
+> Retrieve data for advertiser and date range, with campaign filter
+
+```
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/leads/lsa_events?start_date=2020-09-27&end_date=2020-09-28&global_master_advertiser_id=TEST_123&global_master_campaign_id[]=TEST_1232' \
+
+```
+
+> Example Response
+
+```javascript
+{
+    "global_master_advertiser_id": "TEST_123",
+    "start_date": "2020-09-27",
+    "end_date": "2020-09-28",
+    "page": 1,
+    "per_page": 50,
+    "total_pages": 1,
+    "lsa_events": [
+        {
+            "event_id": "4819",
+            "event_time": "2020-09-27T20:26:30.000Z",
+            "global_master_campaign_id": "TEST_1232",
+            "cycle_id": "444",
+            "lead_type": "PHONE_CALL",
+            "lead_name": "Mr. Letty Mann",
+            "lead_phone_number": "126.235.0549 x2631",
+            "job_type": "install",
+            "zip_code": "93247-8802",
+            "lead_category": "hvac",
+            "charged": "0",
+            "lead_price": "30",
+            "campaign_name": "Amazing discount188618s"
         }
     ]
 }
