@@ -51,6 +51,7 @@ All campaign data for the account will be provided including both Paid Media and
   - Facebook
   - YouTube
   - CVT/Web Events
+  - Email
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
 
 ### Parameters&nbsp;
@@ -143,6 +144,27 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "clicks": 322,
                         "leads": 629,
                         "spend": 500.0,
+                        "budget": 500.0
+                    }
+                ]
+            },
+            {
+                "name": "Email Campaign (Demo)",
+                "global_master_campaign_id": "TEST_207085",
+                "type": "email",
+                "source": "Targeted Email",
+                "start_date": "2020-10-10",
+                "end_date": null,
+                "status": "running",
+                "cycles": [
+                    {
+                        "campaign_cycle": "TEST_207086",
+                        "start_date": "2020-10-10",
+                        "end_date": null,
+                        "impressions": 3568,
+                        "clicks": 56,
+                        "leads": 83,
+                        "spend": 75.0,
                         "budget": 500.0
                     }
                 ]
