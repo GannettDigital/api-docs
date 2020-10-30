@@ -24,7 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 |campaign_status[]|No|All|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |page_size|No|15|Restrict number of keywords in result. |
 |page|No|1|Specifies which page of results to return. |
-|sort_by|No|keyword|Specifies what column to sort by.  Valid columns are: keyword, clicks, impressions, and ctr. |
+|sort_by|No|keyword|Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc.|
 |sort_dir|No|asc|Specifies the sort direction.  Can be either asc or desc. |
 
 ### Response Data Details&nbsp;&nbsp;&nbsp;
