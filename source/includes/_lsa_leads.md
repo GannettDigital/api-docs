@@ -5,7 +5,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | //leads/lsa_events?[query_params] |
+| GET | /leads/lsa_events?[query_params] |
 
 Use GET to retrieve Local Service Ads Leads for a given advertiser.
 
