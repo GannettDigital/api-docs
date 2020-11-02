@@ -29,6 +29,7 @@
 |Lead Metrics|[Chat Summary](#chat_summary)|Counts on chats received, types of changes from both LOCALiQ and organic traffic|
 |Lead Metrics|[Lead Details](#lead_details)|Lead (Calls, emails, web events, and chats) metric from all LOCALiQ campaigns. This API also has number of calls broken down by call duration and time of day. This API does not have information on individual leads. Use the Contact and Contact Interactions API to retrieve details like name, transcripts, form information, etc.|
 |Lead Metrics|[LSA Campaigns](#lsa_campaigns)|Local Service Ad Metrics by Campaign and Interval|
+|Lead Metrics|[LSA Campaign Rollup](#lsa_campaign_rollup)|Local Service Ads - Metric rollup by campaign|
 |Lead Metrics|[LSA Lead Details](#lsa_leads)|Local Service Ads - Individual Leads for a date range|
 |Custom Integration|FranConnect/Franchise Management Software |If you are interested in this custom integration, please contact your account team (Offer #2095)|
 
