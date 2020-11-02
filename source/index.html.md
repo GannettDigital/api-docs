@@ -54,6 +54,8 @@ includes:
   - chat_summary
   - lead_detail
   - lsa_campaigns
+  - lsa_campaign_rollup
+  - lsa_leads
   - zapier
 
   - deprecated_apis
