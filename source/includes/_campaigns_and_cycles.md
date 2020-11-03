@@ -66,6 +66,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": true,
             "has_cvt": false,
+            "offer_name": "Gannett Display",
             "cycles": [
                 {
                     "campaign_cycle": "TEST_-26",
@@ -89,6 +90,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": true,
+            "offer_name": "Targeted Display",
             "cycles": [
                 {
                     "campaign_cycle": "TEST_2",
@@ -112,6 +114,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": true,
+            "offer_name": "Search Engine Marketing",
             "cycles": [
                 {
                     "campaign_cycle": "TEST_5",
@@ -130,6 +133,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": true,
+            "offer_name": "Live Chat",
             "cycles": [
                 {
                     "campaign_cycle": "TEST_20",
@@ -153,6 +157,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "offer_name": null,
             "cycles": [
                 {
                     "campaign_cycle": "TEST_23",
@@ -176,6 +181,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "offer_name": "ReachDisplay GeoFence",
             "cycles": [
                 {
                     "campaign_cycle": "TEST_29",
@@ -199,6 +205,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "offer_name": "YouTube Advertising",
             "cycles": [
                 {
                     "campaign_cycle": "TEST_32",
@@ -238,6 +245,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |status|String|Status of campaign|
 |has_addressable_geofence|Boolean|`True` or `False`|
 |has_cvt|Boolean|`True` or `False`|
+|offer_name|String|Campaign offer name|
 |cycles|Object|[Cycles Object](#campaigns_cycles)|
 |goals|Object|[Goals Object](#campaigns_goals)|
 
