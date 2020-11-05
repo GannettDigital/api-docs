@@ -39,6 +39,7 @@ The campaign list section will list all (running, stopped and ended) campaigns w
   - Number of Leads
   - Spend
   - Budget Amount
+  - Opens for Email Campaigns
 
 All campaign data for the account will be provided including both Paid Media and Offer-based campaigns.
 
@@ -76,280 +77,301 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 ```json
 {
     "report_type": "campaigns_overview",
-    "report_date": "2020-10-12",
-    "start_date": "2019-10-12",
-    "end_date": "2020-10-12",
+    "report_date": "2020-11-05",
+    "start_date": "2019-11-05",
+    "end_date": "2020-11-05",
     "time_zone": "America/Los_Angeles",
     "currency": "USD",
     "report_data": {
         "campaigns": [
             {
-                "name": "Lsa Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207095",
-                "type": "lsa",
-                "source": "Local Services Ads",
-                "start_date": "2020-10-10",
+                "name": "Email Campaign (Demo)",
+                "global_master_campaign_id": "TEST_7025",
+                "type": "email",
+                "source": "Targeted Email",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207102",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
+                        "campaign_cycle": "TEST_7034",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "clicks": 731,
+                        "leads": 631,
+                        "spend": 500.0,
+                        "budget": 500.0,
+                        "opens": 1449
+                    }
+                ]
+            },
+            {
+                "name": "Lsa Campaign (Demo)",
+                "global_master_campaign_id": "TEST_7008",
+                "type": "lsa",
+                "source": "Local Services Ads",
+                "start_date": "2020-10-15",
+                "end_date": null,
+                "status": "running",
+                "cycles": [
+                    {
+                        "campaign_cycle": "TEST_7015",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
                         "impressions": 0,
                         "clicks": 0,
                         "leads": 0,
-                        "spend": 75.0,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Xmedia Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207085",
+                "global_master_campaign_id": "TEST_6954",
                 "type": "xmedia",
                 "source": "Omnichannel - Smart",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207086",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3568,
-                        "clicks": 56,
-                        "leads": 83,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6963",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 26209,
+                        "clicks": 322,
+                        "leads": 629,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Youtube Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207082",
+                "global_master_campaign_id": "TEST_6938",
                 "type": "youtube",
                 "source": "YouTube Advertising",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207083",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3437,
-                        "clicks": 41,
-                        "leads": 85,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6942",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 26978,
+                        "clicks": 325,
+                        "leads": 624,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Geofence Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207079",
+                "global_master_campaign_id": "TEST_6934",
                 "type": "display",
                 "source": "ReachDisplay GeoFence",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207080",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3988,
-                        "clicks": 37,
-                        "leads": 91,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6936",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 26598,
+                        "clicks": 309,
+                        "leads": 640,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Facebook Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207073",
+                "global_master_campaign_id": "TEST_6921",
                 "type": "facebook",
                 "source": "Facebook",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207074",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3869,
-                        "clicks": 49,
-                        "leads": 87,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6922",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 25288,
+                        "clicks": 304,
+                        "leads": 640,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Chat Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207070",
+                "global_master_campaign_id": "TEST_6918",
                 "type": "chat",
                 "source": "Live Chat",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207071",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3805,
-                        "clicks": 52,
-                        "leads": 94,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6919",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 27323,
+                        "clicks": 332,
+                        "leads": 638,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Other Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207067",
+                "global_master_campaign_id": "TEST_6915",
                 "type": "other",
                 "source": "Organic Traffic",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207068",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 4027,
-                        "clicks": 39,
-                        "leads": 99,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6916",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 26601,
+                        "clicks": 332,
+                        "leads": 627,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Totaltrack Web Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207064",
+                "global_master_campaign_id": "TEST_6912",
                 "type": "totaltrack",
                 "source": "Campaign Tracking Only (TotalTrack)",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207065",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3693,
-                        "clicks": 52,
-                        "leads": 91,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6913",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 25728,
+                        "clicks": 326,
+                        "leads": 634,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Totaltrack Web Phone Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207061",
+                "global_master_campaign_id": "TEST_6909",
                 "type": "totaltrack",
                 "source": "Campaign Tracking Only (TotalTrack)",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207062",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3641,
-                        "clicks": 44,
-                        "leads": 94,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6910",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 25202,
+                        "clicks": 312,
+                        "leads": 634,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Totaltrack Phone Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207058",
+                "global_master_campaign_id": "TEST_6906",
                 "type": "totaltrack",
                 "source": "Campaign Tracking Only (TotalTrack)",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207059",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3548,
-                        "clicks": 46,
-                        "leads": 93,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6907",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 26799,
+                        "clicks": 323,
+                        "leads": 626,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Search Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207054",
+                "global_master_campaign_id": "TEST_6903",
                 "type": "search",
                 "source": "Search Engine Marketing",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207055",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3695,
-                        "clicks": 41,
-                        "leads": 95,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6904",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 26329,
+                        "clicks": 335,
+                        "leads": 613,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Display Campaign (Demo)",
-                "global_master_campaign_id": "TEST_207051",
+                "global_master_campaign_id": "TEST_6900",
                 "type": "display",
                 "source": "Targeted Display",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_207052",
-                        "start_date": "2020-10-10",
-                        "end_date": null,
-                        "impressions": 3915,
-                        "clicks": 45,
-                        "leads": 97,
-                        "spend": 75.0,
+                        "campaign_cycle": "TEST_6901",
+                        "start_date": "2020-10-15",
+                        "end_date": "2020-11-03",
+                        "impressions": 25701,
+                        "clicks": 309,
+                        "leads": 614,
+                        "spend": 500.0,
                         "budget": 500.0
                     }
                 ]
             },
             {
                 "name": "Gannett Display Campaign (Demo)",
-                "global_master_campaign_id": "TEST_-207076",
+                "global_master_campaign_id": "TEST_-6924",
                 "type": "gannett_display",
                 "source": "Gannett Display",
-                "start_date": "2020-10-10",
+                "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
                 "cycles": [
                     {
-                        "campaign_cycle": "TEST_-207077",
-                        "start_date": "2020-10-10",
+                        "campaign_cycle": "TEST_-6925",
+                        "start_date": "2020-10-15",
                         "end_date": null,
-                        "impressions": 3704,
-                        "clicks": 52,
+                        "impressions": 26743,
+                        "clicks": 332,
                         "leads": null,
                         "spend": 0.0,
                         "budget": 0.0
@@ -358,12 +380,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             }
         ],
         "totals": {
-            "calls": 250,
-            "chats": 252,
-            "clicks": 554,
-            "emails": 251,
-            "web_events": 256,
-            "impressions": 44890
+            "calls": 1921,
+            "chats": 1861,
+            "clicks": 3861,
+            "emails": 1877,
+            "web_events": 1891,
+            "impressions": 315499
         }
     },
     "global_master_advertiser_id": "TEST_1",
@@ -426,9 +448,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |campaign_cycle|String|Identifier for cycle|
 |start_date|String|Start date for cycle|
 |end_date|String|End date for cycle|
-|impressions|Integer|Total Impressions for cycle|
+|impressions|Integer|Total Impressions for cycle (N/A for Email Campaigns)|
 |clicks|Integer|Total Clicks for cycle|
 |leads|Integer|Total Leads for cycle|
 |spend|Integer|Total Spend/Cost of cycle|
 |budget|Integer|Total Budget of cycle|
-
+|opens|Integer|Total Opens for cycle (Email Campaigns Only)|
