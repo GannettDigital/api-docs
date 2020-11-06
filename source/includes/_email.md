@@ -214,8 +214,9 @@ https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15
 |Field Name|Datatype|Description|
 |---|---|---|
 |index|Int|Index of Link|
-|clicks|Int|Number of clicks for Link)|
-|clicks_pc|Float|Percent of Link clicked|
+|clicks|Int|Number of clicks for Link|
+|clicks_pc|Float|Percent of Link clicks vs quantity|
+|link_pc|Float|Percent of Link clicks vs Total Clicks|
 |url|String|URL of Link|
 
 **Device**
