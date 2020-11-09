@@ -183,8 +183,8 @@ https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15
 |type|String|Campaign Type|
 |status|String|Campaign Status|
 |goals|Goal[]|No|Array of Goals|
-|external_campaign_id|String|Unique Identifier for External Campaign|
-|external_campaign_name|String|External Campaign Name|
+|external_campaign_id|String|Email Vendor's Campaign Identifier|
+|external_campaign_name|String|Email Vendor's Campaign Name|
 |broadcast_date|String|Date Email was pushed out|
 |quantity|Int|Number of emails sent|
 |opens|Int|Number of emails opened|
@@ -230,7 +230,7 @@ https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|ie|Int|Number of clicks from Internet Explorer)|
+|ie|Int|Number of clicks from Internet Explorer|
 |chrome|Int|Number of clicks from Chrome|
 |firefox|Int|Number of clicks from Firefox|
 |safari|Int|Number of clicks from Safari|
