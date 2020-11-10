@@ -1,5 +1,13 @@
 # Release Notes
 
+## November 2020
+
+### November 10th, 2020
+
+|API(s) Updated|Description|
+|---|---|
+|Campaigns|Added offer name|
+
 ## September 2020
 
 ### September 28th, 2020
