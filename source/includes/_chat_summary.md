@@ -305,6 +305,27 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
                         "call_connect": 0
                     }
                 ]
+            },
+            {
+                "global_master_campaign_id": "TEST_691233",
+                "campaign_name": "Targeted Email Campaign (Demo)",
+                "campaign_type": "email",
+                "campaign_status": "running",
+                "organization": "reachlocal",
+                "campaign_start_date": "2020-01-01",
+                "campaign_end_date": null,
+                "intervals": [
+                    {
+                        "start_date": "2020-10-10",
+                        "non_lead_chats": 0,
+                        "total_chats": 11,
+                        "chat_leads": 11,
+                        "chat_sales": 11,
+                        "chat_service": 0,
+                        "chat_other": 0,
+                        "call_connect": 0
+                    }
+                ]
             }
         ],
         "organic": {

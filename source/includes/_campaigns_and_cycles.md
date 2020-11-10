@@ -21,6 +21,8 @@ If using the `campaigns_overview` report_type, all campaign data for the account
   - Facebook
   - YouTube
   - CVT/Web Events
+  - Xmedia
+  - Email
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
 
 ### Parameters
@@ -212,6 +214,52 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "start_date": "2020-10-10",
                     "end_date": null,
                     "name": "Youtube Campaign (Demo)"
+                }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
+                }
+            ]
+        },
+        {
+            "name": "Xmedia Campaign (Demo)",
+            "global_master_campaign_id": "TEST_37",
+            "campaign_type": "xmedia",
+            "organization": "reachlocal",
+            "status": "running",
+            "has_addressable_geofence": false,
+            "has_cvt": false,
+            "cycles": [
+                {
+                    "campaign_cycle": "TEST_38",
+                    "start_date": "2020-10-10",
+                    "end_date": null,
+                    "name": "Xmedia Campaign (Demo)"
+                }
+            ],
+            "goals": [
+                {
+                    "goal_type_id": 2,
+                    "goal_type": "CPL"
+                }
+            ]
+        },
+        {
+            "name": "Email Campaign (Demo)",
+            "global_master_campaign_id": "TEST_33",
+            "campaign_type": "email",
+            "organization": "reachlocal",
+            "status": "running",
+            "has_addressable_geofence": false,
+            "has_cvt": false,
+            "cycles": [
+                {
+                    "campaign_cycle": "TEST_34",
+                    "start_date": "2020-10-10",
+                    "end_date": null,
+                    "name": "Email Campaign (Demo)"
                 }
             ],
             "goals": [

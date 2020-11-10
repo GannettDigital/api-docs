@@ -10,7 +10,7 @@ URI Format:             /client_reports/brand_awareness/[gmaid]?[query_params]
 #### Usage
 Use GET to retrieve information for the Brand Awareness report for a given advertiser.
 
-The data returned will include impressions and clicks for each interval, broken out by campaign type (social, search, display, youtube, geofence, and xmedia) as well as totals for that interval.  Note that display campaigns with web_publisher_id = 38 will count as facebook campaigns, not display campaigns.
+The data returned will include impressions and clicks for each interval, broken out by campaign type (social, search, display, youtube, geofence, xmedia and email) as well as totals for that interval.  Note that display campaigns with web_publisher_id = 38 will count as facebook campaigns, not display campaigns.
 
 Totals across all the intervals are also provided, again broken out by campaign type, but also totals for all campaign types.
 
@@ -123,33 +123,44 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "web_events": 5,
                     "leads": 29
                 },
+                "email": {
+                    "impressions": 1000,
+                    "clicks": 10,
+                    "walk_ins": 30,
+                    "spend": 25.0,
+                    "calls": 10,
+                    "chats": 10,
+                    "emails": 10,
+                    "web_events": 5,
+                    "leads": 30
+                },
                 "totals": {
-                    "impressions": 8923,
-                    "clicks": 114,
-                    "walk_ins": 50,
-                    "spend": 150.0,
-                    "calls": 40,
-                    "chats": 39,
-                    "emails": 47,
-                    "web_events": 38,
-                    "leads": 164
+                    "impressions": 9923,
+                    "clicks": 124,
+                    "walk_ins": 80,
+                    "spend": 175.0,
+                    "calls": 50,
+                    "chats": 49,
+                    "emails": 57,
+                    "web_events": 43,
+                    "leads": 194
                 }
             }
         ],
         "totals": {
-            "impressions": 8923,
-            "clicks": 114,
-            "walk_ins": 50,
-            "spend": 150.0,
-            "calls": 40,
-            "chats": 39,
-            "emails": 47,
-            "web_events": 38,
-            "leads": 164,
-            "unique_calls": 40,
-            "calls_connected": 40,
-            "average_call_length": 102.68,
-            "ctr": 1.28,
+            "impressions": 9923,
+            "clicks": 124,
+            "walk_ins": 80,
+            "spend": 175.0,
+            "calls": 50,
+            "chats": 49,
+            "emails": 57,
+            "web_events": 43,
+            "leads": 194,
+            "unique_calls": 50,
+            "calls_connected": 50,
+            "average_call_length": 182.68,
+            "ctr": 2.18,
             "search": {
                 "impressions": 1205,
                 "clicks": 13,
@@ -239,6 +250,21 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls_connected": 7,
                 "average_call_length": 81.57,
                 "ctr": 0.88
+            },
+            "email": {
+                "impressions": 1000,
+                "clicks": 10,
+                "walk_ins": 30,
+                "spend": 25.0,
+                "calls": 10,
+                "chats": 10,
+                "emails": 10,
+                "web_events": 5,
+                "leads": 30,
+                "unique_calls": 10,
+                "calls_connected": 10,
+                "average_call_length": 80,
+                "ctr": 0.90
             }
         }
     },
