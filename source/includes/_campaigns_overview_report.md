@@ -165,7 +165,10 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "clicks": 56,
                         "leads": 83,
                         "spend": 75.0,
-                        "budget": 500.0
+                        "budget": 500.0,
+                        "quantity": 50000,
+                        "views": 6591,
+                        "opens": 6591
                     }
                 ]
             },
@@ -476,3 +479,5 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |spend|Integer|Total Spend/Cost of cycle|
 |budget|Integer|Total Budget of cycle|
 |opens|Integer|Total Opens for cycle (Email Campaigns Only)|
+|quantity|Integer|Total Quantity for cycle. (Email Campaigns Only)|
+|views|Integer|Total Views of cycle. (Email Campaigns Only)|
