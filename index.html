@@ -271,6 +271,14 @@
             <a href="#release-notes" class="toc-h1 toc-link" data-title="Release Notes">Release Notes</a>
               <ul class="toc-list-h2">
                   <li class="toc-h2-li">
+                    <a href="#release-notes-november-2020" class="toc-h2 toc-link" data-title="Release Notes">November 2020</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#release-notes-november-2020-november-10th-2020" class="toc-h3 toc-link" data-title="Release Notes">November 10th, 2020</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="toc-h2-li">
                     <a href="#release-notes-september-2020" class="toc-h2 toc-link" data-title="Release Notes">September 2020</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
@@ -597,6 +605,30 @@
                           <li class="toc-h3-li">
                             <a href="#lead-info-apis-webhooks-lead-metric-apis-response-data-details-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details   </a>
                           </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-lsa-campaign-metrics-rollup" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>LSA Campaign Metrics Rollup</strong></a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-resource-overview-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview </a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-parameters-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters </a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-response-data-details-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details </a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-lsa-lead-details" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>LSA Lead Details</strong></a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-resource-overview-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview </a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-parameters-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters </a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-lead-metric-apis-response-data-details-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details </a>
+                          </li>
                       </ul>
                   </li>
                   <li class="toc-h2-li">
@@ -870,7 +902,18 @@
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_authorized"</span><span class="p">,</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are not permitted to perform this action."</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-september-2020'>September 2020</h2><h3 id='release-notes-september-2020-september-28th-2020'>September 28th, 2020</h3><table><thead><tr>
+</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-november-2020'>November 2020</h2><h3 id='release-notes-november-2020-november-10th-2020'>November 10th, 2020</h3><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>Campaign</td>
+<td>Added offer name</td>
+</tr>
+<tr>
+<td>Campaign, Campaign Overview, Lead Details and Chat Summary</td>
+<td>Identify Targeted Email campaigns with appropriate type</td>
+</tr></tbody></table><h2 id='release-notes-september-2020'>September 2020</h2><h3 id='release-notes-september-2020-september-28th-2020'>September 28th, 2020</h3><table><thead><tr>
 <th>API(s) Updated</th>
 <th>Description</th>
 </tr>
@@ -996,6 +1039,16 @@
 <td>Local Service Ad Metrics by Campaign and Interval</td>
 </tr>
 <tr>
+<td>Lead Metrics</td>
+<td><a href="#lsa_campaign_rollup">LSA Campaign Rollup</a></td>
+<td>Local Service Ads - Metric rollup by campaign</td>
+</tr>
+<tr>
+<td>Lead Metrics</td>
+<td><a href="#lsa_leads">LSA Lead Details</a></td>
+<td>Local Service Ads - Individual Leads for a date range</td>
+</tr>
+<tr>
 <td>Custom Integration</td>
 <td>FranConnect/Franchise Management Software</td>
 <td>If you are interested in this custom integration, please contact your account team (Offer #2095)</td>
@@ -1014,6 +1067,8 @@
 <li>Facebook</li>
 <li>YouTube</li>
 <li>CVT/Web Events</li>
+<li>Xmedia</li>
+<li>Email</li>
 </ul></li>
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
 </ul><h3 id='reporting-metric-apis-campaigns-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
@@ -1062,6 +1117,7 @@
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_-26"</span><span class="p">,</span><span class="w">
@@ -1085,6 +1141,7 @@
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Targeted Display"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_2"</span><span class="p">,</span><span class="w">
@@ -1108,6 +1165,7 @@
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Engine Marketing"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_5"</span><span class="p">,</span><span class="w">
@@ -1126,6 +1184,7 @@
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Live Chat"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_20"</span><span class="p">,</span><span class="w">
@@ -1149,6 +1208,7 @@
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_23"</span><span class="p">,</span><span class="w">
@@ -1172,6 +1232,7 @@
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ReachDisplay GeoFence"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_29"</span><span class="p">,</span><span class="w">
@@ -1195,12 +1256,59 @@
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YouTube Advertising"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_32"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Youtube Campaign (Demo)"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"goals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"goal_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"goal_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPL"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Xmedia Campaign (Demo)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_37"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xmedia"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_38"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Xmedia Campaign (Demo)"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"goals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"goal_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"goal_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPL"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Campaign (Demo)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_33"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_34"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Campaign (Demo)"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="s2">"goals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1283,6 +1391,11 @@
 <td><code>True</code> or <code>False</code></td>
 </tr>
 <tr>
+<td>offer_name</td>
+<td>String</td>
+<td>Campaign offer name</td>
+</tr>
+<tr>
 <td>cycles</td>
 <td>Object</td>
 <td><a href="#campaigns_cycles">Cycles Object</a></td>
@@ -1361,6 +1474,7 @@
 <li>Number of Leads</li>
 <li>Spend</li>
 <li>Budget Amount</li>
+<li>Opens for Email Campaigns</li>
 </ul></li>
 </ul><p>All campaign data for the account will be provided including both Paid Media and Offer-based campaigns.</p><ul><li>Paid Media campaigns will include the associated <code>campaign_type</code>. Paid Media campaigns include:
 <ul><li>Chat</li>
@@ -1370,6 +1484,7 @@
 <li>Facebook</li>
 <li>YouTube</li>
 <li>CVT/Web Events</li>
+<li>Email</li>
 </ul></li>
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
 </ul><h3 id='reporting-metric-apis-campaigns-apis-parameters-nbsp'>Parameters&nbsp;</h3><p>None</p><h3 id='reporting-metric-apis-campaigns-apis-response-data-details-nbsp'>Response Data Details&nbsp;</h3>
@@ -1382,39 +1497,81 @@
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"report_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaigns_overview"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"report_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-12"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-12"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"report_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-05"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"report_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lsa Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207095"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lsa"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Services Ads"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Campaign (Demo)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_7025"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Targeted Email"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207102"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_7034"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">731</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">631</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"opens"</span><span class="p">:</span><span class="w"> </span><span class="mi">1449</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lsa Campaign (Demo)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_7008"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lsa"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Services Ads"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_7015"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Xmedia Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207085"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6954"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xmedia"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omnichannel - Smart"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6963"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26209</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">322</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">629</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Campaign (Demo)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207085"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Targeted Email"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
@@ -1427,235 +1584,238 @@
                         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
+                        </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">6591</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"opens"</span><span class="p">:</span><span class="w"> </span><span class="mi">6591</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Youtube Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207082"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6938"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"youtube"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YouTube Advertising"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207083"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3437</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6942"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26978</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">325</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">624</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geofence Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207079"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6934"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ReachDisplay GeoFence"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207080"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3988</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6936"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26598</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">309</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207073"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6921"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207074"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3869</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6922"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">25288</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">304</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chat Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207070"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6918"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chat"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Live Chat"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207071"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3805</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">94</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6919"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">27323</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">332</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">638</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207067"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6915"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organic Traffic"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207068"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">4027</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6916"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26601</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">332</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">627</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Totaltrack Web Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207064"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6912"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totaltrack"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign Tracking Only (TotalTrack)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207065"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3693</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6913"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">25728</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">326</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">634</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Totaltrack Web Phone Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207061"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6909"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totaltrack"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign Tracking Only (TotalTrack)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207062"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3641</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">94</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6910"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">25202</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">312</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">634</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Totaltrack Phone Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207058"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6906"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totaltrack"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign Tracking Only (TotalTrack)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207059"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3548</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6907"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26799</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">323</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">626</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207054"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6903"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Engine Marketing"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207055"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3695</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6904"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26329</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">335</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">613</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Display Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207051"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6900"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Targeted Display"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_207052"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3915</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">97</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">75.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6901"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">25701</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">309</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">614</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display Campaign (Demo)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_-207076"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_-6924"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_-207077"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_-6925"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">3704</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26743</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">332</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
@@ -1664,12 +1824,12 @@
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">252</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">554</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">251</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">44890</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">1921</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1861</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">3861</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">1877</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">1891</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">315499</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
@@ -1848,7 +2008,7 @@
 <tr>
 <td>impressions</td>
 <td>Integer</td>
-<td>Total Impressions for cycle</td>
+<td>Total Impressions for cycle (N/A for Email Campaigns)</td>
 </tr>
 <tr>
 <td>clicks</td>
@@ -1869,6 +2029,21 @@
 <td>budget</td>
 <td>Integer</td>
 <td>Total Budget of cycle</td>
+</tr>
+<tr>
+<td>opens</td>
+<td>Integer</td>
+<td>Total Opens for cycle (Email Campaigns Only)</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>Integer</td>
+<td>Total Quantity for cycle. (Email Campaigns Only)</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Integer</td>
+<td>Total Views of cycle. (Email Campaigns Only)</td>
 </tr></tbody></table><h3 id='reporting-metric-apis-campaigns-apis-campaigns-totals' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Campaigns Totals</strong></h3><p><a name="campaigns_totals"></a></p><h3 id='reporting-metric-apis-campaigns-apis-resource-overview-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
@@ -5250,40 +5425,58 @@ https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_
 <td>GET</td>
 <td>/client_reports/google_keyword/[gmaid]?[query_params]</td>
 </tr></tbody></table><p>Use GET to retrieve information for the Keyword Google Compliance Report.  Data can be returned in different intervals determined by the range. The requirements for these parameters are described below.</p><p>The data returned will include google only totals for impressions, clicks, click-through-rate (CTR), media_cost, keywords, and average position.  It will also show breakdowns per keyword for clicks, media cost, impressions, average position, first page cost-per-click (CPC) and top page cost-per-click.  Data will be returned in pages, controlled by the parameters page and page_size.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.</p><p><strong>Note: This API will not provide an Average page position from 1/1/2020 onward in the response.</strong></p><h3 id='reporting-metric-apis-search-apis-parameters-nbsp-nbsp-nbsp'>Parameters&nbsp;&nbsp;&nbsp;</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
-<th>Param</th>
-<th>Function</th>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
 </tr>
 </thead><tbody><tr>
 <td>start_date</td>
-<td>Restricts the results to those occurring on or after this date</td>
+<td>Yes</td>
+<td>--</td>
+<td>Restricts the results to those occurring on or after this date.</td>
 </tr>
 <tr>
 <td>end_date</td>
-<td>Restricts the results to those occurring on or before this date</td>
+<td>Yes</td>
+<td>--</td>
+<td>Restricts the results to those occurring on or before this date.</td>
 </tr>
 <tr>
 <td>global_master_campaign_id[]</td>
-<td>Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2</td>
+<td>No</td>
+<td>All</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456</td>
 </tr>
 <tr>
 <td>campaign_status[]</td>
-<td>Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped</td>
+<td>No</td>
+<td>All</td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
 <td>page_size</td>
-<td>Restrict number of keywords in result.  Default is 15</td>
+<td>No</td>
+<td>15</td>
+<td>Restrict number of keywords in result.</td>
 </tr>
 <tr>
 <td>page</td>
-<td>Specifies which page of results to return.  Default is 1</td>
+<td>No</td>
+<td>1</td>
+<td>Specifies which page of results to return.</td>
 </tr>
 <tr>
 <td>sort_by</td>
-<td>Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc.  Default: keyword</td>
+<td>No</td>
+<td>keyword</td>
+<td>Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc.</td>
 </tr>
 <tr>
 <td>sort_dir</td>
-<td>Specifies the sort direction.  Can be either asc or desc. Default: asc</td>
+<td>No</td>
+<td>asc</td>
+<td>Specifies the sort direction.  Can be either asc or desc.</td>
 </tr></tbody></table><h3 id='reporting-metric-apis-search-apis-response-data-details-nbsp-nbsp-nbsp'>Response Data Details&nbsp;&nbsp;&nbsp;</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p></blockquote>
@@ -11064,6 +11257,27 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
                         </span><span class="s2">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_691233"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Targeted Email Campaign (Demo)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"organic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -11581,12 +11795,12 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&amp;campai
 <th>Function</th>
 </tr>
 </thead><tbody><tr>
-<td><code>start_date</code></td>
+<td>start_date</td>
 <td>Yes</td>
 <td>Restricts the results to those ocurring on or after this date.</td>
 </tr>
 <tr>
-<td><code>end_date</code></td>
+<td>end_date</td>
 <td>Yes</td>
 <td>Restricts the results to those ocurring on or before this date.</td>
 </tr></tbody></table><p>To specify a date range:</p><ul><li>Specify start_date and end_date.</li>
@@ -11827,6 +12041,425 @@ https://api.reachlocalservices.com/client_reports/google_local_service_ads/TEST_
 <td>total_cost</td>
 <td>Decimal</td>
 <td>Total Cost</td>
+</tr></tbody></table><h3 id='lead-info-apis-webhooks-lead-metric-apis-lsa-campaign-metrics-rollup' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>LSA Campaign Metrics Rollup</strong></h3><p><a name="lsa_campaign_rollup"></a></p><h3 id='lead-info-apis-webhooks-lead-metric-apis-resource-overview-nbsp'>Resource Overview&nbsp;</h3><table><thead><tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody><tr>
+<td>GET</td>
+<td>/leads/lsa_events/campaign_rollup?[query_params]</td>
+</tr></tbody></table><p>Use GET to retrieve Local Service Ads metrics rolled up by camapgin for a given advertiser.</p><h3 id='lead-info-apis-webhooks-lead-metric-apis-parameters-nbsp'>Parameters&nbsp;</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody><tr>
+<td>global_master_advertiser_id</td>
+<td>Yes</td>
+<td>Only leads for the specified advertiser will be returned.</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>Yes</td>
+<td>Restricts the results to those ocurring on or after this date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>Yes</td>
+<td>Restricts the results to those ocurring on or before this date.</td>
+</tr></tbody></table><p>To specify a date range:</p><ul><li>Specify start_date and end_date.</li>
+</ul><h3 id='lead-info-apis-webhooks-lead-metric-apis-response-data-details-nbsp'>Response Data Details&nbsp;</h3>
+<blockquote>
+<p>Retrieve data for advertiser and date range</p></blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/leads/lsa_events/campaign_rollup?start_date=2020-09-27&amp;end_date=2020-09-28&amp;global_master_advertiser_id=TEST_123' \
+
+</code></pre>
+<blockquote>
+<p>Example Response</p></blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"TEST_123"</span><span class="p">,</span>
+    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2020-09-01"</span><span class="p">,</span>
+    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2020-09-31"</span><span class="p">,</span>
+    <span class="s2">"campaigns"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"TEST_1230"</span><span class="p">,</span>
+            <span class="s2">"campaign_name"</span><span class="p">:</span> <span class="s2">"GCI | LSA | Bedrock HVAC"</span><span class="p">,</span>
+            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"lsa"</span><span class="p">,</span>
+            <span class="s2">"lead_counts"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"MESSAGE"</span><span class="p">,</span>
+                    <span class="s2">"charged_lead_count"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">"not_charged_lead_count"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">"total_lead_count"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">"total_lead_price"</span><span class="p">:</span> <span class="mf">0.0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"PHONE_CALL"</span><span class="p">,</span>
+                    <span class="s2">"charged_lead_count"</span><span class="p">:</span> <span class="mi">91</span><span class="p">,</span>
+                    <span class="s2">"not_charged_lead_count"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                    <span class="s2">"total_lead_count"</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span>
+                    <span class="s2">"total_lead_price"</span><span class="p">:</span> <span class="mf">2275.0</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"TEST_1231"</span><span class="p">,</span>
+            <span class="s2">"campaign_name"</span><span class="p">:</span> <span class="s2">"GCI | LSA | Bedrock Plumbing"</span><span class="p">,</span>
+            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"lsa"</span><span class="p">,</span>
+            <span class="s2">"lead_counts"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"MESSAGE"</span><span class="p">,</span>
+                    <span class="s2">"charged_lead_count"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">"not_charged_lead_count"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">"total_lead_count"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">"total_lead_price"</span><span class="p">:</span> <span class="mf">0.0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"PHONE_CALL"</span><span class="p">,</span>
+                    <span class="s2">"charged_lead_count"</span><span class="p">:</span> <span class="mi">159</span><span class="p">,</span>
+                    <span class="s2">"not_charged_lead_count"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="s2">"total_lead_count"</span><span class="p">:</span> <span class="mi">166</span><span class="p">,</span>
+                    <span class="s2">"total_lead_price"</span><span class="p">:</span> <span class="mf">3975.0</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"TEST_1233"</span><span class="p">,</span>
+            <span class="s2">"campaign_name"</span><span class="p">:</span> <span class="s2">"GCI | LSA | Bedrock Electrical"</span><span class="p">,</span>
+            <span class="s2">"campaign_type"</span><span class="p">:</span> <span class="s2">"lsa"</span><span class="p">,</span>
+            <span class="s2">"lead_counts"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"MESSAGE"</span><span class="p">,</span>
+                    <span class="s2">"charged_lead_count"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">"not_charged_lead_count"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">"total_lead_count"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">"total_lead_price"</span><span class="p">:</span> <span class="mf">0.0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"PHONE_CALL"</span><span class="p">,</span>
+                    <span class="s2">"charged_lead_count"</span><span class="p">:</span> <span class="mi">72</span><span class="p">,</span>
+                    <span class="s2">"not_charged_lead_count"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">"total_lead_count"</span><span class="p">:</span> <span class="mi">76</span><span class="p">,</span>
+                    <span class="s2">"total_lead_price"</span><span class="p">:</span> <span class="mf">1080.0</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>global_master_advertiser_id</td>
+<td>String</td>
+<td>Global Master Advertiser ID</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>Start date of report</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>End date of report</td>
+</tr>
+<tr>
+<td>campaigns</td>
+<td>Object</td>
+<td>Campaign details. <a href="#lsacampaigndata">Campaign Detail Object</a></td>
+</tr></tbody></table><p><a name="lsacampaigndata"></a>
+<strong>Campaign Detail Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>global_master_campaign_id</td>
+<td>String</td>
+<td>ID Of campaign</td>
+</tr>
+<tr>
+<td>campaign_name</td>
+<td>String</td>
+<td>The name of the campaign</td>
+</tr>
+<tr>
+<td>campaign_type</td>
+<td>String</td>
+<td>The type of campaign</td>
+</tr>
+<tr>
+<td>lead_counts</td>
+<td>Object</td>
+<td>Metrics for each lead type. <a href="#lsaleadtypemetrics">Lead Type Detail Object</a></td>
+</tr></tbody></table><p><a name="lsaleadtypemetrics"></a>
+<strong>Lead Type Metrics</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>lead_type</td>
+<td>String</td>
+<td>The type of lead</td>
+</tr>
+<tr>
+<td>charged_lead_count</td>
+<td>Integer</td>
+<td>The number of leads of this type for this campaign that were charged</td>
+</tr>
+<tr>
+<td>not_charged_lead_count</td>
+<td>Integer</td>
+<td>The number of leads of this type for this campaign that were not charged</td>
+</tr>
+<tr>
+<td>total_lead_count</td>
+<td>Integer</td>
+<td>The total number of leads of this type for this campaign</td>
+</tr>
+<tr>
+<td>total_lead_price</td>
+<td>Integer</td>
+<td>The price for the charged leads</td>
+</tr></tbody></table><h3 id='lead-info-apis-webhooks-lead-metric-apis-lsa-lead-details' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>LSA Lead Details</strong></h3><p><a name="lsa_leads"></a></p><h3 id='lead-info-apis-webhooks-lead-metric-apis-resource-overview-nbsp'>Resource Overview&nbsp;</h3><table><thead><tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody><tr>
+<td>GET</td>
+<td>/leads/lsa_events?[query_params]</td>
+</tr></tbody></table><p>Use GET to retrieve Local Service Ads Leads for a given advertiser.</p><p>The data returned will include individual leads in reverse chronological order.</p><h3 id='lead-info-apis-webhooks-lead-metric-apis-parameters-nbsp'>Parameters&nbsp;</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody><tr>
+<td>global_master_advertiser_id</td>
+<td>Yes</td>
+<td>Only leads for the specified advertiser will be returned.</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>Yes</td>
+<td>Restricts the results to those ocurring on or after this date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>Yes</td>
+<td>Restricts the results to those ocurring on or before this date.</td>
+</tr>
+<tr>
+<td>global_master_campaign_id[]</td>
+<td>No</td>
+<td>Restricts the results to those belonging to these campaigns.</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>No</td>
+<td>Restrict number of leads in result.  Default is 50</td>
+</tr>
+<tr>
+<td>page</td>
+<td>No</td>
+<td>Specifies which page of results to return.  Default is 1</td>
+</tr></tbody></table><p>To specify a date range:</p><ul><li>Specify start_date and end_date.</li>
+</ul><h3 id='lead-info-apis-webhooks-lead-metric-apis-response-data-details-nbsp'>Response Data Details&nbsp;</h3>
+<blockquote>
+<p>Retrieve data for advertiser and date range</p></blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/leads/lsa_events?start_date=2020-09-27&amp;end_date=2020-09-28&amp;global_master_advertiser_id=TEST_123' \
+
+</code></pre>
+<blockquote>
+<p>Example Response</p></blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"TEST_123"</span><span class="p">,</span>
+    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2020-09-27"</span><span class="p">,</span>
+    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2020-09-28"</span><span class="p">,</span>
+    <span class="s2">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"per_page"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">"total_pages"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"lsa_events"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"event_id"</span><span class="p">:</span> <span class="s2">"4819"</span><span class="p">,</span>
+            <span class="s2">"event_time"</span><span class="p">:</span> <span class="s2">"2020-09-27T20:26:30.000Z"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"TEST_1232"</span><span class="p">,</span>
+            <span class="s2">"cycle_id"</span><span class="p">:</span> <span class="s2">"444"</span><span class="p">,</span>
+            <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"PHONE_CALL"</span><span class="p">,</span>
+            <span class="s2">"lead_name"</span><span class="p">:</span> <span class="s2">"Mr. Letty Mann"</span><span class="p">,</span>
+            <span class="s2">"lead_phone_number"</span><span class="p">:</span> <span class="s2">"126.235.0549 x2631"</span><span class="p">,</span>
+            <span class="s2">"job_type"</span><span class="p">:</span> <span class="s2">"install"</span><span class="p">,</span>
+            <span class="s2">"zip_code"</span><span class="p">:</span> <span class="s2">"93247-8802"</span><span class="p">,</span>
+            <span class="s2">"lead_category"</span><span class="p">:</span> <span class="s2">"hvac"</span><span class="p">,</span>
+            <span class="s2">"charged"</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+            <span class="s2">"lead_price"</span><span class="p">:</span> <span class="s2">"30"</span><span class="p">,</span>
+            <span class="s2">"campaign_name"</span><span class="p">:</span> <span class="s2">"Amazing discount188618s"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"event_id"</span><span class="p">:</span> <span class="s2">"1351"</span><span class="p">,</span>
+            <span class="s2">"event_time"</span><span class="p">:</span> <span class="s2">"2020-09-27T19:03:37.000Z"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"TEST_1230"</span><span class="p">,</span>
+            <span class="s2">"cycle_id"</span><span class="p">:</span> <span class="s2">"444"</span><span class="p">,</span>
+            <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"PHONE_CALL"</span><span class="p">,</span>
+            <span class="s2">"lead_name"</span><span class="p">:</span> <span class="s2">"Ms. Annita Anderson"</span><span class="p">,</span>
+            <span class="s2">"lead_phone_number"</span><span class="p">:</span> <span class="s2">"1-904-299-5528 x85872"</span><span class="p">,</span>
+            <span class="s2">"job_type"</span><span class="p">:</span> <span class="s2">"install"</span><span class="p">,</span>
+            <span class="s2">"zip_code"</span><span class="p">:</span> <span class="s2">"55939"</span><span class="p">,</span>
+            <span class="s2">"lead_category"</span><span class="p">:</span> <span class="s2">"hvac"</span><span class="p">,</span>
+            <span class="s2">"charged"</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+            <span class="s2">"lead_price"</span><span class="p">:</span> <span class="s2">"30"</span><span class="p">,</span>
+            <span class="s2">"campaign_name"</span><span class="p">:</span> <span class="s2">"Sweet savings324049s"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Retrieve data for advertiser and date range, with campaign filter</p></blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.reachlocalservices.com/leads/lsa_events?start_date=2020-09-27&amp;end_date=2020-09-28&amp;global_master_advertiser_id=TEST_123&amp;global_master_campaign_id[]=TEST_1232' \
+
+</code></pre>
+<blockquote>
+<p>Example Response</p></blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"global_master_advertiser_id"</span><span class="p">:</span> <span class="s2">"TEST_123"</span><span class="p">,</span>
+    <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2020-09-27"</span><span class="p">,</span>
+    <span class="s2">"end_date"</span><span class="p">:</span> <span class="s2">"2020-09-28"</span><span class="p">,</span>
+    <span class="s2">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"per_page"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">"total_pages"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"lsa_events"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"event_id"</span><span class="p">:</span> <span class="s2">"4819"</span><span class="p">,</span>
+            <span class="s2">"event_time"</span><span class="p">:</span> <span class="s2">"2020-09-27T20:26:30.000Z"</span><span class="p">,</span>
+            <span class="s2">"global_master_campaign_id"</span><span class="p">:</span> <span class="s2">"TEST_1232"</span><span class="p">,</span>
+            <span class="s2">"cycle_id"</span><span class="p">:</span> <span class="s2">"444"</span><span class="p">,</span>
+            <span class="s2">"lead_type"</span><span class="p">:</span> <span class="s2">"PHONE_CALL"</span><span class="p">,</span>
+            <span class="s2">"lead_name"</span><span class="p">:</span> <span class="s2">"Mr. Letty Mann"</span><span class="p">,</span>
+            <span class="s2">"lead_phone_number"</span><span class="p">:</span> <span class="s2">"126.235.0549 x2631"</span><span class="p">,</span>
+            <span class="s2">"job_type"</span><span class="p">:</span> <span class="s2">"install"</span><span class="p">,</span>
+            <span class="s2">"zip_code"</span><span class="p">:</span> <span class="s2">"93247-8802"</span><span class="p">,</span>
+            <span class="s2">"lead_category"</span><span class="p">:</span> <span class="s2">"hvac"</span><span class="p">,</span>
+            <span class="s2">"charged"</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+            <span class="s2">"lead_price"</span><span class="p">:</span> <span class="s2">"30"</span><span class="p">,</span>
+            <span class="s2">"campaign_name"</span><span class="p">:</span> <span class="s2">"Amazing discount188618s"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>start_date</td>
+<td>String</td>
+<td>Start date of report</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>End date of report</td>
+</tr>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>String</td>
+<td>Global Master Advertiser ID</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Integer</td>
+<td>Page Number of results</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>Integer</td>
+<td>Max number of results per page</td>
+</tr>
+<tr>
+<td>total_pages</td>
+<td>Integer</td>
+<td>Number of available pages of results</td>
+</tr>
+<tr>
+<td>lsa_events</td>
+<td>Object</td>
+<td>Report details. <a href="#lsaleaddata">Lead Detail Object</a></td>
+</tr></tbody></table><p><a name="lsaleaddata"></a>
+<strong>Lead Detail Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>event_id</td>
+<td>String</td>
+<td>ID Of lead</td>
+</tr>
+<tr>
+<td>event_time</td>
+<td>String</td>
+<td>Time lead event ocurred</td>
+</tr>
+<tr>
+<td>global_master_campaign_id</td>
+<td>String</td>
+<td>ID Of campaign for this lead</td>
+</tr>
+<tr>
+<td>cycle_id</td>
+<td>String</td>
+<td>ID of the campaign cycle for this lead</td>
+</tr>
+<tr>
+<td>lead_type</td>
+<td>String</td>
+<td>The type of the lead, e.g.: PHONE_CALL</td>
+</tr>
+<tr>
+<td>lead_name</td>
+<td>String</td>
+<td>The first and last name of the lead</td>
+</tr>
+<tr>
+<td>lead_phone_number</td>
+<td>String</td>
+<td>The leads phone number</td>
+</tr>
+<tr>
+<td>job_type</td>
+<td>String</td>
+<td>The type of service job for this lead</td>
+</tr>
+<tr>
+<td>zip_code</td>
+<td>String</td>
+<td>The zip code for the lead</td>
+</tr>
+<tr>
+<td>lead_category</td>
+<td>String</td>
+<td>The lead category</td>
+</tr>
+<tr>
+<td>charged</td>
+<td>String</td>
+<td>Was this a charged lead?</td>
+</tr>
+<tr>
+<td>lead_price</td>
+<td>String</td>
+<td>The price of the lead</td>
+</tr>
+<tr>
+<td>campaign_name</td>
+<td>String</td>
+<td>The name of the campaign for the lead</td>
 </tr></tbody></table><h2 id='lead-info-apis-webhooks-localiq-app-on-zapier'>LOCALiQ App on Zapier®</h2><p><strong>Summary:</strong> Zapier® is a tool that allows two systems to exchange data without any coding. LOCALiQ makes available a lead app on the Zapier® platform for CRM integration.</p><ul><li>The LOCALiQ app on Zapier® is available at no additional cost. Please see note below.</li>
 <li>Advertiser IDs (GMAIDs) are maintained through Campaign Central/Corp and can be found in the general settings of your account settings.</li>
 </ul><p><strong>Note:</strong> There is an additional monthly subscription cost through Zapier®. The cost depends on the number of leads sent per month and the number of leads transmitted between the systems (which Zapier® refers to as &quot;Tasks&quot;). Pricing information for Zapier® can be found <a href="https://zapier.com/pricing">here</a>.</p><p><strong>LOCALiQ App Options:</strong></p><p>There are two options under the LOCALiQ App on Zapier®.</p><ul><li><strong>Contacts:</strong> This trigger supports integration with CRM products. It delivers contact data (first name, last name, email, phone number, etc.) generated for an advertiser in near real-time.</li>
