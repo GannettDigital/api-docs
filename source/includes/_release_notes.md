@@ -6,7 +6,8 @@
 
 |API(s) Updated|Description|
 |---|---|
-|Campaigns|Added offer name|
+|Campaign|Added offer name|
+|Campaign, Campaign Overview, Lead Details and Chat Summary|Identify Targeted Email campaigns with appropriate type|
 
 ## September 2020
 
