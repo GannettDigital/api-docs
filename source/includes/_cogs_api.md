@@ -15,6 +15,9 @@ The API accepts the request parameters listed below and is grouped by the interv
 #### Recommended usage pattern
 The API supports up to 90 days (3 months) time window between the start_date and end_date request parameters. For more than 90 days of metrics the API should be called again by slicing the start_date and end_date into the recommend 90-day time window. For prior year’s data, request the API again with the same date range for the prior year.
 
+
+alskdjhflaskjhdflakjshdflkajshdflkajhsdlkjahsdf
+
 #### HTTP Request
 GET https:// api.reachlocalservices.com/client_reports/advertiser_cogs
 
