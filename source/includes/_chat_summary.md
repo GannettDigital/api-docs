@@ -558,13 +558,13 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 |Field Name|Datatype|Description|
 |---|---|---|
 |start_date|String|Start date of interval|
-|non_lead_chats|Integer|Number of non-lead chats|
-|total_chats|Integer|Number of total chats|
-|chat_leads|Integer|Number of chat leads|
+|non_lead_chats|Integer|Number of non-lead chats, has no email address or phone number to create a Contact|
+|total_chats|Integer|Number of total chats, includes non lead chats|
+|chat_leads|Integer|Number of chat leads, excludes non lead chats|
 |chat_sales|Integer|Number of chats marked as 'sales'|
 |chat_service|Integer|Number of chats marked as 'service'|
 |chat_other|Integer|Number of chats marked as 'other'|
-|call_connect|Integer|Number of calls connected|
+|call_connect|Integer|Subset of chats that initiated a call connect|
 
 <internal>
 <a name="webpublishercampaign"></a>
