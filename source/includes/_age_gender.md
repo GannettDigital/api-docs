@@ -10,7 +10,7 @@ URI Format:             /client_reports/age_gender/[gmaid]?[query_params]
 #### Usage
 Use GET to retrieve information for the AgeGender report for a given advertiser.
 
-The data returned will include age and gender breakdowns for social, youtube, and combined campaigns.
+The data returned will include age and gender breakdowns for socialAd, youtube, and xMedia campaigns. Some variability in metric keys in the response across campaigns or between days is normal. The response will contain metrics that are available to LOCALiQ for reporting purposes.
 
 #### Parameters
 
@@ -46,7 +46,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
 ```javascript
 {
     "report_type": "age_gender",
-    "report_date": "2020-11-18",
+    "report_date": "2020-11-24",
     "earliest_date_available": "2020-10-01",
     "start_date": "2020-10-01",
     "end_date": "2020-10-31",
