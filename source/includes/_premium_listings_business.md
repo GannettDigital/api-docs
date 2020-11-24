@@ -1,16 +1,18 @@
-## Premium Listings Business
+### Business
 
-### Resource Overview
+#### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/premium_listings/business/[gmaid]
 
-#### API Name: premium_listings_business
-### Usage
+#### API Name: business
+#### Usage
 Use GET to retrieve information from the Uberall API. Data will be returned for a GMAID.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
-### Examples
+The data returned will include information about the business which corresponds to the gmaid. 
+
+#### Examples
 
 ```
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/business/GMAID' \
@@ -19,7 +21,7 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 -H 'x-api-key: APIGEE_KEY'
 ```
 
-# Example Response
+#### Example Response
 ```javascript
 {
     "report_type": "premium_listings_business",
@@ -29,13 +31,13 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
         "business": {
                 "id": 13245676,
                 "identifier": "TEST_1234",
-                "name": "ReachLocal",
+                "name": "Example",
                 "type": "SMB",
-                "streetAndNo": "21700 Oxnard St.",
+                "streetAndNo": "21700 Example St.",
                 "addressLine2": "Suite 1600",
                 "province": null,
                 "zip": "91367",
-                "city": "Woodland Hills",
+                "city": "Example Hills",
                 "phone": null,
                 "country": "US",
                 "contractDuration": 1,
@@ -162,4 +164,12 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
         }
     }
 }
+
 ```
+
+Field Name|Datatype|Description|
+|---|---|---|
+|report_type|String|Name of the Report|
+|report_date|String|Date report was run|
+|global\_master\_advertiser\_id |String| The global master advertiser id (for example, TEST_1)
+|report_data|Object|Report details. [Report Data Object](https://uberall.com/en/developers/resources#Business)|

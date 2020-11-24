@@ -57,6 +57,11 @@ includes:
   - lsa_campaign_rollup
   - lsa_leads
   - zapier
+  - premium_listings
+  - premium_listings_business
+  - premium_listings_business_locations
+  - premium_listings_business_insights
+  - premium_listings_business_review_insights
 
   - deprecated_apis
   - creative_ad_metrics

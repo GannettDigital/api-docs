@@ -1,16 +1,16 @@
-## Premium Listings Business
+### Locations
 
-### Resource Overview
+#### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/premium_listings/business/[gmaid]/locations?[query_params]
 
-#### API Name: premium_listings_business
-### Usage
+#### API Name: business_locations
+#### Usage
 Use GET to retrieve information from the Uberall API.  Data will be returned for a GMAID by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
-### Parameters
+#### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
 
@@ -19,7 +19,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`page`|No|Restricts the results to those occurring after the offset|
 |`page_size`|No|Restricts the number of locations that will be shown. (The max value of page_size is 50)|
 
-### Examples
+#### Examples
 
 ```
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/business/GMAID/locations' \
@@ -28,13 +28,16 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 -H 'x-api-key: APIGEE_KEY'
 ```
 
-# Example Response
+#### Example Response
 ```javascript
 {
     "report_type": "premium_listings_business_locations",
     "report_date": "2020-04-03",
     "global_master_advertiser_id": "TEST_1234",
     "report_data": {
+        "total_pages": 2,
+        "page_size": 50,
+        "page": 1,
         "locations": [
             {
                 "identifier": "RL001",
@@ -205,3 +208,21 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
     }
 }
 ```
+
+Field Name|Datatype|Description|
+|---|---|---|
+|report_type|String|Name of the Report|
+|report_date|String|Date report was run|
+|global\_master\_advertiser\_id |String| The global master advertiser id (for example, TEST_1)
+|report_data|Object|Report details. [Report Data Object](#reportdata)|
+
+<a name="reportdata"></a>
+**Report Data Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|page|Integer|The number of the page that is currently loaded.|
+|page_size|Integer|The number of the elements in a page (request).|
+|total_pages|Integer|How many pages are there left. |
+|locations|Array|Array of locations objects. [Locations Objects](https://uberall.com/en/developers/resources#Location)|
+
