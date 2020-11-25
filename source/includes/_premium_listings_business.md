@@ -8,7 +8,7 @@
 
 #### API Name: business
 #### Usage
-Use GET to retrieve information from the Uberall API. Data will be returned for a GMAID.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve business data for a GMAID, that comes from the Uberall API.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
 The data returned will include information about the business which corresponds to the gmaid. 
 
