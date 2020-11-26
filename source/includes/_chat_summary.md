@@ -30,7 +30,7 @@ When using the GET method, the results can be filtered using these parameters:
 |end_date|Yes|Restricts the results to those occurring on or before this date|
 |gmaid|Yes|Restrict results to the specified Global Master Advertiser ID|
 |global_master_campaign_id[]|No|Restrict results to the specified master campaign id|
-|interval_size|No|Return subtotals for the given intervals within the start-end time provided. Accepts calendar_month, calendar_week, or day|
+|interval_size|No|Return subtotals for the given intervals within the start-end time provided. Accepts calendar_month, calendar_week, or day (Default is day)|
 
 ### Response Data Details
 
