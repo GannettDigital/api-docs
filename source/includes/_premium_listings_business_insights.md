@@ -8,7 +8,7 @@
 
 #### API Name: business_insights
 #### Usage
-Use GET to retrieve business insights data for a GMAID, that comes from the Uberall API and will be filtered by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve business insights data for a GMAID, that comes from the Premium Listing Reporting API and will be filtered by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
 This report will show the facebook and google metrics for the particular gmaid for the interval between the start_date and the end_date. Every metric would contain a name property and a data property in which would be shown how many times (count) the metrics has been used for the particular period (interval_size). In the case of the example it would show the usage count of the metrics for a DAY between the start_date and the end_date. 
 

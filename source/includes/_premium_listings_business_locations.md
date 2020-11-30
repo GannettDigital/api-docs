@@ -8,7 +8,7 @@
 
 #### API Name: business_locations
 #### Usage
-Use GET to retrieve business locations data, that comes from the Uberall API and will be returned for a GMAID by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve business locations data, that comes from the Premium Listing Reporting API and will be returned for a GMAID by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
 #### Parameters
 
