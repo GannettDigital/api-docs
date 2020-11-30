@@ -18,6 +18,7 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|---|
 |`start_date`|Yes|--|Restricts the results to those occurring on or after this date.|
 |`end_date`|Yes|--|Restricts the results to those occurring on or before this date.|
+|`global_master_campaign_id[]`| no |--|Restrict results to one or more specific campaigns|
 |`publisher_plat_zipcode[]`|No|--|Specifies the zipcode+4 to filter by|
 |`conversion_fence[]`|No|--|Specifies the conversion_fence to filter by|
 |`page_size`|No|25|Restrict number of keywords in result |
