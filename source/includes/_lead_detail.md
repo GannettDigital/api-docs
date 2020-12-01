@@ -81,6 +81,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
                 "calls": 71,
                 "emails": 85,
                 "web_events": 86,
+                "qualified_web_events": 87,
                 "chats": 88
             }
         ],
@@ -138,8 +139,9 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
             "average_call_length": 89.43,
             "emails": 85,
             "web_events": 86,
+            "qualified_web_events": 87,
             "chats": 88,
-            "leads": 330
+            "leads": 417
         }
     },
     "global_master_advertiser_id": "TEST_1",
@@ -180,6 +182,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |calls|Integer|Calls for interval|
 |emails|Integer|Emails for interval|
 |web_events|Integer|Web events for interval|
+|qualified_web_events|Integer|Qualified Web events for interval|
 |chats|Integer|Chats for interval|
 
 <a name="leadtotals"></a>
@@ -193,6 +196,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |average_call_length|Integer|Total average call length|
 |emails|Integer|Total emails|
 |web_events|Integer|Total web events|
+|qualified_web_events|Integer| TotalQualified Web events|
 |chats|Integer|Total chats|
 |leads|Integer|Total leads|
 
