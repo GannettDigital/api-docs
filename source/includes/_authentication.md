@@ -225,6 +225,8 @@ curl --request POST \
 
 ### **Security Considerations**
 
+### Token Security
+
 Refresh tokens are long-lived.
 
 This means when you must store it securely to keep it from being used by potential attacker. For this reason, it is not safe to store them in the browser. If a Refresh token is leaked, it may be used to obtain new Access tokens (and access protected resources) until it is blacklisted.
@@ -236,13 +238,13 @@ The email address used to obtain the OAuth Access token must be associated with 
 `{ "name": "not_authorized", "message": "You are not permitted to perform this action." }`
 
 <a name="business_user_credentials"></a>
-**Business user credentials**
+### Business user credentials
 
 The user (login email) being used for API authentication must be a business user in the LOCALiQ platform and have access to the GMAID that will be used in the API. Business User credentials are provided to you by your account team during account creation. These credentials allow you to access the account data through the APIs as well as the Client Center.
 If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (https://reachsecurepay.com/client/index.php) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team. If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
 
 <a name="access_to_hippa_data"></a>
-**Access to HIPAA data**
+### Access to HIPAA data
 
 The business user must have “Agency Customer” role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response. Please reach your accoungt team  to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
 This control applies to APIs that provide data that are classified as HIPAA and protected by law.
