@@ -1,6 +1,6 @@
 ## Identity API
 <a name="identity_api"></a>
-The identity endpoint is used to gain insight into the advertisers that the user is authorized to retrieve data from, active state of the advertiser and if the user has the privileges to retrieve HIPAA protected data through the API.
+The identity endpoint is used to gain insight into the advertisers that the user is authorized to retrieve data, active state of the advertiser and the privilege deatils of the user to retrieve HIPAA protected data through the API.
 ### Resource Overview
 
 | Method | URI Format |
