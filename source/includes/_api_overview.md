@@ -10,7 +10,7 @@
 
 |Category|API to use|When you want|
 |---|---|---|
-|Identity|[Identity](#identity_api)|The identity endpoint is used to gain insight into the advertisers that the user is authorized to retrieve data, active state of the advertiser and the privilege deatils of the user to retrieve HIPAA protected data through the API.|
+|Identity|[Identity](#identity_api)|The identity endpoint is used to gain insight into the resources that are accessible by an advertiser.  It will return advertisers that the user is authorized to retrieve data for, the active state of the advertisers, and the privilege details used to determine HIPAA access.|
 |Campaigns|[Campaigns & Cycles](#campaigns_and_cycles)|List of campaigns and cycles for a given advertiser|
 |Campaigns|[Campaigns Overview](#campaigns_overview)|Total campaign performance metrics for all active campaigns in the last 30 days and basic metrics for all campaigns listed individually. This will include all types of campaign. It is best used as an “overview”|
 |Campaigns|[Campaigns Totals](#campaigns_totals)|Total lead count for all running campaigns type over the last 30 days|
