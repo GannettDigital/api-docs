@@ -1,8 +1,6 @@
 ## Identity API
 <a name="identity_api"></a>
-
-The identity endpoint is used to gain insight into what resources are accessible by a user.
-
+The identity endpoint is used to gain insight into the advertisers that the user is authorized to retrieve data from, active state of the advertiser and if the user has the privileges to retrieve HIPAA protected data through the API.
 ### Resource Overview
 
 | Method | URI Format |
@@ -149,5 +147,5 @@ bu_id | Number | The unique business user id.
 email | String | The global master advertiser id of the advertiser.
 business_id | Number| The unique business id that this business user belongs to.
 name | String | The name of the user.
-privilege_level | Number | privilege level.
+privilege_level | Number | privilege level of the business user. PL3 is required to access HIPAA protected data.
 
