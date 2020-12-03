@@ -19,6 +19,9 @@ includes:
 
   - api_overview
 
+  - identity_apis
+  - identity
+
   - api
   - campaigns_and_cycles
   - campaigns_overview_report

@@ -44,3 +44,5 @@ The business user must be set up to allow access to HIPAA information to access 
 
 This control applies to APIs that provide data that are classified as HIPAA and protected by law.
 
+The business user must have "Agency Customer" role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.
+

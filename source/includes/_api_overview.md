@@ -10,6 +10,7 @@
 
 |Category|API to use|When you want|
 |---|---|---|
+|Identity|[Identity](#identity_api)|The identity endpoint is used to gain insight into what resources are accessible by a user.|
 |Campaigns|[Campaigns & Cycles](#campaigns_and_cycles)|List of campaigns and cycles for a given advertiser|
 |Campaigns|[Campaigns Overview](#campaigns_overview)|Total campaign performance metrics for all active campaigns in the last 30 days and basic metrics for all campaigns listed individually. This will include all types of campaign. It is best used as an “overview”|
 |Campaigns|[Campaigns Totals](#campaigns_totals)|Total lead count for all running campaigns type over the last 30 days|
