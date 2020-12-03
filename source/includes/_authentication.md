@@ -22,31 +22,23 @@ You will get a response within 1 business day. The response email will contain a
 
 The second step involves receiving an Authorization token, which is then used to request an Access and Refresh token. **There are two ways to receive an Authorization token: User login method and Direct access method.**
 
-### Authorization Token (User login method)
+### **Get Auth Token**
+
+### User Login Method
 
 Through a browser initiate the authorization with your Client Id and Client Secret tokens [Step 1] and your REDIRECT_URI (the redirect URI is where all API related responses will be sent)
 
 `https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
 
-For user login: Please enter your business user credentials.
+Please enter your [business user credentials](#business_user_credentials).
+
+The user (login email) being used for API authentication must be a business user in the LOCALiQ platform and have access to the GMAID that will be used in the API
 
 ![login screen](/images/login.png)
 
 Upon successful authentication, you will be redirected to the REDIRECT_URI along with an Authorization token. This token expires in 10 minutes.
 
-**Note:**
-
-ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.
-
-If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (`https://reachsecurepay.com/client/index.php`) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team
-
-If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
-
-The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
-
-This control applies to APIs that provide data that are classified as HIPAA and protected by law.
-
-### Requesting Access and Refresh Tokens
+**Get Access and Refresh Tokens**
 
 Please use the Authorization token to request an Access and Refresh token.
 
@@ -106,23 +98,11 @@ curl -X POST \
 }
 
 ```
-### Authorization Token (Direct access method)
+### Direct Access Method
 
-Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a "password" grant type which can be used to exchange your business user credentials for an Access token directly. This method is easier to use for straight API integrations where user interaction isn't desired or possible.
+Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a "password" grant type which can be used to exchange your [business user credentials](#business_user_credentials) for an Access token directly. This method is easier to use for straight API integrations where user interaction isn't desired or possible.
 
 Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.
-
-**Note:**
-
-ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.
-
-If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (`https://reachsecurepay.com/client/index.php`) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team
-
-If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
-
-The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
-
-This control applies to APIs that provide data that are classified as HIPAA and protected by law.
 
 ```ruby
 require 'uri'
@@ -179,7 +159,7 @@ curl --request POST \
 }
 ```
 
-### Request New Access Token
+### **Request New Access Token**
 
 * The Access token should be passed in the authorization header for all API requests. This Access token expires every 2 hours. If the token has expired, all API calls will receive a 401 HTTP status code response.
 
@@ -243,7 +223,7 @@ curl --request POST \
 
 ```
 
-### Security Considerations
+### **Security Considerations**
 
 Refresh tokens are long-lived.
 
@@ -255,7 +235,19 @@ The email address used to obtain the OAuth Access token must be associated with 
 
 `{ "name": "not_authorized", "message": "You are not permitted to perform this action." }`
 
-### API Rate Limits
+<a name="business_user_credentials"></a>
+**Business user credentials**
+
+The user (login email) being used for API authentication must be a business user in the LOCALiQ platform and have access to the GMAID that will be used in the API. Business User credentials are provided to you by your account team during account creation. These credentials allow you to access the account data through the APIs as well as the Client Center.
+If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (https://reachsecurepay.com/client/index.php) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team. If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
+
+<a name="access_to_hippa_data"></a>
+**Access to HIPAA data**
+
+The business user must have “Agency Customer” role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response. Please reach your accoungt team  to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+This control applies to APIs that provide data that are classified as HIPAA and protected by law.
+
+### **API Rate Limits**
 
 ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.
 

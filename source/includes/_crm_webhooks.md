@@ -65,6 +65,15 @@ Parameter | Required | Default | Description
 --------- | -------- |-------- | -----------
 global\_master\_advertiser\_id | yes | none | The global master advertiser id (for example, TEST_1).
 
+**Payload**
+
+Key | Description
+--------- | -------- |-------- | -----------
+event_type | We support both **new_contact** and **new_lead** as event types.  When event_type is new_contact, the registered webhook is created for new lead for a new contact.  When the event_type is new_lead, the registered webhook is created for a new lead for an existing contact.
+url | Endpoint Webhook should POST data to
+authorization | Authorization for Endpoint Webhook POSTs data to
+
+
 **Response Data Details**
 The body of the API response will the id of the webhook.
 
