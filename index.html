@@ -232,22 +232,22 @@
                     <a href="#getting-started-step-2-authorization-authentication" class="toc-h2 toc-link" data-title="Getting Started">Step 2: Authorization/Authentication</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
-                            <a href="#getting-started-step-2-authorization-authentication-authorization-token-user-login-method" class="toc-h3 toc-link" data-title="Getting Started">Authorization Token (User login method)</a>
+                            <a href="#getting-started-step-2-authorization-authentication-get-auth-token" class="toc-h3 toc-link" data-title="Getting Started"><strong>Get Auth Token</strong></a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#getting-started-step-2-authorization-authentication-requesting-access-and-refresh-tokens" class="toc-h3 toc-link" data-title="Getting Started">Requesting Access and Refresh Tokens</a>
+                            <a href="#getting-started-step-2-authorization-authentication-user-login-method" class="toc-h3 toc-link" data-title="Getting Started">User Login Method</a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#getting-started-step-2-authorization-authentication-authorization-token-direct-access-method" class="toc-h3 toc-link" data-title="Getting Started">Authorization Token (Direct access method)</a>
+                            <a href="#getting-started-step-2-authorization-authentication-direct-access-method" class="toc-h3 toc-link" data-title="Getting Started">Direct Access Method</a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#getting-started-step-2-authorization-authentication-request-new-access-token" class="toc-h3 toc-link" data-title="Getting Started">Request New Access Token</a>
+                            <a href="#getting-started-step-2-authorization-authentication-request-new-access-token" class="toc-h3 toc-link" data-title="Getting Started"><strong>Request New Access Token</strong></a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#getting-started-step-2-authorization-authentication-security-considerations" class="toc-h3 toc-link" data-title="Getting Started">Security Considerations</a>
+                            <a href="#getting-started-step-2-authorization-authentication-security-considerations" class="toc-h3 toc-link" data-title="Getting Started"><strong>Security Considerations</strong></a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#getting-started-step-2-authorization-authentication-api-rate-limits" class="toc-h3 toc-link" data-title="Getting Started">API Rate Limits</a>
+                            <a href="#getting-started-step-2-authorization-authentication-api-rate-limits" class="toc-h3 toc-link" data-title="Getting Started"><strong>API Rate Limits</strong></a>
                           </li>
                       </ul>
                   </li>
@@ -301,6 +301,25 @@
           </li>
           <li>
             <a href="#table-of-contents" class="toc-h1 toc-link" data-title="Table of Contents">Table of Contents</a>
+          </li>
+          <li>
+            <a href="#identity-apis" class="toc-h1 toc-link" data-title="Identity APIs">Identity APIs</a>
+              <ul class="toc-list-h2">
+                  <li class="toc-h2-li">
+                    <a href="#identity-apis-identity-api" class="toc-h2 toc-link" data-title="Identity APIs">Identity API</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#identity-apis-identity-api-resource-overview" class="toc-h3 toc-link" data-title="Identity APIs">Resource Overview</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#identity-apis-identity-api-parameters" class="toc-h3 toc-link" data-title="Identity APIs">Parameters</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#identity-apis-identity-api-response-data-details" class="toc-h3 toc-link" data-title="Identity APIs">Response Data Details</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#reporting-metric-apis" class="toc-h1 toc-link" data-title="Reporting Metric APIs">Reporting Metric APIs</a>
@@ -749,7 +768,7 @@
 <li><p>The authorization process determines the advertising data the business user is allowed to access.</p></li>
 </ul><p>Note: Business user’s access to advertiser’s data (GMAIDs) is maintained through Campaign Central/Corp Portal.</p><h2 id='getting-started-step-1-request-api-access'>Step 1: Request API Access</h2><p>The first step is to register your application with Reach Local. Please contact your account manager, DMC or <a href="mailto:apiservices@localiq.com">LOCALiQ API Support</a> to request API access.</p><p>You will get a response within 1 business day. The response email will contain a Client Id and a Client Secret token.</p><ul><li><p>The Client Id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.</p></li>
 <li><p>The client secret is a secret known only to the application and the authorization server.</p></li>
-</ul><h2 id='getting-started-step-2-authorization-authentication'>Step 2: Authorization/Authentication</h2><p>The second step involves receiving an Authorization token, which is then used to request an Access and Refresh token. <strong>There are two ways to receive an Authorization token: User login method and Direct access method.</strong></p><h3 id='getting-started-step-2-authorization-authentication-authorization-token-user-login-method'>Authorization Token (User login method)</h3><p>Through a browser initiate the authorization with your Client Id and Client Secret tokens [Step 1] and your REDIRECT_URI (the redirect URI is where all API related responses will be sent)</p><p><code>https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p><p>For user login: Please enter your business user credentials.</p><p><img src="images/login.png" alt="login screen" /></p><p>Upon successful authentication, you will be redirected to the REDIRECT_URI along with an Authorization token. This token expires in 10 minutes.</p><p><strong>Note:</strong></p><p>ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.</p><p>If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (<code>https://reachsecurepay.com/client/index.php</code>) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team</p><p>If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).</p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><h3 id='getting-started-step-2-authorization-authentication-requesting-access-and-refresh-tokens'>Requesting Access and Refresh Tokens</h3><p>Please use the Authorization token to request an Access and Refresh token.</p><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+</ul><h2 id='getting-started-step-2-authorization-authentication'>Step 2: Authorization/Authentication</h2><p>The second step involves receiving an Authorization token, which is then used to request an Access and Refresh token. <strong>There are two ways to receive an Authorization token: User login method and Direct access method.</strong></p><h3 id='getting-started-step-2-authorization-authentication-get-auth-token' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Get Auth Token</strong></h3><h3 id='getting-started-step-2-authorization-authentication-user-login-method'>User Login Method</h3><p>Through a browser initiate the authorization with your Client Id and Client Secret tokens [Step 1] and your REDIRECT_URI (the redirect URI is where all API related responses will be sent)</p><p><code>https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p><p>Please enter your <a href="#business_user_credentials">business user credentials</a>.</p><p>The user (login email) being used for API authentication must be a business user in the LOCALiQ platform and have access to the GMAID that will be used in the API</p><p><img src="images/login.png" alt="login screen" /></p><p>Upon successful authentication, you will be redirected to the REDIRECT_URI along with an Authorization token. This token expires in 10 minutes.</p><p><strong>Get Access and Refresh Tokens</strong></p><p>Please use the Authorization token to request an Access and Refresh token.</p><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
@@ -796,7 +815,7 @@
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495549720</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre><h3 id='getting-started-step-2-authorization-authentication-authorization-token-direct-access-method'>Authorization Token (Direct access method)</h3><p>Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange your business user credentials for an Access token directly. This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.</p><p>Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p><p><strong>Note:</strong></p><p>ReachLocal credentials: Business User credentials are provided to you by your account team during account creation. These  credentials allow you to access the account data through the APIs as well as the Client Center.</p><p>If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (<code>https://reachsecurepay.com/client/index.php</code>) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team</p><p>If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).</p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+</span></code></pre><h3 id='getting-started-step-2-authorization-authentication-direct-access-method'>Direct Access Method</h3><p>Another way to get the Authorization, Access and Refresh tokens today is to use the direct access approach. OAuth 2 provides a &quot;password&quot; grant type which can be used to exchange your <a href="#business_user_credentials">business user credentials</a> for an Access token directly. This method is easier to use for straight API integrations where user interaction isn&#39;t desired or possible.</p><p>Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct values for your account.</p><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/oauth/token"</span><span class="p">)</span>
@@ -840,7 +859,7 @@
   </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5d59deea16599eb316a63989a9974568da4f5570e7ef9969c693f0b1ce1052cb"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495549720</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='getting-started-step-2-authorization-authentication-request-new-access-token'>Request New Access Token</h3><ul><li><p>The Access token should be passed in the authorization header for all API requests. This Access token expires every 2 hours. If the token has expired, all API calls will receive a 401 HTTP status code response.</p></li>
+</span></code></pre><h3 id='getting-started-step-2-authorization-authentication-request-new-access-token' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Request New Access Token</strong></h3><ul><li><p>The Access token should be passed in the authorization header for all API requests. This Access token expires every 2 hours. If the token has expired, all API calls will receive a 401 HTTP status code response.</p></li>
 <li><p>You can request a new Access token by using the Refresh token. It is very important that you save the Refresh token for this purpose. If your Refresh token is lost, you would have to authenticate and authorize again [Step 1 and Step 2] to obtain a new Access token and Refresh token.</p></li>
 </ul><p><img src="images/oauth_flow.png" alt="Oauth flow" /></p><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
@@ -888,7 +907,11 @@
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1504822139</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre><h3 id='getting-started-step-2-authorization-authentication-security-considerations'>Security Considerations</h3><p>Refresh tokens are long-lived.</p><p>This means when you must store it securely to keep it from being used by potential attacker. For this reason, it is not safe to store them in the browser. If a Refresh token is leaked, it may be used to obtain new Access tokens (and access protected resources) until it is blacklisted.</p><p>Access tokens must also be kept secret, but due to its shorter life, security considerations are less critical.</p><p>The email address used to obtain the OAuth Access token must be associated with the GMAID of the requested advertiser. If it is not, the API will return an HTTP response with status code 403 and the following body:</p><p><code>{ &quot;name&quot;: &quot;not_authorized&quot;, &quot;message&quot;: &quot;You are not permitted to perform this action.&quot; }</code></p><h3 id='getting-started-step-2-authorization-authentication-api-rate-limits'>API Rate Limits</h3><p>ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.</p><p>If you exceed the rate limit allowance, your request will be rejected. An <code>HTTP 429 (Too Many Requests)​</code> response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.</p><p>Example response body for throttled request:</p><p><code>{ &quot;message&quot;: &quot;Too Many Requests&quot; }</code></p><p>We reserve the right to alter rate limits and other functionality to prevent abuse, spam, denial-of-service attacks, or other security issues. Where possible, we&#39;ll return a descriptive error message, but the nature of this type of rate limiting often prevents us from providing more information.</p><h2 id='getting-started-troubleshooting-errors'>Troubleshooting Errors</h2><h3 id='getting-started-troubleshooting-errors-400-bad-request'>400 - Bad Request</h3><p><strong>Invalid Grant</strong></p>
+</span></code></pre><h3 id='getting-started-step-2-authorization-authentication-security-considerations' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Security Considerations</strong></h3><p>Refresh tokens are long-lived.</p><p>This means when you must store it securely to keep it from being used by potential attacker. For this reason, it is not safe to store them in the browser. If a Refresh token is leaked, it may be used to obtain new Access tokens (and access protected resources) until it is blacklisted.</p><p>Access tokens must also be kept secret, but due to its shorter life, security considerations are less critical.</p><p>The email address used to obtain the OAuth Access token must be associated with the GMAID of the requested advertiser. If it is not, the API will return an HTTP response with status code 403 and the following body:</p><p><code>{ &quot;name&quot;: &quot;not_authorized&quot;, &quot;message&quot;: &quot;You are not permitted to perform this action.&quot; }</code></p><p><a name="business_user_credentials"></a>
+<strong>Business user credentials</strong></p><p>The user (login email) being used for API authentication must be a business user in the LOCALiQ platform and have access to the GMAID that will be used in the API. Business User credentials are provided to you by your account team during account creation. These credentials allow you to access the account data through the APIs as well as the Client Center.
+If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (https://reachsecurepay.com/client/index.php) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team. If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).</p><p><a name="access_to_hippa_data"></a>
+<strong>Access to HIPAA data</strong></p><p>The business user must have “Agency Customer” role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response. Please reach your accoungt team  to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><h3 id='getting-started-step-2-authorization-authentication-api-rate-limits' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>API Rate Limits</strong></h3><p>ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.</p><p>If you exceed the rate limit allowance, your request will be rejected. An <code>HTTP 429 (Too Many Requests)​</code> response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.</p><p>Example response body for throttled request:</p><p><code>{ &quot;message&quot;: &quot;Too Many Requests&quot; }</code></p><p>We reserve the right to alter rate limits and other functionality to prevent abuse, spam, denial-of-service attacks, or other security issues. Where possible, we&#39;ll return a descriptive error message, but the nature of this type of rate limiting often prevents us from providing more information.</p><h2 id='getting-started-troubleshooting-errors'>Troubleshooting Errors</h2><h3 id='getting-started-troubleshooting-errors-400-bad-request'>400 - Bad Request</h3><p><strong>Invalid Grant</strong></p>
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_grant"</span><span class="p">,</span><span class="w"> </span><span class="s2">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The provided authorization credentials are invalid. Refer to documentation at https://reachlocal.github.io/api-docs/#error-codes for further information."</span><span class="w"> </span><span class="p">}</span><span class="w">
@@ -902,7 +925,7 @@
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_authorized"</span><span class="p">,</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are not permitted to perform this action."</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-november-2020'>November 2020</h2><h3 id='release-notes-november-2020-november-10th-2020'>November 10th, 2020</h3><table><thead><tr>
+</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-november-2020'>November 2020</h2><h3 id='release-notes-november-2020-november-10th-2020'>November 10th, 2020</h3><table><thead><tr>
 <th>API(s) Updated</th>
 <th>Description</th>
 </tr>
@@ -946,6 +969,11 @@
 <th>When you want</th>
 </tr>
 </thead><tbody><tr>
+<td>Identity</td>
+<td><a href="#identity_api">Identity</a></td>
+<td>The identity endpoint is used to gain insight into the resources that are accessible by an advertiser.  It will return advertisers that the user is authorized to retrieve data for, the active state of the advertisers, and the privilege details used to determine HIPAA access.</td>
+</tr>
+<tr>
 <td>Campaigns</td>
 <td><a href="#campaigns_and_cycles">Campaigns &amp; Cycles</a></td>
 <td>List of campaigns and cycles for a given advertiser</td>
@@ -1054,6 +1082,251 @@
 <td>Custom Integration</td>
 <td>FranConnect/Franchise Management Software</td>
 <td>If you are interested in this custom integration, please contact your account team (Offer #2095)</td>
+</tr></tbody></table><h1 id='identity-apis'>Identity APIs</h1><p><a name="identity_apis"></a></p><h2 id='identity-apis-identity-api'>Identity API</h2><p><a name="identity_api"></a></p><p>The identity endpoint is used to gain insight into the resources that are accessible by an advertiser.  It will return advertisers that the user is authorized to retrieve data for, the active state of the advertisers, and the privilege details used to determine HIPAA access.</p><h3 id='identity-apis-identity-api-resource-overview'>Resource Overview</h3><table><thead><tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody><tr>
+<td>GET</td>
+<td>/identities/v3?[params]</td>
+</tr></tbody></table><p><strong>Usage</strong></p><p>Get a list of advertisers filtered by query params. This endpoint also returns a list of possible business users that match the email address, in the case of multiple similar email addresses. The results of this query are cached for 15 minutes.</p><h3 id='identity-apis-identity-api-parameters'>Parameters</h3><table><thead><tr>
+<th>Param</th>
+<th>Required</th>
+<th>Default</th>
+<th>Function</th>
+</tr>
+</thead><tbody><tr>
+<td>user</td>
+<td>Yes</td>
+<td>--</td>
+<td>Restricts the results to advertisers authorized for the given business user</td>
+</tr>
+<tr>
+<td>exclude_inactive</td>
+<td>No</td>
+<td>false</td>
+<td>Returns only active advertisers</td>
+</tr>
+<tr>
+<td>page</td>
+<td>No</td>
+<td>1</td>
+<td>Return a specified page of results</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>No</td>
+<td>5000</td>
+<td>Number of results per page</td>
+</tr></tbody></table><h3 id='identity-apis-identity-api-response-data-details'>Response Data Details</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/identities/v3?user=EMAIL_ADDRESS"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.reachlocalservices.com/identities/v3?user=EMAIL_ADDRESS"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url https://api.reachlocalservices.com/identities/v3?user<span class="o">=</span>EMAIL_ADDRESS <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p></blockquote>
+<pre class="highlight json tab-json"><code><span class="err">https</span><span class="p">:</span><span class="err">//api.reachlocalservices.com/identities/v</span><span class="mi">3</span><span class="err">?user=test@test</span><span class="mi">3</span><span class="err">.com</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"bu_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL_ADDRESS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"advertiser_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"authorized_advertisers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Advertiser 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Advertiser 2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"buid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL_ADDRESS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><p>The body of the API response will be a JSON object.</p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>bu_id</td>
+<td>Number</td>
+<td>The unique business user id.</td>
+</tr>
+<tr>
+<td>user</td>
+<td>String</td>
+<td>The email address of the business user.</td>
+</tr>
+<tr>
+<td>business_id</td>
+<td>Number</td>
+<td>The unique business id that this business user belongs to.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>The region that this business user belongs.</td>
+</tr>
+<tr>
+<td>advertiser_count</td>
+<td>String</td>
+<td>The region that this business user belongs.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>String</td>
+<td>The region that this business user belongs.</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>String</td>
+<td>The region that this business user belongs.</td>
+</tr>
+<tr>
+<td>authorized_advertisers</td>
+<td>Array</td>
+<td>An array of JSON advertiser objects.</td>
+</tr>
+<tr>
+<td>users</td>
+<td>Array</td>
+<td>An array of JSON user objects.</td>
+</tr></tbody></table><p><strong>Authorized Advertiser</strong></p><table><thead><tr>
+<th>Advertiser Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the advertiser.</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>String</td>
+<td>The platform for the advertiser.</td>
+</tr>
+<tr>
+<td>gmaid</td>
+<td>String</td>
+<td>The global master advertiser id of the advertiser.</td>
+</tr>
+<tr>
+<td>hipaa_protected</td>
+<td>String</td>
+<td>The advertiser&#39;s HIPAA protection status</td>
+</tr>
+<tr>
+<td>business_id</td>
+<td>Number</td>
+<td>The unique business id that this advertiser belongs to.</td>
+</tr>
+<tr>
+<td>business_user_id</td>
+<td>Number</td>
+<td>The unique business_user id that is the primary user for this advertiser.</td>
+</tr>
+<tr>
+<td>privilege_level</td>
+<td>Number</td>
+<td>privilege level.</td>
+</tr>
+<tr>
+<td>adveritser_id</td>
+<td>Number</td>
+<td>The advertiser_id for this advertiser.  Not necessarily the same as the numerical portion of the gmaid.</td>
+</tr>
+<tr>
+<td>active_state</td>
+<td>Number</td>
+<td>0: Advertiser not active.  1: Advertiser not active, but in grace period.  2: Advertiser is active.</td>
+</tr></tbody></table><p><strong>User</strong></p><table><thead><tr>
+<th>Advertiser Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>platform</td>
+<td>String</td>
+<td>The platform for the advertiser.</td>
+</tr>
+<tr>
+<td>bu_id</td>
+<td>Number</td>
+<td>The unique business user id.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>The global master advertiser id of the advertiser.</td>
+</tr>
+<tr>
+<td>business_id</td>
+<td>Number</td>
+<td>The unique business id that this business user belongs to.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td>privilege_level</td>
+<td>Number</td>
+<td>privilege level of the business user. PL3 is required to access HIPAA protected data.</td>
 </tr></tbody></table><h1 id='reporting-metric-apis'>Reporting Metric APIs</h1><p><a name="reporting_metric_apis"></a></p><h2 id='reporting-metric-apis-campaigns-apis'>Campaigns APIs</h2><h3 id='reporting-metric-apis-campaigns-apis-campaigns-amp-cycles' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Campaigns &amp; Cycles</strong></h3><p><a name="campaigns_and_cycles"></a></p><h3 id='reporting-metric-apis-campaigns-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
@@ -10292,6 +10565,21 @@ curl -X POST <span class="se">\</span>
 <td>yes</td>
 <td>none</td>
 <td>The global master advertiser id (for example, TEST_1).</td>
+</tr></tbody></table><p><strong>Payload</strong></p><table><thead><tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>event_type</td>
+<td>We support both <strong>new_contact</strong> and <strong>new_lead</strong> as event types.  When event_type is new_contact, the registered webhook is created for new lead for a new contact.  When the event_type is new_lead, the registered webhook is created for a new lead for an existing contact.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Endpoint Webhook should POST data to</td>
+</tr>
+<tr>
+<td>authorization</td>
+<td>Authorization for Endpoint Webhook POSTs data to</td>
 </tr></tbody></table><p><strong>Response Data Details</strong>
 The body of the API response will the id of the webhook.</p><p><strong>MetaData</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -11432,17 +11720,17 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 <tr>
 <td>non_lead_chats</td>
 <td>Integer</td>
-<td>Number of non-lead chats</td>
+<td>Number of non-lead chats, has no email address or phone number to create a Contact</td>
 </tr>
 <tr>
 <td>total_chats</td>
 <td>Integer</td>
-<td>Number of total chats</td>
+<td>Number of total chats, includes non lead chats</td>
 </tr>
 <tr>
 <td>chat_leads</td>
 <td>Integer</td>
-<td>Number of chat leads</td>
+<td>Number of chat leads, excludes non lead chats</td>
 </tr>
 <tr>
 <td>chat_sales</td>
@@ -11462,7 +11750,7 @@ https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date
 <tr>
 <td>call_connect</td>
 <td>Integer</td>
-<td>Number of calls connected</td>
+<td>Subset of chats that initiated a call connect</td>
 </tr></tbody></table><h3 id='lead-info-apis-webhooks-lead-metric-apis-lead-details' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Lead Details</strong></h3><p><a name="lead_details"></a></p><h3 id='lead-info-apis-webhooks-lead-metric-apis-resource-overview-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
@@ -16036,7 +16324,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_authorized"</span><span class="p">,</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are not permitted to perform this action."</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p>
+</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
