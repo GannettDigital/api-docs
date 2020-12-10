@@ -182,7 +182,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |calls|Integer|Calls for interval|
 |emails|Integer|Emails for interval|
 |web_events|Integer|Web events for interval|
-|qualified_web_events|Integer|Qualified Web events for interval|
+|qualified_web_events|Integer|A lead generating CVT/Web Event|
 |chats|Integer|Chats for interval|
 
 <a name="leadtotals"></a>
@@ -196,7 +196,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&campaign_s
 |average_call_length|Integer|Total average call length|
 |emails|Integer|Total emails|
 |web_events|Integer|Total web events|
-|qualified_web_events|Integer| TotalQualified Web events|
+|qualified_web_events|Integer|A lead generating CVT/Web Event|
 |chats|Integer|Total chats|
 |leads|Integer|Total leads|
 
