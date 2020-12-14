@@ -34,7 +34,7 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 #### Example Response
 ```javascript
 {
-    "report_type": "premium_listings_business_insights",
+    "report_type": "premium_listings/insights",
     "report_date": "2020-04-03",
     "global_master_advertiser_id": "TEST_1234",
     "report_data": {
