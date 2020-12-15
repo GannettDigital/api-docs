@@ -77,7 +77,7 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
   "earliest_date_available": "2018-03-03",        // Earliest Date Data is Available
   "start_date": "2019-10-01",                     // Start Date of Report
   "end_date": "2020-02-25",                       // End Date of Report
-  "time_zone": "America/Los_Angeles",             // Time Zone of Report    
+  "time_zone": "America/Los_Angeles",             // Time Zone of Report
   "interval_size": "calendar_week",               // Interval Size Report is Broken Into
   "currency": "USD",                              // Currency of Report
   "report_data": {
@@ -99,7 +99,7 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
             "intervals": [                                            // Array of intervals
               {
                 "date": "2019-09-30",             // Date of interval
-                "qualified_web_events": 4,        // Number of qualified web events     
+                "qualified_web_events": 4,        // Number of qualified web events
                 "non_qualified_web_events": 0,    // Number of non-qualified web events
                 "high_web_events": 0              // Number of high web events
               },
@@ -143,6 +143,22 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
               }
             ]
           },
+          {
+            "cvt_type": "Unknown",
+            "entry_type": 7,
+            "intervals": [
+              {
+                "date": "2019-09-30",
+                "non_qualified_web_events": 5,
+                "high_web_events": 0
+              },
+              {
+                "date": "2019-09-31",
+                "non_qualified_web_events": 2,
+                "high_web_events": 0
+              }
+            ]
+          }
         ]
       }
     ]
