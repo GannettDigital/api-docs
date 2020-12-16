@@ -18,6 +18,7 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |`page`|No|Restricts the results to those occurring after the offset|
 |`page_size`|No|Restricts the number of locations that will be shown. (The max value of page_size is 50)|
+|`profile_id`|No|Show only one location with the given profile id. (The max size of profile_id is 255)|
 
 #### Examples
 
