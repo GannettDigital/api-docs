@@ -841,7 +841,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | creative_id | String | No | Unique Identifier for Creative |
 | name | String | No | Name of Creative |
 | preview_url | String | No | Preview URL for Creative |
-| status | String | No | Status for Creative |
+| status | String | No | Status for Creative.  |
 | start_date | String | No | Start Date of Creative |
 | end_date | String | Yes | End Date of Creative |
 | impressions | Int | No | Total Impressions for Creative |
@@ -944,6 +944,18 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | ctr | Int | No | Total Click Through Rate |
 | cpsc | Int | No | Total CPSC |
 | roas | Int | No | Total ROAS |
+
+**Creative Status**
+| Status | Description |
+|---|---|
+active |The creative has been successfully pushed to publisher. At present there are no changes on the creatives pending to be sent to publisher.|
+active_edit_pending | Edit on the creative has been done and it's approved. It's yet to be pushed to publisher.|
+paused | The creative is in paused status at present. This change has already been pushed to publisher.There are no changes on the creative pending to be sent to the publisher. |
+paused_pending |The creative is paused and change has been approved. It's yet to be pushed out to publisher. |
+disabled |The creative is in deleted status at present. This change has already been pushed to publisher.There are no changes on the creative pending to be sent to the publisher. |
+disabled_pending |The creative is deleted and change has been approved. It's yet to be pushed out to publisher. |
+ended|The campaign has ended. |
+new |The creative is brand new and the Campaign is yet to be provisioned, thus not yet pushed to any publisher. |
 
 **Totals Per Interval Object**
 
