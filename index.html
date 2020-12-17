@@ -280,8 +280,25 @@
             <a href="#release-notes" class="toc-h1 toc-link" data-title="Release Notes">Release Notes</a>
               <ul class="toc-list-h2">
                   <li class="toc-h2-li">
+                    <a href="#release-notes-december-2020" class="toc-h2 toc-link" data-title="Release Notes">December 2020</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#release-notes-december-2020-december-13th-2020" class="toc-h3 toc-link" data-title="Release Notes">December 13th, 2020</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#release-notes-december-2020-december-07th-2020" class="toc-h3 toc-link" data-title="Release Notes">December 07th, 2020</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#release-notes-december-2020-december-06th-2020" class="toc-h3 toc-link" data-title="Release Notes">December 06th, 2020</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="toc-h2-li">
                     <a href="#release-notes-november-2020" class="toc-h2 toc-link" data-title="Release Notes">November 2020</a>
                       <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#release-notes-november-2020-november-26th-2020" class="toc-h3 toc-link" data-title="Release Notes">November 26th, 2020</a>
+                          </li>
                           <li class="toc-h3-li">
                             <a href="#release-notes-november-2020-november-10th-2020" class="toc-h3 toc-link" data-title="Release Notes">November 10th, 2020</a>
                           </li>
@@ -932,7 +949,35 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_authorized"</span><span class="p">,</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are not permitted to perform this action."</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-november-2020'>November 2020</h2><h3 id='release-notes-november-2020-november-10th-2020'>November 10th, 2020</h3><table><thead><tr>
+</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-december-2020'>December 2020</h2><h3 id='release-notes-december-2020-december-13th-2020'>December 13th, 2020</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>lead Metrics</td>
+<td>Added qualified web event metric</td>
+</tr></tbody></table><h3 id='release-notes-december-2020-december-07th-2020'>December 07th, 2020</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>All APIs</td>
+<td>General Updates and fixes</td>
+</tr></tbody></table><h3 id='release-notes-december-2020-december-06th-2020'>December 06th, 2020</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>All APIs</td>
+<td>General Updates and fixes</td>
+</tr></tbody></table><h2 id='release-notes-november-2020'>November 2020</h2><h3 id='release-notes-november-2020-november-26th-2020'>November 26th, 2020</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>All APIs</td>
+<td>General Performance Updates</td>
+</tr></tbody></table><h3 id='release-notes-november-2020-november-10th-2020'>November 10th, 2020</h3><table><thead><tr>
 <th>API(s) Updated</th>
 <th>Description</th>
 </tr>
@@ -11835,6 +11880,7 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&amp;campai
                 </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">86</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"qualified_web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
@@ -11892,8 +11938,9 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&amp;campai
             </span><span class="s2">"average_call_length"</span><span class="p">:</span><span class="w"> </span><span class="mf">89.43</span><span class="p">,</span><span class="w">
             </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
             </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">86</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"qualified_web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
             </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">330</span><span class="w">
+            </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">417</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
@@ -12006,6 +12053,11 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&amp;campai
 <td>Web events for interval</td>
 </tr>
 <tr>
+<td>qualified_web_events</td>
+<td>Integer</td>
+<td>A lead generating CVT/Web Event</td>
+</tr>
+<tr>
 <td>chats</td>
 <td>Integer</td>
 <td>Chats for interval</td>
@@ -12044,6 +12096,11 @@ https://api.reachlocalservices.com/client_reports/lead_detail/TEST_1?&amp;campai
 <td>web_events</td>
 <td>Integer</td>
 <td>Total web events</td>
+</tr>
+<tr>
+<td>qualified_web_events</td>
+<td>Integer</td>
+<td>A lead generating CVT/Web Event</td>
 </tr>
 <tr>
 <td>chats</td>
