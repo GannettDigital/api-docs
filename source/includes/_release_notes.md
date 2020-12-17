@@ -1,6 +1,39 @@
 # Release Notes
+## December 2020
+
+### December 13th, 2020
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|lead Metrics|Added qualified web event metric|
+
+
+### December 07th, 2020
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Updates and fixes|
+
+
+### December 06th, 2020
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Updates and fixes|
+
+
 
 ## November 2020
+
+### November 26th, 2020
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Performance Updates|
 
 ### November 10th, 2020
 
