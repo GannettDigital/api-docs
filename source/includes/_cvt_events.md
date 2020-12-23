@@ -72,82 +72,328 @@ https://api.reachlocalservices.com/client_reports/cvt_events/USA_123456?start_da
 
 ```javascript
 {
-  "report_type": "cvt_events",                    // Report Type
-  "report_date": "2020-02-26",                    // Date Report was Run
-  "earliest_date_available": "2018-03-03",        // Earliest Date Data is Available
-  "start_date": "2019-10-01",                     // Start Date of Report
-  "end_date": "2020-02-25",                       // End Date of Report
-  "time_zone": "America/Los_Angeles",             // Time Zone of Report    
-  "interval_size": "calendar_week",               // Interval Size Report is Broken Into
-  "currency": "USD",                              // Currency of Report
-  "report_data": {
-    "campaigns": [
-      {
-        "name": "Ad_Campaign_1",                  // Campaign name
-        "global_master_campaign_id": "USA_1",     // Identifier for campaign
-        "start_date": "2016-07-10",               // Start date for campaign
-        "end_date": "2016-10-24",                 // End date for campaign
-        "type": "Search",                         // Type of campaign
-        "status": "running",                      // Current campaign status
-        "organization": "reachlocal",             // Organization
-        "web_events": [
-          {
-            "web_event_name": "*Book my appointment button clicked",  // Name of web event
-            "web_event_url": "https://www.bookanappointment.com",     // Web event url
-            "cvt_type": 1,                                            // CVT Type
-            "entry_type":8,                                           // Entry Type
-            "intervals": [                                            // Array of intervals
-              {
-                "date": "2019-09-30",             // Date of interval
-                "qualified_web_events": 4,        // Number of qualified web events     
-                "non_qualified_web_events": 0,    // Number of non-qualified web events
-                "high_web_events": 0              // Number of high web events
-              },
-              {
-                "date": "2019-10-07",
-                "qualified_web_events": 4,
-                "non_qualified_web_events": 0,
-                "high_web_events": 0
-              },
-              {
-                "date": "2019-10-14",
-                "qualified_web_events": 1,
-                "non_qualified_web_events": 0,
-                "high_web_events": 0
-              }
-            ]
-          },
-          {
-            "web_event_name": "*Request a callback form submitted",
-            "web_event_url": "https://www.bookanappointment.com/callme",
-            "cvt_type": 2,
-            "entry_type": 8,
-            "intervals": [
-              {
-                "date": "2019-09-30",
-                "qualified_web_events": 1,
-                "non_qualified_web_events": 0,
-                "high_web_events": 1
-              },
-              {
-                "date": "2019-10-07",
-                "qualified_web_events": 1,
-                "non_qualified_web_events": 0,
-                "high_web_events": 1
-              },
-              {
-                "date": "2019-10-14",
-                "qualified_web_events": 0,
-                "non_qualified_web_events": 0,
-                "high_web_events": 1
-              }
-            ]
-          },
+    "report_type": "cvt_events",                // Report Type
+    "report_date": "2020-12-15",                // Date Report was Run
+    "earliest_date_available": "2020-11-01",    // Earliest Date Data is Available
+    "start_date": "2020-11-20",                 // Start Date of Report
+    "end_date": "2020-11-21",                   // End Date of Report
+    "time_zone": "America/Los_Angeles",         // Time Zone of Report
+    "interval_size": "day",                     // Interval Size Report is Broken Into
+    "currency": "USD",                          // Currency of Report
+    "report_data": {
+        "campaigns": [
+            {
+                "name": "Display Campaign (Demo)",            // Campaign name
+                "global_master_campaign_id": "TEST_1898330",  // Identifier for campaign
+                "start_date": "2020-11-03",                   // Start date for campaign
+                "end_date": null,                             // End date for campaign
+                "type": "display",                            // Type of campaign
+                "status": "running",                          // Current campaign status
+                "organization": "reachlocal",                 // Organization
+                "web_events": [
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 9,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 4,
+                                "high_web_events": 0
+                            }
+                        ]
+                    },
+                    {
+                        "web_event_name": "Form Submitted (Demo)",  // Name of web event
+                        "web_event_url": "www.rl-demo.com",         // Web event url
+                        "cvt_type": "Submit",                       // CVT Type
+                        "entry_type": 7,                            // Entry Type
+                        "intervals": [                              // Array of intervals
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 1,
+                                "high_web_events": 1
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "non_qualified_web_events": 4,
+                                "high_web_events": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Search Campaign (Demo)",
+                "global_master_campaign_id": "TEST_1898333",
+                "start_date": "2020-11-03",
+                "end_date": null,
+                "type": "search",
+                "status": "running",
+                "organization": "reachlocal",
+                "web_events": [
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 3,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 1,
+                                "high_web_events": 0
+                            }
+                        ]
+                    },
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 7,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "non_qualified_web_events": 6,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "non_qualified_web_events": 6,
+                                "high_web_events": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Totaltrack Web Phone Campaign (Demo)",
+                "global_master_campaign_id": "TEST_1898373",
+                "start_date": "2020-11-04",
+                "end_date": null,
+                "type": "totaltrack",
+                "status": "running",
+                "organization": "reachlocal",
+                "web_events": [
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 7,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "non_qualified_web_events": 2,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "non_qualified_web_events": 3,
+                                "high_web_events": 0
+                            }
+                        ]
+                    },
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 5,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 4,
+                                "high_web_events": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Totaltrack Web Campaign (Demo)",
+                "global_master_campaign_id": "TEST_1898376",
+                "start_date": "2020-11-04",
+                "end_date": null,
+                "type": "totaltrack",
+                "status": "running",
+                "organization": "reachlocal",
+                "web_events": [
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 7,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "non_qualified_web_events": 4,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "non_qualified_web_events": 5,
+                                "high_web_events": 0
+                            }
+                        ]
+                    },
+                    {
+                        "web_event_name": "Form Submitted (Demo)",
+                        "web_event_url": "www.rl-demo.com",
+                        "cvt_type": "Request",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 3,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 5,
+                                "high_web_events": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Other Campaign (Demo)",
+                "global_master_campaign_id": "TEST_1898379",
+                "start_date": "2020-11-04",
+                "end_date": null,
+                "type": "other",
+                "status": "running",
+                "organization": "reachlocal",
+                "web_events": [
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 3,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 5,
+                                "high_web_events": 0
+                            }
+                        ]
+                    },
+                    {
+                        "web_event_name": "Form Submitted (Demo)",
+                        "web_event_url": "www.rl-demo.com",
+                        "cvt_type": "Request",
+                        "entry_type": 7,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "non_qualified_web_events": 2,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "non_qualified_web_events": 2,
+                                "high_web_events": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Chat Campaign (Demo)",
+                "global_master_campaign_id": "TEST_1898382",
+                "start_date": "2020-11-04",
+                "end_date": null,
+                "type": "chat",
+                "status": "running",
+                "organization": "reachlocal",
+                "web_events": [
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 7,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "non_qualified_web_events": 5,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 2,
+                                "high_web_events": 2
+                            }
+                        ]
+                    },
+                    {
+                        "web_event_name": "Form Submitted (Demo)",
+                        "web_event_url": "www.rl-demo.com",
+                        "cvt_type": "Request",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 5,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 3,
+                                "high_web_events": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Xmedia Campaign (Demo)",
+                "global_master_campaign_id": "TEST_1898396",
+                "start_date": "2020-11-04",
+                "end_date": null,
+                "type": "xmedia",
+                "status": "running",
+                "organization": "reachlocal",
+                "web_events": [
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 7,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "non_qualified_web_events": 5,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "non_qualified_web_events": 3,
+                                "high_web_events": 0
+                            }
+                        ]
+                    },
+                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-11-20",
+                                "qualified_web_events": 3,
+                                "high_web_events": 0
+                            },
+                            {
+                                "date": "2020-11-21",
+                                "qualified_web_events": 3,
+                                "high_web_events": 0
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  "global_master_advertiser_id": "USA_123456",  // Global Master Advertiser ID
-  "location": "https://api.reachlocalservices.com/client_reports/cvt_events/USA_190076?campaign_status%5B%5D=running&end_date=2020-02-25&global_master_campaign_id%5B%5D=USA_2772377&interval_size=calendar_week&start_date=2019-10-01"
+    },
+    "global_master_advertiser_id": "TEST_1",
+    "location": "https://api-stage.gcion.com/apgb2b-reporting/client_reports/cvt_events/TEST_1?end_date=2020-11-21&start_date=2020-11-20"
 }
 ```
