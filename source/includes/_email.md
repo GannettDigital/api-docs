@@ -13,14 +13,14 @@ This is an Email Metrics API that can be used by customers that have Email campa
 
 When using the GET method, the results can be filtered using these parameters:
 
-|Parameter|Required|Default|Description|
-|---|---|---|---|
-|start_date|When GMCID not present|--|Restricts the results to those occurring on or after this date|
-|end_date|When GMCID not present|--|Restricts the results to those occurring on or before this date|
-|page|No|1|Determines the page to return|
-|page_size|No|25|Determines how many campaigns are returned per page|
-|sort_by|No|broadcast_date|Determines what attribute to sort by. Possible values: broadcast_date, quantity, opens, opens_pc, views, views_pc, clicks, clicks_pc, ctor, or ctvr  |
-|sort_dir|No|desc|Determines what direction to sort results by.  Possible values: asc or desc|
+|Parameter|Required|Description|
+|---|---|---|
+|start_date|When GMCID not present|Restricts the results to those occurring on or after this date|
+|end_date|When GMCID not present|Restricts the results to those occurring on or before this date|
+|page|No|Determines the page to return <br>**Default value is 1**|
+|page_size|No|Determines how many campaigns are returned per page <br>**Default value: 25**|
+|sort_by|No|Determines what attribute to sort by. Possible values: broadcast_date, quantity, opens, opens_pc, views, views_pc, clicks, clicks_pc, ctor, or ctvr  <br>**Default value: broadcast_date**|
+|sort_dir|No|Determines what direction to sort results by.  Possible values: asc or desc <br>**Default value: desc**|
 
 ### Response Data Details
 
@@ -172,8 +172,9 @@ https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15
 |time_zone|String|Time Zone of Data|
 |global_master_advertiser_id|String|Identifier for Advertiser|
 |advertiser_name|String|Name of Advertiser|
-|campaigns|Campaign[]|Arrays of Campaigns|
+|campaigns|Campaign[]|[Arrays of Campaigns](#campaignsemail)|
 
+<a name="campaignsemail"></a>
 **Campaigns**
 
 |Field Name|Datatype|Description|
@@ -182,7 +183,7 @@ https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15
 |name|String|Campaign Name|
 |type|String|Campaign Type|
 |status|String|Campaign Status|
-|goals|Goal[]|No|Array of Goals|
+|goals|Goal[]|[Array of Goals](#goalsemail)|
 |external_campaign_id|String|Email Vendor's Campaign Identifier|
 |external_campaign_name|String|Email Vendor's Campaign Name|
 |broadcast_date|String|Date Email was pushed out|
@@ -197,18 +198,20 @@ https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15
 |ctvr|Float|CTVR|
 |from_line|Object|From Line for email|
 |subject_line|Object|Subject line for email|
-|devices|Device[]|Array of Device|
-|browsers|Broswer[]|Array of Broswer|
-|links|Link[]|Array of Link|
+|devices|Device[]|[Array of Device](#deviceemail)|
+|browsers|Browser[]|[Array of Browser](#browseremail)|
+|links|Link[]|[Array of Link](#linkemail)|
 |pdf_base64|String|Base64 encoded pdf of report|
 
+<a name="goalsemail"></a>
 **Goals**
 
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-| goal_type_id | Int | No | goal type id |
-| goal_type | String | No | goal type name |
+| Field Name | Datatype | Description |
+|---|---|---|
+| goal_type_id | Integer | goal type id |
+| goal_type | String | goal type name |
 
+<a name="linkemail"></a>
 **Link**
 
 |Field Name|Datatype|Description|
@@ -219,19 +222,21 @@ https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15
 |link_pc|Float|Percent of Link clicks vs Total Clicks|
 |url|String|URL of Link|
 
+<a name="deviceemail"></a>
 **Device**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|desktop|Int|Number of clicks for Desktop users|
-|mobile|Int|Number of clicks for Mobile users|
+|desktop|Integer|Number of clicks for Desktop users|
+|mobile|Integer|Number of clicks for Mobile users|
 
+<a name="browseremail"></a>
 **Browser**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|ie|Int|Number of clicks from Internet Explorer|
-|chrome|Int|Number of clicks from Chrome|
-|firefox|Int|Number of clicks from Firefox|
-|safari|Int|Number of clicks from Safari|
-|other|Int|Number of clicks from browsers not listed|
+|ie|Integer|Number of clicks from Internet Explorer|
+|chrome|Integer|Number of clicks from Chrome|
+|firefox|Integer|Number of clicks from Firefox|
+|safari|Integer|Number of clicks from Safari|
+|other|Integer|Number of clicks from browsers not listed|

@@ -20,13 +20,13 @@ Please note that the contact information in this endpoint is for linking the int
 
 ### Parameters
 
-Parameter | Required | Default | Description
---------- | -------- |-------- | -----------
-global\_master\_advertiser\_id | yes | none | The global master advertiser id (for example, TEST_1).
-created\_after\_date | yes | none | Specifies the lower bound for the earliest date and time when searching for contact interactions.  All records returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.
-created\_before\_date | yes | none | Specifies the upper bound for the latest date and time when searching for contact interactions.  All records returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.
-page | no | 1 | The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.
-event_type | no | none | Must be one of `chat`, `call`, or `form`.  Limits results to records of that type.
+Parameter | Required | Description
+--------- | -------- | -----------
+global\_master\_advertiser\_id | yes | The global master advertiser id (for example, TEST_1).
+created\_after\_date | yes | Specifies the lower bound for the earliest date and time when searching for contact interactions.  All records returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.
+created\_before\_date | yes | Specifies the upper bound for the latest date and time when searching for contact interactions.  All records returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.
+page | no | The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.<br>**Default value: 1** |
+event_type | no | Must be one of `chat`, `call`, or `form`.  Limits results to records of that type.
 
 
 ### Response Data Details
@@ -302,55 +302,58 @@ next\_page\_location | Complete URL that can be used to retrieve the next page o
 
 **Contact Interaction**
 
-Field | Type | Nullable | Description
---------- | -------- |-------- |--------
-id | Integer | no | An integer uniquely identifying this contact interaction.
-contact_id | Integer | no | An integer uniquely identifying the contact to which this contact interaction belongs.
-campaign_id | Integer | no | An integer uniquely identifying the campaign that this contact interaction is attributed to.
-campaign_name |  String| no | The name of the campaign that this contact interaction is attributed to.
-archived_at | Datetime | yes | The date and time which this contact interaction was archived.
-created_at | Datetime | no | The date and time which this contact interaction was created.
-important_at | Datetime | yes | The date and time which this contact interaction was marked important.
-occured_at | Datetime | no | The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.
-read_at | Datetime | yes | The date and time which this contact interaction was marked read.
-display_name | String | no | The display name of the contact interaction.
-event_type| String | no | The type of the contact interaction . Valid values are **chat**, **call** and **form**.
-status | String | no | The status of the associated contact.  Valid values are **pending_contact**, **active_contact interaction**, **client** and **none**.
-notes | String | yes | Free form text notes entered by end users onto the contact interaction .
-tags | Array of String | yes | When present represents a collection of tags use for applying ad-hoc categorization and collation of contact interaction s.
-contact | Contact | no | The contact to which this contact interaction belongs.  See the contacts page of this document for details
+Field | Type  | Description
+--------- | -------- |--------
+id | Integer | An integer uniquely identifying this contact interaction.
+contact_id | Integer | An integer uniquely identifying the contact to which this contact interaction belongs.
+campaign_id | Integer | An integer uniquely identifying the campaign that this contact interaction is attributed to.
+campaign_name |  String | The name of the campaign that this contact interaction is attributed to.
+archived_at | Datetime | The date and time which this contact interaction was archived.<br>**The field is nullable**
+created_at | Datetime | The date and time which this contact interaction was created.
+important_at | Datetime | The date and time which this contact interaction was marked important.<br>**The field is nullable**
+occured_at | Datetime | The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.
+read_at | Datetime | The date and time which this contact interaction was marked read.<br>**The field is nullable**
+display_name | String | The display name of the contact interaction.
+event_type| String | The type of the contact interaction . Valid values are **chat**, **call** and **form**.
+status | String | The status of the associated contact.  Valid values are **pending_contact**, **active_contact interaction**, **client** and **none**.
+notes | String | Free form text notes entered by end users onto the contact interaction .<br>**The field is nullable**
+tags | Array of String | When present represents a collection of tags use for applying ad-hoc categorization and collation of contact interactions <br>**The field is nullable**.
+contact | Contact | The contact to which this contact interaction belongs.  See the contacts page of this document for details
 
 Depending on the type of contact interaction (see the `event_type` attribute), the payload will also include one of the following:
 
 **Chat**
 
-Field | Type | Nullable | Description
+Field | Type | Description
 --------- | -------- |-------- |--------
-summary | String | yes | A freeform text description of the chat.
-transcript | Array of ChatTranscripts | no | An ordered array of chat transcript objects.
+summary | String | A freeform text description of the chat. <br>**The field is nullable**
+transcript | Array | An ordered array of [Chat transcript objects](#chattranscript).
 
+<a name="chattranscript"></a>
 **ChatTranscript Object**
 
-Field | Type | Nullable | Description
+Field | Type | Description
 --------- | -------- |-------- |--------
-id | Integer | no | A sequential id of the line chat transcript.  It uniquely identifies a line of the chat transcript within this contact interaction.
-timestamp | String | no |The date and time that the external chat API registered for this line of the chat transcript.
-from | String | no | The display name of the member of the chat who sent this message.
-message | String | no |The message body of this line of the chat transcript.
+id | Integer | A sequential id of the line chat transcript.  It uniquely identifies a line of the chat transcript within this contact interaction.
+timestamp | String |The date and time that the external chat API registered for this line of the chat transcript.
+from | String | The display name of the member of the chat who sent this message.
+message | String |The message body of this line of the chat transcript.
 
+<a name="callobject"></a>
 **Call**
 
-Field | Type | Nullable | Description
+Field | Type | Description
 --------- | -------- |-------- |--------
-occured_at | Datetime | no | The date and time that the call occurred.
-duration | Integer | no | The duration of the call in seconds.
-recording_url | String | no | The URL address to an audio recording of the call.
+occured_at | Datetime | The date and time that the call occurred.
+duration | Integer | The duration of the call in seconds.
+recording_url | String | The URL address to an audio recording of the call.
 
+<a name="formfill"></a>
 **Form Fill**
 
-Field | Type | Nullable | Description
+Field | Type | Description
 --------- | -------- |-------- |--------
-sub_type | String | no | The subtype of the form.  Valid values are **FormPost** and **FormEmail**.
-full_message | String | no | The full form message
-subject | String | yes |
-extra_fields | Array of String | yes |
+sub_type | String | The subtype of the form.  Valid values are **FormPost** and **FormEmail**.
+full_message | String | The full form message
+subject | String | **The field is nullable** |
+extra_fields | Array of String | **The field is nullable** |

@@ -63,6 +63,6 @@ This endpoint retrieves unread counts for lead events.
 
 **Query Parameters**
 
-Parameter | Required | Default | Description
---------- | -------- |-------- | -----------
-global_master_advertiser_id | yes | none | The global master advertiser id (for example, TEST_1).
+Parameter | Required | Description
+--------- | -------- | -----------
+global_master_advertiser_id | yes | The global master advertiser id (for example, TEST_1).

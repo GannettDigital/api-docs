@@ -20,12 +20,12 @@ ID.
 
 ### Post Body Parameters
 
-Parameter | Required | Datatype | Nullable | Description
+Parameter | Required | Description
 --------- | -------- | -------- | -------- | -----------
-description | yes | string | no | The topic of the call (e.g building a fireplace, fixing a toaster).
-visitId | yes | string | no | The ID of the visit that triggered the call connection.
-visitorName | yes | string | no | The name of the visitor.
-visitorPhone | yes | string | no | The phone number of the visitor. No specific format is required.
+description | yes | The topic of the call (e.g building a fireplace, fixing a toaster).
+visitId | yes | The ID of the visit that triggered the call connection.
+visitorName | yes | The name of the visitor.
+visitorPhone | yes | no | The phone number of the visitor. No specific format is required.
 
 ### Examples:
 
