@@ -16,16 +16,16 @@ The data returned will include google only totals for impressions, clicks, click
 
 When using the GET method, the results can be filtered using these parameters:
 
-| Parameter | Required | Default | Description |
-|---|---|---|---|
-|start_date|Yes|--|Restricts the results to those occurring on or after this date.|
-|end_date|Yes|--|Restricts the results to those occurring on or before this date.|
-|global_master_campaign_id[]|No|All|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
-|campaign_status[]|No|All|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
-|page_size|No|15|Restrict number of keywords in result. |
-|page|No|1|Specifies which page of results to return. |
-|sort_by|No|keyword|Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc.|
-|sort_dir|No|asc|Specifies the sort direction.  Can be either asc or desc. |
+| Parameter | Required | Description |
+|---|---|---|
+|start_date|Yes|Restricts the results to those occurring on or after this date.|
+|end_date|Yes|Restricts the results to those occurring on or before this date.|
+|global_master_campaign_id[]|No|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=USA_123,USA_456|
+|campaign_status[]|No|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|page_size|No|Restrict number of keywords in result.<br>**Default value: 15** |
+|page|No|Specifies which page of results to return.<br>**Default value: 1** | |
+|sort_by|No|Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc. <br>**Default value: keyword**|
+|sort_dir|No|Specifies the sort direction.  Can be either asc or desc. <br>**Default value: asc**|
 
 ### Response Data Details&nbsp;&nbsp;&nbsp;
 
@@ -103,40 +103,39 @@ https://api.reachlocalservices.com/client_reports/google_keyword/TEST_1?&campaig
 |start_date|String|Start date of report|
 |end_date|String|End date of report|
 |time_zone|String|Time Zone|
-|report_data|Object|Report details object containing Totals object and Campaigns array. [Report Data Object](#campaignreportdata)|
+|report_data|Object|Report details object containing Totals object and Campaigns array. [Report Data Object](#keywordreportdata)|
 |global_master_advertiser_id|String|Identifier for advertiser|
 |location|String|Location of this report|
-|page|Int|Page Number|
-|page_size|Int|Number of keywords on page|
+|page|Integer|Page Number|
+|page_size|Integer|Number of keywords on page|
 
+<a name="keywordreportdata"></a>
 **Report Data Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|keywords|Keyword|Array of Keyword|
-|totals|Total|Total Object|
+|keywords|Array|Array of [Keyword Object] (#keywordobject)|
+|totals|Object|[Total Object] (#totalobject)|
 
+<a name="keywordobject"></a>
 **Keyword Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|keyword|Int|No|Keyword Name|
-|type|Int|No|Keyword Type (search/display)|
-|clicks|Float|No|Clicks for Keyword|
-|media_cost|Float|No|cost|
-|impressions|Int|No|Impressions for Keyword|
-|ctr|Float|No|Click through Rate for Keyword|
+|Field Name|Datatype|Description|
+|---|---|---|
+|keyword|Integer|Keyword Name|
+|type|Integer|Keyword Type (search/display)|
+|clicks|Float|Clicks for Keyword|
+|media_cost|Float|cost|
+|impressions|Integer|Impressions for Keyword|
+|ctr|Float|Click through Rate for Keyword|
 
+<a name="totalobject"></a>
 **Totals Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|keywords|Int|No|Number of total keywords regardless of page|
-|clicks|Float|No|Overall Clicks|
-|media_cost|Float|No|cost|
-|impressions|Int|No|Overall Impressions|
-|ctr|Float|No|Overall Click through Rate|
-
-**Totals Per Interval Object**
-
-This is an Interval object across all campaigns.
+|Field Name|Datatype|Description|
+|---|---|---|
+|keywords|Integer|Number of total keywords regardless of page|
+|clicks|Float|Overall Clicks|
+|media_cost|Float|cost|
+|impressions|Integer|Overall Impressions|
+|ctr|Float|Overall Click through Rate|

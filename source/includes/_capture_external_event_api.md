@@ -125,11 +125,11 @@ Response response = client.newCall(request).execute();
 
 **Post Body Parameters**
 
-|Parameter | Required | Datatype | Nullable | Description|
+|Parameter | Required | Description|
 |---|---|---|---|---|
-|eventTime|yes|string|no|The date/time in UTC that the chat started|
-|accountId|yes|string|no|A vendor supplied account identifier|
-|data|yes|string|no|A JSON hash representing the attributes for the chat. See the following section for details|
+|eventTime|yes|The date/time in UTC that the chat started|
+|accountId|yes|A vendor supplied account identifier|
+|data|yes|A JSON hash representing the attributes for the chat. See the following section for details|
 
 This section defines the data parameter JSON hash:
 

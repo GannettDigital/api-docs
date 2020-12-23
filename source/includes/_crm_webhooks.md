@@ -61,9 +61,9 @@ This ID will be needed in the event the user chooses to de-register the webhook.
 
 **Parameters**
 
-Parameter | Required | Default | Description
+Parameter | Required | Description
 --------- | -------- |-------- | -----------
-global\_master\_advertiser\_id | yes | none | The global master advertiser id (for example, TEST_1).
+global\_master\_advertiser\_id | yes | The global master advertiser id (for example, TEST_1).
 
 **Payload**
 
@@ -155,52 +155,52 @@ The lead event that triggered the webhook will be sent to the specified payload 
 
 **Lead Object**
 
-Field | Type | Nullable | Description
+Field | Type | Description
 --------- | -------- |-------- |--------
-id | Integer | no | An integer uniquely identifying this lead event.
-contact_id | Integer | no | An integer uniquely identifying the contact to which this lead belongs.
-campaign_id | Integer | no | An integer uniquely identifying the campaign that this lead is attributed to.
-campaign_name |  String| no | The name of the campaign that this lead is attributed to.
-archived_at | Datetime | yes | The date and time which this lead event was archived.
-created_at | Datetime | no | The date and time which this lead event was created.
-important_at | Datetime | yes | The date and time which this lead event was marked important.
-occured_at | Datetime | no | The date and time which this lead event occurred. This will usually be different than the date that the lead event was created.
-read_at | Datetime | yes | The date and time which this lead event was marked read.
-display_name | String | no | The display name of the lead event.
-event_type| String | no | The type of the lead event. Valid values are **chat**, **call** and **form**.
-status | String | no | The status of the associated contact.  Valid values are **pending_contact**, **active_lead**, **client** and **none**.
-notes | String | yes | Free form text notes entered by end users onto the lead event.
-tags | Array of String | yes | When present represents a collection of tags use for applying ad-hoc categorization and collation of lead events.
-contact | Contact | no | The contact to which this lead event belongs.
-chat | Chat | no | The lead event payload will include a single **chat**, **call** or **form** object.  The object type will match the event_type field.
-call | Call | no | The lead event payload will include a single **chat**, **call** or **form** object.  The object type will match the event_type field.
-form | Form | no | The lead event payload will include a single **chat**, **call** or **form** object.  The object type will match the event_type field.
+id | Integer | An integer uniquely identifying this lead event.
+contact_id | Integer | An integer uniquely identifying the contact to which this lead belongs.
+campaign_id | Integer | An integer uniquely identifying the campaign that this lead is attributed to.
+campaign_name |  String | The name of the campaign that this lead is attributed to.
+archived_at | Datetime | The date and time which this lead event was archived.<br>**The field is nullable**
+created_at | Datetime | The date and time which this lead event was created.
+important_at | Datetime | The date and time which this lead event was marked important.<br>**The field is nullable**
+occured_at | Datetime | The date and time which this lead event occurred. This will usually be different than the date that the lead event was created.
+read_at | Datetime | The date and time which this lead event was marked read.<br>**The field is nullable**
+display_name | String | The display name of the lead event.
+event_type| String | The type of the lead event. Valid values are **chat**, **call** and **form**.
+status | String | The status of the associated contact.  Valid values are **pending_contact**, **active_lead**, **client** and **none**.<br>**The field is nullable**
+notes | String | Free form text notes entered by end users onto the lead event.<br>**The field is nullable**
+tags | Array of String | When present represents a collection of tags use for applying ad-hoc categorization and collation of lead events.<br>**The field is nullable**
+contact | Contact | The contact to which this lead event belongs.
+chat | Chat | The lead event payload will include a single **chat**, **call** or **form** object.  The object type will match the event_type field.
+call | Call | The lead event payload will include a single **chat**, **call** or **form** object.  The object type will match the event_type field.
+form | Form | The lead event payload will include a single **chat**, **call** or **form** object.  The object type will match the event_type field.
 
 **Contact Object**
 
-Field | Type | Nullable | Description
+Field | Type | Description
 --------- | -------- |-------- |--------
-id | Integer | no |An integer uniquely identifying this contact.
-first_name | String | yes | The first name of the contact.
-last_name | String | yes | The last name of the contact.
-email | String | yes | The email address of the contact.
-company | String | yes | The company name for this contact.
-title | String | yes | The title for this contact.
-phone_home | String | yes | The home phone number for this contact.
-phone_work | String | yes | The work phone number for this contact.
-phone_mobile | String | yes | The mobile phone number for this contact.
-phone_fax | String | yes | The fax phone number for this contact.
-address1 | String | yes | The first address line for this contact.
-address2 | String | yes | The second address line for this contact.
-city | String | yes | The city for this contact.
-state | String | yes | The state for this contact.
-postal | String | yes | The postal code for this contact.
-country | String | yes | The country for this contact.
-notes |String | yes | Free form text notes entered by end users for the contact.
-tags | Array of String | yes | When present represents a collection of tags use for applying ad-hoc categorization and collation of contacts.
-status | String | no | The status of the contact.  Valid values are **pending_contact**, **active_lead**, **client** and **none**.
-created_at | Datetime | no | The date and time which this contact was created.
-archived_at | Datetime | yes | The date and time which this contact was archived.
+id | Integer |An integer uniquely identifying this contact.
+first_name | String | The first name of the contact.<br>**The field is nullable**
+last_name | String  | The last name of the contact.<br>**The field is nullable**
+email | String | The email address of the contact.<br>**The field is nullable**
+company | String | The company name for this contact.<br>**The field is nullable**
+title | String | The title for this contact.<br>**The field is nullable**
+phone_home | String | The home phone number for this contact.<br>**The field is nullable**
+phone_work | String | The work phone number for this contact.<br>**The field is nullable**
+phone_mobile | String | The mobile phone number for this contact.<br>**The field is nullable**
+phone_fax | String | The fax phone number for this contact.<br>**The field is nullable**
+address1 | String | The first address line for this contact.<br>**The field is nullable**
+address2 | String | The second address line for this contact.<br>**The field is nullable**
+city | String | The city for this contact.<br>**The field is nullable**
+state | String | The state for this contact.<br>**The field is nullable**
+postal | String | The postal code for this contact.<br>**The field is nullable**
+country | String | The country for this contact.<br>**The field is nullable**
+notes |String | Free form text notes entered by end users for the contact.<br>**The field is nullable**
+tags | Array of String | When present represents a collection of tags use for applying ad-hoc categorization and collation of contacts.<br>**The field is nullable**
+status | String | The status of the contact.  Valid values are **pending_contact**, **active_lead**, **client** and **none**.
+created_at | Datetime | The date and time which this contact was created.
+archived_at | Datetime | The date and time which this contact was archived.<br>**The field is nullable**
 
 **Chat Object**
 > Chat Lead Event
@@ -321,19 +321,19 @@ archived_at | Datetime | yes | The date and time which this contact was archived
 }
 ```
 
-Field | Type | Nullable | Description
---------- | -------- |-------- |--------
-summary | String | yes | A freeform text description of the chat.
-transcript | Array of ChatTranscripts | no | An ordered array of chat transcript objects.
+Field | Type | Description
+--------- |-------- |--------
+summary | String | A freeform text description of the chat.<br>**The field is nullable**
+transcript | Array of ChatTranscripts | An ordered array of chat transcript objects.
 
 **ChatTranscript Object**
 
-Field | Type | Nullable | Description
---------- | -------- |-------- |--------
-id | Integer | no | A sequential id of the line chat transcript.  It uniquely identifies a line of the chat transcript within this lead event.
-timestamp | String | no |The date and time that the external chat API registered for this line of the chat transcript.
-from | String | no | The display name of the member of the chat who sent this message.
-message | String | no |The message body of this line of the chat transcript.
+Field | Type | Description
+--------- | -------- |--------
+id | Integer | A sequential id of the line chat transcript.  It uniquely identifies a line of the chat transcript within this lead event.
+timestamp | String |The date and time that the external chat API registered for this line of the chat transcript.
+from | String | The display name of the member of the chat who sent this message.
+message | String |The message body of this line of the chat transcript.
 
 **Call Object**
 > Call Lead Event
@@ -396,11 +396,11 @@ message | String | no |The message body of this line of the chat transcript.
 }
 ```
 
-Field | Type | Nullable | Description
---------- | -------- |-------- |--------
-occured_at | Datetime | no | The date and time that the call occurred.
-duration | Integer | no | The duration of the call in seconds.
-recording_url | String | no | The URL address to an audio recording of the call.
+Field | Type | Description
+--------- | -------- |--------
+occured_at | Datetime | The date and time that the call occurred.
+duration | Integer | The duration of the call in seconds.
+recording_url | String | The URL address to an audio recording of the call.
 
 **Form Object**
 > Form Lead Event
@@ -509,10 +509,10 @@ recording_url | String | no | The URL address to an audio recording of the call.
 }
 ```
 
-Field | Type | Nullable | Description
---------- | -------- |-------- |--------
-sub_type | String | no | The subtype of the form.  Valid values are **FormPost** and **FormEmail**.
-full_message | String | no | The full form message
-subject | String | yes | Subject |
-extra_fields | Array of String | yes | extra fields |
+Field | Type | Description
+--------- | -------- |--------
+sub_type | String | The subtype of the form.  Valid values are **FormPost** and **FormEmail**.
+full_message | String | The full form message
+subject | String | Subject <br>**The field is nullable**|
+extra_fields | Array of String | extra fields <br>**The field is nullable**|
 

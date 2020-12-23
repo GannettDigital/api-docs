@@ -110,12 +110,12 @@ This endpoint retrieves chat events.
 
 **Query Parameters**
 
-Parameter | Required | Default | Description
---------- | -------- |-------- | -----------
-global_master_advertiser_id | yes | none | The global master advertiser id (for example, TEST_1).
-per_page | no | 50 | The number of records to display per page.
-last_event_seen | no | none | Returns lead_events generated prior to the specified date and time. The format expected is ISO8601.
-show_deleted | no | false | Boolean flag that when set to true queries for and only return events that have been marked as deleted.
+Parameter | Required | Description
+--------- | -------- | -----------
+global_master_advertiser_id | yes | The global master advertiser id (for example, TEST_1).
+per_page | no | The number of records to display per page.<br>**Default value is 50**
+last_event_seen | no | Returns lead_events generated prior to the specified date and time. The format expected is ISO8601.
+show_deleted | no | Boolean flag that when set to true queries for and only return events that have been marked as deleted.<br>**Default value is false**
 
 **Next Page Link**
 

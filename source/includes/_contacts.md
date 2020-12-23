@@ -19,12 +19,12 @@ Please note that the contact information in this endpoint is for linking the int
 
 ### Parameters
 
-Parameter | Required | Default | Description
+Parameter | Required | Description
 --------- | -------- |-------- | -----------
-global\_master\_advertiser\_id | yes | none | The global master advertiser id (for example, TEST_1).
-created\_after\_date | yes | none | Specifies the lower bound for the earliest date and time when searching for contacts.  All contacts returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.
-created\_before\_date | yes | none | Specifies the upper bound for the latest date and time when searching for contacts.  All contacts returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.
-page | no | 1 | The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned.
+global\_master\_advertiser\_id | yes | The global master advertiser id (for example, TEST_1).
+created\_after\_date | yes | Specifies the lower bound for the earliest date and time when searching for contacts.  All contacts returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.
+created\_before\_date | yes | Specifies the upper bound for the latest date and time when searching for contacts.  All contacts returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.
+page | no | The page number of the paginated result set to return.  This parameter is optional, but if the page requested doesn’t exist in the result set defined by the other parameters an empty JSON array is returned <br>**Default value: 1**.
 
 ### Response Data Details
 
@@ -152,26 +152,26 @@ next\_page\_location | Complete URL that can be used to retrieve the next page o
 
 **Contact**
 
-Field | Type | Nullable | Description
---------- | -------- |-------- |--------
-id | Integer | no |An integer uniquely identifying this contact.
-first_name | String | yes | The first name of the contact.
-last_name | String | yes | The last name of the contact.
-email | String | yes | The email address of the contact.
-company | String | yes | The company name for this contact.
-title | String | yes | The title for this contact.
-phone_home | String | yes | The home phone number for this contact.
-phone_work | String | yes | The work phone number for this contact.
-phone_mobile | String | yes | The mobile phone number for this contact.
-phone_fax | String | yes | The fax phone number for this contact.
-address1 | String | yes | The first address line for this contact.
-address2 | String | yes | The second address line for this contact.
-city | String | yes | The city for this contact.
-state | String | yes | The state for this contact.
-postal | String | yes | The postal code for this contact.
-country | String | yes | The country for this contact.
-notes |String | yes | Free form text notes entered by end users for the contact.
-tags | Array of String | yes | When present represents a collection of tags use for applying ad-hoc categorization and collation of contacts.
-status | String | no | The status of the contact.  Valid values are **pending_contact**, **active_lead**, **client** and **none**.
-created_at | Datetime | no | The date and time which this contact was created.
-archived_at | Datetime | yes | The date and time which this contact was archived.
+Field | Type | Description
+--------- | -------- |--------
+id | Integer | An integer uniquely identifying this contact.
+first_name | String | The first name of the contact.<br>**The field is nullable**
+last_name | String | The last name of the contact.<br>**The field is nullable**
+email | String | The email address of the contact.<br>**The field is nullable**
+company | String | The company name for this contact.<br>**The field is nullable**
+title | String | The title for this contact.<br>**The field is nullable**
+phone_home | String | The home phone number for this contact.<br>**The field is nullable**
+phone_work | String | The work phone number for this contact.<br>**The field is nullable**
+phone_mobile | String | The mobile phone number for this contact.<br>**The field is nullable**
+phone_fax | String | The fax phone number for this contact.<br>**The field is nullable**
+address1 | String | The first address line for this contact.<br>**The field is nullable**
+address2 | String | The second address line for this contact.<br>**The field is nullable**
+city | String | The city for this contact.<br>**The field is nullable**
+state | String | The state for this contact.<br>**The field is nullable**
+postal | String | The postal code for this contact.<br>**The field is nullable**
+country | String | The country for this contact.<br>**The field is nullable**
+notes |String | Free form text notes entered by end users for the contact.<br>**The field is nullable**
+tags | Array of String | When present represents a collection of tags use for applying ad-hoc categorization and collation of contacts.<br>**The field is nullable**
+status | String | The status of the contact.  Valid values are **pending_contact**, **active_lead**, **client** and **none**.
+created_at | Datetime | The date and time which this contact was created.<br>**The field is nullable**
+archived_at | Datetime | The date and time which this contact was archived.<br>**The field is nullable**

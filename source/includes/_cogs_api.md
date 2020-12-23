@@ -6,11 +6,11 @@ The totals can be summarized by month to date, week to date or by the day. E.g. 
 
 ##### Parameters
 The API accepts the request parameters listed below and is grouped by the interval size for each publisher.
-| Parameter | Required | Default | Description |
-|---|---|---|---|
-| start_date | yes | none | Restricts the results to those occurring on or after this date. |
-| end_date | yes | none | Restricts the results to those occurring on or before this date. |
-| interval_size | no | day |Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval). |
+| Parameter | Required | Description |
+|---|---|---|
+| start_date | yes | Restricts the results to those occurring on or after this date. |
+| end_date | yes | Restricts the results to those occurring on or before this date. |
+| interval_size | Use calendar_month or calendar_week to roll up the data points into calendar intervals <br><b>Default: 1 day per interval</b> |
 
 #### Recommended usage pattern
 The API supports up to 90 days (3 months) time window between the start_date and end_date request parameters. For more than 90 days of metrics the API should be called again by slicing the start_date and end_date into the recommend 90-day time window. For prior year’s data, request the API again with the same date range for the prior year.

@@ -12,10 +12,10 @@ Use GET to retrieve creative information for a specified GMAID.
 
 When using the GET method, the results can be filtered using these parameters:
 
-| Parameter | Required | Default | Description |
+| Parameter | Required | Description |
 |---|---|---|---|
-|`campaign_status[]`|No|all|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`.|
-|`global_master_campaign_id[]`|No|--|Restrict results to one or more specific campaigns.|
+|`campaign_status[]`|No|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`.|
+|`global_master_campaign_id[]`|No|Restrict results to one or more specific campaigns.|
 
 ### Response Data Details
 
@@ -121,25 +121,25 @@ https://api.reachlocalservices.com/client_reports/creatives/TEST_1?start_date=20
 
 **Campaigns**
 
-| Field Name | Datatype | Nullable | Description |
+| Field Name | Datatype | Description |
 |---|---|---|---|
-|global_master_campaign_id | String | no | Identifier for campaign |
-|name | String | no | Campaign name |
-|creatives | Creative[] | no | List of Creatives |
+|global_master_campaign_id | String | Identifier for campaign |
+|name | String | Campaign name |
+|creatives | Creative[] | List of Creatives |
 
 **Creatives**
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|creative_id | Int | no | Identifier for creative |
-|organization | String | no | Organization |
-|publisher_id | Int | no | Identifier for publisher_id |
-|creative_name | String | yes | Name of creative |
-|url | String | yes | URL for creative preview |
-|width | Int | yes | Width of creative (pixels) |
-|height | Int | yes | Height of creative (pixels) |
-|updated_at | Date | no | Updated at time |
-|created_at | Date | no | Created at time |
+|creative_id | Integer | Identifier for creative |
+|organization | String | Organization |
+|publisher_id | Integer | Identifier for publisher_id |
+|creative_name | String | Name of creative<br>**The field is nullable**|
+|url | String | URL for creative preview<br>**The field is nullable** |
+|width | Integer | Width of creative (pixels)<br>**The field is nullable** |
+|height | Integer | Height of creative (pixels)<br>**The field is nullable** |
+|updated_at | Date | Updated at time |
+|created_at | Date | Created at time |
 
 **Urls for Previews**
 

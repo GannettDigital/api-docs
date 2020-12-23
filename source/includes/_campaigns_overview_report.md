@@ -58,11 +58,11 @@ All campaign data for the account will be provided including both Paid Media and
 
 None
 
-| <internal> Param | Optional | Function </internal> |
+| <internal> Param | Required | Function </internal> |
 |---|---|---|
-|start_date| Yes | Restricts the results to those ocurring on or after this date|
-|markup_type| Yes |  Only supported value is 'percentage' |
-|markup_value| Yes | "cost" fields (spend & budget) will be marked up by this pecentage |
+|start_date| No | Restricts the results to those ocurring on or after this date|
+|markup_type| No |  Only supported value is 'percentage' |
+|markup_value| No | "cost" fields (spend & budget) will be marked up by this pecentage |
 
 
 ### Response Data Details&nbsp;
@@ -426,7 +426,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |end_date|String|End Date|
 |time_zone|String|Time Zone of Data|
 |currency|String|Currency of report|
-|report_data|Object|Report details object containing Totals object and Campaigns array. [Report Data Object](#campaignreportdata)|
+|report_data|Object| [Report Data Object](#campaignreportdata)|
 |global_master_advertiser_id|String|Identifier for advertiser|
 |location|String|Location URL|
 

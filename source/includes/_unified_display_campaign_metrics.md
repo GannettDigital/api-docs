@@ -22,11 +22,11 @@ We recommend you use the campaign totals from the response when reporting at the
 
 When using the GET method, the results can be filtered using these parameters:
 
-|Parameter|Required|Default|Description|
-|---|---|---|---|
-|start_date|Yes|--|Restricts the results to those occurring on or after this date|
-|end_date|Yes|--|Restricts the results to those occurring on or before this date|
-|interval_size|No|none|Specifies the type of interval: none, day, calendar_week, or calendar_month|
+|Parameter|Required|Description|
+|---|---|---|
+|start_date|Yes|Restricts the results to those occurring on or after this date|
+|end_date|Yes|Restricts the results to those occurring on or before this date|
+|interval_size|No|Specifies the type of interval: none, day, calendar_week, or calendar_month <br>**Default value: none**|
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
@@ -1051,255 +1051,255 @@ https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_d
 <a name="udtotals"></a>
 **Totals Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|clicks|Int|No|Total clicks|
-|impressions|Int|No|Total impressions|
-|ctr|Float|No|Overall Click-through Rate|
-|video_full_screen|Float|Yes|Number of Full-Screen Video Views|
-|video_mute|Float|Yes|Number of Muted Video Views|
-|video_unmute|Float|Yes|Number of Unmuted Video Views|
-|video_pause|Float|Yes|Number of Paused Video Views|
-|video_resume|Float|Yes|Number of Resumed Video Views|
-|video_views|Float|Yes|Number of Video Views|
-|total_conversions|Float|Yes|Number of Conversions|
-|click_through_conversions|Float|Yes|Number of Click-Through Conversions|
-|view_through_conversions|Float|Yes|Number of View-Through Conversions|
-|video_played_to_25_pct|Float|Yes|Number of Video Views Played to 25 percent|
-|video_played_to_50_pct|Float|Yes|Number of Video Views Played to 50 percent|
-|video_played_to_75_pct|Float|Yes|Number of Video Views Played to 75 percent|
-|completed_views|Float|Yes|Number of Completed Views|
-|video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
-|view_thru_rate|Float|Yes|View-Through Rate|
+|Field Name|Datatype|Description|
+|---|---|---|
+|clicks|Integer|Total clicks|
+|impressions|Integer|Total impressions|
+|ctr|Float|Overall Click-through Rate|
+|video_full_screen|Float|Number of Full-Screen Video Views<br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views <br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views<br>**The field is nullable**|
+|total_conversions|Float|Number of Conversions<br>**The field is nullable**|
+|click_through_conversions|Float|Number of Click-Through Conversions<br>**The field is nullable**|
+|view_through_conversions|Float|Number of View-Through Conversions<br>**The field is nullable**|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Number of Completed Views<br>**The field is nullable**|
+|video_complete_rate|Float|Rate of Video Completion vs Partial Views<br>**The field is nullable**|
+|view_thru_rate|Float|View-Through Rate<br>**The field is nullable**|
 
 <a name="udintervals"></a>
 **Intervals Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|start_date|String|No|Start Date of interval|
-|clicks|Int|No|Number of clicks for interval|
-|impressions|Int|No|Number of impressions for interval|
-|ctr|Float|No|Click-through Rate for interval|
-|video_full_screen|Float|Yes|Number of Full-Screen Video Views|
-|video_mute|Float|Yes|Number of Muted Video Views|
-|video_unmute|Float|Yes|Number of Unmuted Video Views|
-|video_pause|Float|Yes|Number of Paused Video Views|
-|video_resume|Float|Yes|Number of Resumed Video Views|
-|video_views|Float|Yes|Number of Video Views|
-|total_conversions|Float|Yes|Number of Conversions|
-|click_through_conversions|Float|Yes|Number of Click-Through Conversions|
-|view_through_conversions|Float|Yes|Number of View-Through Conversions|
-|video_played_to_25_pct|Float|Yes|Number of Video Views Played to 25 percent|
-|video_played_to_50_pct|Float|Yes|Number of Video Views Played to 50 percent|
-|video_played_to_75_pct|Float|Yes|Number of Video Views Played to 75 percent|
-|completed_views|Float|Yes|Number of Completed Views|
-|video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
-|view_thru_rate|Float|Yes|View-Through Rate|
+|Field Name|Datatype|Description|
+|---|---|---|
+|start_date|String|Start Date of interval|
+|clicks|Integer|Number of clicks for interval|
+|impressions|Integer|Number of impressions for interval|
+|ctr|Float|Click-through Rate for interval|
+|video_full_screen|Float|Number of Full-Screen Video Views|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views<br>**The field is nullable**|
+|total_conversions|Float|Number of Conversions<br>**The field is nullable**|
+|click_through_conversions|Float|Number of Click-Through Conversions<br>**The field is nullable**|
+|view_through_conversions|Float|Number of View-Through Conversions<br>**The field is nullable**|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Number of Completed Views<br>**The field is nullable**|
+|video_complete_rate|Float|Rate of Video Completion vs Partial Views<br>**The field is nullable**|
+|view_thru_rate|Float|View-Through Rate<br>**The field is nullable**|
 
 <a name="udcampaigns"></a>
 **Campaigns Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|name|String|No|Campaign Name|
-|global_master_campaign_id|String|No|Unique Identifier for Campaign|
-|organization|String|No|Either reachlocal or gannett|
-|start_date|String|No|Campaign Start Date|
-|end_date|String|Yes|Campaign End Date|
-|type|String|No|Type of Campaign|
-|status|String|No|Status of Campaign|
-|spend|Float|No|Total Spend for Campaign|
-|impressions|Float|No|Total Impressions for Campaign|
-|clicks|Float|No|Total Clicks for Campaign|
-|ctr|Float|No|Overall Click-through Rate of Campaign|
-|cpm|Float|No|Overall Click Per Thousand Impressions for Campaign|
-|cpc|Float|No|Cost Per Click for Campaign|
-|walk_ins|Float|No|Total Walk-ins for Campaign|
-|cost_per_view|Float|No|Total Cost Per View for Campaign|
-|form_submissions_ct|Float|No|Total For Submission Click Through for Campaign|
-|form_submissions_vt|Float|No|Total Form Submission View Through for Campaign|
-|website_visits_vt|Float|No|Total Website Visits View Through for Campaign|
-|cost_per_submission|Float|No|Total Cost Per Submission for Campaign|
-|priority_page_views_ct|Float|No|Total Priority Page View Click Through for Campaign|
-|priority_page_views_vt|Float|No|Total Priority Page View Through for Campaign|
-|video_full_screen|Float|Yes|Number of Full-Screen Video Views|
-|video_mute|Float|Yes|Number of Muted Video Views|
-|video_unmute|Float|Yes|Number of Unmuted Video Views|
-|video_pause|Float|Yes|Number of Paused Video Views|
-|video_resume|Float|Yes|Number of Resumed Video Views|
-|video_views|Float|No|Number of Video Views|
-|total_conversions|Float|Yes|Number of Conversions|
-|click_through_conversions|Float|Yes|Number of Click-Through Conversions|
-|view_through_conversions|Float|Yes|Number of View-Through Conversions|
-|video_played_to_25_pct|Float|Yes|Number of Video Views Played to 25 percent|
-|video_played_to_50_pct|Float|Yes|Number of Video Views Played to 50 percent|
-|video_played_to_75_pct|Float|Yes|Number of Video Views Played to 75 percent|
-|completed_views|Float|No|Total Completed Views for Campaign|
-|video_complete_rate|Float|No|Total Video Completion Rate|
-|view_thru_rate|Float|No|Total View-Through Rate|
-|cost_per_view|Float|No|Cost per View|
-|div|Float|No|Display-Influenced Visits|
-|cpdiv|Float|No|Cost per Display-Influenced Visit|
-|creatives|Object|--|Object of creatives details. [Campaign Creatives Object](#udcampaigncreatives)|
+|Field Name|Datatype|Description|
+|---|---|---|
+|name|String|Campaign Name|
+|global_master_campaign_id|String|Unique Identifier for Campaign|
+|organization|String|Either reachlocal or gannett|
+|start_date|String|Campaign Start Date|
+|end_date|String|Campaign End Date<br>**The field is nullable**|
+|type|String|Type of Campaign|
+|status|String|Status of Campaign|
+|spend|Float|Total Spend for Campaign|
+|impressions|Float|Total Impressions for Campaign|
+|clicks|Float|Total Clicks for Campaign|
+|ctr|Float|Overall Click-through Rate of Campaign|
+|cpm|Float|Overall Click Per Thousand Impressions for Campaign|
+|cpc|Float|Cost Per Click for Campaign|
+|walk_ins|Float|Total Walk-ins for Campaign|
+|cost_per_view|Float|Total Cost Per View for Campaign|
+|form_submissions_ct|Float|Total For Submission Click Through for Campaign|
+|form_submissions_vt|Float|Total Form Submission View Through for Campaign|
+|website_visits_vt|Float|Total Website Visits View Through for Campaign|
+|cost_per_submission|Float|Total Cost Per Submission for Campaign|
+|priority_page_views_ct|Float|Total Priority Page View Click Through for Campaign|
+|priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
+|video_full_screen|Float|Number of Full-Screen Video Views<br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views|
+|total_conversions|Float|Number of Conversions<br>**The field is nullable**|
+|click_through_conversions|Float|Number of Click-Through Conversions<br>**The field is nullable**|
+|view_through_conversions|Float|Number of View-Through Conversions<br>**The field is nullable**|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Total Completed Views for Campaign|
+|video_complete_rate|Float|Total Video Completion Rate|
+|view_thru_rate|Float|Total View-Through Rate|
+|cost_per_view|Float|Cost per View|
+|div|Float|Display-Influenced Visits|
+|cpdiv|Float|Cost per Display-Influenced Visit|
+|creatives|Object|Object of creatives details. [Campaign Creatives Object](#udcampaigncreatives)|
 
 <a name="udlineitems"></a>
 **Line Items Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|name|String|No|Name of Line Item|
-|line_item_id|Int|No|Identifier of Line Item|
-|impressions|Int|No|Total Impressions for Line Item|
-|clicks|Int|No|Total Clicks for Line Item|
-|total_active_time_view|Float|No|Total Time (minutes) the ad was viewed by a consumers|
-|ctr|Float|No|Overall Click-through Rate of Line Item|
-|universal_interaction_rate|Float|No|Overall Universal Interaction Rate for Line Item (This MOAT metric was deprecated on 12-31-2019)|
-|universal_interaction_time|Float|No|Overall Universal Interaction Time for Line Item (This MOAT metric was deprecated on 12-31-2019)|
-|hover_rate|Float|No|Hover Rate for Line Item (This MOAT metric was deprecated on 12-31-2019)|
-|attention_quality|Float|No|Attention Quality for Line Item (This MOAT metric was deprecated on 12-31-2019)|
-|intervals|Object|--|Object of line items intervals. [Line Item Intervals Object](#udlineitemintervals)|
-|creatives|Object|--|Object of line items creatives. [Line Item Creatives Object](#udlineitemcreatives)|
+|Field Name|Datatype|Description|
+|---|---|---|
+|name|String|Name of Line Item|
+|line_item_id|Int|Identifier of Line Item|
+|impressions|Int|Total Impressions for Line Item|
+|clicks|Int|Total Clicks for Line Item|
+|total_active_time_view|Float|Total Time (minutes) the ad was viewed by a consumers|
+|ctr|Float|Overall Click-through Rate of Line Item|
+|universal_interaction_rate|Float|Overall Universal Interaction Rate for Line Item (This MOAT metric was deprecated on 12-31-2019)|
+|universal_interaction_time|Float|Overall Universal Interaction Time for Line Item (This MOAT metric was deprecated on 12-31-2019)|
+|hover_rate|Float|Hover Rate for Line Item (This MOAT metric was deprecated on 12-31-2019)|
+|attention_quality|Float|Attention Quality for Line Item (This MOAT metric was deprecated on 12-31-2019)|
+|intervals|Object|Object of line items intervals. [Line Item Intervals Object](#udlineitemintervals)|
+|creatives|Object|Object of line items creatives. [Line Item Creatives Object](#udlineitemcreatives)|
 
 <a name="udlineitemintervals"></a>
 **Line Items Intervals Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|start_date|String|No|Start Date of Interval|
-|impressions|Int|No|Total Impressions for Interval|
-|clicks|Int|No|Total Clicks for Interval|
-|total_active_time_view|Float|No|Total Time (minutes) the ad was viewed by a consumers|
-|ctr|Float|No|Overall Click-through Rate of Interval|
-|universal_interaction_rate|Float|No|Overall Universal Interaction Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|universal_interaction_time|Float|No|Overall Universal Interaction Time for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|hover_rate|Float|No|Hover Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|attention_quality|Float|No|Attention Quality for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|video_full_screen|Float|Yes|Number of Full-Screen Video Views|
-|video_mute|Float|Yes|Number of Muted Video Views|
-|video_unmute|Float|Yes|Number of Unmuted Video Views|
-|video_pause|Float|Yes|Number of Paused Video Views|
-|video_resume|Float|Yes|Number of Resumed Video Views|
-|video_views|Float|Yes|Number of Video Views|
-|total_conversions|Float|Yes|Number of Conversions|
-|click_through_conversions|Float|Yes|Number of Click-Through Conversions|
-|view_through_conversions|Float|Yes|Number of View-Through Conversions|
-|video_played_to_25_pct|Float|Yes|Number of Video Views Played to 25 percent|
-|video_played_to_50_pct|Float|Yes|Number of Video Views Played to 50 percent|
-|video_played_to_75_pct|Float|Yes|Number of Video Views Played to 75 percent|
-|completed_views|Float|Yes|Number of Completed Views|
-|video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
-|view_thru_rate|Float|Yes|View-Through Rate|
-|cost_per_view|Float|No|Cost per View|
+|Field Name|Datatype|Description|
+|---|---|---|
+|start_date|String|==|Start Date of Interval|
+|impressions|Integer|Total Impressions for Interval|
+|clicks|Integer|Total Clicks for Interval|
+|total_active_time_view|Float|Total Time (minutes) the ad was viewed by a consumers|
+|ctr|Float|Overall Click-through Rate of Interval|
+|universal_interaction_rate|Float|Overall Universal Interaction Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|universal_interaction_time|Float|Overall Universal Interaction Time for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|hover_rate|Float|Hover Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|attention_quality|Float|Attention Quality for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|video_full_screen|Float|Number of Full-Screen Video Views<br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views<br>**The field is nullable**|
+|total_conversions|Float|Number of Conversions<br>**The field is nullable**|
+|click_through_conversions|Float|Number of Click-Through Conversions<br>**The field is nullable**|
+|view_through_conversions|Float|Number of View-Through Conversions<br>**The field is nullable**|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Number of Completed Views<br>**The field is nullable**|
+|video_complete_rate|Float|Rate of Video Completion vs Partial Views<br>**The field is nullable**|
+|view_thru_rate|Float|View-Through Rate<br>**The field is nullable**|
+|cost_per_view|Float|Cost per View|
 
 <a name="udlineitemcreatives"></a>
 **Line Items Creatives Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|creative_id|String|No|Identifier for Creative|
-|publisher_id|String|No|Identifier for Publisher|
-|publisher_name|String|No|Name of Publisher|
-|name|String|No|Name of Creative|
-|impressions|Int|No|Total Impressions for Creative|
-|clicks|Int|No|Total Clicks for Creative|
-|total_active_time_view|Float|No|Total Time (minutes) the ad was viewed by a consumers|
-|ctr|Float|No|Overall Click-through Rate of Creative|
-|universal_interaction_rate|Float|No|Overall Universal Interaction Rate for Creative (This MOAT metric was deprecated on 12-31-2019)|
-|universal_interaction_time|Float|No|Overall Universal Interaction Time for Creative (This MOAT metric was deprecated on 12-31-2019)|
-|hover_rate|Float|No|Hover Rate for Creative (This MOAT metric was deprecated on 12-31-2019)|
-|attention_quality|Float|No|Attention Quality for Creative (This MOAT metric was deprecated on 12-31-2019)|
-|video_full_screen|Float|Yes|Number of Full-Screen Video Views|
-|video_mute|Float|Yes|Number of Muted Video Views|
-|video_unmute|Float|Yes|Number of Unmuted Video Views|
-|video_pause|Float|Yes|Number of Paused Video Views|
-|video_resume|Float|Yes|Number of Resumed Video Views|
-|video_views|Float|Yes|Number of Video Views|
-|total_conversions|Float|Yes|Number of Conversions|
-|click_through_conversions|Float|Yes|Number of Click-Through Conversions|
-|view_through_conversions|Float|Yes|Number of View-Through Conversions|
-|video_played_to_25_pct|Float|Yes|Number of Video Views Played to 25 percent|
-|video_played_to_50_pct|Float|Yes|Number of Video Views Played to 50 percent|
-|video_played_to_75_pct|Float|Yes|Number of Video Views Played to 75 percent|
-|completed_views|Float|Yes|Number of Completed Views|
-|video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
-|view_thru_rate|Float|Yes|View-Through Rate|
-|cost_per_view|Float|No|Cost per View|
-|intervals|Object|--|Object of line items creatives intervals. [Line Items Creatives Intervals Object](#udlineitemscreativesintervals)|
+|Field Name|Datatype|Description|
+|---|---|---|
+|creative_id|String|Identifier for Creative|
+|publisher_id|String|Identifier for Publisher|
+|publisher_name|String|Name of Publisher|
+|name|String|Name of Creative|
+|impressions|Integer|Total Impressions for Creative|
+|clicks|Integer|Total Clicks for Creative|
+|total_active_time_view|Float|Total Time (minutes) the ad was viewed by a consumers|
+|ctr|Float|Overall Click-through Rate of Creative|
+|universal_interaction_rate|Float|Overall Universal Interaction Rate for Creative (This MOAT metric was deprecated on 12-31-2019)|
+|universal_interaction_time|Float|Overall Universal Interaction Time for Creative (This MOAT metric was deprecated on 12-31-2019)|
+|hover_rate|Float|Hover Rate for Creative (This MOAT metric was deprecated on 12-31-2019)|
+|attention_quality|Float|Attention Quality for Creative (This MOAT metric was deprecated on 12-31-2019)|
+|video_full_screen|Float|Number of Full-Screen Video Views<br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views<br>**The field is nullable**|
+|total_conversions|Float|Number of Conversions<br>**The field is nullable**|
+|click_through_conversions|Float|Number of Click-Through Conversions<br>**The field is nullable**|
+|view_through_conversions|Float|Number of View-Through Conversions<br>**The field is nullable**|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Number of Completed Views<br>**The field is nullable**|
+|video_complete_rate|Float|Rate of Video Completion vs Partial Views<br>**The field is nullable**|
+|view_thru_rate|Float|View-Through Rate<br>**The field is nullable**|
+|cost_per_view|Float|Cost per View|
+|intervals|Object|Object of line items creatives intervals. [Line Items Creatives Intervals Object](#udlineitemscreativesintervals)|
 
 <a name="udcampaigncreatives"></a>
 **Campaign Creatives Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-|creative_id|Int|No|Identifier for Creative|
-|publisher_id|Int|No|Identifier for Publisher|
-|publisher_name|String|No|Name of Publisher|
-|creative_name|String|Yes|Name of Creative|
-|creative_type|String|No|Type of Creative|
-|creative_size|String|No|Size of Creative|
-|spend|Float|No|Total Spend for Campaign|
-|impressions|Float|No|Total Impressions for Interval|
-|clicks|Float|No|Total Clicks for Interval|
-|total_active_time_view|Float|No|Total Time (minutes) the ad was viewed by a consumers|
-|ctr|Float|No|Overall Click-through Rate of Interval|
-|cpm|Float|No|Overall Click Per Thousand Impressions for Interval|
-|cpc|Float|No|Cost Per Click for Interval|
-|walk_ins|Float|No|Total Walk-ins for Interval|
-|cost_per_view|Float|No|Total Cost Per View for Campaign|
-|form_submissions_ct|Float|No|Total For Submission Click Through for Campaign|
-|form_submissions_vt|Float|No|Total Form Submission View Through for Campaign|
-|website_visits_vt|Float|No|Total Website Visits View Through for Campaign|
-|cost_per_submission|Float|No|Total Cost Per Submission for Campaign|
-|priority_page_views_ct|Float|No|Total Priority Page View Click Through for Campaign|
-|priority_page_views_vt|Float|No|Total Priority Page View Through for Campaign|
-|video_full_screen|Float|Yes|Number of Full-Screen Video Views|
-|video_mute|Float|Yes|Number of Muted Video Views|
-|video_unmute|Float|Yes|Number of Unmuted Video Views|
-|video_pause|Float|Yes|Number of Paused Video Views|
-|video_resume|Float|Yes|Number of Resumed Video Views|
-|video_views|Float|No|Number of Video Views|
-|total_conversions|Float|Yes|Number of Conversions|
-|click_through_conversions|Float|Yes|Number of Click-Through Conversions|
-|view_through_conversions|Float|Yes|Number of View-Through Conversions|
-|video_played_to_25_pct|Float|Yes|Number of Video Views Played to 25 percent|
-|video_played_to_50_pct|Float|Yes|Number of Video Views Played to 50 percent|
-|video_played_to_75_pct|Float|Yes|Number of Video Views Played to 75 percent|
-|completed_views|Float|No|Total Completed Views for Campaign|
-|video_complete_rate|Float|No|Total Video Completion Rate|
-|view_thru_rate|Float|No|Total View-Through Rate|
-|cost_per_view|Float|No|Cost per View|
-|div|Float|No|Display-Influenced Visits|
-|cpdiv|Float|No|Cost per Display-Influenced Visit|
+|Field Name|Datatype|Description|
+|---|---|---|
+|creative_id|Integer|Identifier for Creative|
+|publisher_id|Integer|Identifier for Publisher|
+|publisher_name|String|Name of Publisher|
+|creative_name|String|Name of Creative <br>**The field is nullable**|
+|creative_type|String|Type of Creative|
+|creative_size|String|Size of Creative|
+|spend|Float|Total Spend for Campaign|
+|impressions|Float|Total Impressions for Interval|
+|clicks|Float|Total Clicks for Interval|
+|total_active_time_view|Float|Total Time (minutes) the ad was viewed by a consumers|
+|ctr|Float|Overall Click-through Rate of Interval|
+|cpm|Float|Overall Click Per Thousand Impressions for Interval|
+|cpc|Float|Cost Per Click for Interval|
+|walk_ins|Float|Total Walk-ins for Interval|
+|cost_per_view|Float|Total Cost Per View for Campaign|
+|form_submissions_ct|Float|Total For Submission Click Through for Campaign|
+|form_submissions_vt|Float|Total Form Submission View Through for Campaign|
+|website_visits_vt|Float|Total Website Visits View Through for Campaign|
+|cost_per_submission|Float|Total Cost Per Submission for Campaign|
+|priority_page_views_ct|Float|Total Priority Page View Click Through for Campaign|
+|priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
+|video_full_screen|Float|Number of Full-Screen Video Views <br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views|
+|total_conversions|Float|Number of Conversions<br>**The field is nullable**|
+|click_through_conversions|Float|Number of Click-Through Conversions<br>**The field is nullable**|
+|view_through_conversions|Float|Number of View-Through Conversions<br>**The field is nullable**|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Total Completed Views for Campaign|
+|video_complete_rate|Float|Total Video Completion Rate|
+|view_thru_rate|Float|Total View-Through Rate|
+|cost_per_view|Float|Cost per View|
+|div|Float|Display-Influenced Visits|
+|cpdiv|Float|Cost per Display-Influenced Visit|
 
 <a name="udlineitemscreativesintervals"></a>
 **Line Items Creatives Intervals Object**
 
 |Field Name|Datatype|Nullable|Description|
 |---|---|---|---|
-|start_date|String|No|Start Date of Interval|
-|impressions|Int|No|Total Impressions for Interval|
-|clicks|Int|No|Total Clicks for Interval|
-|total_active_time_view|Float|No|Total Time (minutes) the ad was viewed by a consumers|
-|ctr|Float|No|Overall Click-through Rate of Interval|
-|universal_interaction_rate|Float|No|Overall Universal Interaction Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|universal_interaction_time|Float|No|Overall Universal Interaction Time for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|hover_rate|Float|No|Hover Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|attention_quality|Float|No|Attention Quality for Interval (This MOAT metric was deprecated on 12-31-2019)|
-|video_full_screen|Float|Yes|Number of Full-Screen Video Views|
-|video_mute|Float|Yes|Number of Muted Video Views|
-|video_unmute|Float|Yes|Number of Unmuted Video Views|
-|video_pause|Float|Yes|Number of Paused Video Views|
-|video_resume|Float|Yes|Number of Resumed Video Views|
-|video_views|Float|Yes|Number of Video Views|
-|total_conversions|Float|Yes|Number of Conversions|
-|click_through_conversions|Float|Yes|Number of Click-Through Conversions|
-|view_through_conversions|Float|Yes|Number of View-Through Conversions|
-|video_played_to_25_pct|Float|Yes|Number of Video Views Played to 25 percent|
-|video_played_to_50_pct|Float|Yes|Number of Video Views Played to 50 percent|
-|video_played_to_75_pct|Float|Yes|Number of Video Views Played to 75 percent|
-|completed_views|Float|Yes|Number of Completed Views|
-|video_complete_rate|Float|Yes|Rate of Video Completion vs Partial Views|
-|view_thru_rate|Float|Yes|View-Through Rate|
-|cost_per_view|Float|No|Cost per View|
 
+|start_date|String|Start Date of Interval|
+|impressions|Integer|Total Impressions for Interval|
+|clicks|Integer|Total Clicks for Interval|
+|total_active_time_view|Float|Total Time (minutes) the ad was viewed by a consumers|
+|ctr|Float|Overall Click-through Rate of Interval|
+|universal_interaction_rate|Float|Overall Universal Interaction Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|universal_interaction_time|Float|Overall Universal Interaction Time for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|hover_rate|Float|Hover Rate for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|attention_quality|Float|Attention Quality for Interval (This MOAT metric was deprecated on 12-31-2019)|
+|video_full_screen|Float|Number of Full-Screen Video Views<br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views<br>**The field is nullable**|
+|total_conversions|Float|Number of Conversions<br>**The field is nullable**|
+|click_through_conversions|Float|Number of Click-Through Conversions<br>**The field is nullable**|
+|view_through_conversions|Float|Number of View-Through Conversions<br>**The field is nullable**|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Floates|Number of Completed Views<br>**The field is nullable**|
+|video_complete_rate|Float|Rate of Video Completion vs Partial Views<br>**The field is nullable**|
+|view_thru_rate|Float|View-Through Rate<br>**The field is nullable**|
+|cost_per_view|Float|Cost per View|
