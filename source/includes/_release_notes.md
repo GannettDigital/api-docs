@@ -1,6 +1,14 @@
 # Release Notes
 ## December 2020
 
+### December 23rd, 2020
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|Web Events|Added Type “unknown” to the API|
+|Display Campaign Metrics|Added total_active_time_view|
+
 ### December 13th, 2020
 **Release Notes**
 
