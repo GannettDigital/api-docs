@@ -400,7 +400,7 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
 |---|---|---|
 |web_event_name|String|Name of web event|
 |web_event_url|String|Web event url|
-|cvt_type|String|Request or Submit|
+|cvt_type|String|Request, Submit, or Unknown|
 |entry_type|Integer|7 (does not generate a lead event) or 8 (generates a lead event)|
 |intervals|Object|[Intervals Object](#cvtintervals)|
 
