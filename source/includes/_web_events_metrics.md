@@ -10,7 +10,10 @@
 
 This is an API that can be used by customers who have indicated that certain pages or actions of specific importance will benefit the performance of campaigns through more informed and meaningful conversions. All metrics are reported against the CVT/Web Event.
 
-Web Events fall under two categories: 'Request' and 'Submit'. A 'Request' Web Event is usually informational, in some cases, it can have a post-click activity that can generate a lead. A 'Submit' CVT/Web Event is lead-generating. Metrics tied to a 'Request' CVT/Web Event are considered 'non-qualified', whereas metrics tied to a 'Submit' CVT/Web Event are considered 'qualified'.
+Web Events fall under these categories: ‘Request’, ‘Submit’ and ’unknown”.
+* A 'Request' Web Event is usually informational, in some cases, it can have a post-click activity that can generate a lead.
+* A 'Submit' CVT/Web Event is lead-generating. Metrics tied to a 'Request' CVT/Web Event are considered 'non-qualified', whereas metrics tied to a 'Submit' CVT/Web Event are considered 'qualified'.
+* An 'Unknown’ Web Event is one where the URL & name are missing. This happens periodically when a campaign cycles and a visitor triggers the web event while our system is renewing the web events data for the new cycle. From a metrics perspective, the web event occurred but we don’t know which one was triggered.
 
 Use GET to retrieve web event activity for all CVT/Web Events for a given gmaid.
 
@@ -102,6 +105,16 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
                                 "date": "2020-10-10",
                                 "qualified_web_events": 3,
                                 "high_web_events": 3
+                            }
+                        ]
+                    },                    {
+                        "cvt_type": "Unknown",
+                        "entry_type": 8,
+                        "intervals": [
+                            {
+                                "date": "2020-10-10",
+                                "qualified_web_events": 1,
+                                "high_web_events": 1
                             }
                         ]
                     },
@@ -387,7 +400,7 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
 |---|---|---|
 |web_event_name|String|Name of web event|
 |web_event_url|String|Web event url|
-|cvt_type|String|Request or Submit|
+|cvt_type|String|Request, Submit, or Unknown|
 |entry_type|Integer|7 (does not generate a lead event) or 8 (generates a lead event)|
 |intervals|Object|[Intervals Object](#cvtintervals)|
 
