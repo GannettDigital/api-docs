@@ -1,4 +1,16 @@
 # Release Notes
+## January 2021
+
+### January 6th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|NA|Fix to reset campaign name to name of the current cycle. Please refer to the communication on the issue or reach apiservices@localiq.com for information|
+
+
+
+
 ## December 2020
 
 ### December 23rd, 2020
