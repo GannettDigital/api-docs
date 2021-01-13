@@ -8,7 +8,7 @@
 
 Use GET to retrieve information for the individual advertiser through gmaid.
 
-The data returned will include google only totals for impressions, clicks, click-through-rate (CTR), media_cost, keywords, and average position.  It will also show breakdowns per keyword for clicks, media cost, impressions, average position, first page cost-per-click (CPC) and top page cost-per-click.  Data will be returned in pages, controlled by the parameters page and page_size.  The first page is page 1.  Default values of 1 and 15 will be used if not specified.  Data is sorted in alphabetical order by keyword.
+This API should be used to retrieve information about an advertiser, i.e. name address etc. This API can also be used to check the active state of an advertiser for the purposes of retrieving metrics through our other APIs. An advertiser is considered inactive if they have had no active campaigns for 31 days. If an advertiser is inactive, the reporting APIs will error code 403  https://reachlocal.github.io/api-docs/?shell#error-codes
 
 
 ### Response Data Details&nbsp;&nbsp;&nbsp;
@@ -49,6 +49,6 @@ https://api.reachlocalservices.com/v3/identites/advertisers/TEST_1"
 |state|String|State where the advertiser is based in|
 |zip|String|Zip code of the advertiser|
 |country|String|The country the advertiser is based in|
-|active_state|Integer|The identifier for the state of the advertiser|
-|advertiser_id|Integer|The identifier for advertiser|
+|active_state|Number|**0: Advertiser not active.**<br>**1: Advertiser not active, but in grace period**<br>**2: Advertiser is active**|
+|advertiser_id|Integer|Advertiser ID. An ID assigned to a client at the time of sale.|
 |locale|String|locale of the country the advertiser is based in|
