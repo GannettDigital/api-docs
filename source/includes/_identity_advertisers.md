@@ -16,8 +16,10 @@ This API should be used to retrieve information about an advertiser, i.e. name a
 > Retrieve data for a specific advertiser
 
 ```
-curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
-https://api.reachlocalservices.com/v3/identites/advertisers/TEST_1"
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers/TEST_1' \
+-H 'Accept: application/json' \
+-H 'Authorization: TOKEN' \
+-H 'x-api-key: APIGEE_KEY'
 ```
 
 > Example Response
