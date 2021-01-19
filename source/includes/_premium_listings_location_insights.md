@@ -4,13 +4,13 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings_business/[gmaid]/insights?[query_params]
+| GET | /client_reports/premium_listings_location/[id]/insights?[query_params]
 
 #### API Name: business_insights
 #### Usage
-Use GET to retrieve business insights data for a GMAID, that comes from the Premium Listing Reporting API and will be filtered by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve location insights data , that comes from the Premium Listing Reporting API and will be filtered by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
-This report will show the facebook and google metrics for the particular gmaid for the interval between the start_date and the end_date. Every metric would contain a name property and a data property in which would be shown how many times (count) the metrics has been used for the particular period (interval_size). In the case of the example it would show the usage count of the metrics for a DAY between the start_date and the end_date. 
+This report will show on of the facebook, google, bing, yelp (or all of them) metrics for the particular id for.
 
 #### Parameters
 
@@ -18,14 +18,14 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Parameter | Required | Description |
 |---|---|---|
-|`start_date`|Yes|Restricts the results to those occurring on or after this date|
-|`end_date`|Yes|Restricts the results to those occurring on or before this date.|
-|`interval_size`|No| How to group the results, one of: HOUR (only for ACTIONS_PHONE), DAY, WEEK, MONTH or YEAR (DEFAULT DAY)|
+|`start_date`|No|Restricts the results to those occurring on or after this date|
+|`end_date`|No|Restricts the results to those occurring on or before this date.|
+|`type`|No| An array that filtrs the insights result for one of (facebook, bing, google, yelp)|
 
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings_business/GMAID/insights' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings_location/ID/insights' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -34,11 +34,16 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 #### Example Response
 ```javascript
 {
-    "report_type": "premium_listings/insights",
+    "report_type": "premium_listings_location/insights",
     "report_date": "2020-04-03",
-    "global_master_advertiser_id": "TEST_1234",
     "report_data": {
         "facebook":{
+            "metrics":[]
+        },
+        "yelp":{
+            "metrics":[]
+        },
+        "bing":{
             "metrics":[]
         },
        "google":{
@@ -8951,30 +8956,7 @@ Field Name|Datatype|Description|
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|facebook|Object|Data for specified facebook insights. [Facebook Object](#insights)|
-|google|Object|Data for specified google insights. [Google Object](#insights)|
-
-
-<a name="insights"></a>
-**Insights Object**
-
-
-|Field Name|Datatype|Description|
-|---|---|---|
-|metrics|Array|An array of insights metrics objects. [Insights Metrics](#metrics)|
-
-<a name="metrics"></a>
-**Metrics Array**
-
-|Field Name|Datatype|Description|
-|---|---|---|
-|name|String|Name of metric|
-|data|Array|An array of metrics data| [Metrics Data Array](#metricsdataarray)|
-
-<a name="metricsdataarray"></a>
-**Metrics Data Array**
-
-|Field Name|Datatype|Description|
-|---|---|---|
-|period|String|Date string of the period for which this metric was applied|
-|count|Integer|number of times the metric was applied|
+|facebook|Object|Data for specified facebook insights. [Facebook Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
+|google|Object|Data for specified google insights. [Google Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
+|yelp|Object|Data for specified yelp insights. [Google Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
+|bing|Object|Data for specified bing insights. [Google Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|

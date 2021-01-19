@@ -4,7 +4,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings/business/[gmaid]
+| GET | /client_reports/premium_listings_business/[gmaid]
 
 #### API Name: business
 #### Usage
@@ -15,7 +15,7 @@ The data returned will include information about the business which corresponds 
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/business/GMAID' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings_business/GMAID' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'

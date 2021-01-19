@@ -4,7 +4,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings/business/[gmaid]/review_insights?[query_params]
+| GET | /client_reports/premium_listings_business/[gmaid]/review_insights?[query_params]
 
 #### API Name: review_insights
 #### Usage
@@ -25,7 +25,7 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/business/GMAID/review_insights' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings_business/GMAID/review_insights' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
