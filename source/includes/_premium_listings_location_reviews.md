@@ -4,7 +4,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings_location/[id]/reviews
+| GET | /client_reports/premium_listings/location/[id]/reviews
 
 #### API Name: premium_listings_location_reviews
 #### Usage
@@ -15,7 +15,7 @@ This report will show the facebook and google metrics for the particular gmaid f
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings_location/GMAID/reviews' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/GMAID/reviews' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -24,7 +24,7 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 #### Example Response
 ```javascript
 {
-    "report_type": "premium_listings_location/reviews",
+    "report_type": "premium_listings/location/reviews",
     "report_date": "2020-04-03",
     "report_data": {
         "averageRatingByPeriod":[

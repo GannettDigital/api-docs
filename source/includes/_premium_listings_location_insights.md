@@ -4,7 +4,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings_location/[id]/insights?[query_params]
+| GET | /client_reports/premium_listings/location/[id]/insights?[query_params]
 
 #### API Name: business_insights
 #### Usage
@@ -25,7 +25,7 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings_location/ID/insights' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/ID/insights' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -34,7 +34,7 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 #### Example Response
 ```javascript
 {
-    "report_type": "premium_listings_location/insights",
+    "report_type": "premium_listings/location/insights",
     "report_date": "2020-04-03",
     "report_data": {
         "facebook":{

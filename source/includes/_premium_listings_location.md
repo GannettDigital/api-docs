@@ -4,7 +4,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings_location/[id]
+| GET | /client_reports/premium_listings/location/[id]
 
 #### API Name: premoum_listings_location
 #### Usage
@@ -14,7 +14,7 @@ Use GET to retrieve location data, that comes from the Premium Listing Reporting
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings_location/1234' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/1234' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -23,7 +23,7 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 #### Example Response
 ```javascript
 {
-    "report_type": "premium_listings_location/location",
+    "report_type": "premium_listings/location/location",
     "report_date": "2020-04-03",
     "report_data": {
         {
