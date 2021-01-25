@@ -24,6 +24,7 @@ If using the `campaigns_overview` report_type, all campaign data for the account
   - Xmedia
   - Email
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
+- For search_activity, unified_display, and facebook_campaigns report_types, xmedia campaign types are included.
 
 ### Parameters
 
