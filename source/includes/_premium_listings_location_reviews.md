@@ -8,9 +8,9 @@
 
 #### API Name: premium_listings_location_reviews
 #### Usage
-Use GET to retrieve location reviews data , that comes from the Premium Listing Reporting API.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve location reviews data, that comes from the Premium Listing Reporting API.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
-This report will show on of the facebook, google, bing, yelp_api (or all of them) metrics for the particular id for.
+This report will show one of facebook, google, bing, yelp_api (or all of them) metrics for the particular id for a location.
 
 #### Parameters
 
@@ -20,12 +20,12 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |`start_date`|No|Restricts the results to those occurring on or after this date|
 |`end_date`|No|Restricts the results to those occurring on or before this date.|
-|`types`|No| An array that filtrs the insights result for one of (facebook, bing, google, yelp_api)|
+|`types`|No| An array that filters the insights result for one of (facebook, bing, google, yelp_api)|
 
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/GMAID/reviews' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/ID/reviews' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'

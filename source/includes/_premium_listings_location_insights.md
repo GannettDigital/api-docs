@@ -10,7 +10,7 @@
 #### Usage
 Use GET to retrieve location insights data , that comes from the Premium Listing Reporting API.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
-This report will show on of the facebook, google, bing, yelp_api (or all of them) metrics for the particular id for.
+This report will show one of facebook, google, bing, yelp_api (or all of them) metrics for the particular id for.
 
 #### Parameters
 
@@ -20,7 +20,8 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |`start_date`|No|Restricts the results to those occurring on or after this date|
 |`end_date`|No|Restricts the results to those occurring on or before this date.|
-|`types`|No| An array that filtrs the insights result for one of (facebook, bing, google, yelp_api)|
+|`interval_size`|No| How to group the results, one of: HOUR (only for ACTIONS_PHONE), DAY, WEEK, MONTH or YEAR (DEFAULT DAY)|
+|`types`|No| An array that filters the insights result for one of (facebook, bing, google, yelp_api)|
 
 #### Examples
 
@@ -185,5 +186,5 @@ Field Name|Datatype|Description|
 |---|---|---|
 |facebook|Object|Data for specified facebook insights. [Facebook Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
 |google|Object|Data for specified google insights. [Google Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
-|yelp|Object|Data for specified yelp insights. [Google Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
-|bing|Object|Data for specified bing insights. [Google Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
+|yelp|Object|Data for specified yelp insights. [Yelp Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
+|bing|Object|Data for specified bing insights. [Bing Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_insightsData-GET)|
