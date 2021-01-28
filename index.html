@@ -1427,6 +1427,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <li>Email</li>
 </ul></li>
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
+<li>For search_activity, unified_display, and facebook_campaigns report_types, xmedia campaign types are included.</li>
 </ul><h3 id='reporting-metric-apis-campaigns-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
 <th>Param</th>
 <th>Required?</th>
@@ -6680,6 +6681,10 @@ https://api.reachlocalservices.com/client_reports/google_search_activity/TEST_1?
 <tr>
 <td>goal_type_ids[]</td>
 <td>Optional.  Focus must be specified as <code>goal</code>.  Must be an array of valid goal_type_ids</td>
+</tr>
+<tr>
+<td>include_full_channel</td>
+<td>Optional, default: false.  Includes all metrics for the social channel.  Xmedia campaigns will only contain metrics that are categorized as social, rather than full campaign metrics.</td>
 </tr></tbody></table><p><strong>To specify a date range</strong></p><ul><li>Specify start_date and end_date.</li>
 <li>When specifying a <strong>campaign_cycle</strong>, do not use date range params.</li>
 </ul><p><strong>Valid Goal Type Ids</strong></p><table><thead><tr>
