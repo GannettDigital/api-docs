@@ -21,6 +21,7 @@ When using the GET method, the results can be filtered using these parameters:
 |Param|Required|Function|
 |---|---|---|
 |gmaid|Yes|Restrict results to the specified Global Master Advertiser ID|
+|visitor_id[]|Yes|Returns events for the specified visitors|
 |start_date|No|Restricts the results to those occurring on or after this date|
 |end_date|No|Restricts the results to those occurring on or before this date|
 |group_by|No|Only valid value at this time is `visitor_id`|
@@ -55,7 +56,7 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 ```
 
 
-> Example Response
+> Example Response (with group_by)
 
 ```json
 {
@@ -79,7 +80,7 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
                         "referrer_source": "PAID",
                         "referrer_type": "SEARCH",
                         "page_url": "https://www.simplehi.com/contact-us/",
-                        "global_master_campaign_id": "USA_222",
+                        "global_master_campaign_id": "TEST_222",
                         "campaign_name": "BFD | xMedia | Simple Search | SEM Social",
                         "campaign_type": "xmedia",
                         "campaign_status": "running",
@@ -123,6 +124,62 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 }
 ```
 
+
+> Example Response (without group_by)
+
+```json
+{
+    "api_name": "visitor_events",
+    "global_master_advertiser_id": "TEST_1",
+    "api_run_date": "2021-02-11",
+    "time_zone": "America/Los_Angeles",
+    "report_data": {
+        "events": [
+            {
+                "event_id": "33b09f79-6aa8-4868-8945-5226e8b473a8",
+                "visitor_id": "0b1f0b35-718a-4143-8ab6-5e15d380d6ad",
+                "event_time": "2021-01-18T18:38:12.000Z",
+                "event_type": "Contact",
+                "event_subtype": "Post",
+                "referrer_source": "PAID",
+                "referrer_type": "SEARCH",
+                "page_url": "https://www.simplehi.com/contact-us/",
+                "global_master_campaign_id": "TEST_222",
+                "campaign_name": "BFD | xMedia | Simple Search | SEM Social",
+                "campaign_type": "xmedia",
+                "campaign_status": "running",
+                "goals": [
+                    {
+                        "goal_type_id": 3,
+                        "goal_type": "Contacts"
+                    }
+                ],
+                "channel": "search"
+            },
+            {
+                "event_id": "8e006cac-cc9a-4445-88f2-94bfeee6c54c",
+                "visitor_id": "0b1f0b35-718a-4143-8ab6-5e15d380d6ad",
+                "event_time": "2021-01-18T18:38:16.000Z",
+                "event_type": "Cvt",
+                "event_subtype": "Cvt",
+                "referrer_source": "",
+                "referrer_type": "",
+                "page_url": ""
+            },
+            {
+                "event_id": "496ea87d-7125-4983-b9f8-dfe702b45c35",
+                "visitor_id": "499eea8d-dab5-46ec-8387-0b48a56c4dcb",
+                "event_time": "2021-01-21T19:40:54.000Z",
+                "event_type": "TouchPoint",
+                "event_subtype": "Visit",
+                "referrer_source": "ORGANIC",
+                "referrer_type": "SOCIAL",
+                "page_url": "https://www.simplehi.com/limited-time-offer/?utm_source=facebook&utm_medium=social&utm_campaign=njam_sitetraffic&utm_content=lwv_fb"
+            }
+        ]
+    }
+}
+```
 
 
 |Field Name|Datatype|Description|
