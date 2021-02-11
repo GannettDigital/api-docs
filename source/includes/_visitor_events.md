@@ -21,7 +21,7 @@ When using the GET method, the results can be filtered using these parameters:
 |Param|Required|Function|
 |---|---|---|
 |gmaid|Yes|Restrict results to the specified Global Master Advertiser ID|
-|visitor_id[]|Yes|Returns events for the specified visitors|
+|visitor_ids[]|Yes|Returns events for the specified visitors|
 |start_date|No|Restricts the results to those occurring on or after this date|
 |end_date|No|Restricts the results to those occurring on or before this date|
 |group_by|No|Only valid value at this time is `visitor_id`|
