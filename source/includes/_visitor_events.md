@@ -28,7 +28,7 @@ When using the GET method, the results can be filtered using these parameters:
 
 ### Response Data Details
 
-> Retrieve data for a list of event_ids
+> Retrieve data for a list of visitor_ids
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
