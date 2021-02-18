@@ -1,4 +1,4 @@
-### Reviews
+### Review Details
 
 #### Resource Overview
 
@@ -18,16 +18,16 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Parameter | Required | Description |
 |---|---|---|
-|`data_types`|No|Restricts the results to those data types  e.g. [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]|
-|`ratings`|No|Restricts the results based on the rating number (1,2,3,4 or 5).|
-|`types`|No| An array that filters the insights result for one of (facebook, bing, google, yelp_api)|
+|`data_types`|No|Restricts the results to those data types  e.g. [photo, review, checkin, conversation, question]|
+|`ratings`|No|A float number which restricts the results based on the rating number between 1 and 5.|
+|`types`|No| An array that filters the insights result for one of [google, facebook, bing, yelp_api, brownbook care_dash city_squares cylex dental_plans doctor_com doctor_spot ezlocal find_open healthgrades i_global judys_book my_local_service share_care showmelocal stadtbranchenbuch trip_advisor vitals web_md wellness where_to yalwa ya_sabe zoc_doc zwivel]|
 |`page`|No|Restricts the results to those occurring after the offset|
 |`page_size`|No|Restricts the number of locations that will be shown. (The max value of page_size is 50)|
 
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/ID/reviews' \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/ID/review_details' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -111,6 +111,16 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
 |---|---|---|
 |report_type|String|Name of the Report|
 |report_date|String|Date report was run|
-|report_data|Object|Report details. [Report Data Object](https://uberall.com/en/developers/apiDocumentation#_api_dashboard_customerFeedback-GET)|
+|report_data|Object|Report details. [Report Data Object](#reviewdetailsreportdata)|
+
+<a name="reviewdetailsreportdata"></a>
+**Report Data Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|page|Integer|The number of the page that is currently loaded.|
+|page_size|Integer|The number of the elements in a page (request).|
+|total_pages|Integer|How many pages are there left. |
+|details|Array|Review details for specified locations. [Details Object](https://uberall.com/en/developers/resources#DataPoint)|
 
 
