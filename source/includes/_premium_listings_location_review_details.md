@@ -20,7 +20,7 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |`data_types`|No|Restricts the results to those data types  e.g. [photo, review, checkin, conversation, question]|
 |`ratings`|No|A float number which restricts the results based on the rating number between 1 and 5.|
-|`types`|No| An array that filters the insights result for one of [google, facebook, bing, yelp_api, brownbook care_dash city_squares cylex dental_plans doctor_com doctor_spot ezlocal find_open healthgrades i_global judys_book my_local_service share_care showmelocal stadtbranchenbuch trip_advisor vitals web_md wellness where_to yalwa ya_sabe zoc_doc zwivel]|
+|`types`|No| An array that filters the insights result for one of [google, facebook, bing, yelp_api, brownbook care_dash city_squares cylex dental_plans doctor_com ezlocal find_open healthgrades i_global judys_book my_local_services share_care showmelocal stadtbranchenbuch trip_advisor vitals web_md wellness where_to yalwa ya_sabe zoc_doc zwivel]|
 |`page`|No|Restricts the results to those occurring after the offset|
 |`page_size`|No|Restricts the number of locations that will be shown. (The max value of page_size is 50)|
 
