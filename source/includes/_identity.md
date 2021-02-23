@@ -18,7 +18,9 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 | Param | Required | Default | Function |
 |---|---|---|---|
 |user| Yes | -- | Restricts the results to advertisers authorized for the given business user |
-|exclude_inactive| No |false| Returns only active advertisers |
+<internal>
+|exclude_inactive| No |true| Returns only active advertisers |
+</internal>
 | page| No | 1 | Return a specified page of results |
 | page_size | No | 5000 | Number of results per page |
 
