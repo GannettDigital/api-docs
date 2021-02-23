@@ -1240,9 +1240,19 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>Yes</td>
 <td>--</td>
 <td>Restricts the results to advertisers authorized for the given business user</td>
-</tr></tbody></table><p>
-| page| No | 1 | Return a specified page of results |
-| page_size | No | 5000 | Number of results per page |</p><h3 id='identity-apis-identity-api-response-data-details'>Response Data Details</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+</tr>
+<tr>
+<td>page</td>
+<td>No</td>
+<td>1</td>
+<td>Return a specified page of results</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>No</td>
+<td>5000</td>
+<td>Number of results per page</td>
+</tr></tbody></table><h3 id='identity-apis-identity-api-response-data-details'>Response Data Details</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.reachlocalservices.com/identities/v3?user=EMAIL_ADDRESS"</span><span class="p">)</span>
