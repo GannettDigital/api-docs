@@ -713,9 +713,13 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
             "frequency": 250.3866,
             "spend": 4546.13,
             "video_p100_watched_actions": 0,
+            "offline_conversion_purchases": 7,
+            "offline_conversion_purchases_value": 82,
             "cpc": 2.61,
             "cpm": 7.82,
             "ctr": 0.3,
+            "cpsc": 3.57,
+            "roas": 328,
             "average_daily_reach": 2217.9
         },
         "totals_per_interval": [
