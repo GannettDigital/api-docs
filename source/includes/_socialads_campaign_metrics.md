@@ -657,7 +657,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "leads_breakdown": {
+            "leadgen_other_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 0,
