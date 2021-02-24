@@ -195,7 +195,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "button_clicks_breakdown": {
+            "call_to_action_clicks_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 0,
@@ -393,7 +393,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "links_clicks_breakdown": {
+            "link_click_breakdown": {
                 "age_18-24_gender_male": 8.0,
                 "age_18-24_gender_female": 8.0,
                 "age_25-34_gender_male": 13.0,
@@ -426,7 +426,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "page_engagements_breakdown": {
+            "page_engagement_breakdown": {
                 "age_18-24_gender_male": 8.0,
                 "age_18-24_gender_female": 8.0,
                 "age_25-34_gender_male": 14.0,
@@ -459,7 +459,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "page_likes_breakdown": {
+            "like_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 0,
@@ -492,7 +492,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "post_engagements_breakdown": {
+            "post_engagement_breakdown": {
                 "age_18-24_gender_male": 8.0,
                 "age_18-24_gender_female": 8.0,
                 "age_25-34_gender_male": 14.0,
@@ -525,7 +525,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "post_comments_breakdown": {
+            "comment_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 0,
@@ -558,7 +558,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "post_shares_breakdown": {
+            "post_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 0,
@@ -591,7 +591,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "post_reactions_breakdown": {
+            "post_reaction_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 1.0,
@@ -624,7 +624,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "checkins_breakdown": {
+            "checkin_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 0,
@@ -657,7 +657,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
                 "age_Unknown_gender_female": 0,
                 "age_Unknown_gender_unknown": 0
             },
-            "lead_forms_breakdown": {
+            "leads_breakdown": {
                 "age_18-24_gender_male": 0,
                 "age_18-24_gender_female": 0,
                 "age_25-34_gender_male": 0,
