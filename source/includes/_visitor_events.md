@@ -203,7 +203,7 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|event_id|Event ID|An id for the event and unique to every event|
+|event_id|Event ID|An id for the event and unique to every occurance of the event|
 |visitor_id|Visitor ID|An id of a visitor to an advertiser’s site for a given browser & device. The same visitor will have a different id if a different browser on the same device or a different device is used|
 |event_time|Event Time|Time the event occured|
 |event_type|Event Type|See below for options|
