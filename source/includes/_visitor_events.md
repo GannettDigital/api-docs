@@ -8,7 +8,7 @@
 |---|---|
 |GET|/client_reports/visitor_events?[query_params]|
 
-This API should be used to retrieve all events for a visitor_ids for a given advertiser (GMAID). The response will contain a chornological list of events. It can also be optionally grouped by visitor_id. Events can also be restricted to a date range.
+This API should be used to retrieve all events for a list of visitor_ids for a given advertiser (GMAID). The response will contain a chornological list of events. It can also be optionally grouped by visitor_id. Events can also be restricted to a date range.
 
 When available, campaign information will be provided for each event, as well as channel when campaign type is xmedia.
 
