@@ -8,7 +8,7 @@
 |---|---|
 |GET|/client_reports/visitor_events?[query_params]|
 
-This API should be used to retrieve all events for a visitor_ids for a given advertiser (GMAID). The response will contain a chornological list of events. It can also be optionally grouped by visitor_id. You can also request for events within a data range.
+This API should be used to retrieve all events for a visitor_ids for a given advertiser (GMAID). The response will contain a chornological list of events. It can also be optionally grouped by visitor_id. Events can also be restricted to a date range.
 
 When available, campaign information will be provided for each event, as well as channel when campaign type is xmedia.
 
@@ -203,14 +203,14 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|event_id|Event ID|An id for the event and unique to every event
-|visitor_id|Visitor ID|An id of a visitor to an advertiser’s site for a given browser & device. The same visitor will have a different id if a different browser on the same device or a different device is used.
-|event_time|Event Time|Time the event occured
-|event_type|Event Type|See below for options
-|event_subtype|Event Subtype|See below for options
-|referrer_source|Referrer Source|See below for options
-|referrer_type|Referrer Type|See below for options
-|page_url|Page URL|URl of the page the visitor is on
+|event_id|Event ID|An id for the event and unique to every event|
+|visitor_id|Visitor ID|An id of a visitor to an advertiser’s site for a given browser & device. The same visitor will have a different id if a different browser on the same device or a different device is used|
+|event_time|Event Time|Time the event occured|
+|event_type|Event Type|See below for options|
+|event_subtype|Event Subtype|See below for options|
+|referrer_source|Referrer Source|See below for options|
+|referrer_type|Referrer Type|See below for options|
+|page_url|Page URL|URl of the page the visitor is on |
 |global_master_campaign_id|String|Identifier for campaign (campaign info present only if referrer_source==PAID)|
 |campaign_name|String|Name of campaign|
 |campaign_type|String|Type of campaign|
@@ -254,6 +254,7 @@ Describes the type of event
 
 
 **Referrer Source**
+Describes the traffic source of  the visitor.
 | Field Name | Description |
 |---|---|
 |Organic|Visitor's came to the site organically|
@@ -262,7 +263,7 @@ Describes the type of event
 |Unavailable|Cannot be determined|
 
 **Referrer Type**
-Describes the type of domain the visitor came from
+Describes the type of domain the visitor came from.
 | Field Name |Description |
 |---|---| 
 |Search|Google.com, lycos.com etc.|
