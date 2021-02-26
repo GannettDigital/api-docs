@@ -8,7 +8,7 @@
 |---|---|
 |GET|/client_reports/visitor_events?[query_params]|
 
-This API should be used to retrieve all events for a list of visitor_ids for a given advertiser (GMAID). The response will contain a chornological list of events. It can also be optionally grouped by visitor_id. Events can also be restricted to a date range.
+This API should be used to retrieve all events for a list of visitor_ids for a given advertiser (GMAID). The response will contain a chronological list of events. Optionally, it can also be grouped by visitor_id. Events can also be restricted to a date range.
 
 When available, campaign information will be provided for each event, as well as channel when campaign type is xmedia.
 
@@ -186,7 +186,7 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 |global_master_advertiser_id|String|Global Master Advertiser ID|
 |api_run_date|String|Date report was run|
 |start_date|String|Start date of report (if specified in params)|
-|end_date|String|End date of report (if sepcified in params)|
+|end_date|String|End date of report (if specified in params)|
 |time_zone|String|Time Zone|
 |report_data|Object|Report details. [Report Data Object](#visitoreventsreportdata)|
 
@@ -203,9 +203,9 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|event_id|Event ID|An id for the event and unique to every occurance of the event|
+|event_id|Event ID|An id for the event and unique to every occurrence of the event|
 |visitor_id|Visitor ID|An id of a visitor to an advertiser’s site for a given browser & device. The same visitor will have a different id if a different browser on the same device or a different device is used|
-|event_time|Event Time|Time the event occured|
+|event_time|Event Time|Time the event occurred|
 |event_type|Event Type|See below for options|
 |event_subtype|Event Subtype|See below for options|
 |referrer_source|Referrer Source|See below for options|
@@ -272,4 +272,3 @@ Describes the type of domain the visitor came from.
 |Other|allstarrents.com, maac.com etc.|
 |Direct|Visitor typed the URL|
 |unavailable|Cannot be determined|
-|
