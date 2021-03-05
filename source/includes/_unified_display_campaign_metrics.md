@@ -36,14 +36,14 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_date=2016-12-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data with intervals
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/unified_display/TEST_1?start_date=2016-12-01&end_date=2016-12-31&interval_size=day
+https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date=2016-12-01&end_date=2016-12-31&interval_size=day
 ```
 
 > Example Response

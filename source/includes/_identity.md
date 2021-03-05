@@ -30,7 +30,7 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/identities/v3?user=EMAIL_ADDRESS")
+url = URI("https://api.localiqservices.com/identities/v3?user=EMAIL_ADDRESS")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -46,7 +46,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/identities/v3?user=EMAIL_ADDRESS")
+  .url("https://api.localiqservices.com/identities/v3?user=EMAIL_ADDRESS")
   .get()
   .addHeader("Authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Accept", "application/json")
@@ -57,7 +57,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request GET \
-  --url https://api.reachlocalservices.com/identities/v3?user=EMAIL_ADDRESS \
+  --url https://api.localiqservices.com/identities/v3?user=EMAIL_ADDRESS \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
 ```
@@ -65,7 +65,7 @@ curl --request GET \
 > Example Response
 
 ```json
-https://api.reachlocalservices.com/identities/v3?user=test@test3.com
+https://api.localiqservices.com/identities/v3?user=test@test3.com
 
 {
     "bu_id": 1,

@@ -34,14 +34,14 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/addressable_geofence/USA_105569?start_date=2016-12-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/addressable_geofence/USA_105569?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/addressable_geofence/USA_105569?start_date=2016-12-01&end_date=2016-12-31&publisher_plat_zipcode[]=5555-0001
+https://api.localiqservices.com/client_reports/addressable_geofence/USA_105569?start_date=2016-12-01&end_date=2016-12-31&publisher_plat_zipcode[]=5555-0001
 ```
 
 > Example Response

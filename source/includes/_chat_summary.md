@@ -38,28 +38,28 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25'
+https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25'
 ```
 
 > Retrieve data for a specific master campaign id
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1' \
+https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1' \
 ```
 
 > Retrieve data for a specific range of dates grouped by calendar week
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25&interval_size=calendar_week' \
+https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25&interval_size=calendar_week' \
 ```
 
 > Retrieve data with all options together with results below
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1&interval_size=calendar_week' \
+https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1&interval_size=calendar_week' \
 ```
 
 > Example Response

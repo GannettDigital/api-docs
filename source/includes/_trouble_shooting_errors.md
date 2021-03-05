@@ -16,7 +16,7 @@ Invalid grant error messages occurs when either:
 
 - When a request is made to refresh an access token with an expired refresh token, one that has already been used to obtain an access token so it is no longer valid.
 
-To resolve this check your username and password for accuracy, then follow steps at [Requesting Access and Refresh Tokens](https://reachlocal.github.io/api-docs/#api-access-step-2-authorization-requesting-access-and-refresh-tokens) to request a new refresh token.
+To resolve this check your username and password for accuracy, then follow steps at [Requesting Access and Refresh Tokens](https://doc.api.localiq.com/#getting-started-step-2-authorization-authentication) to request a new refresh token.
 
 ### 401 - Unauthorized
 
@@ -28,7 +28,7 @@ To resolve this check your username and password for accuracy, then follow steps
 
 Unauthorized messages can occur when a request for a report endpoint is made using an expired token.
 
-To resolve this, follow steps at [Requesting Access and Refresh Tokens](https://reachlocal.github.io/api-docs/#api-access-step-2-authorization-requesting-access-and-refresh-tokens)
+To resolve this, follow steps at [Requesting Access and Refresh Tokens](https://doc.api.localiq.com/#getting-started-step-2-authorization-authentication)
 
 ### 403 - Forbidden
 

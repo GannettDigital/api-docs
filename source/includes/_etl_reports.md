@@ -23,7 +23,7 @@ Use POST to schedule an ETL job.  The `report_type` and `report_params` params i
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 -H 'Content-Type: application/json' \
--X POST 'https://api.reachlocalservices.com/client_reports/etl' \
+-X POST 'https://api.localiqservices.com/client_reports/etl' \
 --data-raw '{
 	"report_type": "etl_keyword_report",
 	"report_params": {
@@ -60,7 +60,7 @@ Use GET to retrieve details about an ETL job.  Note that only jobs created by th
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-'https://api.reachlocalservices.com/client_reports/etl/3'
+'https://api.localiqservices.com/client_reports/etl/3'
 ```
 
 > Response
@@ -92,7 +92,7 @@ Use GET to retrieve a list of etl_jobs.  Note that only jobs created by the call
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-'https://api.reachlocalservices.com/client_reports/etl' \
+'https://api.localiqservices.com/client_reports/etl' \
 ```
 
 > Response

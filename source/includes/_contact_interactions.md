@@ -35,7 +35,7 @@ event_type | no | Must be one of `chat`, `call`, or `form`.  Limits results to r
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
+url = URI("https://api.localiqservices.com/crm/contact_interactions?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -50,7 +50,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
+  .url("https://api.localiqservices.com/crm/contact_interactions?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
   .get()
   .addHeader("Authorization", "OAUTH_ACCESS_TOKEN")
   .build();
@@ -60,7 +60,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request GET \
-  --url 'https://api.reachlocalservices.com/crm/contact_interactions?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10' \
+  --url 'https://api.localiqservices.com/crm/contact_interactions?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10' \
   --header 'Authorization: OAUTH_ACCESS_TOKEN'
 ```
 
@@ -71,7 +71,7 @@ curl --request GET \
     "global_master_advertiser_id": "TEST_1",
     "page": 1,
     "total_pages": 5,
-    "next_page_location": "https://api.qa.reachlocalservices.com/crm/contact_interactions?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=TEST_1&page=2",
+    "next_page_location": "https://api.qa.localiqservices.com/crm/contact_interactions?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=TEST_1&page=2",
     "contact_interactions": [
         {
             "campaign_id": 26330,

@@ -17,7 +17,7 @@ All params are required.  Once the job has completed, a call to the status endpo
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 -H 'Content-Type: application/json' \
--X POST 'https://api.reachlocalservices.com/client_reports/etl' \
+-X POST 'https://api.localiqservices.com/client_reports/etl' \
 --data-raw '{
 	"report_type": "etl_keyword_report",
 	"report_params": {

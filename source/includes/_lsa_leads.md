@@ -34,7 +34,7 @@ To specify a date range:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/leads/lsa_events?start_date=2020-09-27&end_date=2020-09-28&global_master_advertiser_id=TEST_123' \
+https://api.localiqservices.com/leads/lsa_events?start_date=2020-09-27&end_date=2020-09-28&global_master_advertiser_id=TEST_123' \
 
 ```
 
@@ -87,7 +87,7 @@ https://api.reachlocalservices.com/leads/lsa_events?start_date=2020-09-27&end_da
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/leads/lsa_events?start_date=2020-09-27&end_date=2020-09-28&global_master_advertiser_id=TEST_123&global_master_campaign_id[]=TEST_1232' \
+https://api.localiqservices.com/leads/lsa_events?start_date=2020-09-27&end_date=2020-09-28&global_master_advertiser_id=TEST_123&global_master_campaign_id[]=TEST_1232' \
 
 ```
 

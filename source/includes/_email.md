@@ -28,14 +28,14 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns?start_date=2020-10-01&end_date=2020-10-10
+https://api.localiqservices.com/client_reports/email/TEST_1/campaigns?start_date=2020-10-01&end_date=2020-10-10
 ```
 
 > Retrieve data for a specific campaign
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
+https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
 ```
 
 > Example Response Index

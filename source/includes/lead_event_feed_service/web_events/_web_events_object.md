@@ -31,7 +31,7 @@
             "read": false,
             "flagged": false,
             "campaign_name": "Killer sales",
-            "event_uri": "https://api.reachlocalservices.com/leads/web_events/4",
+            "event_uri": "https://api.localiqservices.com/leads/web_events/4",
             "source": "Organic Traffic",
             "name": "Ward-Gaylord",
             "referring_url": "http://champlin.biz/pickled",
@@ -51,7 +51,7 @@
             "read": false,
             "flagged": false,
             "campaign_name": "Special savings",
-            "event_uri": "https://api.reachlocalservices.com/leads/web_events/562",
+            "event_uri": "https://api.localiqservices.com/leads/web_events/562",
             "source": "Organic Traffic",
             "name": "Brown Group",
             "referring_url": "http://rutherford.co/vice",
@@ -59,7 +59,7 @@
             "event_time": "2018-05-08T13:49:44.000Z"
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/web_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-05-06 19:51:02584&show_deleted=false"
+    "next_page": "https://api.localiqservices.com/leads/web_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-05-06 19:51:02584&show_deleted=false"
 }
 ```
 

@@ -23,7 +23,7 @@ This endpoint is used to create a chat event.
 
 ``` shell
 curl -X POST \
-  https://api.reachlocalservices.com/capture_events/chats \
+  https://api.localiqservices.com/capture_events/chats \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
@@ -49,7 +49,7 @@ curl -X POST \
 # Sample cURL for the Create Chat POST request with validation errors:
 
 curl -X POST \
-  https://api.reachlocalservices.com/capture_events/chats \
+  https://api.localiqservices.com/capture_events/chats \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
@@ -86,7 +86,7 @@ curl -X POST \
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/capture_events/chats")
+url = URI("https://api.localiqservices.com/capture_events/chats")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -111,7 +111,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"SomeCompany\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n");
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/capture_events/chats")
+  .url("https://api.localiqservices.com/capture_events/chats")
   .post(body)
   .addHeader("accept", "application/json")
   .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")

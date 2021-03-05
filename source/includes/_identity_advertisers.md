@@ -8,7 +8,7 @@
 
 Use GET to retrieve information for the individual advertiser through gmaid.
 
-This API should be used to retrieve information about an advertiser, i.e. name address etc. This API can also be used to check the active state of an advertiser for the purposes of retrieving metrics through our other APIs. An advertiser is considered inactive if they have had no active campaigns for 31 days. If an advertiser is inactive, the reporting APIs will error code 403  https://reachlocal.github.io/api-docs/?shell#error-codes
+This API should be used to retrieve information about an advertiser, i.e. name address etc. This API can also be used to check the active state of an advertiser for the purposes of retrieving metrics through our other APIs. An advertiser is considered inactive if they have had no active campaigns for 31 days. If an advertiser is inactive, the reporting APIs will error code 403  https://doc.api.localiq.com/?shell#error-codes
 
 
 ### Response Data Details&nbsp;&nbsp;&nbsp;

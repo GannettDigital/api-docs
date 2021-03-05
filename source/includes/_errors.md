@@ -1,6 +1,6 @@
 # Error Codes
 
-The ReachLocal API uses standard HTTP status codes to communicate errors
+The LocalIQ API uses standard HTTP status codes to communicate errors
 
 Error Code | Meaning
 ---------- | -------

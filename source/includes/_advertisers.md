@@ -98,19 +98,19 @@ curl -H "Authorization: token reachanalyticsreportingservicetoken"  "http://loca
         "tier": 1,
         "campaign_performance_consultant": {
             "global_master_advertiser_id": "USA_196567",
-            "name": "Lyndsee Rothenburg",
-            "role": "Nbar Marketing Engineer",
-            "email": "lyndsee.rothenburg@reachlocal.com",
-            "phone": "+12145455530"
+            "name": "Fred Flintstone",
+            "role": "Marketing Engineer",
+            "email": "fred.flintstone@localiq.com",
+            "phone": "+12145555530"
         },
         "customer_contacts": [
             {
-                "name": "Jeffery Schnurmacher",
-                "email": "jschnurmacher@gmail.com"
+                "name": "Barney Rubble",
+                "email": "barney.rubble@gmail.com"
             },
             {
-                "name": "David Schlamme",
-                "email": "nanuet@mygym.com"
+                "name": "Betty Rubble",
+                "email": "betty.rubble@mygym.com"
             }
         ]
     }

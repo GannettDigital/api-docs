@@ -9,7 +9,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/crm/webhooks?global_master_advertiser_id=TEST_1")
+url = URI("https://api.localiqservices.com/crm/webhooks?global_master_advertiser_id=TEST_1")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -28,7 +28,7 @@ OOkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{ \"event_type\": \"new_contact\", \"url\": \"https://my.webhook.site/new_contact\", \"authorization\": \"token jokin\" }");
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/crm/webhooks?global_master_advertiser_id=TEST_1")
+  .url("https://api.localiqservices.com/crm/webhooks?global_master_advertiser_id=TEST_1")
   .post(body)
   .addHeader("Authorization", "OAUTH_ACCESS_TOKEN")
   .addHeader("Content-Type", "application/json")
@@ -39,7 +39,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request POST \
-  --url 'https://api.reachlocalservices.com/crm/webhooks?global_master_advertiser_id=TEST_1' \
+  --url 'https://api.localiqservices.com/crm/webhooks?global_master_advertiser_id=TEST_1' \
   --header 'Authorization: OAUTH_ACCESS_TOKEN' \
   --header 'Content-Type: application/json' \
   --data '{ "event_type": "new_contact", "url": "https://my.webhook.site/9995ad74-3c32-4e6c-aa8f-25da0fd419d9/new_contact", "authorization": "token jokin" }'
@@ -57,7 +57,7 @@ This ID will be needed in the event the user chooses to de-register the webhook.
 
 **Resource Overview**
 
-`POST https://api.reachlocalservices.com/crm/webhooks`
+`POST https://api.localiqservices.com/crm/webhooks`
 
 **Parameters**
 
@@ -92,7 +92,7 @@ This endpoint De-registers a webhook created using the above register webhook me
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/crm/webhooks/84+TEST_1")
+url = URI("https://api.localiqservices.com/crm/webhooks/84+TEST_1")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -108,7 +108,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/crm/webhooks/84+TEST_1")
+  .url("https://api.localiqservices.com/crm/webhooks/84+TEST_1")
   .delete(null)
   .addHeader("Authorization", "OAUTH_ACCESS_TOKEN")
   .addHeader("Content-Type", "application/json")
@@ -119,7 +119,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request DELETE \
-  --url 'https://api.reachlocalservices.com/crm/webhooks/84+TEST_1' \
+  --url 'https://api.localiqservices.com/crm/webhooks/84+TEST_1' \
   --header 'Authorization: OAUTH_ACCESS_TOKEN' \
   --header 'Content-Type: application/json'
 ```
@@ -134,7 +134,7 @@ curl --request DELETE \
 
 **Resource&nbsp;Overview**
 
-`DELETE https://api.reachlocalservices.com/crm/webhooks/[id]`
+`DELETE https://api.localiqservices.com/crm/webhooks/[id]`
 
 **Response&nbsp;Data Details**
 

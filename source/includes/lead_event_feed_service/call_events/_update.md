@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/call_events/123.json")
+url = URI("https://api.localiqservices.com/leads/call_events/123.json")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -24,7 +24,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n\t\"read\":\"true\",\n\t\"flagged\":\"true\"\n}");
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/call_events/123.json")
+  .url("https://api.localiqservices.com/leads/call_events/123.json")
   .put(body)
   .addHeader("Authorization", "token lambda_token")
   .addHeader("Content-Type", "application/json")
@@ -36,7 +36,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X PUT \
-  https://api.reachlocalservices.com/leads/call_events/123.json \
+  https://api.localiqservices.com/leads/call_events/123.json \
   -H 'Authorization: token lambda_token' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \

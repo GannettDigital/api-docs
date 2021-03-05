@@ -30,27 +30,27 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='111-222-333'&visitor_ids[]='444-555-666'
+https://api.localiqservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='111-222-333'&visitor_ids[]='444-555-666'
 ```
 
 > Retrieve data restricted by date_range
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='111-222-333'&visitor_ids[]='444-555-666'&start_date=2021-01-01&end_date=2021-01-31
+https://api.localiqservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='111-222-333'&visitor_ids[]='444-555-666'&start_date=2021-01-01&end_date=2021-01-31
 ```
 
 > Retrieve data grouped by visitor_id
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='111-222-333'&visitor_ids[]='444-555-666'&group_by=visitor_id
+https://api.localiqservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='111-222-333'&visitor_ids[]='444-555-666'&group_by=visitor_id
 ```
 > all filters combined (results below)
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='0b1f0b35-718a-4143-8ab6-5e15d380d6ad'&visitor_ids[]='499eea8d-dab5-46ec-8387-0b48a56c4dcb'&start_date=2021-01-01&end_date=2021-01-31&group_by=visitor_id
+https://api.localiqservices.com/client_reports/visitor_events?gmaid=TEST_1&visitor_ids[]='0b1f0b35-718a-4143-8ab6-5e15d380d6ad'&visitor_ids[]='499eea8d-dab5-46ec-8387-0b48a56c4dcb'&start_date=2021-01-01&end_date=2021-01-31&group_by=visitor_id
 ```
 
 

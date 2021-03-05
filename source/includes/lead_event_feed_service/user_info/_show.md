@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/user_info")
+url = URI("https://api.localiqservices.com/leads/user_info")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -20,7 +20,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/user_info")
+  .url("https://api.localiqservices.com/leads/user_info")
   .get()
   .addHeader("accept", "application/json")
   .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")
@@ -31,7 +31,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X GET \
-  --url ' https://api.reachlocalservices.com/leads/user_info' \
+  --url ' https://api.localiqservices.com/leads/user_info' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN' \
   --header 'Content-Type: application/json'
 ```

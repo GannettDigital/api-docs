@@ -28,7 +28,7 @@ The second step involves receiving an Authorization token, which is then used to
 
 Through a browser initiate the authorization with your Client Id and Client Secret tokens [Step 1] and your REDIRECT_URI (the redirect URI is where all API related responses will be sent)
 
-`https://api.reachlocalservices.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
+`https://api.localiqservices.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&redirect_uri=[REDIRECT_URI]`
 
 Please enter your [business user credentials](#business_user_credentials).
 
@@ -46,7 +46,7 @@ Please use the Authorization token to request an Access and Refresh token.
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/oauth/token")
+url = URI("https://api.localiqservices.com/oauth/token")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -66,7 +66,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"code\": \"AUTHORIZATION_TOKEN\",\n\t\"grant_type\": \"authorization_code\",\n\t\"redirect_uri\": \"REDIRECT_URI\"\n}");
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/oauth/token")
+  .url("https://api.localiqservices.com/oauth/token")
   .post(body)
   .addHeader("content-type", "application/json")
   .build();
@@ -76,7 +76,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X POST \
-  https://api.reachlocalservices.com/oauth/token \
+  https://api.localiqservices.com/oauth/token \
   -H 'content-type: application/json' \
   -d '{
   "client_id": "CLIENT_ID",
@@ -108,7 +108,7 @@ Replace the CLIENT_ID, CLIENT_SECRET, USERNAME and PASSWORD with the correct val
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/oauth/token")
+url = URI("https://api.localiqservices.com/oauth/token")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -126,7 +126,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\":\"password\",\n\t\"username\":\"USERNAME\",\n\t\"password\":\"PASSWORD\"\n}");
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/oauth/token")
+  .url("https://api.localiqservices.com/oauth/token")
   .post(body)
   .addHeader("Content-Type", "application/json")
   .build();
@@ -136,7 +136,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request POST \
-  --url https://api.reachlocalservices.com/oauth/token \
+  --url https://api.localiqservices.com/oauth/token \
   --header 'Content-Type: application/json' \
   --data '{
       "client_id": "CLIENT_ID",
@@ -171,7 +171,7 @@ curl --request POST \
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/oauth/token")
+url = URI("https://api.localiqservices.com/oauth/token")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -191,7 +191,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n\t\"client_id\": \"CLIENT_ID\",\n\t\"client_secret\": \"CLIENT_SECRET\",\n\t\"grant_type\": \"refresh_token\",\n\t\"refresh_token\": \"REFRESH_TOKEN\"\n}");
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/oauth/token")
+  .url("https://api.localiqservices.com/oauth/token")
   .post(body)
   .addHeader("content-type", "application/json")
   .build();
@@ -201,7 +201,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request POST \
-  --url https://api.reachlocalservices.com/oauth/token \
+  --url https://api.localiqservices.com/oauth/token \
   --header 'content-type: application/json' \
   --data '{
       "client_id": "CLIENT_ID",

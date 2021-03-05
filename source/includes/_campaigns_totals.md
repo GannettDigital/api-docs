@@ -19,7 +19,7 @@ None
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/campaigns_totals/TEST_1"
+"https://api.localiqservices.com/client_reports/campaigns_totals/TEST_1"
 ```
 > Example Response
 
@@ -35,7 +35,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
         "leads": 1009
     },
     "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.reachlocalservices.com/client_reports/campaigns_totals/TEST_1"
+    "location": "https://api.localiqservices.com/client_reports/campaigns_totals/TEST_1"
 }
 ```
 

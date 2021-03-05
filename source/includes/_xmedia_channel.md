@@ -34,40 +34,40 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/xmedia_channel/TEST_1?start_date=2020-03-10&end_date=2020-03-10"
+"https://api.localiqservices.com/client_reports/xmedia_channel/TEST_1?start_date=2020-03-10&end_date=2020-03-10"
 ```
 
 > Retrieve data for a specific range of dates
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/xmedia_channel/TEST_1?start_date=2016-12-01&end_date=2016-12-31"
+"https://api.localiqservices.com/client_reports/xmedia_channel/TEST_1?start_date=2016-12-01&end_date=2016-12-31"
 ```
 > Retrieve data for a specific campaign starting on a certain date
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/xmedia_channel/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31"
+"https://api.localiqservices.com/client_reports/xmedia_channel/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31"
 ```
 > Retrieve data for a specific campaign cycle
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/xmedia_channel/TEST_1?campaign_cycle=USA_100"
+"https://api.localiqservices.com/client_reports/xmedia_channel/TEST_1?campaign_cycle=USA_100"
 ```
 > Retrieve data for campaigns that are stopped and running
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/xmedia_channel/TEST_1?campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31"
+"https://api.localiqservices.com/client_reports/xmedia_channel/TEST_1?campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31"
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/xmedia_channel/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true"
+"https://api.localiqservices.com/client_reports/xmedia_channel/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true"
 ```
 
 > Retrieve data for specific channels
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/xmedia_channel/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&channels[]=display&channels[]=search"
+"https://api.localiqservices.com/client_reports/xmedia_channel/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&channels[]=display&channels[]=search"
 ```
 > Response Description
 ### Base Report
