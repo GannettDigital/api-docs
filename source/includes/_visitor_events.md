@@ -8,11 +8,9 @@
 |---|---|
 |GET|/client_reports/visitor_events?[query_params]|
 
-This API can be used to retrieve capture events for a list of visitor_ids for a gmaid.
+This API should be used to retrieve all events for a list of visitor_ids for a given advertiser (GMAID). The response will contain a chronological list of events. Optionally, it can also be grouped by visitor_id. Events can also be restricted to a date range.
 
-The data can be filtered with date range, and optionally grouped by visitor_id.
-
-When available, campaign data will be provided for each event, as well as channel when campaign type is xmedia.
+When available, campaign information will be provided for each event, as well as channel when campaign type is xmedia.
 
 ### Parameters
 
@@ -188,7 +186,7 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 |global_master_advertiser_id|String|Global Master Advertiser ID|
 |api_run_date|String|Date report was run|
 |start_date|String|Start date of report (if specified in params)|
-|end_date|String|End date of report (if sepcified in params)|
+|end_date|String|End date of report (if specified in params)|
 |time_zone|String|Time Zone|
 |report_data|Object|Report details. [Report Data Object](#visitoreventsreportdata)|
 
@@ -197,7 +195,7 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|visitor_id|UUID|Visitor ID|
+|visitor_id|UUID|An id of a visitor to an advertiser’s site for a given browser & device. The same visitor will have a different id if a different browser on the same device or a different device is used.|
 |events|Array|Array of Event Objects. [Event Object](#visitoreventsevent)|
 
 <a name="visitoreventsevent"></a>
@@ -205,14 +203,14 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|event_id|Event ID|
-|visitor_id|Visitor ID|
-|event_time|Event Time|
-|event_type|Event Type|
-|event_subtype|Event Subtype|
-|referrer_source|Referrer Source|
-|referrer_type|Referrer Type|
-|page_url|Page URL|
+|event_id|Event ID|An id for the event and unique to every occurrence of the event|
+|visitor_id|Visitor ID|An id of a visitor to an advertiser’s site for a given browser & device. The same visitor will have a different id if a different browser on the same device or a different device is used|
+|event_time|Event Time|Time the event occurred|
+|event_type|Event Type|See below for options|
+|event_subtype|Event Subtype|See below for options|
+|referrer_source|Referrer Source|See below for options|
+|referrer_type|Referrer Type|See below for options|
+|page_url|Page URL|URl of the page the visitor is on |
 |global_master_campaign_id|String|Identifier for campaign (campaign info present only if referrer_source==PAID)|
 |campaign_name|String|Name of campaign|
 |campaign_type|String|Type of campaign|
@@ -229,3 +227,48 @@ https://api.reachlocalservices.com/client_reports/visitor_events?gmaid=TEST_1&vi
 |goal_type_id|String|Identifier for campaign goal type|
 |goal_type|String|Name(Type) of goal type|
 
+**Event Type**
+Describes the event categories
+| Field Name | 
+|---| 
+|Contact |
+| CVT |
+| Touchpoint |
+
+
+**Event Sub Type**
+Describes the type of event
+| Field Name | 
+|---| 
+|Impression |
+|Call |
+|Chat |
+|Email |
+|Post |
+|Visit |
+|Cvt |
+|ChatInitiated |
+|Consent |
+|Facebook |
+|Unavailable |
+
+
+**Referrer Source**
+Describes the traffic source of  the visitor.
+| Field Name | Description |
+|---|---|
+|Organic|Visitor's came to the site organically|
+|Paid|Visitor's came to the site through a LOCALiQ campaign link|
+|NonRLPaid|Visitor's came to the site through a paid link but is not LOCALiQ|
+|Unavailable|Cannot be determined|
+
+**Referrer Type**
+Describes the type of domain the visitor came from.
+| Field Name |Description |
+|---|---| 
+|Search|Google.com, lycos.com etc.|
+|Social|pinterest.com, plus.url.google etc.|
+|Directory|whitepages.com, superpages.com, birkenheadpages.co.uk etc.|
+|Other|allstarrents.com, maac.com etc.|
+|Direct|Visitor typed the URL|
+|unavailable|Cannot be determined|
