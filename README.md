@@ -26,7 +26,7 @@ Publishing to GitHub Pages
 
 Run `./deploy.sh`
 
-Your changes should now be live on http://reachlocal.github.io/api-docs
+Your changes should now be live on https://doc.api.localiq.com
 
 Internal Only Documentation
 -----------------------------------

@@ -27,7 +27,7 @@ When using the GET method, the results can be filtered using these parameters:
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1")
+url = URI("https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -43,7 +43,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1")
+  .url("https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1")
   .get()
   .addHeader("Authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Accept", "application/json")
@@ -54,7 +54,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request GET \
-  --url 'https://api.reachlocalservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1' \
+  --url 'https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&endTime=2018-01-14T15:59:59Z&bucket=1&gmaid=TEST_1' \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
 ```

@@ -40,28 +40,28 @@ To specify a date range:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?start_date=2018-05-01&end_date=2018-05-01
+https://api.localiqservices.com/client_reports/display_creative/TEST_1?start_date=2018-05-01&end_date=2018-05-01
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2018-05-01&end_date=2018-05-01
+https://api.localiqservices.com/client_reports/display_creative/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2018-05-01&end_date=2018-05-01
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?campaign_cycle=TEST_1
+https://api.localiqservices.com/client_reports/display_creative/TEST_1?campaign_cycle=TEST_1
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_creative/TEST_1?&campaign_status[]=running,stopped&start_date=2018-05-01&end_date=2018-05-01
+https://api.localiqservices.com/client_reports/display_creative/TEST_1?&campaign_status[]=running,stopped&start_date=2018-05-01&end_date=2018-05-01
 ```
 
 > Example Response

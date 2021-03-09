@@ -32,7 +32,7 @@ page | no | The page number of the paginated result set to return.  This paramet
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/crm/contacts?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
+url = URI("https://api.localiqservices.com/crm/contacts?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -47,7 +47,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/crm/contacts?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
+  .url("https://api.localiqservices.com/crm/contacts?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10")
   .get()
   .addHeader("Authorization", "OAUTH_ACCESS_TOKEN")
   .build();
@@ -57,7 +57,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl --request GET \
-  --url 'https://api.reachlocalservices.com/crm/contacts?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10' \
+  --url 'https://api.localiqservices.com/crm/contacts?global_master_advertiser_id=TEST_1&created_after_date=2019-01-01&created_before_date=2019-01-10' \
   --header 'Authorization: OAUTH_ACCESS_TOKEN'
 ```
 
@@ -68,17 +68,17 @@ curl --request GET \
     "global_master_advertiser_id": "TEST_1",
     "page": 1,
     "total_pages": 2,
-    "next_page_location": "https://api.reachlocalservices.com/crm/contacts?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=TEST_1&page=2",
+    "next_page_location": "https://api.localiqservices.com/crm/contacts?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=TEST_1&page=2",
     "contacts": [
         {
             "status": "pending_contact",
             "id": 862741,
             "created_at": "2019-01-04T15:24:31Z",
             "tags": [],
-            "first_name": "Jatinm",
-            "last_name": "Jasm",
-            "email": "jatiin@k.com",
-            "phone_work": "536633367",
+            "first_name": "Charlie",
+            "last_name": "Bucket",
+            "email": "charlie.bucket@google.com",
+            "phone_work": "2188675309",
             "address1": "21700 Oxnard st",
             "address2": "suite 1600",
             "city": "Woodland hills",
@@ -91,8 +91,8 @@ curl --request GET \
             "id": 864211,
             "created_at": "2019-01-04T18:21:53Z",
             "tags": [],
-            "first_name": "Presideo",
-            "email": "pre@k.com"
+            "first_name": "Augustus",
+            "email": "augustus.gloop@gmail.com"
         },
         {
             "status": "pending_contact",
@@ -101,9 +101,9 @@ curl --request GET \
             "tags": [
                 "TRACY WONG'S FERRARI DEALERSHIP"
             ],
-            "first_name": "Kiara",
-            "last_name": "",
-            "email": "kiara@l.com",
+            "first_name": "Mike",
+            "last_name": "Teavee",
+            "email": "mike.reavee@gmail.com",
             "phone_work": ""
         },
         {
@@ -111,14 +111,14 @@ curl --request GET \
             "id": 869231,
             "created_at": "2019-01-08T20:51:03Z",
             "tags": [],
-            "first_name": "Sachin",
-            "last_name": "Arora",
-            "email": "sachinarora82@yahoo.com",
-            "phone_work": "8054042151",
-            "address1": "8610 Oakdale Ave",
-            "city": "Winnetka",
+            "first_name": "Violet",
+            "last_name": "Beauregarde",
+            "email": "violet.beauregarde@gmail.com",
+            "phone_work": "6128675309",
+            "address1": "1234 Oak St",
+            "city": "Springfield",
             "state": "CA",
-            "postal": "91306",
+            "postal": "90210",
             "country": "United States Minor Outlying Islands"
         },
         {
@@ -128,10 +128,10 @@ curl --request GET \
             "tags": [
                 "Direct Site Traffic"
             ],
-            "first_name": "Victer",
-            "last_name": "",
-            "email": "victer@j.com",
-            "phone_work": ""
+            "first_name": "Veruca",
+            "last_name": "Salt",
+            "email": "veruca.salt@gmail.com",
+            "phone_work": "9525551212"
         }
         ...
     ]

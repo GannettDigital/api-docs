@@ -42,14 +42,14 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/campaigns/TEST_1?report_type=campaigns_overview
+"https://api.localiqservices.com/client_reports/campaigns/TEST_1?report_type=campaigns_overview
 ```
 
 > Retrieve data for a specific report_type as well as for running and stopped campaigns
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.reachlocalservices.com/client_reports/campaigns/TEST_1?report_type=campaigns_overview&campaign_status[]=running,stopped
+"https://api.localiqservices.com/client_reports/campaigns/TEST_1?report_type=campaigns_overview&campaign_status[]=running,stopped
 ```
 
 > Example Response
@@ -59,7 +59,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
     "advertiser_name": "Advertiser (Demo)",
     "advertiser_code": "demo",
     "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.reachlocalservices.com/client_reports/campaigns/TEST_1?report_type=campaigns_overview",
+    "location": "https://api.localiqservices.com/client_reports/campaigns/TEST_1?report_type=campaigns_overview",
     "report_campaigns": [
         {
             "name": "Gannett Display Campaign (Demo)",

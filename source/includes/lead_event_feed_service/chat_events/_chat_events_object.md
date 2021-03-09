@@ -31,7 +31,7 @@
             "read": false,
             "flagged": false,
             "campaign_name": "Premium promos",
-            "event_uri": "https://api.reachlocalservices.com/leads/chat_events/580",
+            "event_uri": "https://api.localiqservices.com/leads/chat_events/580",
             "source": "Organic Traffic",
             "event_time": "2018-06-15T16:26:50.000Z",
             "lead_type": "",
@@ -53,7 +53,7 @@
             "read": false,
             "flagged": false,
             "campaign_name": "Premium promos",
-            "event_uri": "https://api.reachlocalservices.com/leads/chat_events/575",
+            "event_uri": "https://api.localiqservices.com/leads/chat_events/575",
             "source": "Organic Traffic",
             "event_time": "2018-06-15T15:30:46.000Z",
             "lead_type": "",
@@ -63,7 +63,7 @@
             "transcript": "Laudantium omnis aut rem recusandae ab. Quasi culpa aspernatur itaque ut quisquam quidem placeat. Suscipit et facere minus vel. Cumque libero ut. Ut rem et beatae perspiciatis omnis."
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/chat_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-06-13 02:19:5122&show_deleted=false"
+    "next_page": "https://api.localiqservices.com/leads/chat_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-06-13 02:19:5122&show_deleted=false"
 }
 ```
 

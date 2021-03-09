@@ -159,6 +159,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
     ]
   },
   "global_master_advertiser_id": "USA_123456",  // Global Master Advertiser ID
-  "location": "https://api.reachlocalservices.com/client_reports/cvt_events/USA_190076?campaign_status%5B%5D=running&end_date=2020-02-25&global_master_campaign_id%5B%5D=USA_2772377&interval_size=calendar_week&start_date=2019-10-01"
+  "location": "https://api.localiqservices.com/client_reports/cvt_events/USA_190076?campaign_status%5B%5D=running&end_date=2020-02-25&global_master_campaign_id%5B%5D=USA_2772377&interval_size=calendar_week&start_date=2019-10-01"
 }
 ```

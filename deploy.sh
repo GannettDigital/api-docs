@@ -19,6 +19,10 @@ Options:
 
 bundle exec middleman build --clean
 
+if [ -e ".env" ]; then
+  cp CNAME build
+fi
+
 parse_args() {
   # Set args from a local environment file.
   if [ -e ".env" ]; then

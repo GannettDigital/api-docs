@@ -41,35 +41,35 @@ To specify a date range:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25'
+https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25'
 ```
 
 > Retrieve data for a specific master campaign id
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1' \
+https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1' \
 ```
 
 > Retrieve data for a specific range of dates limited to ended campaigns
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&campaign_status[]=ended' \
+https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&campaign_status[]=ended' \
 ```
 
 > Retrieve data for a specific range of dates grouped by calendar week
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&interval_size=calendar_week' \
+https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&interval_size=calendar_week' \
 ```
 
 > Retrieve data with all options together with results below
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1&interval_size=calendar_week&campaign_status[]=running' \
+https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019-10-01&end_date=2020-02-25&global_master_campaign_id[]=TEST_1&interval_size=calendar_week&campaign_status[]=running' \
 ```
 
 > Example Response
@@ -354,7 +354,7 @@ https://api.reachlocalservices.com/client_reports/cvt_events/TEST_1?start_date=2
         ]
     },
     "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.reachlocalservices.com/client_reports/cvt_events//TEST_1?end_date=2020-10-10&start_date=2019-10-10"
+    "location": "https://api.localiqservices.com/client_reports/cvt_events//TEST_1?end_date=2020-10-10&start_date=2019-10-10"
 }
 ```
 

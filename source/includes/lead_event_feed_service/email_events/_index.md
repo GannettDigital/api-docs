@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=TEST_1")
+url = URI("https://api.localiqservices.com/leads/email_events?global_master_advertiser_id=TEST_1")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -20,7 +20,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=TEST_1")
+  .url("https://api.localiqservices.com/leads/email_events?global_master_advertiser_id=TEST_1")
   .get()
   .addHeader("Authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Cache-Control", "no-cache")
@@ -31,7 +31,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X GET \
-  --url ' https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=GMAID' \
+  --url ' https://api.localiqservices.com/leads/email_events?global_master_advertiser_id=GMAID' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN' \
   --header 'Content-Type: application/json'
 ```
@@ -64,7 +64,7 @@ curl -X GET \
             "read": false,
             "flagged": false,
             "campaign_name": "Premium prices",
-            "event_uri": "https://api.reachlocalservices.com/leads/email_events/265",
+            "event_uri": "https://api.localiqservices.com/leads/email_events/265",
             "source": "Organic Traffic",
             "sender_name": "Ettie McLaughlin",
             "sender_email": "oda@shanahan.io",
@@ -84,7 +84,7 @@ curl -X GET \
             "read": false,
             "flagged": false,
             "campaign_name": "Special savings",
-            "event_uri": "https://api.reachlocalservices.com/leads/email_events/555",
+            "event_uri": "https://api.localiqservices.com/leads/email_events/555",
             "source": "Organic Traffic",
             "sender_name": "Ms. Beth Waelchi",
             "sender_email": "felipe_padberg@rice.info",
@@ -92,7 +92,7 @@ curl -X GET \
             "event_time": "2018-05-08T15:14:41.000Z"
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/email_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-05-06 04:30:33584&show_deleted=false"
+    "next_page": "https://api.localiqservices.com/leads/email_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-05-06 04:30:33584&show_deleted=false"
 }
 ```
 

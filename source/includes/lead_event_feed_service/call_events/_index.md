@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/call_events?global_master_advertiser_id=GMAID")
+url = URI("https://api.localiqservices.com/leads/call_events?global_master_advertiser_id=GMAID")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -20,7 +20,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/call_events?global_master_advertiser_id=GMAID")
+  .url("https://api.localiqservices.com/leads/call_events?global_master_advertiser_id=GMAID")
   .get()
   .addHeader("accept", "application/json")
   .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")
@@ -31,7 +31,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X GET \
-  --url ' https://api.reachlocalservices.com/leads/call_events?global_master_advertiser_id=GMAID' \
+  --url ' https://api.localiqservices.com/leads/call_events?global_master_advertiser_id=GMAID' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN' \
   --header 'Content-Type: application/json'
 ```
@@ -64,7 +64,7 @@ curl -X GET \
             "read": false,
             "flagged": false,
             "campaign_name": "Killer prices",
-            "event_uri": "https://api.reachlocalservices.com/leads/call_events/5288",
+            "event_uri": "https://api.localiqservices.com/leads/call_events/5288",
             "source": "Organic Traffic",
             "caller_phone_number": "562.861.5742 x73119",
             "call_recording_url": "http://www.rl_record.com/1590",
@@ -85,7 +85,7 @@ curl -X GET \
             "read": false,
             "flagged": false,
             "campaign_name": "Killer prices",
-            "event_uri": "https://api.reachlocalservices.com/leads/call_events/5283",
+            "event_uri": "https://api.localiqservices.com/leads/call_events/5283",
             "source": "Organic Traffic",
             "caller_phone_number": "430.269.2225 x6481",
             "call_recording_url": "http://www.rl_record.com/1580",
@@ -94,7 +94,7 @@ curl -X GET \
             "caller_name": "Clovis Casper"
         }
     ],
-    "next_page": "https://api.reachlocalservices.com/leads/call_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-06-13 12:52:385023&show_deleted=false"
+    "next_page": "https://api.localiqservices.com/leads/call_events?global_master_advertiser_id=TEST_1&per_page=50&last_event_seen=2018-06-13 12:52:385023&show_deleted=false"
 }
 ```
 

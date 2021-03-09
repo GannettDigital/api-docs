@@ -53,42 +53,42 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start_date=2016-12-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?campaign_cycle=TEST_1
+https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?campaign_cycle=TEST_1
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?&campaign_status[]=running,stopped&start_date=2016-12-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?&campaign_status[]=running,stopped&start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-12-01&end_date=2016-12-31&include_cycles=true
+https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-12-01&end_date=2016-12-31&include_cycles=true
 ```
 
 > Example Response:
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start_date=2020-06-26&end_date=2020-06-27
+https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_date=2020-06-26&end_date=2020-06-27
 ```
 
 > Example Response
@@ -760,7 +760,7 @@ https://api.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?start
         ]
     },
     "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.qa.reachlocalservices.com/client_reports/facebook_campaign/TEST_1?end_date=2020-10-10&start_date=2020-10-10"
+    "location": "https://api.qa.localiqservices.com/client_reports/facebook_campaign/TEST_1?end_date=2020-10-10&start_date=2020-10-10"
 }
 
 ```

@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/email_events/123")
+url = URI("https://api.localiqservices.com/leads/email_events/123")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -20,7 +20,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/email_events/123")
+  .url("https://api.localiqservices.com/leads/email_events/123")
   .get()
   .addHeader("accept", "application/json")
   .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")
@@ -31,7 +31,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X GET \
-  --url ' https://api.reachlocalservices.com/leads/email_events/123' \
+  --url ' https://api.localiqservices.com/leads/email_events/123' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN' \
   --header 'Content-Type: application/json'
 ```
@@ -62,7 +62,7 @@ curl -X GET \
     "read": false,
     "flagged": false,
     "campaign_name": "Amazing deals",
-    "event_uri": "https://api.reachlocalservices.com/leads/email_events/123",
+    "event_uri": "https://api.localiqservices.com/leads/email_events/123",
     "source": "Organic Traffic",
     "sender_name": "Louisa Schuster",
     "sender_email": "loren_erdman@oconnerschoen.net",

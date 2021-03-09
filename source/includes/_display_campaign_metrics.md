@@ -41,35 +41,35 @@ To specify a date range:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?start_date=2016-12-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/display_activity/TEST_1?start_date=2016-12-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/display_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?campaign_cycle=TEST_1
+https://api.localiqservices.com/client_reports/display_activity/TEST_1?campaign_cycle=TEST_1
 ```
 
 > Retrieve data for campaigns that are stopped and running
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/display_activity/TEST_1?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31
 ```
 
 > Retrieve data for a specific campaign starting on a certain date with cycle nesting
 
 ```
 curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
-https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true
+https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true
 ```
 
 > Response Description with Cycles
@@ -178,7 +178,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_
     ]
   },
   "global_master_advertiser_id": "TEST_1", // Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
+  "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
 }
 ```
 >  Response Description without Cycles
@@ -280,7 +280,7 @@ https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_
     ]
   },
   "global_master_advertiser_id": "TEST_1", // Identifier for advertiser
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
+  "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
 }
 ```
 
@@ -630,9 +630,9 @@ https://api.reachlocalservices.com/client_reports/search_activity/TEST_1?global_
     ]
   },
   "global_master_advertiser_id": "TEST_1",
-  "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?start_date=2017-01-11&end_date=2017-01-13"
+  "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?start_date=2017-01-11&end_date=2017-01-13"
     },
     "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.reachlocalservices.com/client_reports/display_activity/TEST_1?end_date=2018-03-09&start_date=2018-03-09"
+    "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?end_date=2018-03-09&start_date=2018-03-09"
 }
 ```

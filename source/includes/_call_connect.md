@@ -10,7 +10,7 @@ ID.
 
 | Method | URI Format |
 |---|---|
-| POST | https://api.reachlocalservices.com/call_connect |
+| POST | https://api.localiqservices.com/call_connect |
 
 ### HTTP Response Codes
 | Status Code | Description
@@ -33,7 +33,7 @@ visitorPhone | yes | no | The phone number of the visitor. No specific format is
 # Sample cURL for the Create POST request:
 
 curl -X POST \
-  https://api.reachlocalservices.com/call_connect \
+  https://api.localiqservices.com/call_connect \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
@@ -53,7 +53,7 @@ curl -X POST \
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/call_connect")
+url = URI("https://api.localiqservices.com/call_connect")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -77,7 +77,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\"description\": \"creating an example\", \"visitId\": \"92a2e98d-a51c-4cb0-aec8-495a14470821\", \"visitorName\": \"John Doe\", \"visitorPhone\": \"(111) 222-3333\"}");
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/call_connect")
+  .url("https://api.localiqservices.com/call_connect")
   .post(body)
   .addHeader("accept", "application/json")
   .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")

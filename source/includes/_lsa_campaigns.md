@@ -31,7 +31,7 @@ To specify a date range:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.reachlocalservices.com/client_reports/google_local_service_ads/TEST_1?start_date=2020-09-01&end_date=2020-09-02' \
+https://api.localiqservices.com/client_reports/google_local_service_ads/TEST_1?start_date=2020-09-01&end_date=2020-09-02' \
 ```
 
 > Example Response
@@ -45,7 +45,7 @@ https://api.reachlocalservices.com/client_reports/google_local_service_ads/TEST_
     "currency": "USD",
     "global_master_advertiser_id": "USA_5713",
     "advertiser_name": "My Service Company",
-    "location": "https://api.reachlocalservices.com/client_reports/google_local_service_ads/USA_5713?end_date=2020-09-02&start_date=2020-09-01",
+    "location": "https://api.localiqservices.com/client_reports/google_local_service_ads/USA_5713?end_date=2020-09-02&start_date=2020-09-01",
     "report_data": {
         "campaigns": [
             {

@@ -4,7 +4,7 @@
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.reachlocalservices.com/leads/web_events/123")
+url = URI("https://api.localiqservices.com/leads/web_events/123")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -21,7 +21,7 @@ puts response.read_body
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("https://api.reachlocalservices.com/leads/web_events/123")
+  .url("https://api.localiqservices.com/leads/web_events/123")
   .delete(null)
   .addHeader("Authorization", "token lambda_token")
   .addHeader("Cache-Control", "no-cache")
@@ -33,7 +33,7 @@ Response response = client.newCall(request).execute();
 
 ```shell
 curl -X DELETE \
-  https://api.reachlocalservices.com/leads/web_events/123 \
+  https://api.localiqservices.com/leads/web_events/123 \
   -H 'Authorization: token lambda_token' \
   -H 'Cache-Control: no-cache'
 ```
