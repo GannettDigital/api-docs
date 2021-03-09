@@ -19,7 +19,7 @@ Options:
 
 bundle exec middleman build --clean
 
-if [ -e ".env" ]; then
+if [ -e "CNAME" ]; then
   cp CNAME build
 fi
 
