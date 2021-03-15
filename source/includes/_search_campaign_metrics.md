@@ -101,6 +101,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                         "clicks": 17,
                         "calls": 6,
                         "web_events": 7,
+                        "qualified_web_events": 5,
                         "emails": 8,
                         "spend": 25,
                         "ctr": 1.6,
@@ -132,6 +133,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
             "clicks": 17,
             "calls": 6,
             "web_events": 7,
+            "qualified_web_events": 5,
             "emails": 8,
             "leads": 21,
             "spend": 25,
@@ -178,6 +180,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                 "clicks": 17,
                 "calls": 6,
                 "web_events": 7,
+                "qualified_web_events": 5,
                 "emails": 8,
                 "spend": 25,
                 "ctr": 1.6,
@@ -257,6 +260,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 |clicks|Integer|Clicks for interval|
 |calls|Integer|Calls for interval|
 |web_events|Integer|Web events for interval|
+|qualified_web_events|Integer|A lead generating CVT/Web Event|
 |emails|Integer|Emails for interval|
 |spend|Integer|Spend for interval|
 |ctr|Integer|Click through rate for interval|
@@ -272,6 +276,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 |clicks|Integer|Total click events|
 |calls|Integer|Total call events|
 |web_events|Integer|Total web events|
+|qualified_web_events|Integer|A lead generating CVT/Web Event|
 |emails|Integer|Total email events|
 |leads|Integer|Total leads|
 |spend|Integer|Total spend|
