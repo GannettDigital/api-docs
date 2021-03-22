@@ -6,21 +6,26 @@
 
 |API(s) Updated|Description|
 |---|---|
-|Search Metrics|API update to suppot a new key; qualified web events|
+|Search Metrics|API update to support a new key; qualified web events|
+
 
 ### March 2nd, 2021
 **Release Notes**
 
 |API(s) Updated|Description|
 |---|---|
-|Social Ads|API updated to support  additional age with gender breakdowns |
+|Social Ads|API updated to support additional age with gender breakdowns |
 
-### March 1st,18th 2021
+
+
+### March 1st & 18th 2021
 **Release Notes**
 
 |API(s) Updated|Description|
 |---|---|
 |All APIs|General Performance Updates; no impact to the response or usuage of the API|
+
+
 
 ## February 2021
 
@@ -32,12 +37,14 @@
 |Search Metrics|API update to support a new optional param;include_full_channel|
 
 
-### February 1st,4th, 9th, 11th, 15th,22nd & 28th 2021
+
+### February 1st, 4th, 9th, 11th, 15th, 22nd & 28th 2021
 **Release Notes**
 
 |API(s) Updated|Description|
 |---|---|
 |All APIs|General Performance Updates; no impact to the response or usuage of the API|
+
 
 
 ## January 2021
