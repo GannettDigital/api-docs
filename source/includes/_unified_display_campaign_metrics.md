@@ -1275,9 +1275,8 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
 <a name="udlineitemscreativesintervals"></a>
 **Line Items Creatives Intervals Object**
 
-|Field Name|Datatype|Nullable|Description|
-|---|---|---|---|
-
+|Field Name|Datatype|Description|
+|---|---|---|
 |start_date|String|Start Date of Interval|
 |impressions|Integer|Total Impressions for Interval|
 |clicks|Integer|Total Clicks for Interval|
