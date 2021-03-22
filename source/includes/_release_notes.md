@@ -1,16 +1,38 @@
 # Release Notes
-## February 2021
+## March 2021
 
+### March 15th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|Search Metrics|API update to suppot a new key; qualified web events|
+
+### March 2nd, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|Social Ads|API updated to support  additional age with gender breakdowns |
+
+### March 1st,18th 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Performance Updates; no impact to the response or usuage of the API|
+
+## February 2021
 
 ### February 04th, 2021
 **Release Notes**
 
 |API(s) Updated|Description|
 |---|---|
-|Search Metrics|API update to suppot a new optional param;include_full_channel|
+|Search Metrics|API update to support a new optional param;include_full_channel|
 
 
-### February 01st, 2021
+### February 1st,4th, 9th, 11th, 15th,22nd & 28th 2021
 **Release Notes**
 
 |API(s) Updated|Description|
@@ -29,21 +51,6 @@
 |All APIs|General Performance Updates; no impact to the response or usuage of the API|
 
 
-### January 26th, 2021
-**Release Notes**
-
-|API(s) Updated|Description|
-|---|---|
-|Identity|General Performance Updates; no impact to the response or usuage of the API|
-
-
-### January 15th, 2021
-**Release Notes**
-
-|API(s) Updated|Description|
-|---|---|
-|Social Ads API|General Performance Updates; no impact to the response or usuage of the API|
-
 
 ### January 6th, 2021
 **Release Notes**
@@ -52,6 +59,13 @@
 |---|---|
 |NA|Fix to reset campaign name to name of the current cycle. Please refer to the communication on the issue or reach apiservices@localiq.com for information|
 
+
+### January 15th & 26th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|Identity|General Performance Updates; no impact to the response or usuage of the API|
 
 
 ## December 2020
