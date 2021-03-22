@@ -92,6 +92,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | clicks | Float | No | Total Clicks for Interval |
 | calls | Float | No | Total Calls for Interval |
 | web_events | Float | No | Total Web Events for Interval |
+| qualified_web_events | Float | No | Total Qualified Web Events for Interval |
 | emails | Float | No | Total Emails for Interval |
 | chats | Float | No | Total Chats for Interval |
 | leads | Float | No | Total Leads for Campaign |
@@ -107,6 +108,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | clicks | Float | No | Total Clicks |
 | calls | Float | No | Total Calls |
 | web_events | Float | No | Total Web Events |
+| qualified_web_events | Float | No | Total Qualified Web Events |
 | emails | Float | No | Total Emailsl |
 | chats | Float | No | Total Chatsl |
 | leads | Float | No | Total Leads |
@@ -123,6 +125,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | clicks | Float | No | Total Clicks for Interval |
 | calls | Float | No | Total Calls for Interval |
 | web_events | Float | No | Total Web Events for Interval |
+| qualified_web_events | Float | No | Total Qualified Web Events for Interval |
 | emails | Float | No | Total Emails for Interval |
 | chats | Float | No | Total Chats for Interval |
 | leads | Float | No | Total Leads for Campaign |
@@ -171,6 +174,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "clicks": 18,
                         "calls": 9,
                         "web_events": 7,
+                        "qualified_web_events": 3,
                         "emails": 9,
                         "chats": 10,
                         "leads": 35,
@@ -186,6 +190,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "clicks": 18,
             "calls": 9,
             "web_events": 7,
+            "qualified_web_events": 3,
             "emails": 9,
             "chats": 10,
             "leads": 35,
@@ -200,6 +205,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "clicks": 18,
                 "calls": 9,
                 "web_events": 7,
+                "qualified_web_events": 3,
                 "emails": 9,
                 "chats": 10,
                 "leads": 35,
