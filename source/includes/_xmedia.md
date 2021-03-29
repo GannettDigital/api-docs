@@ -91,8 +91,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Campaign |
 | clicks | Float | No | Total Clicks for Interval |
 | calls | Float | No | Total Calls for Interval |
-| web_events | Float | No | Total Web Events for Interval |
-| qualified_web_events | Float | No | Total Qualified Web Events for Interval |
+| web_events | Int | No | Total Web Events for Interval |
+| qualified_web_events | Int | No | Total lead-generating CVT/Web Events for Interval |
 | emails | Float | No | Total Emails for Interval |
 | chats | Float | No | Total Chats for Interval |
 | leads | Float | No | Total Leads for Campaign |
@@ -107,8 +107,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions |
 | clicks | Float | No | Total Clicks |
 | calls | Float | No | Total Calls |
-| web_events | Float | No | Total Web Events |
-| qualified_web_events | Float | No | Total Qualified Web Events |
+| web_events | Int | No | Total Web Events |
+| qualified_web_events | Int | No | Total lead-generating CVT/Web Events |
 | emails | Float | No | Total Emailsl |
 | chats | Float | No | Total Chatsl |
 | leads | Float | No | Total Leads |
@@ -124,8 +124,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Campaign |
 | clicks | Float | No | Total Clicks for Interval |
 | calls | Float | No | Total Calls for Interval |
-| web_events | Float | No | Total Web Events for Interval |
-| qualified_web_events | Float | No | Total Qualified Web Events for Interval |
+| web_events | Int | No | Total Web Events for Interval |
+| qualified_web_events | Int | No | Total lead-generating CVT/Web Events for Interval |
 | emails | Float | No | Total Emails for Interval |
 | chats | Float | No | Total Chats for Interval |
 | leads | Float | No | Total Leads for Campaign |
