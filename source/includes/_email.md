@@ -130,6 +130,12 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
                 "index": 1,
                 "clicks": 190,
                 "clicks_pc": 0.0,
+                "width": 300,
+                "height": 241,
+                "position": {
+                    "left": 20,
+                    "top": 40
+                },
                 "url": "demo_url.com",
                 "created_at": "2020-10-30T18:57:49.000Z",
                 "updated_at": "2020-10-30T18:57:49.000Z"
@@ -141,6 +147,12 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
                 "index": 2,
                 "clicks": 190,
                 "clicks_pc": 0.0,
+                "width": 300,
+                "height": 241,
+                "position": {
+                    "left": 20,
+                    "top": 40
+                },
                 "url": "demo_url.com",
                 "created_at": "2020-10-30T18:57:49.000Z",
                 "updated_at": "2020-10-30T18:57:49.000Z"
@@ -151,12 +163,19 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
                 "platform_id": 7,
                 "index": 3,
                 "clicks": 190,
+                "width": 300,
+                "height": 241,
+                "position": {
+                    "left": 20,
+                    "top": 40
+                },
                 "clicks_pc": 0.0,
                 "url": "demo_url.com",
                 "created_at": "2020-10-30T18:57:49.000Z",
                 "updated_at": "2020-10-30T18:57:49.000Z"
             }
         ],
+        "screenshot_url": "https://api.demo.url/screenshot/1.jpg",
         "pdf_base64": "base64 pdf"
     }
 }
@@ -201,6 +220,7 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
 |devices|Device[]|[Array of Device](#deviceemail)|
 |browsers|Browser[]|[Array of Browser](#browseremail)|
 |links|Link[]|[Array of Link](#linkemail)|
+|screenshot_url|String|Link to the campaign screenshot url|
 |pdf_base64|String|Base64 encoded pdf of report|
 
 <a name="goalsemail"></a>
@@ -220,6 +240,9 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
 |clicks|Int|Number of clicks for Link|
 |clicks_pc|Float|Percent of Link clicks vs quantity|
 |link_pc|Float|Percent of Link clicks vs Total Clicks|
+|width|Int|The width of the Link|
+|height|Int|The height of the Link|
+|position|Int|The position (top and left) of the Link|
 |url|String|URL of Link|
 
 <a name="deviceemail"></a>
