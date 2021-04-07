@@ -63,6 +63,7 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
             "quantity": 2911,
             "opens": 1150,
             "opens_pc": 0.0,
+            "screenshot_url": "https://api.demo.url/screenshot/1.jpg",
             "views": 281,
             "views_pc": 0.0,
             "clicks": 570,
