@@ -9,7 +9,7 @@
 
 Use GET to retrieve information for the Search Activity report for a given advertiser.
 
-The data returned will include impressions, leads, clicks, calls, web_events, emails, and spend values organized by campaign and campaign_cycle.
+The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, and spend values organized by campaign and campaign_cycle.
 
 ### Parameters
 
@@ -97,7 +97,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                         "start_date": "2020-10-10",
                         "impressions": 1065,
                         "impression_share": 0,
-                        "leads": 21,
+                        "leads": 19,
                         "clicks": 17,
                         "calls": 6,
                         "web_events": 7,
@@ -135,7 +135,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
             "web_events": 7,
             "qualified_web_events": 5,
             "emails": 8,
-            "leads": 21,
+            "leads": 19,
             "spend": 25,
             "ctr": 1.6,
             "cpc": 1.47,
@@ -176,7 +176,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                 "start_date": "2020-10-10",
                 "impressions": 1065,
                 "impression_share": 0,
-                "leads": 21,
+                "leads": 19,
                 "clicks": 17,
                 "calls": 6,
                 "web_events": 7,
