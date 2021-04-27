@@ -1,5 +1,112 @@
 ### **Advertisers**
 
+## Advertisers API
+
+### Resource Overview
+
+| Method | URI Format |
+|---|---|
+| GET `index` | /v3/identities/advertisers? |
+| GET `show` | /v3/identities/advertisers/{gmaid} |
+
+### Usage
+Use GET to retrieve advertisers that match the query params.
+
+### Parameters
+
+When using the GET index method, the results will be filtered using these parameters:
+
+| Parameter | Required | Default | Description |
+|---|---|---|---|
+|`match_params`|No| - | JSON object with `name` and `state` keys to match on|
+|`gmaid`| no |Restrict results to one or more specific gmaid|
+|`advertiser_id`|No|Restrict results to one or more specific advertiser with the given advertiser id|
+|`business_id`|No|Restrict results to one or more specific advertiser with the given business id|
+|`cobrand_id`|No|Restrict results to one or more specific advertiser with the given cobrand id|
+|`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 5000</b>|
+|`active_state`|No|Specifies what column to sort by.  Valid active states are: `ACTIVE`, `INACTIVE` and `ALL` <br><b>Default value: `ALL`</b>|
+|`advertiser_code`|No|Restrict results to one or more specific advertiser with the given advertiser code|
+
+### Examples:
+
+### GET (index)
+
+```
+curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?[query_params]' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+> Response Description
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|gmaid | String | no | gmaid of potenial matching advertiser|
+|name | String | no | name of potenial matching advertiser|
+|address1 | String | no | address of potenial matching advertiser|
+|address2 | String | no | address of potenial matching advertiser|
+|city | String | no | city of potenial matching advertiser|
+|state | String | no | state of potenial matching advertiser|
+|zip | String | no | zip code of potenial matching advertiser|
+|country | String | no | country code of potenial matching advertiser|
+|active_state | Integer | no | Active state of advertiser (0 = inactive, 1 = expiring soon, 2 = active)|
+
+#### Example Response
+
+```javascript
+{
+    "advertisers": [
+        {
+            "gmaid": "USA_133964",
+            "name": "Red Lion Insulation - Jackson (BN)",
+            "address1": "141 N. County Line Rd",
+            "address2": "",
+            "city": "Jackson",
+            "state": "NJ",
+            "zip": "08527",
+            "country": "USA",
+            "active_state": 2
+        },
+        {
+            "gmaid": "USA_133965",
+            "name": "Red Lion Insulation - Barrington (BN)",
+            "address1": "66 E Gloucester Pike",
+            "address2": "",
+            "city": "Barrington",
+            "state": "NJ",
+            "zip": "08007",
+            "country": "USA",
+            "active_state": 1
+        },
+        {
+            "gmaid": "USA_133967",
+            "name": "Red Lion Insulation - Piscataway (BN)",
+            "address1": "42 Colonial Dr",
+            "address2": "",
+            "city": "Piscataway",
+            "state": "NJ",
+            "zip": "08854",
+            "country": "USA",
+            "active_state": 0
+        },
+        {
+            "gmaid": "USA_149837",
+            "name": "Red Lion Insulation - Farmingdale",
+            "address1": "5142 W Hurley Pond Rd",
+            "address2": "",
+            "city": "Farmingdale",
+            "state": "NJ",
+            "zip": "07727",
+            "country": "USA",
+            "active_state": 2
+        }
+    ]
+}
+```
+
 ### Resource Overview&nbsp;&nbsp;&nbsp;
 
 |Method|URI Format|
@@ -11,6 +118,7 @@ Use GET to retrieve information for the individual advertiser through gmaid.
 This API should be used to retrieve information about an advertiser, i.e. name address etc. This API can also be used to check the active state of an advertiser for the purposes of retrieving metrics through our other APIs. An advertiser is considered inactive if they have had no active campaigns for 31 days. If an advertiser is inactive, the reporting APIs will error code 403  https://doc.api.localiq.com/?shell#error-codes
 
 
+### GET (show)
 ### Response Data Details&nbsp;&nbsp;&nbsp;
 
 > Retrieve data for a specific advertiser
