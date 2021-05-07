@@ -1,4 +1,23 @@
 # Release Notes
+## April 2021
+
+### April 20th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|Search Metrics|API update to include just qualified web events in lead totals|
+
+
+### April 12th, 13th, 19th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Performance Updates; no impact to the response or usuage of the API|
+
+
+
 ## March 2021
 
 ### March 15th, 2021
@@ -18,7 +37,7 @@
 
 
 
-### March 1st & 18th 2021
+### March 1st & 18th, 30th  2021
 **Release Notes**
 
 |API(s) Updated|Description|
