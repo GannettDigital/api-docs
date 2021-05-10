@@ -280,6 +280,17 @@
             <a href="#release-notes" class="toc-h1 toc-link" data-title="Release Notes">Release Notes</a>
               <ul class="toc-list-h2">
                   <li class="toc-h2-li">
+                    <a href="#release-notes-april-2021" class="toc-h2 toc-link" data-title="Release Notes">April 2021</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#release-notes-april-2021-april-20th-2021" class="toc-h3 toc-link" data-title="Release Notes">April 20th, 2021</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#release-notes-april-2021-april-12th-13th-19th-2021" class="toc-h3 toc-link" data-title="Release Notes">April 12th, 13th, 19th, 2021</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="toc-h2-li">
                     <a href="#release-notes-march-2021" class="toc-h2 toc-link" data-title="Release Notes">March 2021</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
@@ -289,7 +300,7 @@
                             <a href="#release-notes-march-2021-march-2nd-2021" class="toc-h3 toc-link" data-title="Release Notes">March 2nd, 2021</a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#release-notes-march-2021-march-1st-amp-18th-2021" class="toc-h3 toc-link" data-title="Release Notes">March 1st &amp; 18th 2021</a>
+                            <a href="#release-notes-march-2021-march-1st-amp-18th-30th-2021" class="toc-h3 toc-link" data-title="Release Notes">March 1st &amp; 18th, 30th  2021</a>
                           </li>
                       </ul>
                   </li>
@@ -991,7 +1002,21 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_authorized"</span><span class="p">,</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are not permitted to perform this action."</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-march-2021'>March 2021</h2><h3 id='release-notes-march-2021-march-15th-2021'>March 15th, 2021</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-april-2021'>April 2021</h2><h3 id='release-notes-april-2021-april-20th-2021'>April 20th, 2021</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>Search Metrics</td>
+<td>API update to include just qualified web events in lead totals</td>
+</tr></tbody></table><h3 id='release-notes-april-2021-april-12th-13th-19th-2021'>April 12th, 13th, 19th, 2021</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>All APIs</td>
+<td>General Performance Updates; no impact to the response or usuage of the API</td>
+</tr></tbody></table><h2 id='release-notes-march-2021'>March 2021</h2><h3 id='release-notes-march-2021-march-15th-2021'>March 15th, 2021</h3><p><strong>Release Notes</strong></p><table><thead><tr>
 <th>API(s) Updated</th>
 <th>Description</th>
 </tr>
@@ -1005,7 +1030,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </thead><tbody><tr>
 <td>Social Ads</td>
 <td>API updated to support additional age with gender breakdowns</td>
-</tr></tbody></table><h3 id='release-notes-march-2021-march-1st-amp-18th-2021'>March 1st &amp; 18th 2021</h3><p><strong>Release Notes</strong></p><table><thead><tr>
+</tr></tbody></table><h3 id='release-notes-march-2021-march-1st-amp-18th-30th-2021'>March 1st &amp; 18th, 30th  2021</h3><p><strong>Release Notes</strong></p><table><thead><tr>
 <th>API(s) Updated</th>
 <th>Description</th>
 </tr>
@@ -5709,13 +5734,36 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 <td>Object</td>
 <td><a href="#totalkeyword">Total Object</a></td>
 </tr></tbody></table><p><a name="keyword"></a>
-<strong>Keyword Object</strong></p><p>|Field Name|Datatype|Nullable|Description|
-|---|---|---|
-|keyword|Integer|Keyword Name|
-|type|Integer|Keyword Type (search/display)|
-|clicks|Float|Clicks for Keyword|
-|impressions|Integer|Impressions for Keyword|
-|ctr|Float|Click through Rate for Keyword|</p><p><a name="totalkeyword"></a>
+<strong>Keyword Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>keyword</td>
+<td>Integer</td>
+<td>Keyword Name</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Integer</td>
+<td>Keyword Type (search/display)</td>
+</tr>
+<tr>
+<td>clicks</td>
+<td>Float</td>
+<td>Clicks for Keyword</td>
+</tr>
+<tr>
+<td>impressions</td>
+<td>Integer</td>
+<td>Impressions for Keyword</td>
+</tr>
+<tr>
+<td>ctr</td>
+<td>Float</td>
+<td>Click through Rate for Keyword</td>
+</tr></tbody></table><p><a name="totalkeyword"></a>
 <strong>Totals Object</strong></p><table><thead><tr>
 <th>Field Name</th>
 <th>Datatype</th>
@@ -5747,7 +5795,7 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 </thead><tbody><tr>
 <td>GET</td>
 <td>/client_reports/search_activity/[gmaid]?[query_params]</td>
-</tr></tbody></table><p>Use GET to retrieve information for the Search Activity report for a given advertiser.</p><p>The data returned will include impressions, leads, clicks, calls, web_events, emails, and spend values organized by campaign and campaign_cycle.</p><h3 id='reporting-metric-apis-search-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
+</tr></tbody></table><p>Use GET to retrieve information for the Search Activity report for a given advertiser.</p><p>The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, and spend values organized by campaign and campaign_cycle.</p><h3 id='reporting-metric-apis-search-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
 <th>Param</th>
 <th>Function</th>
 </tr>
@@ -5835,7 +5883,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1065</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -5873,7 +5921,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
             </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
             </span><span class="s2">"qualified_web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
             </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.47</span><span class="p">,</span><span class="w">
@@ -5914,7 +5962,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                 </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1065</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
