@@ -127,7 +127,7 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 <a name="keyword"></a>
 **Keyword Object**
 
-|Field Name|Datatype|Nullable|Description|
+|Field Name|Datatype|Description|
 |---|---|---|
 |keyword|Integer|Keyword Name|
 |type|Integer|Keyword Type (search/display)|
