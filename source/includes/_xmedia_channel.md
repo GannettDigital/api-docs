@@ -1,18 +1,19 @@
-## Xmedia Channel
+### **XMO Channel Metrics**
+<a name="xmedia_channel"></a>
 
-### Resource Overview
+### Resource Overview&nbsp;
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/xmedia_channel/[gmaid]?[query_params] |
-#### API Name: xmedia_channel
-### Summary
+#### API Name: xmedia_channel&nbsp;
+### Summary&nbsp;
 This is a new Xmedia channels API that can be used to retrieve metrics by channel for an Xmedia campaign. Channels can be Search, Social, Display, Chat and Other. This API can be used to see how each channel performed for an Xmedia Campaign.
-### Usage
+### Usage&nbsp;
 Use GET to retrieve channel metrics for an Xmedia campaign. Metrics can be returned for a GMAID for a specific date range determined by start_date and end_date. Metrics can be retrieved for a specified campaign, cycle or channel.
 Metrics can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below.
 
-### Parameters
+### Parameters&nbsp;
 
 When using the GET method, the results can be filtered using these parameters:
 
@@ -28,7 +29,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`markup_type`| no |--|Only valid option is "percentage"|
 |`markup_value`| no | 0 |When `markup_type` is "percentage" this is the percent markup|
 |`channels[]`| no | All Channels |Specifies which channels to filter results by. Valid channels are `search`, `display`, `social`, `chat` and `other`|
-### Examples:
+### Examples:&nbsp;
 
 > Retrieve data for a specific range of dates
 

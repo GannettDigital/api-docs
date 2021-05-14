@@ -46,6 +46,9 @@ includes:
   - top_referrers
   - total_track
   - web_events_metrics
+  - cross_media_optimization
+  - xmedia
+  - xmedia_channel
 
   - integrations
   - capture_external_event_api
