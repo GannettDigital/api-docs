@@ -10,7 +10,7 @@
 ### Usage
 Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns. 
 
-The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. Please note chats will be reported as 0 in this API. Please use the XOM channel metrics API to get the chat counts. The total leads are based on all web events.
+The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. Please note chats will be reported as 0 in this API. Please use the XMO channel metrics API to get the chat counts. The total leads are based on all web events.
 
 
 ### Parameters
