@@ -1,5 +1,5 @@
 ### **XMO Channel Metrics**
-<a name="xmedia_channel"></a>
+<a name="xmo_channel"></a>
 
 ### Resource Overview
 
@@ -21,12 +21,13 @@ When using the GET method, the results can be filtered using these parameters:
 |`end_date`| Restricts the results to those ocurring on or before this date|
 |`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
 |`campaign_status[]`| Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
-|`campaign_cycle`| Restrict results to a single campaign cycle|
-|`interval_size`| | Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
-|`include_cycles`| |Set to true or false on whether to include cycle nesting.  Default value is false|
-|`markup_type`| |Only valid option is "percentage"|
-|`markup_value`| |When `markup_type` is "percentage" this is the percent markup|
-|`channels[]`| |Specifies which channels to filter results by. Valid channels are `search`, `display`, `social`, `chat` and `other`|
+|`campaign_cycle`| Restrict results to a single campaign cycle |
+|`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
+|`include_cycles`| Set to true or false on whether to include cycle nesting.  Default value is false|
+|`channels[]`|Specifies which channels to filter results by. Valid channels are `search`, `display`, `social`, `chat` and `other`|
+|<internal> markup_type|Only supported value is 'percentage' </internal>|
+|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
+
 
 ### Response Data Details
 
@@ -95,6 +96,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |`totals_by_channel`|Object|Overall Totals Broken Down by Channel|
 |`totals_by_publisher`|Object|Overall Totals Broken Down by Publisher|
 
+<a name="xmocampaigns"></a>
 **Campaigns**
 
 | Field Name | Datatype |  Description |
@@ -122,6 +124,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float | Cost Per Click for Campaign |
 | cpl | Float | Cost Per Lead for Campaign |
 
+<a name="xmocycles"></a>
 ### Cycles Array
 
 | Field Name | Datatype | Description |
@@ -144,6 +147,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | wpcs | WPC[] | Array of WPCs |
 | cpl | Float | Cost Per Lead for Cycle |
 
+<a name="xmopublishers"></a>
 ### WPCs (Web Publisher Campaign) Object
 
 | Field Name | Datatype | Description |
@@ -172,6 +176,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpl | Float  | Cost Per Lead for WPC |
 | intervals | Interval[] | Array of Intervals |
 
+<a name="xmointervals"></a>
 **Intervals Array**
 
 | Field Name | Datatype | Description |
@@ -191,6 +196,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float  | Cost Per Click for Interval |
 | cpl | Float | Cost Per Lead for Interval |
 
+<a name="xmototals"></a>
 **Totals Object**
 
 | Field Name | Datatype  | Description |
@@ -209,6 +215,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float | Overall Cost Per Click |
 | cpl | Float | Overall Cost Per Lead |
 
+<a name="Totalsinterval"></a>
 **Totals by Interval Object**
 
 | Field Name | Datatype | Description |
@@ -228,6 +235,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float | Cost Per Click for Interval |
 | cpl | Float | Cost Per Lead for Interval |
 
+<a name="Totalschannel"></a>
 **Totals Per channel Object**
 
 | Field Name | Datatype | Description |
@@ -247,6 +255,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float  | Cost Per Click for Channel |
 | cpl | Float  | Cost Per Lead for Channel |
 
+<a name="Totalpublisher"></a>
 **Totals Per Publisher Object**
 
 
