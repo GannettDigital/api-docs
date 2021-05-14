@@ -40,7 +40,7 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
   -H 'x-api-key: SJNPPSecret'
 ```
 
-> Response Description
+> Response Description if query_params contains match_params
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
@@ -101,6 +101,69 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
             "state": "NJ",
             "zip": "07727",
             "country": "USA",
+            "active_state": 2
+        }
+    ]
+}
+```
+
+> Response Description if query_params does not contain match_params
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|gmaid | String | no | gmaid of advertiser|
+|name | String | no | name of advertiser|
+|platform | String | no | platform of advertiser|
+|advertiser_id | String | no | id advertiser|
+|business_name | String | no | business name of advertiser|
+|business_id | String | no | state of potenial matching advertiser|
+|hipaa_protected | String | no | Is advertiser protected by hipaa |
+|cobrand_id | String | no | Cobrand ID of advertiser |
+|cobrand_name | String | no | Cobrand Name of advertiser |
+|active_state | Integer | no | Active state of advertiser (0 = inactive, 1 = expiring soon, 2 = active)|
+
+#### Example Response
+
+```javascript
+{
+    "page": 1,
+    "page_size": 1000,
+    "advertisers_count": 1000,
+    "advertisers": [
+        {
+            "advertiser_id": 1,
+            "platform": "USA",
+            "gmaid": "USA_1",
+            "name": "Alive",
+            "business_name": "test",
+            "business_id": 2322,
+            "hipaa_protected": false,
+            "cobrand_id": 1123213,
+            "cobrand_name": "test",
+            "active_state": 0
+        },
+        {
+            "advertiser_id": 3,
+            "platform": "USA",
+            "gmaid": "USA_3",
+            "name": "Alive",
+            "business_name": "test",
+            "business_id": 232,
+            "hipaa_protected": false,
+            "cobrand_id": 112313,
+            "cobrand_name": "test",
+            "active_state": 1
+        },
+        {
+            "advertiser_id": 2,
+            "platform": "USA",
+            "gmaid": "USA_2",
+            "name": "Alive",
+            "business_name": "test",
+            "business_id": 222,
+            "hipaa_protected": false,
+            "cobrand_id": 113213,
+            "cobrand_name": "test",
             "active_state": 2
         }
     ]
