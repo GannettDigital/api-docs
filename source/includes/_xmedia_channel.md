@@ -11,7 +11,6 @@
 Use GET to retrieve campaign performance metrics by channel (search, social etc.) for the Cross Media Optimization (XMO) campaigns. This API can be used to see how each channel performed for an Xmedia Campaign.
 
 
-
 ### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
@@ -98,7 +97,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 **Campaigns**
 
-| Field Name | Datatype  Description |
+| Field Name | Datatype |  Description |
 |---|---|---|
 | name | String | Campaign Name |
 | global_master_campaign_id | String | Unique Identifier for Campaign |
@@ -251,22 +250,22 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 **Totals Per Publisher Object**
 
 
-| Field Name | Datatype | Nullable | Description |
+| Field Name | Datatype  | Description |
 |---|---|---|---|
-| publisher | String | No | Publisher Name |
-| impressions | Int | No | Total Impressions for Publisher |
-| clicks | Float | No | Total Clicks for Publisher |
-| click_to_calls | Int | No | Total Click-to-Calls for Publisher. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
-| calls | Int | No | Total Calls for Publisher |
-| qualified_web_events | Int | No | Total Lead Generating CVT/Web Events for Publisher |
-| non_qualified_web_events | Int | No | Total Non-Lead Generating CVT/Web Events for Publisher |
-| emails | Int | No | Total Emails for Publisher |
-| chats | Int | No | Total Chats for Publisher |
-| leads | Int | No | Total Leads for Publisher |
-| spend | Float | No | Total Spend for Publisher |
-| ctr | Float | No | Click-through Rate for Publisher |
-| cpc | Float | No | Cost Per Click for Publisher |
-| cpl | Float | No | Cost Per Lead for Publisher |
+| publisher | String | Publisher Name |
+| impressions | Int | Total Impressions for Publisher |
+| clicks | Float  | Total Clicks for Publisher |
+| click_to_calls | Int | Total Click-to-Calls for Publisher. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
+| calls | Int  | Total Calls for Publisher |
+| qualified_web_events | Int  | Total Lead Generating CVT/Web Events for Publisher |
+| non_qualified_web_events | Int | Total Non-Lead Generating CVT/Web Events for Publisher |
+| emails | Int  | Total Emails for Publisher |
+| chats | Int | Total Chats for Publisher |
+| leads | Int  | Total Leads for Publisher |
+| spend | Float  | Total Spend for Publisher |
+| ctr | Float | Click-through Rate for Publisher |
+| cpc | Float  | Cost Per Click for Publisher |
+| cpl | Float  | Cost Per Lead for Publisher |
 
 > Example Response with include_cycles=true
 
