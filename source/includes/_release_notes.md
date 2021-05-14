@@ -1,4 +1,14 @@
 # Release Notes
+## May 2021
+
+### May 13th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|XMO Metrics|New API for campaign performance metrics for the Cross Media Optimization (XMO) campaigns |
+|XMO Channel Metrics|New API for campaign performance metrics by channel (search, social etc.) for the Cross Media Optimization (XMO) campaigns |
+
 ## April 2021
 
 ### April 20th, 2021
