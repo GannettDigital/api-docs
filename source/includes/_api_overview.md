@@ -20,6 +20,8 @@
 |Search|[Keyword Performance Metrics](#keyword_performance_metrics)|Keywords with metrics on each of them for both search and site retargeting campaigns|
 |Social|[SocialAds Campaign Metrics](#socialads_campaign_metrics)|Detailed performance metrics for social campaigns (Facebook). Includes age, gender & device breakdown|
 |Social|[YouTube Campaign Metrics](#youtube_campaign_metrics)|Detailed performance metrics for social campaigns (You Tube)|
+|XMO|[XMO Campaign Metrics](#xmo_metrics)|Detailed performance metrics for Cross Media Optimization campaigns (XOM)|
+|XMO |[XMO Channel Metrics](#xmo_channel)|Detailed performance metrics for Cross Media Optimization channels (XOM)|
 |Traffic Metrics|[Discovery](#discovery)|Basic metrics organized by traffic; paid (LOCALiQ & others) and organic|
 |Traffic Metrics|[Top referrers](#top_referrers)|Information on top referrers for both paid & organic traffic|
 |Traffic Metrics|[Total Track](#total_track)|Custom Tracking campaign metrics that have metrics on contacts from tracking phone number(s) and trackable URLs (Web & Phone)|
