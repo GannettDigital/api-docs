@@ -1,32 +1,34 @@
 ### **XMO Metrics**
-<a name="xmedia"></a>
+<a name="xmo_metrics"></a>
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/xmedia/[gmaid]?[query_params] |
-#### API Name: xmedia
-### Usage
-Use GET to retrieve information for the Xmedia API that will retrieve metrics on xmedia campaigns. Data can be returned for a GMAID for a specific date range determined by start_date and end_date.  Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below.
+
+Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns. 
+
+The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. Please note chats will be reported as 0 in this API. Please use the XMO channel metrics API to get the chat counts. The total leads are based on all web events.
+
 
 ### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
 
-| Param | Required | Default | Description |
-|---|---|---|---|
-|`start_date`| yes |--|Restricts the results to those ocurring on or after this date.|
-|`end_date`| yes |--|Restricts the results to those ocurring on or before this date.|
-|`global_master_campaign_id[]`| no |--|Restrict results to one or more specific campaigns|
-|`campaign_status[]`| no |running|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
-|`campaign_cycle`| no |--|Restrict results to a single campaign cycle|
-|`interval_size`| no | day | Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
-|`include_cycles`| no | false |Set to true or false on whether to include cycle nesting.  Default value is false.|
-|`markup_type`| no |--|Only valid option is "percentage".|
-|`markup_value`| no | 0 |When `markup_type` is "percentage" this is the percent markup.|
+| Param | Function|
+|---|---|
+|`start_date`|Restricts the results to those ocurring on or after this date.|
+|`end_date`|Restricts the results to those ocurring on or before this date.|
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns.|
+|`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
+|`campaign_cycle`|Restrict results to a single campaign cycle|
+|`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
+|`include_cycles`|Set to true or false on whether to include cycle nesting.  Default value is false.|
+|<internal> markup_type|Only supported value is 'percentage' </internal>|
+|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
-### Examples:
+### Response Data Details
 
 > Retrieve data for a specific range of dates
 
@@ -61,80 +63,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.localiqservices.com/client_reports/xmedia/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true"
 ```
-
-> Response Description
-
-### Campaigns
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-| name | String | No | Campaign Name |
-| global_master_campaign_id | String | No | Unique Identifier for Campaign |
-| organization | String | No | Either reachlocal or gannett |
-| start_date | String | No | Campaign Start Date |
-| end_date | String | Yes | Campaign End Date |
-| type | String | No | Type of Campaign |
-| status | String | No | Status of Campaign |
-
-### Goals
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-| goal_type_id | Int | No | goal type id |
-| goal_type | String | No | goal type name |
-
-
-### Campaign Intervals
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-| start_date | String | No | Campaign Start Date |
-| impressions | Int | No | Total Impressions for Campaign |
-| clicks | Float | No | Total Clicks for Interval |
-| calls | Float | No | Total Calls for Interval |
-| web_events | Int | No | Total Web Events for Interval |
-| qualified_web_events | Int | No | Total lead-generating CVT/Web Events for Interval |
-| emails | Float | No | Total Emails for Interval |
-| chats | Float | No | Total Chats for Interval |
-| leads | Float | No | Total Leads for Campaign |
-| spend | Float | No | Total Spend for Interval |
-| ctr | Float | No | Click-through Rate for Interval |
-| cpc | Float | No | Cost Per Click for Interval |
-
-### Totals
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-| impressions | Int | No | Total Impressions |
-| clicks | Float | No | Total Clicks |
-| calls | Float | No | Total Calls |
-| web_events | Int | No | Total Web Events |
-| qualified_web_events | Int | No | Total lead-generating CVT/Web Events |
-| emails | Float | No | Total Emailsl |
-| chats | Float | No | Total Chatsl |
-| leads | Float | No | Total Leads |
-| spend | Float | No | Total Spend |
-| ctr | Float | No | Overall Click-through Rate |
-| cpc | Float | No | Overall Cost Per Click |
-
-### Totals Per Interval
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|start_date | String | no | Start Date of interval |
-| impressions | Int | No | Total Impressions for Campaign |
-| clicks | Float | No | Total Clicks for Interval |
-| calls | Float | No | Total Calls for Interval |
-| web_events | Int | No | Total Web Events for Interval |
-| qualified_web_events | Int | No | Total lead-generating CVT/Web Events for Interval |
-| emails | Float | No | Total Emails for Interval |
-| chats | Float | No | Total Chats for Interval |
-| leads | Float | No | Total Leads for Campaign |
-| spend | Float | No | Total Spend for Interval |
-| ctr | Float | No | Click-through Rate for Interval |
-| cpc | Float | No | Cost Per Click for Interval |
-
-##### Example Response
+>  Example Response
 
 ```javascript
 {
@@ -177,8 +106,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "web_events": 7,
                         "qualified_web_events": 3,
                         "emails": 9,
-                        "chats": 10,
-                        "leads": 35,
+                        "chats": 0,
+                        "leads": 25,
                         "spend": 25.0,
                         "ctr": 1.52,
                         "cpc": 1.39
@@ -193,8 +122,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "web_events": 7,
             "qualified_web_events": 3,
             "emails": 9,
-            "chats": 10,
-            "leads": 35,
+            "chats": 0,
+            "leads": 25,
             "spend": 25.0,
             "ctr": 1.52,
             "cpc": 1.39
@@ -208,8 +137,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "web_events": 7,
                 "qualified_web_events": 3,
                 "emails": 9,
-                "chats": 10,
-                "leads": 35,
+                "chats": 0,
+                "leads": 25,
                 "spend": 25.0,
                 "ctr": 1.52,
                 "cpc": 1.39
@@ -218,3 +147,77 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
     }
 }
 ```
+
+
+**Campaigns**
+
+| Field Name | Datatype | Description |
+|---|---|---|
+| name | String | Campaign Name |
+| global_master_campaign_id | String | Unique Identifier for Campaign |
+| organization | String | Either reachlocal or gannett |
+| start_date | String | Campaign Start Date |
+| end_date | String | Campaign End Date |
+| type | String | Type of Campaign |
+| status | String | Status of Campaign |
+
+**Goals Array**
+
+| Field Name | Datatype | Description |
+|---|---|---|
+| goal_type_id | Int|  goal type id |
+| goal_type | String|  goal type name |
+
+
+**Intervals Array**
+
+| Field Name | Datatype | Description |
+|---|---|---|
+| start_date | String| Campaign Start Date |
+| impressions | Int | Total Impressions for Campaign |
+| clicks | Float | Total Clicks for Interval |
+| calls | Float | Total Calls for Interval |
+| web_events | Int | Total Web Events for Interval |
+| qualified_web_events | Int | Total lead-generating CVT/Web Events for Interval |
+| emails | Float | Total Emails for Interval |
+| chats | Float | Total Chats for Interval |
+| leads | Float | Total Leads for Campaign |
+| spend | Float | Total Spend for Interval |
+| ctr | Float | Click-through Rate for Interval |
+| cpc | Float | Cost Per Click for Interval |
+
+**Totals Object**
+
+| Field Name | Datatype | Description |
+|---|---|---|
+| impressions | Int | Total Impressions |
+| clicks | Float | Total Clicks |
+| calls | Float| Total Calls |
+| web_events | Int | Total Web Events |
+| qualified_web_events | Int | Total lead-generating CVT/Web Events |
+| emails | Float | Total Emailsl |
+| chats | Float | Total Chatsl |
+| leads | Float | Total Leads |
+| spend | Float | Total Spend |
+| ctr | Float | Overall Click-through Rate |
+| cpc | Float | Overall Cost Per Click |
+
+**Totals Per Interval Object**
+
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|start_date | String | Start Date of interval |
+| impressions | Int | Total Impressions for Campaign |
+| clicks | Float | Total Clicks for Interval |
+| calls | Float | Total Calls for Interval |
+| web_events | Int  | Total Web Events for Interval |
+| qualified_web_events | Int | No | Total lead-generating CVT/Web Events for Interval |
+| emails | Float | Total Emails for Interval |
+| chats | Float | Total Chats for Interval |
+| leads | Float  | Total Leads for Campaign |
+| spend | Float | Total Spend for Interval |
+| ctr | Float | Click-through Rate for Interval |
+| cpc | Float | Cost Per Click for Interval |
+
+
