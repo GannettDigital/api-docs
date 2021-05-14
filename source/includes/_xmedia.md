@@ -10,7 +10,7 @@
 ### Usage
 Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns. 
 
-The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. 
+The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. Please note chats will be reported as 0 in this API. Please use the XOM channel metrics API to get the chat counts. The total leads are based on all web events.
 
 
 ### Parameters
@@ -180,8 +180,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "web_events": 7,
                         "qualified_web_events": 3,
                         "emails": 9,
-                        "chats": 10,
-                        "leads": 35,
+                        "chats": 0,
+                        "leads": 25,
                         "spend": 25.0,
                         "ctr": 1.52,
                         "cpc": 1.39
@@ -196,8 +196,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "web_events": 7,
             "qualified_web_events": 3,
             "emails": 9,
-            "chats": 10,
-            "leads": 35,
+            "chats": 0,
+            "leads": 25,
             "spend": 25.0,
             "ctr": 1.52,
             "cpc": 1.39
@@ -211,8 +211,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "web_events": 7,
                 "qualified_web_events": 3,
                 "emails": 9,
-                "chats": 10,
-                "leads": 35,
+                "chats": 0,
+                "leads": 25,
                 "spend": 25.0,
                 "ctr": 1.52,
                 "cpc": 1.39
