@@ -90,11 +90,11 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 | Field Name | Datatype | Description |
 |---|---|---|
-|`campaigns`|Object|Data for specified campaign|
-|`totals`|Object|Data for Overall Totals|
-|`totals_per_interval`|Object|Overall Totals Broken Down by Interval|
-|`totals_by_channel`|Object|Overall Totals Broken Down by Channel|
-|`totals_by_publisher`|Object|Overall Totals Broken Down by Publisher|
+|`campaigns`|Object|Data for specified campaign.[Campaigns.](#xmocampaigns)|
+|`totals`|Object|Data for Overall Totals [Totals Object.](#xmototals)|
+|`totals_per_interval`|Object|Overall Totals Broken Down by Interval [Totals by Interval Object.](#totalsinterval)|
+|`totals_by_channel`|Object|Overall Totals Broken Down by Channel [Totals Per Channel Object.](#totalschannel)|
+|`totals_by_publisher`|Object|Overall Totals Broken Down by Publisher [Totals Per Publisher Object.](#totalspublisher)|
 
 <a name="xmocampaigns"></a>
 **Campaigns**
@@ -148,7 +148,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpl | Float | Cost Per Lead for Cycle |
 
 <a name="xmopublishers"></a>
-### WPCs (Web Publisher Campaign) Object
+### WPC Object
 
 | Field Name | Datatype | Description |
 |---|---|---|
@@ -215,7 +215,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float | Overall Cost Per Click |
 | cpl | Float | Overall Cost Per Lead |
 
-<a name="Totalsinterval"></a>
+<a name="totalsinterval"></a>
 **Totals by Interval Object**
 
 | Field Name | Datatype | Description |
@@ -235,7 +235,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float | Cost Per Click for Interval |
 | cpl | Float | Cost Per Lead for Interval |
 
-<a name="Totalschannel"></a>
+<a name="totalschannel"></a>
 **Totals Per channel Object**
 
 | Field Name | Datatype | Description |
@@ -255,7 +255,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float  | Cost Per Click for Channel |
 | cpl | Float  | Cost Per Lead for Channel |
 
-<a name="Totalpublisher"></a>
+<a name="totalpublisher"></a>
 **Totals Per Publisher Object**
 
 
