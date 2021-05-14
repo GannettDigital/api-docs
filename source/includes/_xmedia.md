@@ -1,5 +1,5 @@
 ### **XMO Metrics**
-<a name="xmedia"></a>
+<a name="xmo_metrics"></a>
 
 ### Resource Overview
 
