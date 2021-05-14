@@ -6,7 +6,7 @@
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/xmedia/[gmaid]?[query_params] |
-#### API Name: XMO Metrics
+
 Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns. 
 
 The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. Please note chats will be reported as 0 in this API. Please use the XMO channel metrics API to get the chat counts. The total leads are based on all web events.
@@ -161,7 +161,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | type | String | Type of Campaign |
 | status | String | Status of Campaign |
 
-### Goals
+**Goals Array**
 
 | Field Name | Datatype | Description |
 |---|---|---|
