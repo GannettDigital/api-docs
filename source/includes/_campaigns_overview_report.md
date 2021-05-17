@@ -450,7 +450,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |calls|Integer|Total call events|
 |emails|Integer|Total email events|
 |web_events|Integer|Total web events|
-|qualified_web_events|Integer|Total qualified web events|
+|qualified_web_events|Integer|Total lead generating CVT or Web Event|
 |chats|Integer|Total chat events|
 
 <a name="campaignsdetails"></a>
