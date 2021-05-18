@@ -27,6 +27,8 @@ When using the GET method, the results can be filtered using these parameters:
 |start_date|Yes|Restricts the results to those occurring on or after this date|
 |end_date|Yes|Restricts the results to those occurring on or before this date|
 |interval_size|No|Specifies the type of interval: none, day, calendar_week, or calendar_month <br>**Default value: none**|
+|global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
+|campaign_cycle|Restrict results to a single campaign cycle|
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
@@ -587,6 +589,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
             {
                 "name": "Line Item (Demo) 1",
                 "line_item_id": 1,
+                "organization": "gannett",
                 "impressions": 830.0,
                 "clicks": 14.0,
                 "total_active_time_view": 335.83,
@@ -800,6 +803,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
             {
                 "name": "Line Item (Demo) 2",
                 "line_item_id": 2,
+                "organization": "gannett",
                 "impressions": 1647.0,
                 "clicks": 20.0,
                 "total_active_time_view": 653.02,
@@ -1150,6 +1154,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
 |---|---|---|
 |name|String|Name of Line Item|
 |line_item_id|Int|Identifier of Line Item|
+|organization|String|Either reachlocal or gannett|
 |impressions|Int|Total Impressions for Line Item|
 |clicks|Int|Total Clicks for Line Item|
 |total_active_time_view|Float|Total Time (minutes) the ad was viewed by a consumers|
