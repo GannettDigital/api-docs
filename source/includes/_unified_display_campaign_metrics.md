@@ -29,6 +29,7 @@ When using the GET method, the results can be filtered using these parameters:
 |interval_size|No|Specifies the type of interval: none, day, calendar_week, or calendar_month <br>**Default value: none**|
 |global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
 |campaign_cycle|Restrict results to a single campaign cycle|
+|campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
