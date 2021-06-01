@@ -1,7 +1,7 @@
 ## CRM Webhooks
 <a name="crm_webhooks"></a>
 
-### Registering the Webhook
+### Client Center Webhook
 
 Client Center has an automation feature that is capable of triggering on “New Lead for New Contact” and “New Lead for Existing Contact” events.  When either of these events occur, this webhook integration will trigger and POST the Lead Event JSON Payload to a URL configured for the webhook.  Create a webhook using the integrations account setting.
 
