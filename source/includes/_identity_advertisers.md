@@ -16,10 +16,11 @@ Use GET to retrieve advertisers that match the query params.
 
 When using the GET index method, the results will be filtered using these parameters:
 
-| Parameter | Required | Default | Description |
+| Parameter | Required | Description |
 |---|---|---|---|
-|`match_params`|No| - | JSON object with `name` and `state` keys to match on|
-|`gmaid`| no |Restrict results to one or more specific gmaid|
+|`match_params`|Yes (in first case)|JSON object with `name` and `state` keys to match on|
+|`platform_id`|Yes (in second case)|Array which restricts the results to one or more specific advertiser with the given platform id  Valid platform ids are: `USA`, `CAN`, `AUS` and `GBR` |
+|`gmaid`|No|Restrict results to one or more specific gmaid|
 |`advertiser_id`|No|Restrict results to one or more specific advertiser with the given advertiser id|
 |`business_id`|No|Restrict results to one or more specific advertiser with the given business id|
 |`cobrand_id`|No|Restrict results to one or more specific advertiser with the given cobrand id|
