@@ -18,6 +18,7 @@ The performance metrics for the last 30 days are across all running campaigns an
 - Total Calls
 - Total Emails
 - Total Web Events
+- Total Qualified Web Events
 - Total Chat Events
 
 The campaign list section will list all (running, stopped and ended) campaigns with the following information for each campaign in the list:
@@ -410,7 +411,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "clicks": 3861,
             "emails": 1877,
             "web_events": 1891,
-            "impressions": 315499
+            "impressions": 315499,
+            "qualified_web_events": 1291
         }
     },
     "global_master_advertiser_id": "TEST_1",
@@ -448,6 +450,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |calls|Integer|Total call events|
 |emails|Integer|Total email events|
 |web_events|Integer|Total web events|
+|qualified_web_events|Integer|Total lead generating CVT or Web Event|
 |chats|Integer|Total chat events|
 
 <a name="campaignsdetails"></a>
