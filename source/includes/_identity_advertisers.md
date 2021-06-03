@@ -23,12 +23,15 @@ When using the GET index method, the results will be filtered using these parame
 |`gmaid`|No|Restrict results to one or more specific gmaid|
 |`advertiser_id`|No|Restrict results to one or more specific advertiser with the given advertiser id|
 |`business_id`|No|Restrict results to one or more specific advertiser with the given business id|
-|`cobrand_id`|No|Restrict results to one or more specific advertiser with the given cobrand id|
-|`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
+|`cobrand_id`|No|Restrict results to one or more specific advertiser with the given cobrand id. An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LOCALiQ data construct used for internal purposes|
+|`page_size`|No|Restrict number of advertisers in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 5000</b>|
-|`active_state`|No|Specifies what column to sort by.  Valid active states are: `ACTIVE`, `INACTIVE` and `ALL` <br><b>Default value: `ALL`</b>|
-|`advertiser_code`|No|Restrict results to one or more specific advertiser with the given advertiser code|
+|`active_state`|No|Valid active states are: `ACTIVE`, `INACTIVE` and `ALL` <br><b>Default value: `ALL`</b>|
+|`advertiser_code`|No|Non-unique identifier. This is an internal LOCALiQ data construct used for internal purposes|
+|`business_category`|No|LOCALiQ’s categorization of the client’s business e.g. Home & Home improvement, Real Estate, Automotive-For Sale etc|
+|`business_sub_category`|No|LOCALiQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
 
+#### If you use the match_params parameter, the ones below won't be considered from the API
 ### Examples:
 
 ### GET (index)
@@ -112,15 +115,15 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|gmaid | String | no | gmaid of advertiser|
-|name | String | no | name of advertiser|
-|platform | String | no | platform of advertiser|
-|advertiser_id | String | no | id advertiser|
-|business_name | String | no | business name of advertiser|
-|business_id | String | no | state of potenial matching advertiser|
+|gmaid | String | no | The global master advertiser id of the advertiser. |
+|name | String | no | The name of the advertiser |
+|platform | String | no | The platform for the advertiser |
+|advertiser_id | String | no |The advertiser_id for this advertiser.  Not necessarily the same as the numerical portion of the gmaid. |
+|business_name | String | no | The business name of this advertiser. |
+|business_id | String | no | The unique business id that this advertiser belongs to. |
 |hipaa_protected | String | no | Is advertiser protected by hipaa |
-|cobrand_id | String | no | Cobrand ID of advertiser |
-|cobrand_name | String | no | Cobrand Name of advertiser |
+|cobrand_id | String | no | An ID used to  uniquely identify a cobrand. |
+|cobrand_name | String | no | Name given to a collection of of business or BID.  This is an internal LOCALiQ data construct used to aggregate like businesses e.g. partner, Gannett etc. |
 |active_state | Integer | no | Active state of advertiser (0 = inactive, 1 = expiring soon, 2 = active)|
 
 #### Example Response
