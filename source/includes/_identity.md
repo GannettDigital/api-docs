@@ -21,7 +21,7 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 | page| No | 1 | Return a specified page of results |
 | page_size | No | 5000 | Number of results per page |
 | business_id |No|The unique business id that this advertiser belongs to.|
-| active_state |No|0: Advertiser not active. 2: Advertiser is active|
+| active_state |No|0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active|
 <internal>
 | gmaid |No|Identifier for advertiser|
 | advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LOCALiQ data construct used for internal purposes|
