@@ -18,10 +18,11 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 | Param | Required | Description |
 |---|---|---|
 |user| Yes | Restricts the results to advertisers authorized for the given business user |
-| page| No | Return a specified page of results. <br><b>Default value: 1</b> |
-| page_size | No | Number of results per page <br><b>Default value: 5000</b> |
 | business_id |No|The unique business id that this advertiser belongs to.|
 | active_state |No|Array of active states that can include: 0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active|
+| page| No | Return a specified page of results. <br><b>Default value: 1</b> |
+| page_size | No | Number of results per page <br><b>Default value: 5000</b> |
+ 
 <internal>
 | gmaid |No|Identifier for advertiser|
 | advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LOCALiQ data construct used for internal purposes|
