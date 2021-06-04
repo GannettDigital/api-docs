@@ -15,18 +15,18 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 
 ### Parameters
 
-| Param | Required | Default | Function |
-|---|---|---|---|
-|user| Yes | -- | Restricts the results to advertisers authorized for the given business user |
-| page| No | 1 | Return a specified page of results |
-| page_size | No | 5000 | Number of results per page |
+| Param | Required | Description |
+|---|---|---|
+|user| Yes | Restricts the results to advertisers authorized for the given business user |
+| page| No | Return a specified page of results. <br><b>Default value: 1</b> |
+| page_size | No | Number of results per page <br><b>Default value: 5000</b> |
 | business_id |No|The unique business id that this advertiser belongs to.|
 | active_state |No|0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active|
 <internal>
 | gmaid |No|Identifier for advertiser|
 | advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LOCALiQ data construct used for internal purposes|
 | cobrand_id |No|An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LOCALiQ data construct used for internal purposes|
-| exclude_inactive | No |true| Returns only active advertisers|
+| exclude_inactive | No | Returns only active advertisers <br><b>Default value: true</b>|
 | advertiser_code |No|Non-unique identifier. This is an internal LOCALiQ data construct used for internal purposes|
 | business_category |No|LOCALiQ’s categorization of the client’s business e.g. Home & Home improvement, Real Estate, Automotive-For Sale etc|
 | business_sub_category |No|LOCALiQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
