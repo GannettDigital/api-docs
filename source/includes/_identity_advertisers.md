@@ -26,7 +26,7 @@ When using the GET index method, the results will be filtered using these parame
 |`cobrand_id`|No|Restrict results to one or more specific advertiser with the given cobrand id. An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LOCALiQ data construct used for internal purposes|
 |`page_size`|No|Restrict number of advertisers in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 5000</b>|
-|`active_state`|No|0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active.|
+|`active_state`|No|Array of active states that can include 0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active.|
 |`advertiser_code`|No|Non-unique identifier. This is an internal LOCALiQ data construct used for internal purposes|
 |`business_category`|No|LOCALiQ’s categorization of the client’s business e.g. Home & Home improvement, Real Estate, Automotive-For Sale etc|
 |`business_sub_category`|No|LOCALiQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
@@ -173,6 +173,95 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
     ]
 }
 ```
+
+```
+curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&business_id=15' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+#### Example Response
+
+```javascript
+{
+    "page": 1,
+    "page_size": 1000,
+    "advertisers_count": 1000,
+    "advertisers": [
+        {
+            "advertiser_id": 1,
+            "platform": "USA",
+            "gmaid": "USA_1",
+            "name": "Alive",
+            "business_name": "test",
+            "business_id": 15,
+            "hipaa_protected": false,
+            "cobrand_id": 1123213,
+            "cobrand_name": "test",
+            "active_state": 0
+        },
+        {
+            "advertiser_id": 3,
+            "platform": "USA",
+            "gmaid": "USA_3",
+            "name": "Alive",
+            "business_name": "test",
+            "business_id": 15,
+            "hipaa_protected": false,
+            "cobrand_id": 112313,
+            "cobrand_name": "test",
+            "active_state": 1
+        },
+        {
+            "advertiser_id": 2,
+            "platform": "USA",
+            "gmaid": "USA_2",
+            "name": "Alive",
+            "business_name": "test",
+            "business_id": 15,
+            "hipaa_protected": false,
+            "cobrand_id": 113213,
+            "cobrand_name": "test",
+            "active_state": 2
+        }
+    ]
+}
+```
+
+```
+curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&active_state[]=0' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+#### Example Response
+
+```javascript
+{
+    "page": 1,
+    "page_size": 1000,
+    "advertisers_count": 1000,
+    "advertisers": [
+        {
+            "advertiser_id": 1,
+            "platform": "USA",
+            "gmaid": "USA_1",
+            "name": "Alive",
+            "business_name": "test",
+            "business_id": 15,
+            "hipaa_protected": false,
+            "cobrand_id": 1123213,
+            "cobrand_name": "test",
+            "active_state": 0
+        }
+    ]
+}
+```
+
 
 ### Resource Overview&nbsp;&nbsp;&nbsp;
 

@@ -21,7 +21,7 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 | page| No | Return a specified page of results. <br><b>Default value: 1</b> |
 | page_size | No | Number of results per page <br><b>Default value: 5000</b> |
 | business_id |No|The unique business id that this advertiser belongs to.|
-| active_state |No|0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active|
+| active_state |No|Array of active states that can include: 0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active|
 <internal>
 | gmaid |No|Identifier for advertiser|
 | advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LOCALiQ data construct used for internal purposes|
@@ -109,6 +109,132 @@ https://api.localiqservices.com/identities/v3?user=test@test3.com
             "privilege_level": 3,
             "advertiser_id": 2,
             "active_state": 2,
+            "cobrand_id": 1123213,
+            "cobrand_name": "test"
+        }
+    ],
+    "users": [
+        {
+            "platform": "TEST",
+            "buid": 1,
+            "email": "EMAIL_ADDRESS",
+            "business_id": 2,
+            "name": "test",
+            "privilege_level": 3
+        }
+    ]
+}
+```
+
+```shell
+curl --request GET \
+  --url https://api.localiqservices.com/identities/v3?user=EMAIL_ADDRESS&business_id=15 \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
+```
+
+> Example Response
+
+```json
+https://api.localiqservices.com/identities/v3?user=test@test3.com
+
+{
+    "bu_id": 1,
+    "user": "EMAIL_ADDRESS",
+    "business_id": 1,
+    "country": "USA",
+    "advertiser_count": 2,
+    "page": 1,
+    "page_size": 5000,
+    "authorized_advertisers": [
+        {
+            "name": "Test Advertiser 1",
+            "gmaid": "TEST_1",
+            "platform": "TEST",
+            "hipaa_protected": false,
+            "business_id": 15,
+            "business_name": "Test Name 1",
+            "business_user_id": 1,
+            "privilege_level": 3,
+            "advertiser_id": 1,
+            "active_state": 2,
+            "cobrand_id": 1123213,
+            "cobrand_name": "test"
+        },
+        {
+            "name": "Test Advertiser 2",
+            "gmaid": "TEST_2",
+            "platform": "TEST",
+            "hipaa_protected": true,
+            "business_id": 15,
+            "business_name": "Test Name 2",
+            "business_user_id": 2,
+            "privilege_level": 3,
+            "advertiser_id": 2,
+            "active_state": 2,
+            "cobrand_id": 1123213,
+            "cobrand_name": "test"
+        }
+    ],
+    "users": [
+        {
+            "platform": "TEST",
+            "buid": 1,
+            "email": "EMAIL_ADDRESS",
+            "business_id": 2,
+            "name": "test",
+            "privilege_level": 3
+        }
+    ]
+}
+```
+
+```shell
+curl --request GET \
+  --url https://api.localiqservices.com/identities/v3?user=EMAIL_ADDRESS&active_state[]=0 \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
+```
+
+> Example Response
+
+```json
+https://api.localiqservices.com/identities/v3?user=test@test3.com
+
+{
+    "bu_id": 1,
+    "user": "EMAIL_ADDRESS",
+    "business_id": 1,
+    "country": "USA",
+    "advertiser_count": 2,
+    "page": 1,
+    "page_size": 5000,
+    "authorized_advertisers": [
+        {
+            "name": "Test Advertiser 1",
+            "gmaid": "TEST_1",
+            "platform": "TEST",
+            "hipaa_protected": false,
+            "business_id": 1,
+            "business_name": "Test Name 1",
+            "business_user_id": 1,
+            "privilege_level": 3,
+            "advertiser_id": 1,
+            "active_state": 0,
+            "cobrand_id": 1123213,
+            "cobrand_name": "test"
+        },
+        {
+            "name": "Test Advertiser 2",
+            "gmaid": "TEST_2",
+            "platform": "TEST",
+            "hipaa_protected": true,
+            "business_id": 2,
+            "business_name": "Test Name 2",
+            "business_user_id": 2,
+            "privilege_level": 3,
+            "advertiser_id": 2,
+            "active_state": 0,
             "cobrand_id": 1123213,
             "cobrand_name": "test"
         }
