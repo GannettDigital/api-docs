@@ -700,7 +700,10 @@
                     <a href="#lead-info-apis-webhooks-crm-webhooks" class="toc-h2 toc-link" data-title="Lead Info APIs/Webhooks">CRM Webhooks</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
-                            <a href="#lead-info-apis-webhooks-crm-webhooks-registering-the-webhook" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Registering the Webhook</a>
+                            <a href="#lead-info-apis-webhooks-crm-webhooks-client-center-webhook" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Client Center Webhook</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#lead-info-apis-webhooks-crm-webhooks-custom-webhook" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Custom Webhook</a>
                           </li>
                           <li class="toc-h3-li">
                             <a href="#lead-info-apis-webhooks-crm-webhooks-webhook-payload" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Webhook Payload</a>
@@ -1980,6 +1983,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <li>Total Calls</li>
 <li>Total Emails</li>
 <li>Total Web Events</li>
+<li>Total Qualified Web Events</li>
 <li>Total Chat Events</li>
 </ul><p>The campaign list section will list all (running, stopped and ended) campaigns with the following information for each campaign in the list:</p><ul><li>Campaign Name</li>
 <li>Campaign ID (global_master_campaign_id)</li>
@@ -2353,7 +2357,8 @@ This control applies to APIs that provide data that are classified as HIPAA and 
             </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">3861</span><span class="p">,</span><span class="w">
             </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">1877</span><span class="p">,</span><span class="w">
             </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">1891</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">315499</span><span class="w">
+            </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">315499</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"qualified_web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">1291</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
@@ -2453,6 +2458,11 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>web_events</td>
 <td>Integer</td>
 <td>Total web events</td>
+</tr>
+<tr>
+<td>qualified_web_events</td>
+<td>Integer</td>
+<td>Total lead generating CVT or Web Event</td>
 </tr>
 <tr>
 <td>chats</td>
@@ -13305,7 +13315,7 @@ curl -X POST <span class="se">\</span>
 <td>extra_fields</td>
 <td>Array of String</td>
 <td><strong>The field is nullable</strong></td>
-</tr></tbody></table><h2 id='lead-info-apis-webhooks-crm-webhooks'>CRM Webhooks</h2><p><a name="crm_webhooks"></a></p><h3 id='lead-info-apis-webhooks-crm-webhooks-registering-the-webhook'>Registering the Webhook</h3><p>Client Center has an automation feature that is capable of triggering on “New Lead for New Contact” and “New Lead for Existing Contact” events.  When either of these events occur, this webhook integration will trigger and POST the Lead Event JSON Payload to a URL configured for the webhook.  Create a webhook using the integrations account setting.</p><p><img src="images/webhook.png" alt="Integrations webhook" /></p><p>When creating a webhook integration in Client Center, the CRM provider should be asked for the Payload URL.</p><p><img src="images/create_webhook.png" alt="Create webhook" /></p><p>Webhook Components:</p><ul><li>Payload URL
+</tr></tbody></table><h2 id='lead-info-apis-webhooks-crm-webhooks'>CRM Webhooks</h2><p><a name="crm_webhooks"></a></p><h3 id='lead-info-apis-webhooks-crm-webhooks-client-center-webhook'>Client Center Webhook</h3><p>Client Center has an automation feature that is capable of triggering on “New Lead for New Contact” and “New Lead for Existing Contact” events.  When either of these events occur, this webhook integration will trigger and POST the Lead Event JSON Payload to a URL configured for the webhook.  Create a webhook using the integrations account setting.</p><p><img src="images/webhook.png" alt="Integrations webhook" /></p><p>When creating a webhook integration in Client Center, the CRM provider should be asked for the Payload URL.</p><p><img src="images/create_webhook.png" alt="Create webhook" /></p><p>Webhook Components:</p><ul><li>Payload URL
 <ul><li>A Payload URL (also called an Endpoint URL, Postback URL, or HTTP POST URL) is a place in the CRM where our data can be sent.</li>
 <li>We will not be able to send the data without a Payload URL.</li>
 </ul></li>
@@ -13327,7 +13337,7 @@ curl -X POST <span class="se">\</span>
 <ul><li>The format that we will send the data in. This can either be sent in JSON, which is the standard format, or in ADF/XML.</li>
 </ul></li>
 <li>The webhook can be set to Active by checking the box next to &quot;Active&quot;. If left unchecked, the webhook will not send data.</li>
-</ul><p>All leads for an advertiser will be sent through the webhook and cannot be filtered by a specific campaign.</p><p><strong>Register via API</strong></p><p><strong>Webhook option:</strong> We also have a Webhook to receive contacts in real time as they are recorded in the LOCALiQ platform. Our endpoint enables registration for webhook callbacks when new contacts or contact interactions occur. It requires the following parameters for a successful response: GMAID (advertiser ID).</p><p><strong>Zapier App:</strong> The contact webhook is available as an integration on the Zapier marketplace. https://zapier.com/apps/localiq/integrations</p><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+</ul><p>All leads for an advertiser will be sent through the webhook and cannot be filtered by a specific campaign.</p><h3 id='lead-info-apis-webhooks-crm-webhooks-custom-webhook'>Custom Webhook</h3><p><strong>Register via API</strong></p><p><strong>Webhook option:</strong> We also have a Webhook to receive contacts in real time as they are recorded in the LOCALiQ platform. Our endpoint enables registration for webhook callbacks when new contacts or contact interactions occur. It requires the following parameters for a successful response: GMAID (advertiser ID).</p><p><strong>Zapier App:</strong> The contact webhook is available as an integration on the Zapier marketplace. https://zapier.com/apps/localiq/integrations</p><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.localiqservices.com/crm/webhooks?global_master_advertiser_id=TEST_1"</span><span class="p">)</span>
