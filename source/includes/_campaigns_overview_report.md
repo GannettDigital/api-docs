@@ -349,6 +349,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "start_date": "2020-10-15",
                 "end_date": null,
                 "status": "running",
+                "id_bidding_pricing_model": 8,
                 "cycles": [
                     {
                         "campaign_cycle": "TEST_6904",
@@ -466,6 +467,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |start_date|String|Start date for campaign|
 |end_date|String|End date for campaign|
 |status|String|campaign status|
+|id_bidding_pricing_model|Integer|The id which will be used to filter the sub type of top search campaign|
 |cycles|Object|Data for cycles. [Cycles Object](#campaignscycles)|
 
 <a name="campaignscycles"></a>
