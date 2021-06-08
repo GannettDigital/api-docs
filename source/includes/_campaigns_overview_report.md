@@ -467,7 +467,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |start_date|String|Start date for campaign|
 |end_date|String|End date for campaign|
 |status|String|campaign status|
-|id_bidding_pricing_model|Integer|The id which will be used to filter the sub type of top search campaign|
+|id_bidding_pricing_model|Integer|The id which will be used to filter the sub type of top search campaign (shown only for search campaigns)|
 |cycles|Object|Data for cycles. [Cycles Object](#campaignscycles)|
 
 <a name="campaignscycles"></a>

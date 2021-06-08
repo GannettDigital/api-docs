@@ -293,7 +293,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |campaign_type|String|Type of campaign|
 |organization|String|Organization|
 |status|String|Status of campaign|
-|id_bidding_pricing_model|Integer|The id which will be used to filter the sub type of top search campaign|
+|id_bidding_pricing_model|Integer|The id which will be used to filter the sub type of top search campaign (shown only for search campaigns)|
 |has_addressable_geofence|Boolean|`True` or `False`|
 |has_cvt|Boolean|`True` or `False`|
 |offer_name|String|Campaign offer name|
