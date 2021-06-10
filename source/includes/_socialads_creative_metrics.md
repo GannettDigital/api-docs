@@ -85,7 +85,6 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "checkin": 7.0,
                 "action_reaction": 5.0,
                 "leadgen.other": 0,
-                "frequency": 9.0,
                 "spend": 25.0,
                 "video_p100_watched_actions": 18.0,
                 "offline_conversion_purchases": 5.0,
@@ -125,7 +124,6 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                         "checkin": 7.0,
                         "action_reaction": 5.0,
                         "leadgen.other": 0,
-                        "frequency": 9.0,
                         "spend": 0.0,
                         "video_p100_watched_actions": 18.0,
                         "offline_conversion_purchases": 5.0,
@@ -299,7 +297,6 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "checkin": 4.0,
                 "action_reaction": 3.0,
                 "leadgen.other": 0,
-                "frequency": 5.0,
                 "spend": 7.0,
                 "video_p100_watched_actions": 9.0,
                 "offline_conversion_purchases": 3.0,
@@ -368,7 +365,6 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "checkin": 7.0,
                 "action_reaction": 5.0,
                 "leadgen.other": 0,
-                "frequency": 9.0,
                 "spend": 25.0,
                 "video_p100_watched_actions": 18.0,
                 "offline_conversion_purchases": 5.0,
@@ -402,7 +398,6 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                         "checkin": 7.0,
                         "action_reaction": 5.0,
                         "leadgen.other": 0,
-                        "frequency": 9.0,
                         "spend": 25.0,
                         "video_p100_watched_actions": 18.0,
                         "offline_conversion_purchases": 5.0,
@@ -442,7 +437,6 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                 "checkin": 7.0,
                                 "action_reaction": 5.0,
                                 "leadgen.other": 0,
-                                "frequency": 9.0,
                                 "spend": 0.0,
                                 "video_p100_watched_actions": 18.0,
                                 "offline_conversion_purchases": 5.0,
@@ -893,7 +887,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | checkin | Int | No | Total Checkins for Interval |
 | action_reaction | Int | No | Total Action Reaction for Interval |
 | leadgen.other | Int | No | Total leadgen.other for Interval |
-| frequency | Int | No | Total Frequency for Interval |
+| frequency | Int | No | Average. This metric is available only for param interval_size is day |
 | spend | Int | No | Total Spend for Interval |
 | video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent for Interval |
 | offline_conversion_purchases | Int | No | Total Offline Conversion Purchases for Interval |
@@ -927,7 +921,6 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | checkin | Int | No | Total Checkins |
 | action_reaction | Int | No | Total Action Reaction |
 | leadgen.other | Int | No | Total leadgen.other |
-| frequency | Int | No | Total Frequency |
 | spend | Int | No | Total Spend |
 | video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent |
 | offline_conversion_purchases | Int | No | Total Offline Conversion Purchases |
