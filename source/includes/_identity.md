@@ -31,6 +31,8 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 | advertiser_code |No|Non-unique identifier. This is an internal LOCALiQ data construct used for internal purposes|
 | business_category |No|LOCALiQ’s categorization of the client’s business e.g. Home & Home improvement, Real Estate, Automotive-For Sale etc|
 | business_sub_category |No|LOCALiQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
+| advertiser_name |No|Restrict results to one or more specific advertiser with the given advertiser name|
+| business_name |No|Restrict results to one or more specific advertiser with the given business name|
 </internal>
 
 ### Response Data Details

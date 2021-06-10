@@ -30,6 +30,8 @@ When using the GET index method, the results will be filtered using these parame
 |`advertiser_code`|No|Non-unique identifier. This is an internal LOCALiQ data construct used for internal purposes|
 |`business_category`|No|LOCALiQ’s categorization of the client’s business e.g. Home & Home improvement, Real Estate, Automotive-For Sale etc|
 |`business_sub_category`|No|LOCALiQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
+|`advertiser_name`|No|Restrict results to one or more specific advertiser with the given advertiser name|
+|`business_name`|No|Restrict results to one or more specific advertiser with the given business name|
 
 #### If you use the match_params parameter, the ones below won't be considered from the API
 ### Examples:
@@ -57,6 +59,7 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
 |zip | String | no | zip code of potenial matching advertiser|
 |country | String | no | country code of potenial matching advertiser|
 |active_state | Integer | no | Active state of advertiser (0 = inactive, 1 = expiring soon, 2 = active)|
+
 
 #### Example Response
 
