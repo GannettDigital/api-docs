@@ -710,7 +710,6 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
             "checkin": 0,
             "action_reaction": 0,
             "leadgen.other": 0,
-            "frequency": 250.3866,
             "spend": 4546.13,
             "video_p100_watched_actions": 0,
             "offline_conversion_purchases": 7,
@@ -744,7 +743,6 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
                 "checkin": 8,
                 "action_reaction": 9,
                 "leadgen.other": 0,
-                "frequency": 5,
                 "spend": 25,
                 "video_p100_watched_actions": 20,
                 "video_avg_percent_watched_actions": 76,
@@ -842,7 +840,7 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 |checkin|Int|No|Total Checkins for Interval|
 |action_reaction|Int|No|Total Action Reaction for Interval|
 |leadgen.other|Int|No|Total leadgen.other for Interval|
-|frequency|Int|No|Total Frequency for Interval|
+|frequency|Int|No|Average. This metric is available only for param interval_size is day|
 |spend|Int|No|Total Spend for Interval|
 |video_p100_watched_actions|Int|No|Total Videos Watched to 100 percent for Interval|
 |offline_conversion_purchases|Int|No|Total Offline Conversion Purchases for Interval|
@@ -876,7 +874,6 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 |checkin|Int|No|Total Checkins|
 |action_reaction|Int|No|Total Action Reaction|
 |leadgen.other|Int|No|Total leadgen.other|
-|frequency|Int|No|Total Frequency|
 |spend|Int|No|Total Spend|
 |video_p100_watched_actions|Int|No|Total Videos Watched to 100 percent|
 |offline_conversion_purchases|Int|No|Total Offline Conversion Purchases|
