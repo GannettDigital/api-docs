@@ -220,11 +220,11 @@ archived_at | Datetime | The date and time which this contact was archived.<br>*
       "display_name":"Meghan Cummerata",
       "read_at":"2017-06-09T08:05:37-07:00",
       "event_type":"chat",
-      "campaign_name":"unknown",
+      "campaign_name":"Campaign Name 1",
       "status":"pending_contact",
       "notes":null,
       "tags":[
-         "unknown",
+         "Campaign Name 1",
          "red",
          "blue"
       ],
@@ -236,7 +236,7 @@ archived_at | Datetime | The date and time which this contact was archived.<br>*
          "email":"jazmyn.halvorson@mann.name",
          "company":"Gusikowski and Sons",
          "tags":[
-            "unknown",
+            "Campaign Name 1",
             "red",
             "blue"
          ],
@@ -352,14 +352,14 @@ message | String |The message body of this line of the chat transcript.
       "occured_at":"2017-05-30T08:18:49.000-07:00",
       "read_at":"2017-06-09T09:18:53-07:00",
       "event_type":"call",
-      "campaign_name":"unknown",
+      "campaign_name":"Campaign Name 2",
       "status":"pending_contact",
       "notes":null,
       "tags":[
          "blue",
          "fuschia",
          "purple",
-         "unknown"
+         "Campaign Name 2"
       ],
       "contact":{
          "id":8389,
@@ -371,7 +371,7 @@ message | String |The message body of this line of the chat transcript.
          "tags":[
             "green",
             "orange",
-            "unknown",
+            "Campaign Name 2",
             "yellow"
          ],
          "notes":"Freeform notes about the contact",
@@ -419,14 +419,14 @@ recording_url | String | The URL address to an audio recording of the call.
       "occured_at":"2017-05-30T08:15:05.000-07:00",
       "read_at":"2017-06-06T11:32:48-07:00",
       "event_type":"form",
-      "campaign_name":"unknown",
+      "campaign_name":"Campaign Name 1",
       "status":"none",
       "notes":"Free form lead event notes",
       "tags":[
          "bar",
          "baz",
          "foo",
-         "unknown"
+         "Campaign Name 1"
       ],
       "contact":{
          "id":217,
@@ -437,7 +437,7 @@ recording_url | String | The URL address to an audio recording of the call.
          "company":"Graham Group",
          "tags":[
             "nothing",
-            "unknown"
+            "Campaign Name 1"
          ],
          "notes":"Some contact free form notes",
          "archived_at":null,
@@ -482,11 +482,11 @@ recording_url | String | The URL address to an audio recording of the call.
       "occured_at":"2017-06-12T14:07:44.000-07:00",
       "read_at":null,
       "event_type":"form",
-      "campaign_name":"unknown",
+      "campaign_name":"Campaign Name 2",
       "status":"pending_contact",
       "notes":null,
       "tags":[
-         "unknown"
+         "Campaign Name 2"
       ],
       "parsed_contact_attributes":{
          "first_name":"Elisa",
