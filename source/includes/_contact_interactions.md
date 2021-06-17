@@ -12,13 +12,13 @@ Please note that the contact information in this endpoint is for linking the int
 **Please note:** If you have the Live Chat Platinum product, the API response can contain non-lead chat information. A non-lead chat is in which the visitor does not provide their contact details (i.e. their name + email or phone). The contact information in the response is mock data. If you would like to remove non-lead chats from your integration, please filter out interactions containing the email "nonleadchat@reachlocal.com".
 
 
-### Resource Overview
+### Resource Overview&nbsp;
 
 | Method | URI Format |
 |---|---|
 | GET | /crm/contact_interactions?[params]|
 
-### Parameters
+### Parameters&nbsp;
 
 Parameter | Required | Description
 --------- | -------- | -----------
@@ -29,7 +29,7 @@ page | no | The page number of the paginated result set to return.  This paramet
 event_type | no | Must be one of `chat`, `call`, or `form`.  Limits results to records of that type.
 
 
-### Response Data Details
+### Response Data Details&nbsp;
 
 ```ruby
 require 'uri'
