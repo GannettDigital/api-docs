@@ -686,13 +686,13 @@
                             <a href="#lead-info-apis-webhooks-contacts-lead-apis-contact-interactions-leads" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>Contact Interactions/Leads</strong></a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#lead-info-apis-webhooks-contacts-lead-apis-resource-overview" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview</a>
+                            <a href="#lead-info-apis-webhooks-contacts-lead-apis-resource-overview-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview </a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#lead-info-apis-webhooks-contacts-lead-apis-parameters" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters</a>
+                            <a href="#lead-info-apis-webhooks-contacts-lead-apis-parameters-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters </a>
                           </li>
                           <li class="toc-h3-li">
-                            <a href="#lead-info-apis-webhooks-contacts-lead-apis-response-data-details" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details</a>
+                            <a href="#lead-info-apis-webhooks-contacts-lead-apis-response-data-details-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details </a>
                           </li>
                       </ul>
                   </li>
@@ -1349,26 +1349,32 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </tr></tbody></table><p><strong>Usage</strong></p><p>Get a list of advertisers filtered by query params. This endpoint also returns a list of possible business users that match the email address, in the case of multiple similar email addresses. The results of this query are cached for 15 minutes.</p><h3 id='identity-apis-identity-api-parameters'>Parameters</h3><table><thead><tr>
 <th>Param</th>
 <th>Required</th>
-<th>Default</th>
-<th>Function</th>
+<th>Description</th>
 </tr>
 </thead><tbody><tr>
 <td>user</td>
 <td>Yes</td>
-<td>--</td>
 <td>Restricts the results to advertisers authorized for the given business user</td>
+</tr>
+<tr>
+<td>business_id</td>
+<td>No</td>
+<td>The unique business id that this advertiser belongs to.</td>
+</tr>
+<tr>
+<td>active_state</td>
+<td>No</td>
+<td>Array of active states that can include: 0: Advertiser not active. 1: Advertiser not active, but in grace period. 2: Advertiser is active</td>
 </tr>
 <tr>
 <td>page</td>
 <td>No</td>
-<td>1</td>
-<td>Return a specified page of results</td>
+<td>Return a specified page of results. <br><b>Default value: 1</b></td>
 </tr>
 <tr>
 <td>page_size</td>
 <td>No</td>
-<td>5000</td>
-<td>Number of results per page</td>
+<td>Number of results per page <br><b>Default value: 5000</b></td>
 </tr></tbody></table><h3 id='identity-apis-identity-api-response-data-details'>Response Data Details</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
@@ -1420,7 +1426,9 @@ This control applies to APIs that provide data that are classified as HIPAA and 
             </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1123213</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Advertiser 2"</span><span class="p">,</span><span class="w">
@@ -1432,7 +1440,125 @@ This control applies to APIs that provide data that are classified as HIPAA and 
             </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
             </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1123213</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"buid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL_ADDRESS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url https://api.localiqservices.com/identities/v3?user<span class="o">=</span>EMAIL_ADDRESS&amp;business_id<span class="o">=</span>15 <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p></blockquote>
+<pre class="highlight json tab-json"><code><span class="err">https</span><span class="p">:</span><span class="err">//api.localiqservices.com/identities/v</span><span class="mi">3</span><span class="err">?user=test@test</span><span class="mi">3</span><span class="err">.com</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"bu_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL_ADDRESS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"advertiser_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"authorized_advertisers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Advertiser 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1123213</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Advertiser 2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1123213</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"buid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL_ADDRESS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url https://api.localiqservices.com/identities/v3?user<span class="o">=</span>EMAIL_ADDRESS&amp;active_state[]<span class="o">=</span>0 <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p></blockquote>
+<pre class="highlight json tab-json"><code><span class="err">https</span><span class="p">:</span><span class="err">//api.localiqservices.com/identities/v</span><span class="mi">3</span><span class="err">?user=test@test</span><span class="mi">3</span><span class="err">.com</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"bu_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL_ADDRESS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"advertiser_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"authorized_advertisers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Advertiser 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1123213</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Advertiser 2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hipaa_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"business_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"privilege_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"active_state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1123213</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cobrand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1526,6 +1652,11 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>The unique business id that this advertiser belongs to.</td>
 </tr>
 <tr>
+<td>business_name</td>
+<td>Number</td>
+<td>The business name of this advertiser.</td>
+</tr>
+<tr>
 <td>business_user_id</td>
 <td>Number</td>
 <td>The unique business_user id that is the primary user for this advertiser.</td>
@@ -1536,7 +1667,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>privilege level.</td>
 </tr>
 <tr>
-<td>adveritser_id</td>
+<td>advertiser_id</td>
 <td>Number</td>
 <td>The advertiser_id for this advertiser.  Not necessarily the same as the numerical portion of the gmaid.</td>
 </tr>
@@ -1544,6 +1675,16 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>active_state</td>
 <td>Number</td>
 <td>0: Advertiser not active.  1: Advertiser not active, but in grace period.  2: Advertiser is active.</td>
+</tr>
+<tr>
+<td>cobrand_name</td>
+<td>Number</td>
+<td>Name given to a collection of of business or BID.  This is an internal LOCALiQ data construct used to aggregate like businesses e.g. partner, Gannett etc.</td>
+</tr>
+<tr>
+<td>cobrand_id</td>
+<td>Number</td>
+<td>An ID used to  uniquely identify a cobrand.</td>
 </tr></tbody></table><p><strong>User</strong></p><table><thead><tr>
 <th>Advertiser Field Name</th>
 <th>Datatype</th>
@@ -2690,6 +2831,21 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>interval_size</td>
 <td>No</td>
 <td>Specifies the type of interval: none, day, calendar_week, or calendar_month <br><strong>Default value: none</strong></td>
+</tr>
+<tr>
+<td>global_master_campaign_id[]</td>
+<td>Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2</td>
+
+</tr>
+<tr>
+<td>campaign_cycle</td>
+<td>Restrict results to a single campaign cycle</td>
+
+</tr>
+<tr>
+<td>campaign_status[]</td>
+<td>Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped</td>
+
 </tr></tbody></table><h3 id='reporting-metric-apis-display-apis-response-data-details-nbsp'>Response Data Details&nbsp;</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p></blockquote>
@@ -3241,6 +3397,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item (Demo) 1"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"line_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mf">830.0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_active_time_view"</span><span class="p">:</span><span class="w"> </span><span class="mf">335.83</span><span class="p">,</span><span class="w">
@@ -3454,6 +3611,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item (Demo) 2"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"line_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mf">1647.0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_active_time_view"</span><span class="p">:</span><span class="w"> </span><span class="mf">653.02</span><span class="p">,</span><span class="w">
@@ -4186,6 +4344,11 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
 <td>line_item_id</td>
 <td>Int</td>
 <td>Identifier of Line Item</td>
+</tr>
+<tr>
+<td>organization</td>
+<td>String</td>
+<td>Either reachlocal or gannett</td>
 </tr>
 <tr>
 <td>impressions</td>
@@ -7683,7 +7846,6 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
             </span><span class="s2">"checkin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"action_reaction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"leadgen.other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mf">250.3866</span><span class="p">,</span><span class="w">
             </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">4546.13</span><span class="p">,</span><span class="w">
             </span><span class="s2">"video_p100_watched_actions"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"offline_conversion_purchases"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -7717,7 +7879,6 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
                 </span><span class="s2">"checkin"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"action_reaction"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"leadgen.other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"video_p100_watched_actions"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"video_avg_percent_watched_actions"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="p">,</span><span class="w">
@@ -8045,7 +8206,7 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 <td>frequency</td>
 <td>Int</td>
 <td>No</td>
-<td>Total Frequency for Interval</td>
+<td>Average. This metric is available only for param interval_size is day</td>
 </tr>
 <tr>
 <td>spend</td>
@@ -8219,12 +8380,6 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 <td>Int</td>
 <td>No</td>
 <td>Total leadgen.other</td>
-</tr>
-<tr>
-<td>frequency</td>
-<td>Int</td>
-<td>No</td>
-<td>Total Frequency</td>
 </tr>
 <tr>
 <td>spend</td>
@@ -12850,14 +13005,14 @@ curl -X POST <span class="se">\</span>
 <td>archived_at</td>
 <td>Datetime</td>
 <td>The date and time which this contact was archived.<br><strong>The field is nullable</strong></td>
-</tr></tbody></table><h3 id='lead-info-apis-webhooks-contacts-lead-apis-contact-interactions-leads' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Contact Interactions/Leads</strong></h3><p><a name="contact_interactions"></a></p><p><strong>Summary:</strong> This HIPAA Compliant endpoint supports integration with CRM products. It returns all interactions (or leads) generated by a campaign for an advertiser. The response is organized by campaigns with the interactions nested within. Please note that the response also includes the associated contact and its meta data.</p><p><strong>Parameters:</strong> It requires the following parameters for a successful response: GMAID (advertiser ID), created_before date and created_after_date. An optional <code>event_type</code> parameter can be specified, to limit results to one of <code>chat</code>, <code>call</code>, or <code>form</code>.</p><p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LOCALiQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p><p>Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them as contacts into your CRM from this endpoint will cause duplicates.</p><p><strong>Please note:</strong> If you have the Live Chat Platinum product, the API response can contain non-lead chat information. A non-lead chat is in which the visitor does not provide their contact details (i.e. their name + email or phone). The contact information in the response is mock data. If you would like to remove non-lead chats from your integration, please filter out interactions containing the email &quot;nonleadchat@reachlocal.com&quot;.</p><h3 id='lead-info-apis-webhooks-contacts-lead-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
+</tr></tbody></table><h3 id='lead-info-apis-webhooks-contacts-lead-apis-contact-interactions-leads' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Contact Interactions/Leads</strong></h3><p><a name="contact_interactions"></a></p><p><strong>Summary:</strong> This HIPAA Compliant endpoint supports integration with CRM products. It returns all interactions (or leads) generated by a campaign for an advertiser. The response is organized by campaigns with the interactions nested within. Please note that the response also includes the associated contact and its meta data.</p><p><strong>Parameters:</strong> It requires the following parameters for a successful response: GMAID (advertiser ID), created_before date and created_after_date. An optional <code>event_type</code> parameter can be specified, to limit results to one of <code>chat</code>, <code>call</code>, or <code>form</code>.</p><p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LOCALiQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p><p>Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them as contacts into your CRM from this endpoint will cause duplicates.</p><p><strong>Please note:</strong> If you have the Live Chat Platinum product, the API response can contain non-lead chat information. A non-lead chat is in which the visitor does not provide their contact details (i.e. their name + email or phone). The contact information in the response is mock data. If you would like to remove non-lead chats from your integration, please filter out interactions containing the email &quot;nonleadchat@reachlocal.com&quot;.</p><h3 id='lead-info-apis-webhooks-contacts-lead-apis-resource-overview-nbsp'>Resource Overview&nbsp;</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
 </tr>
 </thead><tbody><tr>
 <td>GET</td>
 <td>/crm/contact_interactions?[params]</td>
-</tr></tbody></table><h3 id='lead-info-apis-webhooks-contacts-lead-apis-parameters'>Parameters</h3><table><thead><tr>
+</tr></tbody></table><h3 id='lead-info-apis-webhooks-contacts-lead-apis-parameters-nbsp'>Parameters&nbsp;</h3><table><thead><tr>
 <th>Parameter</th>
 <th>Required</th>
 <th>Description</th>
@@ -12886,7 +13041,7 @@ curl -X POST <span class="se">\</span>
 <td>event_type</td>
 <td>no</td>
 <td>Must be one of <code>chat</code>, <code>call</code>, or <code>form</code>.  Limits results to records of that type.</td>
-</tr></tbody></table><h3 id='lead-info-apis-webhooks-contacts-lead-apis-response-data-details'>Response Data Details</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+</tr></tbody></table><h3 id='lead-info-apis-webhooks-contacts-lead-apis-response-data-details-nbsp'>Response Data Details&nbsp;</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.localiqservices.com/crm/contact_interactions?global_master_advertiser_id=TEST_1&amp;created_after_date=2019-01-01&amp;created_before_date=2019-01-10"</span><span class="p">)</span>
@@ -13665,11 +13820,11 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
       <span class="s2">"display_name"</span><span class="p">:</span><span class="s2">"Meghan Cummerata"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="p">:</span><span class="s2">"2017-06-09T08:05:37-07:00"</span><span class="p">,</span>
       <span class="s2">"event_type"</span><span class="p">:</span><span class="s2">"chat"</span><span class="p">,</span>
-      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"unknown"</span><span class="p">,</span>
+      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"Campaign Name 1"</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="p">:</span><span class="s2">"pending_contact"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
       <span class="s2">"tags"</span><span class="p">:[</span>
-         <span class="s2">"unknown"</span><span class="p">,</span>
+         <span class="s2">"Campaign Name 1"</span><span class="p">,</span>
          <span class="s2">"red"</span><span class="p">,</span>
          <span class="s2">"blue"</span>
       <span class="p">],</span>
@@ -13681,7 +13836,7 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
          <span class="s2">"email"</span><span class="p">:</span><span class="s2">"jazmyn.halvorson@mann.name"</span><span class="p">,</span>
          <span class="s2">"company"</span><span class="p">:</span><span class="s2">"Gusikowski and Sons"</span><span class="p">,</span>
          <span class="s2">"tags"</span><span class="p">:[</span>
-            <span class="s2">"unknown"</span><span class="p">,</span>
+            <span class="s2">"Campaign Name 1"</span><span class="p">,</span>
             <span class="s2">"red"</span><span class="p">,</span>
             <span class="s2">"blue"</span>
          <span class="p">],</span>
@@ -13818,14 +13973,14 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
       <span class="s2">"occured_at"</span><span class="p">:</span><span class="s2">"2017-05-30T08:18:49.000-07:00"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="p">:</span><span class="s2">"2017-06-09T09:18:53-07:00"</span><span class="p">,</span>
       <span class="s2">"event_type"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span>
-      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"unknown"</span><span class="p">,</span>
+      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"Campaign Name 2"</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="p">:</span><span class="s2">"pending_contact"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
       <span class="s2">"tags"</span><span class="p">:[</span>
          <span class="s2">"blue"</span><span class="p">,</span>
          <span class="s2">"fuschia"</span><span class="p">,</span>
          <span class="s2">"purple"</span><span class="p">,</span>
-         <span class="s2">"unknown"</span>
+         <span class="s2">"Campaign Name 2"</span>
       <span class="p">],</span>
       <span class="s2">"contact"</span><span class="p">:{</span>
          <span class="s2">"id"</span><span class="p">:</span><span class="mi">8389</span><span class="p">,</span>
@@ -13837,7 +13992,7 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
          <span class="s2">"tags"</span><span class="p">:[</span>
             <span class="s2">"green"</span><span class="p">,</span>
             <span class="s2">"orange"</span><span class="p">,</span>
-            <span class="s2">"unknown"</span><span class="p">,</span>
+            <span class="s2">"Campaign Name 2"</span><span class="p">,</span>
             <span class="s2">"yellow"</span>
          <span class="p">],</span>
          <span class="s2">"notes"</span><span class="p">:</span><span class="s2">"Freeform notes about the contact"</span><span class="p">,</span>
@@ -13895,14 +14050,14 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
       <span class="s2">"occured_at"</span><span class="p">:</span><span class="s2">"2017-05-30T08:15:05.000-07:00"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="p">:</span><span class="s2">"2017-06-06T11:32:48-07:00"</span><span class="p">,</span>
       <span class="s2">"event_type"</span><span class="p">:</span><span class="s2">"form"</span><span class="p">,</span>
-      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"unknown"</span><span class="p">,</span>
+      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"Campaign Name 1"</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="p">:</span><span class="s2">"none"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="p">:</span><span class="s2">"Free form lead event notes"</span><span class="p">,</span>
       <span class="s2">"tags"</span><span class="p">:[</span>
          <span class="s2">"bar"</span><span class="p">,</span>
          <span class="s2">"baz"</span><span class="p">,</span>
          <span class="s2">"foo"</span><span class="p">,</span>
-         <span class="s2">"unknown"</span>
+         <span class="s2">"Campaign Name 1"</span>
       <span class="p">],</span>
       <span class="s2">"contact"</span><span class="p">:{</span>
          <span class="s2">"id"</span><span class="p">:</span><span class="mi">217</span><span class="p">,</span>
@@ -13913,7 +14068,7 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
          <span class="s2">"company"</span><span class="p">:</span><span class="s2">"Graham Group"</span><span class="p">,</span>
          <span class="s2">"tags"</span><span class="p">:[</span>
             <span class="s2">"nothing"</span><span class="p">,</span>
-            <span class="s2">"unknown"</span>
+            <span class="s2">"Campaign Name 1"</span>
          <span class="p">],</span>
          <span class="s2">"notes"</span><span class="p">:</span><span class="s2">"Some contact free form notes"</span><span class="p">,</span>
          <span class="s2">"archived_at"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
@@ -13957,11 +14112,11 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
       <span class="s2">"occured_at"</span><span class="p">:</span><span class="s2">"2017-06-12T14:07:44.000-07:00"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
       <span class="s2">"event_type"</span><span class="p">:</span><span class="s2">"form"</span><span class="p">,</span>
-      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"unknown"</span><span class="p">,</span>
+      <span class="s2">"campaign_name"</span><span class="p">:</span><span class="s2">"Campaign Name 2"</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="p">:</span><span class="s2">"pending_contact"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
       <span class="s2">"tags"</span><span class="p">:[</span>
-         <span class="s2">"unknown"</span>
+         <span class="s2">"Campaign Name 2"</span>
       <span class="p">],</span>
       <span class="s2">"parsed_contact_attributes"</span><span class="p">:{</span>
          <span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Elisa"</span><span class="p">,</span>
