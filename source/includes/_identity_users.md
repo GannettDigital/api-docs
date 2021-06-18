@@ -15,19 +15,19 @@
 
 Get an existing user.
 
-|Field|Description|
-|---|---|
-|id|id value of the user|
-|email|The unique email of user|
-|first_name|The first name of user|
-|last_name|The last name of user|
-|bu_id|Business user id|
-|platform_id|The platform id for the user|
-|cc_id|The legacy client center id value of the user|
-|cc_role_id|The legacy client center cc_role_id value of the user|
-|cc_type|The legacy client center type value of the user|
-|locale|locale of the country the user is based in|
-|profile_data|Meta data of the user|
+|Field|Type|Description|
+|---|---|---|
+|id|integer|id value of the user|
+|email|string|The unique email of user|
+|first_name|string|The first name of user|
+|last_name|string|The last name of user|
+|bu_id|integer|Business user id|
+|platform_id|integer|The platform id for the user|
+|cc_id|integer|The legacy client center id value of the user|
+|cc_role_id|integer|The legacy client center cc_role_id value of the user|
+|cc_type|string|The legacy client center type value of the user|
+|locale|string|Locale of the country the user is based in|
+|profile_data|JSON|Meta data of the user|
 
 example request: 
 
@@ -65,18 +65,18 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 Create a user.
 
-|Parameter|Required|Description|
-|---|---|---|
-|email|Yes|email unique value of the user|
-|first_name|No|The first name of the user|
-|last_name|No|The last name of the user|
-|platform_id|Yes|The platform id for the user|
-|bu_id|No|Business user id|
-|cc_id|No|The legacy client center id value of the user|
-|cc_role_id|No|The legacy client center cc_role_id value of the user|
-|cc_type|No|The legacy client center type value of the user|
-|locale|No|locale of the country the user is based in|
-|profile_data|No|Meta data of the user|
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|email|string|Yes|Email unique value of the user|
+|first_name|string|No|The first name of the user|
+|last_name|string|No|The last name of the user|
+|platform_id|integer|Yes|The platform id for the user|
+|bu_id|integer|No|Business user id|
+|cc_id|integer|No|The legacy client center id value of the user|
+|cc_role_id|integer|No|The legacy client center cc_role_id value of the user|
+|cc_type|string|No|The legacy client center type value of the user|
+|locale|string|No|Locale of the country the user is based in|
+|profile_data|JSON|No|Meta data of the user|
 
 example request: 
 
@@ -130,19 +130,18 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 Update an existing premium listing user profile.
 
-|Parameter|Required|Description|
-|---|---|---|
-|id|Yes|id value of the user|
-|email|Yes|email unique value of the user|
-|first_name|No|The first name of the user|
-|last_name|No|The last name of the user|
-|platform_id|Yes|The platform id for the user|
-|bu_id|No|Business user id|
-|cc_id|No|The legacy client center id value of the user|
-|cc_role_id|No|The legacy client center cc_role_id value of the user|
-|cc_type|No|The legacy client center type value of the user|
-|locale|No|locale of the country the user is based in|
-|profile_data|No|Meta data of the user|
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|email|string|Yes|Email unique value of the user|
+|first_name|string|No|The first name of the user|
+|last_name|string|No|The last name of the user|
+|platform_id|integer|Yes|The platform id for the user|
+|bu_id|integer|No|Business user id|
+|cc_id|integer|No|The legacy client center id value of the user|
+|cc_role_id|integer|No|The legacy client center cc_role_id value of the user|
+|cc_type|string|No|The legacy client center type value of the user|
+|locale|string|No|Locale of the country the user is based in|
+|profile_data|JSON|No|Meta data of the user|
 
 Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
 
