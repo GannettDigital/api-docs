@@ -92,6 +92,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                 "end_date": null,
                 "type": "search",
                 "status": "running",
+                "bidding_pricing_model_id": 8,
                 "intervals": [
                     {
                         "start_date": "2020-10-10",
@@ -246,6 +247,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 |end_date|String|End date for campaign|
 |type|String|Type of campaign|
 |status|String|Status of campaign|
+|bidding_pricing_model_id|Integer|The id which will be used to filter the sub type of top search campaign|
 |intervals|Array|Data for specified interval. [Intervals Array.](#searchintervals)|
 
 <a name="searchintervals"></a>
