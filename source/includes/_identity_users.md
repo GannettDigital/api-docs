@@ -4,10 +4,10 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /v1/identities/users/[id]
-| POST | /v1/identities/users
-| PUT | /v1/identities/users/[id]
-| DELETE | /v1/identities/users/[id]
+| GET | /v3/identities/users/[id]
+| POST | /v3/identities/users
+| PUT | /v3/identities/users/[id]
+| DELETE | /v3/identities/users/[id]
 
 ### Resource Detail
 
