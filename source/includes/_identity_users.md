@@ -128,7 +128,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 #### PUT User
 
-Update an existing user profile.
+Update an existing user.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
