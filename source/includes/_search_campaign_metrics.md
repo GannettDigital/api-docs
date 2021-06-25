@@ -71,7 +71,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 ```
 
 
->  Example Response
+>  Example Response if bidding pricing model is 8 ()
 
 ```json
 {
@@ -93,6 +93,54 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                 "type": "search",
                 "status": "running",
                 "bidding_pricing_model_id": 8,
+                "intervals": [
+                    {
+                        "start_date": "2020-10-10",
+                        "impressions": 1065,
+                        "impression_share": 0,
+                        "leads": 19,
+                        "clicks": 17,
+                        "calls": 6,
+                        "web_events": 7,
+                        "qualified_web_events": 5,
+                        "emails": 8,
+                        "spend": 25,
+                        "ctr": 1.6,
+                        "cpc": 1.47,
+                        "position": null,
+                        "device_breakdowns": {
+                            "impression_share": {
+                                "mobile": 0,
+                                "desktop": 0,
+                                "tablet": 0
+                            },
+                            "impressions": {
+                                "mobile": 1000,
+                                "desktop": 65,
+                                "tablet": 0
+                            },
+                            "clicks": {
+                                "mobile": 14,
+                                "desktop": 3,
+                                "tablet": 0
+                            }
+                        },
+                        "search_impression_share": 1,
+                        "top_search_impression_share": 1,
+                        "absolute_top_search_impression_share": 1,
+                        "rank_lost_absolute_top_search_impression_share": 1,
+                        "budget_lost_absolute_top_search_impression_share": 1
+                    }
+                ]
+            },
+            {
+                "name": "Search Campaign (Demo)",
+                "global_master_campaign_id": "TEST_1368327",
+                "start_date": "2020-01-01",
+                "end_date": null,
+                "type": "search",
+                "status": "running",
+                "bidding_pricing_model_id": 1,
                 "intervals": [
                     {
                         "start_date": "2020-10-10",
@@ -170,7 +218,12 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                     }
                 }
             },
-            "position": null
+            "position": null,
+            "search_impression_share": 1,
+            "top_search_impression_share": 1,
+            "absolute_top_search_impression_share": 1,
+            "rank_lost_absolute_top_search_impression_share": 1,
+            "budget_lost_absolute_top_search_impression_share": 1
         },
         "totals_per_interval": [
             {
@@ -203,7 +256,12 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                         "desktop": 3,
                         "tablet": 0
                     }
-                }
+                },
+                "search_impression_share": 1,
+                "top_search_impression_share": 1,
+                "absolute_top_search_impression_share": 1,
+                "rank_lost_absolute_top_search_impression_share": 1,
+                "budget_lost_absolute_top_search_impression_share": 1
             }
         ]
     },
@@ -268,6 +326,12 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 |ctr|Integer|Click through rate for interval|
 |cpc|Integer|Cost per click for interval|
 |device_breakdowns|DeviceBreakdown[]|Array of [DeviceBreakdown](#searchdevicebreakdowns)|
+|search_impression_share|Integer|Search impression share for interval|
+|top_search_impression_share|Integer|Top Search impression share for interval|
+|absolute_top_search_impression_share|Integer|Absolute Top Search Impression share for interval|
+|rank_lost_absolute_top_search_impression_share|Integer|Rank Lost Absolute Top Search Impression share for interval|
+|budget_lost_absolute_top_search_impression_share|Integer|Budget Lost Absolute Top Search Impression share for interval|
+
 
 <a name="searchtotals"></a>
 **Totals Object**
@@ -285,6 +349,11 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 |ctr|Integer|Total click through rate|
 |cpc|Integer|Toal cost per click|
 |device_breakdowns|DeviceBreakdown[]|Array of [DeviceBreakdown](#searchdevicebreakdowns)|
+|search_impression_share|Integer|Search impression share for interval|
+|top_search_impression_share|Integer|Top Search impression share for interval|
+|absolute_top_search_impression_share|Integer|Absolute Top Search Impression share for interval|
+|rank_lost_absolute_top_search_impression_share|Integer|Rank Lost Absolute Top Search Impression share for interval|
+|budget_lost_absolute_top_search_impression_share|Integer|Budget Lost Absolute Top Search Impression share for interval|
 
 <a name="searchdevicebreakdowns"></a>
 **Device Breakdowns Object**
