@@ -1,5 +1,12 @@
-Getting Started
-------------------------------
+# README - Data Connect API Documentation
+
+Public facing documentation for the DataConnect APIs
+
+## Ownership
+
+- *Team Multi-User Chat:* https://usatnetwork-product.slack.com/messages/client-center
+- *Confluence:* https://confluence.gannett.com/display/LIQAP/DataConnect
+- *Jira:* https://jira.gannett.com/browse/ANALYTICS
 
 ### Set Up
 
