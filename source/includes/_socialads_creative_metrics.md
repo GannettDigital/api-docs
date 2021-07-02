@@ -69,6 +69,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 1392,
                 "call_to_action_clicks": 5.0,
                 "clicks": 18,
+                "chats": 9.0,
                 "social_clicks": 9.0,
                 "reach": 1392.0,
                 "social_reach": 89.0,
@@ -108,6 +109,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                         "impressions": 1392,
                         "call_to_action_clicks": 5.0,
                         "clicks": 18,
+                        "chats": 9.0,
                         "social_clicks": 9.0,
                         "reach": 1392.0,
                         "social_reach": 89.0,
@@ -139,6 +141,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                 "impressions": 1392,
                                 "call_to_action_clicks": 5.0,
                                 "clicks": 18,
+                                "chats": 9.0,
                                 "social_clicks": 9.0,
                                 "reach": 1392.0,
                                 "social_reach": 89.0,
@@ -175,6 +178,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
             "impressions": 1392,
             "call_to_action_clicks": 5.0,
             "clicks": 18,
+            "chats": 9.0,
             "social_clicks": 9.0,
             "reach": 1392.0,
             "social_reach": 89.0,
@@ -207,6 +211,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 1392,
                 "call_to_action_clicks": 5.0,
                 "clicks": 18,
+                "chats": 9.0,
                 "social_clicks": 9.0,
                 "reach": 1392.0,
                 "social_reach": 89.0,
@@ -245,6 +250,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 696.0,
                 "call_to_action_clicks": 2.0,
                 "clicks": 9.0,
+                "chats": 9.0,
                 "social_clicks": 4.0,
                 "reach": 696.0,
                 "social_reach": 44.0,
@@ -281,6 +287,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 696.0,
                 "call_to_action_clicks": 3.0,
                 "clicks": 9.0,
+                "chats": 9.0,
                 "social_clicks": 5.0,
                 "reach": 696.0,
                 "social_reach": 45.0,
@@ -349,6 +356,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 1392,
                 "call_to_action_clicks": 5.0,
                 "clicks": 18,
+                "chats": 9.0,
                 "social_clicks": 9.0,
                 "reach": 1392.0,
                 "social_reach": 89.0,
@@ -382,6 +390,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                         "impressions": 1392,
                         "call_to_action_clicks": 5.0,
                         "clicks": 18,
+                        "chats": 9.0,
                         "social_clicks": 9.0,
                         "reach": 1392.0,
                         "social_reach": 89.0,
@@ -421,6 +430,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                 "impressions": 1392,
                                 "call_to_action_clicks": 5.0,
                                 "clicks": 18,
+                                "chats": 9.0,
                                 "social_clicks": 9.0,
                                 "reach": 1392.0,
                                 "social_reach": 89.0,
@@ -452,6 +462,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                         "impressions": 1392,
                                         "call_to_action_clicks": 5.0,
                                         "clicks": 18,
+                                        "chats": 9.0,
                                         "social_clicks": 9.0,
                                         "reach": 1392.0,
                                         "social_reach": 89.0,
@@ -490,6 +501,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
             "impressions": 1392,
             "call_to_action_clicks": 5.0,
             "clicks": 18,
+            "chats": 9.0,
             "social_clicks": 9.0,
             "reach": 1392.0,
             "social_reach": 89.0,
@@ -522,6 +534,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 1392,
                 "call_to_action_clicks": 5.0,
                 "clicks": 18,
+                "chats": 9.0,
                 "social_clicks": 9.0,
                 "reach": 1392.0,
                 "social_reach": 89.0,
@@ -560,6 +573,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 696.0,
                 "call_to_action_clicks": 2.0,
                 "clicks": 9.0,
+                "chats": 0,
                 "social_clicks": 4.0,
                 "reach": 696.0,
                 "social_reach": 44.0,
@@ -596,6 +610,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "impressions": 696.0,
                 "call_to_action_clicks": 3.0,
                 "clicks": 9.0,
+                "chats": 9.0,
                 "social_clicks": 5.0,
                 "reach": 696.0,
                 "social_reach": 45.0,
@@ -709,6 +724,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Campaign |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks for Campaign |
 | clicks | Int | No | Total Clicks for Campaign |
+| chats | Int | No | Total Chats for Campaign |
 | social_clicks | Int | No | Total Social Clicks for Campaign |
 | reach | Int | No | Total Reach for Campaign |
 | social_reach | Int | No | Total Social Reach for Campaign |
@@ -748,6 +764,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Cycle |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks for Cycle |
 | clicks | Int | No | Total Clicks for Cycle |
+| chats | Int | No | Total Chats for Cycle |
 | social_clicks | Int | No | Total Social Clicks for Cycle |
 | reach | Int | No | Total Reach for Cycle |
 | social_reach | Int | No | Total Social Reach for Cycle |
@@ -792,6 +809,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Cycle |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks for Cycle |
 | clicks | Int | No | Total Clicks for Cycle |
+| chats | Int | No | Total Chats for Cycle |
 | social_clicks | Int | No | Total Social Clicks for Cycle |
 | reach | Int | No | Total Reach for Cycle |
 | social_reach | Int | No | Total Social Reach for Cycle |
@@ -834,6 +852,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Creative |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks for Creative |
 | clicks | Int | No | Total Clicks for Creative |
+| chats | Int | No | Total Chats for Creative |
 | social_clicks | Int | No | Total Social Clicks for Creative |
 | reach | Int | No | Total Reach for Creative |
 | social_reach | Int | No | Total Social Reach for Creative |
@@ -871,6 +890,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Interval |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks for Interval |
 | clicks | Int | No | Total Clicks for Interval |
+| chats | Int | No | Total Chats for Interval |
 | social_clicks | Int | No | Total Social Clicks for Interval |
 | reach | Int | No | Total Reach for Interval |
 | social_reach | Int | No | Total Social Reach for Interval |
@@ -905,6 +925,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks |
 | clicks | Int | No | Total Clicks |
+| chats | Int | No | Total Chats |
 | social_clicks | Int | No | Total Social Clicks |
 | reach | Int | No | Total Reach |
 | social_reach | Int | No | Total |

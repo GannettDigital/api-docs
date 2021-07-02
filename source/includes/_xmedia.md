@@ -195,8 +195,8 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | calls | Float| Total Calls |
 | web_events | Int | Total Web Events |
 | qualified_web_events | Int | Total lead-generating CVT/Web Events |
-| emails | Float | Total Emailsl |
-| chats | Float | Total Chatsl |
+| emails | Float | Total Emails |
+| chats | Float | Total Chats |
 | leads | Float | Total Leads |
 | spend | Float | Total Spend |
 | ctr | Float | Overall Click-through Rate |
