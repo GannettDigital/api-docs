@@ -139,6 +139,10 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
             212,
             211
         ],
+        "named_categories": [
+            "Businesses and Services > Advertising and Marketing > Advertising Agency",
+            "Businesses and Services > Advertising and Marketing > Marketing Agency"
+        ],
         "contentLists": [],
         "features": [
             "AUTOMATION",
@@ -184,4 +188,4 @@ Field Name|Datatype|Description|
 |---|---|---|
 |report_type|String|Name of the Report|
 |report_date|String|Date report was run|
-|report_data|Object|location details. [Location Objects](https://uberall.com/en/developers/resources#Location)|
+|report_data|Object|location details. [Location Objects](https://uberall.com/en/developers/resources#Location)<br> Named categories array details. [Categories](https://uberall.com/en/developers/resources#Category) |
