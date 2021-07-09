@@ -26,7 +26,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`end_date`|Restricts the results to those ocurring on or before this date.|
 |`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
-
+|`type`|Use `report`, `publisher`, `channel` to get the interval(totals), totals_by_channel or totals_by_publisher metrics breakdown|
 
 To specify a date range:
 
