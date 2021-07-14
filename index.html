@@ -1807,6 +1807,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
             </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bidding_pricing_model_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Targeted Display"</span><span class="p">,</span><span class="w">
@@ -2047,6 +2048,11 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>status</td>
 <td>String</td>
 <td>Status of campaign</td>
+</tr>
+<tr>
+<td>bidding_pricing_model_id</td>
+<td>Integer</td>
+<td>The id which will be used to filter the sub type of top search campaign (shown only for search campaigns)</td>
 </tr>
 <tr>
 <td>has_addressable_geofence</td>
@@ -2436,6 +2442,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
                 </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bidding_pricing_model_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"cycles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_6904"</span><span class="p">,</span><span class="w">
@@ -2654,6 +2661,11 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>status</td>
 <td>String</td>
 <td>campaign status</td>
+</tr>
+<tr>
+<td>bidding_pricing_model_id</td>
+<td>Integer</td>
+<td>The id which will be used to filter the sub type of top search campaign (shown only for search campaigns)</td>
 </tr>
 <tr>
 <td>cycles</td>
@@ -6115,6 +6127,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bidding_pricing_model_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
@@ -6347,6 +6360,11 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 <td>status</td>
 <td>String</td>
 <td>Status of campaign</td>
+</tr>
+<tr>
+<td>bidding_pricing_model_id</td>
+<td>Integer</td>
+<td>The id which will be used to filter the sub type of top search campaign</td>
 </tr>
 <tr>
 <td>intervals</td>
