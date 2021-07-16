@@ -71,7 +71,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 ```
 
 
->  Example Response if bidding pricing model is 8 ()
+>  Example Response if there is a Top Search Campaign (bidding pricing model is 8)
 
 ```json
 {
