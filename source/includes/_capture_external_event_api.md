@@ -5,7 +5,7 @@
 
 | Method | URI Format |
 |---|---|
-| POST | /capture_events/confirmed_leads |
+| POST | /capture_events/confirmed_calls |
 
 
 | HTTPS Response Code | Description
@@ -24,7 +24,6 @@ This endpoint is used to inform us of confirmed leads for First Party Data
 |---|---|---|---|---|
 |provider|yes|The provider of the First Party Day.  Example:  "Acme Co."|
 |calls|yes, if leads not supplied|An Array of Call Objects, defined below|
-|leads|yes, if calls not supplied|An Array of Lead Objects, defined below|
 
 **Call Object Parameters**
 
@@ -44,7 +43,7 @@ This endpoint is used to inform us of confirmed leads for First Party Data
 
 ``` shell
 curl -X POST \
-  https://api.localiqservices.com/capture_events/chats \
+  https://api.localiqservices.com/capture_events/confirmed_calls \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
@@ -75,7 +74,7 @@ curl -X POST \
 # Sample cURL for the Create Calls POST request with validation errors:
 
 curl -X POST \
-  https://api.localiqservices.com/capture_events/chats \
+  https://api.localiqservices.com/capture_events/confirmed_calls \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Bearer OAUTH_ACCESS_TOKEN' \
@@ -118,7 +117,7 @@ require "uri"
 require "json"
 require "net/http"
 
-url = URI("http://localhost:3000/confirmed_leads")
+url = URI("https://api.localiqservices.com/capture_events/confirmed_calls")
 
 http = Net::HTTP.new(url.host, url.port);
 request = Net::HTTP::Post.new(url)
@@ -162,7 +161,7 @@ OkHttpClient client = new OkHttpClient().newBuilder()
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n    \"provider\":\"ACME Co.\",\n    \"calls\": [\n        {\n            \"occurred_at\":\"2017-03-10T01:19:23Z\",\n            \"gmaid\":\"USA_172717\",\n            \"phone\":\"8885551212\",\n            \"recording_url\":\"https://myrecording.com/12345\", \n            \"duration\":\"180\",\n            \"tag\":1\n        },\n          {\n            \"occurred_at\":\"2017-02-10T01:19:23Z\",\n            \"gmaid\":\"USA_172717\",\n            \"phone\":\"+18885551212\",\n            \"recording_url\":\"https://myrecording.com/12346\", \n            \"duration\":\"180\",\n            \"tag\":1\n        }\n    ]\n}");
 Request request = new Request.Builder()
-  .url("http://localhost:3000/confirmed_leads")
+  .url("https://api.localiqservices.com/capture_events/confirmed_leads")
   .method("POST", body)
   .addHeader("Accept", "application/json")
   .addHeader("Authorization", "Token 3a686f207b6a01336b3a7a163e2cac68")
