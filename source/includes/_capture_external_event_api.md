@@ -122,7 +122,7 @@ url = URI("https://api.localiqservices.com/capture_events/confirmed_calls")
 http = Net::HTTP.new(url.host, url.port);
 request = Net::HTTP::Post.new(url)
 request["Accept"] = "application/json"
-request["Authorization"] = "Token 3a686f207b6a01336b3a7a163e2cac68"
+request["authorization"] = 'Bearer OAUTH_ACCESS_TOKEN'
 request["Content-Type"] = "application/json"
 request.body = JSON.dump({
   "provider": "ACME Co.",
@@ -164,7 +164,7 @@ Request request = new Request.Builder()
   .url("https://api.localiqservices.com/capture_events/confirmed_leads")
   .method("POST", body)
   .addHeader("Accept", "application/json")
-  .addHeader("Authorization", "Token 3a686f207b6a01336b3a7a163e2cac68")
+  .addHeader("authorization", "Bearer OAUTH_ACCESS_TOKEN")
   .addHeader("Content-Type", "application/json")
   .build();
 Response response = client.newCall(request).execute();
