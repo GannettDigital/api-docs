@@ -1,0 +1,2 @@
+This is a new file to document the first party data API.  If you don't want it public, there is nothing
+else that needs to be done (other than add some content).  It will only be public if included in index.html.md.
