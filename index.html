@@ -657,17 +657,6 @@
             <a href="#lead-info-apis-webhooks" class="toc-h1 toc-link" data-title="Lead Info APIs/Webhooks">Lead Info APIs/Webhooks</a>
               <ul class="toc-list-h2">
                   <li class="toc-h2-li">
-                    <a href="#lead-info-apis-webhooks-capture-external-event-api" class="toc-h2 toc-link" data-title="Lead Info APIs/Webhooks">Capture External Event API</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#lead-info-apis-webhooks-capture-external-event-api-resource-overview" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#lead-info-apis-webhooks-capture-external-event-api-parameters" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li class="toc-h2-li">
                     <a href="#lead-info-apis-webhooks-contacts-lead-apis" class="toc-h2 toc-link" data-title="Lead Info APIs/Webhooks">Contacts/Lead APIs</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
@@ -789,6 +778,33 @@
                           </li>
                           <li class="toc-h3-li">
                             <a href="#lead-info-apis-webhooks-localiq-app-on-zapier-contacts" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Contacts</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#first-party-data-api-apps" class="toc-h1 toc-link" data-title="First Party Data API/Apps">First Party Data API/Apps</a>
+              <ul class="toc-list-h2">
+                  <li class="toc-h2-li">
+                    <a href="#first-party-data-api-apps-capture-external-events-confirmed-calls" class="toc-h2 toc-link" data-title="First Party Data API/Apps">Capture External Events - Confirmed Calls</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#first-party-data-api-apps-capture-external-events-confirmed-calls-resource-overview" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Resource Overview</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#first-party-data-api-apps-capture-external-events-confirmed-calls-parameters" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Parameters</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="toc-h2-li">
+                    <a href="#first-party-data-api-apps-capture-external-events-chat" class="toc-h2 toc-link" data-title="First Party Data API/Apps">Capture External Events - Chat</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#first-party-data-api-apps-capture-external-events-chat-resource-overview" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Resource Overview</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#first-party-data-api-apps-capture-external-events-chat-parameters" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Parameters</a>
                           </li>
                       </ul>
                   </li>
@@ -12677,203 +12693,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <li>Contact Interactions</li>
 </ul><p><strong>Apps on Zapier Marketplace</strong></p><ul><li>Contacts</li>
 <li>Contact Interactions</li>
-</ul><h2 id='lead-info-apis-webhooks-capture-external-event-api'>Capture External Event API</h2><h3 id='lead-info-apis-webhooks-capture-external-event-api-resource-overview'>Resource Overview</h3><table><thead><tr>
-<th>Method</th>
-<th>URI Format</th>
-</tr>
-</thead><tbody><tr>
-<td>POST</td>
-<td>/capture_events/chats</td>
-</tr></tbody></table><table><thead><tr>
-<th>HTTPS Response Code</th>
-<th>Description</th>
-</tr>
-</thead><tbody><tr>
-<td>200</td>
-<td>Successful</td>
-</tr>
-<tr>
-<td>400</td>
-<td>Validation Error</td>
-</tr></tbody></table><p>Capture External Event API is a public ReachLocal external interface for vendors to use.
-This endpoint is used to create a chat event.</p><h3 id='lead-info-apis-webhooks-capture-external-event-api-parameters'>Parameters</h3>
-<blockquote>
-<p>Examples</p><p>Sample cURL for the Create Chat POST request:</p></blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  https://api.localiqservices.com/capture_events/chats <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
-  -d <span class="s1">'{
-  "eventTime": "2017-03-10T01:19:23Z",
-  "accountId": "123456789",
-  "data":
-    {
-        "provider": "SomeCompany",
-        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",
-        "chatDuration": 261.58,
-        "chatSummary": "Do you have any specials going on?",
-        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
-        "chatVisitorEmail": "minneapple@gmail.com",
-        "chatVisitorName": "Bob",
-        "chatVisitorPhone": "6592009999"
-    }
-
-}
-'</span>
-<span class="c"># HTTP Response Status: 200</span>
-
-<span class="c"># Sample cURL for the Create Chat POST request with validation errors:</span>
-
-curl -X POST <span class="se">\</span>
-  https://api.localiqservices.com/capture_events/chats <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
-  -d <span class="s1">'{
-  "eventTime": "2017-03-10T01:19:23Z",
-  "accountId": "123456789",
-  "data":
-    {
-        "provider": null,
-        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",
-        "chatDuration": 261.58,
-        "chatSummary": "Do you have any specials going on?",
-        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
-        "chatVisitorEmail": "minneapple@gmail.com",
-        "chatVisitorName": "Bob",
-        "chatVisitorPhone": "6592009999"
-    }
-
-}
-'</span>
-
-<span class="c"># HTTP Response Status: 400</span>
-<span class="c"># HTTP Response Body:</span>
-<span class="c"># [</span>
-<span class="c">#     "Provider can't be blank"</span>
-<span class="c"># ]</span>
-
-
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="c1"># Sample Ruby for the Create Chat POST request:</span>
-
-<span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.localiqservices.com/capture_events/chats"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">eventTime</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-03-10T01:19:23Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">accountId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123456789</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:  </span><span class="se">\n</span><span class="s2">    {</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SomeCompany</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">visitId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bd4567f4-9b90-42e6-b282-7767af1ba581</span><span class="se">\"</span><span class="s2">,          </span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatDuration</span><span class="se">\"</span><span class="s2">: 261.58,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatSummary</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Do you have any specials going on?</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatTextFull</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\u</span><span class="s2">000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?</span><span class="se">\u</span><span class="s2">000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorEmail</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">minneapple@gmail.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorName</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Bob</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorPhone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">6592009999</span><span class="se">\"\n</span><span class="s2">    }</span><span class="se">\n</span><span class="s2">       </span><span class="se">\n</span><span class="s2">}</span><span class="se">\n</span><span class="s2">"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-
-<span class="c1"># HTTP Response Status: 200</span>
-
-</code></pre><pre class="highlight java tab-java"><code><span class="cm">/* Sample Java for the Create Chat POST request: */</span>
-
-<span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
-
-<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
-<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"SomeCompany\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"</span><span class="o">);</span>
-<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.localiqservices.com/capture_events/chats"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-
-<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
-
-<span class="cm">/* HTTP Response Status: 200 */</span>
-</code></pre><p><strong>Post Body Parameters</strong></p><table><thead><tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody><tr>
-<td>eventTime</td>
-<td>yes</td>
-<td>The date/time in UTC that the chat started</td>
-</tr>
-<tr>
-<td>accountId</td>
-<td>yes</td>
-<td>A vendor supplied account identifier</td>
-</tr>
-<tr>
-<td>data</td>
-<td>yes</td>
-<td>A JSON hash representing the attributes for the chat. See the following section for details</td>
-</tr></tbody></table><p>This section defines the data parameter JSON hash:</p><table><thead><tr>
-<th>Data Field</th>
-<th>Required</th>
-<th>Datatype</th>
-<th>Nullable</th>
-<th>Description</th>
-</tr>
-</thead><tbody><tr>
-<td>provider</td>
-<td>yes</td>
-<td>string</td>
-<td>no</td>
-<td>The name of the service provider</td>
-</tr>
-<tr>
-<td>visitId</td>
-<td>yes</td>
-<td>string</td>
-<td>no</td>
-<td>The Reach Local visitId of the chat user</td>
-</tr>
-<tr>
-<td>chatDuration</td>
-<td>yes</td>
-<td>number</td>
-<td>yes</td>
-<td>The duration of the chat in seconds</td>
-</tr>
-<tr>
-<td>chatSummary</td>
-<td>yes</td>
-<td>string</td>
-<td>no</td>
-<td>A summary of the chat</td>
-</tr>
-<tr>
-<td>chatTextFull</td>
-<td>yes</td>
-<td>string</td>
-<td>no</td>
-<td>The full transcript of the chat</td>
-</tr>
-<tr>
-<td>chatVisitorEmail</td>
-<td>yes</td>
-<td>string</td>
-<td>no</td>
-<td>The email address of the visitor</td>
-</tr>
-<tr>
-<td>chatVisitorName</td>
-<td>yes</td>
-<td>string</td>
-<td>no</td>
-<td>The name of the chat visitor</td>
-</tr>
-<tr>
-<td>chatVisitorPhone</td>
-<td>no</td>
-<td>string</td>
-<td>no</td>
-<td>The phone number for this chat visitor</td>
-</tr></tbody></table><h2 id='lead-info-apis-webhooks-contacts-lead-apis'>Contacts/Lead APIs</h2><h3 id='lead-info-apis-webhooks-contacts-lead-apis-contacts' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Contacts</strong></h3><p><a name="contacts"></a></p><p><strong>Summary:</strong> This HIPAA Compliant endpoint supports integration with CRM products. It returns all contacts (first name, last name, email and/or phone number) generated by a campaign for an advertiser. The response is organized by campaigns with the contacts nested within. Please note that the response also includes the associated contact and its meta data.</p><p><strong>Parameters:</strong> It requires the following parameters for a successful response: GMAID (advertiser ID), created_before date and created_after_date.</p><p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LOCALiQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p><p>Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them as contacts into your CRM from this endpoint will cause duplicates.</p><h3 id='lead-info-apis-webhooks-contacts-lead-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
+</ul><h2 id='lead-info-apis-webhooks-contacts-lead-apis'>Contacts/Lead APIs</h2><h3 id='lead-info-apis-webhooks-contacts-lead-apis-contacts' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Contacts</strong></h3><p><a name="contacts"></a></p><p><strong>Summary:</strong> This HIPAA Compliant endpoint supports integration with CRM products. It returns all contacts (first name, last name, email and/or phone number) generated by a campaign for an advertiser. The response is organized by campaigns with the contacts nested within. Please note that the response also includes the associated contact and its meta data.</p><p><strong>Parameters:</strong> It requires the following parameters for a successful response: GMAID (advertiser ID), created_before date and created_after_date.</p><p><strong>Recommended usage pattern:</strong> A one-time call to the API to fetch all past interactions recorded by the LOCALiQ platform, followed by daily recurrent calls for a 2 -3-day period to fetch new interactions. The results are paginated. If there is no data for a particular attribute, it will not be present in the results.</p><p>Please note that the contact information in this endpoint is for linking the interactions/leads with the contact. Importing them as contacts into your CRM from this endpoint will cause duplicates.</p><h3 id='lead-info-apis-webhooks-contacts-lead-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
 </tr>
@@ -16078,6 +15898,403 @@ https://api.localiqservices.com/leads/lsa_events?start_date=2020-09-27&amp;end_d
 <td>archived_at</td>
 <td>Datetime</td>
 <td>The date and time which this contact was archived.</td>
+</tr></tbody></table><h1 id='first-party-data-api-apps'>First Party Data API/Apps</h1><p><a name="First Party Data API/apps"></a></p><p><img src="images/fpd-overview_page_3.jpg" alt="FPD" />
+<img src="images/fpd-overview_page_4.jpg" alt="FPD" />
+<img src="images/fpd-overview_page_6.jpg" alt="FPD" /></p><h2 id='first-party-data-api-apps-capture-external-events-confirmed-calls'>Capture External Events - Confirmed Calls</h2><h3 id='first-party-data-api-apps-capture-external-events-confirmed-calls-resource-overview'>Resource Overview</h3><table><thead><tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody><tr>
+<td>POST</td>
+<td>/capture_events/confirmed_calls</td>
+</tr></tbody></table><table><thead><tr>
+<th>HTTPS Response Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>200</td>
+<td>Successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Validation Error</td>
+</tr></tbody></table><p>Capture External Event API is a public ReachLocal external interface for vendors to use.
+This endpoint is used to inform us of confirmed leads for First Party Data</p><h3 id='first-party-data-api-apps-capture-external-events-confirmed-calls-parameters'>Parameters</h3><p><strong>Post Body Parameters</strong></p><table><thead><tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>provider</td>
+<td>yes</td>
+<td>The provider of the First Party Data.  Example:  &quot;Acme Co.&quot;</td>
+</tr>
+<tr>
+<td>calls</td>
+<td>yes, if leads not supplied</td>
+<td>An Array of Call Objects, defined below</td>
+</tr></tbody></table><p><strong>Call Object Parameters</strong></p><table><thead><tr>
+<th>Data Field</th>
+<th>Required</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>gmaid</td>
+<td>yes</td>
+<td>string</td>
+<td>Global Master Advertiser ID</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>yes</td>
+<td>string</td>
+<td>Normalized phone number of the lead</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>yes</td>
+<td>number</td>
+<td>The duration of the call in seconds</td>
+</tr>
+<tr>
+<td>recording_url</td>
+<td>yes</td>
+<td>string</td>
+<td>The URL address to an audio recording of the call.</td>
+</tr>
+<tr>
+<td>occurred_at</td>
+<td>no</td>
+<td>string</td>
+<td>The date and time that the call occurred</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>yes</td>
+<td>integer</td>
+<td>1: High Value, 2: Mid Value, 3: Low Value</td>
+</tr></tbody></table>
+<blockquote>
+<p>Examples</p><p>Sample cURL for the Create Calls POST request:</p></blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://api.localiqservices.com/capture_events/confirmed_calls <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "provider": "ACME Co.",
+  "calls":[
+                  {
+                      "occurred_at":"2017-03-10T01:19:23Z",
+                      "gmaid":"USA_172717",
+                      "phone":"8885551212",
+                      "recording_url":"https://myrecording.com/12345", 
+                      "duration":"180",
+                      "tag":1
+                  },
+                    {
+                      "occurred_at":"2017-02-10T01:19:23Z",
+                      "gmaid":"USA_172717",
+                      "phone":"+18885551212",
+                      "recording_url":"https://myrecording.com/12346", 
+                      "duration":"180",
+                      "tag":1
+                  }
+              ]
+}
+'</span>
+<span class="c"># HTTP Response Status: 200</span>
+
+<span class="c"># Sample cURL for the Create Calls POST request with validation errors:</span>
+
+curl -X POST <span class="se">\</span>
+  https://api.localiqservices.com/capture_events/confirmed_calls <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+        "provider": "",
+        "calls":[
+                        {
+                            "occurred_at":"2017-03-10T01:19:23Z",
+                            "gmaid":"USA_172717",
+                            "phone":"8885551212",
+                            "recording_url":"https://myrecording.com/12345", 
+                            "duration":"180",
+                            "tag":1
+                        },
+                          {
+                            "occurred_at":"2017-02-10T01:19:23Z",
+                            "gmaid":"USA_172717",
+                            "phone":"+18885551212",
+                            "recording_url":"https://myrecording.com/12346", 
+                            "duration":"180",
+                            "tag":1
+                        }
+                    ]
+      }
+'</span>
+
+<span class="c"># HTTP Response Status: 400</span>
+<span class="c"># HTTP Response Body:</span>
+<span class="c"># [</span>
+<span class="c">#     "Provider can't be blank"</span>
+<span class="c"># ]</span>
+
+
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="c1"># Sample Ruby for the Create Calls POST request:</span>
+
+<span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"json"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.localiqservices.com/capture_events/confirmed_calls"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">);</span>
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/json"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/json"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">dump</span><span class="p">({</span>
+  <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"ACME Co."</span><span class="p">,</span>
+  <span class="s2">"calls"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"occurred_at"</span><span class="p">:</span> <span class="s2">"2017-03-10T01:19:23Z"</span><span class="p">,</span>
+      <span class="s2">"gmaid"</span><span class="p">:</span> <span class="s2">"USA_172717"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"8885551212"</span><span class="p">,</span>
+      <span class="s2">"recording_url"</span><span class="p">:</span> <span class="s2">"https://myrecording.com/12345"</span><span class="p">,</span>
+      <span class="s2">"duration"</span><span class="p">:</span> <span class="s2">"180"</span><span class="p">,</span>
+      <span class="s2">"tag"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"occurred_at"</span><span class="p">:</span> <span class="s2">"2017-02-10T01:19:23Z"</span><span class="p">,</span>
+      <span class="s2">"gmaid"</span><span class="p">:</span> <span class="s2">"USA_172717"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"+18885551212"</span><span class="p">,</span>
+      <span class="s2">"recording_url"</span><span class="p">:</span> <span class="s2">"https://myrecording.com/12346"</span><span class="p">,</span>
+      <span class="s2">"duration"</span><span class="p">:</span> <span class="s2">"180"</span><span class="p">,</span>
+      <span class="s2">"tag"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+
+<span class="c1"># HTTP Response Status: 200</span>
+
+</code></pre><pre class="highlight java tab-java"><code><span class="cm">/* Sample Java for the Create Calls POST request: */</span>
+
+<span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">().</span><span class="na">newBuilder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n    \"provider\":\"ACME Co.\",\n    \"calls\": [\n        {\n            \"occurred_at\":\"2017-03-10T01:19:23Z\",\n            \"gmaid\":\"USA_172717\",\n            \"phone\":\"8885551212\",\n            \"recording_url\":\"https://myrecording.com/12345\", \n            \"duration\":\"180\",\n            \"tag\":1\n        },\n          {\n            \"occurred_at\":\"2017-02-10T01:19:23Z\",\n            \"gmaid\":\"USA_172717\",\n            \"phone\":\"+18885551212\",\n            \"recording_url\":\"https://myrecording.com/12346\", \n            \"duration\":\"180\",\n            \"tag\":1\n        }\n    ]\n}"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.localiqservices.com/capture_events/confirmed_leads"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">method</span><span class="o">(</span><span class="s">"POST"</span><span class="o">,</span> <span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+
+<span class="cm">/* HTTP Response Status: 200 */</span>
+</code></pre><h2 id='first-party-data-api-apps-capture-external-events-chat'>Capture External Events - Chat</h2><h3 id='first-party-data-api-apps-capture-external-events-chat-resource-overview'>Resource Overview</h3><table><thead><tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody><tr>
+<td>POST</td>
+<td>/capture_events/chats</td>
+</tr></tbody></table><table><thead><tr>
+<th>HTTPS Response Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>200</td>
+<td>Successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Validation Error</td>
+</tr></tbody></table><p>Capture External Event API is a public ReachLocal external interface for vendors to use.
+This endpoint is used to create a chat event.</p><h3 id='first-party-data-api-apps-capture-external-events-chat-parameters'>Parameters</h3>
+<blockquote>
+<p>Examples</p><p>Sample cURL for the Create Chat POST request:</p></blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://api.localiqservices.com/capture_events/chats <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "eventTime": "2017-03-10T01:19:23Z",
+  "accountId": "123456789",
+  "data":
+    {
+        "provider": "SomeCompany",
+        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",
+        "chatDuration": 261.58,
+        "chatSummary": "Do you have any specials going on?",
+        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
+        "chatVisitorEmail": "minneapple@gmail.com",
+        "chatVisitorName": "Bob",
+        "chatVisitorPhone": "6592009999"
+    }
+
+}
+'</span>
+<span class="c"># HTTP Response Status: 200</span>
+
+<span class="c"># Sample cURL for the Create Chat POST request with validation errors:</span>
+
+curl -X POST <span class="se">\</span>
+  https://api.localiqservices.com/capture_events/chats <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer OAUTH_ACCESS_TOKEN'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "eventTime": "2017-03-10T01:19:23Z",
+  "accountId": "123456789",
+  "data":
+    {
+        "provider": null,
+        "visitId": "bd4567f4-9b90-42e6-b282-7767af1ba581",
+        "chatDuration": 261.58,
+        "chatSummary": "Do you have any specials going on?",
+        "chatTextFull": "\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.",
+        "chatVisitorEmail": "minneapple@gmail.com",
+        "chatVisitorName": "Bob",
+        "chatVisitorPhone": "6592009999"
+    }
+
+}
+'</span>
+
+<span class="c"># HTTP Response Status: 400</span>
+<span class="c"># HTTP Response Body:</span>
+<span class="c"># [</span>
+<span class="c">#     "Provider can't be blank"</span>
+<span class="c"># ]</span>
+
+
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="c1"># Sample Ruby for the Create Chat POST request:</span>
+
+<span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.localiqservices.com/capture_events/chats"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">eventTime</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-03-10T01:19:23Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">accountId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123456789</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:  </span><span class="se">\n</span><span class="s2">    {</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SomeCompany</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">visitId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bd4567f4-9b90-42e6-b282-7767af1ba581</span><span class="se">\"</span><span class="s2">,          </span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatDuration</span><span class="se">\"</span><span class="s2">: 261.58,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatSummary</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Do you have any specials going on?</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatTextFull</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\u</span><span class="s2">000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?</span><span class="se">\u</span><span class="s2">000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorEmail</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">minneapple@gmail.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorName</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Bob</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">        </span><span class="se">\"</span><span class="s2">chatVisitorPhone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">6592009999</span><span class="se">\"\n</span><span class="s2">    }</span><span class="se">\n</span><span class="s2">       </span><span class="se">\n</span><span class="s2">}</span><span class="se">\n</span><span class="s2">"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+
+<span class="c1"># HTTP Response Status: 200</span>
+
+</code></pre><pre class="highlight java tab-java"><code><span class="cm">/* Sample Java for the Create Chat POST request: */</span>
+
+<span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="s">"{\n  \"eventTime\": \"2017-03-10T01:19:23Z\",\n  \"accountId\": \"1213456789\",\n  \"data\":  \n    {\n        \"provider\": \"SomeCompany\",\n        \"visitId\": \"bd4567f4-9b90-42e6-b282-7767af1ba581\",          \n        \"chatDuration\": 261.58,\n        \"chatSummary\": \"Do you have any specials going on?\",\n        \"chatTextFull\": \"\u000a[2/13/2017 10:55:24 AM] elaine: Hello, thanks for contacting St. Louis Car Dealership. My name is elaine, may I have your name?\u000a  [3/9/2017 8:17:50 PM] System: All users have left the chat.\",\n        \"chatVisitorEmail\": \"minneapple@gmail.com\",\n        \"chatVisitorName\": \"Bob\",\n        \"chatVisitorPhone\": \"6592009999\"\n    }\n       \n}\n"</span><span class="o">);</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.localiqservices.com/capture_events/chats"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+
+<span class="cm">/* HTTP Response Status: 200 */</span>
+</code></pre><p><strong>Post Body Parameters</strong></p><table><thead><tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>eventTime</td>
+<td>yes</td>
+<td>The date/time in UTC that the chat started</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>yes</td>
+<td>A vendor supplied account identifier</td>
+</tr>
+<tr>
+<td>data</td>
+<td>yes</td>
+<td>A JSON hash representing the attributes for the chat. See the following section for details</td>
+</tr></tbody></table><p>This section defines the data parameter JSON hash:</p><table><thead><tr>
+<th>Data Field</th>
+<th>Required</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>provider</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The name of the service provider</td>
+</tr>
+<tr>
+<td>visitId</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The Reach Local visitId of the chat user</td>
+</tr>
+<tr>
+<td>chatDuration</td>
+<td>yes</td>
+<td>number</td>
+<td>yes</td>
+<td>The duration of the chat in seconds</td>
+</tr>
+<tr>
+<td>chatSummary</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>A summary of the chat</td>
+</tr>
+<tr>
+<td>chatTextFull</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The full transcript of the chat</td>
+</tr>
+<tr>
+<td>chatVisitorEmail</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The email address of the visitor</td>
+</tr>
+<tr>
+<td>chatVisitorName</td>
+<td>yes</td>
+<td>string</td>
+<td>no</td>
+<td>The name of the chat visitor</td>
+</tr>
+<tr>
+<td>chatVisitorPhone</td>
+<td>no</td>
+<td>string</td>
+<td>no</td>
+<td>The phone number for this chat visitor</td>
 </tr></tbody></table><h1 id='deprecated-apis'>Deprecated APIs</h1><p><a name="deprecated_apis"></a></p><h2 id='deprecated-apis-creative-ad-metrics'>Creative/Ad Metrics</h2><h3 id='deprecated-apis-creative-ad-metrics-resource-overview'>Resource Overview</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
