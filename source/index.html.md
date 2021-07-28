@@ -51,7 +51,7 @@ includes:
   - xmedia_channel
 
   - integrations
-  - capture_external_event_api
+  - capture_external_event_chat
   - contacts
   - contact_interactions
   - edge_webhook
