@@ -22,7 +22,7 @@ This endpoint is used to inform us of confirmed leads for First Party Data
 
 |Parameter | Required | Description|
 |---|---|---|---|---|
-|provider|yes|The provider of the First Party Day.  Example:  "Acme Co."|
+|provider|yes|The provider of the First Party Data.  Example:  "Acme Co."|
 |calls|yes, if leads not supplied|An Array of Call Objects, defined below|
 
 **Call Object Parameters**
@@ -33,8 +33,8 @@ This endpoint is used to inform us of confirmed leads for First Party Data
 |phone|yes|string|Normalized phone number of the lead|
 |duration|yes|number|The duration of the call in seconds|
 |recording_url|yes|string|The URL address to an audio recording of the call.|
-|occured_at|no|string|The date and time that the call occurred|
-|tag|yes|integer|1: High Value, 2: Mid Value, 3: low Value|
+|occurred_at|no|string|The date and time that the call occurred|
+|tag|yes|integer|1: High Value, 2: Mid Value, 3: Low Value|
 
 
 > Examples
