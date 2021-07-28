@@ -6108,7 +6108,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?&amp;campa
 https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_master_campaign_id[]=TEST_1&amp;start_date=2016-10-01&amp;end_date=2016-12-31&amp;include_cycles=true"
 </code></pre>
 <blockquote>
-<p> Example Response</p></blockquote>
+<p> Example Response if there is a Top Search Campaign (bidding pricing model is 8)</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"report_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_activity"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"report_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-15"</span><span class="p">,</span><span class="w">
@@ -6128,6 +6128,54 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"bidding_pricing_model_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1065</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"qualified_web_events"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.47</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"device_breakdowns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"impression_share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"rank_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"budget_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Campaign (Demo)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1368327"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bidding_pricing_model_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-10"</span><span class="p">,</span><span class="w">
@@ -6205,7 +6253,12 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rank_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"budget_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"totals_per_interval"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
@@ -6238,7 +6291,12 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                         </span><span class="s2">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"tablet"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rank_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"budget_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -6440,6 +6498,31 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 <td>device_breakdowns</td>
 <td>DeviceBreakdown[]</td>
 <td>Array of <a href="#searchdevicebreakdowns">DeviceBreakdown</a></td>
+</tr>
+<tr>
+<td>search_impression_share</td>
+<td>Integer</td>
+<td>Search impression share for interval</td>
+</tr>
+<tr>
+<td>top_search_impression_share</td>
+<td>Integer</td>
+<td>Top Search impression share for interval</td>
+</tr>
+<tr>
+<td>absolute_top_search_impression_share</td>
+<td>Integer</td>
+<td>Absolute Top Search Impression share for interval</td>
+</tr>
+<tr>
+<td>rank_lost_absolute_top_search_impression_share</td>
+<td>Integer</td>
+<td>Rank Lost Absolute Top Search Impression share for interval</td>
+</tr>
+<tr>
+<td>budget_lost_absolute_top_search_impression_share</td>
+<td>Integer</td>
+<td>Budget Lost Absolute Top Search Impression share for interval</td>
 </tr></tbody></table><p><a name="searchtotals"></a>
 <strong>Totals Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -6500,6 +6583,31 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 <td>device_breakdowns</td>
 <td>DeviceBreakdown[]</td>
 <td>Array of <a href="#searchdevicebreakdowns">DeviceBreakdown</a></td>
+</tr>
+<tr>
+<td>search_impression_share</td>
+<td>Integer</td>
+<td>Search impression share for interval</td>
+</tr>
+<tr>
+<td>top_search_impression_share</td>
+<td>Integer</td>
+<td>Top Search impression share for interval</td>
+</tr>
+<tr>
+<td>absolute_top_search_impression_share</td>
+<td>Integer</td>
+<td>Absolute Top Search Impression share for interval</td>
+</tr>
+<tr>
+<td>rank_lost_absolute_top_search_impression_share</td>
+<td>Integer</td>
+<td>Rank Lost Absolute Top Search Impression share for interval</td>
+</tr>
+<tr>
+<td>budget_lost_absolute_top_search_impression_share</td>
+<td>Integer</td>
+<td>Budget Lost Absolute Top Search Impression share for interval</td>
 </tr></tbody></table><p><a name="searchdevicebreakdowns"></a>
 <strong>Device Breakdowns Object</strong></p><table><thead><tr>
 <th>Field Name</th>
