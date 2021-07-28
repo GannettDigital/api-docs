@@ -1,4 +1,4 @@
-## Capture External Event API
+## Capture External Event API - Chat Events
 
 ### Resource Overview
 
