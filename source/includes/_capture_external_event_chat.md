@@ -2,6 +2,9 @@
 
 ### Resource Overview
 
+The Capture External Event - Chat endpoint is used to send chat events to LOCALiQ.
+
+
 | Method | URI Format |
 |---|---|
 | POST | /capture_events/chats |
@@ -12,8 +15,6 @@
 | 200 | Successful
 | 400 | Validation Error
 
-Capture External Event API is a public ReachLocal external interface for vendors to use.
-This endpoint is used to create a chat event.
 
 ### Parameters
 
@@ -126,20 +127,25 @@ Response response = client.newCall(request).execute();
 **Post Body Parameters**
 
 |Parameter | Required | Description|
-|---|---|---|---|---|
+|---|---|---|
 |eventTime|yes|The date/time in UTC that the chat started|
 |accountId|yes|A vendor supplied account identifier|
 |data|yes|A JSON hash representing the attributes for the chat. See the following section for details|
 
 This section defines the data parameter JSON hash:
 
-|Data Field|Required|Datatype|Nullable|Description|
-|---|---|---|---|---|
-|provider|yes|string|no|The name of the service provider|
-|visitId|yes|string|no|The Reach Local visitId of the chat user|
-|chatDuration|yes|number|yes|The duration of the chat in seconds|
-|chatSummary|yes|string|no|A summary of the chat|
-|chatTextFull|yes|string|no|The full transcript of the chat|
-|chatVisitorEmail|yes|string|no|The email address of the visitor|
-|chatVisitorName|yes|string|no|The name of the chat visitor|
-|chatVisitorPhone|no|string|no|The phone number for this chat visitor|
+|Data Field|Required|Description|
+|---|---|---|
+|provider|yes|The name of the service provider|
+|visitId|yes|The Reach Local visitId of the chat user|
+|chatDuration|yes|The duration of the chat in seconds|
+|chatSummary|yes|A summary of the chat|
+|chatTextFull|yes|The full transcript of the chat|
+|chatVisitorEmail|yes|The email address of the visitor|
+|chatVisitorName|yes|The name of the chat visitor|
+|chatVisitorPhone|no|The phone number for this chat visitor|
+
+| HTTPS Response Code | Description
+|---|---|
+| 200 | Successful
+| 400 | Validation Error
