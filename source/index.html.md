@@ -51,7 +51,6 @@ includes:
   - xmedia_channel
 
   - integrations
-  - capture_external_event_chat
   - contacts
   - contact_interactions
   - edge_webhook
@@ -63,6 +62,9 @@ includes:
   - lsa_campaign_rollup
   - lsa_leads
   - zapier
+  - fpd
+  - capture_external_event_fpd
+  - capture_external_event_chat
 
   - deprecated_apis
   - creative_ad_metrics

@@ -1,4 +1,4 @@
-# First Party Data API/apps
+# First Party Data API/Apps
 <a name="First Party Data API/apps"></a>
 
 ![FPD](/images/fpd-overview_page_3.jpg)
