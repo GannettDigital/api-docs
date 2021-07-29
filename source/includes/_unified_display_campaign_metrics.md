@@ -30,6 +30,7 @@ When using the GET method, the results can be filtered using these parameters:
 |global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
 |campaign_cycle|Restrict results to a single campaign cycle|
 |campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|include_full_channel|Optional, default: false. Includes all metrics for the display channel. Xmedia campaigns will only contain metrics that belong to the display channel, rather than full campaign metrics.|
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
