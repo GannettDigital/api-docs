@@ -4,10 +4,10 @@
 
 ### July 12th, 18th 2021
 **Release Notes**
+
 |API(s) Updated|Description|
 |---|---|
-|All APIs|General Performance Updates; no impact to the response or usuage of the API|
-
+|All APIs|General Performance Updates; no impact to the response or usage of the API|
 
 
 ## June 2021
@@ -19,13 +19,12 @@
 |---|---|
 |Social Ads|API update to report frequency only for daily intervals| 
 
-
 ### June 8th, 14th, 17th, 28th, 30th 2021
 **Release Notes**
 
 |API(s) Updated|Description|
 |---|---|
-|All APIs|General Performance Updates; no impact to the response or usuage of the API|
+|All APIs|General Performance Updates; no impact to the response or usage of the API|
 
 ## May 2021
 
