@@ -34,5 +34,9 @@
 |Lead Metrics|[LSA Campaigns](#lsa_campaigns)|Local Service Ad Metrics by Campaign and Interval|
 |Lead Metrics|[LSA Campaign Rollup](#lsa_campaign_rollup)|Local Service Ads - Metric rollup by campaign|
 |Lead Metrics|[LSA Lead Details](#lsa_leads)|Local Service Ads - Individual Leads for a date range|
+|First Party Data |[Capture External Events Confirmed Calls](#lcapture_external_event_fpd)|First Party Data - Send LOCALiQ high value call recording URLs|
+|First Party Data |[Capture External Events Chat](#capture_external_event_chat)|Local Service Ads - Send LOCALiQ offline Chats that occur|
+
+
 |Custom Integration|FranConnect/Franchise Management Software |If you are interested in this custom integration, please contact your account team (Offer #2095)|
 
