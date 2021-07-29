@@ -1,5 +1,42 @@
 # Release Notes
+
+## July 2021
+
+### July 12th, 18th 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Performance Updates; no impact to the response or usage of the API|
+
+
+## June 2021
+
+### June 22th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|Social Ads|API update to report frequency only for daily intervals| 
+
+### June 8th, 14th, 17th, 28th, 30th 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Performance Updates; no impact to the response or usage of the API|
+
 ## May 2021
+
+### May 24th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|Campaign Overview|API update to include just qualified web events in lead totals|
+|Unified Display| Update to limit the response to include metrics only from display publisdhers (SimpliFi, Gannet Ad Manager & Media Math)|
+|Search Metrics| Bug fix related to spend when Include_cycles param is 'False"|
+
 
 ### May 13th, 2021
 **Release Notes**
@@ -8,6 +45,22 @@
 |---|---|
 |XMO Metrics|New API for campaign performance metrics for the Cross Media Optimization (XMO) campaigns |
 |XMO Channel Metrics|New API for campaign performance metrics by channel (search, social etc.) for the Cross Media Optimization (XMO) campaigns |
+
+
+### May 10th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|LOCALiQ App on Zapier|Upgrade. No change to functionality |
+
+### May 26th, 27th, 2021
+**Release Notes**
+
+|API(s) Updated|Description|
+|---|---|
+|All APIs|General Performance Updates; no impact to the response or usuage of the API|
+
 
 ## April 2021
 
