@@ -45,7 +45,7 @@ message | String |The message body of this line of the chat transcript.
 
 Field | Type | Description
 --------- |-------- |--------
-occured_at | Datetime | The date and time that the call occurred.
+occured_at | Datetime | The date and time that the call occurred..
 duration | Integer | The duration of the call in seconds.
 recording_url | String | The URL address to an audio recording of the call.
 
