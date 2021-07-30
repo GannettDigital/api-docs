@@ -5,7 +5,7 @@
 
 **Contact Interaction Details**
 
-![Contact Integration Trigger](/images/contactinteraction_zapier.png)
+![Contact Integration Trigger Event](/images/contactinteraction_zapier.png)
 
 Depending on the type of contact interaction (see the `event_type` attribute), the payload will also include one of the following:
 
