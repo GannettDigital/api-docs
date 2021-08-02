@@ -17,11 +17,10 @@ When using the GET index method, the results will be filtered using these parame
 
 | Parameter | Required | Description |
 |---|---|---|
-|`event_params`|Yes (in first case)|JSON object with `duration`, `recording_url` and `phone_number` keys to match on|
-|`event_params[duration]`|Yes|Integer that restricts the contacts to one or more based on call_duration|
 |`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
-|`event_params[phone_number]`|Yes|Array of max 15 elements that restricts the contacts to one or more based on the phone number elements|
 |`global_master_advertiser_id`|No|Restrict results to one or more specific gmaid|
+|`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
 #### If you use the event_params parameter, the ones below won't be considered from the API
 ### Examples:
@@ -29,7 +28,7 @@ When using the GET index method, the results will be filtered using these parame
 ### GET (index)
 
 ```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[duration]=20&event_params[recording_url]=url&event_params[phone_number][]=1234' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
@@ -52,6 +51,9 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
 |duration| Integer | no | the phone call duration of the contact|
 |url| String | no | the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|page| Integer | no | the number of the contacts page|
+|page_size| Integer | no | the number of the size of the contacts array|
+|total_pages| Integer | no | the number of contacts array total pages|
 
 
 #### Example Response
@@ -83,6 +85,9 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
                 }
             ]
         }
-    ]
+    ],
+    "page": 1,
+    "total_pages": 1,
+    "per_page": 25
 }
 
