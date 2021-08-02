@@ -1,5 +1,5 @@
 ### **Contacts**
-
+<a name="lips_contacts"></a>
 ## Contacts API
 
 ### Resource Overview
@@ -12,21 +12,26 @@
 Use GET to retrieve advertisers that match the query params.
 
 ### Parameters
-
 When using the GET index method, the results will be filtered using these parameters:
 
 | Parameter | Required | Description |
 |---|---|---|
+
+<internal>
 |`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
-|`global_master_advertiser_id`|No|Restrict results to one or more specific gmaid|
+</internal>
+
+|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
 |`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
-#### If you use the event_params parameter, the ones below won't be considered from the API
+<internal>
+#### If you use the event_params parameter, the response would contain also recording url and duration values
+</internal>
 ### Examples:
 
 ### GET (index)
-
+<internal>
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
   -H 'Accept: */*' \
@@ -34,8 +39,16 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
   -H 'Content-Type: application/json' \
   -H 'x-api-key: SJNPPSecret'
 ```
+> Response Description if query_params contains event_params
+</internal>
 
-> Response Description if query_params contains match_params
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
@@ -47,8 +60,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
 |city| String | no | city of the contact|
 |state| String | no | state of the contact|
 |postal| String | no | zip code of the contact|
+<internal>
 |country| String | no | country code of the contact|
 |duration| Integer | no | the phone call duration of the contact|
+</internal>
 |url| String | no | the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
 |page| Integer | no | the number of the contacts page|
@@ -73,8 +88,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
             "postal": "1234",
             "country": "US",
             "email": "mail@mail.com",
+            <internal>
             "duration": 20,
             "url": "url",
+            </internal>
             "phone_numbers": [
                 {
                     "phone_type": "smart",
@@ -90,4 +107,3 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
     "total_pages": 1,
     "per_page": 25
 }
-
