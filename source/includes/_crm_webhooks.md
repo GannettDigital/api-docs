@@ -162,12 +162,12 @@ Field | Type | Description
 id | Integer | An integer uniquely identifying this lead event.
 contact_id | Integer | An integer uniquely identifying the contact to which this lead belongs.
 campaign_id | Integer | An integer uniquely identifying the campaign that this lead is attributed to.
+master_campaign_id | Integer | An integer uniquely identifying the campaign that this lead is attributed to.
 campaign_name |  String | The name of the campaign that this lead is attributed to.
 archived_at | Datetime | The date and time which this lead event was archived.<br>**The field is nullable**
 created_at | Datetime | The date and time which this lead event was created.
 important_at | Datetime | The date and time which this lead event was marked important.<br>**The field is nullable**
 occured_at | Datetime | The date and time which this lead event occurred. This will usually be different than the date that the lead event was created.
-read_at | Datetime | The date and time which this lead event was marked read.<br>**The field is nullable**
 display_name | String | The display name of the lead event.
 event_type| String | The type of the lead event. Valid values are **chat**, **call** and **form**.
 status | String | The status of the associated contact.  Valid values are **pending_contact**, **active_lead**, **client** and **none**.<br>**The field is nullable**
@@ -209,118 +209,191 @@ archived_at | Datetime | The date and time which this contact was archived.<br>*
 
 ```javascript
 {
-   "lead":{
-      "id":282638,
-      "contact_id":323223,
-      "campaign_id":1727,
-      "archived_at":null,
-      "created_at":"2017-05-30T08:55:09.000-07:00",
-      "important_at":"2017-06-06T11:32:59.000-07:00",
-      "occured_at":"2017-05-30T08:51:09.000-07:00",
-      "display_name":"Meghan Cummerata",
-      "read_at":"2017-06-09T08:05:37-07:00",
-      "event_type":"chat",
-      "campaign_name":"Campaign Name 1",
-      "status":"pending_contact",
-      "notes":null,
-      "tags":[
-         "Campaign Name 1",
-         "red",
-         "blue"
+  "lead": {
+    "campaign_id": 350851,
+    "master_campaign_id": "2705608",
+    "campaign_name": "Orange Paper",
+    "id": 1632500,
+    "created_at": "2021-07-30T15:54:30Z",
+    "occured_at": "2021-07-30T15:54:28Z",
+    "tags": [
+      "Form Lead",
+      "Orange Paper"
+    ],
+    "event_type": "form",
+    "contact_id": 1414924,
+    "status": "pending_contact",
+    "display_name": "Adam Smith",
+    "contact": {
+      "status": "pending_contact",
+      "id": 1414924,
+      "created_at": "2021-07-30T15:38:55Z",
+      "tags": [
+        "Orange Paper"
       ],
-      "contact":{
-         "id":323223,
-         "first_name":"Meghan",
-         "last_name":"Cummerata",
-         "title":"Mrs",
-         "email":"jazmyn.halvorson@mann.name",
-         "company":"Gusikowski and Sons",
-         "tags":[
-            "Campaign Name 1",
-            "red",
-            "blue"
-         ],
-         "notes":null,
-         "archived_at":null,
-         "created_at":"2017-05-30T08:55:09.000-07:00",
-         "status":"pending_contact",
-         "phone_home":"699.533.3659",
-         "phone_mobile":"699.533.3657",
-         "phone_work":"699.533.3658",
-         "address1":"555 Elm Street",
-         "address2":"Apartment 12",
-         "city":"Anytown",
-         "state":"Minnesota",
-         "postal":"55811",
-         "country":"United States"
-      },
-      "chat":{
-         "summary":"Est voluptatem porro exercitationem quia veniam.",
-         "transcript":[
-            {
-               "id":1,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Alia:",
-               "message":"In pariatur ad vel aut eum."
-            },
-            {
-               "id":2,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Visitor:",
-               "message":"Consequuntur accusantium omnis sunt tempore eveniet provident exercitationem consequatur."
-            },
-            {
-               "id":3,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Alia:",
-               "message":"Dicta et aut illo voluptatem cupiditate totam itaque nemo."
-            },
-            {
-               "id":4,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Visitor:",
-               "message":"Labore modi quis porro qui dolorem molestias aperiam et."
-            },
-            {
-               "id":5,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Alia:",
-               "message":"Tenetur aut iste et sit amet qui fugit."
-            },
-            {
-               "id":6,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Visitor:",
-               "message":"Blanditiis sunt laudantium iusto reiciendis provident enim qui aut."
-            },
-            {
-               "id":7,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Alia:",
-               "message":"Soluta eius ipsam quia rerum rerum est officia."
-            },
-            {
-               "id":8,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Visitor:",
-               "message":"Rerum dicta nihil voluptatem."
-            },
-            {
-               "id":9,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Alia:",
-               "message":"Quibusdam et est quod."
-            },
-            {
-               "id":10,
-               "timestamp":"05/30/2017 10:55:09",
-               "from":"Visitor:",
-               "message":"Dolores ea harum facere officia voluptatem."
+      "first_name": "Adam",
+      "last_name": "Smith",
+      "email": "a.smith@tattoine.net",
+      "company": "",
+      "phone_mobile": "",
+      "phone_work": "612-867-5309",
+      "address1": "Ocean drive",
+      "address2": "",
+      "city": "",
+      "state": "",
+      "postal": "",
+      "country": ""
+    },
+            "chat": {
+                "summary": "Ronita \nNo\nOn campus \nDo your college offer medical billing?\nYes. \nRonita Wade and my number 8627049412; email: ronitawade7075@hotmail.com\nNewark, NJ\nThe Belleville location would be better for me. \nIt would be better in September. \nYes\nOk\nThank You, Jennifer but they don’t have medical billing. ",
+                "transcript": [
+                    {
+                        "id": 1,
+                        "timestamp": "5/10/2021 2:05:06 PM",
+                        "from": "Jennifer:",
+                        "message": "Hello, thanks for contacting Eastern International College. My name is Jennifer, may I have your name?"
+                    },
+                    {
+                        "id": 2,
+                        "timestamp": "5/10/2021 2:05:23 PM",
+                        "from": "Visitor:",
+                        "message": "Ronita"
+                    },
+                    {
+                        "id": 3,
+                        "timestamp": "5/10/2021 2:05:40 PM",
+                        "from": "Jennifer:",
+                        "message": "Hi, Ronita.  Have you contacted Eastern International College before?"
+                    },
+                    {
+                        "id": 4,
+                        "timestamp": "5/10/2021 2:05:46 PM",
+                        "from": "Visitor:",
+                        "message": "No"
+                    },
+                    {
+                        "id": 5,
+                        "timestamp": "5/10/2021 2:05:52 PM",
+                        "from": "Jennifer:",
+                        "message": "Good to have you with us.  Are you interested in online or on-campus program?"
+                    },
+                    {
+                        "id": 6,
+                        "timestamp": "5/10/2021 2:06:05 PM",
+                        "from": "Visitor:",
+                        "message": "On campus"
+                    },
+                    {
+                        "id": 7,
+                        "timestamp": "5/10/2021 2:06:07 PM",
+                        "from": "Jennifer:",
+                        "message": "Okay.  Which of our programs are you interested in?"
+                    },
+                    {
+                        "id": 8,
+                        "timestamp": "5/10/2021 2:06:22 PM",
+                        "from": "Visitor:",
+                        "message": "Do your college offer medical billing?"
+                    },
+                    {
+                        "id": 9,
+                        "timestamp": "5/10/2021 2:06:57 PM",
+                        "from": "Jennifer:",
+                        "message": "Alright.   One of our Admissions Representatives can discuss this in greater detail. May I have your first and last name along with your phone number and email to better assist you?"
+                    },
+                    {
+                        "id": 10,
+                        "timestamp": "5/10/2021 2:07:31 PM",
+                        "from": "Visitor:",
+                        "message": "Yes."
+                    },
+                    {
+                        "id": 11,
+                        "timestamp": "5/10/2021 2:08:36 PM",
+                        "from": "Visitor:",
+                        "message": "Ronita Wade and my number 862-704-9412; email: ronitawade7075@hotmail.com"
+                    },
+                    {
+                        "id": 12,
+                        "timestamp": "5/10/2021 2:08:42 PM",
+                        "from": "Jennifer:",
+                        "message": "Thank you for the contact information, Ronita.  Which city and state are you located in?"
+                    },
+                    {
+                        "id": 13,
+                        "timestamp": "5/10/2021 2:09:09 PM",
+                        "from": "Visitor:",
+                        "message": "Newark, NJ"
+                    },
+                    {
+                        "id": 14,
+                        "timestamp": "5/10/2021 2:09:35 PM",
+                        "from": "Jennifer:",
+                        "message": "Great.  Which of our locations are you interested in attending Jersey City or Belleville location?"
+                    },
+                    {
+                        "id": 15,
+                        "timestamp": "5/10/2021 2:10:08 PM",
+                        "from": "Visitor:",
+                        "message": "The Belleville location would be better for me."
+                    },
+                    {
+                        "id": 16,
+                        "timestamp": "5/10/2021 2:10:17 PM",
+                        "from": "Jennifer:",
+                        "message": "Okay.  How soon are you interested in enrolling?"
+                    },
+                    {
+                        "id": 17,
+                        "timestamp": "5/10/2021 2:11:06 PM",
+                        "from": "Visitor:",
+                        "message": "It would be better in September."
+                    },
+                    {
+                        "id": 18,
+                        "timestamp": "5/10/2021 2:11:20 PM",
+                        "from": "Jennifer:",
+                        "message": "Sounds good!  For further assistance, I can connect you directly to our office by phone using our Call Connect service. Would you like to speak with someone now?"
+                    },
+                    {
+                        "id": 19,
+                        "timestamp": "5/10/2021 2:11:53 PM",
+                        "from": "Visitor:",
+                        "message": "Yes"
+                    },
+                    {
+                        "id": 20,
+                        "timestamp": "5/10/2021 2:12:23 PM",
+                        "from": "Jennifer:",
+                        "message": "Perfect.  One moment please, I'm attempting to connect you now (please be aware that, for routing purposes, your caller ID will show a 925 area code). Please pick up and wait to be connected. I will be here if you need anything."
+                    },
+                    {
+                        "id": 21,
+                        "timestamp": "5/10/2021 2:12:48 PM",
+                        "from": "Visitor:",
+                        "message": "Ok"
+                    },
+                    {
+                        "id": 22,
+                        "timestamp": "5/10/2021 2:13:29 PM",
+                        "from": "Jennifer:",
+                        "message": "You should now be connected. Is there anything else I can help you with?"
+                    },
+                    {
+                        "id": 23,
+                        "timestamp": "5/10/2021 2:15:43 PM",
+                        "from": "Visitor:",
+                        "message": "Thank You, Jennifer but they don’t have medical billing."
+                    },
+                    {
+                        "id": 24,
+                        "timestamp": "5/10/2021 2:16:06 PM",
+                        "from": "Jennifer:",
+                        "message": "You are welcome.  Thank you for contacting Eastern International College. Have a nice day, Ronita!"
+                    }
+                ]
             }
-         ]
-      }
-   }
-}
+        }
 ```
 
 Field | Type | Description
@@ -342,60 +415,44 @@ message | String |The message body of this line of the chat transcript.
 
 ```javascript
 {
-   "lead":{
-      "id":912873,
-      "contact_id":8389,
-      "campaign_id":1,
-      "archived_at":null,
-      "created_at":"2017-05-30T08:54:49.000-07:00",
-      "important_at":"2017-06-06T11:42:54.000-07:00",
-      "occured_at":"2017-05-30T08:18:49.000-07:00",
-      "read_at":"2017-06-09T09:18:53-07:00",
-      "event_type":"call",
-      "campaign_name":"Campaign Name 2",
-      "status":"pending_contact",
-      "notes":null,
-      "tags":[
-         "blue",
-         "fuschia",
-         "purple",
-         "Campaign Name 2"
-      ],
-      "contact":{
-         "id":8389,
-         "first_name":"Eliezer",
-         "last_name":"Braun",
-         "title":null,
-         "email":null,
-         "company":"",
-         "tags":[
-            "green",
-            "orange",
-            "Campaign Name 2",
-            "yellow"
-         ],
-         "notes":"Freeform notes about the contact",
-         "archived_at":null,
-         "created_at":"2017-05-30T08:54:50.000-07:00",
-         "status":"pending_contact",
-         "phone_fax":null,
-         "phone_home":null,
-         "phone_mobile":null,
-         "phone_work":"(833)174-7656 x881",
-         "address1":null,
-         "address2":null,
-         "city":"Jaimemouth",
-         "state":"Florida",
-         "postal":"37111",
-         "country":null
-      },
-      "call":{
-         "occured_at":"2017-05-30T08:18:49.000-07:00",
-         "duration":52,
-         "recording_url":"http://calltrackdata.com/webreports/audio/20140508/2089563981_nfhzbbha.mp3"
-      }
-   }
-}
+            "campaign_id": 357509,
+            "master_campaign_id": "2927264",
+            "campaign_name": "Management Service | Eastern International College",
+            "id": 136294964,
+            "created_at": "2021-05-10T16:12:08-05:00",
+            "occured_at": "2021-05-10T16:07:51-05:00",
+            "tags": [
+                "Call Lead",
+                "Management Service | Eastern International College"
+            ],
+            "event_type": "call",
+            "contact_id": 36996224,
+            "status": "pending_contact",
+            "display_name": "Bolanos, Kelly ",
+            "contact": {
+                "status": "pending_contact",
+                "id": 36996224,
+                "created_at": "2018-09-12T15:35:36-05:00",
+                "tags": [
+                    "Direct Site Traffic",
+                    "Management Service | Eastern International College",
+                    "Organic Search"
+                ],
+                "first_name": "Kelly ",
+                "last_name": "Bolanos",
+                "email": "bolanoskelly@gmail.com",
+                "phone_work": "9738611219",
+                "postal": "07011",
+                "company": "Eastern International College",
+                "city": "",
+                "state": ""
+            },
+            "call": {
+                "occured_at": "2021-05-10T16:07:51-05:00",
+                "recording_url": "https://webservice.telmetrics.com/filedownload.ashx/4fcbd064-840d-4690-935c-71be733f68a4/2179874818.mp3",
+                "duration": "03:47"
+            }
+        }
 ```
 
 Field | Type | Description
@@ -410,43 +467,43 @@ recording_url | String | The URL address to an audio recording of the call.
 ```javascript
 {
    "lead":{
-      "id":217,
-      "contact_id":217,
-      "campaign_id":1,
+      "id":21,
+      "contact_id":21,
+      "campaign_id":3,
       "archived_at":null,
       "created_at":"2017-05-30T08:56:05.000-07:00",
       "important_at":null,
       "occured_at":"2017-05-30T08:15:05.000-07:00",
       "read_at":"2017-06-06T11:32:48-07:00",
       "event_type":"form",
-      "campaign_name":"Campaign Name 1",
+      "campaign_name":"Campaign",
       "status":"none",
-      "notes":"Free form lead event notes",
+      "notes":"Free form event notes",
       "tags":[
          "bar",
          "baz",
          "foo",
-         "Campaign Name 1"
+         "Campaign"
       ],
       "contact":{
          "id":217,
          "first_name":"Harry",
-         "last_name":"VonRueden",
+         "last_name":"Brown",
          "title":"Dr.",
-         "email":"filiberto.gleason@heathcotekuhic.com",
-         "company":"Graham Group",
+         "email":"slim.gleason@heatotekuhic.com",
+         "company":"Group",
          "tags":[
             "nothing",
-            "Campaign Name 1"
+            "Campaign"
          ],
          "notes":"Some contact free form notes",
          "archived_at":null,
          "created_at":"2017-05-30T08:56:05.000-07:00",
          "status":"none",
          "phone_fax":null,
-         "phone_home":"812-344-3948",
-         "phone_mobile":"(399)385-8032",
-         "phone_work":"379-420-3202",
+         "phone_home":"812-666-3948",
+         "phone_mobile":"(699)385-8032",
+         "phone_work":"379-420-69",
          "address1":null,
          "address2":null,
          "city":null,
@@ -472,42 +529,61 @@ recording_url | String | The URL address to an audio recording of the call.
 
 ```javascript
 {
-   "lead":{
-      "id":104,
-      "contact_id":104,
-      "campaign_id":1,
-      "archived_at":null,
-      "created_at":"2017-06-12T14:50:44.000-07:00",
-      "important_at":null,
-      "occured_at":"2017-06-12T14:07:44.000-07:00",
-      "read_at":null,
-      "event_type":"form",
-      "campaign_name":"Campaign Name 2",
-      "status":"pending_contact",
-      "notes":null,
-      "tags":[
-         "Campaign Name 2"
+  "lead": {
+    "campaign_id": 350851,
+    "master_campaign_id": "2705608",
+    "campaign_name": "Orange Paper",
+    "id": 1632500,
+    "created_at": "2021-07-30T15:54:30Z",
+    "occured_at": "2021-07-30T15:54:28Z",
+    "tags": [
+      "Form Lead",
+      "Orange Paper"
+    ],
+    "event_type": "form",
+    "contact_id": 1414924,
+    "status": "pending_contact",
+    "display_name": "Adam Smith",
+    "contact": {
+      "status": "pending_contact",
+      "id": 1414924,
+      "created_at": "2021-07-30T15:38:55Z",
+      "tags": [
+        "Orange Paper"
       ],
-      "parsed_contact_attributes":{
-         "first_name":"Elisa",
-         "last_name":"Shanahan",
-         "phone_home":null,
-         "phone_work":null,
-         "phone_mobile":null,
-         "email":"soledad_ziemann@christiansenswift.net",
-         "company":null,
-         "title":null
-      },
-      "form":{
-         "sub_type":"FormEmail",
-         "full_message":"Subject:\nVoluptatibus ab aliquam dolorem assumenda consequatur veniam id.\n\nMessage:\nImpedit aut error. Eos sed porro. Vel dolorem in excepturi sed. Sit delectus itaque nostrum qui quo alias recusandae. Et repudiandae molestiae. Atque sequi aut sint ut totam ea. Rerum minus animi eum.",
-         "subject":"Voluptatibus ab aliquam dolorem assumenda consequatur veniam id.",
-         "message":"Impedit aut error. Eos sed porro. Vel dolorem in excepturi sed. Sit delectus itaque nostrum qui quo alias recusandae. Et repudiandae molestiae. Atque sequi aut sint ut totam ea. Rerum minus animi eum.",
-         "extra_fields":{
-
-         }
+      "first_name": "Adam",
+      "last_name": "Smith",
+      "email": "a.smith@tattoine.net",
+      "company": "",
+      "phone_mobile": "",
+      "phone_work": "612-867-5309",
+      "address1": "Ocean drive",
+      "address2": "",
+      "city": "",
+      "state": "",
+      "postal": "",
+      "country": ""
+    },
+    "form": {
+      "sub_type": "FormEmail",
+      "full_message": "Message:\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "extra_fields": {
+        "campaign_id": "USA_2705608",
+        "campaign_name": "Orange Paper",
+        "submit_button": "SUBMIT",
+        "name": "Adam Smith",
+        "phone": "6128675309",
+        "email": "Adam@example.com",
+        "address": "",
+        "address1": "",
+        "postal": "",
+        "country": "",
+        "company": "",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       }
-   }
+    }
+  }
 }
 ```
 
