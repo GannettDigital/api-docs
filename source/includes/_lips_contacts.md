@@ -9,7 +9,7 @@
 | GET `index` | /contacts? |
 
 ### Usage
-Use GET to retrieve advertisers that match the query params.
+Use GET to retrieve contacts that match the query params.
 
 ### Parameters
 When using the GET index method, the results will be filtered using these parameters:
@@ -22,11 +22,11 @@ When using the GET index method, the results will be filtered using these parame
 </internal>
 
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
-|`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
+|`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
 <internal>
-#### If you use the event_params parameter, the response would contain also recording url and duration values
+#### If the event_params parameter is present, the response will also contain recording_url and duration.
 </internal>
 ### Examples:
 
