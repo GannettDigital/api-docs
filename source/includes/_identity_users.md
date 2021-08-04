@@ -4,6 +4,7 @@
 
 | Method | URI Format |
 |---|---|
+| GET | /v3/identities/users?
 | GET | /v3/identities/users/[id]
 | POST | /v3/identities/users
 | PUT | /v3/identities/users/[id]
@@ -11,7 +12,74 @@
 
 ### Resource Detail
 
-#### GET User
+#### Parameters
+
+When using the GET index method, the results will be filtered using these parameters:
+
+| Parameter | Required | Description |
+|---|---|---|
+|`first_name`|No|Restrict results to one or more specific user with the given first name|
+|`last_name`|No|Restrict results to one or more specific user with the given last name|
+|`email`|No|Restrict results to one or more specific user with the given email|
+|`page_size`|No|Restrict number of keywords in result <br><b>Default value: 100</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
+#### GET User(index)
+
+Get an existing user.
+
+|Field|Type|Description|
+|---|---|---|
+|id|integer|id value of the user|
+|email|string|The unique email of user|
+|first_name|string|The first name of user|
+|last_name|string|The last name of user|
+|bu_id|integer|Business user id|
+|platform_id|integer|The platform id for the user|
+|cc_id|integer|The legacy client center id value of the user|
+|cc_role_id|integer|The legacy client center cc_role_id value of the user|
+|cc_type|string|The legacy client center type value of the user|
+|locale|string|Locale of the country the user is based in|
+|profile_data|JSON|Meta data of the user|
+
+example request: 
+
+```
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/users?first_name=Slim&last_name=Sha&email=scas \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY'
+```
+
+example success response (HTTP status 2xx):
+
+```
+{
+    "users": [
+        {
+            "id": 8,
+            "email": "sсasdsad@gmail.com",
+            "first_name": "Slims",
+            "last_name": "Shady",
+            "bu_id": 1,
+            "platform_id": 1,
+            "cc_id": 1,
+            "cc_role_id": 1,
+            "cc_type": "type",
+            "locale": "EN",
+            "profile_data": {
+                "test": "test",
+                "test2": "test"
+            }
+        }
+    ],
+    "page": 1,
+    "total_pages": 1,
+    "per_page": 100
+}
+```
+
+#### GET User(show)
 
 Get an existing user.
 
