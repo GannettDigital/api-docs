@@ -1,4 +1,4 @@
-### ETL Lead Attribution Report**
+### ETL Lead Attribution Report
 <a name="Lead Attribution report"></a>
 
 ### Resource Overview;
@@ -48,7 +48,72 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 ```
 
 ### Response Data Details;
-> The format of the resulting csv file is:
+> The format of the resulting csv file is
+
+Field | Type  | Description
+--------- | -------- |--------
+
+|master_campaign_id |String|Unique Identifier for Campaign|
+|campaign_name | String | The name of the campaign that this contact interaction is attributed to|
+|type | String|The type of the Contact/Contactinteraction. Valid values are Contact,CVT or Touchpoint|
+|sub_type|String|The type of the Contact/Contactinteraction. See below for options|
+|id_web_publisher_campaign|String |The unique Identifier for web publisher Campaign that attributed to this contact interaction|
+|influencing_campaign_id|String| The unique Identifier for Campaign that influenced the contact interaction|
+|influencing_id_web_publisher_campaign|String | The unique Identifier for web publisher Campaign that influenced the contact interaction|
+|page_url| String| The URL that the Contact/Contactinteraction was on when the contact event was generated|
+|referrer_source | String |The traffic source that generated the Contact/Contactinteraction. See below for options|
+|referrer_type | Int | The type of source the Contact/Contactinteraction came from.See below for options|
+|referrer_url | String| The URL that the Contact/Contactinteraction came from|
+|first_name| String | no | first name of the contact|
+|last_name| String | no | last name of the contact|
+|phone_work|yes|string|Normalized phone number of the lead|
+|address1| String | no | address of the contact|
+|city| String | no | city of the contact|
+|state| String | no | state of the contact|
+|postal| String | no | zip code of the contact|
+|email| String | no | email of the contact|
+|occurrence_time| Datetime | The date and time which this contact interaction occurred|
+|chat_transcript|String|Transcript of the chat|	
+|call_duration|yes|number|The duration of the call in seconds|
+|call_recording_url|yes|string|The URL address to an audio recording of the call|
+|phone_work|yes|string|Normalized phone number of the lead|
+
+**Event Sub Type**
+Describes the type of event
+| Field Name | 
+|---| 
+|Impression |
+|Call |
+|Chat |
+|Email |
+|Post |
+|Visit |
+|Cvt |
+|ChatInitiated |
+|Consent |
+|Facebook |
+|Unavailable |
+
+
+**Referrer Source**
+Describes the traffic source of  the visitor.
+| Field Name | Description |
+|---|---|
+|Organic|Visitor's came to the site organically|
+|Paid|Visitor's came to the site through a LOCALiQ campaign link|
+|NonRLPaid|Visitor's came to the site through a paid link but is not LOCALiQ|
+|Unavailable|Cannot be determined|
+
+**Referrer Type**
+Describes the type of domain the visitor came from.
+| Field Name |Description |
+|---|---| 
+|Search|Google.com, lycos.com etc.|
+|Social|pinterest.com, plus.url.google etc.|
+|Directory|whitepages.com, superpages.com, birkenheadpages.co.uk etc.|
+|Other|allstarrents.com, maac.com etc.|
+|Direct|Visitor typed the URL|
+|unavailable|Cannot be determined|
 
 ```
 master_campaign_id,campaign_name,sub_type,type,id_web_publisher_campaign,influencing_campaign_id,influencing_id_web_publisher_campaign,page_url,referrer_name,referrer_source,referrer_type,referrer_url,first_name,last_name,phone_work,address1,city,state,postal,email,occurrence_time,chat_transcript,call_duration,call_recording_url
