@@ -275,11 +275,11 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
 ```
 ###### Retrieve data for a specific range of dates
 ```
-curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?start_date=2016-12-01&end_date=2016-12-31&type=channel"
+curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?start_date=2016-12-01&end_date=2016-12-31&type=channel"
 ```
 ###### Retrieve data for a specific campaign starting on a certain date
 ```
-curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=channel"
+curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=channel"
 ```
 
 #### Response Description
@@ -298,70 +298,44 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
             {
                 "start_date": "2020-03-01",
                 "search": {
-                    "impressions": 1205,
-                    "clicks": 13,
-                    "walk_ins": 0,
-                    "spend": 25.0,
-                    "calls": 5,
-                    "chats": 5,
-                    "emails": 5,
-                    "web_events": 7,
-                    "leads": 22
+                    "impressions": 351,
+                    "clicks": 10,
+                    "spend": 33.9,
+                    "calls": 4,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 6,
+                    "leads": 10
                 },
                 "display": {
-                    "impressions": 2679,
-                    "clicks": 35,
-                    "walk_ins": 0,
-                    "spend": 25.0,
-                    "calls": 5,
-                    "chats": 9,
-                    "emails": 7,
-                    "web_events": 5,
-                    "leads": 26
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
                 },
-                "youtube": {
-                    "impressions": 2446,
-                    "clicks": 29,
-                    "walk_ins": 30,
-                    "spend": 50.0,
-                    "calls": 16,
-                    "chats": 13,
-                    "emails": 19,
-                    "web_events": 13,
-                    "leads": 61
+                "social": {
+                    "impressions": 3816,
+                    "clicks": 14,
+                    "spend": 26.12,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
                 },
-                "geofence": {
-                    "impressions": 2342,
-                    "clicks": 30,
-                    "walk_ins": 50,
-                    "spend": 50.0,
-                    "calls": 12,
-                    "chats": 13,
-                    "emails": 16,
-                    "web_events": 13,
-                    "leads": 54
-                },
-                "facebook": {
-                    "impressions": 2513,
-                    "clicks": 27,
-                    "walk_ins": 30,
-                    "spend": 50.0,
-                    "calls": 16,
-                    "chats": 15,
-                    "emails": 18,
-                    "web_events": 10,
-                    "leads": 59
-                },
-                "email": {
-                    "impressions": 1000,
-                    "clicks": 10,
-                    "walk_ins": 30,
-                    "spend": 25.0,
-                    "calls": 10,
-                    "chats": 10,
-                    "emails": 10,
-                    "web_events": 5,
-                    "leads": 30
+                "other": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
                 },
                 "totals": {
                     "impressions": 9923,
@@ -451,11 +425,11 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
 ```
 ###### Retrieve data for a specific range of dates
 ```
-curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?start_date=2016-12-01&end_date=2016-12-31&type=publisher"
+curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?start_date=2016-12-01&end_date=2016-12-31&type=publisher"
 ```
 ###### Retrieve data for a specific campaign starting on a certain date
 ```
-curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=publisher"
+curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=publisher"
 ```
 ```
 #### Response Description
@@ -474,70 +448,44 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
             {
                 "start_date": "2020-03-01",
                 "search": {
-                    "impressions": 1205,
-                    "clicks": 13,
-                    "walk_ins": 0,
-                    "spend": 25.0,
-                    "calls": 5,
-                    "chats": 5,
-                    "emails": 5,
-                    "web_events": 7,
-                    "leads": 22
+                    "impressions": 351,
+                    "clicks": 10,
+                    "spend": 33.9,
+                    "calls": 4,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 6,
+                    "leads": 10
                 },
                 "display": {
-                    "impressions": 2679,
-                    "clicks": 35,
-                    "walk_ins": 0,
-                    "spend": 25.0,
-                    "calls": 5,
-                    "chats": 9,
-                    "emails": 7,
-                    "web_events": 5,
-                    "leads": 26
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
                 },
-                "youtube": {
-                    "impressions": 2446,
-                    "clicks": 29,
-                    "walk_ins": 30,
-                    "spend": 50.0,
-                    "calls": 16,
-                    "chats": 13,
-                    "emails": 19,
-                    "web_events": 13,
-                    "leads": 61
+                "social": {
+                    "impressions": 3816,
+                    "clicks": 14,
+                    "spend": 26.12,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
                 },
-                "geofence": {
-                    "impressions": 2342,
-                    "clicks": 30,
-                    "walk_ins": 50,
-                    "spend": 50.0,
-                    "calls": 12,
-                    "chats": 13,
-                    "emails": 16,
-                    "web_events": 13,
-                    "leads": 54
-                },
-                "facebook": {
-                    "impressions": 2513,
-                    "clicks": 27,
-                    "walk_ins": 30,
-                    "spend": 50.0,
-                    "calls": 16,
-                    "chats": 15,
-                    "emails": 18,
-                    "web_events": 10,
-                    "leads": 59
-                },
-                "email": {
-                    "impressions": 1000,
-                    "clicks": 10,
-                    "walk_ins": 30,
-                    "spend": 25.0,
-                    "calls": 10,
-                    "chats": 10,
-                    "emails": 10,
-                    "web_events": 5,
-                    "leads": 30
+                "other": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
                 },
                 "totals": {
                     "impressions": 9923,
