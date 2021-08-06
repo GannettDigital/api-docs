@@ -1,16 +1,35 @@
-### ETL Lead Attribution Report
+### **ETL Lead Attribution Report**
+<a name="Lead Attribution report"></a>
 
-#### Report Params
+### Resource Overview&nbsp;
 
-When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
-
-| Param | Function |
+|Method|URI Format|
 |---|---|
-|`gmaid`|Global Master Advertiser ID.  Only events for a single advertiser can be returned in a single report|
-|`start_date`|Restricts the results to those occurring on or after this date.|
-|`end_date`|Restricts the results to those occurring on or before this date.|
+|GET|/client_reports/unified_display/[gmaid]?[query_params]|When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
+
+### Parameters&nbsp;
+
+|Parameter|Required|Description|
+|---|---|---|
+|`gmaid`|Yes|Global Master Advertiser ID.  Only events for a single advertiser can be returned in a single report|
+|`start_date`|Yes|Restricts the results to those occurring on or after this date.|
+|`end_date`|Yes|Restricts the results to those occurring on or before this date.|
 
 All params are required.  Once the job has completed, a call to the status endpoint will yeild a signed_url to a csv file, which can be downloaded.
+
+
+### Response Data Details&nbsp;
+
+The csv will contain
+•	One row for every contact created during the given timeslot. This is identified by events of type “contact” e.g., email, chat, ph. call or form fill.  This is the person or the lead and hence called the contact. We have PII info like name or email from these events
+•	On row each for every contact interaction by this contact. This is identified by events of type “touchpoint” e.g., visits or impressions. 
+
+
+**Note:** Currently we do not have a lookback window limit. It looks for all interactions within LIPS. LIPS contains 30 days of history, so it is not an issue. We will implement a lookback window in the next iteration so that the information is relevant.
+**Note:** Any contact interactions that do not have a contact event will not be part of this extract (e.g., A visitor who came to the site 10 times at various days/times but never make a ph call or chat or a form fill aka never became a contact)
+
+
+
 
 > Example POST request to create an ETL Keyword Report Job
 
@@ -28,6 +47,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 }'
 ```
 
+### Response Data Details&nbsp;
 > The format of the resulting csv file is:
 
 ```
