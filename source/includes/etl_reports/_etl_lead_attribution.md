@@ -48,7 +48,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 ```
 
 ### Response Data Details;
-> The format of the resulting csv file is
+> The resulting csv file will contain the following
 
 Field | Type  | Description
 --------- | -------- |--------
@@ -115,6 +115,8 @@ Describes the type of domain the visitor came from.
 |Direct|Visitor typed the URL|
 |unavailable|Cannot be determined|
 
+
+> The format of the resulting csv file is
 ```
 master_campaign_id,campaign_name,sub_type,type,id_web_publisher_campaign,influencing_campaign_id,influencing_id_web_publisher_campaign,page_url,referrer_name,referrer_source,referrer_type,referrer_url,first_name,last_name,phone_work,address1,city,state,postal,email,occurrence_time,chat_transcript,call_duration,call_recording_url
 321,,ChatEvent,Contact,,,,,,,,,Anisa,O'Keefe,,,Bedrock,,,darla.littel@kris-hoppe.org,2021-07-14T16:27:09.000Z,Velit adipisci non nihil qui eveniet.,,
