@@ -26,7 +26,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`end_date`|Restricts the results to those ocurring on or before this date.|
 |`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
-
+|`type`|Use `report`, `publisher`, `channel` to get the interval(totals), totals_by_channel or totals_by_publisher metrics breakdown|
 
 To specify a date range:
 
@@ -35,11 +35,11 @@ To specify a date range:
 #### Example Local Dev Curls:
 ###### Retrieve data for a specific range of dates
 ```
-curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?start_date=2016-12-01&end_date=2016-12-31"
+curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?start_date=2016-12-01&end_date=2016-12-31&type=report"
 ```
 ###### Retrieve data for a specific campaign starting on a certain date
 ```
-curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31"
+curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=report"
 ```
 
 #### Response Description
@@ -269,6 +269,326 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
         }
     },
     "global_master_advertiser_id": "TEST_1",
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/brand_awareness/TEST_1?end_date=2020-03-01&start_date=2020-03-01"
+    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/brand_awareness/TEST_1?end_date=2020-03-01&start_date=2020-03-01&type=report"
+}
+
+```
+###### Retrieve data for a specific range of dates
+```
+curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?start_date=2016-12-01&end_date=2016-12-31&type=channel"
+```
+###### Retrieve data for a specific campaign starting on a certain date
+```
+curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=channel"
+```
+
+#### Response Description
+```javascript
+{
+    "report_type": "brand_awareness",
+    "report_date": "2020-03-24",
+    "earliest_date_available": "2020-03-01",
+    "start_date": "2020-03-01",
+    "end_date": "2020-03-01",
+    "time_zone": "America/Los_Angeles",
+    "interval_size": "day",
+    "currency": "USD",
+    "report_data": {
+        "intervals": [
+            {
+                "start_date": "2020-03-01",
+                "search": {
+                    "impressions": 351,
+                    "clicks": 10,
+                    "spend": 33.9,
+                    "calls": 4,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 6,
+                    "leads": 10
+                },
+                "display": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
+                "social": {
+                    "impressions": 3816,
+                    "clicks": 14,
+                    "spend": 26.12,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
+                "other": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
+                "totals": {
+                    "impressions": 9923,
+                    "clicks": 124,
+                    "walk_ins": 80,
+                    "spend": 175.0,
+                    "calls": 50,
+                    "chats": 49,
+                    "emails": 57,
+                    "web_events": 43,
+                    "leads": 194
+                }
+            }
+        ],
+        "totals_by_channel": [
+            {
+                "channel": "search",
+                "impressions": 1403,
+                "clicks": 54,
+                "click_to_calls": 3,
+                "calls": 4,
+                "qualified_web_events": 1,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 2,
+                "leads": 7,
+                "spend": 684.73,
+                "ctr": 3.85,
+                "cpc": 12.68,
+                "cpl": 97.82
+            },
+            {
+                "channel": "social",
+                "impressions": 830,
+                "clicks": 5,
+                "click_to_calls": 1,
+                "calls": 1,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 0,
+                "leads": 1,
+                "spend": 25.14,
+                "ctr": 0.6,
+                "cpc": 5.03,
+                "cpl": 25.14
+            },
+            {
+                "channel": "other",
+                "impressions": 0,
+                "clicks": 0,
+                "click_to_calls": 0,
+                "calls": 0,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 0,
+                "leads": 0,
+                "spend": 0.0,
+                "ctr": 0,
+                "cpc": 0,
+                "cpl": 0
+            },
+            {
+                "channel": "display",
+                "impressions": 1411,
+                "clicks": 1,
+                "click_to_calls": 1,
+                "calls": 1,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 0,
+                "leads": 1,
+                "spend": 10.04,
+                "ctr": 0.07,
+                "cpc": 10.04,
+                "cpl": 10.04
+            }
+        ]
+    },
+    "global_master_advertiser_id": "TEST_1",
+    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/brand_awareness/TEST_1?end_date=2020-03-01&start_date=2020-03-01&type=channel"
+}
+```
+
+```
+###### Retrieve data for a specific range of dates
+```
+curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?start_date=2016-12-01&end_date=2016-12-31&type=publisher"
+```
+###### Retrieve data for a specific campaign starting on a certain date
+```
+curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=publisher"
+```
+```
+#### Response Description
+```javascript
+{
+    "report_type": "brand_awareness",
+    "report_date": "2020-03-24",
+    "earliest_date_available": "2020-03-01",
+    "start_date": "2020-03-01",
+    "end_date": "2020-03-01",
+    "time_zone": "America/Los_Angeles",
+    "interval_size": "day",
+    "currency": "USD",
+    "report_data": {
+        "intervals": [
+            {
+                "start_date": "2020-03-01",
+                "search": {
+                    "impressions": 351,
+                    "clicks": 10,
+                    "spend": 33.9,
+                    "calls": 4,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 6,
+                    "leads": 10
+                },
+                "display": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
+                "social": {
+                    "impressions": 3816,
+                    "clicks": 14,
+                    "spend": 26.12,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
+                "other": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "spend": 0.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
+                "totals": {
+                    "impressions": 9923,
+                    "clicks": 124,
+                    "walk_ins": 80,
+                    "spend": 175.0,
+                    "calls": 50,
+                    "chats": 49,
+                    "emails": 57,
+                    "web_events": 43,
+                    "leads": 194
+                }
+            }
+        ],
+        "totals_by_publisher": [
+            {
+                "publisher": "Google",
+                "publisher_id": 1,
+                "impressions": 763,
+                "clicks": 37,
+                "click_to_calls": 3,
+                "calls": 4,
+                "qualified_web_events": 1,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 1,
+                "leads": 6,
+                "spend": 555.1,
+                "ctr": 4.85,
+                "cpc": 15.0,
+                "cpl": 92.52
+            },
+            {
+                "publisher": "Facebook",
+                "publisher_id": 38,
+                "impressions": 830,
+                "clicks": 5,
+                "click_to_calls": 1,
+                "calls": 1,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 0,
+                "leads": 1,
+                "spend": 25.14,
+                "ctr": 0.6,
+                "cpc": 5.03,
+                "cpl": 25.14
+            },
+            {
+                "publisher": "Yahoo Bing Search",
+                "publisher_id": 17,
+                "impressions": 640,
+                "clicks": 17,
+                "click_to_calls": 0,
+                "calls": 0,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 1,
+                "leads": 1,
+                "spend": 129.63,
+                "ctr": 2.66,
+                "cpc": 7.63,
+                "cpl": 129.63
+            },
+            {
+                "publisher": "ReachLocal.com",
+                "publisher_id": 9,
+                "impressions": 0,
+                "clicks": 0,
+                "click_to_calls": 0,
+                "calls": 0,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 0,
+                "leads": 0,
+                "spend": 0.0,
+                "ctr": 0,
+                "cpc": 0,
+                "cpl": 0
+            },
+            {
+                "publisher": "Simpli.fi API",
+                "publisher_id": 49,
+                "impressions": 1411,
+                "clicks": 1,
+                "click_to_calls": 1,
+                "calls": 1,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 0,
+                "chats": 0,
+                "leads": 1,
+                "spend": 10.04,
+                "ctr": 0.07,
+                "cpc": 10.04,
+                "cpl": 10.04
+            }
+        ]
+    }
+    "global_master_advertiser_id": "TEST_1",
+    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/brand_awareness/TEST_1?end_date=2020-03-01&start_date=2020-03-01&type=channel"
 }
 ```
