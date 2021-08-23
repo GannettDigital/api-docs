@@ -5,9 +5,9 @@
 
 |Method|URI Format|
 |---|---|
-|GET|/client_reports/unified_display/[gmaid]?[query_params]|When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
+|GET|/client_reports/etl?[query_params]|When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
 
-### Parameters;
+### Parameters
 
 |Parameter|Required|Description|
 |---|---|---|
@@ -18,7 +18,7 @@
 All params are required.  Once the job has completed, a call to the status endpoint will yeild a signed_url to a csv file, which can be downloaded.
 
 
-### Response Data Details;
+### Response Data Details
 
 The csv will contain
 •	One row for every contact created during the given timeslot. This is identified by events of type “contact” e.g., email, chat, ph. call or form fill.  This is the person or the lead and hence called the contact. We have PII info like name or email from these events
@@ -51,7 +51,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 > The resulting csv file will contain the following
 
 Field | Type  | Description
---------- | -------- |--------
+--------- |-------- |--------
 
 |master_campaign_id |String|Unique Identifier for Campaign|
 |campaign_name | String | The name of the campaign that this contact interaction is attributed to|
