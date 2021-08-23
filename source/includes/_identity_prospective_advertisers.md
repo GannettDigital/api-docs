@@ -4,12 +4,81 @@
 
 | Method | URI Format |
 |---|---|
+| GET | /v3/identities/prospective_advertisers
 | GET | /v3/identities/prospective_advertisers/[id]
 | POST | /v3/identities/prospective_advertisers
 | PUT | /v3/identities/prospective_advertisers/[id]
 | DELETE | /v3/identities/prospective_advertisers/[id]
 
 ### Resource Detail
+
+#### GET User(index)
+
+When using the GET index method, the results will be filtered using these parameters:
+
+| Parameter | Required | Description |
+|---|---|---|
+|`page_size`|No|Restrict number of prospective advertisers in the result <br><b>Default value: 100</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
+Get an existing prospective advertiser.
+
+|Field|Type|Description|
+|---|---|---|
+|prospective_advertiser_id|integer|The maid of prospective advertiser|
+|gmaid|integer|The global master_advertiser_id of the prospective advertiser|
+|business_category_id|integer|The business category id of the advertiser|
+|business_sub_category_id|integer|The business sub category id of the advertiser|
+|name|string|The name of the prospective advertiser|
+|address1|string|The first address of the prospective advertiser|
+|address2|string|The second address of the prospective advertiser|
+|city|string|The city of the advertiser|
+|province|string|The province of the advertiser|
+|postal_code|integer|the postal code of the advertiser|
+|country|string|The country of the advertiser|
+|phone_number|string|The phone number of the advertiser|
+|phone_type|string|The phone type of the advertiser|
+|phone_country_code|string|The phone country code of the advertiser|
+|fax|integer|fax address of the prospective advertiser|
+|email|string|email address of the prospective advertiser|
+|url|string|url address of the prospective advertiser|
+|user_id|integer|User id, that the prospective advertiser is associated with|
+
+example request: 
+
+```
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY'
+```
+
+example success response (HTTP status 2xx):
+
+```
+{
+    "prospective_advertiser_id": 8,
+    "gmaid: "USA_132",
+    "business_category_id": 14,
+    "business_sub_category_id": 142,
+    "name": "Company",
+    "address1": "Old str 10",
+    "address2": "Old str 11",
+    "city": "Chicago",
+    "province": "Chicago",
+    "postal_code": 2312,
+    "country": "USA",
+    "phone_number": "+123456",
+    "phone_type": "type",
+    "phone_country_code": "+123",
+    "fax": "123456",
+    "email": "email@gmail.com",
+    "url": "http://www.prospect-advertisers.com",
+    "user_id": 12
+}
+```
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
 #### GET User(show)
 
@@ -18,11 +87,10 @@ Get an existing prospective advertiser.
 |Field|Type|Description|
 |---|---|---|
 |prospective_advertiser_id|integer|The maid of prospective advertiser|
-|master_advertiser_id|integer|The maid of prospective advertiser|
-|platform_id|integer|The platform of prospective advertiser|
-|business_category_id|integer|The maid of prospective advertiser|
-|business_sub_category_id|integer|The maid of prospective advertiser|
-|name|string|The name of prospective advertiser|
+|gmaid|integer|The global master_advertiser_id of the prospective advertiser|
+|business_category_id|integer|The business category id of the advertiser|
+|business_sub_category_id|integer|The business sub category id of the advertiser|
+|name|string|The name of the prospective advertiser|
 |address1|string|The first address of the prospective advertiser|
 |address2|string|The second address of the prospective advertiser|
 |city|string|The city of the advertiser|
@@ -51,8 +119,7 @@ example success response (HTTP status 2xx):
 ```
 {
     "prospective_advertiser_id": 8,
-    "master_advertiser_id": 152,
-    "platform_id": 2,
+    "gmaid: "USA_132",
     "business_category_id": 14,
     "business_sub_category_id": 142,
     "name": "Company",
@@ -80,23 +147,22 @@ Create a prospective advertiser.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|master_advertiser_id|integer|Yes|The maid of prospective advertiser|
-|platform_id|integer|Yes|The platform of prospective advertiser|
-|business_category_id|integer|Yes|The maid of prospective advertiser|
-|business_sub_category_id|integer|Yes|The maid of prospective advertiser|
-|name|string|Yes|The name of prospective advertiser|
+|gmaid|integer|Yes|The global master_advertiser_id of the prospective advertiser|
+|business_category_id|integer|No|The business category id of the advertiser|
+|business_sub_category_id|integer|No|The business sub category id of the advertiser|
+|name|string|No|The name of the prospective advertiser|
 |address1|string|No|The first address of the prospective advertiser|
 |address2|string|No|The second address of the prospective advertiser|
 |city|string|No|The city of the advertiser|
 |province|string|No|The province of the advertiser|
-|postal_code|integer|Yes|the postal code of the advertiser|
+|postal_code|integer|No|the postal code of the advertiser|
 |country|string|No|The country of the advertiser|
 |phone_number|string|No|The phone number of the advertiser|
 |phone_type|string|No|The phone type of the advertiser|
 |phone_country_code|string|No|The phone country code of the advertiser|
 |fax|integer|No|fax address of the prospective advertiser|
-|email|string|No|email address of the prospective advertiser|
-|url|string|No|url address of the prospective advertiser|
+|email|string|Yes|email address of the prospective advertiser|
+|url|string|Yes|url address of the prospective advertiser|
 |user_ids|Array|Yes|An array of user ids, that the prospective advertiser is associated with|
 
 example request: 
@@ -108,8 +174,7 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospectiv
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '   "prospective_advertiser": {
-        "master_advertiser_id": 152,
-        "platform_id": 2,
+        "gmaid": "USA_132",
         "business_category_id": 14,
         "business_sub_category_id": 142,
         "name": "Company",
@@ -133,8 +198,7 @@ example success response (HTTP status 2xx):
 
 ```
 {
-    "master_advertiser_id": 152,
-    "platform_id": 2,
+    "gmaid": "USA_132",
     "business_category_id": 14,
     "business_sub_category_id": 142,
     "name": "Company",
@@ -162,16 +226,15 @@ Update a prospective advertiser.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|master_advertiser_id|integer|Yes|The maid of prospective advertiser|
-|platform_id|integer|Yes|The platform of prospective advertiser|
-|business_category_id|integer|Yes|The maid of prospective advertiser|
-|business_sub_category_id|integer|Yes|The maid of prospective advertiser|
-|name|string|Yes|The name of prospective advertiser|
+|gmaid|integer|No|The global master_advertiser_id of the prospective advertiser|
+|business_category_id|integer|No|The business category id of the advertiser|
+|business_sub_category_id|integer|No|The business sub category id of the advertiser|
+|name|string|No|The name of the prospective advertiser|
 |address1|string|No|The first address of the prospective advertiser|
 |address2|string|No|The second address of the prospective advertiser|
 |city|string|No|The city of the advertiser|
 |province|string|No|The province of the advertiser|
-|postal_code|integer|Yes|the postal code of the advertiser|
+|postal_code|integer|No|the postal code of the advertiser|
 |country|string|No|The country of the advertiser|
 |phone_number|string|No|The phone number of the advertiser|
 |phone_type|string|No|The phone type of the advertiser|
@@ -179,7 +242,7 @@ Update a prospective advertiser.
 |fax|integer|No|fax address of the prospective advertiser|
 |email|string|No|email address of the prospective advertiser|
 |url|string|No|url address of the prospective advertiser|
-|user_ids|Array|Yes|An array of user ids, that the prospective advertiser is associated with|
+|user_ids|Array|No|An array of user ids, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -198,8 +261,7 @@ example success response (HTTP status 2xx):
 
 ```
 {
-    "master_advertiser_id": 152,
-    "platform_id": 2,
+    "gmaid": "USA_132",
     "business_category_id": 14,
     "business_sub_category_id": 142,
     "name": "Other Company",
