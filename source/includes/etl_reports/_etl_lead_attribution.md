@@ -5,7 +5,7 @@
 
 |Method|URI Format|
 |---|---|
-|GET|/client_reports/etl?[query_params]|When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
+|POST|/client_reports/etl?[query_params]|When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
 
 ### Parameters
 
@@ -15,7 +15,13 @@
 |`start_date`|Yes|Restricts the results to those occurring on or after this date.|
 |`end_date`|Yes|Restricts the results to those occurring on or before this date.|
 
-All params are required.  Once the job has completed, a call to the status endpoint will yeild a signed_url to a csv file, which can be downloaded.
+All params are required.  The response will include a job id
+
+Once the job has completed, a call to the status endpoint will yeild a signed_url to a csv file, which can be downloaded.
+
+|Method|URI Format|
+|---|---|
+|GET|/client_reports//etl/[job id]|When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
 
 
 ### Response Data Details
