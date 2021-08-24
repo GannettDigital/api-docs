@@ -9,9 +9,9 @@ Also referred to as "contact interactions", *events* are activities associated w
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /fpd_events? |
+| GET `index` | /fpd_events |
 | GET `index` | /fpd_events/#id |
-| GET `index` | /contacts/#id/events? |
+| GET `index` | /contacts/#id/events |
 | POST `create` | /fpd_events |
 
 ## Get Events for specific event type
@@ -169,7 +169,9 @@ When using this GET index method, the results will be filtered using these param
 |`total_pages`| Integer | total number of pages|
 
 ##### Event Object:
+
 | Field Name | Datatype | Description |
+|---|---|---|
 |`id`| integer | id of the event|
 |`event_type`| string | type of the event |
 |`visitor_id`| string | capture visitor_id |
@@ -191,12 +193,16 @@ When using this GET index method, the results will be filtered using these param
 |`page_url`| string | Page URL for the event |
 
 If `event_type` is FpdEvent, the following fields are also returned:
+
 | Field Name | Datatype | Description |
+|---|---|---|
 |`call_recording_url`| String | url used to match the contact|
 |`phone_number`| String | normalized phone number used to match the contact|
 
 If `event_type` is CallEvent, the following fields are also returned:
+
 | Field Name | Datatype | Description |
+|---|---|---|
 |`call_recording_url`| String | url used to match the contact|
 |`phone_number`| String | normalized phone number used to match the contact|
 |`call_duration` | String | duration of call in seconds |
@@ -206,11 +212,15 @@ If `event_type` is CallEvent, the following fields are also returned:
 |`target_number` | String | Phone Number the call was redirected to|
 
 If `event_type` is ChatEvent, the following fields are also returned:
+
 | Field Name | Datatype | Description |
+|---|---|---|
 |`transcript`| String | Transcript of the chat|
 
 If `event_type` is FormEvent, the following fields are also returned:
+
 | Field Name | Datatype | Description |
+|---|---|---|
 |`referring_url` |String| URL of the referring page|
 |`cvt_type` |String| CVT Type|
 |`entry_type` |String| CVT Entry Type |
@@ -219,9 +229,6 @@ If `event_type` is FormEvent, the following fields are also returned:
 |`extra_fields` |String| JSON of "extra fields" present on the form |
 
 #### Example Curl
-
-curl -L -X GET 'localhost:3000/contacts/2626/events?page=2&per_page=1' \
--H 'Authorization: token engineer'
 
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/events?page=1&per_page=2' \
