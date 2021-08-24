@@ -1,7 +1,7 @@
 ### ETL Lead Attribution Report
 <a name="Lead Attribution report"></a>
 
-### Resource Overview;
+### Resource Overview
 
 |Method|URI Format|
 |---|---|
@@ -53,12 +53,11 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 }'
 ```
 
-### Response Data Details;
+### Response Data Details
 > The resulting csv file will contain the following
 
-Field | Type  | Description
---------- |-------- |--------
-
+Field|Type|Description
+|---------|--------|--------|
 |master_campaign_id |String|Unique Identifier for Campaign|
 |campaign_name | String | The name of the campaign that this contact interaction is attributed to|
 |type | String|The type of the Contact/Contactinteraction. Valid values are Contact,CVT or Touchpoint|
@@ -85,25 +84,12 @@ Field | Type  | Description
 |phone_work|yes|string|Normalized phone number of the lead|
 
 **Event Sub Type**
-Describes the type of event
-| Field Name | 
-|---| 
-|Impression |
-|Call |
-|Chat |
-|Email |
-|Post |
-|Visit |
-|Cvt |
-|ChatInitiated |
-|Consent |
-|Facebook |
-|Unavailable |
+Describes the type of event. They are Impression, Call, Chat, Email, Post, Visit, cvt, ChatInitiated, Consent, Facebook and Unavailable.
 
 
 **Referrer Source**
 Describes the traffic source of  the visitor.
-| Field Name | Description |
+|Field Name|Description|
 |---|---|
 |Organic|Visitor's came to the site organically|
 |Paid|Visitor's came to the site through a LOCALiQ campaign link|
@@ -112,7 +98,7 @@ Describes the traffic source of  the visitor.
 
 **Referrer Type**
 Describes the type of domain the visitor came from.
-| Field Name |Description |
+|Field Name|Description |
 |---|---| 
 |Search|Google.com, lycos.com etc.|
 |Social|pinterest.com, plus.url.google etc.|
