@@ -316,7 +316,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/eve
 
 ### Usage
 
-Call this endpoint to create an FPD event.  An attempt will be made to match the event to an existing contact using the provided parameters.  If no contact is found, one may be created, unless the value of the `skip_contact` parameter is "true".
+Call this endpoint to create an FPD event.  An attempt will be made to match the event to an existing contact using the provided parameters.  If no contact is found, one may be created, unless the value of the `skip_contact` parameter is "true".  At least one of these params must be provided for matching purposes:  `call_recording_url`, `email`, or `phone_number`.
 
 ### Parameters
 When using the POST FPD Event create method, the following paramters are allowed:
