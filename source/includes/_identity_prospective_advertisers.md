@@ -9,6 +9,9 @@
 | POST | /v3/identities/prospective_advertisers
 | PUT | /v3/identities/prospective_advertisers/[id]
 | DELETE | /v3/identities/prospective_advertisers/[id]
+| POST | /v3/identities/prospective_advertisers/[id]/users
+| PUT | /v3/identities/prospective_advertisers/[id]/users/[id]
+| DELETE | /v3/identities/prospective_advertisers/[id]/users/[id]
 
 ### Resource Detail
 
@@ -147,7 +150,7 @@ Create a prospective advertiser.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|gmaid|integer|Yes|The global master_advertiser_id of the prospective advertiser|
+|gmaid|integer|No|The global master_advertiser_id of the prospective advertiser|
 |business_category_id|integer|No|The business category id of the advertiser|
 |business_sub_category_id|integer|No|The business sub category id of the advertiser|
 |name|string|No|The name of the prospective advertiser|
@@ -163,7 +166,7 @@ Create a prospective advertiser.
 |fax|integer|No|fax address of the prospective advertiser|
 |email|string|Yes|email address of the prospective advertiser|
 |url|string|Yes|url address of the prospective advertiser|
-|user_ids|Array|Yes|An array of user ids, that the prospective advertiser is associated with|
+|user_id|Integer|Yes|An id of a user, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -190,7 +193,7 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospectiv
         "fax": "123456",
         "email": "email@gmail.com",
         "url": "http://www.prospect-advertisers.com",
-        "user_ids": [1, 124, 41242]
+        "user_id": 1
     }'
 ```
 
@@ -285,7 +288,76 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 #### DELETE Prospective Advertiser
 
-Delete an existing user.
+Delete a prospective advertiser.
+
+example request: 
+
+```
+curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY'
+```
+
+Upon a successful request (HTTP status 2xx), the response body will be empty.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+
+#### POST Prospective Advertiser user
+
+Create a prospective advertiser user.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|user_id|Integer|Yes|An id of an user, that the prospective advertiser is associated with|
+
+example request: 
+
+```
+curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY' \
+-H 'Content-Type: application/json' \
+--data-raw '   "prospective_advertiser_user": {
+        "user_id": 1
+    }'
+```
+Upon a successful request (HTTP status 2xx), the response body will be empty.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+#### PUT Prospective Advertiser user
+
+UPDATE a prospective advertiser user.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|user_id|Integer|YES|An id of an user, that the prospective advertiser is associated with|
+|prospective_advertiser_id|Integer|YES|An id of an prospective advertiser, that the user is associated with|
+|is_primary|Bool|No|Field which shows, if the user is a primary one|
+
+example request: 
+
+```
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY' \
+-H 'Content-Type: application/json' \
+--data-raw '   "prospective_advertiser_user": {
+        "user_id": 1
+    }'
+```
+Upon a successful request (HTTP status 2xx), the response body will be empty.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+
+#### DELETE Prospective Advertiser User
+
+Delete an existing Prospective Advertiser user.
 
 example request: 
 
