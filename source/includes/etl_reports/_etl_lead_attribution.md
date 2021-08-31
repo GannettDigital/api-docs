@@ -89,6 +89,7 @@ Describes the type of event. They are Impression, Call, Chat, Email, Post, Visit
 
 **Referrer Source**
 Describes the traffic source of  the visitor.
+
 |Field Name|Description|
 |---|---|
 |Organic|Visitor's came to the site organically|
@@ -98,6 +99,7 @@ Describes the traffic source of  the visitor.
 
 **Referrer Type**
 Describes the type of domain the visitor came from.
+
 |Field Name|Description |
 |---|---| 
 |Search|Google.com, lycos.com etc.|
