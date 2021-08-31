@@ -65,6 +65,8 @@ includes:
   - fpd
   - capture_external_event_fpd
   - capture_external_event_chat
+  - etl_reports
+  - etl_reports/etl_lead_attribution
 
   - deprecated_apis
   - creative_ad_metrics
