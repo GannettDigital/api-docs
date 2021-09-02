@@ -327,6 +327,7 @@ When using the POST FPD Event create method, the following paramters are allowed
 |`call_recording_url`|No|Match to a contact using this call_recording url|
 |`email`|No|Match to a contact using this email address|
 |`phone_number`|No|Match to a contact using this phone number|
+|`occurrence_time`|No|Time the event occurred|
 |`skip_contact`|No|If "true", do not create a contact if no matching contact is found|
 
 ### Response Description
