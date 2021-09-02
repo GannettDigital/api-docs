@@ -45,7 +45,7 @@ Get an existing prospective advertiser.
 |fax|integer|fax address of the prospective advertiser|
 |email|string|email address of the prospective advertiser|
 |url|string|url address of the prospective advertiser|
-|user_id|integer|User id, that the prospective advertiser is associated with|
+|users|Array|Array of users, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -77,7 +77,21 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
-    "user_id": 12
+    "users": [
+        {
+            "id": 1,
+            "email": "CODsoap@gmail.com",
+            "first_name": "Slims",
+            "last_name": "Shady",
+            "bu_id": 1,
+            "platform_id": 1,
+            "cc_id": 1,
+            "cc_role_id": 1,
+            "cc_type": "type",
+            "locale": "EN",
+            "profile_data": null
+        }
+    ]
 }
 ```
 
@@ -106,7 +120,7 @@ Get an existing prospective advertiser.
 |fax|integer|fax address of the prospective advertiser|
 |email|string|email address of the prospective advertiser|
 |url|string|url address of the prospective advertiser|
-|user_id|integer|User id, that the prospective advertiser is associated with|
+|users|Array|Array of users, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -138,7 +152,21 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
-    "user_id": 12
+    "users": [
+        {
+            "id": 1,
+            "email": "CODsoap@gmail.com",
+            "first_name": "Slims",
+            "last_name": "Shady",
+            "bu_id": 1,
+            "platform_id": 1,
+            "cc_id": 1,
+            "cc_role_id": 1,
+            "cc_type": "type",
+            "locale": "EN",
+            "profile_data": null
+        }
+    ]
 }
 ```
 
@@ -217,7 +245,21 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
-    "user_ids": [1, 124, 41242]
+    "users": [
+        {
+            "id": 1,
+            "email": "CODsoap@gmail.com",
+            "first_name": "Slims",
+            "last_name": "Shady",
+            "bu_id": 1,
+            "platform_id": 1,
+            "cc_id": 1,
+            "cc_role_id": 1,
+            "cc_type": "type",
+            "locale": "EN",
+            "profile_data": null
+        }
+    ]
 }
 ```
 
@@ -245,7 +287,7 @@ Update a prospective advertiser.
 |fax|integer|No|fax address of the prospective advertiser|
 |email|string|No|email address of the prospective advertiser|
 |url|string|No|url address of the prospective advertiser|
-|user_ids|Array|No|An array of user ids, that the prospective advertiser is associated with|
+|user_id|Integer|Yes|An id of a user, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -280,7 +322,21 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
-    "user_id": 12
+    "users": [
+        {
+            "id": 1,
+            "email": "CODsoap@gmail.com",
+            "first_name": "Slims",
+            "last_name": "Shady",
+            "bu_id": 1,
+            "platform_id": 1,
+            "cc_id": 1,
+            "cc_role_id": 1,
+            "cc_type": "type",
+            "locale": "EN",
+            "profile_data": null
+        }
+    ]
 }
 ```
 
