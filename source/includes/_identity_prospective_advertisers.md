@@ -428,7 +428,7 @@ Delete an existing Prospective Advertiser user.
 example request: 
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1' \
+curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'

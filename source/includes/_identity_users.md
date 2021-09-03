@@ -41,7 +41,7 @@ Get an existing user.
 |cc_type|string|The legacy client center type value of the user|
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
-|prospective_advertiser|Array|Array of prospective advertisers, that the user is associated with|
+|prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
 
 example request: 
 
@@ -122,7 +122,7 @@ Get an existing user.
 |cc_type|string|The legacy client center type value of the user|
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
-|prospective_advertiser|Array|Array of prospective advertisers, that the user is associated with|
+|prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
 
 example request: 
 
