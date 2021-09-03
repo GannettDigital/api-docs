@@ -21,7 +21,7 @@ When using the GET index method, the results will be filtered using these parame
 |`first_name`|No|Restrict results to one or more specific user with the given first name|
 |`last_name`|No|Restrict results to one or more specific user with the given last name|
 |`email`|No|Restrict results to one or more specific user with the given email|
-|`page_size`|No|Restrict number of keywords in result <br><b>Default value: 100</b> |
+|`page_size`|No|Restrict number of users in result <br><b>Default value: 100</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
 #### GET User(index)
@@ -41,6 +41,7 @@ Get an existing user.
 |cc_type|string|The legacy client center type value of the user|
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
+|prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
 
 example request: 
 
@@ -70,7 +71,32 @@ example success response (HTTP status 2xx):
             "profile_data": {
                 "test": "test",
                 "test2": "test"
-            }
+            },
+            "prospective_advertisers": [
+                {
+                    "id": 1,
+                    "master_advertiser_id": null,
+                    "platform_id": null,
+                    "name": "Company",
+                    "address1": "Old str 10",
+                    "address2": "Old str 11",
+                    "city": "Chicago",
+                    "province": "Chicago",
+                    "postal_code": "2312",
+                    "country": "USA",
+                    "phone_number": "+123456",
+                    "phone_type": "type",
+                    "phone_country_code": "+123",
+                    "business_category_id": 14,
+                    "business_sub_category_id": 142,
+                    "fax": 123456,
+                    "email": "em@gmail.com",
+                    "url": "http://www.prospect-advertisers.com",
+                    "is_freemium": false,
+                    "created_at": "2021-08-27T13:19:29.000Z",
+                    "updated_at": "2021-08-27T13:25:55.000Z"
+                }
+            ]
         }
     ],
     "page": 1,
@@ -96,6 +122,7 @@ Get an existing user.
 |cc_type|string|The legacy client center type value of the user|
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
+|prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
 
 example request: 
 
@@ -123,7 +150,32 @@ example success response (HTTP status 2xx):
     "profile_data": {
         "test": "test",
         "test2": "test"
-    }
+    },
+    "prospective_advertisers": [
+        {
+            "id": 1,
+            "master_advertiser_id": null,
+            "platform_id": null,
+            "name": "Company",
+            "address1": "Old str 10",
+            "address2": "Old str 11",
+            "city": "Chicago",
+            "province": "Chicago",
+            "postal_code": "2312",
+            "country": "USA",
+            "phone_number": "+123456",
+            "phone_type": "type",
+            "phone_country_code": "+123",
+            "business_category_id": 14,
+            "business_sub_category_id": 142,
+            "fax": 123456,
+            "email": "em@gmail.com",
+            "url": "http://www.prospect-advertisers.com",
+            "is_freemium": false,
+            "created_at": "2021-08-27T13:19:29.000Z",
+            "updated_at": "2021-08-27T13:25:55.000Z"
+        }
+    ]
 }
 ```
 
@@ -188,7 +240,8 @@ example success response (HTTP status 2xx):
     "profile_data": {
         "test": "test",
         "test2": "test"
-    }
+    },
+    "prospective_advertisers": []
 }
 ```
 
@@ -241,7 +294,32 @@ example success response (HTTP status 2xx):
     "cc_role_id": 1,
     "cc_type": "type",
     "locale": "EN",
-    "profile_data": null
+    "profile_data": null,
+    "prospective_advertisers": [
+        {
+            "id": 1,
+            "master_advertiser_id": null,
+            "platform_id": null,
+            "name": "Company",
+            "address1": "Old str 10",
+            "address2": "Old str 11",
+            "city": "Chicago",
+            "province": "Chicago",
+            "postal_code": "2312",
+            "country": "USA",
+            "phone_number": "+123456",
+            "phone_type": "type",
+            "phone_country_code": "+123",
+            "business_category_id": 14,
+            "business_sub_category_id": 142,
+            "fax": 123456,
+            "email": "em@gmail.com",
+            "url": "http://www.prospect-advertisers.com",
+            "is_freemium": false,
+            "created_at": "2021-08-27T13:19:29.000Z",
+            "updated_at": "2021-08-27T13:25:55.000Z"
+        }
+    ]
 }
 ```
 
