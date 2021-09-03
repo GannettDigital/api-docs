@@ -28,7 +28,7 @@ Get an existing prospective advertiser.
 
 |Field|Type|Description|
 |---|---|---|
-|prospective_advertiser_id|integer|The maid of prospective advertiser|
+|id|integer|The maid of prospective advertiser|
 |gmaid|integer|The global master_advertiser_id of the prospective advertiser|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
@@ -60,7 +60,7 @@ example success response (HTTP status 2xx):
 
 ```
 {
-    "prospective_advertiser_id": 8,
+    "id": 8,
     "gmaid: "USA_132",
     "business_category_id": 14,
     "business_sub_category_id": 142,
@@ -77,6 +77,8 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
+    "is_freemium": true,
+    "primary_user_id": 1,
     "users": [
         {
             "id": 1,
@@ -103,7 +105,7 @@ Get an existing prospective advertiser.
 
 |Field|Type|Description|
 |---|---|---|
-|prospective_advertiser_id|integer|The maid of prospective advertiser|
+|id|integer|The maid of prospective advertiser|
 |gmaid|integer|The global master_advertiser_id of the prospective advertiser|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
@@ -135,7 +137,7 @@ example success response (HTTP status 2xx):
 
 ```
 {
-    "prospective_advertiser_id": 8,
+    "id": 8,
     "gmaid: "USA_132",
     "business_category_id": 14,
     "business_sub_category_id": 142,
@@ -152,6 +154,8 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
+    "is_freemium": true,
+    "primary_user_id": 1,
     "users": [
         {
             "id": 1,
@@ -229,6 +233,7 @@ example success response (HTTP status 2xx):
 
 ```
 {
+    "id": 14,
     "gmaid": "USA_132",
     "business_category_id": 14,
     "business_sub_category_id": 142,
@@ -245,6 +250,8 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
+    "is_freemium": true,
+    "primary_user_id": 1,
     "users": [
         {
             "id": 1,
@@ -306,6 +313,7 @@ example success response (HTTP status 2xx):
 
 ```
 {
+    "id": 14,
     "gmaid": "USA_132",
     "business_category_id": 14,
     "business_sub_category_id": 142,
@@ -322,6 +330,8 @@ example success response (HTTP status 2xx):
     "fax": "123456",
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
+    "is_freemium": true,
+    "primary_user_id": 1,
     "users": [
         {
             "id": 1,
