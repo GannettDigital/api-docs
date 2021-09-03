@@ -407,13 +407,13 @@ UPDATE a prospective advertiser user.
 example request: 
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users' \
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '   "prospective_advertiser_user": {
-        "user_id": 1
+        "is_primary": true
     }'
 ```
 Upon a successful request (HTTP status 2xx), the response body will be empty.
