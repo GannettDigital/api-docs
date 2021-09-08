@@ -42,6 +42,7 @@ Get an existing user.
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
 |prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
+|ldap_id|string|Id of the user used to reference a directory server|
 
 example request: 
 
@@ -96,7 +97,8 @@ example success response (HTTP status 2xx):
                     "created_at": "2021-08-27T13:19:29.000Z",
                     "updated_at": "2021-08-27T13:25:55.000Z"
                 }
-            ]
+            ],
+            "ldap_id": "qwerty123"
         }
     ],
     "page": 1,
@@ -123,6 +125,7 @@ Get an existing user.
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
 |prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
+|ldap_id|string|Id of the user used to reference a directory server|
 
 example request: 
 
@@ -175,7 +178,8 @@ example success response (HTTP status 2xx):
             "created_at": "2021-08-27T13:19:29.000Z",
             "updated_at": "2021-08-27T13:25:55.000Z"
         }
-    ]
+    ],
+    "ldap_id": "qwerty123"
 }
 ```
 
@@ -197,6 +201,7 @@ Create a user.
 |cc_type|string|No|The legacy client center type value of the user|
 |locale|string|No|Locale of the country the user is based in|
 |profile_data|JSON|No|Meta data of the user|
+|ldap_id|string|No|Id of the user used to reference a directory server|
 
 example request: 
 
@@ -219,7 +224,8 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/users' \
         "profile_data": {
             "test": "test",
             "test2": "test"
-        }
+        },
+        "ldap_id": "qwerty123"
     }'
 ```
 
@@ -241,7 +247,8 @@ example success response (HTTP status 2xx):
         "test": "test",
         "test2": "test"
     },
-    "prospective_advertisers": []
+    "prospective_advertisers": [],
+    "ldap_id": "qwerty123"
 }
 ```
 
@@ -319,7 +326,8 @@ example success response (HTTP status 2xx):
             "created_at": "2021-08-27T13:19:29.000Z",
             "updated_at": "2021-08-27T13:25:55.000Z"
         }
-    ]
+    ],
+    "ldap_id": "qwerty123"
 }
 ```
 
