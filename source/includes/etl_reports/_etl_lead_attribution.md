@@ -27,14 +27,11 @@ Once the job has completed, a call to the status endpoint will yeild a signed_ur
 ### Response Data Details
 
 The csv will contain
-•	One row for every contact created during the given timeslot. This is identified by events of type “contact” e.g., email, chat, ph. call or form fill.  This is the person or the lead and hence called the contact. We have PII info like name or email from these events
-•	On row each for every contact interaction by this contact. This is identified by events of type “touchpoint” e.g., visits or impressions. 
-
+•	One row for every Contact Interaction created during the given timeslot. This is identified by type, e.g., email, chat, ph. call or form fill.  This is the person or the lead and hence called the contact. We have PII info like name or email from these events.
+•	If the Contact Interaction can be matched to a visitor, rows for each “touchpoint” will follow the interaction row.  Possible types include visits or impressions.
 
 **Note:** Currently we do not have a lookback window limit. It looks for all interactions within LIPS. LIPS contains 30 days of history, so it is not an issue. We will implement a lookback window in the next iteration so that the information is relevant.
 **Note:** Any contact interactions that do not have a contact event will not be part of this extract (e.g., A visitor who came to the site 10 times at various days/times but never make a ph call or chat or a form fill aka never became a contact)
-
-
 
 
 > Example POST request to create an ETL Keyword Report Job
@@ -58,17 +55,11 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 Field|Type|Description
 |---------|--------|--------|
-|master_campaign_id |String|Unique Identifier for Campaign|
-|campaign_name | String | The name of the campaign that this contact interaction is attributed to|
-|type | String|The type of the Contact/Contactinteraction. Valid values are Contact,CVT or Touchpoint|
+|type | String|The type of the Contactinteraction. Valid values are Contact,CVT or Touchpoint|
 |sub_type|String|The type of the Contact/Contactinteraction. See below for options|
-|id_web_publisher_campaign|String |The unique Identifier for web publisher Campaign that attributed to this contact interaction|
-|influencing_campaign_id|String| The unique Identifier for Campaign that influenced the contact interaction|
-|influencing_id_web_publisher_campaign|String | The unique Identifier for web publisher Campaign that influenced the contact interaction|
-|page_url| String| The URL that the Contact/Contactinteraction was on when the contact event was generated|
 |referrer_source | String |The traffic source that generated the Contact/Contactinteraction. See below for options|
-|referrer_type | Int | The type of source the Contact/Contactinteraction came from.See below for options|
-|referrer_url | String| The URL that the Contact/Contactinteraction came from|
+|occurrence_time| Datetime | The date and time which this contact interaction occurred|
+|channel|String | The channel that generated the interaction
 |first_name| String | no | first name of the contact|
 |last_name| String | no | last name of the contact|
 |phone_work|yes|string|Normalized phone number of the lead|
@@ -77,11 +68,21 @@ Field|Type|Description
 |state| String | no | state of the contact|
 |postal| String | no | zip code of the contact|
 |email| String | no | email of the contact|
-|occurrence_time| Datetime | The date and time which this contact interaction occurred|
-|chat_transcript|String|Transcript of the chat|	
+|master_campaign_id |String|Unique Identifier for Campaign|
+|campaign_name | String | The name of the campaign that this contact interaction is attributed to|
+|WPCID|String |The unique Identifier for web publisher Campaign that attributed to this contact interaction|
+|WPC_name|String |The name of the web publisher Campaign that attributed to this contact interaction|
+|influencing_CID|String| The unique Identifier for Campaign that influenced the contact interaction|
+|influencing_campaign_name|String| Thename of Campaign that influenced the contact interaction|
+|influencing_WPCID|String | The unique Identifier for the web publisher Campaign that influenced the contact interaction|
+|influencing_WPC_name|String | The name of the web publisher Campaign that influenced the contact interaction|
+|page_url| String| The URL that the Contact/Contactinteraction was on when the contact event was generated|
+|referrer_type | Int | The type of source the Contact/Contactinteraction came from.See below for options|
+|referrer_url | String| The URL that the Contact/Contactinteraction came from|
+|chat_transcript|String|Transcript of the chat|
 |call_duration|yes|number|The duration of the call in seconds|
 |call_recording_url|yes|string|The URL address to an audio recording of the call|
-|phone_work|yes|string|Normalized phone number of the lead|
+|extra_fields|JSON string|extra fields that may have accompanied a form post|
 
 **Event Sub Type**
 Describes the type of event. They are Impression, Call, Chat, Email, Post, Visit, cvt, ChatInitiated, Consent, Facebook and Unavailable.
@@ -101,7 +102,7 @@ Describes the traffic source of  the visitor.
 Describes the type of domain the visitor came from.
 
 |Field Name|Description |
-|---|---| 
+|---|---|
 |Search|Google.com, lycos.com etc.|
 |Social|pinterest.com, plus.url.google etc.|
 |Directory|whitepages.com, superpages.com, birkenheadpages.co.uk etc.|
@@ -112,12 +113,11 @@ Describes the type of domain the visitor came from.
 
 > The format of the resulting csv file is
 ```
-master_campaign_id,campaign_name,sub_type,type,id_web_publisher_campaign,influencing_campaign_id,influencing_id_web_publisher_campaign,page_url,referrer_name,referrer_source,referrer_type,referrer_url,first_name,last_name,phone_work,address1,city,state,postal,email,occurrence_time,chat_transcript,call_duration,call_recording_url
-321,,ChatEvent,Contact,,,,,,,,,Anisa,O'Keefe,,,Bedrock,,,darla.littel@kris-hoppe.org,2021-07-14T16:27:09.000Z,Velit adipisci non nihil qui eveniet.,,
-321,,CallEvent,Contact,,,,,,,,,Anisa,O'Keefe,,,Bedrock,,,darla.littel@kris-hoppe.org,2021-07-14T16:27:09.000Z,,19,http://calls.com/rolf.farrell
-321,,FormEvent,Contact,,,,,,,,,Anisa,O'Keefe,,,Bedrock,,,darla.littel@kris-hoppe.org,2021-07-14T16:27:09.000Z,,,
-321,,ChatEvent,Contact,,,,,,,,,Donnie,Upton,,,Bedrock,,,gonzalo@dicki.net,2021-07-14T16:27:09.000Z,Qui repellendus facilis perspiciatis voluptas assumenda.,,
-321,,CallEvent,Contact,,,,,,,,,Donnie,Upton,,,Bedrock,,,gonzalo@dicki.net,2021-07-14T16:27:09.000Z,,30,http://calls.com/maritza.purdy
-321,,FormEvent,Contact,,,,,,,,,Donnie,Upton,,,Bedrock,,,gonzalo@dicki.net,2021-07-14T16:27:09.000Z,,,
+type,sub_type,referrer_source,occurrence_time,channel,first_name,last_name,phone_work,address1,city,state,postal,email,master_campaign_id,campaign_name,WPCID,WPC_name,influencing_CID,influencing_campaign_name,influencing_WPCID,influencing_WPC_name,page_url,referrer_type,referrer_url,chat_transcript,call_duration,call_recording_url,extra_fields
+Contact,FormEvent,PAID,2021-08-04T21:21:42.000Z,search,qat1formaug04firstname,qat1formaug04lastname,,qat1formaug04address1,,Texas,55334,,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,USA_3743465,Google National,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&e=qa&scid=3743465,DIRECT,,,,,"{""does_this_work""=>""yes it does"", ""campaign_id""=>""USA_2705608"", ""campaign_name""=>""Orange Paper TEST DO NOT DELETE - ALVIN"", ""submit_button""=>""SUBMIT"", ""company___required""=>""qat1formaug04Compny"", ""address1___required""=>""qat1formaug04address1"", ""email___required""=>""qat1formaug04email"", ""first_name___required""=>""qat1formaug04firstname"", ""title___required""=>""qat1formaug04title"", ""last_name___required""=>""qat1formaug04lastname"", ""phone___required""=>""8700000032"", ""phone_work___required""=>""8700000031"", ""phone_mobile___required""=>""8700000034"", ""phone_home___required""=>""8700000033"", ""address_2""=>""qat1formaug04address2"", ""city___required""=>""Plano"", ""state""=>""Texas"", ""country""=>""USA"", ""postal___required""=>""55334"", ""message""=>""qat1formaug04Compny"", ""page_post_url""=>""http://reachcodetesting.com/index.php?dev=search""}"
+TouchPoint,Visit,PAID,2021-08-04 20:02:29 UTC,search,qat1formaug04firstname,qat1formaug04lastname,,qat1formaug04address1,,Texas,55334,,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,,,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&e=qa&scid=3743465,DIRECT,,"","","",""
+Contact,FormEvent,PAID,2021-08-04T20:04:12.000Z,search,t1eqaaug42021,"",,,,,,t1eqaaug42021@mail.com,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,USA_3743465,Google National,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&e=qa&scid=3743465,DIRECT,,,,,
+TouchPoint,Visit,PAID,2021-08-04 20:02:29 UTC,search,t1eqaaug42021,"",,,,,,t1eqaaug42021@mail.com,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,,,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&e=qa&scid=3743465,DIRECT,,"","","",""
+
 ...
 ```
