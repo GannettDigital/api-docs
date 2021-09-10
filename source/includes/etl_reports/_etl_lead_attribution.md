@@ -24,11 +24,11 @@ Once the job has completed, a call to the status endpoint will yeild a signed_ur
 |GET|/client_reports//etl/[job id]|When creating an ETL Lead Attribution Report, provide the following fields in `report_params`:
 
 
-### Response Data Details
+### CSV Details
 
 The csv will contain
-•	One row for every Contact Interaction created during the given timeslot. This is identified by type, e.g., email, chat, ph. call or form fill.  This is the person or the lead and hence called the contact.  The row is enriched with available about the contact PII e.g. First name, Last name, email, phone number, address etc.
-•	If the Contact Interaction can be matched to a visitor, rows for each “touchpoint” will follow the interaction row.  Possible types include visits or impressions.
+ - One row for every Contact Interaction created during the given timeslot. This is identified by type, e.g., email, chat, ph. call or form fill.  This is the person or the lead and hence called the contact.  The row is enriched with available about the contact PII e.g. First name, Last name, email, phone number, address etc.
+ - If the Contact Interaction can be matched to a visitor, rows for each “touchpoint” will follow the interaction row.  Possible types include visits or impressions.
 
 **Note:** Currently we do not have a lookback window limit. It looks for all interactions within LIPS. LIPS contains 30 days of history, so it is not an issue. We will implement a lookback window in the next iteration so that the information is relevant.
 **Note:** Any contact interactions that do not have a contact event will not be part of this extract (e.g., A visitor who came to the site 10 times at various days/times but never make a ph call or chat or a form fill aka never became a contact)
