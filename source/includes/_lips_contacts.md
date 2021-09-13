@@ -18,6 +18,7 @@ When using the GET index method, the results will be filtered using these parame
 |---|---|---|
 <internal>
 |`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
+|`event_params[phone_number]`|Yes|String that restricts the contacts to one or more based on phone number|
 </internal>
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
 |`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
@@ -90,7 +91,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
             "country": "US",
             "email": "mail@mail.com",
             "duration": 20,
-            "url": "url",
+            "recording_url": "url",
             "phone_numbers": [
                 {
                     "phone_type": "smart",
