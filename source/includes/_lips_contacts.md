@@ -60,6 +60,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
 |duration| Integer | no | the phone call duration of the contact|
 |url| String | no | the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|first_party_data | boolean | This contact has been flagged as being "first party data"|
 |page| Integer | no | the number of the contacts page|
 |page_size| Integer | no | the number of the size of the contacts array|
 |total_pages| Integer | no | the number of contacts array total pages|
@@ -93,7 +94,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
                     "created_at": "2021-07-16T12:43:32.000Z",
                     "updated_at": "2021-07-16T12:43:32.000Z"
                 }
-            ]
+            ],
+            "first_party_data": false
         }
     ],
     "page": 1,
