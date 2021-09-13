@@ -17,10 +17,11 @@ When using the GET index method, the results will be filtered using these parame
 | Parameter | Required | Description |
 |---|---|---|
 |`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
-|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone_number|
+|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
 |`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
 
 #### If the event_params parameter is present, the response will also contain recording_url and duration.
 
@@ -60,6 +61,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
 |duration| Integer | no | the phone call duration of the contact|
 |url| String | no | the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|first_party_data | boolean | This contact has been flagged as being "first party data"|
 |page| Integer | no | the number of the contacts page|
 |page_size| Integer | no | the number of the size of the contacts array|
 |total_pages| Integer | no | the number of contacts array total pages|
@@ -84,7 +86,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
             "country": "US",
             "email": "mail@mail.com",
             "duration": 20,
-            "url": "url",
+            "recording_url": "url",
             "phone_numbers": [
                 {
                     "phone_type": "smart",
@@ -93,7 +95,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
                     "created_at": "2021-07-16T12:43:32.000Z",
                     "updated_at": "2021-07-16T12:43:32.000Z"
                 }
-            ]
+            ],
+            "first_party_data": false
         }
     ],
     "page": 1,
