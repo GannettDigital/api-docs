@@ -16,23 +16,18 @@ When using the GET index method, the results will be filtered using these parame
 
 | Parameter | Required | Description |
 |---|---|---|
-<internal>
 |`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
 |`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
-</internal>
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
 |`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
-<internal>
 
 #### If the event_params parameter is present, the response will also contain recording_url and duration.
-</internal>
 
 ### Examples:
 
 ### GET (index)
-<internal>
 
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
