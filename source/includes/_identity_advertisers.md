@@ -293,31 +293,188 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers
 
 ```json
 {
-    "gmaid": "TEST_1",
-    "name": "John Smith's Pizza",
-    "address1": "44421 S. 132th St.",
-    "address2": "",
-    "city": "Los Angeles",
-    "state": "CA",
-    "zip": "12345",
-    "country": "USA",
-    "active_state": 2,
-    "advertiser_id": 123456,
-    "locale": "en-US"
+    {
+        "global_master_advertiser_id": "USA_105669",
+        "name": "Z - Brian Gerrard",
+        "address": {
+            "address1": "8550 Balboa Blvd. Suite 140",
+            "address2": "",
+            "city": "Northridge",
+            "province": "CA",
+            "postalCode": "91325",
+            "country": "USA"
+        },
+        "contactInfo": {
+            "phone1": {
+                "phoneNumber": "8187142804",
+                "countryCode": "1",
+                "phoneType": "Local"
+            },
+            "phone2": null,
+            "fax": "",
+            "email": "brian.gerrard@reachlocal.com",
+            "url": ""
+        },
+        "businessUser": null,
+        "hipaa_advertiser": false,
+        "active_state": 0,
+        "business": {
+            "id": 3760,
+            "name": "ReachLocal Encino",
+            "cobrand": 2488
+        },
+        "users": [
+            {
+                "email": "jim.gibson@reachlocal.com;rsm",
+                "locale": "en-US",
+                "privilege": "AGENCY_ADMIN",
+                "bu_id": 177082,
+                "business_id": 3760
+            }
+        ],
+        "service_users": [
+            {
+                "email": "chris.waters@reachlocal.com",
+                "bu_id": 394895,
+                "platform": "USA",
+                "is_primary": false,
+                "gs_function": "Facebook Analyst"
+            },
+            {
+                "email": "chris.waters@reachlocal.com",
+                "bu_id": 394895,
+                "platform": "USA",
+                "is_primary": false,
+                "gs_function": "Custom Solutions"
+            }
+        ],
+        "prospective_advertisers": [
+            {
+                "id": 17,
+                "gmaid": "USA_421",
+                "business_category_id": 14,
+                "business_sub_category_id": 142,
+                "name": "Company",
+                "address1": "Old str 10",
+                "address2": "Old str 11",
+                "city": "Chicago",
+                "province": "Chicago",
+                "postal_code": "2312",
+                "country": "USA",
+                "phone_number": "+123456",
+                "phone_type": "type",
+                "phone_country_code": "+123",
+                "fax": 123456,
+                "email": "ssddsdddsddsdddda@gmail.com",
+                "url": "http://www.prospect-advertisers.com",
+                "is_freemium": true,
+                "primary_user_id": 8,
+                "users": [
+                    {
+                        "id": 8,
+                        "email": "emailssd@gmail.com",
+                        "first_name": "Slim",
+                        "last_name": "Shaddy",
+                        "bu_id": 1,
+                        "platform_id": 1,
+                        "cc_id": 1,
+                        "cc_role_id": 1,
+                        "cc_type": "type",
+                        "locale": "EN",
+                        "profile_data": {
+                            "test": "test",
+                            "test2": "test"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
 }
 
 ```
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|gmaid|String|Identifier for advertiser|
+|global_master_advertiser_id|String|Identifier for advertiser|
 |name|String|Name of the advertiser|
-|address1|String|Address where the advertiser is based in|
-|address2|String|Address where the advertiser is based in|
-|city|String|City where the advertiser is based in|
-|state|String|State where the advertiser is based in|
-|zip|String|Zip code of the advertiser|
-|country|String|The country the advertiser is based in|
+|address|Object|Address information of the advertiser|
+|contactInfo|Object|The contact information of the advertiser|
+|businessUser|String|The business user that the advertiser is connected to|
+|hipaa_advertiser|bool|Is the advertiser hipaa protected|
 |active_state|Number|**0: Advertiser not active.**<br>**1: Advertiser not active, but in grace period**<br>**2: Advertiser is active**|
-|advertiser_id|Integer|Advertiser ID. An ID assigned to a client at the time of sale.|
-|locale|String|locale of the country the advertiser is based in|
+|business|Object|Business information of the advertiser [Business object.](#businessobject)|
+|users|Array|Array of the users associated with the advertiser [Users Array.](#usersarray)|
+|service_users|Array|Array of the users associated with the advertiser [Service Users Array.](#serviceusersarray)|
+|prospective_advertisers|Array|Array of the prospective advertisers associated with the advertiser [Prospective Advertisers Array.](#prospectiveadvertisersarray)|
+
+
+<a name="businessobject"></a>
+**Business object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|id|Integer|the id of the business in identity service|
+|name|String|The name of the business|
+|cobrand|Integer|The id of the cobrand|
+
+<a name="usersarray"></a>
+**Users Array**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|email|String|email of the user|
+|locale|String|The locale of the user|
+|privilege|String|Users privilege|
+|bu_id|String|The business user id of the user|
+|business_id|String|The business id of the user|
+
+<a name="serviceusersarray"></a>
+**Service Users Array**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|email|String|email of the service user|
+|bu_id|String|The business user id of the service user|
+|platform|String|The platform of the service user|
+|is_primary|boolean|Is primary service user|
+|gs_function|String|The gs function of the service user|
+
+<a name="prospectiveadvertisersarray"></a>
+**Prospective Advertisers Array**
+
+|gmaid|integer|The global master_advertiser_id of the prospective advertiser|
+|business_category_id|integer|The business category id of the advertiser|
+|business_sub_category_id|integer|The business sub category id of the advertiser|
+|name|string|The name of the prospective advertiser|
+|address1|string|The first address of the prospective advertiser|
+|address2|string|The second address of the prospective advertiser|
+|city|string|The city of the advertiser|
+|province|string|The province of the advertiser|
+|postal_code|integer|the postal code of the advertiser|
+|country|string|The country of the advertiser|
+|phone_number|string|The phone number of the advertiser|
+|phone_type|string|The phone type of the advertiser|
+|phone_country_code|string|The phone country code of the advertiser|
+|fax|integer|fax address of the prospective advertiser|
+|email|string|email address of the prospective advertiser|
+|url|string|url address of the prospective advertiser|
+|is_freemium|bool|if the prospective advertiser is in a freemium mode|
+|primary_user_id|id|the primary user id|
+|users|Integer|users, that the prospective advertiser is associated with [Prospective Advertisers Users Array.](#prospectiveadvertisersusersarray)|
+
+<a name="prospectiveadvertisersarray"></a>
+**Prospective Advertisers Users Array**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|email|string|Email unique value of the user|
+|first_name|string|The first name of the user|
+|last_name|string|The last name of the user|
+|platform_id|integer|The platform id for the user|
+|bu_id|integer|Business user id|
+|cc_id|integer|The legacy client center id value of the user|
+|cc_role_id|integer|The legacy client center cc_role_id value of the user|
+|cc_type|string|The legacy client center type value of the user|
+|locale|string|Locale of the country the user is based in|
+|profile_data|JSON|Meta data of the user|
