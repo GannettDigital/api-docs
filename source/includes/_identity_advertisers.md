@@ -293,103 +293,101 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers
 
 ```json
 {
-    {
-        "global_master_advertiser_id": "USA_105669",
-        "name": "Z - Brian Gerrard",
-        "address": {
-            "address1": "8550 Balboa Blvd. Suite 140",
-            "address2": "",
-            "city": "Northridge",
-            "province": "CA",
-            "postalCode": "91325",
-            "country": "USA"
+    "global_master_advertiser_id": "USA_105669",
+    "name": "Z - Brian Gerrard",
+    "address": {
+        "address1": "8550 Balboa Blvd. Suite 140",
+        "address2": "",
+        "city": "Northridge",
+        "province": "CA",
+        "postalCode": "91325",
+        "country": "USA"
+    },
+    "contactInfo": {
+        "phone1": {
+            "phoneNumber": "8187142804",
+            "countryCode": "1",
+            "phoneType": "Local"
         },
-        "contactInfo": {
-            "phone1": {
-                "phoneNumber": "8187142804",
-                "countryCode": "1",
-                "phoneType": "Local"
-            },
-            "phone2": null,
-            "fax": "",
-            "email": "brian.gerrard@reachlocal.com",
-            "url": ""
+        "phone2": null,
+        "fax": "",
+        "email": "brian.gerrard@reachlocal.com",
+        "url": ""
+    },
+    "businessUser": null,
+    "hipaa_advertiser": false,
+    "active_state": 0,
+    "business": {
+        "id": 3760,
+        "name": "ReachLocal Encino",
+        "cobrand": 2488
+    },
+    "users": [
+        {
+            "email": "jim.gibson@reachlocal.com;rsm",
+            "locale": "en-US",
+            "privilege": "AGENCY_ADMIN",
+            "bu_id": 177082,
+            "business_id": 3760
+        }
+    ],
+    "service_users": [
+        {
+            "email": "chris.waters@reachlocal.com",
+            "bu_id": 394895,
+            "platform": "USA",
+            "is_primary": false,
+            "gs_function": "Facebook Analyst"
         },
-        "businessUser": null,
-        "hipaa_advertiser": false,
-        "active_state": 0,
-        "business": {
-            "id": 3760,
-            "name": "ReachLocal Encino",
-            "cobrand": 2488
-        },
-        "users": [
-            {
-                "email": "jim.gibson@reachlocal.com;rsm",
-                "locale": "en-US",
-                "privilege": "AGENCY_ADMIN",
-                "bu_id": 177082,
-                "business_id": 3760
-            }
-        ],
-        "service_users": [
-            {
-                "email": "chris.waters@reachlocal.com",
-                "bu_id": 394895,
-                "platform": "USA",
-                "is_primary": false,
-                "gs_function": "Facebook Analyst"
-            },
-            {
-                "email": "chris.waters@reachlocal.com",
-                "bu_id": 394895,
-                "platform": "USA",
-                "is_primary": false,
-                "gs_function": "Custom Solutions"
-            }
-        ],
-        "prospective_advertisers": [
-            {
-                "id": 17,
-                "gmaid": "USA_421",
-                "business_category_id": 14,
-                "business_sub_category_id": 142,
-                "name": "Company",
-                "address1": "Old str 10",
-                "address2": "Old str 11",
-                "city": "Chicago",
-                "province": "Chicago",
-                "postal_code": "2312",
-                "country": "USA",
-                "phone_number": "+123456",
-                "phone_type": "type",
-                "phone_country_code": "+123",
-                "fax": 123456,
-                "email": "ssddsdddsddsdddda@gmail.com",
-                "url": "http://www.prospect-advertisers.com",
-                "is_freemium": true,
-                "primary_user_id": 8,
-                "users": [
-                    {
-                        "id": 8,
-                        "email": "emailssd@gmail.com",
-                        "first_name": "Slim",
-                        "last_name": "Shaddy",
-                        "bu_id": 1,
-                        "platform_id": 1,
-                        "cc_id": 1,
-                        "cc_role_id": 1,
-                        "cc_type": "type",
-                        "locale": "EN",
-                        "profile_data": {
-                            "test": "test",
-                            "test2": "test"
-                        }
+        {
+            "email": "chris.waters@reachlocal.com",
+            "bu_id": 394895,
+            "platform": "USA",
+            "is_primary": false,
+            "gs_function": "Custom Solutions"
+        }
+    ],
+    "prospective_advertisers": [
+        {
+            "id": 17,
+            "gmaid": "USA_421",
+            "business_category_id": 14,
+            "business_sub_category_id": 142,
+            "name": "Company",
+            "address1": "Old str 10",
+            "address2": "Old str 11",
+            "city": "Chicago",
+            "province": "Chicago",
+            "postal_code": "2312",
+            "country": "USA",
+            "phone_number": "+123456",
+            "phone_type": "type",
+            "phone_country_code": "+123",
+            "fax": 123456,
+            "email": "ssddsdddsddsdddda@gmail.com",
+            "url": "http://www.prospect-advertisers.com",
+            "is_freemium": true,
+            "primary_user_id": 8,
+            "users": [
+                {
+                    "id": 8,
+                    "email": "emailssd@gmail.com",
+                    "first_name": "Slim",
+                    "last_name": "Shaddy",
+                    "bu_id": 1,
+                    "platform_id": 1,
+                    "cc_id": 1,
+                    "cc_role_id": 1,
+                    "cc_type": "type",
+                    "locale": "EN",
+                    "profile_data": {
+                        "test": "test",
+                        "test2": "test"
                     }
-                ]
-            }
-        ]
-    }
+                }
+            ]
+        }
+    ]
 }
 
 ```
