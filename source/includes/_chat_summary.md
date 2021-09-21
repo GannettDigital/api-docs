@@ -565,9 +565,9 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|campaigns|Object|Data for specified campaign. [Campaigns Object](#chatcampaigns)|
-|organic|Object|Data for organic. [Organic Object](#chatorganic)|
-|otherpaid|Object|Data for non organic. [Otherpaid Object](#chatotherpaid)|
+|campaigns|Object|chat counts for chats attributed to paid campaigns. [Campaigns Object](#chatcampaigns)|
+|organic|Object|chat counts for chats attributed to organic sources (Organic search, Direct Site Traffic, etc.) [Organic Object](#chatorganic)|
+|otherpaid|Object|chat counts for chats attributed to paid traffic by other media vendors. [Otherpaid Object](#chatotherpaid)|
 
 <a name="chatcampaigns"></a>
 **Campaigns Object**
