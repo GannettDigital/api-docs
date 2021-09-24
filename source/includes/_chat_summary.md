@@ -8,7 +8,7 @@
 |---|---|
 |GET|/client_reports/chat_summary/[gmaid]?[query_params]|
 
-This API can be used by customers who have our chat widget on their site. The API has metrics on each chat along with traffic information (Paid Campaign/Organic).
+This API can be used by customers who have our chat widget on their site. The API has metrics on each chat along with traffic information (Paid Campaign/Organic/Otherpaid).
 
 Use GET to retrieve information from the Chat Summary API. Data can be returned for a GMAID by a specific date range determined by start date and end date.
 
@@ -341,6 +341,20 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
                     "call_connect": 0
                 }
             ]
+        },
+        "otherpaid": {
+            "intervals": [
+                {
+                    "start_date": "2020-10-11",
+                    "non_lead_chats": 0,
+                    "total_chats": 0,
+                    "chat_leads": 0,
+                    "chat_sales": 0,
+                    "chat_service": 0,
+                    "chat_other": 0,
+                    "call_connect": 0
+                }
+            ]
         }
     },
     "global_master_advertiser_id": "TEST_1"
@@ -502,6 +516,30 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
                     "call_connect": 0
                 }
             ]
+        },
+        "otherpaid": {
+            "intervals": [
+                {
+                    "start_date": "2020-02-12",
+                    "non_lead_chats": 0,
+                    "total_chats": 2,
+                    "chat_leads": 2,
+                    "chat_sales": 2,
+                    "chat_service": 0,
+                    "chat_other": 0,
+                    "call_connect": 0
+                },
+                {
+                    "start_date": "2020-02-27",
+                    "non_lead_chats": 0,
+                    "total_chats": 3,
+                    "chat_leads": 3,
+                    "chat_sales": 2,
+                    "chat_service": 0,
+                    "chat_other": 0,
+                    "call_connect": 0
+                }
+            ]
         }
     },
     "global_master_advertiser_id": "USA_172716"
@@ -527,8 +565,9 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|campaigns|Object|Data for specified campaign. [Campaigns Object](#chatcampaigns)|
-|organic|Object|Data for organic. [Organic Object](#chatorganic)|
+|campaigns|Object|chat counts for chats attributed to paid campaigns. [Campaigns Object](#chatcampaigns)|
+|organic|Object|chat counts for chats attributed to organic sources (Organic search, Direct Site Traffic, etc.) [Organic Object](#chatorganic)|
+|otherpaid|Object|chat counts for chats attributed to paid traffic by other media vendors. [Otherpaid Object](#chatotherpaid)|
 
 <a name="chatcampaigns"></a>
 **Campaigns Object**
@@ -547,6 +586,27 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 
 <a name="chatorganic"></a>
 **Organic Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
+
+<a name="chatintervals"></a>
+**Intervals Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|start_date|String|Start date of interval|
+|non_lead_chats|Integer|Number of non-lead chats, has no email address or phone number to create a Contact|
+|total_chats|Integer|Number of total chats, includes non lead chats|
+|chat_leads|Integer|Number of chat leads, excludes non lead chats|
+|chat_sales|Integer|Number of chats marked as 'sales'|
+|chat_service|Integer|Number of chats marked as 'service'|
+|chat_other|Integer|Number of chats marked as 'other'|
+|call_connect|Integer|Subset of chats that initiated a call connect|
+
+<a name="chatotherpaid"></a>
+**Otherpid Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
