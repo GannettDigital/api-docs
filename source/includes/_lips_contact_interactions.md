@@ -24,8 +24,6 @@ When using the GET index method, the results will be filtered using these parame
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
 
-#### If the event_params parameter is present, the response will also contain recording_url and duration.
-
 ### Examples:
 
 ### GET (index)
