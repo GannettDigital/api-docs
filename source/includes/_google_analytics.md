@@ -8,7 +8,7 @@
 
 #### API Name: marketplace_metrics
 ### Usage
-Use GET to retrieve information from the Google Analytics API. Data will be returned for a GMAID by a specific date range determined by start date and end date.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve information from the Google Analytics API. Data will be returned for a GMAID by a specific date range determined by start date and end date. Can be filtered by medium dimension. Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
 ### Parameters
 
@@ -19,6 +19,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`start_date`|Yes|Restricts the results to those occurring on or after this date|
 |`end_date`|Yes|Restricts the results to those occurring on or before this date.|
 |`gmaid`|Yes|Restrict results to the specified Global Master Advertiser ID|
+|`medium`|No|Restricts results using a regex match on the Medium dimension|
 
 ### Metrics
 
