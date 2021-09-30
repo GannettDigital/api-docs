@@ -23,6 +23,11 @@ When using the GET index method, the results will be filtered using these parame
 |---|---|---|
 |`page_size`|No|Restrict number of prospective advertisers in the result <br><b>Default value: 100</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+|`gmaid`|No|Specifies a gmaid that will be used for searching a prospective advertisers|
+|`email`|No|Specifies a email that will be used for searching a prospective advertisers|
+|`url`|No|Specifies a url that will be used for searching a prospective advertisers|
+|`user_id`|No|Specifies a user id, based on which a search of a prospective advertisers wil be performed|
+|`user_email`|No|Specifies a user email, based on which a search of a prospective advertisers wil be performed|
 
 Get an existing prospective advertiser.
 
