@@ -43,7 +43,7 @@ curl -L -X GET 'localhost:3001/client_reports/oauth/google/USA_130964' \
 
 ### POST
 
-Use POST with a JSON payload to create/update google oauth credentials for a given advertiser.  The tokens will be used to fetch the Google Analytics Report.  The JSON payload must include gmaid, access_token, refresh_token, and view_id.  Option parameters are account_id, web_property_id, client_id, project_id. If provided client_id, project_id must match values used to create access_tokens and refresh_tokens or attempts to refresh a token will fail.
+Use POST with a JSON payload to create/update google oauth credentials for a given advertiser.  The tokens will be used to fetch the Google Analytics Report.  The JSON payload must include gmaid, access_token, refresh_token, and view_id.  Optional parameters are account_id, web_property_id, client_id, project_id. If provided client_id, project_id must match values used to create access_tokens and refresh_tokens or attempts to refresh a token will fail.
 
 #### Example Local Dev Curl:
 
