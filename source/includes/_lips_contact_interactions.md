@@ -20,7 +20,7 @@ When using the GET index method, the results will be filtered using these parame
 |`event_params[phone_numbers]`|No|String that restricts the contacts to one or more based on phone number|
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
 |`global_master_campaign_id`|Yes|Restrict results to one or more specific gmcid|
-|`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
+|`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
 
