@@ -19,7 +19,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`start_date`|Yes|Restricts the results to those occurring on or after this date|
 |`end_date`|Yes|Restricts the results to those occurring on or before this date.|
 |`gmaid`|Yes|Restrict results to the specified Global Master Advertiser ID|
-|`medium`|No|Restricts results using a regex match on the Medium dimension|
+|`medium`|No|Restricts results using a regex match on the Medium dimension.  Some possible mediums include: “organic” (unpaid search), “cpc” (cost per click, i.e. paid search), “referral” (referral), “none” (direct traffic has a medium of “none”).|
 
 ### Metrics
 
