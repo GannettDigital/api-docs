@@ -7,6 +7,7 @@
 | Method | URI Format |
 |---|---|
 | GET `index` | /contact_interactions? |
+| PUT `update` | /contact_interactions/:id |
 
 ### Usage
 Use GET to retrieve contact interactions that match the query params.
@@ -73,7 +74,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
 |event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
-
+|read|boolean|No|Check if contact interaction is marked as read|
+|important|boolean|No|Check if contact interaction is marked as important|
 
 #### Example Response
 
@@ -145,3 +147,39 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     "total_pages": 1,
     "per_page": 25
 }
+```
+
+#### PUT Contact Interaction
+
+Update an existing contact_interaction.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|read|boolean|No|Check if contact interaction is marked as read|
+|important|boolean|No|Check if contact interaction is marked as important|
+
+
+Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
+
+example request: 
+
+```
+curl --location --request PUT 'https://data-connect-lips.gannettdigital.com//contact_interactions/1' \
+--header 'Authorization: {auth_token}' \
+--header 'Content-Type: application/json' \
+--data-raw '
+    {
+        "contact_interaction": { "important": false, "read": true}
+    }
+'
+```
+
+example success response (HTTP status 2xx):
+
+```
+{
+    "contact_interaction": "successfully updated!"
+}
+```
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
