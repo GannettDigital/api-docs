@@ -16,10 +16,9 @@ When using the GET index method, the results will be filtered using these parame
 
 | Parameter | Required | Description |
 |---|---|---|
-|`event_params[recording_url]`|No|String that restricts the contacts to one or more based on recording_url|
 |`event_params[phone_numbers]`|No|String that restricts the contacts to one or more based on phone number|
-|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
-|`global_master_campaign_id`|Yes|Restrict results to one or more specific gmcid|
+|`global_master_advertiser_id`|Yes/No|Restrict results to one or more specific gmaid. One of the `global_master_advertiser_id` or `global_master_campaign_id` is required|
+|`global_master_campaign_id`|Yes/No|Restrict results to one or more specific gmcid. One of the `global_master_advertiser_id` or `global_master_campaign_id` is required|
 |`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
@@ -29,7 +28,7 @@ When using the GET index method, the results will be filtered using these parame
 ### GET (index)
 
 ```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&event_params[phone_numbers]=+1243325' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
@@ -45,7 +44,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   -H 'Content-Type: application/json' \
   -H 'x-api-key: SJNPPSecret'
 ```
-###Contact Interactions
+### Contact Interactions
 **Contact**
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
@@ -58,7 +57,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |phone_numbers| String | yes | phone number data. ('phone_type' phone_type of the contact, 'phone_number' the normalized number of the phone number)|
 |created_at| Datetime | no | The date and time which this contact was created|
 |contact_external_source| String | no |contact_Ext Source tells us if this contact came to us from FPD, Yardi etc|
-|interaction_Ext_source| String | no | the number of the contacts page|
+|interaction_external_source| String | no | the number of the contacts page|
 
 **Interaction**
 | Field Name | Datatype | Nullable | Description |
@@ -66,7 +65,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |id| Integer | no | id of the interaction|
 |contact_id| String | no | An integer uniquely identifying contact with the interaction|
 |campaign_name| String | no | The name of the campaign that this contact interaction is attributed to|
-|channel| String | no | The channel the lead belongs to (more relevant to XMO but applies to all, type of web publisher)|
 |refer_type| String | no | Paid, organic|
 |refer_source| String | no | Domain the visitor came from|
 |influencing_campaign| String | yes | Campaign that influenced this interaction|
@@ -74,8 +72,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
 |display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
 |event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
-applying ad-hoc categorization and collation of contact interactions
-The field is nullable|
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
 
 
@@ -95,7 +91,7 @@ The field is nullable|
             "created_at": "2021-09-06T16:18:42.505Z",
             "occurred_at": "2021-09-06T16:16:08.000Z",
             "display_name": "S ELIGIO",
-            "external_source": "capture"
+            "external_source": "capture",
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -125,7 +121,7 @@ The field is nullable|
             "created_at": "2021-09-04T01:21:26.881Z",
             "occurred_at": "2021-08-25T14:50:34.000Z",
             "display_name": "S ELIGIO",
-            "external_source": "capture"
+            "external_source": "capture",
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
