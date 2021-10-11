@@ -34,6 +34,8 @@ curl -L -X GET 'localhost:3001/client_reports/oauth/google/USA_130964' \
     "account_name": "MyAccount",
     "web_property_id": "UA-79363368-1",
     "web_property_name": "MyWebSite",
+    "client_id": "123_xyz.googlecloud.com",
+    "project_id" "rl-client-center",
     "created_at": "2020-04-08T16:21:59.000Z",
     "updated_at": "2020-07-22T20:55:49.000Z"
 }
@@ -41,7 +43,7 @@ curl -L -X GET 'localhost:3001/client_reports/oauth/google/USA_130964' \
 
 ### POST
 
-Use POST with a JSON payload to create/update google oauth credentials for a given advertiser.  The tokens will be used to fetch the Google Analytics Report.  The JSON payload must include gmaid, access_token, refresh_token, and view_id.  Option parameters are account_id and web_property_id.
+Use POST with a JSON payload to create/update google oauth credentials for a given advertiser.  The tokens will be used to fetch the Google Analytics Report.  The JSON payload must include gmaid, access_token, refresh_token, and view_id.  Optional parameters are account_id, web_property_id, client_id, project_id. If provided client_id, project_id must match values used to create access_tokens and refresh_tokens or attempts to refresh a token will fail.
 
 #### Example Local Dev Curl:
 
@@ -59,7 +61,9 @@ curl --location --request POST 'localhost:3001/client_reports/oauth/google' \
 	"web_property_id": "UA-79363368-1",
 	"web_property_name": "http://www.absinsulating.com",
 	"view_id": "123954488",
-	"view_name": "Filtered view www.absinsulating.com"
+	"view_name": "Filtered view www.absinsulating.com",
+    "client_id": "123_xyz.googlecloud.com",
+    "project_id": "rl-client-center"
 }'
 ```
 
