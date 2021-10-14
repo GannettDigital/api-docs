@@ -9,9 +9,9 @@
 | POST | /v3/identities/prospective_advertisers
 | PUT | /v3/identities/prospective_advertisers/[id]
 | DELETE | /v3/identities/prospective_advertisers/[id]
-| POST | /v3/identities/prospective_advertisers/[id]/users
-| PUT | /v3/identities/prospective_advertisers/[id]/users/[id]
-| DELETE | /v3/identities/prospective_advertisers/[id]/users/[id]
+| POST | /v3/identities/prospective_advertisers/[id]/login_users
+| PUT | /v3/identities/prospective_advertisers/[id]/login_users/[id]
+| DELETE | /v3/identities/prospective_advertisers/[id]/login_users/[id]
 
 ### Resource Detail
 
@@ -26,8 +26,8 @@ When using the GET index method, the results will be filtered using these parame
 |`gmaid`|No|Specifies a gmaid that will be used for searching a prospective advertisers|
 |`email`|No|Specifies a email that will be used for searching a prospective advertisers|
 |`url`|No|Specifies a url that will be used for searching a prospective advertisers|
-|`user_id`|No|Specifies a user id, based on which a search of a prospective advertisers wil be performed|
-|`user_email`|No|Specifies a user email, based on which a search of a prospective advertisers wil be performed|
+|`login_user_id`|No|Specifies a login user id, based on which a search of a prospective advertisers wil be performed|
+|`login_user_email`|No|Specifies a login user email, based on which a search of a prospective advertisers wil be performed|
 
 Get an existing prospective advertiser.
 
@@ -50,7 +50,7 @@ Get an existing prospective advertiser.
 |fax|integer|fax address of the prospective advertiser|
 |email|string|email address of the prospective advertiser|
 |url|string|url address of the prospective advertiser|
-|users|Array|Array of users, that the prospective advertiser is associated with|
+|login_users|Array|Array of login_users, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -83,18 +83,14 @@ example success response (HTTP status 2xx):
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
     "is_freemium": true,
-    "primary_user_id": 1,
-    "users": [
+    "primary_login_user_id": 1,
+    "login_users": [
         {
             "id": 1,
             "email": "CODsoap@gmail.com",
             "first_name": "Slims",
             "last_name": "Shady",
             "bu_id": 1,
-            "platform_id": 1,
-            "cc_id": 1,
-            "cc_role_id": 1,
-            "cc_type": "type",
             "locale": "EN",
             "profile_data": null
         }
@@ -127,7 +123,7 @@ Get an existing prospective advertiser.
 |fax|integer|fax address of the prospective advertiser|
 |email|string|email address of the prospective advertiser|
 |url|string|url address of the prospective advertiser|
-|users|Array|Array of users, that the prospective advertiser is associated with|
+|login_users|Array|Array of login_users, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -160,18 +156,14 @@ example success response (HTTP status 2xx):
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
     "is_freemium": true,
-    "primary_user_id": 1,
-    "users": [
+    "primary_login_user_id": 1,
+    "login_users": [
         {
             "id": 1,
             "email": "CODsoap@gmail.com",
             "first_name": "Slims",
             "last_name": "Shady",
             "bu_id": 1,
-            "platform_id": 1,
-            "cc_id": 1,
-            "cc_role_id": 1,
-            "cc_type": "type",
             "locale": "EN",
             "profile_data": null
         }
@@ -203,7 +195,7 @@ Create a prospective advertiser.
 |fax|integer|No|fax address of the prospective advertiser|
 |email|string|Yes|email address of the prospective advertiser|
 |url|string|Yes|url address of the prospective advertiser|
-|user_id|Integer|Yes|An id of a user, that the prospective advertiser is associated with|
+|login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -230,7 +222,7 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospectiv
         "fax": "123456",
         "email": "email@gmail.com",
         "url": "http://www.prospect-advertisers.com",
-        "user_id": 1
+        "login_user_id": 1
     }'
 ```
 
@@ -257,17 +249,13 @@ example success response (HTTP status 2xx):
     "url": "http://www.prospect-advertisers.com",
     "is_freemium": true,
     "primary_user_id": 1,
-    "users": [
+    "login_users": [
         {
             "id": 1,
             "email": "CODsoap@gmail.com",
             "first_name": "Slims",
             "last_name": "Shady",
             "bu_id": 1,
-            "platform_id": 1,
-            "cc_id": 1,
-            "cc_role_id": 1,
-            "cc_type": "type",
             "locale": "EN",
             "profile_data": null
         }
@@ -299,7 +287,7 @@ Update a prospective advertiser.
 |fax|integer|No|fax address of the prospective advertiser|
 |email|string|No|email address of the prospective advertiser|
 |url|string|No|url address of the prospective advertiser|
-|user_id|Integer|Yes|An id of a user, that the prospective advertiser is associated with|
+|login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -336,18 +324,14 @@ example success response (HTTP status 2xx):
     "email": "email@gmail.com",
     "url": "http://www.prospect-advertisers.com",
     "is_freemium": true,
-    "primary_user_id": 1,
-    "users": [
+    "primary_login_user_id": 1,
+    "login_users": [
         {
             "id": 1,
             "email": "CODsoap@gmail.com",
             "first_name": "Slims",
             "last_name": "Shady",
             "bu_id": 1,
-            "platform_id": 1,
-            "cc_id": 1,
-            "cc_role_id": 1,
-            "cc_type": "type",
             "locale": "EN",
             "profile_data": null
         }
@@ -377,11 +361,11 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 #### POST Prospective Advertiser user
 
-Create a prospective advertiser user.
+Create a prospective advertiser login user.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|user_id|Integer|Yes|An id of an user, that the prospective advertiser is associated with|
+|login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
 
 example request: 
 
@@ -391,33 +375,33 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospectiv
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
---data-raw '   "prospective_advertiser_user": {
-        "user_id": 1
+--data-raw '   "prospective_advertiser_login_user": {
+        "login_user_id": 1
     }'
 ```
 Upon a successful request (HTTP status 2xx), the response body will be empty.
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### PUT Prospective Advertiser user
+#### PUT Prospective Advertiser login user
 
-UPDATE a prospective advertiser user.
+UPDATE a prospective advertiser login user.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|user_id|Integer|YES|An id of an user, that the prospective advertiser is associated with|
-|prospective_advertiser_id|Integer|YES|An id of an prospective advertiser, that the user is associated with|
-|is_primary|Bool|No|Field which shows, if the user is a primary one|
+|login_user_id|Integer|YES|An id of a login user, that the prospective advertiser is associated with|
+|prospective_advertiser_id|Integer|YES|An id of an prospective advertiser, that the login user is associated with|
+|is_primary|Bool|No|Field which shows, if the login user is a primary one|
 
 example request: 
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users/1' \
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
---data-raw '   "prospective_advertiser_user": {
+--data-raw '   "prospective_advertiser_login_user": {
         "is_primary": true
     }'
 ```
@@ -433,7 +417,7 @@ Delete an existing Prospective Advertiser user.
 example request: 
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users/1' \
+curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
