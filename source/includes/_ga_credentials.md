@@ -35,7 +35,8 @@ curl -L -X GET 'localhost:3001/client_reports/oauth/google/USA_130964' \
     "web_property_id": "UA-79363368-1",
     "web_property_name": "MyWebSite",
     "client_id": "123_xyz.googlecloud.com",
-    "project_id" "rl-client-center",
+    "project_id": "rl-client-center",
+    "site_url": "www.testsite.com",
     "created_at": "2020-04-08T16:21:59.000Z",
     "updated_at": "2020-07-22T20:55:49.000Z"
 }
@@ -43,7 +44,25 @@ curl -L -X GET 'localhost:3001/client_reports/oauth/google/USA_130964' \
 
 ### POST
 
-Use POST with a JSON payload to create/update google oauth credentials for a given advertiser.  The tokens will be used to fetch the Google Analytics Report.  The JSON payload must include gmaid, access_token, refresh_token, and view_id.  Optional parameters are account_id, web_property_id, client_id, project_id. If provided client_id, project_id must match values used to create access_tokens and refresh_tokens or attempts to refresh a token will fail.
+Use POST with a JSON payload to create/update google oauth credentials for a given advertiser. The values will be used to fetch the Google Analytics Report. If provided client_id and project_id must match values used to create access_token and refresh_token or attempts to refresh a token will fail.
+
+### Parameters
+
+| Parameter | Required | Description |
+|---|---|---|
+|`gmaid`|Yes|Creates/updates credentials for specified Global Master Advertiser ID|
+|`access_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
+|`refresh_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
+|`view_id`|Yes|Creates/updates value. Value found in Google Analytics UI at `https://analytics.google.com`|
+|`client_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> API & Services -> Credentials|
+|`project_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> Dashboard -> Project Info|
+|`site_url`|No|Creates/updates value. Required to access Google Search Console data via GA report. See [googe_site_urls](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_google_site_urls.md)|
+|`view_name`|No| Creates/updates value.|
+|`account_id`|No|Creates/updates value.|
+|`account_name`|No|Creates/updates value.|
+|`web_property_id`|No|Creates/updates value.|
+|`web_property_name`|No|Creates/updates value.|
+
 
 #### Example Local Dev Curl:
 
@@ -63,7 +82,8 @@ curl --location --request POST 'localhost:3001/client_reports/oauth/google' \
 	"view_id": "123954488",
 	"view_name": "Filtered view www.absinsulating.com",
     "client_id": "123_xyz.googlecloud.com",
-    "project_id": "rl-client-center"
+    "project_id": "rl-client-center",
+    "site_url": "www.testsite.com"
 }'
 ```
 
