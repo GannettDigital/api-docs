@@ -145,7 +145,9 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     ],
     "page": 1,
     "total_pages": 1,
-    "per_page": 25
+    "per_page": 25,
+    "total_interactions": 2,
+    "total_unread": 0
 }
 ```
 
