@@ -66,8 +66,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |id| Integer | no | id of the interaction|
 |contact_id| String | no | An integer uniquely identifying contact with the interaction|
 |campaign_name| String | no | The name of the campaign that this contact interaction is attributed to|
-|refer_type| String | no | Paid, organic|
-|refer_source| String | no | Domain the visitor came from|
+|referrer_type| String | no | Paid, organic|
+|referrer_source| String | no | Domain the visitor came from|
 |influencing_campaign| String | yes | Campaign that influenced this interaction|
 |created_at| Datetime | yes | The date and time which this interaction was created|
 |occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
@@ -87,8 +87,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "contact_id": 2197617,
             "campaign_name": "LSS Test Campaign",
             "channel": "search",
-            "refer_type": "UNKNOWN",
-            "refer_source": "PAID",
+            "referrer_type": "UNKNOWN",
+            "referrer_source": "PAID",
             "influencing_campaign": "",
             "created_at": "2021-09-06T16:18:42.505Z",
             "occurred_at": "2021-09-06T16:16:08.000Z",
@@ -117,8 +117,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "contact_id": 2197617,
             "campaign_name": "LSS Test Campaign",
             "channel": "search",
-            "refer_type": "UNKNOWN",
-            "refer_source": "PAID",
+            "referrer_type": "UNKNOWN",
+            "referrer_source": "PAID",
             "influencing_campaign": "",
             "created_at": "2021-09-04T01:21:26.881Z",
             "occurred_at": "2021-08-25T14:50:34.000Z",
