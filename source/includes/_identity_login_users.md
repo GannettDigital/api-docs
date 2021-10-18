@@ -105,7 +105,7 @@ example success response (HTTP status 2xx):
                     "external_id": 1,
                     "platform_id": 1,
                     "role": 1,
-                    "type_of": "type",
+                    "type_of": 1,
                     "login_user_id": 1,
                     "created_at": "2021-10-11T00:00:00.000Z",
                     "updated_at": "2021-10-11T00:00:00.000Z"
@@ -199,7 +199,7 @@ example success response (HTTP status 2xx):
             "external_id": 1,
             "platform_id": 1,
             "role": 1,
-            "type_of": "type",
+            "type_of": 1,
             "login_user_id": 1,
             "created_at": "2021-10-11T00:00:00.000Z",
             "updated_at": "2021-10-11T00:00:00.000Z"
@@ -348,7 +348,7 @@ example success response (HTTP status 2xx):
             "external_id": 1,
             "platform_id": 1,
             "role": 1,
-            "type_of": "type",
+            "type_of": 1,
             "login_user_id": 1,
             "created_at": "2021-10-11T00:00:00.000Z",
             "updated_at": "2021-10-11T00:00:00.000Z"
@@ -385,7 +385,7 @@ Create a client center user.
 |---|---|---|---|
 |external_id|Integer|No|An id of a client center user, that the login user is associated with.|
 |platform_id|Integer|Yes|An id that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`) and 6 (`GBR`)|
-|type_of|String|No|Type of a client center user, that the login user is associated with.|
+|type_of|Integer|No|Type of a client center user, that the login user is associated with.|
 |role|Integer|Yes|A role id of a client center user, that the login user is associated with.|
 
 example request: 
@@ -412,7 +412,7 @@ UPDATE a client center user.
 |---|---|---|---|
 |external_id|Integer|No|An id of a client center user, that the login user is associated with.|
 |platform_id|Integer|Yes|An id that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`) and 6 (`GBR`)|
-|type_of|String|No|Type of a client center user, that the login user is associated with.|
+|type_of|Integer|No|Type of a client center user, that the login user is associated with.|
 |role|Integer|Yes|A role id of a client center user, that the login user is associated with.|
 |login_user_id|Integer|No|An id of a login user id, that the client center user is associated with.|
 
