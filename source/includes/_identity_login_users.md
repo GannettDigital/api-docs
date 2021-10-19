@@ -1,14 +1,14 @@
-## Identity Users
+## Identity Login Users
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET | /v3/identities/users?
-| GET | /v3/identities/users/[id]
-| POST | /v3/identities/users
-| PUT | /v3/identities/users/[id]
-| DELETE | /v3/identities/users/[id]
+| GET | /v3/identities/login_users?
+| GET | /v3/identities/login_users/[id]
+| POST | /v3/identities/login_users
+| PUT | /v3/identities/login_users/[id]
+| DELETE | /v3/identities/login_users/[id]
 
 ### Resource Detail
 
@@ -21,7 +21,7 @@ When using the GET index method, the results will be filtered using these parame
 |`first_name`|No|Restrict results to one or more specific user with the given first name|
 |`last_name`|No|Restrict results to one or more specific user with the given last name|
 |`email`|No|Restrict results to one or more specific user with the given email|
-|`page_size`|No|Restrict number of users in result <br><b>Default value: 100</b> |
+|`page_size`|No|Restrict number of login users in result <br><b>Default value: 100</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
 #### GET User(index)
@@ -30,24 +30,21 @@ Get an existing user.
 
 |Field|Type|Description|
 |---|---|---|
-|id|integer|id value of the user|
-|email|string|The unique email of user|
-|first_name|string|The first name of user|
-|last_name|string|The last name of user|
+|id|integer|id value of the login user|
+|email|string|The unique email of the login user|
+|first_name|string|The first name of the login user|
+|last_name|string|The last name of the login user|
 |bu_id|integer|Business user id|
-|platform_id|integer|The platform id for the user|
-|cc_id|integer|The legacy client center id value of the user|
-|cc_role_id|integer|The legacy client center cc_role_id value of the user|
-|cc_type|string|The legacy client center type value of the user|
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
-|prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
+|prospective_advertisers|Array|Array of prospective advertisers, that the loign user is associated with|
+|client_center_users|Array|Array of client center user, that the login user is associated with|
 |ldap_id|string|Id of the user used to reference a directory server|
 
 example request: 
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/users?first_name=Slim&last_name=Sha&email=scas \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users?first_name=Slim&last_name=Sha&email=scas \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -57,17 +54,13 @@ example success response (HTTP status 2xx):
 
 ```
 {
-    "users": [
+    "login_users": [
         {
             "id": 8,
             "email": "sсasdsad@gmail.com",
             "first_name": "Slims",
             "last_name": "Shady",
             "bu_id": 1,
-            "platform_id": 1,
-            "cc_id": 1,
-            "cc_role_id": 1,
-            "cc_type": "type",
             "locale": "EN",
             "profile_data": {
                 "test": "test",
@@ -98,6 +91,26 @@ example success response (HTTP status 2xx):
                     "updated_at": "2021-08-27T13:25:55.000Z"
                 }
             ],
+            "client_center_users": [
+                {
+                    "external_id": 23,
+                    "platform_id": 6,
+                    "role": null,
+                    "type_of": null,
+                    "login_user_id": 1,
+                    "created_at": "2021-10-11T13:42:04.000Z",
+                    "updated_at": "2021-10-11T13:42:04.000Z"
+                },
+                {
+                    "external_id": 1,
+                    "platform_id": 1,
+                    "role": 1,
+                    "type_of": 1,
+                    "login_user_id": 1,
+                    "created_at": "2021-10-11T00:00:00.000Z",
+                    "updated_at": "2021-10-11T00:00:00.000Z"
+                },
+            ],
             "ldap_id": "qwerty123"
         }
     ],
@@ -109,28 +122,25 @@ example success response (HTTP status 2xx):
 
 #### GET User(show)
 
-Get an existing user.
+Get an existing login user.
 
 |Field|Type|Description|
 |---|---|---|
-|id|integer|id value of the user|
-|email|string|The unique email of user|
-|first_name|string|The first name of user|
-|last_name|string|The last name of user|
+|id|integer|id value of the login user|
+|email|string|The unique email of the login user|
+|first_name|string|The first name of the login user|
+|last_name|string|The last name of the login user|
 |bu_id|integer|Business user id|
-|platform_id|integer|The platform id for the user|
-|cc_id|integer|The legacy client center id value of the user|
-|cc_role_id|integer|The legacy client center cc_role_id value of the user|
-|cc_type|string|The legacy client center type value of the user|
 |locale|string|Locale of the country the user is based in|
-|profile_data|JSON|Meta data of the user|
+|profile_data|JSON|Meta data of the login user|
 |prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
+|client_center_users|Array|Array of client center user, that the login user is associated with|
 |ldap_id|string|Id of the user used to reference a directory server|
 
 example request: 
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/users/8 \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/8 \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -145,10 +155,6 @@ example success response (HTTP status 2xx):
     "first_name": "Slims",
     "last_name": "Shady",
     "bu_id": 1,
-    "platform_id": 1,
-    "cc_id": 1,
-    "cc_role_id": 1,
-    "cc_type": "type",
     "locale": "EN",
     "profile_data": {
         "test": "test",
@@ -179,26 +185,42 @@ example success response (HTTP status 2xx):
             "updated_at": "2021-08-27T13:25:55.000Z"
         }
     ],
+    "client_center_users": [
+        {
+            "external_id": 23,
+            "platform_id": 6,
+            "role": null,
+            "type_of": null,
+            "login_user_id": 1,
+            "created_at": "2021-10-11T13:42:04.000Z",
+            "updated_at": "2021-10-11T13:42:04.000Z"
+        },
+        {
+            "external_id": 1,
+            "platform_id": 1,
+            "role": 1,
+            "type_of": 1,
+            "login_user_id": 1,
+            "created_at": "2021-10-11T00:00:00.000Z",
+            "updated_at": "2021-10-11T00:00:00.000Z"
+        },
+    ],
     "ldap_id": "qwerty123"
 }
 ```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### POST User
+#### POST Login User
 
-Create a user.
+Create a login user.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
 |email|string|Yes|Email unique value of the user|
 |first_name|string|No|The first name of the user|
 |last_name|string|No|The last name of the user|
-|platform_id|integer|Yes|The platform id for the user|
 |bu_id|integer|No|Business user id|
-|cc_id|integer|No|The legacy client center id value of the user|
-|cc_role_id|integer|No|The legacy client center cc_role_id value of the user|
-|cc_type|string|No|The legacy client center type value of the user|
 |locale|string|No|Locale of the country the user is based in|
 |profile_data|JSON|No|Meta data of the user|
 |ldap_id|string|No|Id of the user used to reference a directory server|
@@ -206,7 +228,7 @@ Create a user.
 example request: 
 
 ```
-curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/users' \
+curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
@@ -216,11 +238,7 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/users' \
         "first_name": "Slim",
         "last_name": "Shady",
         "bu_id": 1,
-        "cc_id": 1,
-        "cc_role_id": 1,
-        "cc_type": "type",
         "locale": "EN",
-        "platform_id": 1,
         "profile_data": {
             "test": "test",
             "test2": "test"
@@ -238,16 +256,13 @@ example success response (HTTP status 2xx):
     "first_name": "Slim",
     "last_name": "Shady",
     "bu_id": 1,
-    "platform_id": 1,
-    "cc_id": 1,
-    "cc_role_id": 1,
-    "cc_type": "type",
     "locale": "EN",
     "profile_data": {
         "test": "test",
         "test2": "test"
     },
     "prospective_advertisers": [],
+    "client_center_users": [],
     "ldap_id": "qwerty123"
 }
 ```
@@ -263,11 +278,7 @@ Update an existing user.
 |email|string|Yes|Email unique value of the user|
 |first_name|string|No|The first name of the user|
 |last_name|string|No|The last name of the user|
-|platform_id|integer|Yes|The platform id for the user|
 |bu_id|integer|No|Business user id|
-|cc_id|integer|No|The legacy client center id value of the user|
-|cc_role_id|integer|No|The legacy client center cc_role_id value of the user|
-|cc_type|string|No|The legacy client center type value of the user|
 |locale|string|No|Locale of the country the user is based in|
 |profile_data|JSON|No|Meta data of the user|
 
@@ -276,7 +287,7 @@ Fields marked as required aren't necessarily required in the request, but are re
 example request: 
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/users/1' \
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
@@ -296,10 +307,6 @@ example success response (HTTP status 2xx):
     "first_name": "Bono",
     "last_name": "Shady",
     "bu_id": 1,
-    "platform_id": 1,
-    "cc_id": 1,
-    "cc_role_id": 1,
-    "cc_type": "type",
     "locale": "EN",
     "profile_data": null,
     "prospective_advertisers": [
@@ -327,20 +334,113 @@ example success response (HTTP status 2xx):
             "updated_at": "2021-08-27T13:25:55.000Z"
         }
     ],
+    "client_center_users": [
+        {
+            "external_id": 23,
+            "platform_id": 6,
+            "role": null,
+            "type_of": null,
+            "login_user_id": 1,
+            "created_at": "2021-10-11T13:42:04.000Z",
+            "updated_at": "2021-10-11T13:42:04.000Z"
+        },
+        {
+            "external_id": 1,
+            "platform_id": 1,
+            "role": 1,
+            "type_of": 1,
+            "login_user_id": 1,
+            "created_at": "2021-10-11T00:00:00.000Z",
+            "updated_at": "2021-10-11T00:00:00.000Z"
+        }
+    ],
     "ldap_id": "qwerty123"
 }
 ```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### DELETE User
+#### DELETE Login User
 
-Delete an existing user.
+Delete an existing login user.
 
 example request: 
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/users/1' \
+curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY'
+```
+
+Upon a successful request (HTTP status 2xx), the response body will be empty.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+#### POST Client center user
+
+Create a client center user.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|external_id|Integer|No|An id of a client center user, that the login user is associated with.|
+|platform_id|Integer|Yes|An id that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`) and 6 (`GBR`)|
+|type_of|Integer|No|Type of a client center user, that the login user is associated with.|
+|role|Integer|Yes|A role id of a client center user, that the login user is associated with.|
+
+example request: 
+
+```
+curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1/client_center_user' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY' \
+-H 'Content-Type: application/json' \
+--data-raw '   "client_center_user_id": {
+        "platform_id": 1
+    }'
+```
+Upon a successful request (HTTP status 2xx), the response body will be empty.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+#### PUT Client center user
+
+UPDATE a client center user.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|external_id|Integer|No|An id of a client center user, that the login user is associated with.|
+|platform_id|Integer|Yes|An id that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`) and 6 (`GBR`)|
+|type_of|Integer|No|Type of a client center user, that the login user is associated with.|
+|role|Integer|Yes|A role id of a client center user, that the login user is associated with.|
+|login_user_id|Integer|No|An id of a login user id, that the client center user is associated with.|
+
+example request: 
+
+```
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users/1' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'x-api-key: APIGEE_KEY' \
+-H 'Content-Type: application/json' \
+--data-raw '   "client_center_user_id": {
+        "external_id": 45
+    }'
+```
+Upon a successful request (HTTP status 2xx), the response body will be empty.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+
+#### DELETE Client Center User
+
+Delete an existing Client Center user.
+
+example request: 
+
+```
+curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1/client_center_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
