@@ -18,10 +18,14 @@ When using the GET index method, the results will be filtered using these parame
 | Parameter | Required | Description |
 |---|---|---|
 |`event_params[phone_numbers]`|No|String that restricts the contacts to one or more based on phone number|
-|`global_master_advertiser_id`|Yes*|Restrict results to one or more specific gmaid|
-|`global_master_campaign_id`|Yes*|Restrict results to one or more specific gmcid|
+|`global_master_advertiser_id`|Yes*|Restrict results to one or more specific gmaid.|
+|`global_master_campaign_id`|Yes*|Restrict results to one or more specific gmcid.|
+|`start_date`|No|Restricts the results to those occurring on or after this date|
+|`end_date`|No|Restricts the results to those occurring on or before this date|
 |`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+|`sort_by`|No|Specifies what column to sort by. Valid columns are: impotant<br><b>Default value: occurrence_time</b> |
+|`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: desc</b> |
 >*One of the `global_master_advertiser_id` or `global_master_campaign_id` is required
 
 ### Examples:
@@ -94,6 +98,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "occurred_at": "2021-09-06T16:16:08.000Z",
             "display_name": "S ELIGIO",
             "external_source": "capture",
+            "important": true,
+            "read": true,
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -124,6 +130,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "occurred_at": "2021-08-25T14:50:34.000Z",
             "display_name": "S ELIGIO",
             "external_source": "capture",
+            "important": false,
+            "read": true,
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
