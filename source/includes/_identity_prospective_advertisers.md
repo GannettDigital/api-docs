@@ -15,7 +15,7 @@
 
 ### Resource Detail
 
-#### GET User(index)
+#### GET Prospective Advertiser(index)
 
 When using the GET index method, the results will be filtered using these parameters:
 
@@ -52,7 +52,7 @@ Get an existing prospective advertiser.
 |url|string|url address of the prospective advertiser|
 |login_users|Array|Array of login_users, that the prospective advertiser is associated with|
 
-example request: 
+example request:
 
 ```
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers \
@@ -100,7 +100,7 @@ example success response (HTTP status 2xx):
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### GET User(show)
+#### GET Prospective Advertiser(show)
 
 Get an existing prospective advertiser.
 
@@ -125,7 +125,7 @@ Get an existing prospective advertiser.
 |url|string|url address of the prospective advertiser|
 |login_users|Array|Array of login_users, that the prospective advertiser is associated with|
 
-example request: 
+example request:
 
 ```
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/8 \
@@ -197,7 +197,7 @@ Create a prospective advertiser.
 |url|string|Yes|url address of the prospective advertiser|
 |login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
 
-example request: 
+example request:
 
 ```
 curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers' \
@@ -289,7 +289,7 @@ Update a prospective advertiser.
 |url|string|No|url address of the prospective advertiser|
 |login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
 
-example request: 
+example request:
 
 ```
 curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/12' \
@@ -345,7 +345,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 Delete a prospective advertiser.
 
-example request: 
+example request:
 
 ```
 curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1' \
@@ -367,7 +367,7 @@ Create a prospective advertiser login user.
 |---|---|---|---|
 |login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
 
-example request: 
+example request:
 
 ```
 curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users' \
@@ -393,7 +393,7 @@ UPDATE a prospective advertiser login user.
 |prospective_advertiser_id|Integer|YES|An id of an prospective advertiser, that the login user is associated with|
 |is_primary|Bool|No|Field which shows, if the login user is a primary one|
 
-example request: 
+example request:
 
 ```
 curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/login_users/1' \
@@ -414,7 +414,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 Delete an existing Prospective Advertiser user.
 
-example request: 
+example request:
 
 ```
 curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/login_users/1' \
