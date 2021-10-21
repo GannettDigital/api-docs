@@ -7,6 +7,7 @@
 | Method | URI Format |
 |---|---|
 | GET `index` | /contact_interactions? |
+| PUT `update` | /contact_interactions/:id |
 
 ### Usage
 Use GET to retrieve contact interactions that match the query params.
@@ -17,10 +18,14 @@ When using the GET index method, the results will be filtered using these parame
 | Parameter | Required | Description |
 |---|---|---|
 |`event_params[phone_numbers]`|No|String that restricts the contacts to one or more based on phone number|
-|`global_master_advertiser_id`|Yes*|Restrict results to one or more specific gmaid|
-|`global_master_campaign_id`|Yes*|Restrict results to one or more specific gmcid|
+|`global_master_advertiser_id`|Yes*|Restrict results to one or more specific gmaid.|
+|`global_master_campaign_id`|Yes*|Restrict results to one or more specific gmcid.|
+|`start_date`|No|Restricts the results to those occurring on or after this date|
+|`end_date`|No|Restricts the results to those occurring on or before this date|
 |`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+|`sort_by`|No|Specifies what column to sort by. Valid columns are: impotant<br><b>Default value: occurrence_time</b> |
+|`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: desc</b> |
 >*One of the `global_master_advertiser_id` or `global_master_campaign_id` is required
 
 ### Examples:
@@ -65,15 +70,16 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |id| Integer | no | id of the interaction|
 |contact_id| String | no | An integer uniquely identifying contact with the interaction|
 |campaign_name| String | no | The name of the campaign that this contact interaction is attributed to|
-|refer_type| String | no | Paid, organic|
-|refer_source| String | no | Domain the visitor came from|
+|referrer_type| String | no | Paid, organic|
+|referrer_source| String | no | Domain the visitor came from|
 |influencing_campaign| String | yes | Campaign that influenced this interaction|
 |created_at| Datetime | yes | The date and time which this interaction was created|
 |occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
 |display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
 |event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
-
+|read|boolean|No|Check if contact interaction is marked as read|
+|important|boolean|No|Check if contact interaction is marked as important|
 
 #### Example Response
 
@@ -85,13 +91,15 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "contact_id": 2197617,
             "campaign_name": "LSS Test Campaign",
             "channel": "search",
-            "refer_type": "UNKNOWN",
-            "refer_source": "PAID",
+            "referrer_type": "UNKNOWN",
+            "referrer_source": "PAID",
             "influencing_campaign": "",
             "created_at": "2021-09-06T16:18:42.505Z",
             "occurred_at": "2021-09-06T16:16:08.000Z",
             "display_name": "S ELIGIO",
             "external_source": "capture",
+            "important": true,
+            "read": true,
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -115,13 +123,15 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "contact_id": 2197617,
             "campaign_name": "LSS Test Campaign",
             "channel": "search",
-            "refer_type": "UNKNOWN",
-            "refer_source": "PAID",
+            "referrer_type": "UNKNOWN",
+            "referrer_source": "PAID",
             "influencing_campaign": "",
             "created_at": "2021-09-04T01:21:26.881Z",
             "occurred_at": "2021-08-25T14:50:34.000Z",
             "display_name": "S ELIGIO",
             "external_source": "capture",
+            "important": false,
+            "read": true,
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -143,5 +153,41 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     ],
     "page": 1,
     "total_pages": 1,
-    "per_page": 25
+    "per_page": 25,
 }
+```
+
+#### PUT Contact Interaction
+
+Update an existing contact_interaction.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|read|boolean|No|Check if contact interaction is marked as read|
+|important|boolean|No|Check if contact interaction is marked as important|
+
+
+Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
+
+example request: 
+
+```
+curl --location --request PUT 'https://data-connect-lips.gannettdigital.com//contact_interactions/1' \
+--header 'Authorization: {auth_token}' \
+--header 'Content-Type: application/json' \
+--data-raw '
+    {
+        "contact_interaction": { "important": false, "read": true}
+    }
+'
+```
+
+example success response (HTTP status 2xx):
+
+```
+{
+    "contact_interaction": "successfully updated!"
+}
+```
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
