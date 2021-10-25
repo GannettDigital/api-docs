@@ -7,9 +7,7 @@
 |---|---|
 |GET|/client_reports/marketing_activity/[gmaid]?[query_params]|
 
-Use GET to retrieve information from the Chat Summary API. Data can be returned for a GMAID by a specific date range determined by start date and end date.
-
-Subtotals will be returned for each Master Campaign ID with chat activity in the specified date range.
+Use GET to retrieve information from the Marketing activity API. Data can be returned for a GMAID by a specific date range determined by start date and end date.
 
 Subtotals can be further aggregated given an interval, and will be totaled for day, calendar_week, or calendar_month. The first day of the interval will be used to denote the interval totals.
 
@@ -64,9 +62,9 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 ```json
 {
     "api_name": "marketing_activity",
-    "api_run_date": "2021-10-22",
+    "api_run_date": "2021-10-25",
     "start_date": "2021-05-22",
-    "end_date": "2021-06-22",
+    "end_date": "2021-05-25",
     "time_zone": "America/Los_Angeles",
     "interval_size": "day",
     "report_data": {
@@ -84,234 +82,25 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                         "visits": 6,
                         "chats": 0,
                         "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-25",
-                        "visits": 43,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-26",
-                        "visits": 44,
-                        "chats": 0,
-                        "calls": 2,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-05-27",
-                        "visits": 33,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-28",
-                        "visits": 43,
-                        "chats": 1,
-                        "calls": 2,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-29",
-                        "visits": 44,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-30",
-                        "visits": 35,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-31",
-                        "visits": 40,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-01",
-                        "visits": 61,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 8
-                    },
-                    {
-                        "start_date": "2021-06-02",
-                        "visits": 72,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-03",
-                        "visits": 40,
-                        "chats": 1,
-                        "calls": 1,
-                        "forms": 4
-                    },
-                    {
-                        "start_date": "2021-06-04",
-                        "visits": 40,
-                        "chats": 2,
-                        "calls": 1,
-                        "forms": 2
-                    },
-                    {
-                        "start_date": "2021-06-05",
-                        "visits": 36,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-06",
-                        "visits": 37,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-07",
-                        "visits": 58,
-                        "chats": 1,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-08",
-                        "visits": 49,
-                        "chats": 1,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-09",
-                        "visits": 41,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-10",
-                        "visits": 43,
-                        "chats": 0,
-                        "calls": 2,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-11",
-                        "visits": 46,
-                        "chats": 0,
-                        "calls": 2,
-                        "forms": 3
-                    },
-                    {
-                        "start_date": "2021-06-12",
-                        "visits": 35,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-13",
-                        "visits": 32,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-14",
-                        "visits": 48,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-15",
-                        "visits": 47,
-                        "chats": 2,
-                        "calls": 1,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-16",
-                        "visits": 53,
-                        "chats": 0,
-                        "calls": 5,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-17",
-                        "visits": 62,
-                        "chats": 1,
-                        "calls": 3,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-18",
-                        "visits": 59,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-19",
-                        "visits": 59,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-20",
-                        "visits": 48,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-21",
-                        "visits": 42,
-                        "chats": 3,
-                        "calls": 2,
-                        "forms": 1
-                    }
-                ]
-            },
-            {
-                "global_master_campaign_id": "USA_2872211",
-                "campaign_name": "Website | Pegalis Law Group | Hosting & Management",
-                "campaign_type": "edge",
-                "organization": "reachlocal",
-                "campaign_start_date": "2021-05-31",
-                "campaign_end_date": "2021-08-29",
-                "intervals": [
-                    {
-                        "start_date": "2021-05-27",
-                        "visits": 0,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-07",
-                        "visits": 0,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-13",
-                        "visits": 1,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
+                        "forms": 0,
+                        "channels": [
+                          {
+                            "search": {
+                                "visits": 5,
+                                "chats": 0,
+                                "calls": 0,
+                                "forms": 0
+                            } 
+                          },
+                          {
+                            "social": {
+                              "visits": 1,
+                              "chats": 0,
+                              "calls": 0,
+                              "forms": 0
+                            }
+                          }
+                        ]
                     }
                 ]
             }
@@ -324,27 +113,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                     "chats": 1,
                     "calls": 0,
                     "forms": 1
-                },
-                {
-                    "start_date": "2021-06-02",
-                    "visits": 0,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 2
-                },
-                {
-                    "start_date": "2021-06-09",
-                    "visits": 0,
-                    "chats": 1,
-                    "calls": 0,
-                    "forms": 1
-                },
-                {
-                    "start_date": "2021-06-15",
-                    "visits": 0,
-                    "chats": 1,
-                    "calls": 0,
-                    "forms": 1
                 }
             ]
         },
@@ -353,13 +121,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         },
         "direct": {
             "intervals": [
-                {
-                    "start_date": "2021-05-21",
-                    "visits": 11,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
                 {
                     "start_date": "2021-05-22",
                     "visits": 28,
@@ -380,195 +141,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                     "chats": 0,
                     "calls": 0,
                     "forms": 0
-                },
-                {
-                    "start_date": "2021-05-25",
-                    "visits": 38,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-26",
-                    "visits": 25,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-27",
-                    "visits": 30,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-28",
-                    "visits": 21,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-29",
-                    "visits": 13,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-30",
-                    "visits": 16,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-01",
-                    "visits": 106,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-02",
-                    "visits": 33,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-03",
-                    "visits": 889,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-04",
-                    "visits": 54,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-05",
-                    "visits": 19,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-06",
-                    "visits": 57,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-07",
-                    "visits": 30,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-08",
-                    "visits": 40,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-09",
-                    "visits": 40,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-10",
-                    "visits": 32,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-11",
-                    "visits": 56,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-12",
-                    "visits": 18,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-13",
-                    "visits": 29,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-14",
-                    "visits": 26,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-15",
-                    "visits": 134,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-16",
-                    "visits": 29,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-17",
-                    "visits": 28,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-18",
-                    "visits": 484,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 1
-                },
-                {
-                    "start_date": "2021-06-19",
-                    "visits": 8,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-20",
-                    "visits": 13,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-21",
-                    "visits": 16,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
                 }
             ]
         },
@@ -582,45 +154,16 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             "intervals": []
         },
         "other": {
-            "intervals": [
-                {
-                    "start_date": "2021-05-31",
-                    "visits": 12,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-03",
-                    "visits": 0,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 1
-                },
-                {
-                    "start_date": "2021-06-07",
-                    "visits": 0,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 2
-                },
-                {
-                    "start_date": "2021-06-13",
-                    "visits": 0,
-                    "chats": 2,
-                    "calls": 0,
-                    "forms": 1
-                }
-            ]
+            "intervals": []
         },
         "otherpaid": {
             "intervals": []
         },
         "totals": {
-            "total_visits": 3960,
-            "total_calls": 34,
-            "total_chats": 21,
-            "total_forms": 3
+            "total_visits": 79,
+            "total_calls": 0,
+            "total_chats": 1,
+            "total_forms": 0
         }
     },
     "global_master_advertiser_id": "USA_136048"
@@ -631,14 +174,13 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <internal>Example Response</internal>
 
 ```json
-<internal>
 {
     "api_name": "marketing_activity",
-    "api_run_date": "2021-10-22",
+    "api_run_date": "2021-10-25",
     "start_date": "2021-05-22",
-    "end_date": "2021-06-22",
+    "end_date": "2021-05-25",
     "time_zone": "America/Los_Angeles",
-    "interval_size": "day",
+    "interval_size": "calendar_week",
     "report_data": {
         "campaigns": [
             {
@@ -655,233 +197,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                         "chats": 0,
                         "calls": 0,
                         "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-25",
-                        "visits": 43,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-26",
-                        "visits": 44,
-                        "chats": 0,
-                        "calls": 2,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-05-27",
-                        "visits": 33,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-28",
-                        "visits": 43,
-                        "chats": 1,
-                        "calls": 2,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-29",
-                        "visits": 44,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-30",
-                        "visits": 35,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-05-31",
-                        "visits": 40,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-01",
-                        "visits": 61,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 8
-                    },
-                    {
-                        "start_date": "2021-06-02",
-                        "visits": 72,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-03",
-                        "visits": 40,
-                        "chats": 1,
-                        "calls": 1,
-                        "forms": 4
-                    },
-                    {
-                        "start_date": "2021-06-04",
-                        "visits": 40,
-                        "chats": 2,
-                        "calls": 1,
-                        "forms": 2
-                    },
-                    {
-                        "start_date": "2021-06-05",
-                        "visits": 36,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-06",
-                        "visits": 37,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-07",
-                        "visits": 58,
-                        "chats": 1,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-08",
-                        "visits": 49,
-                        "chats": 1,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-09",
-                        "visits": 41,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-10",
-                        "visits": 43,
-                        "chats": 0,
-                        "calls": 2,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-11",
-                        "visits": 46,
-                        "chats": 0,
-                        "calls": 2,
-                        "forms": 3
-                    },
-                    {
-                        "start_date": "2021-06-12",
-                        "visits": 35,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-13",
-                        "visits": 32,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-14",
-                        "visits": 48,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-15",
-                        "visits": 47,
-                        "chats": 2,
-                        "calls": 1,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-16",
-                        "visits": 53,
-                        "chats": 0,
-                        "calls": 5,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-17",
-                        "visits": 62,
-                        "chats": 1,
-                        "calls": 3,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-18",
-                        "visits": 59,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-19",
-                        "visits": 59,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 1
-                    },
-                    {
-                        "start_date": "2021-06-20",
-                        "visits": 48,
-                        "chats": 1,
-                        "calls": 0,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-21",
-                        "visits": 42,
-                        "chats": 3,
-                        "calls": 2,
-                        "forms": 1
-                    }
-                ]
-            },
-            {
-                "global_master_campaign_id": "USA_2872211",
-                "campaign_name": "Website | Pegalis Law Group | Hosting & Management",
-                "campaign_type": "edge",
-                "organization": "reachlocal",
-                "campaign_start_date": "2021-05-31",
-                "campaign_end_date": "2021-08-29",
-                "intervals": [
-                    {
-                        "start_date": "2021-05-27",
-                        "visits": 0,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-07",
-                        "visits": 0,
-                        "chats": 0,
-                        "calls": 1,
-                        "forms": 0
-                    },
-                    {
-                        "start_date": "2021-06-13",
-                        "visits": 1,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
                     }
                 ]
             }
@@ -889,28 +204,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "search": {
             "intervals": [
                 {
-                    "start_date": "2021-05-22",
-                    "visits": 0,
-                    "chats": 1,
-                    "calls": 0,
-                    "forms": 1
-                },
-                {
-                    "start_date": "2021-06-02",
-                    "visits": 0,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 2
-                },
-                {
-                    "start_date": "2021-06-09",
-                    "visits": 0,
-                    "chats": 1,
-                    "calls": 0,
-                    "forms": 1
-                },
-                {
-                    "start_date": "2021-06-15",
+                    "start_date": "2021-05-17",
                     "visits": 0,
                     "chats": 1,
                     "calls": 0,
@@ -924,217 +218,14 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "direct": {
             "intervals": [
                 {
-                    "start_date": "2021-05-21",
-                    "visits": 11,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-22",
-                    "visits": 28,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-23",
-                    "visits": 9,
+                    "start_date": "2021-05-17",
+                    "visits": 37,
                     "chats": 0,
                     "calls": 0,
                     "forms": 0
                 },
                 {
                     "start_date": "2021-05-24",
-                    "visits": 16,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-25",
-                    "visits": 38,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-26",
-                    "visits": 25,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-27",
-                    "visits": 30,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-28",
-                    "visits": 21,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-29",
-                    "visits": 13,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-30",
-                    "visits": 16,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-01",
-                    "visits": 106,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-02",
-                    "visits": 33,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-03",
-                    "visits": 889,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-04",
-                    "visits": 54,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-05",
-                    "visits": 19,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-06",
-                    "visits": 57,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-07",
-                    "visits": 30,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-08",
-                    "visits": 40,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-09",
-                    "visits": 40,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-10",
-                    "visits": 32,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-11",
-                    "visits": 56,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-12",
-                    "visits": 18,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-13",
-                    "visits": 29,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-14",
-                    "visits": 26,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-15",
-                    "visits": 134,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-16",
-                    "visits": 29,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-17",
-                    "visits": 28,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-18",
-                    "visits": 484,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 1
-                },
-                {
-                    "start_date": "2021-06-19",
-                    "visits": 8,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-20",
-                    "visits": 13,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-21",
                     "visits": 16,
                     "chats": 0,
                     "calls": 0,
@@ -1152,50 +243,20 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             "intervals": []
         },
         "other": {
-            "intervals": [
-                {
-                    "start_date": "2021-05-31",
-                    "visits": 12,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-06-03",
-                    "visits": 0,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 1
-                },
-                {
-                    "start_date": "2021-06-07",
-                    "visits": 0,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 2
-                },
-                {
-                    "start_date": "2021-06-13",
-                    "visits": 0,
-                    "chats": 2,
-                    "calls": 0,
-                    "forms": 1
-                }
-            ]
+            "intervals": []
         },
         "otherpaid": {
             "intervals": []
         },
         "totals": {
-            "total_visits": 3960,
-            "total_calls": 34,
-            "total_chats": 21,
-            "total_forms": 3
+            "total_visits": 79,
+            "total_calls": 0,
+            "total_chats": 1,
+            "total_forms": 0
         }
     },
     "global_master_advertiser_id": "USA_136048"
 }
-</internal>
 ```
 
 
@@ -1245,7 +306,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
+|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 
 <a name="marketingactivitysocial"></a>
 **Social Object**
@@ -1294,7 +355,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
+|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 
 <a name="marketingactivityintervals"></a>
 **Intervals Object**
