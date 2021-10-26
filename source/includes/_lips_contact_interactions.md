@@ -24,9 +24,11 @@ When using the GET index method, the results will be filtered using these parame
 |`end_date`|No|Restricts the results to those occurring on or before this date|
 |`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
-|`sort_by`|No|Specifies what column to sort by. Valid columns are: impotant<br><b>Default value: occurrence_time</b> |
-|`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: desc</b> |
+|`sort_by`|No|Specifies what column to sort by. Valid columns are: important<br><b>Default value: occurred_at</b> |
+|`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: asc</b> |
 >*One of the `global_master_advertiser_id` or `global_master_campaign_id` is required
+
+> * It always sorting by `occurred_at DESC`, if we provided `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Defaults is always sort by `occurred_at DESC`.
 
 ### Examples:
 
@@ -153,7 +155,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     ],
     "page": 1,
     "total_pages": 1,
-    "per_page": 25,
+    "per_page": 25
 }
 ```
 
