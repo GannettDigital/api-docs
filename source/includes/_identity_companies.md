@@ -34,7 +34,7 @@ Get an existing company.
 |Field|Type|Description|
 |---|---|---|
 |id|integer|The maid of company|
-|gmaid|integer|The global master_advertiser_id of the company|
+|gmaid|string|The global master_advertiser_id of the company|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
 |name|string|The name of the company|
@@ -107,7 +107,7 @@ Get an existing company.
 |Field|Type|Description|
 |---|---|---|
 |id|integer|The maid of company|
-|gmaid|integer|The global master_advertiser_id of the company|
+|gmaid|string|The global master_advertiser_id of the company|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
 |name|string|The name of the company|
@@ -179,7 +179,7 @@ Create a company.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|gmaid|integer|No|The global master_advertiser_id of the company|
+|gmaid|string|No|The global master_advertiser_id of the company|
 |business_category_id|integer|No|The business category id of the advertiser|
 |business_sub_category_id|integer|No|The business sub category id of the advertiser|
 |name|string|No|The name of the company|
@@ -271,7 +271,7 @@ Update a company.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|gmaid|integer|No|The global master_advertiser_id of the company|
+|gmaid|string|No|The global master_advertiser_id of the company|
 |business_category_id|integer|No|The business category id of the advertiser|
 |business_sub_category_id|integer|No|The business sub category id of the advertiser|
 |name|string|No|The name of the company|
@@ -287,7 +287,7 @@ Update a company.
 |fax|integer|No|fax address of the company|
 |email|string|No|email address of the company|
 |url|string|No|url address of the company|
-|login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
+|login_user_id|Integer|No|An id of a login user, that the company is associated with|
 
 example request:
 
@@ -297,7 +297,7 @@ curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
---data-raw '   "company": {
+--data-raw '{
         "name": "Other Company",
     }'
 ```
