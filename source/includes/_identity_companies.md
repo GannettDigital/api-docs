@@ -1,45 +1,45 @@
-## Identity Prospective Advertisers
+## Identity Companies
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET | /v3/identities/prospective_advertisers
-| GET | /v3/identities/prospective_advertisers/[id]
-| POST | /v3/identities/prospective_advertisers
-| PUT | /v3/identities/prospective_advertisers/[id]
-| DELETE | /v3/identities/prospective_advertisers/[id]
-| POST | /v3/identities/prospective_advertisers/[id]/login_users
-| PUT | /v3/identities/prospective_advertisers/[id]/login_users/[id]
-| DELETE | /v3/identities/prospective_advertisers/[id]/login_users/[id]
+| GET | /v3/identities/companies
+| GET | /v3/identities/companies/[id]
+| POST | /v3/identities/companies
+| PUT | /v3/identities/companies/[id]
+| DELETE | /v3/identities/companies/[id]
+| POST | /v3/identities/companies/[id]/login_users
+| PUT | /v3/identities/companies/[id]/login_users/[id]
+| DELETE | /v3/identities/companies/[id]/login_users/[id]
 
 ### Resource Detail
 
-#### GET Prospective Advertiser(index)
+#### GET Company(index)
 
 When using the GET index method, the results will be filtered using these parameters:
 
 | Parameter | Required | Description |
 |---|---|---|
-|`page_size`|No|Restrict number of prospective advertisers in the result <br><b>Default value: 100</b> |
+|`page_size`|No|Restrict number of companies in the result <br><b>Default value: 100</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
-|`gmaid`|No|Specifies a gmaid that will be used for searching a prospective advertisers|
-|`email`|No|Specifies a email that will be used for searching a prospective advertisers|
-|`url`|No|Specifies a url that will be used for searching a prospective advertisers|
-|`login_user_id`|No|Specifies a login user id, based on which a search of a prospective advertisers wil be performed|
-|`login_user_email`|No|Specifies a login user email, based on which a search of a prospective advertisers wil be performed|
+|`gmaid`|No|Specifies a gmaid that will be used for searching a companies|
+|`email`|No|Specifies a email that will be used for searching a companies|
+|`url`|No|Specifies a url that will be used for searching a companies|
+|`login_user_id`|No|Specifies a login user id, based on which a search of a companies wil be performed|
+|`login_user_email`|No|Specifies a login user email, based on which a search of a companies wil be performed|
 
-Get an existing prospective advertiser.
+Get an existing company.
 
 |Field|Type|Description|
 |---|---|---|
-|id|integer|The maid of prospective advertiser|
-|gmaid|integer|The global master_advertiser_id of the prospective advertiser|
+|id|integer|The maid of company|
+|gmaid|string|The global master_advertiser_id of the company|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
-|name|string|The name of the prospective advertiser|
-|address1|string|The first address of the prospective advertiser|
-|address2|string|The second address of the prospective advertiser|
+|name|string|The name of the company|
+|address1|string|The first address of the company|
+|address2|string|The second address of the company|
 |city|string|The city of the advertiser|
 |province|string|The province of the advertiser|
 |postal_code|integer|the postal code of the advertiser|
@@ -47,15 +47,15 @@ Get an existing prospective advertiser.
 |phone_number|string|The phone number of the advertiser|
 |phone_type|string|The phone type of the advertiser|
 |phone_country_code|string|The phone country code of the advertiser|
-|fax|integer|fax address of the prospective advertiser|
-|email|string|email address of the prospective advertiser|
-|url|string|url address of the prospective advertiser|
-|login_users|Array|Array of login_users, that the prospective advertiser is associated with|
+|fax|integer|fax address of the company|
+|email|string|email address of the company|
+|url|string|url address of the company|
+|login_users|Array|Array of login_users, that the company is associated with|
 
 example request:
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -81,7 +81,7 @@ example success response (HTTP status 2xx):
     "phone_country_code": "+123",
     "fax": "123456",
     "email": "email@gmail.com",
-    "url": "http://www.prospect-advertisers.com",
+    "url": "http://www.some_company.com",
     "is_freemium": true,
     "primary_login_user_id": 1,
     "login_users": [
@@ -100,19 +100,19 @@ example success response (HTTP status 2xx):
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### GET Prospective Advertiser(show)
+#### GET Company(show)
 
-Get an existing prospective advertiser.
+Get an existing company.
 
 |Field|Type|Description|
 |---|---|---|
-|id|integer|The maid of prospective advertiser|
-|gmaid|integer|The global master_advertiser_id of the prospective advertiser|
+|id|integer|The maid of company|
+|gmaid|string|The global master_advertiser_id of the company|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
-|name|string|The name of the prospective advertiser|
-|address1|string|The first address of the prospective advertiser|
-|address2|string|The second address of the prospective advertiser|
+|name|string|The name of the company|
+|address1|string|The first address of the company|
+|address2|string|The second address of the company|
 |city|string|The city of the advertiser|
 |province|string|The province of the advertiser|
 |postal_code|integer|the postal code of the advertiser|
@@ -120,15 +120,15 @@ Get an existing prospective advertiser.
 |phone_number|string|The phone number of the advertiser|
 |phone_type|string|The phone type of the advertiser|
 |phone_country_code|string|The phone country code of the advertiser|
-|fax|integer|fax address of the prospective advertiser|
-|email|string|email address of the prospective advertiser|
-|url|string|url address of the prospective advertiser|
-|login_users|Array|Array of login_users, that the prospective advertiser is associated with|
+|fax|integer|fax address of the company|
+|email|string|email address of the company|
+|url|string|url address of the company|
+|login_users|Array|Array of login_users, that the company is associated with|
 
 example request:
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/8 \
+curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/8 \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -154,7 +154,7 @@ example success response (HTTP status 2xx):
     "phone_country_code": "+123",
     "fax": "123456",
     "email": "email@gmail.com",
-    "url": "http://www.prospect-advertisers.com",
+    "url": "http://www.some_company.com",
     "is_freemium": true,
     "primary_login_user_id": 1,
     "login_users": [
@@ -173,18 +173,18 @@ example success response (HTTP status 2xx):
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### POST Prospective Advertiser
+#### POST Company
 
-Create a prospective advertiser.
+Create a company.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|gmaid|integer|No|The global master_advertiser_id of the prospective advertiser|
+|gmaid|string|No|The global master_advertiser_id of the company|
 |business_category_id|integer|No|The business category id of the advertiser|
 |business_sub_category_id|integer|No|The business sub category id of the advertiser|
-|name|string|No|The name of the prospective advertiser|
-|address1|string|No|The first address of the prospective advertiser|
-|address2|string|No|The second address of the prospective advertiser|
+|name|string|No|The name of the company|
+|address1|string|No|The first address of the company|
+|address2|string|No|The second address of the company|
 |city|string|No|The city of the advertiser|
 |province|string|No|The province of the advertiser|
 |postal_code|integer|No|the postal code of the advertiser|
@@ -192,20 +192,20 @@ Create a prospective advertiser.
 |phone_number|string|No|The phone number of the advertiser|
 |phone_type|string|No|The phone type of the advertiser|
 |phone_country_code|string|No|The phone country code of the advertiser|
-|fax|integer|No|fax address of the prospective advertiser|
-|email|string|Yes|email address of the prospective advertiser|
-|url|string|Yes|url address of the prospective advertiser|
-|login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
+|fax|integer|No|fax address of the company|
+|email|string|Yes|email address of the company|
+|url|string|Yes|url address of the company|
+|login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
 
 example request:
 
 ```
-curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers' \
+curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
---data-raw '   "prospective_advertiser": {
+--data-raw '   "company": {
         "gmaid": "USA_132",
         "business_category_id": 14,
         "business_sub_category_id": 142,
@@ -221,7 +221,7 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospectiv
         "phone_country_code": "+123",
         "fax": "123456",
         "email": "email@gmail.com",
-        "url": "http://www.prospect-advertisers.com",
+        "url": "http://www.some_company.com",
         "login_user_id": 1
     }'
 ```
@@ -246,7 +246,7 @@ example success response (HTTP status 2xx):
     "phone_country_code": "+123",
     "fax": "123456",
     "email": "email@gmail.com",
-    "url": "http://www.prospect-advertisers.com",
+    "url": "http://www.some_company.com",
     "is_freemium": true,
     "primary_user_id": 1,
     "login_users": [
@@ -265,18 +265,18 @@ example success response (HTTP status 2xx):
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### PUT Prospective Advertiser
+#### PUT Company
 
-Update a prospective advertiser.
+Update a company.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|gmaid|integer|No|The global master_advertiser_id of the prospective advertiser|
+|gmaid|string|No|The global master_advertiser_id of the company|
 |business_category_id|integer|No|The business category id of the advertiser|
 |business_sub_category_id|integer|No|The business sub category id of the advertiser|
-|name|string|No|The name of the prospective advertiser|
-|address1|string|No|The first address of the prospective advertiser|
-|address2|string|No|The second address of the prospective advertiser|
+|name|string|No|The name of the company|
+|address1|string|No|The first address of the company|
+|address2|string|No|The second address of the company|
 |city|string|No|The city of the advertiser|
 |province|string|No|The province of the advertiser|
 |postal_code|integer|No|the postal code of the advertiser|
@@ -284,20 +284,20 @@ Update a prospective advertiser.
 |phone_number|string|No|The phone number of the advertiser|
 |phone_type|string|No|The phone type of the advertiser|
 |phone_country_code|string|No|The phone country code of the advertiser|
-|fax|integer|No|fax address of the prospective advertiser|
-|email|string|No|email address of the prospective advertiser|
-|url|string|No|url address of the prospective advertiser|
-|login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
+|fax|integer|No|fax address of the company|
+|email|string|No|email address of the company|
+|url|string|No|url address of the company|
+|login_user_id|Integer|No|An id of a login user, that the company is associated with|
 
 example request:
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/12' \
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/12' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
---data-raw '   "prospective_advertiser": {
+--data-raw '{
         "name": "Other Company",
     }'
 ```
@@ -322,7 +322,7 @@ example success response (HTTP status 2xx):
     "phone_country_code": "+123",
     "fax": "123456",
     "email": "email@gmail.com",
-    "url": "http://www.prospect-advertisers.com",
+    "url": "http://www.some_company.com",
     "is_freemium": true,
     "primary_login_user_id": 1,
     "login_users": [
@@ -341,14 +341,14 @@ example success response (HTTP status 2xx):
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### DELETE Prospective Advertiser
+#### DELETE Company
 
-Delete a prospective advertiser.
+Delete a company.
 
 example request:
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1' \
+curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
@@ -359,23 +359,23 @@ Upon a successful request (HTTP status 2xx), the response body will be empty.
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
 
-#### POST Prospective Advertiser user
+#### POST Company user
 
-Create a prospective advertiser login user.
+Create a company login user.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|login_user_id|Integer|Yes|An id of a login user, that the prospective advertiser is associated with|
+|login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
 
 example request:
 
 ```
-curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users' \
+curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
---data-raw '   "prospective_advertiser_login_user": {
+--data-raw '{
         "login_user_id": 1
     }'
 ```
@@ -383,25 +383,25 @@ Upon a successful request (HTTP status 2xx), the response body will be empty.
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### PUT Prospective Advertiser login user
+#### PUT Company login user
 
-UPDATE a prospective advertiser login user.
+UPDATE a company login user.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|login_user_id|Integer|YES|An id of a login user, that the prospective advertiser is associated with|
-|prospective_advertiser_id|Integer|YES|An id of an prospective advertiser, that the login user is associated with|
+|login_user_id|Integer|YES|An id of a login user, that the company is associated with|
+|company_id|Integer|YES|An id of an company, that the login user is associated with|
 |is_primary|Bool|No|Field which shows, if the login user is a primary one|
 
 example request:
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/login_users/1' \
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
---data-raw '   "prospective_advertiser_login_user": {
+--data-raw '   "company_login_user": {
         "is_primary": true
     }'
 ```
@@ -410,14 +410,14 @@ Upon a successful request (HTTP status 2xx), the response body will be empty.
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
 
-#### DELETE Prospective Advertiser User
+#### DELETE Company User
 
-Delete an existing Prospective Advertiser user.
+Delete an existing Company user.
 
 example request:
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/login_users/1' \
+curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY'

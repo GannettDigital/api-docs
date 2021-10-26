@@ -37,11 +37,11 @@ Get an existing user.
 |bu_id|integer|Business user id|
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the user|
-|prospective_advertisers|Array|Array of prospective advertisers, that the loign user is associated with|
+|companies|Array|Array of companies, that the loign user is associated with|
 |client_center_users|Array|Array of client center user, that the login user is associated with|
 |ldap_id|string|Id of the user used to reference a directory server|
 
-example request: 
+example request:
 
 ```
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users?first_name=Slim&last_name=Sha&email=scas \
@@ -66,7 +66,7 @@ example success response (HTTP status 2xx):
                 "test": "test",
                 "test2": "test"
             },
-            "prospective_advertisers": [
+            "companies": [
                 {
                     "id": 1,
                     "master_advertiser_id": null,
@@ -85,7 +85,7 @@ example success response (HTTP status 2xx):
                     "business_sub_category_id": 142,
                     "fax": 123456,
                     "email": "em@gmail.com",
-                    "url": "http://www.prospect-advertisers.com",
+                    "url": "http://www.some_company.com",
                     "is_freemium": false,
                     "created_at": "2021-08-27T13:19:29.000Z",
                     "updated_at": "2021-08-27T13:25:55.000Z"
@@ -133,11 +133,11 @@ Get an existing login user.
 |bu_id|integer|Business user id|
 |locale|string|Locale of the country the user is based in|
 |profile_data|JSON|Meta data of the login user|
-|prospective_advertisers|Array|Array of prospective advertisers, that the user is associated with|
+|companies|Array|Array of companies, that the user is associated with|
 |client_center_users|Array|Array of client center user, that the login user is associated with|
 |ldap_id|string|Id of the user used to reference a directory server|
 
-example request: 
+example request:
 
 ```
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/8 \
@@ -160,7 +160,7 @@ example success response (HTTP status 2xx):
         "test": "test",
         "test2": "test"
     },
-    "prospective_advertisers": [
+    "companies": [
         {
             "id": 1,
             "master_advertiser_id": null,
@@ -179,7 +179,7 @@ example success response (HTTP status 2xx):
             "business_sub_category_id": 142,
             "fax": 123456,
             "email": "em@gmail.com",
-            "url": "http://www.prospect-advertisers.com",
+            "url": "http://www.some_company.com",
             "is_freemium": false,
             "created_at": "2021-08-27T13:19:29.000Z",
             "updated_at": "2021-08-27T13:25:55.000Z"
@@ -225,7 +225,7 @@ Create a login user.
 |profile_data|JSON|No|Meta data of the user|
 |ldap_id|string|No|Id of the user used to reference a directory server|
 
-example request: 
+example request:
 
 ```
 curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users' \
@@ -261,7 +261,7 @@ example success response (HTTP status 2xx):
         "test": "test",
         "test2": "test"
     },
-    "prospective_advertisers": [],
+    "companies": [],
     "client_center_users": [],
     "ldap_id": "qwerty123"
 }
@@ -284,7 +284,7 @@ Update an existing user.
 
 Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
 
-example request: 
+example request:
 
 ```
 curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1' \
@@ -309,7 +309,7 @@ example success response (HTTP status 2xx):
     "bu_id": 1,
     "locale": "EN",
     "profile_data": null,
-    "prospective_advertisers": [
+    "companies": [
         {
             "id": 1,
             "master_advertiser_id": null,
@@ -328,7 +328,7 @@ example success response (HTTP status 2xx):
             "business_sub_category_id": 142,
             "fax": 123456,
             "email": "em@gmail.com",
-            "url": "http://www.prospect-advertisers.com",
+            "url": "http://www.some_company.com",
             "is_freemium": false,
             "created_at": "2021-08-27T13:19:29.000Z",
             "updated_at": "2021-08-27T13:25:55.000Z"
@@ -364,7 +364,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 Delete an existing login user.
 
-example request: 
+example request:
 
 ```
 curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1' \
@@ -388,7 +388,7 @@ Create a client center user.
 |type_of|Integer|No|Type of a client center user, that the login user is associated with.|
 |role|Integer|Yes|A role id of a client center user, that the login user is associated with.|
 
-example request: 
+example request:
 
 ```
 curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1/client_center_user' \
@@ -416,10 +416,10 @@ UPDATE a client center user.
 |role|Integer|Yes|A role id of a client center user, that the login user is associated with.|
 |login_user_id|Integer|No|An id of a login user id, that the client center user is associated with.|
 
-example request: 
+example request:
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/prospective_advertisers/1/users/1' \
+curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'x-api-key: APIGEE_KEY' \
@@ -437,7 +437,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 Delete an existing Client Center user.
 
-example request: 
+example request:
 
 ```
 curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1/client_center_users/1' \
