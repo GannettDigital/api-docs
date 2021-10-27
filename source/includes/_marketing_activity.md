@@ -13,7 +13,7 @@ Subtotals can be further aggregated given an interval, and will be totaled for d
 
 Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.
 
-<internal>Web_publisher_campaigns array will show the WPCS(offer name) with it's subtotatals attributed to that chat within a campaign (for only trusted users).</internal>
+<internal>Web_publisher_campaigns array will show the WPCS(offer name) with it's subtotals attributed to that chat within a campaign (for only trusted users).</internal>
 
 ### Parameters
 
@@ -70,8 +70,8 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
     "report_data": {
         "campaigns": [
             {
-                "global_master_campaign_id": "USA_1195173",
-                "campaign_name": "SEM | Pegalis Law Group | Medical Malpractice",
+                "global_master_campaign_id": "USA_3212412",
+                "campaign_name": "SK | Slipknot Group | Heavy Metal",
                 "campaign_type": "search",
                 "organization": "reachlocal",
                 "campaign_start_date": "2021-05-24",
@@ -83,24 +83,20 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                         "chats": 0,
                         "calls": 0,
                         "forms": 0,
-                        "channels": [
-                          {
+                        "channels": {
                             "search": {
                                 "visits": 5,
                                 "chats": 0,
                                 "calls": 0,
                                 "forms": 0
-                            } 
-                          },
-                          {
+                            },
                             "social": {
                               "visits": 1,
                               "chats": 0,
                               "calls": 0,
                               "forms": 0
                             }
-                          }
-                        ]
+                        }
                     }
                 ]
             }
@@ -184,8 +180,8 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
     "report_data": {
         "campaigns": [
             {
-                "global_master_campaign_id": "USA_1195173",
-                "campaign_name": "SEM | Pegalis Law Group | Medical Malpractice",
+                "global_master_campaign_id": "USA_77777777",
+                "campaign_name": "FC | Real Madrid | Football Club",
                 "campaign_type": "search",
                 "organization": "reachlocal",
                 "campaign_start_date": "2021-05-24",
@@ -255,7 +251,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             "total_forms": 0
         }
     },
-    "global_master_advertiser_id": "USA_136048"
+    "global_master_advertiser_id": "USA_16556777"
 }
 ```
 
@@ -268,7 +264,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |end_date|String|End date of report|
 |time_zone|String|Time Zone|
 |interval_size|String|Interval Size ('none', 'day', 'calendar_week' or 'calendar_month')|
-|report_data|Object|Report details. [Report Data Object](#chatreportdata)|
+|report_data|Object|Report details. [Report Data Object](#marketingactivityreportdata)|
 |global_master_advertiser_id|String|Global Master Advertiser ID|
 
 <a name="marketingactivityreportdata"></a>
