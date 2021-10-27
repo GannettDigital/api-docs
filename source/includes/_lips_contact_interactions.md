@@ -62,6 +62,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |company| String | yes | The company name for this contact|
 |title| String | yes | The title of the contact|
 |phone_numbers| String | yes | phone number data. ('phone_type' phone_type of the contact, 'phone_number' the normalized number of the phone number)|
+|call_recording_url| String | yes | only included when interaction is call |
+|call_duration| Integer | yes | only included when interaction is call |
 |created_at| Datetime | no | The date and time which this contact was created|
 |contact_external_source| String | no |contact_Ext Source tells us if this contact came to us from FPD, Yardi etc|
 |interaction_external_source| String | no | the number of the contacts page|
