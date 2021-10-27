@@ -63,7 +63,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |title| String | yes | The title of the contact|
 |phone_numbers| String | yes | phone number data. ('phone_type' phone_type of the contact, 'phone_number' the normalized number of the phone number)|
 |call_recording_url| String | yes | only included when interaction is call |
-|call_duration| Integer | yes | only included when interaction is call |
+|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call |
 |created_at| Datetime | no | The date and time which this contact was created|
 |contact_external_source| String | no |contact_Ext Source tells us if this contact came to us from FPD, Yardi etc|
 |interaction_external_source| String | no | the number of the contacts page|
@@ -117,6 +117,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
                         "phone_number": "+13184227453"
                     }
                 ],
+                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bccd/220384.mp3"
+                "call_duration": 44
                 "created_at": "2021-09-04T01:21:27.394Z",
                 "contact_external_source":"a6426573-5120-4077-9d71-ac5e7f65bccd",
                 "interaction_external_source": "capture"
