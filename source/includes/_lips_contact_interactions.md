@@ -82,6 +82,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
 |read|boolean|No|Check if contact interaction is marked as read|
 |important|boolean|No|Check if contact interaction is marked as important|
+|call_recording_url| String | yes | Only included when interaction is call|
+|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
 
 #### Example Response
 
@@ -102,6 +104,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "external_source": "capture",
             "important": true,
             "read": true,
+            "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bccd/220384.mp3"
+            "call_duration": 44
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
