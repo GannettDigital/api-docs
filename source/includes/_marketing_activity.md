@@ -146,9 +146,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "marketplace": {
             "intervals": []
         },
-        "calladextension": {
-            "intervals": []
-        },
         "other": {
             "intervals": []
         },
@@ -235,9 +232,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "marketplace": {
             "intervals": []
         },
-        "calladextension": {
-            "intervals": []
-        },
         "other": {
             "intervals": []
         },
@@ -278,7 +272,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |direct|Object|chat, visit, call, form counts attributed to organic sources (Organic direct) [Direct Object](#marketingactivitydirect)|
 |directory|Object|chat, visit, call, form counts attributed to organic sources (Organic directory) [Directory Object](#marketingactivitydirectory)|
 |marketplace|Object|chat, visit, call, form counts attributed to marketplace sources (Marketplace) [Marketplace Object](#marketingactivitymarketplace)|
-|calladextension|Object|chat, visit, call, form counts attributed to organic sources (Organic calladextension) [Calladextension Object](#marketingactivitycalladextension)|
 |other|Object|chat, visit, call, form counts attributed to organic sources (Other) [Other Object](#marketingactivityother)|
 |otherpaid|Object|chat, visit, call, form counts attributed to organic sources (Other paid) [Otherpaid Object](#marketingactivityotherpaid)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
@@ -327,13 +320,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 
 <a name="marketingactivitymarketplace"></a>
 **Marketplace Object**
-
-|Field Name|Datatype|Description|
-|---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-
-<a name="marketingactivitycalladextension"></a>
-**Calladextension Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
