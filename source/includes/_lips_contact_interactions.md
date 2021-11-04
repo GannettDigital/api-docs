@@ -86,16 +86,22 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
 
 **Totals**
+
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|total_events| Integer | no | totals of events|
-|total_call_events| Integer | no | totals of call events|
-|total_form_events| Integer | no | totals of form events|
-|total_chat_events| Integer | no | totals of chat events|
-|total_unread_events| Integer | no | totals of unread events|
-|total_unread_call_events| Integer | no | totals of unread call events|
-|total_unread_form_events| Integer | no | totals of unread form events|
-|total_unread_chat_events| Integer | no | totals of unread chat events|
+|events| Integer | no | totals of events|
+|call_events| Integer | no | totals of call events|
+|form_events| Integer | no | totals of form events|
+|chat_events| Integer | no | totals of chat events|
+
+**Unread**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|events| Integer | no | totals of unread events|
+|call_events| Integer | no | totals of unread call events|
+|form_events| Integer | no | totals of unread form events|
+|chat_events| Integer | no | totals of unread chat events|
 
 
 
