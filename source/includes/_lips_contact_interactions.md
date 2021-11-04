@@ -180,14 +180,18 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     "page": 1,
     "total_pages": 1,
     "per_page": 25,
-    "total_events": 3,
-    "total_call_events": 3,
-    "total_form_events": 0,
-    "total_chat_events": 0,
-    "total_unread_events": 2,
-    "total_unread_call_events": 2,
-    "total_unread_form_events": 0,
-    "total_unread_chat_events": 0
+    "totals": {
+        "events": 3,
+        "call_events": 3,
+        "form_events": 0,
+        "chat_events": 0,
+    },
+    "unread": {
+       "events": 2,
+       "call_events": 2
+       "form_events": 0
+       "chat_events": 0
+    }
 }
 ```
 
