@@ -85,6 +85,26 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |call_recording_url| String | yes | Only included when interaction is call|
 |call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
 
+**Totals**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|events| Integer | no | totals of events|
+|call_events| Integer | no | totals of call events|
+|form_events| Integer | no | totals of form events|
+|chat_events| Integer | no | totals of chat events|
+
+**Unread**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|events| Integer | no | totals of unread events|
+|call_events| Integer | no | totals of unread call events|
+|form_events| Integer | no | totals of unread form events|
+|chat_events| Integer | no | totals of unread chat events|
+
+
+
 #### Example Response
 
 ```javascript
@@ -159,7 +179,19 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     ],
     "page": 1,
     "total_pages": 1,
-    "per_page": 25
+    "per_page": 25,
+    "totals": {
+        "events": 3,
+        "call_events": 3,
+        "form_events": 0,
+        "chat_events": 0,
+    },
+    "unread": {
+       "events": 2,
+       "call_events": 2
+       "form_events": 0
+       "chat_events": 0
+    }
 }
 ```
 
