@@ -78,7 +78,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |created_at| Datetime | yes | The date and time which this interaction was created|
 |occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
 |display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
-|channel| String | yes | The channel of the campaign (type of web publisher)|
+|channel| String | yes | The acquisition channel responsible for the contact interaction|
 |event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
 |read|boolean|No|Check if contact interaction is marked as read|
