@@ -8,7 +8,7 @@
 
 This API can be used to retrieve metrics for Social campaigns broken down by campaign, cycle, web publisher campaign, ad set and creative.
 
-Use GET to retrieve creative metrics for a Social campaign. Metrics can be returned for a GMAID for a specific date range determined by start_date and end_date. Metrics can be retrieved for a specified campaign or cycle.
+Use GET to retrieve metrics for a Social campaign. Metrics can be returned for a GMAID for a specific date range determined by start_date and end_date. Metrics can be retrieved for a specified campaign or cycle.
 
 The requirements for these parameters are described below.
 
@@ -20,14 +20,14 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|---|
 |start_date| yes |--|Restricts the results to those ocurring on or after this date|
 |end_date| yes |--|Restricts the results to those ocurring on or before this date|
-global_master_campaign_id[]| no |--|Restrict results to one or more specific campaigns|
+|global_master_campaign_id[]| no |--|Restrict results to one or more specific campaigns|
 |campaign_status[]| no |running|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended|
 |campaign_cycle| no |--|Restrict results to a single campaign cycle|
 |include_cycles| no | false |Set to true or false on whether to include cycle nesting.  Default value is false|
 
 ### Response Data Details
 
-> Example Response with include_cycles=true
+> Example Response with include_cycles=false
 
 ```json
 {
