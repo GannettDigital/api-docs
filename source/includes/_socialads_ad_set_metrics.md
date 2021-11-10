@@ -31,7 +31,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
 
 ```json
 {
-    "api_name": "social_creative",
+    "api_name": "social_ad_set",
     "api_run_date": "2020-10-26",
     "earliest_date_available": "2020-10-01",
     "start_date": "2020-10-15",
@@ -62,15 +62,13 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                     }
                 ],
                 "impressions": 1392,
-                "remarketing_impressions": 0.0,
                 "call_to_action_clicks": 5.0,
                 "clicks": 18,
-                "chats": 9.0,
+                "chats": 9,
                 "calls": 0,
-                "emails": 0,
-                "web_events": 0.0,
+                "emails": 9,
                 "qualified_web_events": 0.0,
-                "views": 0.0,
+                "non_qualified_web_events": 0.0,
                 "social_clicks": 9.0,
                 "reach": 1392.0,
                 "social_reach": 89.0,
@@ -87,6 +85,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                 "checkin": 7.0,
                 "action_reaction": 5.0,
                 "spend": 25.0,
+                "relevance_score": 10.0,
                 "onsite_conversion_lead_grouped": 5.0,
                 "video_p100_watched_actions": 18.0,
                 "offline_conversion_purchases": 5.0,
@@ -116,7 +115,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                       "non_qualified_web_event":0,
                       "call_to_action_clicks": 5.0,
                       "clicks": 18,
-                      "chats": 9.0,
+                      "chats": 9,
                       "social_clicks": 9.0,
                       "reach": 1392.0,
                       "social_reach": 89.0,
@@ -134,6 +133,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                       "action_reaction": 5.0,
                       "onsite_conversion_lead_grouped": 5.0,
                       "spend": 0.0,
+                      "relevance_score": 10.0,
                       "video_p100_watched_actions": 18.0,
                       "offline_conversion_purchases": 5.0,
                       "offline_conversion_purchases_value": 79.0,
@@ -155,6 +155,10 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                           "target_gender": "All",
                           "optimization_event": "View Content",
                           "impressions": 100,
+                          "calls": 0,
+                          "emails": 0,
+                          "qualified_web_events": 0.0,
+                          "non_qualified_web_events": 0.0,
                           "clicks": 10,
                           "reach": 10,
                           "inline_link_clicks": 10,
@@ -169,6 +173,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                           "action_reaction": 10,
                           "frequency": 10,
                           "spend": 10,
+                          "relevance_score": 10.0,
                           "onsite_conversion_lead_grouped": 10,
                           "video_p100_watched_actions": 10,
                           "offline_conversion_purchases": 10,
@@ -183,6 +188,10 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                       "start_date": "2018-01-31",
                                       "end_date": "2021-08-30",
                                       "impressions": 4461.0,
+                                      "calls": 0,
+                                      "emails": 0,
+                                      "qualified_web_events": 0.0,
+                                      "non_qualified_web_events": 0.0,
                                       "call_to_action_clicks": 0,
                                       "clicks": 33.0,
                                       "social_clicks": 0,
@@ -202,6 +211,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                       "action_reaction": 0,
                                       "chats": 0,
                                       "spend": 51.12,
+                                      "relevance_score": 10.0,
                                       "video_p100_watched_actions": 0,
                                       "offline_conversion_purchases": 0,
                                       "offline_conversion_purchases_value": 0,
@@ -219,6 +229,10 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                       "start_date": "2018-04-10",
                                       "end_date": "2021-08-30",
                                       "impressions": 9359.0,
+                                      "calls": 0,
+                                      "emails": 0,
+                                      "qualified_web_events": 0.0,
+                                      "non_qualified_web_events": 0.0,
                                       "call_to_action_clicks": 0,
                                       "clicks": 71.0,
                                       "social_clicks": 0,
@@ -238,6 +252,7 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
                                       "action_reaction": 0,
                                       "chats": 0,
                                       "spend": 88.08,
+                                      "relevance_score": 10.0,
                                       "video_p100_watched_actions": 0,
                                       "offline_conversion_purchases": 0,
                                       "offline_conversion_purchases_value": 0,
@@ -255,35 +270,41 @@ global_master_campaign_id[]| no |--|Restrict results to one or more specific cam
             }
         ],
         "totals": {
-            "impressions": 1392,
-            "call_to_action_clicks": 5.0,
-            "clicks": 18,
-            "chats": 9.0,
-            "social_clicks": 9.0,
-            "reach": 1392.0,
-            "social_reach": 89.0,
-            "social_impressions": 1392.0,
-            "website_clicks": 7.0,
-            "inline_link_clicks": 9.0,
-            "link_click": 5.0,
-            "page_engagement": 56.0,
-            "like": 81.0,
-            "post_engagement": 82.0,
-            "comment": 8.0,
-            "post": 8.0,
-            "post_reaction": 71.0,
-            "checkin": 7.0,
-            "action_reaction": 5.0,
-            "onsite_conversion_lead_grouped": 10,
-            "spend": 25.0,
-            "video_p100_watched_actions": 18.0,
-            "offline_conversion_purchases": 5.0,
-            "offline_conversion_purchases_value": 79.0,
-            "cpc": 1.39,
-            "cpm": 17.96,
-            "ctr": 1.29,
-            "cpsc": 5.0,
-            "roas": 316.0
+            "clicks": 278,
+            "impressions": 41456,
+            "spend": 1035.02,
+            "relevance_score": 0,
+            "cpc": 3.72,
+            "cpm": 24.97,
+            "ctr": 0.67,
+            "chats": 0,
+            "emails": 9,
+            "calls": 0,
+            "qualified_web_events": 0,
+            "non_qualified_web_events": 0,
+            "reach": 30308.0,
+            "inline_link_clicks": 189.0,
+            "link_click": 189.0,
+            "page_engagement": 202.0,
+            "like": 0,
+            "post_engagement": 202.0,
+            "comment": 1.0,
+            "post": 1.0,
+            "post_reaction": 10.0,
+            "checkin": 0,
+            "action_reaction": 0,
+            "onsite_conversion_lead_grouped": 9.0,
+            "video_p100_watched_actions": 0,
+            "offline_conversion_purchases": 0,
+            "offline_conversion_purchases_value": 0,
+            "unique_link_click": 179.0,
+            "social_reach": 0,
+            "social_impressions": 0,
+            "website_clicks": 0,
+            "call_to_action_clicks": 0,
+            "social_clicks": 0,
+            "cpsc": 0,
+            "roas": 0.0
         },
     }
 }
@@ -356,6 +377,10 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | goals | Array | No | Array of Goals |
 | cycles | Cycle[] | No | Array of Cycles |
 | impressions | Int | No | Total Impressions for Campaign |
+| calls | Int | No | Total Calls for Campaign |
+| emails | Int | No | Total emails for Campaign |
+| qualified_web_events | Int | No | Total emails for Campaign |
+| web_events | Int | No | Total web_events for Campaign |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks for Campaign |
 | clicks | Int | No | Total Clicks for Campaign |
 | chats | Int | No | Total chat generated by paid traffic |
@@ -377,14 +402,15 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | onsite_conversion_lead_grouped | Int | No | Total Onsite Conversion Lead Grouped for Campaign |
 | frequency | Int | No | Total Frequency for Campaign |
 | spend | Int | No | Total Spend for Campaign |
+| relevance_score | Float | No | Average relevance score see https://www.facebook.com/business/news/relevance-score |
 | video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent for Campaign |
 | offline_conversion_purchases | Int | No | Total Offline Conversion Purchases for Campaign |
 | offline_conversion_purchases_value | Int | No | Total Offline Conversion Purchase Value for Campaign |
-| cpc | Int | No | Total Cost per Click for Campaign |
-| cpm | Int | No | Total Cost per Milli for Campaign |
-| ctr | Int | No | Total Click Through Rate for Campaign |
-| cpsc | Int | No | Total CPSC for Campaign |
-| roas | Int | No | Total ROAS for Campaign |
+| cpc | Float | No | Total Cost per Click for Campaign |
+| cpm | Float | No | Total Cost per Milli for Campaign |
+| ctr | Float | No | Total Click Through Rate for Campaign |
+| cpsc | Float | No | Total CPSC for Campaign |
+| roas | Float | No | Total ROAS for Campaign |
 | cycles | Cycle[] | No | Array of cycles |
 | campaigns | Campaign[] | No | Array of campaigns |
 
@@ -417,14 +443,15 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | onsite_conversion_lead_grouped | Int | No | Total Onsite Conversion Lead Grouped for Campaign |
 | frequency | Int | No | Total Frequency for Cycle |
 | spend | Int | No | Total Spend for Cycle |
+| relevance_score | Float | No | Average relevance score see https://www.facebook.com/business/news/relevance-score |
 | video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent for Cycle |
 | offline_conversion_purchases | Int | No | Total Offline Conversion Purchases for Cycle |
 | offline_conversion_purchases_value | Int | No | Total Offline Conversion Purchase Value for Cycle |
-| cpc | Int | No | Total Cost per Click for Cycle |
-| cpm | Int | No | Total Cost per Milli for Cycle |
-| ctr | Int | No | Total Click Through Rate for Cycle |
-| cpsc | Int | No | Total CPSC for Cycle |
-| roas | Int | No | Total ROAS for Cycle |
+| cpc | Float | No | Total Cost per Click for Cycle |
+| cpm | Float | No | Total Cost per Milli for Cycle |
+| ctr | Float | No | Total Click Through Rate for Cycle |
+| cpsc | Float | No | Total CPSC for Cycle |
+| roas | Float | No | Total ROAS for Cycle |
 | wpcs | WPC[] | No | Array of WPCs |
 
 **WPCs (Web Publisher Campaign) Object**
@@ -440,38 +467,83 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | tactic | String | No | Tactic for WPC (Offer Name) |
 | external_account_id | String | No | External Account ID for WPC |
 | external_account_name | String | No | External Account Name for WPC |
-| impressions | Int | No | Total Impressions for Cycle |
-| call_to_action_clicks | Int | No | Total Call to Action Clicks for Cycle |
-| clicks | Int | No | Total Clicks for Cycle |
+| impressions | Int | No | Total Impressions for WPC |
+| call_to_action_clicks | Int | No | Total Call to Action Clicks for WPC |
+| clicks | Int | No | Total Clicks for WPC |
 | chats | Int | No | Total chat generated by paid traffic|
-| social_clicks | Int | No | Total Social Clicks for Cycle |
-| reach | Int | No | Total Reach for Cycle |
-| social_reach | Int | No | Total Social Reach for Cycle |
-| social_impressions | Int | No | Total Social Impressions for Cycle |
-| website_clicks | Int | No | Total Website Clicks for Cycle |
-| inline_link_clicks | Int | No | Total Inline Link Clicks for Cycle |
-| link_click | Int | No | Total Link Clicks for Cycle |
-| page_engagement | Int | No | Total Page Engagement for Cycle |
-| like | Int | No | Total Likes for Cycle |
-| post_engagement | Int | No | Total Post Engagement for Cycle |
-| comment | Int | No | Total Comments for Cycle |
-| post | Int | No | Total Posts for Cycle |
-| post_reaction | Int | No | Total Post Reactions for Cycle |
-| checkin | Int | No | Total Checkins for Cycle |
-| action_reaction | Int | No | Total Action Reaction for Cycle |
-| onsite_conversion_lead_grouped | Int | No | Total Onsite Conversion Lead Grouped for Campaign |
-| frequency | Int | No | Total Frequency for Cycle |
-| spend | Int | No | Total Spend for Cycle |
-| video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent for Cycle |
-| offline_conversion_purchases | Int | No | Total Offline Conversion Purchases for Cycle |
-| offline_conversion_purchases_value | Int | No | Total Offline Conversion Purchase Value for Cycle |
-| cpc | Int | No | Total Cost per Click for Cycle |
-| cpm | Int | No | Total Cost per Milli for Cycle |
-| ctr | Int | No | Total Click Through Rate for Cycle |
-| cpsc | Int | No | Total CPSC for Cycle |
-| roas | Int | No | Total ROAS for Cycle |
-| intervals | Interval[] | No | Array of Intervals |
-| creatives | Creative[] | No | Array of Creatives |
+| social_clicks | Int | No | Total Social Clicks for WPC |
+| reach | Int | No | Total Reach for WPC |
+| social_reach | Int | No | Total Social Reach for WPC |
+| social_impressions | Int | No | Total Social Impressions for WPC |
+| website_clicks | Int | No | Total Website Clicks for WPC |
+| inline_link_clicks | Int | No | Total Inline Link Clicks for WPC |
+| link_click | Int | No | Total Link Clicks for WPC |
+| page_engagement | Int | No | Total Page Engagement for WPC |
+| like | Int | No | Total Likes for WPC |
+| post_engagement | Int | No | Total Post Engagement for WPC |
+| comment | Int | No | Total Comments for WPC |
+| post | Int | No | Total Posts for WPC |
+| post_reaction | Int | No | Total Post Reactions for WPC |
+| checkin | Int | No | Total Checkins for WPC |
+| action_reaction | Int | No | Total Action Reaction for WPC |
+| onsite_conversion_lead_grouped | Int | No | Total Onsite Conversion Lead Grouped for WPC |
+| frequency | Int | No | Total Frequency for WPC |
+| spend | Int | No | Total Spend for WPC |
+| relevance_score | Float | No | Average relevance score see https://www.facebook.com/business/news/relevance-score |
+| video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent for WPC |
+| offline_conversion_purchases | Int | No | Total Offline Conversion Purchases for WPC|
+| offline_conversion_purchases_value | Int | No | Total Offline Conversion Purchase Value for WPC|
+| cpc | Int | No | Total Cost per Click for WPC |
+| cpm | Int | No | Total Cost per Milli for WPC |
+| ctr | Int | No | Total Click Through Rate for WPC |
+| cpsc | Int | No | Total CPSC for WPC |
+| roas | Int | No | Total ROAS for WPC |
+| ad_sets | AdSets[] | No | Array of Ad Sets |
+
+**Ad Sets Object**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+| id | String | No | Unique Identifier for Ad Set |
+| name | String | No | Name of Ad Set |
+| target_min_age | String | No | Target Miniumum Age |
+| target_max_age | String | No | Target Maximum Age  |
+| target_device_type | String | No | Target Device Type |
+| target_gender | String | Yes | Target Gender (Male,Female,All) |
+| optimization_event | String | No | Optimization Event |
+| facebook_id | String | No | External Facebook ID for Ad Set |
+| impressions | Int | No | Total Impressions for Ad Set |
+| call_to_action_clicks | Int | No | Total Call to Action Clicks for Ad Set |
+| clicks | Int | No | Total Clicks for Ad Set |
+| social_clicks | Int | No | Total Social Clicks for Ad Set |
+| reach | Int | No | Total Reach for Ad Set |
+| social_reach | Int | No | Total Social Reach for Ad Set |
+| social_impressions | Int | No | Total Social Impressions for Ad Set |
+| website_clicks | Int | No | Total Website Clicks for Ad Set |
+| inline_link_clicks | Int | No | Total Inline Link Clicks for Ad Set |
+| link_click | Int | No | Total Link Clicks for Ad Set |
+| page_engagement | Int | No | Total Page Engagement for Ad Set |
+| like | Int | No | Total Likes for Ad Set |
+| post_engagement | Int | No | Total Post Engagement for Ad Set |
+| comment | Int | No | Total Comments for Ad Set |
+| post | Int | No | Total Posts for Ad Set |
+| post_reaction | Int | No | Total Post Reactions for Ad Set |
+| checkin | Int | No | Total Checkins for Ad Set |
+| action_reaction | Int | No | Total Action Reaction for Ad Set |
+| onsite_conversion_lead_grouped | Int | No | Total Onsite Conversion Lead Grouped for Ad Set |
+| frequency | Int | No | Total Frequency for Ad Set |
+| spend | Int | No | Total Spend for Ad Set |
+| relevance_score | Float | No | Average relevance score see https://www.facebook.com/business/news/relevance-score |
+| video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent for Ad Set |
+| offline_conversion_purchases | Int | No | Total Offline Conversion Purchases for Ad Set|
+| offline_conversion_purchases_value | Int | No | Total Offline Conversion Purchase Value for Ad Set|
+| cpc | Float | No | Total Cost per Click for Ad Set |
+| cpm | Float | No | Total Cost per Milli for Ad Set |
+| ctr | Float | No | Total Click Through Rate for Ad Set |
+| cpsc | Float | No | Total CPSC for Ad Set |
+| roas | Float | No | Total ROAS for Ad Set |
+| creatives[] | No | Array of Creatives |
+
 
 **Creative Object**
 
@@ -486,7 +558,6 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | impressions | Int | No | Total Impressions for Creative |
 | call_to_action_clicks | Int | No | Total Call to Action Clicks for Creative |
 | clicks | Int | No | Total Clicks for Creative |
-| chats | Int | No | Total chat generated by paid traffic |
 | social_clicks | Int | No | Total Social Clicks for Creative |
 | reach | Int | No | Total Reach for Creative |
 | social_reach | Int | No | Total Social Reach for Creative |
@@ -505,16 +576,15 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | onsite_conversion_lead_grouped | Int | No | Total Onsite Conversion Lead Grouped for Campaign |
 | frequency | Int | No | Total Frequency for Creative |
 | spend | Int | No | Total Spend for Creative |
+| relevance_score | Float | No | Average relevance score see https://www.facebook.com/business/news/relevance-score |
 | video_p100_watched_actions | Int | No | Total Videos Watched to 100 percent for Creative |
 | offline_conversion_purchases | Int | No | Total Offline Conversion Purchases for Creative |
 | offline_conversion_purchases_value | Int | No | Total Offline Conversion Purchase Value for Creative |
-| cpc | Int | No | Total Cost per Click for Creative |
-| cpm | Int | No | Total Cost per Milli for Creative |
-| ctr | Int | No | Total Click Through Rate for Creative |
-| cpsc | Int | No | Total CPSC for Creative |
-| roas | Int | No | Total ROAS for Creative |
-| intervals | Interval[] | No | Array of Intervals |
-| creatives | Creative[] | No | Array of Creatives |
+| cpc | Float | No | Total Cost per Click for Creative |
+| cpm | Float | No | Total Cost per Milli for Creative |
+| ctr | Float | No | Total Click Through Rate for Creative |
+| cpsc | Float | No | Total CPSC for Creative |
+| roas | Float | No | Total ROAS for Creative |
 
 **Totals Object**
 
