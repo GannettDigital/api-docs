@@ -1,4 +1,4 @@
-## SocialAds Adset Metrics
+## SocialAds Ad Set Metrics
 
 ### Resource Overview
 
