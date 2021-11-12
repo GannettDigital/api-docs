@@ -81,8 +81,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
 |read|boolean|No|Check if contact interaction is marked as read|
 |important|boolean|No|Check if contact interaction is marked as important|
-|call_recording_url| String | yes | Only included when interaction is call|
-|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
 
 **Totals**
 
@@ -102,6 +100,36 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |form_events| Integer | no | totals of unread form events|
 |chat_events| Integer | no | totals of unread chat events|
 
+**Call**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|call_recording_url| String | yes | Only included when interaction is call|
+|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
+
+**Form**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|sub_type| String | yes |Only included when interaction is call|
+|full_message| string | yes |full message of the form event|
+|message| string | yes| parsed message|
+|extra_fields| object | yes |extra fields|
+
+**Chat**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|transcript| object | no |object of chat transcript|
+
+**Transcript**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|id| object | no |A sequential id of the line chat transcript. It uniquely identifies a line of the chat transcript within this contact interaction.|
+|timestamp| object | no |The date and time that the external chat API registered for this line of the chat transcript.|
+|form| object | no |The display name of the member of the chat who sent this message.|
+|message| object | no |The message body of this line of the chat transcript.|
 
 
 #### Example Response
@@ -122,8 +150,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "external_source": "capture",
             "important": true,
             "read": true,
-            "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bccd/220384.mp3"
-            "call_duration": 44
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -140,6 +166,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
                 ],
                 "created_at": "2021-09-04T01:21:27.394Z"
             },
+            "call": {
+                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
+                "call_duration": 44
+            }
         },
         {
             "id": 3871993,
@@ -169,6 +199,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
                     }
                 ],
                "created_at": "2021-09-04T01:21:27.394Z"
+            },
+            "call": {
+                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
+                "call_duration": 44
             }
         }
     ],
