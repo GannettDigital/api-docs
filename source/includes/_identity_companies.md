@@ -11,8 +11,11 @@
 | DELETE | /v3/identities/companies/[id]
 | POST | /v3/identities/companies/[id]/login_users
 | PUT | /v3/identities/companies/[id]/login_users/[id]
-| DELETE | /v3/identities/companies/[id]/login_users/[id]
-
+| GET | /v3/identities/companies/[id]/products
+| GET | /v3/identities/companies/[id]/products[product_code]
+| POST | /v3/identities/companies/[id]/products
+| PUT | /v3/identities/companies/[id]/products/[product_code]
+| DELETE | /v3/identities/companies/[id]/products/[product_code]
 ### Resource Detail
 
 #### GET Company(index)
@@ -426,3 +429,166 @@ curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/companie
 Upon a successful request (HTTP status 2xx), the response body will be empty.
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+#### GET Company Product(index)
+
+Get all products for existing company.
+
+|Field|Type|Description|
+|---|---|---|
+|company_products|array|Array of all company products|
+
+example request:
+
+```
+curl --location --request GET 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products' \
+--header 'Authorization: TRUSTED_TOKEN' \
+--header 'x-api-key: APIGEE_KEY' \
+```
+
+example success response (HTTP status 2xx):
+
+```
+{
+  "company_products": [
+    {
+      "company_id": 4,
+      "product_code": "test_product",
+      "product_name": "Test Name",
+      "product_type": "test_type",
+      "external_id": "123",
+      "origin": "local",
+      "active": true,
+      "details": {
+        "details_test": "test_details"
+      }
+    },
+    {
+      "company_id": 4,
+      "product_code": "test_product2",
+      "product_name": "Test Product2",
+      "product_type": "test",
+      "external_id": "123",
+      "origin": "local",
+      "active": false,
+      "details": null
+    }
+  ]
+}
+```
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+#### GET Company Product(show)
+
+Get company product by product_code.
+
+| Parameter | Required | Description |
+
+|Field|Type|Description|
+|---|---|---|
+|company_id|integer|The maid of company|
+|product_code|string|The unique identifier of the product|
+|product_name|string|The name of the product|
+|product_type|string|The type of the product|
+|external_id|string|The external id of the product|
+|origin|string|The origin of the product|
+|active|boolean|Active status of product|
+|details|json|Other product information|
+
+example request:
+
+```
+curl --location --request GET 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products/test_product' \
+--header 'Authorization: TRUSTED_TOKEN' \
+--header 'x-api-key: APIGEE_KEY' \
+```
+
+example success response (HTTP status 2xx):
+
+```
+{
+  "company_id": 4,
+  "product_code": "test_product",
+  "product_name": "Test Name",
+  "product_type": "test_type",
+  "external_id": "123",
+  "origin": "local",
+  "active": true,
+  "details": {
+    "details_test": "test_details"
+  }
+}
+```
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+#### POST Company Product
+
+Create a company product.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|product_code|string|yes|The unique identifier of a product|
+|active|boolean|yes|Active status of product|
+|external_id|string|no|The external id of the product|
+|origin|string|no|The origin of the product|
+|details|json|no|Other product information|
+
+example request:
+
+```
+curl --location --request POST 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products' \
+--header 'Authorization: TRUSTED_TOKEN' \
+--header 'Accept: application/json' \
+--header 'x-api-key: APIGEE_KEY' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "product_code":"test_product2",
+   "active":true,
+   "origin":"local",
+   "external_id":"123",
+   "details": {
+       "test_details":"value"
+       }
+}'
+```
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+#### PUT Company Product
+
+UPDATE a company product.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|external_id|string|no|The external id of the product|
+|origin|string|no|The origin of the product|
+|active|boolean|no|Active status of product|
+|details|json|no|Other product information|
+
+example request:
+
+```
+curl --location --request PUT 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/1/products/test_product' \
+--header 'Authorization: TRUSTED_TOKEN' \
+--header 'Accept: application/json' \
+--header 'x-api-key: APIGEE_KEY' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "active":false,
+   "details": {
+       "details":"update_test"
+       }
+}'
+```
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+#### DELETE Company Product
+
+Delete an existing company product.
+
+example request:
+
+```
+curl --location --request DELETE 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products/test_product' \
+--header 'Authorization: TRUSTED_TOKEN' \
+--header 'x-api-key: APIGEE_KEY' \
+
+Upon a successful request (HTTP status 2xx), the response body will be empty.
