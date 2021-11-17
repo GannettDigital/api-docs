@@ -30,7 +30,7 @@ This endpoint is used to inform us of confirmed leads for First Party Data
 
 |Data Field|Required|Datatype|Description|
 |---|---|---|---|
-|gmaid|yes|string|Global Master Advertiser ID|
+|gmaid|yes|string|Global Master Advertiser ID - Uppercase platform and underscore between platform and MAID required|
 |phone|yes|string|Normalized phone number of the lead|
 |duration|yes|number|The duration of the call in seconds|
 |recording_url|yes|string|The URL address to an audio recording of the call.|
