@@ -482,8 +482,6 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 
 Get company product by product_code.
 
-| Parameter | Required | Description |
-
 |Field|Type|Description|
 |---|---|---|
 |company_id|integer|The maid of company|
@@ -590,5 +588,5 @@ example request:
 curl --location --request DELETE 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products/test_product' \
 --header 'Authorization: TRUSTED_TOKEN' \
 --header 'x-api-key: APIGEE_KEY' \
-
+```
 Upon a successful request (HTTP status 2xx), the response body will be empty.
