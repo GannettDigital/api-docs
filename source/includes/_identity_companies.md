@@ -127,6 +127,7 @@ Get an existing company.
 |email|string|email address of the company|
 |url|string|url address of the company|
 |login_users|Array|Array of login_users, that the company is associated with|
+|products|Array|Array of this companies products|
 
 example request:
 
@@ -169,6 +170,21 @@ example success response (HTTP status 2xx):
             "bu_id": 1,
             "locale": "EN",
             "profile_data": null
+        }
+    ],
+    "products": [
+        {
+            "product_code": "test_product1",
+            "product_name": "Test Product1",
+            "product_type": "test",
+            "created_at": "2021-11-18T15:41:41.000Z",
+            "updated_at": "2021-11-18T15:41:41.000Z",
+            "external_id": "123",
+            "origin": "local",
+            "active": true,
+            "details": {
+                "test_details": "details"
+            }
         }
     ]
 }
@@ -262,7 +278,8 @@ example success response (HTTP status 2xx):
             "locale": "EN",
             "profile_data": null
         }
-    ]
+    ],
+    "product":[]
 }
 ```
 
@@ -338,7 +355,8 @@ example success response (HTTP status 2xx):
             "locale": "EN",
             "profile_data": null
         }
-    ]
+    ],
+    "products": []
 }
 ```
 
