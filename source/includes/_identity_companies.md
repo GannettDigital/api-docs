@@ -183,7 +183,8 @@ example success response (HTTP status 2xx):
             "origin": "local",
             "active": true,
             "details": {
-                "test_details": "details"
+                "color":"pink",
+                "flavor":"watermelon"
             }
         }
     ]
@@ -478,7 +479,8 @@ example success response (HTTP status 2xx):
       "origin": "local",
       "active": true,
       "details": {
-        "details_test": "test_details"
+        "color":"pink",
+        "flavor":"watermelon"
       }
     },
     {
@@ -509,7 +511,7 @@ Get company product by product_code.
 |external_id|string|The external id of the product|
 |origin|string|The origin of the product|
 |active|boolean|Active status of product|
-|details|json|Other product information|
+|details|json|A collection of key value pairs specific to this company's instance of this product|
 
 example request:
 
@@ -531,7 +533,8 @@ example success response (HTTP status 2xx):
   "origin": "local",
   "active": true,
   "details": {
-    "details_test": "test_details"
+    "color":"pink",
+    "flavor":"watermelon"
   }
 }
 ```
@@ -579,7 +582,7 @@ UPDATE a company product.
 |external_id|string|no|The external id of the product|
 |origin|string|no|The origin of the product|
 |active|boolean|no|Active status of product|
-|details|json|no|Other product information|
+|details|json|no|A collection of key value pairs specific to this company's instance of this product|
 
 example request:
 
@@ -592,8 +595,9 @@ curl --location --request PUT 'https://data-connect-pre-production.gannettdigita
 --data-raw '{
    "active":false,
    "details": {
-       "details":"update_test"
-       }
+        "color":"pink",
+        "flavor":"watermelon"
+    }
 }'
 ```
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
