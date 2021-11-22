@@ -546,7 +546,7 @@ Create a company product.
 |active|boolean|yes|Active status of product|
 |external_id|string|no|The external id of the product|
 |origin|string|no|The origin of the product|
-|details|json|no|Other product information|
+|details|json|no|A collection of key value pairs specific to this company's instance of this product|
 
 example request:
 
@@ -562,7 +562,8 @@ curl --location --request POST 'https://data-connect-pre-production.gannettdigit
    "origin":"local",
    "external_id":"123",
    "details": {
-       "test_details":"value"
+       "color":"pink",
+       "flavor":"watermelon"
        }
 }'
 ```
