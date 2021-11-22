@@ -61,7 +61,6 @@ example request:
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
 ```
 
 example success response (HTTP status 2xx):
@@ -135,7 +134,6 @@ example request:
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/8 \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
 ```
 
 example success response (HTTP status 2xx):
@@ -223,7 +221,6 @@ example request:
 curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '   "company": {
         "gmaid": "USA_132",
@@ -316,7 +313,6 @@ example request:
 curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/12' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '{
         "name": "Other Company",
@@ -373,7 +369,6 @@ example request:
 curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
 ```
 
 Upon a successful request (HTTP status 2xx), the response body will be empty.
@@ -395,7 +390,6 @@ example request:
 curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '{
         "login_user_id": 1
@@ -421,7 +415,6 @@ example request:
 curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '   "company_login_user": {
         "is_primary": true
@@ -442,7 +435,6 @@ example request:
 curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
 ```
 
 Upon a successful request (HTTP status 2xx), the response body will be empty.
@@ -462,7 +454,6 @@ example request:
 ```
 curl --location --request GET 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products' \
 --header 'Authorization: TRUSTED_TOKEN' \
---header 'x-api-key: APIGEE_KEY' \
 ```
 
 example success response (HTTP status 2xx):
@@ -518,7 +509,6 @@ example request:
 ```
 curl --location --request GET 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products/test_product' \
 --header 'Authorization: TRUSTED_TOKEN' \
---header 'x-api-key: APIGEE_KEY' \
 ```
 
 example success response (HTTP status 2xx):
@@ -557,7 +547,6 @@ example request:
 curl --location --request POST 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products' \
 --header 'Authorization: TRUSTED_TOKEN' \
 --header 'Accept: application/json' \
---header 'x-api-key: APIGEE_KEY' \
 --header 'Content-Type: application/json' \
 --data-raw '{
    "product_code":"test_product2",
@@ -590,7 +579,6 @@ example request:
 curl --location --request PUT 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/1/products/test_product' \
 --header 'Authorization: TRUSTED_TOKEN' \
 --header 'Accept: application/json' \
---header 'x-api-key: APIGEE_KEY' \
 --header 'Content-Type: application/json' \
 --data-raw '{
    "active":false,
@@ -610,6 +598,5 @@ example request:
 ```
 curl --location --request DELETE 'https://data-connect-pre-production.gannettdigital.com/v3/identities/companies/4/products/test_product' \
 --header 'Authorization: TRUSTED_TOKEN' \
---header 'x-api-key: APIGEE_KEY' \
 ```
 Upon a successful request (HTTP status 2xx), the response body will be empty.
