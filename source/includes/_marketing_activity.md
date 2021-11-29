@@ -276,6 +276,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |otherpaid|Object|chat, visit, call, form counts attributed to organic sources (Other paid) [Otherpaid Object](#marketingactivityotherpaid)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
+
 <a name="chatcampaigns"></a>
 **Campaigns Object**
 
@@ -289,6 +290,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitysearch"></a>
 **Search Object**
@@ -296,6 +298,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitysocial"></a>
 **Social Object**
@@ -303,6 +306,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitydirect"></a>
 **Direct Object**
@@ -310,6 +314,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitydirectory"></a>
 **Directory Object**
@@ -317,6 +322,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitymarketplace"></a>
 **Marketplace Object**
@@ -324,6 +330,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivityother"></a>
 **Other Object**
@@ -331,6 +338,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivityotherpaid"></a>
 **Otherpaid Object**
@@ -338,6 +346,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
+|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivityintervals"></a>
 **Intervals Object**
