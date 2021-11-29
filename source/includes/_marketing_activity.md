@@ -74,6 +74,8 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 "campaign_name": "SK | Slipknot Group | Heavy Metal",
                 "campaign_type": "search",
                 "organization": "reachlocal",
+                "offer_id": 2101,
+                "source": "XMO",
                 "campaign_start_date": "2021-05-24",
                 "campaign_end_date": "2021-06-24",
                 "intervals": [
@@ -181,6 +183,8 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 "campaign_name": "FC | Real Madrid | Football Club",
                 "campaign_type": "search",
                 "organization": "reachlocal",
+                "offer_id": 2101,
+                "source": "XMO",
                 "campaign_start_date": "2021-05-24",
                 "campaign_end_date": "2021-06-24",
                 "intervals": [
@@ -287,6 +291,8 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |campaign_type|String|Type of campaign|
 |campaign_status|String|Status of campaign|
 |organization|String|Organization|
+|offer_id|String|Offer id of the campaign|
+|source|String|Source of the campaign|
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
