@@ -98,7 +98,13 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                             }
                         }
                     }
-                ]
+                ],
+                "totals": {
+                    "total_visits": 12,
+                    "total_calls": 0,
+                    "total_chats": 0,
+                    "total_forms": 0
+                }
             }
         ],
         "search": {
@@ -110,7 +116,13 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                     "calls": 0,
                     "forms": 1
                 }
-            ]
+            ],
+            "totals": {
+                "total_visits": 0,
+                "total_calls": 0,
+                "total_chats": 1,
+                "total_forms": 1
+            }
         },
         "social": {
             "intervals": []
@@ -138,13 +150,31 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                     "calls": 0,
                     "forms": 0
                 }
-            ]
+            ],
+            "totals": {
+                "total_visits": 53,
+                "total_calls": 0,
+                "total_chats": 0,
+                "total_forms": 0
+            }
         },
         "directory": {
-            "intervals": []
+            "intervals": [],
+            "totals": {
+                "total_visits": 0,
+                "total_calls": 0,
+                "total_chats": 0,
+                "total_forms": 0
+            }
         },
         "marketplace": {
-            "intervals": []
+            "intervals": [],
+            "totals": {
+                "total_visits": 0,
+                "total_calls": 0,
+                "total_chats": 0,
+                "total_forms": 0
+            }
         },
         "other": {
             "intervals": []
