@@ -74,8 +74,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 "campaign_name": "SK | Slipknot Group | Heavy Metal",
                 "campaign_type": "search",
                 "organization": "reachlocal",
-                "offer_id": 2101,
-                "source": "XMO",
                 "campaign_start_date": "2021-05-24",
                 "campaign_end_date": "2021-06-24",
                 "intervals": [
@@ -183,8 +181,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 "campaign_name": "FC | Real Madrid | Football Club",
                 "campaign_type": "search",
                 "organization": "reachlocal",
-                "offer_id": 2101,
-                "source": "XMO",
                 "campaign_start_date": "2021-05-24",
                 "campaign_end_date": "2021-06-24",
                 "intervals": [
@@ -280,7 +276,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |otherpaid|Object|chat, visit, call, form counts attributed to organic sources (Other paid) [Otherpaid Object](#marketingactivityotherpaid)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
-
 <a name="chatcampaigns"></a>
 **Campaigns Object**
 
@@ -291,12 +286,9 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |campaign_type|String|Type of campaign|
 |campaign_status|String|Status of campaign|
 |organization|String|Organization|
-|offer_id|String|Offer id of the campaign|
-|source|String|Source of the campaign|
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitysearch"></a>
 **Search Object**
@@ -304,7 +296,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitysocial"></a>
 **Social Object**
@@ -312,7 +303,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitydirect"></a>
 **Direct Object**
@@ -320,7 +310,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitydirectory"></a>
 **Directory Object**
@@ -328,7 +317,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitymarketplace"></a>
 **Marketplace Object**
@@ -336,7 +324,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivityother"></a>
 **Other Object**
@@ -344,7 +331,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivityotherpaid"></a>
 **Otherpaid Object**
@@ -352,7 +338,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivityintervals"></a>
 **Intervals Object**
