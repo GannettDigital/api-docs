@@ -120,7 +120,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|transcript| object | no |object of chat transcript|
+|transcript| object | yes |object of chat transcript|
+|summary| object | yes |A freeform text description of the chat.|
 
 **Transcript**
 
