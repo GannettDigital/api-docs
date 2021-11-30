@@ -71,6 +71,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |id| Integer | no | id of the interaction|
 |campaign_name| String | no | The name of the campaign that this contact interaction is attributed to|
 |global_master_campaign_id| String | no | An string global master campaign id for this interaction|
+|sub_type| String | yes |Sub type of the campaign|
 |referrer_type| String | no | Paid, organic|
 |referrer_source| String | no | Domain the visitor came from|
 |influencing_campaign| String | yes | Campaign that influenced this interaction|
@@ -111,7 +112,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|sub_type| String | yes |Only included when interaction is call|
 |full_message| string | yes |full message of the form event|
 |message| string | yes| parsed message|
 |extra_fields| object | yes |extra fields|
@@ -141,6 +141,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "id": 4314774,
             "campaign_name": "LSS Test Campaign",
             "global_master_campaign_id": "USA_3115232",
+            "sub_type": "Call"
             "channel": "search",
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
@@ -175,6 +176,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "id": 3871993,
             "campaign_name": "LSS Test Campaign",
             "global_master_campaign_id": "USA_3115232",
+            "sub_type": "Call"
             "channel": "search",
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
