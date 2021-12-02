@@ -484,6 +484,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |leads|Integer|Total Leads for cycle|
 |spend|Integer|Total Spend/Cost of cycle|
 |budget|Integer|Total Budget of cycle|
+|<internal>off_platform_activity|Boolean|True if activity detected in last 30 days</internal>|
 |opens|Integer|Total Opens for cycle (Email Campaigns Only)|
 |quantity|Integer|Total Quantity for cycle. (Email Campaigns Only)|
 |views|Integer|Total Views of cycle. (Email Campaigns Only)|
