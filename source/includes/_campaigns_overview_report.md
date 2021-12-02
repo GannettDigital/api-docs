@@ -41,6 +41,7 @@ The campaign list section will list all (running, stopped and ended) campaigns w
   - Spend
   - Budget Amount
   - Opens for Email Campaigns
+  <internal> - Off Platform Activity: Will be true in cases when campaigns are missing expected WPER data.</internal>
 
 All campaign data for the account will be provided including both Paid Media and Offer-based campaigns.
 
