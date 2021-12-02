@@ -71,6 +71,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |id| Integer | no | id of the interaction|
 |campaign_name| String | no | The name of the campaign that this contact interaction is attributed to|
 |global_master_campaign_id| String | no | An string global master campaign id for this interaction|
+|sub_type| String | yes |Sub type of the campaign|
 |referrer_type| String | no | Paid, organic|
 |referrer_source| String | no | Domain the visitor came from|
 |influencing_campaign| String | yes | Campaign that influenced this interaction|
@@ -81,8 +82,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
 |read|boolean|No|Check if contact interaction is marked as read|
 |important|boolean|No|Check if contact interaction is marked as important|
-|call_recording_url| String | yes | Only included when interaction is call|
-|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
 
 **Totals**
 
@@ -102,6 +101,36 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |form_events| Integer | no | totals of unread form events|
 |chat_events| Integer | no | totals of unread chat events|
 
+**Call**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|call_recording_url| String | yes | Only included when interaction is call|
+|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
+
+**Form**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|full_message| string | yes |full message of the form event|
+|message| string | yes| parsed message|
+|extra_fields| object | yes |extra fields|
+
+**Chat**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|transcript| object | yes |object of chat transcript|
+|summary| object | yes |A freeform text description of the chat.|
+
+**Transcript**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|id| object | no |A sequential id of the line chat transcript. It uniquely identifies a line of the chat transcript within this contact interaction.|
+|timestamp| object | no |The date and time that the external chat API registered for this line of the chat transcript.|
+|form| object | no |The display name of the member of the chat who sent this message.|
+|message| object | no |The message body of this line of the chat transcript.|
 
 
 #### Example Response
@@ -113,6 +142,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "id": 4314774,
             "campaign_name": "LSS Test Campaign",
             "global_master_campaign_id": "USA_3115232",
+            "sub_type": "Call"
             "channel": "search",
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
@@ -122,8 +152,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "external_source": "capture",
             "important": true,
             "read": true,
-            "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bccd/220384.mp3"
-            "call_duration": 44
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -140,11 +168,16 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
                 ],
                 "created_at": "2021-09-04T01:21:27.394Z"
             },
+            "call": {
+                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
+                "call_duration": 44
+            }
         },
         {
             "id": 3871993,
             "campaign_name": "LSS Test Campaign",
             "global_master_campaign_id": "USA_3115232",
+            "sub_type": "Call"
             "channel": "search",
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
@@ -169,6 +202,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
                     }
                 ],
                "created_at": "2021-09-04T01:21:27.394Z"
+            },
+            "call": {
+                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
+                "call_duration": 44
             }
         }
     ],
