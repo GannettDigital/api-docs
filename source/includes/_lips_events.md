@@ -325,6 +325,7 @@ When using the POST FPD Event create method, the following paramters are allowed
 |---|---|---|
 |`global_master_advertiser_id`|Yes|Create the event for this advertiser|
 |`call_recording_url`|No|Match to a contact using this call_recording url|
+|`external_id`|No|The external id of the event, that's being used in other systems|
 |`email`|No|Match to a contact using this email address|
 |`phone_number`|No|Match to a contact using this phone number|
 |`occurrence_time`|No|Time the event occurred|
