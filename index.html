@@ -14341,7 +14341,7 @@ A response status code of 404 indicates that the webhook ID was not found.</p><p
 </thead><tbody><tr>
 <td>GET</td>
 <td>/client_reports/chat_summary/[gmaid]?[query_params]</td>
-</tr></tbody></table><p>This API can be used by customers who have our chat widget on their site. The API has metrics on each chat along with traffic information (Paid Campaign/Organic).</p><p>Use GET to retrieve information from the Chat Summary API. Data can be returned for a GMAID by a specific date range determined by start date and end date.</p><p>Subtotals will be returned for each Master Campaign ID with chat activity in the specified date range.</p><p>Subtotals can be further aggregated given an interval, and will be totaled for day, calendar_week, or calendar_month. The first day of the interval will be used to denote the interval totals.</p><p>Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.</p><h3 id='lead-info-apis-webhooks-lead-metric-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
+</tr></tbody></table><p>This API can be used by customers who have our chat widget on their site. The API has metrics on each chat along with traffic information (Paid Campaign/Organic/Otherpaid).</p><p>Use GET to retrieve information from the Chat Summary API. Data can be returned for a GMAID by a specific date range determined by start date and end date.</p><p>Subtotals will be returned for each Master Campaign ID with chat activity in the specified date range.</p><p>Subtotals can be further aggregated given an interval, and will be totaled for day, calendar_week, or calendar_month. The first day of the interval will be used to denote the interval totals.</p><p>Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.</p><h3 id='lead-info-apis-webhooks-lead-metric-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
 <th>Param</th>
 <th>Required</th>
 <th>Function</th>
@@ -14669,6 +14669,20 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
                     </span><span class="s2">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"otherpaid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-11"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
@@ -14731,12 +14745,17 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 </thead><tbody><tr>
 <td>campaigns</td>
 <td>Object</td>
-<td>Data for specified campaign. <a href="#chatcampaigns">Campaigns Object</a></td>
+<td>chat counts for chats attributed to paid campaigns. <a href="#chatcampaigns">Campaigns Object</a></td>
 </tr>
 <tr>
 <td>organic</td>
 <td>Object</td>
-<td>Data for organic. <a href="#chatorganic">Organic Object</a></td>
+<td>chat counts for chats attributed to organic sources (Organic search, Direct Site Traffic, etc.) <a href="#chatorganic">Organic Object</a></td>
+</tr>
+<tr>
+<td>otherpaid</td>
+<td>Object</td>
+<td>chat counts for chats attributed to paid traffic by other media vendors. <a href="#chatotherpaid">Otherpaid Object</a></td>
 </tr></tbody></table><p><a name="chatcampaigns"></a>
 <strong>Campaigns Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14784,6 +14803,61 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 <td>Data for specified interval. <a href="#chatintervals">Intervals Object</a></td>
 </tr></tbody></table><p><a name="chatorganic"></a>
 <strong>Organic Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#chatintervals">Intervals Object</a></td>
+</tr></tbody></table><p><a name="chatintervals"></a>
+<strong>Intervals Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>start_date</td>
+<td>String</td>
+<td>Start date of interval</td>
+</tr>
+<tr>
+<td>non_lead_chats</td>
+<td>Integer</td>
+<td>Number of non-lead chats, has no email address or phone number to create a Contact</td>
+</tr>
+<tr>
+<td>total_chats</td>
+<td>Integer</td>
+<td>Number of total chats, includes non lead chats</td>
+</tr>
+<tr>
+<td>chat_leads</td>
+<td>Integer</td>
+<td>Number of chat leads, excludes non lead chats</td>
+</tr>
+<tr>
+<td>chat_sales</td>
+<td>Integer</td>
+<td>Number of chats marked as &#39;sales&#39;</td>
+</tr>
+<tr>
+<td>chat_service</td>
+<td>Integer</td>
+<td>Number of chats marked as &#39;service&#39;</td>
+</tr>
+<tr>
+<td>chat_other</td>
+<td>Integer</td>
+<td>Number of chats marked as &#39;other&#39;</td>
+</tr>
+<tr>
+<td>call_connect</td>
+<td>Integer</td>
+<td>Subset of chats that initiated a call connect</td>
+</tr></tbody></table><p><a name="chatotherpaid"></a>
+<strong>Otherpid Object</strong></p><table><thead><tr>
 <th>Field Name</th>
 <th>Datatype</th>
 <th>Description</th>
@@ -16169,7 +16243,7 @@ This endpoint is used to inform us of confirmed leads for First Party Data</p><h
 <td>gmaid</td>
 <td>yes</td>
 <td>string</td>
-<td>Global Master Advertiser ID</td>
+<td>Global Master Advertiser ID - Uppercase platform and underscore between platform and MAID required</td>
 </tr>
 <tr>
 <td>phone</td>
@@ -16686,6 +16760,11 @@ curl -X POST <span class="se">\</span>
 <td>The type of the Contactinteraction. Valid values are Contact,CVT or Touchpoint</td>
 </tr>
 <tr>
+<td>visitor_id</td>
+<td>String</td>
+<td>The visitor id of the contact</td>
+</tr>
+<tr>
 <td>sub_type</td>
 <td>String</td>
 <td>The type of the Contact/Contactinteraction. See below for options</td>
@@ -16872,8 +16951,8 @@ Describes the type of domain the visitor came from.</p><table><thead><tr>
 <blockquote>
 <p>The format of the resulting csv file is
 ```
-type,sub_type,referrer_source,occurrence_time,channel,first_name,last_name,phone_work,address1,city,state,postal,email,master_campaign_id,campaign_name,WPCID,WPC_name,influencing_CID,influencing_campaign_name,influencing_WPCID,influencing_WPC_name,page_url,referrer_type,referrer_url,chat_transcript,call_duration,call_recording_url,extra_fields
-Contact,FormEvent,PAID,2021-08-04T21:21:42.000Z,search,qat1formaug04firstname,qat1formaug04lastname,,qat1formaug04address1,,Texas,55334,,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,USA_3743465,Google National,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&amp;e=qa&amp;scid=3743465,DIRECT,,,,,&quot;{&quot;&quot;does_this_work&quot;&quot;=&gt;&quot;&quot;yes it does&quot;&quot;, &quot;&quot;campaign_id&quot;&quot;=&gt;&quot;&quot;USA_2705608&quot;&quot;, &quot;&quot;campaign_name&quot;&quot;=&gt;&quot;&quot;Orange Paper TEST DO NOT DELETE - ALVIN&quot;&quot;, &quot;&quot;submit_button&quot;&quot;=&gt;&quot;&quot;SUBMIT&quot;&quot;, &quot;&quot;company_<strong>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04Compny&quot;&quot;, &quot;&quot;address1</strong><em>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04address1&quot;&quot;, &quot;&quot;email</em><strong>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04email&quot;&quot;, &quot;&quot;first_name</strong><em>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04firstname&quot;&quot;, &quot;&quot;title</em><strong>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04title&quot;&quot;, &quot;&quot;last_name</strong><em>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04lastname&quot;&quot;, &quot;&quot;phone</em><strong>required&quot;&quot;=&gt;&quot;&quot;8700000032&quot;&quot;, &quot;&quot;phone_work</strong><em>required&quot;&quot;=&gt;&quot;&quot;8700000031&quot;&quot;, &quot;&quot;phone_mobile</em><strong>required&quot;&quot;=&gt;&quot;&quot;8700000034&quot;&quot;, &quot;&quot;phone_home</strong><em>required&quot;&quot;=&gt;&quot;&quot;8700000033&quot;&quot;, &quot;&quot;address_2&quot;&quot;=&gt;&quot;&quot;qat1formaug04address2&quot;&quot;, &quot;&quot;city</em><strong>required&quot;&quot;=&gt;&quot;&quot;Plano&quot;&quot;, &quot;&quot;state&quot;&quot;=&gt;&quot;&quot;Texas&quot;&quot;, &quot;&quot;country&quot;&quot;=&gt;&quot;&quot;USA&quot;&quot;, &quot;&quot;postal</strong>_required&quot;&quot;=&gt;&quot;&quot;55334&quot;&quot;, &quot;&quot;message&quot;&quot;=&gt;&quot;&quot;qat1formaug04Compny&quot;&quot;, &quot;&quot;page_post_url&quot;&quot;=&gt;&quot;&quot;http://reachcodetesting.com/index.php?dev=search&quot;&quot;}&quot;
+type,visitor_id,sub_type,referrer_source,occurrence_time,channel,first_name,last_name,phone_work,address1,city,state,postal,email,master_campaign_id,campaign_name,WPCID,WPC_name,influencing_CID,influencing_campaign_name,influencing_WPCID,influencing_WPC_name,page_url,referrer_type,referrer_url,chat_transcript,call_duration,call_recording_url,extra_fields
+Contact,&quot;fff-12323-32131&quot;,FormEvent,PAID,2021-08-04T21:21:42.000Z,search,qat1formaug04firstname,qat1formaug04lastname,,qat1formaug04address1,,Texas,55334,,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,USA_3743465,Google National,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&amp;e=qa&amp;scid=3743465,DIRECT,,,,,&quot;{&quot;&quot;does_this_work&quot;&quot;=&gt;&quot;&quot;yes it does&quot;&quot;, &quot;&quot;campaign_id&quot;&quot;=&gt;&quot;&quot;USA_2705608&quot;&quot;, &quot;&quot;campaign_name&quot;&quot;=&gt;&quot;&quot;Orange Paper TEST DO NOT DELETE - ALVIN&quot;&quot;, &quot;&quot;submit_button&quot;&quot;=&gt;&quot;&quot;SUBMIT&quot;&quot;, &quot;&quot;company_<strong>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04Compny&quot;&quot;, &quot;&quot;address1</strong><em>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04address1&quot;&quot;, &quot;&quot;email</em><strong>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04email&quot;&quot;, &quot;&quot;first_name</strong><em>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04firstname&quot;&quot;, &quot;&quot;title</em><strong>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04title&quot;&quot;, &quot;&quot;last_name</strong><em>required&quot;&quot;=&gt;&quot;&quot;qat1formaug04lastname&quot;&quot;, &quot;&quot;phone</em><strong>required&quot;&quot;=&gt;&quot;&quot;8700000032&quot;&quot;, &quot;&quot;phone_work</strong><em>required&quot;&quot;=&gt;&quot;&quot;8700000031&quot;&quot;, &quot;&quot;phone_mobile</em><strong>required&quot;&quot;=&gt;&quot;&quot;8700000034&quot;&quot;, &quot;&quot;phone_home</strong><em>required&quot;&quot;=&gt;&quot;&quot;8700000033&quot;&quot;, &quot;&quot;address_2&quot;&quot;=&gt;&quot;&quot;qat1formaug04address2&quot;&quot;, &quot;&quot;city</em><strong>required&quot;&quot;=&gt;&quot;&quot;Plano&quot;&quot;, &quot;&quot;state&quot;&quot;=&gt;&quot;&quot;Texas&quot;&quot;, &quot;&quot;country&quot;&quot;=&gt;&quot;&quot;USA&quot;&quot;, &quot;&quot;postal</strong>_required&quot;&quot;=&gt;&quot;&quot;55334&quot;&quot;, &quot;&quot;message&quot;&quot;=&gt;&quot;&quot;qat1formaug04Compny&quot;&quot;, &quot;&quot;page_post_url&quot;&quot;=&gt;&quot;&quot;http://reachcodetesting.com/index.php?dev=search&quot;&quot;}&quot;
 TouchPoint,Visit,PAID,2021-08-04 20:02:29 UTC,search,qat1formaug04firstname,qat1formaug04lastname,,qat1formaug04address1,,Texas,55334,,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,,,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&amp;e=qa&amp;scid=3743465,DIRECT,,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
 Contact,FormEvent,PAID,2021-08-04T20:04:12.000Z,search,t1eqaaug42021,&quot;&quot;,,,,,,t1eqaaug42021@mail.com,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,USA_3743465,Google National,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&amp;e=qa&amp;scid=3743465,DIRECT,,,,,
 TouchPoint,Visit,PAID,2021-08-04 20:02:29 UTC,search,t1eqaaug42021,&quot;&quot;,,,,,,t1eqaaug42021@mail.com,2705608,Orange Paper TEST DO NOT DELETE - ALVIN,USA_3743465,Google National,,,,,http://reachcodetesting.net/?siteid=427e4e5f-5317-42d8-825c-765b49e43028&amp;e=qa&amp;scid=3743465,DIRECT,,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;</p></blockquote>
@@ -17756,7 +17835,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.localiqservices.com/client_reports/display_activity/TEST_1?end_date=2018-03-09&amp;start_date=2018-03-09"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='deprecated-apis-lead-events'>Lead Events</h2><p>Lead Event Feed Service is a HIPAA Compliant API that allows users to retrieve lead details for call, chat, web, and email events.</p><h3 id='deprecated-apis-lead-events-call-events'>Call Events</h3><p><strong><code>Call Events</code></strong> object returns call data for potential customers placing calls to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>The Call Events Object</strong></p>
+</span></code></pre><h2 id='deprecated-apis-lead-events'>Lead Events</h2><p>Lead Event Feed Service is a HIPAA Compliant API that allows users to retrieve lead details for call, chat, web, and email events.</p><h3 id='deprecated-apis-lead-events-call-events'>Call Events</h3><p><strong><code>Call Events</code></strong> object returns call data for potential customers placing calls to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>DISCLAIMER</strong> - The update and delete methods of the API are no longer supported</p><p><strong>The Call Events Object</strong></p>
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -18276,7 +18355,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 </thead><tbody><tr>
 <td>DELETE</td>
 <td>/leads/call_events/[id]</td>
-</tr></tbody></table><h3 id='deprecated-apis-lead-events-chat-events'>Chat Events</h3><p><strong><code>Chat Events</code></strong> object returns chat data for potential customers using chat to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>The Chat Events Object</strong></p>
+</tr></tbody></table><h3 id='deprecated-apis-lead-events-chat-events'>Chat Events</h3><p><strong><code>Chat Events</code></strong> object returns chat data for potential customers using chat to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>DISCLAIMER</strong> - The update and delete methods of the API are no longer supported</p><p><strong>The Chat Events Object</strong></p>
 <blockquote>
 <p>Example Response:</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -18807,7 +18886,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 </thead><tbody><tr>
 <td>DELETE</td>
 <td>/leads/chat_events/[id]</td>
-</tr></tbody></table><h3 id='deprecated-apis-lead-events-email-events'>Email Events</h3><p><strong><code>Email Events</code></strong> object returns call data for potential customers using email to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>The Email Events Object</strong></p>
+</tr></tbody></table><h3 id='deprecated-apis-lead-events-email-events'>Email Events</h3><p><strong><code>Email Events</code></strong> object returns call data for potential customers using email to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>DISCLAIMER</strong> - The update and delete methods of the API are no longer supported</p><p><strong>The Email Events Object</strong></p>
 <blockquote>
 <p>Example Response:</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -19602,7 +19681,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 </thead><tbody><tr>
 <td>GET</td>
 <td>/leads/user_info]</td>
-</tr></tbody></table><h3 id='deprecated-apis-lead-events-web-events'>Web Events</h3><p><strong><code>Web Events</code></strong> object returns web data for potential customers using the web to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>The Web Events Object</strong></p>
+</tr></tbody></table><h3 id='deprecated-apis-lead-events-web-events'>Web Events</h3><p><strong>DISCLAIMER</strong> - This API is no longer supported</p><p><strong><code>Web Events</code></strong> object returns web data for potential customers using the web to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>The Web Events Object</strong></p>
 <blockquote>
 <p>Example Response:</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
