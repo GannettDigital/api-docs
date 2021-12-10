@@ -293,6 +293,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |campaign_type|String|Type of campaign|
 |organization|String|Organization|
 |status|String|Status of campaign|
+|<internal>off_platform_activity|Boolean|Will be true in cases when campaigns are missing expected WPER data.</internal>|
 |bidding_pricing_model_id|Integer|The id which will be used to filter the sub type of top search campaign (shown only for search campaigns)|
 |has_addressable_geofence|Boolean|`True` or `False`|
 |has_cvt|Boolean|`True` or `False`|
