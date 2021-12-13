@@ -126,6 +126,5 @@ curl -L -g -X GET 'http://localhost:3001/client_reports/gustav_daily_creative_me
         ]
     },
     "global_master_advertiser_id": "TEST_1",
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/gustav_daily_creative_metrics/TEST_1?campaign_status%5B%5D=running&campaign_status%5B%5D=ended&end_date=2021-06-05&start_date=2021-06-01"
 }
 ```

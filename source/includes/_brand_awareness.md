@@ -268,8 +268,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
             }
         }
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/brand_awareness/TEST_1?end_date=2020-03-01&start_date=2020-03-01&type=report"
+    "global_master_advertiser_id": "TEST_1"
 }
 
 ```
@@ -417,8 +416,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
             }
         ]
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/brand_awareness/TEST_1?end_date=2020-03-01&start_date=2020-03-01&type=channel"
+    "global_master_advertiser_id": "TEST_1"
 }
 ```
 
@@ -588,7 +586,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
             }
         ]
     }
-    "global_master_advertiser_id": "TEST_1",
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/brand_awareness/TEST_1?end_date=2020-03-01&start_date=2020-03-01&type=channel"
+    "global_master_advertiser_id": "TEST_1"
 }
 ```

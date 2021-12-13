@@ -45,7 +45,6 @@ https://api.localiqservices.com/client_reports/google_local_service_ads/TEST_1?s
     "currency": "USD",
     "global_master_advertiser_id": "USA_5713",
     "advertiser_name": "My Service Company",
-    "location": "https://api.localiqservices.com/client_reports/google_local_service_ads/USA_5713?end_date=2020-09-02&start_date=2020-09-01",
     "report_data": {
         "campaigns": [
             {

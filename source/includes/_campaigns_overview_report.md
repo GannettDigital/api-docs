@@ -417,8 +417,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "qualified_web_events": 1291
         }
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.localiqservices.com/client_reports/campaigns_overview/TEST_1"
+    "global_master_advertiser_id": "TEST_1"
 }
 ```
 
@@ -432,7 +431,6 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |currency|String|Currency of report|
 |report_data|Object| [Report Data Object](#campaignreportdata)|
 |global_master_advertiser_id|String|Identifier for advertiser|
-|location|String|Location URL|
 
 <a name="campaignreportdata"></a>
 **Report Data Object**

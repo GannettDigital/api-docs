@@ -757,8 +757,7 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
             }
         ]
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.qa.localiqservices.com/client_reports/facebook_campaign/TEST_1?end_date=2020-10-10&start_date=2020-10-10"
+    "global_master_advertiser_id": "TEST_1"
 }
 
 ```

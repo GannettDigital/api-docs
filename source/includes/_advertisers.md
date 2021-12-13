@@ -34,7 +34,6 @@ curl -H "Authorization: token reachanalyticsreportingservicetoken"  "http://loca
 
 ```json
 {
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/advertisers",
     "advertisers": [
         {
             "global_master_advertiser_id": "USA_229172",
@@ -65,7 +64,6 @@ curl -H "Authorization: token reachanalyticsreportingservicetoken"  "http://loca
 
 ```json
 {
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/advertisers?tier=1",
     "advertisers": [
         {
             "global_master_advertiser_id": "USA_229172",
@@ -93,7 +91,6 @@ curl -H "Authorization: token reachanalyticsreportingservicetoken"  "http://loca
 ```json
 {
     "advertiser": {
-        "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/advertisers/USA_196567",
         "global_master_advertiser_id": "USA_196567",
         "tier": 1,
         "campaign_performance_consultant": {

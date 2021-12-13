@@ -52,7 +52,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
     "end_date": "2020-03-10",
     "time_zone": "America/Los_Angeles",
     "global_master_advertiser_id": "TEST_1",
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/device_breakdowns/TEST_1?end_date=2020-03-10&start_date=2020-03-01",
     "report_data": {
         "social": [
             {

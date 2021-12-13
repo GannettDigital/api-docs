@@ -52,7 +52,6 @@ Report data is returned as JSON e.g.:
   "global_master_advertiser_id": "USA_105569",
   "global_master_campaign_id": "ALL",
   "interval_type": "day",
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/consolidated_calls/USA_105569?action=show&controller=consolidated_calls&id=USA_105569&interval_type=day&number_of_intervals=7&range=custom&number_of_bins=5&bin_size=30",
   "number_of_intervals": 7,
   "number_of_bins": 5,
   "bin_size": 30,

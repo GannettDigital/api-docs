@@ -88,7 +88,6 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
         ]
     },
     "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.qa.localiqservices.com/client_reports/google_keyword/TEST_1?end_date=2020-10-10&start_date=2020-10-10",
     "page": 1,
     "page_size": 25
 }
@@ -105,7 +104,6 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 |time_zone|String|Time Zone|
 |report_data|Object|Report details object containing Totals object and Campaigns array. [Report Data Object](#keywordreportdata)|
 |global_master_advertiser_id|String|Identifier for advertiser|
-|location|String|Location of this report|
 |page|Integer|Page Number|
 |page_size|Integer|Number of keywords on page|
 

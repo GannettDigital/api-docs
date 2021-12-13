@@ -57,7 +57,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
     "report_date": "2019-07-23",
     "business_id": "USA_6338",
     "business_name": "Kiddie Academy",
-    "location": "http://localhost:3001/client_reports/business_call_events/USA_6338?end_date=2019-04-01&interval_size=calendar_month&start_date=2019-01-01",
     "start_date": "2019-01-01",
     "end_date": "2019-04-01",
     "report_data": {
