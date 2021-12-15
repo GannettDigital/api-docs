@@ -18,8 +18,7 @@ When using the GET index method, the results will be filtered using these parame
 
 | Parameter | Required | Description |
 |---|---|---|
-|`match_params`|Yes (in first case)|JSON object with `name` and `state` keys to match on|
-|`platform_id`|Yes (in second case)|Array which restricts the results to one or more specific advertiser with the given platform id  Valid platform ids are: `USA`, `CAN`, `AUS` and `GBR` |
+|`platform_id`|Yes|Array which restricts the results to one or more specific advertiser with the given platform id  Valid platform ids are: `USA`, `CAN`, `AUS` and `GBR` |
 |`gmaid`|No|Restrict results to one or more specific gmaid|
 |`advertiser_id`|No|Restrict results to one or more specific advertiser with the given advertiser id|
 |`business_id`|No|Restrict results to one or more specific advertiser with the given business id|
@@ -33,7 +32,6 @@ When using the GET index method, the results will be filtered using these parame
 |`advertiser_name`|No|Restrict results to one or more specific advertiser with the given advertiser name|
 |`business_name`|No|Restrict results to one or more specific advertiser with the given business name|
 
-#### If you use the match_params parameter, the ones below won't be considered from the API
 ### Examples:
 
 ### GET (index)
@@ -46,7 +44,6 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
   -H 'x-api-key: SJNPPSecret'
 ```
 
-> Response Description if query_params contains match_params
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
@@ -114,7 +111,6 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
 }
 ```
 
-> Response Description if query_params does not contain match_params
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
