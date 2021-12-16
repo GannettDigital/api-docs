@@ -222,7 +222,7 @@ curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies'
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'Content-Type: application/json' \
---data-raw '   "company": {
+--data-raw '{
         "gmaid": "USA_132",
         "business_category_id": 14,
         "business_sub_category_id": 142,
@@ -305,7 +305,6 @@ Update a company.
 |fax|integer|No|fax address of the company|
 |email|string|No|email address of the company|
 |url|string|No|url address of the company|
-|login_user_id|Integer|No|An id of a login user, that the company is associated with|
 
 example request:
 
