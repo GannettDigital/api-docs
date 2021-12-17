@@ -18,8 +18,7 @@ When using the GET index method, the results will be filtered using these parame
 
 | Parameter | Required | Description |
 |---|---|---|
-|`match_params`|Yes (in first case)|JSON object with `name` and `state` keys to match on|
-|`platform_id`|Yes (in second case)|Array which restricts the results to one or more specific advertiser with the given platform id  Valid platform ids are: `USA`, `CAN`, `AUS` and `GBR` |
+|`platform_id`|Yes|Array which restricts the results to one or more specific advertiser with the given platform id  Valid platform ids are: `USA`, `CAN`, `AUS` and `GBR` |
 |`gmaid`|No|Restrict results to one or more specific gmaid|
 |`advertiser_id`|No|Restrict results to one or more specific advertiser with the given advertiser id|
 |`business_id`|No|Restrict results to one or more specific advertiser with the given business id|
@@ -33,10 +32,7 @@ When using the GET index method, the results will be filtered using these parame
 |`advertiser_name`|No|Restrict results to one or more specific advertiser with the given advertiser name|
 |`business_name`|No|Restrict results to one or more specific advertiser with the given business name|
 
-#### If you use the match_params parameter, the ones below won't be considered from the API
-### Examples:
-
-### GET (index)
+#### GET (index)
 
 ```
 curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?[query_params]' \
@@ -46,75 +42,7 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
   -H 'x-api-key: SJNPPSecret'
 ```
 
-> Response Description if query_params contains match_params
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|gmaid | String | no | gmaid of potenial matching advertiser|
-|name | String | no | name of potenial matching advertiser|
-|address1 | String | no | address of potenial matching advertiser|
-|address2 | String | no | address of potenial matching advertiser|
-|city | String | no | city of potenial matching advertiser|
-|state | String | no | state of potenial matching advertiser|
-|zip | String | no | zip code of potenial matching advertiser|
-|country | String | no | country code of potenial matching advertiser|
-|active_state | Integer | no | Active state of advertiser (0 = inactive, 1 = expiring soon, 2 = active)|
-
-
-#### Example Response
-
-```javascript
-{
-    "advertisers": [
-        {
-            "gmaid": "USA_133964",
-            "name": "Red Lion Insulation - Jackson (BN)",
-            "address1": "141 N. County Line Rd",
-            "address2": "",
-            "city": "Jackson",
-            "state": "NJ",
-            "zip": "08527",
-            "country": "USA",
-            "active_state": 2
-        },
-        {
-            "gmaid": "USA_133965",
-            "name": "Red Lion Insulation - Barrington (BN)",
-            "address1": "66 E Gloucester Pike",
-            "address2": "",
-            "city": "Barrington",
-            "state": "NJ",
-            "zip": "08007",
-            "country": "USA",
-            "active_state": 1
-        },
-        {
-            "gmaid": "USA_133967",
-            "name": "Red Lion Insulation - Piscataway (BN)",
-            "address1": "42 Colonial Dr",
-            "address2": "",
-            "city": "Piscataway",
-            "state": "NJ",
-            "zip": "08854",
-            "country": "USA",
-            "active_state": 0
-        },
-        {
-            "gmaid": "USA_149837",
-            "name": "Red Lion Insulation - Farmingdale",
-            "address1": "5142 W Hurley Pond Rd",
-            "address2": "",
-            "city": "Farmingdale",
-            "state": "NJ",
-            "zip": "07727",
-            "country": "USA",
-            "active_state": 2
-        }
-    ]
-}
-```
-
-> Response Description if query_params does not contain match_params
+Response Description
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
