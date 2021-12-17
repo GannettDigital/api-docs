@@ -38,7 +38,6 @@ Report data is returned as JSON e.g.:
     ]
   },
   "global_master_advertiser_id": "USA_105569",
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/spend_vs_budget/USA_105569?global_master_campaign_id=USA_16&range=cycle",
   "available_campaigns": [
     {
       "name": "Coupon",

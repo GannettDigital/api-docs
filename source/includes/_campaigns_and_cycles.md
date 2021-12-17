@@ -59,7 +59,6 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
     "advertiser_name": "Advertiser (Demo)",
     "advertiser_code": "demo",
     "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.localiqservices.com/client_reports/campaigns/TEST_1?report_type=campaigns_overview",
     "report_campaigns": [
         {
             "name": "Gannett Display Campaign (Demo)",
@@ -280,7 +279,6 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |advertiser_name|String|Name of advertiser|
 |advertiser_code|String|Non-unique identifier used for internal purposes|
 |global_master_advertiser_id|String|Identifier for advertiser|
-|location|String|Location URL|
 |report_campaigns|Object|[Report Campaigns Object](#campaigns_reportcampaigns)|
 
 <a name="campaigns_reportcampaigns"></a>

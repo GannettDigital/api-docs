@@ -393,7 +393,6 @@ https://api.localiqservices.com/client_reports/cvt_events/USA_123456?start_date=
             }
         ]
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api-stage.gcion.com/apgb2b-reporting/client_reports/cvt_events/TEST_1?end_date=2020-11-21&start_date=2020-11-20"
+    "global_master_advertiser_id": "TEST_1"
 }
 ```

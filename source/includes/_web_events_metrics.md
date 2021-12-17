@@ -353,8 +353,7 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
             }
         ]
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.localiqservices.com/client_reports/cvt_events//TEST_1?end_date=2020-10-10&start_date=2019-10-10"
+    "global_master_advertiser_id": "TEST_1"
 }
 ```
 
@@ -377,7 +376,6 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 |---|---|---|
 |campaigns|Object|[Campaigns Object](#cvtcampaigns)|
 |global_master_advertiser_id|String|Global Master Advertiser ID|
-|location|String|Location URL|
 
 <a name="cvtcampaigns"></a>
 **Campaigns Object**

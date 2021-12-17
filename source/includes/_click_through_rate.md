@@ -23,7 +23,6 @@ Report data is returned as JSON e.g.:
     }
   ],
   "global_master_advertiser_id": "USA_105569",
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/click_through_rate/USA_105569?global_master_campaign_id=USA_15&range=cycle",
   "available_campaigns": [
     {
       "name": "Coupon",

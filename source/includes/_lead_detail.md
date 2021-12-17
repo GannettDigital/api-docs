@@ -144,8 +144,7 @@ https://api.localiqservices.com/client_reports/lead_detail/TEST_1?&campaign_stat
             "leads": 417
         }
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.qa.localiqservices.com/client_reports/lead_detail/TEST_1?end_date=2020-10-10&start_date=2020-10-10"
+    "global_master_advertiser_id": "TEST_1"
 }
 
 ```
@@ -161,7 +160,6 @@ https://api.localiqservices.com/client_reports/lead_detail/TEST_1?&campaign_stat
 |interval_size|String|Interval size for report|
 |report_data|Object|[Report Data Object.](#leadreportdata)|
 |global_master_advertiser_id|String|Identifier for advertiser|
-|location|String|Location URL|
 
 <a name="leadreportdata"></a>
 **Report Data Object**

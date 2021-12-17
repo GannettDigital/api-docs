@@ -128,7 +128,6 @@ Report data is returned as JSON e.g.:
     ]
   },
   "global_master_advertiser_id": "USA_105569",
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/call_events/USA_105569?interval_type=calendar_month&number_of_intervals=2&range=custom",
   "available_campaigns": [
     {
       "name": "Coupon",
@@ -247,7 +246,6 @@ Report data is returned as JSON e.g.:
     ]
   },
   "global_master_advertiser_id": "USA_105569",
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/call_events/USA_105569?event_type=calls&global_master_campaign_id=USA_16&range=cycle",
   "available_campaigns": [
     {
       "name": "Coupon",

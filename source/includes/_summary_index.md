@@ -68,7 +68,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
   "reports": [
     {
       "report_type": "click_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/click_events/USA_105569?global_master_campaign_id=USA_14&interval_type=day&number_of_intervals=30&range=custom",
       "campaigns": [
         {
           "name": "Yelp",
@@ -85,7 +84,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "impression_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/impression_events/USA_105569?global_master_campaign_id=USA_14&interval_type=day&number_of_intervals=30&range=custom",
       "campaigns": [
         {
           "name": "Yelp",
@@ -102,7 +100,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "call_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/consolidated_calls/USA_105569?global_master_campaign_id=USA_14&interval_type=day&number_of_intervals=30&range=custom",
       "campaigns": [
         {
           "name": "Yelp",
@@ -119,7 +116,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "web_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/web_events/USA_105569?global_master_campaign_id=USA_14&interval_type=day&number_of_intervals=30&range=custom",
       "campaigns": [
         {
           "name": "Yelp",
@@ -136,7 +132,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "email_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/email_events/USA_105569?global_master_campaign_id=USA_14&interval_type=day&number_of_intervals=30&range=custom",
       "campaigns": [
         {
           "name": "Yelp",
@@ -198,7 +193,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
   "reports": [
     {
       "report_type": "click_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/click_events/USA_105569?global_master_campaign_id=USA_14&range=cycle",
       "campaigns": [
         {
           "name": "Yelp",
@@ -216,7 +210,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "impression_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/impression_events/USA_105569?global_master_campaign_id=USA_14&range=cycle",
       "campaigns": [
         {
           "name": "Yelp",
@@ -234,7 +227,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "call_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/consolidated_calls/USA_105569?global_master_campaign_id=USA_14&range=cycle",
       "campaigns": [
         {
           "name": "Yelp",
@@ -252,7 +244,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "web_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/web_events/USA_105569?global_master_campaign_id=USA_14&range=cycle",
       "campaigns": [
         {
           "name": "Yelp",
@@ -270,7 +261,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "email_events",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/email_events/USA_105569?global_master_campaign_id=USA_14&range=cycle",
       "campaigns": [
         {
           "name": "Yelp",
@@ -288,7 +278,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "spend_vs_budget",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/spend_vs_budget/USA_105569?global_master_campaign_id=USA_14&range=cycle",
       "campaigns": [
         {
           "name": "Yelp",
@@ -307,7 +296,6 @@ GET /client_reports?include_summary=true&range=custom&interval_type=day&number_o
     },
     {
       "report_type": "cpm",
-      "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/cpm/USA_105569?global_master_campaign_id=USA_14&range=cycle",
       "campaigns": [
         {
           "name": "Yelp",

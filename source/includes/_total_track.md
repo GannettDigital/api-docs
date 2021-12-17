@@ -181,8 +181,7 @@ https://api.localiqservices.com/client_reports/total_track/TEST_1?global_master_
             }
         ]
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.localiqservices.com/client_reports/total_track/TEST_1?end_date=2020-10-10&include_cycles=true&start_date=2020-10-10"
+    "global_master_advertiser_id": "TEST_1"
 }
 ```
 
@@ -199,7 +198,6 @@ https://api.localiqservices.com/client_reports/total_track/TEST_1?global_master_
 |currency|String|Currency Type of Monetary Values Returned in Report (Example: USD, AUD, CAD)|
 |report_data|Object|Report details|
 |global_master_advertiser_id|String|Identifier for advertiser|
-|location|String|Location URL|
 
 **Report Data Object**
 

@@ -177,8 +177,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
       }
     ]
   },
-  "global_master_advertiser_id": "TEST_1", // Identifier for advertiser
-  "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
+  "global_master_advertiser_id": "TEST_1" // Identifier for advertiser
 }
 ```
 >  Response Description without Cycles
@@ -279,8 +278,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
       }
     ]
   },
-  "global_master_advertiser_id": "TEST_1", // Identifier for advertiser
-  "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?campaign_cycle=ALL&global_master_campaign_id[]=TEST_1&range=cycle"
+  "global_master_advertiser_id": "TEST_1" // Identifier for advertiser
 }
 ```
 
@@ -629,10 +627,6 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
       }
     ]
   },
-  "global_master_advertiser_id": "TEST_1",
-  "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?start_date=2017-01-11&end_date=2017-01-13"
-    },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.localiqservices.com/client_reports/display_activity/TEST_1?end_date=2018-03-09&start_date=2018-03-09"
+  "global_master_advertiser_id": "TEST_1"
 }
 ```

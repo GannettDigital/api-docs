@@ -45,7 +45,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
     "report_date": "2019-07-18",
     "business_id": "USA_6338",
     "business_name": "Kiddie Academy",
-    "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/business_daily_metrics/USA_6338?end_date=2019-06-15&start_date=2019-06-14",
     "start_date": "2019-06-14",
     "end_date": "2019-06-15",
     "report_data": {

@@ -34,8 +34,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
         "campaigns": 13,
         "leads": 1009
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.localiqservices.com/client_reports/campaigns_totals/TEST_1"
+    "global_master_advertiser_id": "TEST_1"
 }
 ```
 
@@ -48,7 +47,6 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |time_zone|String|Time Zone of Data|
 |report_data|Object|ReportData Object|
 |global_master_advertiser_id|String|Identifier for advertiser|
-|location|String |URL location of this report|
 
 **ReportData Object**
 

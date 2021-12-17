@@ -111,8 +111,7 @@ https://api.localiqservices.com/client_reports/google_search_activity/TEST_1?glo
             }
         ]
     },
-    "global_master_advertiser_id": "TEST_1",
-    "location": "https://api.qa.localiqservices.com/client_reports/google_search_activity/TEST_1?end_date=2020-10-10&start_date=2020-10-10"
+    "global_master_advertiser_id": "TEST_1"
 }
 
 ```
@@ -129,7 +128,6 @@ https://api.localiqservices.com/client_reports/google_search_activity/TEST_1?glo
 |currency|String|Currency for Advertiser|
 |report_data|Object|[Report Data Object.](#googlesearchreportdata)|
 |global_master_advertiser_id|String|Identifier for advertiser|
-|location|String|Location URL|
 <a name="googlesearchreportdata"></a>
 
 **Report Data Object**

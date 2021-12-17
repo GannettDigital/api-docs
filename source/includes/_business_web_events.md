@@ -67,7 +67,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
   "report_date": "2020-02-27",
   "business_id": "USA_6338",
   "business_name": "Kiddie Academy INV",
-  "location": "http://dweb2270.dev.wh.reachlocal.com/client_reports/business_web_events/USA_6338?campaign_status%5B%5D=running&end_date=2019-08-01&global_master_campaign_id%5B%5D=USA_465183&interval_size=day&start_date=2019-07-01",
   "start_date": "2019-07-01",
   "end_date": "2019-08-01",
   "report_data": {
@@ -158,7 +157,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
       }
     ]
   },
-  "global_master_advertiser_id": "USA_123456",  // Global Master Advertiser ID
-  "location": "https://api.localiqservices.com/client_reports/cvt_events/USA_190076?campaign_status%5B%5D=running&end_date=2020-02-25&global_master_campaign_id%5B%5D=USA_2772377&interval_size=calendar_week&start_date=2019-10-01"
+  "global_master_advertiser_id": "USA_123456"  // Global Master Advertiser ID
 }
 ```
