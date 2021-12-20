@@ -212,7 +212,7 @@ Create a company.
 |phone_country_code|string|No|The phone country code of the advertiser|
 |fax|integer|No|fax address of the company|
 |email|string|Yes|email address of the company|
-|url|string|Yes|url address of the company|
+|url|string|No|url address of the company|
 |login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
 
 example request:
