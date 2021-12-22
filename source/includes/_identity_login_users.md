@@ -320,6 +320,8 @@ example success response (HTTP status 2xx):
         {
             "id": 1,
             "gmaid": "USA_888",
+            "master_advertiser_id": 888,
+            "platform_id": 1,
             "business_category_id": null,
             "business_sub_category_id": null,
             "name": "Slate Quarry",
