@@ -11,6 +11,7 @@
 | DELETE | /v3/identities/companies/[id]
 | POST | /v3/identities/companies/[id]/login_users
 | PUT | /v3/identities/companies/[id]/login_users/[id]
+| DELETE | /v3/identities/companies/[id]/login_users/[id]
 | GET | /v3/identities/companies/[id]/products
 | GET | /v3/identities/companies/[id]/products[product_code]
 | POST | /v3/identities/companies/[id]/products
