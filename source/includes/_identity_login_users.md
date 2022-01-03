@@ -40,6 +40,7 @@ Get an existing user.
 |companies|Array|Array of companies, that the loign user is associated with|
 |client_center_users|Array|Array of client center user, that the login user is associated with|
 |ldap_id|string|Id of the user used to reference a directory server|
+|verified|boolean|indicates the email of user has been verified|
 
 example request:
 
@@ -111,7 +112,8 @@ example success response (HTTP status 2xx):
                     "updated_at": "2021-10-11T00:00:00.000Z"
                 },
             ],
-            "ldap_id": "qwerty123"
+            "ldap_id": "qwerty123",
+            "verified": false
         }
     ],
     "page": 1,
@@ -136,6 +138,7 @@ Get an existing login user.
 |companies|Array|Array of companies, that the user is associated with|
 |client_center_users|Array|Array of client center user, that the login user is associated with|
 |ldap_id|string|Id of the user used to reference a directory server|
+|verified|boolean|indicates the email of user has been verified|
 
 example request:
 
@@ -205,7 +208,8 @@ example success response (HTTP status 2xx):
             "updated_at": "2021-10-11T00:00:00.000Z"
         },
     ],
-    "ldap_id": "qwerty123"
+    "ldap_id": "qwerty123",
+    "verified": true
 }
 ```
 
@@ -224,6 +228,8 @@ Create a login user.
 |locale|string|No|Locale of the country the user is based in|
 |profile_data|JSON|No|Meta data of the user|
 |ldap_id|string|No|Id of the user used to reference a directory server|
+|verified|boolean|No|Indicates the email of user has been verified.  Defaults to false.|
+
 
 example request:
 
@@ -269,9 +275,9 @@ example success response (HTTP status 2xx):
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
 
-#### PUT User
+#### PUT Login User
 
-Update an existing user.
+Update an existing login user.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
@@ -281,6 +287,7 @@ Update an existing user.
 |bu_id|integer|No|Business user id|
 |locale|string|No|Locale of the country the user is based in|
 |profile_data|JSON|No|Meta data of the user|
+|verified|boolean|No|Indicates the email of user has been verified|
 
 Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
 
@@ -312,26 +319,26 @@ example success response (HTTP status 2xx):
     "companies": [
         {
             "id": 1,
-            "master_advertiser_id": null,
-            "platform_id": null,
-            "name": "Company",
-            "address1": "Old str 10",
-            "address2": "Old str 11",
-            "city": "Chicago",
-            "province": "Chicago",
-            "postal_code": "2312",
-            "country": "USA",
-            "phone_number": "+123456",
-            "phone_type": "type",
-            "phone_country_code": "+123",
-            "business_category_id": 14,
-            "business_sub_category_id": 142,
-            "fax": 123456,
-            "email": "em@gmail.com",
-            "url": "http://www.some_company.com",
-            "is_freemium": false,
-            "created_at": "2021-08-27T13:19:29.000Z",
-            "updated_at": "2021-08-27T13:25:55.000Z"
+            "gmaid": "USA_888",
+            "master_advertiser_id": 888,
+            "platform_id": 1,
+            "business_category_id": null,
+            "business_sub_category_id": null,
+            "name": "Slate Quarry",
+            "address1": null,
+            "address2": null,
+            "city": null,
+            "province": null,
+            "postal_code": null,
+            "country": null,
+            "phone_number": null,
+            "phone_type": null,
+            "phone_country_code": null,
+            "fax": null,
+            "email": "email@gmail.com",
+            "url": "slate.com",
+            "is_freemium": true,
+            "primary_login_user_id": 1
         }
     ],
     "client_center_users": [

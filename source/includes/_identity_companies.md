@@ -38,6 +38,8 @@ Get an existing company.
 |---|---|---|
 |id|integer|The maid of company|
 |gmaid|string|The global master_advertiser_id of the company|
+|master_advertiser_id|integer|The master_advertiser_id of the company|
+|platform_id|integer|The platform_id of the company|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
 |name|string|The name of the company|
@@ -69,6 +71,8 @@ example success response (HTTP status 2xx):
 {
     "id": 8,
     "gmaid: "USA_132",
+    "master_advertiser_id": 132,
+    "platform_id": 1,
     "business_category_id": 14,
     "business_sub_category_id": 142,
     "name": "Company",
@@ -110,6 +114,8 @@ Get an existing company.
 |---|---|---|
 |id|integer|The maid of company|
 |gmaid|string|The global master_advertiser_id of the company|
+|master_advertiser_id|integer|The master_advertiser_id of the company|
+|platform_id|integer|The platform_id of the company|
 |business_category_id|integer|The business category id of the advertiser|
 |business_sub_category_id|integer|The business sub category id of the advertiser|
 |name|string|The name of the company|
@@ -142,6 +148,8 @@ example success response (HTTP status 2xx):
 {
     "id": 8,
     "gmaid: "USA_132",
+    "master_advertiser_id": 132,
+    "platform_id": 1,
     "business_category_id": 14,
     "business_sub_category_id": 142,
     "name": "Company",
@@ -212,7 +220,7 @@ Create a company.
 |phone_country_code|string|No|The phone country code of the advertiser|
 |fax|integer|No|fax address of the company|
 |email|string|Yes|email address of the company|
-|url|string|Yes|url address of the company|
+|url|string|No|url address of the company|
 |login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
 
 example request:
@@ -249,6 +257,8 @@ example success response (HTTP status 2xx):
 {
     "id": 14,
     "gmaid": "USA_132",
+    "master_advertiser_id": 132,
+    "platform_id": 1,
     "business_category_id": 14,
     "business_sub_category_id": 142,
     "name": "Company",
@@ -324,6 +334,8 @@ example success response (HTTP status 2xx):
 {
     "id": 14,
     "gmaid": "USA_132",
+    "master_advertiser_id": 132,
+    "platform_id": 1,
     "business_category_id": 14,
     "business_sub_category_id": 142,
     "name": "Other Company",
