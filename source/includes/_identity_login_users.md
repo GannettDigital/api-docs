@@ -20,7 +20,7 @@ When using the GET index method, the results will be filtered using these parame
 |---|---|---|
 |`first_name`|No|Restrict results to one or more specific user with the given first name|
 |`last_name`|No|Restrict results to one or more specific user with the given last name|
-|`email`|No|Restrict results to one or more specific user with the given email|
+|`email`|No|Restrict results to one specific user with the given email|
 |`page_size`|No|Restrict number of login users in result <br><b>Default value: 100</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
