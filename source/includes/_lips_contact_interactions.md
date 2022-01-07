@@ -26,9 +26,20 @@ When using the GET index method, the results will be filtered using these parame
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 |`sort_by`|No|Specifies what column to sort by. Valid columns are: important<br><b>Default value: occurred_at</b> |
 |`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: asc</b> |
+|`event_type[]`|No|See chart below|
 
-
-> * It always sorting by `occurred_at DESC`, if we provided `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Defaults is always sort by `occurred_at DESC`.
+> * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`.
+#### Event Type Filter
+Event Type | Explanation
+-- | --
+call | All CallEvents
+chat | All ChatEvents
+chat_sales | ChatEvents with a lead_type of sales. Ignored when used in combination with `chat`
+chat_service | ChatEvents with a lead_type of service. Ignored when used in combination with `chat`
+chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
+form | FormEvents with a sub_type of FormPost
+email | FormEvents with a sub_type of FormEmail
+fpd | All FpdEvents
 
 ### Examples:
 
@@ -46,6 +57,14 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&event_type[]=form&event_type[]=calls' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
