@@ -191,6 +191,52 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 }
             }
         ],
+        "display": [
+            {
+                "metric_type": "impressions",
+                "devices": {
+                    "tablet": {
+                        "total": 109,
+                        "percent": 6.02
+                    },
+                    "desktop": {
+                        "total": 749,
+                        "percent": 41.33
+                    },
+                    "mobile": {
+                        "total": 596,
+                        "percent": 32.89
+                    },
+                    "unknown": {
+                        "total": 358,
+                        "percent": 19.76
+                    },
+                    "total": 1812
+                }
+            },
+            {
+                "metric_type": "clicks",
+                "devices": {
+                    "tablet": {
+                        "total": 13,
+                        "percent": 13.54
+                    },
+                    "desktop": {
+                        "total": 37,
+                        "percent": 38.54
+                    },
+                    "mobile": {
+                        "total": 25,
+                        "percent": 26.04
+                    },
+                    "unknown": {
+                        "total": 21,
+                        "percent": 21.88
+                    },
+                    "total": 96
+                }
+            }
+        ],
         "xmedia": [
             {
                 "metric_type": "impressions",
