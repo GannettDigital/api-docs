@@ -6,7 +6,7 @@
 |---|---|
 | GET | /client_reports/google_analytics/[gmaid]?[query_params]
 
-#### API Name: marketplace_metrics
+#### API Name: google_analytics
 ### Usage
 Use GET to retrieve information from the Google Analytics API and (optional) Google Search Console API. Data will be returned for a GMAID by a specific date range determined by start date and end date. Analytics data be filtered by medium dimension and Search Console data can be sorted. Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
