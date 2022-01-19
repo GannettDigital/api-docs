@@ -68,6 +68,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": true,
             "has_cvt": false,
+            "has_video": false,
             "offer_name": "Gannett Display",
             "cycles": [
                 {
@@ -93,6 +94,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "bidding_pricing_model_id": 8,
             "has_addressable_geofence": false,
             "has_cvt": true,
+            "has_video": true,
             "offer_name": "Targeted Display",
             "cycles": [
                 {
@@ -117,6 +119,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": true,
+            "has_video": true,
             "offer_name": "Search Engine Marketing",
             "cycles": [
                 {
@@ -136,6 +139,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": true,
+            "has_video": false,
             "offer_name": "Live Chat",
             "cycles": [
                 {
@@ -160,6 +164,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "has_video": false,
             "offer_name": null,
             "cycles": [
                 {
@@ -184,6 +189,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "has_video": false,
             "offer_name": "ReachDisplay GeoFence",
             "cycles": [
                 {
@@ -208,6 +214,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "has_video": false,
             "offer_name": "YouTube Advertising",
             "cycles": [
                 {
@@ -232,6 +239,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "has_video": false,
             "cycles": [
                 {
                     "campaign_cycle": "TEST_38",
@@ -255,6 +263,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "status": "running",
             "has_addressable_geofence": false,
             "has_cvt": false,
+            "has_video": false,
             "cycles": [
                 {
                     "campaign_cycle": "TEST_34",
@@ -295,6 +304,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |bidding_pricing_model_id|Integer|The id which will be used to filter the sub type of top search campaign (shown only for search campaigns)|
 |has_addressable_geofence|Boolean|`True` or `False`|
 |has_cvt|Boolean|`True` or `False`|
+|has_video|Boolean|`True` or `False`|
 |offer_name|String|Campaign offer name|
 |cycles|Object|[Cycles Object](#campaigns_cycles)|
 |goals|Object|[Goals Object](#campaigns_goals)|
