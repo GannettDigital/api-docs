@@ -27,8 +27,11 @@ When using the GET index method, the results will be filtered using these parame
 |`sort_by`|No|Specifies what column to sort by. Valid columns are: important<br><b>Default value: occurred_at</b> |
 |`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: asc</b> |
 |`event_type[]`|No|See chart below|
+|`channel[]`|No|Filters results by Event channel. Valid channels are: `search, display, social, chat, other`|
+|`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
 
-> * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`.
+
+> * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`. Searching by `channel` will remove any event without a `wpc_id`.
 #### Event Type Filter
 Event Type | Explanation
 -- | --
@@ -120,6 +123,17 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |form_events| Integer | no | totals of unread form events|
 |chat_events| Integer | no | totals of unread chat events|
 
+**Channel**
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|channels| Integer | no | total events|
+|display| Integer | no | total events with `display` channel|
+|search| Integer | no |total events with `search` channel |
+|social| Integer | no | total events with `social` channel|
+|chat | Integer | no | total events with `chat` channel|
+|other | Integer | no | total events with `other` channel|
+|none | Integer | no | total events without channel|
+
 **Call**
 
 | Field Name | Datatype | Nullable | Description |
@@ -150,7 +164,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |timestamp| object | no |The date and time that the external chat API registered for this line of the chat transcript.|
 |form| object | no |The display name of the member of the chat who sent this message.|
 |message| object | no |The message body of this line of the chat transcript.|
-
 
 #### Example Response
 
@@ -239,10 +252,20 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     },
     "unread": {
        "events": 2,
-       "call_events": 2
-       "form_events": 0
+       "call_events": 2,
+       "form_events": 0,
        "chat_events": 0
     }
+    "channel": {
+       "events": 3,
+       "display": 2,
+       "search": 0,
+       "social": 0,
+       "chat": 0,
+       "other": 0,
+       "none": 1
+    }
+
 }
 ```
 
