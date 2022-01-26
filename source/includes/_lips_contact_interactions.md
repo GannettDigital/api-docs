@@ -257,7 +257,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
        "chat_events": 0
     }
     "channel": {
-       "events": 3,
        "display": 2,
        "search": 0,
        "social": 0,
