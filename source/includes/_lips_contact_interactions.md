@@ -27,7 +27,7 @@ When using the GET index method, the results will be filtered using these parame
 |`sort_by`|No|Specifies what column to sort by. Valid columns are: important<br><b>Default value: occurred_at</b> |
 |`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: asc</b> |
 |`event_type[]`|No|See chart below|
-|`channel[]`|No|Filters results by Event channel. Valid channels are: `search, display, social, chat, other`|
+|`channel[]`|No|Filters results by Event channel. Valid channels are: `search, display, social, chat, other, none`|
 |`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
 
 
