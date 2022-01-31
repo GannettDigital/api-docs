@@ -62,7 +62,7 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                 "creatives": [
                     {
                         "publisher_id": 1777,
-                        "publisher": "Simpli.fi Remarketing",
+                        "publisher_name": "Simpli.fi Remarketing",
                         "publisher_creative_id": 3231883,
                         "name": "CPT12237903H_1.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/324324543/3231883/4123f0.mp4",
@@ -87,7 +87,7 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                     },
                     {
                         "publisher_id": 1777,
-                        "publisher": "Simpli.fi Remarketing",
+                        "publisher_name": "Simpli.fi Remarketing",
                         "publisher_creative_id": 3231884,
                         "name": "CPT1928401H.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/324324543/3231884/99928.mp4",
@@ -122,7 +122,7 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                 "creatives": [
                     {
                         "publisher_id": 1777,
-                        "publisher": "Simpli.fi Remarketing",
+                        "publisher_name": "Simpli.fi Remarketing",
                         "publisher_creative_id": 3231885,
                         "name": "CPT88334564051H.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/324324543/3231885/e2c223ca.mp4",
@@ -163,7 +163,7 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                     },
                     {
                         "publisher_id": 1777,
-                        "publisher": "Simpli.fi Remarketing",
+                        "publisher_name": "Simpli.fi Remarketing",
                         "publisher_creative_id": 3231886,
                         "name": "CPT1953723432457H.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/2691669/3231886/6b2340d.mp4",
