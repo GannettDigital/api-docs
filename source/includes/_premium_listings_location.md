@@ -143,6 +143,18 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_li
             "Businesses and Services > Advertising and Marketing > Advertising Agency",
             "Businesses and Services > Advertising and Marketing > Marketing Agency"
         ],
+        "doctorComData":{
+            "hospitalAffiliations":"Hospital Research Institute",
+            "doctorCategories":[
+                227
+            ],
+            "credentials":"MD, NAME",
+            "npi":"1234567",
+            "university":"University name"
+        }
+        "named_doctor_categories": [
+            "Audiologist > General"
+        ],
         "contentLists": [],
         "features": [
             "AUTOMATION",
