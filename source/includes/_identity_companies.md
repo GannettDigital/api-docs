@@ -57,6 +57,7 @@ Get an existing company.
 |email|string|email address of the company|
 |url|string|url address of the company|
 |login_users|Array|Array of login_users, that the company is associated with|
+|sic_code|integer|Integer of 2 - 4 digits|
 
 example request:
 
@@ -90,6 +91,7 @@ example success response (HTTP status 2xx):
     "email": "email@gmail.com",
     "url": "http://www.some_company.com",
     "is_freemium": true,
+    "sic_code": 123,
     "primary_login_user_id": 1,
     "login_users": [
         {
@@ -167,6 +169,7 @@ example success response (HTTP status 2xx):
     "email": "email@gmail.com",
     "url": "http://www.some_company.com",
     "is_freemium": true,
+    "sic_code": 123,
     "primary_login_user_id": 1,
     "login_users": [
         {
@@ -276,6 +279,7 @@ example success response (HTTP status 2xx):
     "email": "email@gmail.com",
     "url": "http://www.some_company.com",
     "is_freemium": true,
+    "sic_code": 123,
     "primary_user_id": 1,
     "login_users": [
         {
@@ -353,6 +357,7 @@ example success response (HTTP status 2xx):
     "email": "email@gmail.com",
     "url": "http://www.some_company.com",
     "is_freemium": true,
+    "sic_code": 123,
     "primary_login_user_id": 1,
     "login_users": [
         {
