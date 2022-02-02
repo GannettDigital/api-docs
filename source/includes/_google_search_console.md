@@ -6,7 +6,7 @@
 |---|---|
 | GET | /client_reports/google_search_console/[gmaid]?[query_params]
 
-#### API Name: google_analytics
+#### API Name: google_search_console
 ### Usage
 Use GET to retrieve information from Google Search Console API. Data will be returned for a GMAID by a specific date range determined by start date and end date. Data can be sorted. Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
 
