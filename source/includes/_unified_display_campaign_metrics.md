@@ -247,6 +247,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
                         "creative_name": "Creative (Demo) 1",
                         "creative_type": "Image",
                         "creative_size": "300x250",
+                        "preview_url": "https://example.com/imgUpload128240714.png",
                         "spend": 29.82,
                         "impressions": 1442.0,
                         "clicks": 13.0,
@@ -1208,6 +1209,8 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
 |publisher_id|String|Identifier for Publisher|
 |publisher_name|String|Name of Publisher|
 |name|String|Name of Creative|
+|creative_size|String|Size of Creative|
+|preview_url|String|Preview URL for creative|
 |impressions|Integer|Total Impressions for Creative|
 |clicks|Integer|Total Clicks for Creative|
 |total_active_time_view|Float|Total Time (minutes) the ad was viewed by a consumers|
@@ -1245,6 +1248,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
 |creative_name|String|Name of Creative <br>**The field is nullable**|
 |creative_type|String|Type of Creative|
 |creative_size|String|Size of Creative|
+|preview_url|String|Preview URL for creative|
 |spend|Float|Total Spend for Campaign|
 |impressions|Float|Total Impressions for Interval|
 |clicks|Float|Total Clicks for Interval|
