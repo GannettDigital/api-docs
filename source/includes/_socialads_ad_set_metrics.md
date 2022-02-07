@@ -24,6 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 |campaign_status[]| no |running|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended|
 |campaign_cycle| no |--|Restrict results to a single campaign cycle|
 |include_cycles| no | false |Set to true or false on whether to include cycle nesting.  Default value is false|
+|include_full_channel| no | false |Set to true or false on whether to include full channel(xmedia) campaigns in response.  Default value is false|
 
 ### Response Data Details
 
