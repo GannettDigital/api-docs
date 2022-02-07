@@ -21,11 +21,15 @@ When using the GET method the results can be filtered using these parameters:
 
 ### Report Data
 
+#### Site Urls
+
 A list of sites that the particular advertiser has verified in the Google Search Console system.
 
 | Data Object | Description |
 |---|---|
-|Array|An unsorted list of all site urls. See [google_services](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_google_services.md) for site_url usage.|
+|`site_urls`|An unsorted array of all site urls. See [google_services](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_google_services.md) for site_url usage.|
+
+
 
 ### Examples
 
@@ -42,12 +46,14 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
     "report_date": "2021-09-16",
     "global_master_advertiser_id": "USA_130964",
     "report_data": {
-        "https://www.brannan1.com/",
-        "https://www.pwm-sales.co.uk/",
-        "https://www.inexroofingco.com/",
-        "https://www.looknatural.com/",
-        "https://calsgaragedoors.com/",
-        "https://www.landscapesbyjefferyinc.com/"
+        "site_urls": [
+            "https://www.brannan1.com/",
+            "https://www.pwm-sales.co.uk/",
+            "https://www.inexroofingco.com/",
+            "https://www.looknatural.com/",
+            "https://calsgaragedoors.com/",
+            "https://www.landscapesbyjefferyinc.com/"
+        ]
     }
 }
             
