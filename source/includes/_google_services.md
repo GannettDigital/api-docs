@@ -67,8 +67,6 @@ curl -L -X GET 'localhost:3001/client_reports/oauth/google/USA_130964?service=an
     }
 {
 ```
-**Note:** a `null` service value will be functionally equivilant to `analytics` when making calls to `/client_reporting/google_analytics`
-
 ### POST
 
 Use POST with a JSON payload to create/update Google service credentials for a given advertiser and given service. The values will be used to fetch the matching Google service data. When provided client_id and project_id must match values used to create access_token and refresh_token or attempts to refresh a token will fail.
@@ -80,7 +78,7 @@ Use POST with a JSON payload to create/update Google service credentials for a g
 |`gmaid`|Yes|Creates/updates credentials for specified Global Master Advertiser ID|
 |`access_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
 |`refresh_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
-|`service`|No|Creates/updates value. Allowed values: `analytics` or `search_console`.|
+|`service`|No|Creates/updates value. Allowed values: `analytics, search_console`.|
 |`client_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> API & Services -> Credentials|
 |`project_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> Dashboard -> Project Info|
 |`site_url`|No|Creates/updates value. Required for `search_console` service. See [googe_site_urls](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_google_site_urls.md)|
@@ -91,6 +89,7 @@ Use POST with a JSON payload to create/update Google service credentials for a g
 |`web_property_id`|No|Creates/updates value.|
 |`web_property_name`|No|Creates/updates value.|
 
+**WARNING:** A NULL `service` value is equivilant to `analytics` and can be used to make calls to `/client_reporting/google_analytics`. However if you are intending to make calls to another google service (ex. `/client_reporting/google_search_console`) `service` should be treated as a required parameter.
 
 #### Example Local Dev Curl:
 
