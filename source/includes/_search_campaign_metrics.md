@@ -352,11 +352,11 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 |ctr|Integer|Total click through rate|
 |cpc|Integer|Toal cost per click|
 |device_breakdowns|DeviceBreakdown[]|Array of [DeviceBreakdown](#searchdevicebreakdowns)|
-|search_impression_share|Integer|Search impression share for interval|
-|top_search_impression_share|Integer|Top Search impression share for interval|
-|absolute_top_search_impression_share|Integer|Absolute Top Search Impression share for interval|
-|rank_lost_absolute_top_search_impression_share|Integer|Rank Lost Absolute Top Search Impression share for interval|
-|budget_lost_absolute_top_search_impression_share|Integer|Budget Lost Absolute Top Search Impression share for interval|
+|search_impression_share|Decimal|Search impression share percentage for interval|
+|top_search_impression_share|Decimal|Top Search impression share percentage for interval|
+|absolute_top_search_impression_share|Decimal|Absolute Top Search Impression share percentage for interval|
+|rank_lost_absolute_top_search_impression_share|Decimal|Rank Lost Absolute Top Search Impression share percentage for interval|
+|budget_lost_absolute_top_search_impression_share|Decimal|Budget Lost Absolute Top Search Impression share percentage for interval|
 
 <a name="searchdevicebreakdowns"></a>
 **Device Breakdowns Object**
