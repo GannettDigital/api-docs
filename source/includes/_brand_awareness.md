@@ -10,11 +10,9 @@ URI Format:             /client_reports/brand_awareness/[gmaid]?[query_params]
 #### Usage
 Use GET to retrieve information for the Brand Awareness report for a given advertiser.
 
-The data returned will include impressions and clicks for each interval, broken out by campaign type (social, search, display, youtube, geofence, xmedia and email) as well as totals for that interval.  Note that display campaigns with web_publisher_id = 38 will count as facebook campaigns, not display campaigns.
+The data returned will include impressions and clicks for each interval, broken out by campaign type (chat, social, search, display, youtube, geofence, xmedia and email) as well as totals for that interval.  Note that display campaigns with web_publisher_id = 38 will count as facebook campaigns, not display campaigns.
 
 Totals across all the intervals are also provided, again broken out by campaign type, but also totals for all campaign types.
-
-Available campaigns lists only campaigns of type social, search, and display for the given gmaid.
 
 #### Parameters
 
@@ -57,6 +55,17 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
         "intervals": [
             {
                 "start_date": "2020-03-01",
+                "chat": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "walk_ins": 0,
+                    "spend": 48.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
                 "search": {
                     "impressions": 1205,
                     "clicks": 13,
@@ -161,6 +170,21 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
             "calls_connected": 50,
             "average_call_length": 182.68,
             "ctr": 2.18,
+            "chat": {
+                "impressions": 0,
+                "clicks": 0,
+                "walk_ins": 0,
+                "spend": 1048.0,
+                "calls": 0,
+                "chats": 0,
+                "emails": 0,
+                "web_events": 0,
+                "leads": 0,
+                "unique_calls": 0,
+                "calls_connected": 0,
+                "average_call_length": 0,
+                "ctr": 0
+            },
             "search": {
                 "impressions": 1205,
                 "clicks": 13,
@@ -296,6 +320,17 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
         "intervals": [
             {
                 "start_date": "2020-03-01",
+                "chat": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "walk_ins": 0,
+                    "spend": 48.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
                 "search": {
                     "impressions": 351,
                     "clicks": 10,
@@ -350,6 +385,21 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
             }
         ],
         "totals_by_channel": [
+            "chat": {
+                "impressions": 0,
+                "clicks": 0,
+                "walk_ins": 0,
+                "spend": 1048.0,
+                "calls": 0,
+                "chats": 0,
+                "emails": 0,
+                "web_events": 0,
+                "leads": 0,
+                "unique_calls": 0,
+                "calls_connected": 0,
+                "average_call_length": 0,
+                "ctr": 0
+            },
             {
                 "channel": "search",
                 "impressions": 1403,
@@ -445,6 +495,17 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
         "intervals": [
             {
                 "start_date": "2020-03-01",
+                "chat": {
+                    "impressions": 0,
+                    "clicks": 0,
+                    "walk_ins": 0,
+                    "spend": 48.0,
+                    "calls": 0,
+                    "chats": 0,
+                    "emails": 0,
+                    "web_events": 0,
+                    "leads": 0
+                },
                 "search": {
                     "impressions": 351,
                     "clicks": 10,
