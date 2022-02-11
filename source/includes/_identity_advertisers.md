@@ -21,7 +21,7 @@ When using the GET index method, the results will be filtered using these parame
 |`platform_id`|Yes|Array which restricts the results to one or more specific advertiser with the given platform id  Valid platform ids are: `USA`, `CAN`, `AUS` and `GBR` |
 |`gmaid`|No|Restrict results to one or more specific gmaid|
 |`advertiser_id`|No|Restrict results to one or more specific advertiser with the given advertiser id|
-|`business_id`|No|Restrict results to one or more specific advertiser with the given business id|
+|`business_id[]`|No|Restrict results to advertisers with any one of the given business ids|
 |`cobrand_id`|No|Restrict results to one or more specific advertiser with the given cobrand id. An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LOCALiQ data construct used for internal purposes|
 |`page_size`|No|Restrict number of advertisers in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 5000</b>|
@@ -106,7 +106,7 @@ Response Description
 ```
 
 ```
-curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&business_id=15' \
+curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&business_id[]=15' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
