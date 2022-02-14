@@ -66,6 +66,8 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                         "publisher_creative_id": 3231883,
                         "name": "CPT12237903H_1.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/324324543/3231883/4123f0.mp4",
+                        "creative_template_id": 1,
+                        "native_style_id": 1,
                         "intervals": [
                             {
                                 "start_date": "2022-01-03",
@@ -91,6 +93,8 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                         "publisher_creative_id": 3231884,
                         "name": "CPT1928401H.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/324324543/3231884/99928.mp4",
+                        "creative_template_id": 2,
+                        "native_style_id": 2,
                         "intervals": [
                             {
                                 "start_date": "2022-01-03",
@@ -126,6 +130,8 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                         "publisher_creative_id": 3231885,
                         "name": "CPT88334564051H.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/324324543/3231885/e2c223ca.mp4",
+                        "creative_template_id": 3,
+                        "native_style_id": 3,
                         "intervals": [
                             {
                                 "start_date": "2022-01-03",
@@ -167,6 +173,8 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
                         "publisher_creative_id": 3231886,
                         "name": "CPT1953723432457H.mp4",
                         "url": "https://adspreview.simpli.fi/ads/live/2691669/3231886/6b2340d.mp4",
+                        "creative_template_id": 4,
+                        "native_style_id": 4,
                         "intervals": [
                             {
                                 "start_date": "2022-01-10",
@@ -327,6 +335,8 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
 |publisher_creative_id|Integer|Identifier for Creative|
 |creative_name | String | Name of creative<br>**The field is nullable**|
 |url | String | URL for creative preview<br>**The field is nullable** |
+|creative_template_id | Integer |Part of Identifier for paramount creatives alongside native_style_id|
+|native_style_id | Integer |Part of Identifier for paramount creatives alongside creative_template_id|
 |creatives|Object|Object of creatives details. [Campaign Creatives Object](#vacampaigncreatives)|
 
 <a name="vatotalsperinterval"></a>
