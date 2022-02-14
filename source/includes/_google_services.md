@@ -1,4 +1,4 @@
-# Google Services 
+# Google API Services
 
 ## Resource Overview
 
@@ -13,15 +13,7 @@ Authorization on these methods is limited to services using a "trusted token".  
 
 ### GET
 
-Use GET to examine the account information for a given advertiser.  Note that tokens are not returned.
-
-### Parameters
-
-When using the GET method, the results can be filtered using these parameters:
-
-| Param | Required | Default | Description |
-|---|---|---|---|
-|service| no |--|Returns only credentials for that service. Allowed values are: `analytics` or `search_console`|
+Use GET to examine the configurations for a given advertiser.  Note that tokens are not returned.
 
 #### Example Local Dev Curl:
 
@@ -34,42 +26,44 @@ curl -L -X GET 'localhost:3001/client_reports/oauth/google/USA_130964?service=an
 
 ```
 {
-    google_services:
-    {
-        "gmaid": "USA_130964",
-        "service": "analytics",
-        "view_id": "123954488",
-        "view_name": "BuenaVista",
-        "account_id": "79363368",
-        "account_name": "MyAccount",
-        "web_property_id": "UA-79363368-1",
-        "web_property_name": "MyWebSite",
-        "client_id": "123_xyz.googlecloud.com",
-        "project_id": "rl-client-center",
-        "site_url": "www.testsite.com",
-        "created_at": "2020-04-08T16:21:59.000Z",
-        "updated_at": "2020-07-22T20:55:49.000Z"
-    },
-    {
-        "gmaid": "USA_130964",
-        "service": "search_console",
-        "view_id": null,
-        "view_name": null,
-        "account_id": "79363368",
-        "account_name": null,
-        "web_property_id": null,
-        "web_property_name": null,
-        "client_id": "456_xyz.googlecloud.com",
-        "project_id": "rl-client-center",
-        "site_url": "www.testsite.com",
-        "created_at": "2020-04-08T16:30:59.000Z",
-        "updated_at": "2020-04-08T16:30:59.000Z",
-    }
+    google_api_configurations:
+    [
+
+        {
+            "gmaid": "USA_130964",
+            "view_id": "123954488",
+            "view_name": "BuenaVista",
+            "account_id": "79363368",
+            "account_name": "MyAccount",
+            "web_property_id": "UA-79363368-1",
+            "web_property_name": "MyWebSite",
+            "client_id": "123_xyz.googlecloud.com",
+            "project_id": "rl-client-center",
+            "site_url": null,
+            "created_at": "2020-04-08T16:21:59.000Z",
+            "updated_at": "2020-07-22T20:55:49.000Z"
+        },
+        {
+            "gmaid": "USA_130964",
+            "service": "search_console",
+            "view_id": null,
+            "view_name": null,
+            "account_id": "79363368",
+            "account_name": null,
+            "web_property_id": null,
+            "web_property_name": null,
+            "client_id": "456_xyz.googlecloud.com",
+            "project_id": "rl-cc-search-console",
+            "site_url": "www.testsite.com",
+            "created_at": "2020-04-08T16:30:59.000Z",
+            "updated_at": "2020-04-08T16:30:59.000Z",
+        }
+    ]
 {
 ```
 ### POST
 
-Use POST with a JSON payload to create/update Google service credentials for a given advertiser and given service. The values will be used to fetch the matching Google service data. When provided client_id and project_id must match values used to create access_token and refresh_token or attempts to refresh a token will fail.
+Use POST with a JSON payload to create/update Google service credentials for a given advertiser. The values will be used when call are made to the  Google API report endpoint.
 
 ### Parameters
 
@@ -78,19 +72,17 @@ Use POST with a JSON payload to create/update Google service credentials for a g
 |`gmaid`|Yes|Creates/updates credentials for specified Global Master Advertiser ID|
 |`access_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
 |`refresh_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
-|`service`|No|Creates/updates value. Allowed values: `analytics, search_console`.|
-|`client_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> API & Services -> Credentials|
+|`client_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> API & Services -> Credentials, see WARNING below|
 |`project_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> Dashboard -> Project Info|
-|`site_url`|No|Creates/updates value. Required for `search_console` service. See [googe_site_urls](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_google_site_urls.md)|
-|`view_id`|No|Creates/updates value. Required for `analytics` service. Value found in Google Analytics UI at `https://analytics.google.com`|
+|`site_url`|No|Creates/updates value. Required for `search_console` report. See [googe_site_urls](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_google_site_urls.md)|
+|`view_id`|No|Creates/updates value. Required for `analytics` report. Value found in Google Analytics UI at `https://analytics.google.com`|
 |`view_name`|No| Creates/updates value.|
 |`account_id`|No|Creates/updates value.|
 |`account_name`|No|Creates/updates value.|
 |`web_property_id`|No|Creates/updates value.|
 |`web_property_name`|No|Creates/updates value.|
 
-**WARNING:** A NULL `service` value is equivilant to `analytics` and can be used to make calls to `/client_reporting/google_analytics`. However if you are intending to make calls to another google service (ex. `/client_reporting/google_search_console`) `service` should be treated as a required parameter.
-
+**WARNING:** If a `client_id` value is not included the configuration can only be used to call: `/client_reporting/google_analytics` and will be defaulted to project_id `client-center-284215`. Therefore if you intend to call another report (Ex. `/client_reporting/google_search_console`) or another client the `client_id` should be treated as a `required` param. When provided `client_id` must match value used to create access_token and refresh_token or attempts to refresh a token will fail.
 #### Example Local Dev Curl:
 
 ```
