@@ -69,7 +69,7 @@ Use POST with a JSON payload to create/update Google service credentials for a g
 
 | Parameter | Required | Description |
 |---|---|---|
-|`gmaid`|Yes|Creates/updates credentials for specified Global Master Advertiser ID|
+|`gmaid`|Yes|Creates/updates configuration for specified Global Master Advertiser ID|
 |`access_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
 |`refresh_token`|Yes|Creates/updates value. Value received from request to `https://oauth2.googleapis.com/token`|
 |`client_id`|No|Creates/updates value. Value found in Google Cloud Platform Console -> API & Services -> Credentials, see WARNING below|
@@ -82,7 +82,7 @@ Use POST with a JSON payload to create/update Google service credentials for a g
 |`web_property_id`|No|Creates/updates value.|
 |`web_property_name`|No|Creates/updates value.|
 
-**WARNING:** If a `client_id` value is not included the configuration can only be used to call: `/client_reporting/google_analytics` and will be defaulted to project_id `client-center-284215`. Therefore if you intend to call another report (Ex. `/client_reporting/google_search_console`) or another client the `client_id` should be treated as a `required` param. When provided `client_id` must match value used to create access_token and refresh_token or attempts to refresh a token will fail.
+**WARNING:** If a `client_id` value is not included the call will create/updated a default configuration for project_id: `client-center-284215` that can only be used to call: `/client_reporting/google_analytics`. Therefore if you intend the configuration to be used to call another report (Ex. `/client_reporting/google_search_console`) the `client_id` should be treated as a `required` param. When provided `client_id` must match value used to create access_token and refresh_token or attempts to refresh a token will fail.
 #### Example Local Dev Curl:
 
 ```
