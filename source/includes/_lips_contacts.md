@@ -16,9 +16,9 @@ When using the GET index method, the results will be filtered using these parame
 
 | Parameter | Required | Description |
 |---|---|---|
-|`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
-|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
+|`event_params[recording_url]`|No|String that restricts the contacts to one or more based on recording_url|
+|`event_params[phone_numbers]`|No|String that restricts the contacts to one or more based on phone number|
 |`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
