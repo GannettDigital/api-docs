@@ -1,6 +1,138 @@
 ## Campaigns APIs
 
+<internal>
+
+### **Campaigns Search**
+
+### Resource Overview
+
+| Method | URI Format |
+|---|---|
+| GET | /client_reports/campaigns |
+
+A list of filtered Campaigns that match the provided query string.
+
+### Parameters
+
+When using the GET method, the results can be filtered using these parameters:
+
+| Param | Required? | Function |
+|---|---|---|
+| query | Yes | Query string used to search for campaigns, minimum of 3 characters |
+| page | No | Pagination page |
+| platform_id|Integer|Yes|An id that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`) and 6 (`GBR`)|
+
+### Response Data Details
+
+> Retrieve data for a specific report_type
+
+```
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
+```
+
+> Retrieve data for a specific report_type as well as for running and stopped campaigns
+
+```
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
+```
+
+> Example Response
+
+```json
+{
+    "platform_id": 1,
+    "query": "GCI",
+    "page": 1,
+    "per_page": 5,
+    "total_pages": 12529,
+    "campaigns": [
+        {
+            "global_master_advertiser_id": "USA_834393",
+            "global_master_campaign_id": "USA_-55370",
+            "master_advertiser_name": "WA WA THRIFT MART",
+            "name": "C54323_GCI08146_WA WA THRIFT MART Brownwood TX",
+            "type": "gannett_display",
+            "source": "Gannett Display",
+            "status": "running",
+            "start_date": "2022-02-04",
+            "end_date": "2022-02-24"
+        },
+        {
+            "global_master_advertiser_id": "USA_95569",
+            "global_master_campaign_id": "USA_-55369",
+            "master_advertiser_name": "C1264_COLLINS VISION CLINIC",
+            "name": "C1264_GCI0226481_COLLINS VISION CLINIC- Branded Content",
+            "type": "gannett_display",
+            "source": "Gannett Display",
+            "status": "running",
+            "start_date": "2022-03-15",
+            "end_date": "2022-04-13"
+        },
+        {
+            "global_master_advertiser_id": "USA_23654",
+            "global_master_campaign_id": "USA_-55368",
+            "master_advertiser_name": "MISSAUGA NATIONAL BANK",
+            "name": "C1170_GCI0812638_Missauga National Bank - Digital - Q1 2022",
+            "type": "other",
+            "source": "Facebook Ads - Custom Solutions",
+            "status": "ended",
+            "start_date": "2022-01-01",
+            "end_date": "2022-03-31"
+        },
+        {
+            "global_master_advertiser_id": "USA_876456",
+            "global_master_campaign_id": "USA_-55364",
+            "master_advertiser_name": "LONE OAK DOG TRAINING",
+            "name": "C6764_GCI0786222_LONE OAK DOG TRAINING - Campaign January",
+            "type": "gannett_display",
+            "source": "Gannett Display",
+            "status": "running",
+            "start_date": "2022-01-01",
+            "end_date": "2022-01-31"
+        },
+        {
+            "global_master_advertiser_id": "USA_876456",
+            "global_master_campaign_id": "USA_-55363",
+            "master_advertiser_name": "LONE OAK DOG TRAINING",
+            "name": "C6764_GCI0786224_LONE OAK DOG TRAINING - Campaign February",
+            "type": "gannett_display",
+            "source": "Gannett Display",
+            "status": "running",
+            "start_date": "2022-02-01",
+            "end_date": "2022-02-28"
+        }
+    ]
+}
+```
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|platform_id|String|Platform queried (1 for `USA`, 2 for `CAN`, 3 for `AUS` and 6 for `GBR`)|
+|query|String|Search string used (minimum of 3 characters)|
+|page|String|Results page (defaults to 1)|
+|per_page|String|Results per page (defaults to 25)|
+|total_pages|String|Total count of result pages|
+|campaigns|Object|[Search Campaigns Object](#campaigns_searchcampaigns)|
+
+<a name="campaigns_searchcampaigns"></a>
+**Search Campaigns Object**
+
+| Field Name | Datatype | Description |
+|---|---|---|
+|global_master_advertiser_id|String|Identifier for advertiser|
+|global_master_campaign_id|String|Identifier for campaign|
+|master_advertiser_name|String|Identifier for advertiser|
+|name|String|Identifier for campaign|
+|type|String|Type of campaign|
+|source|String|Campaign offer name|
+|status|String|Status of campaign|
+|start_date|String|Campaign offer name|
+|end_date|String|Campaign offer name|
+
+</internal>|
+
 ### **Campaigns & Cycles**
+
 <a name="campaigns_and_cycles"></a>
 
 ### Resource Overview
