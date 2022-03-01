@@ -247,6 +247,8 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
                         "creative_name": "Creative (Demo) 1",
                         "creative_type": "Image",
                         "creative_size": "300x250",
+                        "creative_template_id": 1234,
+                        "native_style_id": 5678 ,
                         "preview_url": "https://example.com/imgUpload128240714.png",
                         "spend": 29.82,
                         "impressions": 1442.0,
@@ -356,6 +358,8 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
                         "publisher_name": "Simpli.fi API",
                         "creative_name": "Creative (Demo) 2",
                         "creative_type": "Image",
+                        "creative_template_id": 1234,
+                        "native_style_id": 5678 ,
                         "creative_size": "300x250",
                         "spend": 20.18,
                         "impressions": 1207.0,
@@ -1247,6 +1251,8 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
 |publisher_name|String|Name of Publisher|
 |creative_name|String|Name of Creative <br>**The field is nullable**|
 |creative_type|String|Type of Creative|
+|creative_template_id|Integer|The template id of the creative (Used for paramount creatives)|
+|native_style_id|Integer|The native style id of the creative (Used for paramount creatives)|
 |creative_size|String|Size of Creative|
 |preview_url|String|Preview URL for creative|
 |spend|Float|Total Spend for Campaign|
