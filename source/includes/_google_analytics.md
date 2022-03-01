@@ -25,6 +25,8 @@ When using the GET method, the results can be filtered using these parameters:
 |`page_path_2`|No|Restricts results using an inclusive regex match of the second level path. Ex. `page_path_2=services` returns results for `/newark/service/*`, `/hoboken/service-center/*`, etc.|
 |`sort_by`|No|Applies only to Search Console data. Use "clicks", "impressions", "postion", or "ctr". Returns top 20 results. Default: "clicks"|
 
+Note: All filters use AND logic to match results.
+
 ### Metrics
 
 #### Website Traffic Metrics
