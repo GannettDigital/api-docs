@@ -150,6 +150,7 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
     "contact": {
         "id": 1,
         "master_advertiser_id": 1,
+        "platform_id": 1,
         "platform": "USA",
         "first_name": "M",
         "last_name": "Example",
@@ -193,6 +194,7 @@ curl -L -X POST 'https://data-connect-lips.gannettdigital.com/contacts' \
 --data-raw '{
     "contact": {
         "master_advertiser_id": 1,
+        "platform_id": 1,
         "platform": "USA",
         "first_name": "M",
         "last_name": "Example",
@@ -214,7 +216,33 @@ curl -L -X POST 'https://data-connect-lips.gannettdigital.com/contacts' \
 ```
 A successful response will simply echo the contact (with an id) and return a 200 HTTP response code.
 
+The **master_advertiser_id** and **platform_id** parameters are required.
+
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+For the above example, if the email address `mail@mail.com` was already associated with a contact belonging to USA_1, the response would have an HTTP status code of 422 with the following response body
+```
+[
+    {
+        "attribute": "email",
+        "message": "must be unique"
+    }
+]
+```
+
+If the phone number and email address were already associated with a contact belonging to USA_1, the response would have an HTTP status code if 422 qith the following response body
+```
+[
+    {
+        "attribute": "email",
+        "message": "must be unique"
+    },
+    {
+        "attribute": "phone_number",
+        "message": "must be unique"
+    }
+]
+```
 
 #### PUT Contact(update)
 
