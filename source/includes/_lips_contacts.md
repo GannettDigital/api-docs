@@ -4,15 +4,20 @@
 
 ### Resource Overview
 
-| Method | URI Format |
-|---|---|
-| GET `index` | /contacts? |
-| GET `show` | /contacts/{id} |
+| Route | Method | URI Format |
+|---|---|---|
+| `index` | GET | /contacts |
+| `show` | GET | /contact/[id] |
+| `create` | POST | /contacts |
+| `update` | PUT | /contact/[id] |
+| `destroy` | DELETE | /contact/[id] |
 
-### Usage
+#### GET Contacts(index)
+
+##### Usage
 Use GET to retrieve contacts that match the query params.
 
-### Parameters
+##### Parameters
 When using the GET index method, the results will be filtered using these parameters:
 
 | Parameter | Required | Description |
@@ -24,11 +29,11 @@ When using the GET index method, the results will be filtered using these parame
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 
 
-#### If the event_params parameter is present, the response will also contain recording_url and duration.
+If the event_params parameter is present, the response will also contain recording_url and duration.
 
-### Examples:
+##### Examples:
 
-### GET (index)
+##### GET (index)
 
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
@@ -75,7 +80,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
 |total_pages| Integer | no | the number of contacts array total pages|
 
 
-#### Example Response
+##### Example Response
 
 ```javascript
 {
@@ -119,3 +124,236 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
     "total_pages": 1,
     "per_page": 25
 }
+```
+
+#### GET Contact(show)
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+##### Usage
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+##### Parameters
+When using the GET index method, the results will be filtered using these parameters:
+
+| Parameter | Required | Description |
+|---|---|---|
+|`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
+|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
+|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
+|`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
+##### Examples:
+
+##### GET (show)
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+> Response Description if query_params contains event_params
+
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|first_name| String | no | first name of the contact|
+|last_name| String | no | last name of the contact|
+|email| String | no | email of the contact|
+|address1| String | no | address of the contact|
+|address2| String | no | address of the contact|
+|city| String | no | city of the contact|
+|state| String | no | state of the contact|
+|postal| String | no | zip code of the contact|
+|country| String | no | country code of the contact|
+|duration| Integer | no | the phone call duration of the contact|
+|url| String | no | the recording_url of the contact's call|
+|phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|first_party_data | boolean | This contact has been flagged as being "first party data"|
+|page| Integer | no | the number of the contacts page|
+|page_size| Integer | no | the number of the size of the contacts array|
+|total_pages| Integer | no | the number of contacts array total pages|
+
+#### POST Contact(create)
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+##### Usage
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+##### Parameters
+When using the GET index method, the results will be filtered using these parameters:
+
+| Parameter | Required | Description |
+|---|---|---|
+|`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
+|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
+|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
+|`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
+##### Examples:
+
+##### POST (create)
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+> Response Description if query_params contains event_params
+
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|first_name| String | no | first name of the contact|
+|last_name| String | no | last name of the contact|
+|email| String | no | email of the contact|
+|address1| String | no | address of the contact|
+|address2| String | no | address of the contact|
+|city| String | no | city of the contact|
+|state| String | no | state of the contact|
+|postal| String | no | zip code of the contact|
+|country| String | no | country code of the contact|
+|duration| Integer | no | the phone call duration of the contact|
+|url| String | no | the recording_url of the contact's call|
+|phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|first_party_data | boolean | This contact has been flagged as being "first party data"|
+|page| Integer | no | the number of the contacts page|
+|page_size| Integer | no | the number of the size of the contacts array|
+|total_pages| Integer | no | the number of contacts array total pages|
+
+#### PUT Contact(update)
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+##### Usage
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+##### Parameters
+When using the PUT update method
+
+| Parameter | Required | Description |
+|---|---|---|
+|`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
+|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
+|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
+|`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
+##### Examples:
+
+##### POST (create)
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+> Response Description if query_params contains event_params
+
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|first_name| String | no | first name of the contact|
+|last_name| String | no | last name of the contact|
+|email| String | no | email of the contact|
+|address1| String | no | address of the contact|
+|address2| String | no | address of the contact|
+|city| String | no | city of the contact|
+|state| String | no | state of the contact|
+|postal| String | no | zip code of the contact|
+|country| String | no | country code of the contact|
+|duration| Integer | no | the phone call duration of the contact|
+|url| String | no | the recording_url of the contact's call|
+|phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|first_party_data | boolean | This contact has been flagged as being "first party data"|
+|page| Integer | no | the number of the contacts page|
+|page_size| Integer | no | the number of the size of the contacts array|
+|total_pages| Integer | no | the number of contacts array total pages|
+
+
+#### DELETE Contact(destroy)
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+##### Usage
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+##### Parameters
+When using the DELETE destroy method
+
+| Parameter | Required | Description |
+|---|---|---|
+|`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
+|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
+|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
+|`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
+##### Examples:
+
+##### POST (create)
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1&event_params[recording_url]=url' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+> Response Description if query_params contains event_params
+
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_master_advertiser_id=USA_1' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|first_name| String | no | first name of the contact|
+|last_name| String | no | last name of the contact|
+|email| String | no | email of the contact|
+|address1| String | no | address of the contact|
+|address2| String | no | address of the contact|
+|city| String | no | city of the contact|
+|state| String | no | state of the contact|
+|postal| String | no | zip code of the contact|
+|country| String | no | country code of the contact|
+|duration| Integer | no | the phone call duration of the contact|
+|url| String | no | the recording_url of the contact's call|
+|phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|first_party_data | boolean | This contact has been flagged as being "first party data"|
+|page| Integer | no | the number of the contacts page|
+|page_size| Integer | no | the number of the size of the contacts array|
+|total_pages| Integer | no | the number of contacts array total pages|
