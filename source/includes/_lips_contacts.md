@@ -7,6 +7,7 @@
 | Method | URI Format |
 |---|---|
 | GET `index` | /contacts? |
+| GET `show` | /contacts/{id} |
 
 ### Usage
 Use GET to retrieve contacts that match the query params.
@@ -62,8 +63,15 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
 |url| String | no | the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
 |first_party_data | boolean | This contact has been flagged as being "first party data"|
+|status | String | Status of the contact|
+|archived_at | Datetime | The date of the archived contact|
 |page| Integer | no | the number of the contacts page|
 |page_size| Integer | no | the number of the size of the contacts array|
+|total_events| Integer | no | the number of contacts events|
+|total_call_event| Integer | no | the number of contacts call events|
+|total_fpd_event| Integer | no | the number of contacts fpd events|
+|total_form_event| Integer | no | the number of contacts form events|
+|total_chat_event| Integer | no | the number of contacts chat events|
 |total_pages| Integer | no | the number of contacts array total pages|
 
 
@@ -96,7 +104,15 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts?global_m
                     "updated_at": "2021-07-16T12:43:32.000Z"
                 }
             ],
+            "status": null,
+            "archived_at": null,
             "first_party_data": false
+            "occurrence_time": "2022-02-23T14:53:03.000Z",
+            "total_events": 1,
+            "total_call": 1,
+            "total_chat": 0,
+            "total_form": 0,
+            "total_fpd": 0
         }
     ],
     "page": 1,
