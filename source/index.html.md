@@ -63,6 +63,7 @@ includes:
   - lsa_leads
   - zapier
   - fpd
+  - fpd_zapier
   - capture_external_event_fpd
   - capture_external_event_chat
   - etl_reports
