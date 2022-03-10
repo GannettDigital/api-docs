@@ -47,7 +47,7 @@ As an alternative, if you would like LOCALiQ to create the Zap, maintain, and ma
 
 6) Need inspiration? See [LOCALiQ and Zapier](https://zapier.com/apps/LOCALiQ/integrations).
 
-### Creating a LOCALiQ Trigger Zap?
+### Using the LOCALiQ Trigger Zap?
 
 1) Click "Make a New Zap!" button in the upper right-hand corner of the Zapier® Dashboard
 
@@ -59,7 +59,7 @@ As an alternative, if you would like LOCALiQ to create the Zap, maintain, and ma
 
 Also see: [Learn key concepts in Zapier®](https://zapier.com/help/create/basics/learn-key-concepts-in-zapier)
 
-### Creating a Zap using the LOCALiQ Create Action?
+### Using the LOCALiQ Zap Action?
 
 1) Click "Make a New Zap!" button in the upper right-hand corner of the Zapier® Dashboard
 
