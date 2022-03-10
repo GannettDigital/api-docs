@@ -23,6 +23,7 @@ When using the GET method, the results can be filtered using these parameters:
 |start_date|No|Restricts the results to those occurring on or after this date|
 |end_date|No|Restricts the results to those occurring on or before this date|
 |group_by|No|Only valid value at this time is `visitor_id`|
+|limit|No|Limits the count of the visitor events that are fetched|
 
 ### Response Data Details
 
