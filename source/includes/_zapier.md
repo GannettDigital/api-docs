@@ -65,7 +65,7 @@ Also see: [Learn key concepts in Zapier®](https://zapier.com/help/create/basics
 
 2) Pick something like your CRM's "New Interaction Created" as your Trigger 
 
-3) Choose the LOCALiQ "Create Event and Match/Create Contact" as your Action and map your data to the given fields
+3) Choose the LOCALiQ "Create Event and Match/Create Contact" as your Action and map your data to the [given fields](#zapier_create_event_form)
 
 4) Enable the Zap and your are done!
 
@@ -162,3 +162,21 @@ status | String | The status of the contact.  Valid values are **pending_contact
 created_at | Datetime | The date and time which this contact was created.
 archived_at | Datetime | The date and time which this contact was archived.
 
+### Create Event Action Form
+<a name="zapier_create_event_form"></a>
+
+Field | Type | Required | Description
+--------- | -------- | -------- | ------- |
+GMAID | string | YES | LOCALiQ global master advertiser ids are maintained through Campaign Central/Corp.
+Email | string | MAYBE | Used to match or create contact. One of url, email, or phone number required.
+Phone Number | string | MAYBE | Used to match or create contact. One of url, email, or phone number required.
+Call Recording URL | string | MAYBE | Used to match or create contact. One of url, email, or phone number required.
+Occurrence Time | datetime | NO | Occurrence time of event. Reccommended format: `YYYY-MM-DD HH:MM:SS`
+First Name | string | NO | First name of contact.
+Last Name | string | NO | Last name of contact.
+Address1 | string | NO | Address1 of contact.
+Address2 | string | NO | Address2 of contact.
+City | string | NO | City of contact.
+State | string | NO | State of contact.
+Postal Code | string | NO | Postal code of contact.
+Country | string | NO | Country of contact.
