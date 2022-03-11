@@ -170,7 +170,15 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
                 "updated_at": "2021-07-16T12:43:32.000Z"
             }
         ],
+        "status": null,
+        "archived_at": null,
         "first_party_data": false
+        "occurrence_time": "2022-02-23T14:53:03.000Z",
+        "total_events": 1,
+        "total_call": 1,
+        "total_chat": 0,
+        "total_form": 0,
+        "total_fpd": 0
     }
 }
 ```
