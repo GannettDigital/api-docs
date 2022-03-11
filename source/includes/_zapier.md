@@ -23,9 +23,9 @@ There are 3 options under the LOCALiQ App on Zapier®. 2 triggers and 1 create/m
 
 **Recommended Usage Pattern:**
 
-This is a self-service solution and it is recommended for the client to use their Zapier® account and to create a Zap between our LOCALiQ leads app and their CRM app. When using one of our triggers leads from all their campaigns will flow in real time from our platform to their CRM. When using the create/match actions data will flow from their CRM into our platform.
+This is a self-service solution and it is recommended that you use your own Zapier® account to create a Zap between our LOCALiQ leads app and your CRM app. When using one of our triggers, leads from all your campaigns will flow in real time from our platform to your CRM. When using our create/match action data will flow from your CRM into our platform.
 
-As an alternative, if you would like LOCALiQ to create the Zap, maintain, and manage it using our Zapier® account, please reach your account team and request Offer 2095. This service is available at an additional fee.
+As an alternative, if you would like LOCALiQ to create the Zap, maintain, and manage it using our Zapier® account, please reach out to your account team and request Offer 2095. This service is available at an additional fee.
 
 ### LOCALiQ Account on Zapier
 
