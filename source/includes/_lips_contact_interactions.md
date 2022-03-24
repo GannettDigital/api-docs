@@ -153,6 +153,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
+|provider| string | yes |chat provider(if missing assume Apex)|
 |transcript| object | yes |object of chat transcript|
 |summary| object | yes |A freeform text description of the chat.|
 

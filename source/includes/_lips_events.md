@@ -215,6 +215,7 @@ If `event_type` is ChatEvent, the following fields are also returned:
 
 | Field Name | Datatype | Description |
 |---|---|---|
+|`provider`| String | The chat provider |
 |`transcript`| String | Transcript of the chat|
 
 If `event_type` is FormEvent, the following fields are also returned:
