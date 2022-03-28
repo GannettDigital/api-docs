@@ -22,7 +22,7 @@ Use GET to retrieve contacts that match the query params.
 When using the GET index method, the results will be filtered using these parameters:
 
 | Parameter | Required | Description | Possible Values
-|---|---|---|
+|---|---|---|---|
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
 |`event_params[recording_url]`|no|String that restricts the contacts to one or more based on recording_url|
 |`event_params[phone_numbers]`|no|String that restricts the contacts to one or more based on phone number|
