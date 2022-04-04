@@ -104,7 +104,7 @@ https://api.localiqservices.com/client_reports/addressable_geofence/USA_105569?s
 *Totals*
 
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---|
 |clicks | Int | Total clicks |
 |impressions | Int | Total impressions |
 |ctr | Float | Overall Click-through Rate |
@@ -137,19 +137,19 @@ https://api.localiqservices.com/client_reports/addressable_geofence/USA_105569?s
 ### Available Addressable Geofence
 All available addressable geofences for GMAID identified by publisher_plat_zipcode
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---|
 |publisher_plat_zipcode | Int | Zip of Addressable Geofence |
 
 ### Available Conversion Fences
 All available conversion fences for GMAID
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---|
 |conversion_fence_id | Int | Identifier for Conversion Fence |
 |name | Int | Name |
 
 ### Paging
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---|
 |page | Int | Which Page is Returned |
 |page_size | Int | How Many Addressable Geofences Per Page |
 |total_count | Int | Overall Total of Geofences for All Pages |
