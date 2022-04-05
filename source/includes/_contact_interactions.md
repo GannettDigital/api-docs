@@ -17,6 +17,7 @@ Please note that the contact information in this endpoint is for linking the int
 | Method | URI Format |
 |---|---|
 | GET | /crm/contact_interactions?[params]|
+| GET | /crm/contact_interactions/:id|
 
 ### Parameters&nbsp;
 
@@ -286,6 +287,43 @@ curl --request GET \
         }
         ...
     ]
+}
+```
+
+The body of the API response will contain metadata and a JSON array of contact interaction objects.
+
+> Example Response
+
+```json
+{
+    "id": 18435950,
+    "campaign_name": "UNW | ARS Unknown | UNW",
+    "global_master_campaign_id": "USA_1275939",
+    "sub_type": "Call",
+    "referrer_type": "UNKNOWN",
+    "referrer_source": "PAID",
+    "influencing_campaign": "",
+    "occurred_at": "2022-02-18T15:14:42.000Z",
+    "channel": null,
+    "external_source": "capture",
+    "event_type": "CallEvent",
+    "important": false,
+    "read": false,
+    "contact": {
+        "id": 2116567,
+        "first_name": "Unknown",
+        "last_name": null,
+        "display_name": "Unknown Somebody",
+        "email": null,
+        "company": null,
+        "title": null,
+        "phone_numbers": [],
+        "created_at": "2022-02-23T13:35:56.855Z"
+    },
+    "call": {
+        "recording_url": "",
+        "duration": 5
+    }
 }
 ```
 
