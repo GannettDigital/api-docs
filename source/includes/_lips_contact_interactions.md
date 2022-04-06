@@ -185,6 +185,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "external_source": "capture",
             "important": true,
             "read": true,
+            "tags": [
+                "search",
+                "call"
+            ],
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -220,6 +224,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "external_source": "capture",
             "important": false,
             "read": true,
+             "tags": [
+                "capture",
+                "call"
+            ],
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
