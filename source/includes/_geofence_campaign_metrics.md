@@ -28,6 +28,7 @@ When using the GET method, the results can be filtered using these parameters:
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
+*Note*: Maximum date range for this API is 31 days.
 
 ### Response Data Details:
 
