@@ -74,6 +74,14 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   -H 'Content-Type: application/json' \
   -H 'x-api-key: SJNPPSecret'
 ```
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&tags[]=foo' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
 ### Contact Interactions
 **Contact**
 | Field Name | Datatype | Nullable | Description |
@@ -104,6 +112,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |channel| String | yes | The acquisition channel responsible for the contact interaction|
 |event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
 |external_source| String | no | External Source tells us if this interaction came to us from Capture (through the pubsub) or through the LIPS API(Zapier, FPD, Entrata etc.|
+|tags| Array(String)| the tags attached to the contact interaction|
 |read|boolean|No|Check if contact interaction is marked as read|
 |important|boolean|No|Check if contact interaction is marked as important|
 |page_url|String|No|The page_url associated with the interaction|
@@ -230,7 +239,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "external_source": "capture",
             "important": false,
             "read": true,
-             "tags": [
+            "tags": [
                 "capture",
                 "call"
             ],
