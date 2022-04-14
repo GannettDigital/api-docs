@@ -24,6 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`page_path_1`|No|Restricts results using an inclusive regex match of the first level path. Ex. `page_path_1=newark` returns results for `/newark/*`, `newark-hoboken/*`, etc.|
 |`page_path_2`|No|Restricts results using an inclusive regex match of the second level path. Ex. `page_path_2=services` returns results for `/newark/service/*`, `/hoboken/service-center/*`, etc.|
 |`sort_by`|No|Applies only to Search Console data. Use "clicks", "impressions", "postion", or "ctr". Returns top 20 results. Default: "clicks"|
+|`page_size`|No|Applies ONLY to responses of reports `pages_by_pageview` and `top_landing_pages`. Default: 10|
 
 
 Note: All filters use AND logic to match results.
@@ -81,6 +82,7 @@ Dimension: Channel Grouping, such as Organic, Paid Search, Direct, etc.
 #### Pages by Page View
 
 Dimension: Page Path, the url of each page that was viewed
+Dimension2: Page Title, the title of the page that was viewed
 
 | Metric | Description |
 |---|---|
@@ -95,6 +97,7 @@ Dimension: Page Path, the url of each page that was viewed
 #### Top Landing Pages
 
 Dimension: Page Path, the url of each page that was viewed
+Dimension2: Page Title, the title of the page that was viewed
 
 | Metric | Description |
 |---|---|
@@ -246,6 +249,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                 "data": [
                     {
                         "dimension": "/",
+                        "dimension2": "Home Page",
                         "sessions": "18",
                         "bounce_rate": "61.111111111111114",
                         "entrances": "18",
@@ -255,6 +259,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                     },
                     {
                         "dimension": "/contact-us/",
+                        "dimension2": "Contact Us",
                         "sessions": "2",
                         "bounce_rate": "50.0",
                         "entrances": "2",
@@ -264,6 +269,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                     },
                     {
                         "dimension": "/our-products/",
+                        "dimension2": "Products",
                         "sessions": "2",
                         "bounce_rate": "0.0",
                         "entrances": "2",
@@ -273,6 +279,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                     },
                     {
                         "dimension": "/our-services/",
+                        "dimension2": "Services",
                         "sessions": "0",
                         "bounce_rate": "0.0",
                         "entrances": "0",
@@ -282,6 +289,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                     },
                     {
                         "dimension": "/about-us/",
+                        "dimension2": "All About Us",
                         "sessions": "0",
                         "bounce_rate": "0.0",
                         "entrances": "0",
@@ -296,6 +304,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                 "data": [
                     {
                         "dimension": "/",
+                        "dimension2": "Home Page",
                         "new_users": "18",
                         "percent_new_sessions": "100.0",
                         "sessions": "18",
@@ -305,6 +314,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                     },
                     {
                         "dimension": "/contact-us/",
+                        "dimension2": "Contact Us",
                         "new_users": "2",
                         "percent_new_sessions": "100.0",
                         "sessions": "2",
@@ -314,6 +324,7 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
                     },
                     {
                         "dimension": "/our-products/",
+                        "dimension2": "Products",
                         "new_users": "2",
                         "percent_new_sessions": "100.0",
                         "sessions": "2",
