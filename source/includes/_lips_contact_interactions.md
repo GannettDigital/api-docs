@@ -283,15 +283,15 @@ Show a single contact interaction by id
 #### Examples:
 ```
 
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions/18435950
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions/1001
 ```
 #### Example Response
 
 ```json
 {
-    "id": 18435950,
-    "campaign_name": "UNW | ARS Unknown | UNW",
-    "global_master_campaign_id": "USA_1275939",
+    "id": 1001,
+    "campaign_name": "Boats | Boats | Boats",
+    "global_master_campaign_id": "USA_1234567",
     "sub_type": "Call",
     "referrer_type": "UNKNOWN",
     "referrer_source": "PAID",
@@ -303,7 +303,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     "important": false,
     "read": false,
     "contact": {
-        "id": 2116567,
+        "id": 2000,
         "first_name": "Unknown",
         "last_name": null,
         "display_name": "Unknown Somebody",
