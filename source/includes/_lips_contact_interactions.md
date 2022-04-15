@@ -7,6 +7,7 @@
 | Method | URI Format |
 |---|---|
 | GET `index` | /contact_interactions? |
+| GET `show` |contact_interactions/:id|
 | PUT `update` | /contact_interactions/:id |
 
 ### Usage
@@ -276,8 +277,49 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 }
 ```
+### GET (SHOW)
+Show a single contact interaction by id
 
-#### PUT Contact Interaction
+#### Examples:
+```
+
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions/18435950
+```
+#### Example Response
+
+```json
+{
+    "id": 18435950,
+    "campaign_name": "UNW | ARS Unknown | UNW",
+    "global_master_campaign_id": "USA_1275939",
+    "sub_type": "Call",
+    "referrer_type": "UNKNOWN",
+    "referrer_source": "PAID",
+    "influencing_campaign": "",
+    "occurred_at": "2022-02-18T15:14:42.000Z",
+    "channel": null,
+    "external_source": "capture",
+    "event_type": "CallEvent",
+    "important": false,
+    "read": false,
+    "contact": {
+        "id": 2116567,
+        "first_name": "Unknown",
+        "last_name": null,
+        "display_name": "Unknown Somebody",
+        "email": null,
+        "company": null,
+        "title": null,
+        "phone_numbers": [],
+        "created_at": "2022-02-23T13:35:56.855Z"
+    },
+    "call": {
+        "recording_url": "",
+        "duration": 5
+    }
+}
+```
+### PUT (UPDATE)
 
 Update an existing contact_interaction.
 
@@ -289,7 +331,7 @@ Update an existing contact_interaction.
 
 Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
 
-example request: 
+#### Examples:
 
 ```
 curl --location --request PUT 'https://data-connect-lips.gannettdigital.com//contact_interactions/1' \
