@@ -193,6 +193,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
                 "search",
                 "call"
             ],
+           "page_url": "www.example.com",
             "contact": {
                 "id": 2197617,
                 "first_name": "S",
@@ -201,6 +202,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
                 "email": null,
                 "company": null,
                 "title": null,
+                "preferred_contact_method": "email",
                 "phone_numbers": [
                     {
                         "phone_type": "work",
