@@ -26,7 +26,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`sort_by`|No|Applies only to Search Console data. Use "clicks", "impressions", "postion", or "ctr". Returns top 20 results. Default: "clicks"|
 |`page_size`|No|Applies ONLY to responses of reports `pages_by_pageview` and `top_landing_pages`. Default: 10|
 |`second_start_date`|No|Applies ONLY to responses of reports ` website_traffic` `pages_by_pageview`, and  `channel_performance`.|
-|`second_start_date`|No|Requires use of `second_start_date`. Will return `second_data_set` object or array. Applies ONLY to responses of reports ` website_traffic` `pages_by_pageview`, and  `channel_performance`.|
+|`second_end_date`|No|Requires use of `second_start_date`. Will return `second_data_set` object or array. Applies ONLY to responses of reports ` website_traffic` `pages_by_pageview`, and  `channel_performance`.|
 
 
 Note: All filters use AND logic to match results.
@@ -35,8 +35,8 @@ Note: All filters use AND logic to match results.
 
 #### Website Traffic Metrics
 
-These are overall metrics that do not have any dimensions associated with them.
-A second set of metrics can be returned by using `second_start_date` and `second_end_date` params
+These are overall metrics that do not have any dimensions associated with them. <br>
+Can return a second_data_set by using second_start_date and second_end_date params.
 
 | Metric | Description |
 |---|---|
@@ -73,6 +73,7 @@ Dimension: A boolean, either New Visitor or Returning Visitor, indicating if the
 
 Dimension: Channel Grouping, such as Organic, Paid Search, Direct, etc.
 
+Can return a second_data_set by using second_start_date and second_end_date params.
 
 | Metric | Description |
 |---|---|
@@ -83,11 +84,15 @@ Dimension: Channel Grouping, such as Organic, Paid Search, Direct, etc.
 |`avg_session_duration`|The average duration (in seconds) of users' sessions.|
 |`pageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
 
-A `second_data_set` can be returned by using `second_start_date` and `second_end_date` params.
+`second_data_set` can be returned by using `second_start_date` and `second_end_date` params.
+
 #### Pages by Page View
 
 Dimension: Page Path, the url of each page that was viewed
-Dimension2: Page Title, the title of the page that was viewed
+
+Dimension2: Page Title, the title of the page that was viewed'
+
+Can return a second_data_set by using second_start_date and second_end_date params.
 
 | Metric | Description |
 |---|---|
@@ -99,11 +104,10 @@ Dimension2: Page Title, the title of the page that was viewed
 |`avg_time_on_page`|The average time users spent viewing this page or a set of pages.|
 |`exit_rate`|The percentage of exits from the property that occurred out of the total pageviews.|
 
-A `second_data_set` can be returned by using `second_start_date` and `second_end_date` params.
-
 #### Top Landing Pages
 
 Dimension: Page Path, the url of each page that was viewed
+
 Dimension2: Page Title, the title of the page that was viewed
 
 | Metric | Description |
