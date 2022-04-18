@@ -7,6 +7,7 @@
 | Method | URI Format |
 |---|---|
 | GET `index` | /contact_interactions? |
+| GET `show` |/contact_interactions/:id|
 | PUT `update` | /contact_interactions/:id |
 
 ### Usage
@@ -84,6 +85,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |email| String | yes | email of the contact|
 |company| String | yes | The company name for this contact|
 |title| String | yes | The title of the contact|
+|preferred_contact_method| String | yes | The preferred contact method of the contact|
 |phone_numbers| String | yes | phone number data. ('phone_type' phone_type of the contact, 'phone_number' the normalized number of the phone number)|
 |created_at| Datetime | no | The date and time which this contact was created|
 
@@ -101,9 +103,11 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
 |channel| String | yes | The acquisition channel responsible for the contact interaction|
 |event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
-|external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
+|external_source| String | no | External Source tells us if this interaction came to us from Capture (through the pubsub) or through the LIPS API(Zapier, FPD, Entrata etc.|
 |read|boolean|No|Check if contact interaction is marked as read|
 |important|boolean|No|Check if contact interaction is marked as important|
+|page_url|String|No|The page_url associated with the interaction|
+
 
 **Totals**
 
