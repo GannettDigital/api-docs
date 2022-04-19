@@ -486,4 +486,5 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/eve
     "per_page": 2
 }
 ```
-### Like the format of the `contacts/[id]/events` response? The Data Connect team would be happy to discuss creating a new `events` endpoint that combines the functionality of the `contact_interactions` endpoint but responds using this format.
+#### Like the format of the `contacts/[id]/events` response?
+The Data Connect team would be happy to discuss creating a new `events` endpoint that combines the functionality of the `contact_interactions` endpoint but responds using this format.
