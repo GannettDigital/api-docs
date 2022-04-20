@@ -24,6 +24,8 @@ When using the GET method, the results can be filtered using these parameters:
 |start_date|Yes|Restricts the results to those occurring on or after this date|
 |end_date|Yes|Restricts the results to those occurring on or before this date|
 |gmaid|Yes|Restrict results to the specified Global Master Advertiser ID|
+|second_start_date|No|Add a `secondary_totals` node to all sections of the report when used with `second_end_date`|
+|second_end_date|No|Restricts the `secondary_totals` results to those occurring on or before this date when used with `second_start_date`|
 |global_master_campaign_id[]|No|Restrict results to the specified master campaign id|
 |interval_size|No|Return subtotals for the given intervals within the start-end time provided. Accepts calendar_month, calendar_week, or day (Default is day)|
 
@@ -214,138 +216,207 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 ```
 
 
-<internal>Example Response</internal>
+<internal>Example Response (with secondary date range)</internal>
 
 ```json
 {
-    "api_name": "marketing_activity",
-    "api_run_date": "2021-10-25",
-    "start_date": "2021-05-22",
-    "end_date": "2021-05-25",
-    "time_zone": "America/Los_Angeles",
-    "interval_size": "calendar_week",
-    "report_data": {
-        "campaigns": [
-            {
-                "global_master_campaign_id": "USA_77777777",
-                "campaign_name": "FC | Real Madrid | Football Club",
-                "campaign_type": "search",
-                "organization": "reachlocal",
-                "offer_id": 2101,
-                "source": "XMO",
-                "campaign_start_date": "2021-05-24",
-                "campaign_end_date": "2021-06-24",
-                "intervals": [
-                    {
-                        "start_date": "2021-05-24",
-                        "visits": 6,
-                        "chats": 0,
-                        "calls": 0,
-                        "forms": 0
-                    }
-                ],
-                 "totals": {
-                "total_visits": 6,
-                "total_calls": 0,
-                "total_chats": 0,
-                "total_forms": 0
-            }
-            }
+  "api_name": "marketing_activity",
+  "api_run_date": "2022-04-20",
+  "start_date": "2020-12-01",
+  "end_date": "2020-12-19",
+  "time_zone": "America/Los_Angeles",
+  "interval_size": "day",
+  "report_data": {
+    "campaigns": [
+      {
+        "global_master_campaign_id": "USA_123",
+        "campaign_name": "SEM | Boats | Boats",
+        "campaign_type": "search",
+        "organization": "reachlocal",
+        "offer_id": 1,
+        "source": "Search Engine Marketing",
+        "campaign_start_date": "2021-10-26",
+        "campaign_end_date": null,
+        "intervals": [
+          {
+            "start_date": "2020-12-18",
+            "visits": 0,
+            "chats": 0,
+            "calls": 2,
+            "forms": 0
+          }
         ],
-        "search": {
-            "intervals": [
-                {
-                    "start_date": "2021-05-17",
-                    "visits": 0,
-                    "chats": 1,
-                    "calls": 0,
-                    "forms": 1
-                }
-            ],
-             "totals": {
-                "total_visits": 0,
-                "total_calls": 0,
-                "total_chats": 1,
-                "total_forms": 1
-            }
-        },
-        "social": {
-            "intervals": [],
-             "totals": {
-                "total_visits": 0,
-                "total_calls": 0,
-                "total_chats": 0,
-                "total_forms": 0
-            }
-        },
-        "direct": {
-            "intervals": [
-                {
-                    "start_date": "2021-05-17",
-                    "visits": 37,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                },
-                {
-                    "start_date": "2021-05-24",
-                    "visits": 16,
-                    "chats": 0,
-                    "calls": 0,
-                    "forms": 0
-                }
-            ],
-             "totals": {
-                "total_visits": 53,
-                "total_calls": 0,
-                "total_chats": 0,
-                "total_forms": 0
-            }
-        },
-        "directory": {
-            "intervals": [],
-             "totals": {
-                "total_visits": 0,
-                "total_calls": 0,
-                "total_chats": 0,
-                "total_forms": 0
-            }
-        },
-        "marketplace": {
-            "intervals": [],
-             "totals": {
-                "total_visits": 0,
-                "total_calls": 0,
-                "total_chats": 0,
-                "total_forms": 0
-            }
-        },
-        "other": {
-            "intervals": [],
-             "totals": {
-                "total_visits": 0,
-                "total_calls": 0,
-                "total_chats": 0,
-                "total_forms": 0
-            }
-        },
-        "otherpaid": {
-            "intervals": [],
-             "totals": {
-                "total_visits": 0,
-                "total_calls": 0,
-                "total_chats": 0,
-                "total_forms": 0
-            }
-        },
         "totals": {
-            "total_visits": 79,
-            "total_calls": 0,
-            "total_chats": 1,
-            "total_forms": 0
+          "total_visits": 0,
+          "total_calls": 2,
+          "total_chats": 0,
+          "total_forms": 0
+        },
+        "secondary_totals": {
+          "total_visits": 0,
+          "total_calls": 2,
+          "total_chats": 0,
+          "total_forms": 0
         }
+      }
+    ],
+    "search": {
+      "intervals": [
+        {
+          "start_date": "2020-12-17",
+          "visits": 0,
+          "chats": 0,
+          "calls": 12,
+          "forms": 0
+        },
+        {
+          "start_date": "2020-12-18",
+          "visits": 0,
+          "chats": 0,
+          "calls": 5,
+          "forms": 0
+        }
+      ],
+      "totals": {
+        "total_visits": 0,
+        "total_calls": 17,
+        "total_chats": 0,
+        "total_forms": 0
+      },
+      "secondary_totals": {
+        "total_visits": 0,
+        "total_calls": 5,
+        "total_chats": 0,
+        "total_forms": 0
+      }
     },
-    "global_master_advertiser_id": "USA_16556777"
+    "social": {
+      "intervals": [],
+      "totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      },
+      "secondary_totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      }
+    },
+    "direct": {
+      "intervals": [
+        {
+          "start_date": "2020-12-17",
+          "visits": 0,
+          "chats": 0,
+          "calls": 16,
+          "forms": 0
+        },
+        {
+          "start_date": "2020-12-18",
+          "visits": 0,
+          "chats": 0,
+          "calls": 13,
+          "forms": 0
+        }
+      ],
+      "totals": {
+        "total_visits": 0,
+        "total_calls": 29,
+        "total_chats": 0,
+        "total_forms": 0
+      },
+      "secondary_totals": {
+        "total_visits": 0,
+        "total_calls": 13,
+        "total_chats": 0,
+        "total_forms": 0
+      }
+    },
+    "directory": {
+      "intervals": [],
+      "totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      },
+      "secondary_totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      }
+    },
+    "marketplace": {
+      "intervals": [],
+      "totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      },
+      "secondary_totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      }
+    },
+    "other": {
+      "intervals": [
+        {
+          "start_date": "2020-12-18",
+          "visits": 0,
+          "chats": 0,
+          "calls": 2,
+          "forms": 0
+        }
+      ],
+      "totals": {
+        "total_visits": 0,
+        "total_calls": 2,
+        "total_chats": 0,
+        "total_forms": 0
+      },
+      "secondary_totals": {
+        "total_visits": 0,
+        "total_calls": 2,
+        "total_chats": 0,
+        "total_forms": 0
+      }
+    },
+    "otherpaid": {
+      "intervals": [],
+      "totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      },
+      "secondary_totals": {
+        "total_visits": 0,
+        "total_calls": 0,
+        "total_chats": 0,
+        "total_forms": 0
+      }
+    },
+    "totals": {
+      "total_visits": 0,
+      "total_calls": 76,
+      "total_chats": 39,
+      "total_forms": 0
+    },
+    "secondary_totals": {
+      "total_visits": 0,
+      "total_calls": 33,
+      "total_chats": 12,
+      "total_forms": 0
+    }
+  },
+  "global_master_advertiser_id": "USA_123"
 }
 ```
 
@@ -375,6 +446,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |other|Object|chat, visit, call, form counts attributed to organic sources (Other) [Other Object](#marketingactivityother)|
 |otherpaid|Object|chat, visit, call, form counts attributed to organic sources (Other paid) [Otherpaid Object](#marketingactivityotherpaid)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 
 <a name="chatcampaigns"></a>
@@ -393,6 +465,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 
 <a name="marketingactivitysearch"></a>
 **Search Object**
@@ -401,7 +474,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 <a name="marketingactivitysocial"></a>
 **Social Object**
 
@@ -409,7 +482,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 <a name="marketingactivitydirect"></a>
 **Direct Object**
 
@@ -417,7 +490,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 <a name="marketingactivitydirectory"></a>
 **Directory Object**
 
@@ -425,7 +498,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 <a name="marketingactivitymarketplace"></a>
 **Marketplace Object**
 
@@ -433,7 +506,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 <a name="marketingactivityother"></a>
 **Other Object**
 
@@ -441,7 +514,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 <a name="marketingactivityotherpaid"></a>
 **Otherpaid Object**
 
@@ -449,7 +522,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-
+|secondary_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
 <a name="marketingactivityintervals"></a>
 **Intervals Object**
 
