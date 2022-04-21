@@ -151,6 +151,8 @@ When using the PUT Tag updated method, the following paramters are allowed:
 |`global_master_advertiser_id`|No|The gmaid, that the tag is associated with|
 |`name`|Yes|The name that we want the tag to be changed to|
 
+### NOTE! IF YOU USE THE UPDATE WITHOUT A GMAID, ALL OF THE TAGS WITH THE GIVEN NAME WOULD BE UPDATED REGARDLESS OF THE GMAID
+
 ### Response Description
 
 | Field Name | Datatype | Description |
