@@ -46,7 +46,7 @@ The message is formatted in JSON.  In the example message, the product TEST_PROD
 
 LIPS will publish to the Pub/Sub topic whenever the creation of contact interactions that result in the creation of a new or update of an existing contact.
 
-The message is formatted in JSON.  In the example message, the the advertiser gmaid USA_332240.
+The message is formatted in JSON.  In the example message, the contact interaction 31589324 is a new lead for what is a new contact 15319451 for the advertiser gmaid USA_332240.  If the "action" was update, the contact interaction 31589324 would have been a new lead for an existing contact.
 
 ```javascript
 {
