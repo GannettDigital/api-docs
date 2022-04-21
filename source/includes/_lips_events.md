@@ -1,19 +1,19 @@
-### **Contact Interactions**
-<a name="lips_contact_interactions"></a>
-## Contact Interactions API
+### **Events**
+<a name="lips_events"></a>
+## Events API
 
-Also referred to as "events", *contact interactions* are activities associated with a contact.  The event may be a call, a form post, or chat event recorded by capture or a FPD event.
+Also referred to as "contact interactions", *events* are activities associated with a contact.  The event may be a call, a form post, or a chat event recorded by capture or a FPD event.
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /contact_interactions? |
-| GET `show` |contact_interactions/:id|
-| PUT `update` | /contact_interactions/:id |
+| GET `index` | /events |
+| GET `show` |events/:id|
+| PUT `update` | /events/:id |
 
 ### Usage
-Use GET to retrieve contact interactions that match the query params.
+Use GET to retrieve events that match the query params.
 
 ### Parameters
 When using the GET index method, the results will be filtered using these parameters:
@@ -52,7 +52,7 @@ fpd | All FpdEvents
 ### GET (index)
 
 ```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&event_params[phone_numbers]=+1243325' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1&event_params[phone_numbers]=+1243325' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
@@ -62,7 +62,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 
 ```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
@@ -70,20 +70,20 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 ```
 
 ```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&event_type[]=form&event_type[]=calls' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1&event_type[]=form&event_type[]=calls' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: SJNPPSecret'
 ```
-### Contact Interactions
+### events
 **Contact**
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
 |id| Integer | no | id of the contact|
 |first_name| String | yes | first name of the contact|
 |last_name| String | yes | last name of the contact|
-|display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
+|display_name| String | yes | The display name of the event. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
 |email| String | yes | email of the contact|
 |company| String | yes | The company name for this contact|
 |title| String | yes | The title of the contact|
@@ -94,19 +94,19 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
 |id| Integer | no | id of the interaction|
-|campaign_name| String | no | The name of the campaign that this contact interaction is attributed to|
+|campaign_name| String | no | The name of the campaign that this event is attributed to|
 |global_master_campaign_id| String | no | An string global master campaign id for this interaction|
 |sub_type| String | yes |Sub type of the campaign|
 |referrer_type| String | no | Paid, organic|
 |referrer_source| String | no | Domain the visitor came from|
 |influencing_campaign| String | yes | Campaign that influenced this interaction|
 |created_at| Datetime | yes | The date and time which this interaction was created|
-|occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
-|channel| String | yes | The acquisition channel responsible for the contact interaction|
-|event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
+|occured_at| Datetime | yes |The date and time which this event occurred. This will usually be different than the date that the event was created.|
+|channel| String | yes | The acquisition channel responsible for the event|
+|event_type| String | no | The type of the event . Valid values are chat, call and form|
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
-|read|boolean|No|Check if contact interaction is marked as read|
-|important|boolean|No|Check if contact interaction is marked as important|
+|read|boolean|No|Check if event is marked as read|
+|important|boolean|No|Check if event is marked as important|
 
 **Totals**
 
@@ -164,7 +164,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|id| object | no |A sequential id of the line chat transcript. It uniquely identifies a line of the chat transcript within this contact interaction.|
+|id| object | no |A sequential id of the line chat transcript. It uniquely identifies a line of the chat transcript within this event.|
 |timestamp| object | no |The date and time that the external chat API registered for this line of the chat transcript.|
 |form| object | no |The display name of the member of the chat who sent this message.|
 |message| object | no |The message body of this line of the chat transcript.|
@@ -173,7 +173,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 ```javascript
 {
-    "contact_interactions": [
+    "events": [
         {
             "id": 4314774,
             "campaign_name": "LSS Test Campaign",
@@ -280,12 +280,12 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 }
 ```
 ### GET (SHOW)
-Show a single contact interaction by id
+Show a single event by id
 
 #### Examples:
 ```
 
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions/1001
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events/1001
 ```
 #### Example Response
 
@@ -327,8 +327,8 @@ Update an existing contact_interaction.
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|
-|read|boolean|No|Check if contact interaction is marked as read|
-|important|boolean|No|Check if contact interaction is marked as important|
+|read|boolean|No|Check if event is marked as read|
+|important|boolean|No|Check if event is marked as important|
 
 
 Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
@@ -336,7 +336,7 @@ Fields marked as required aren't necessarily required in the request, but are re
 #### Examples:
 
 ```
-curl --location --request PUT 'https://data-connect-lips.gannettdigital.com//contact_interactions/1' \
+curl --location --request PUT 'https://data-connect-lips.gannettdigital.com//events/1' \
 --header 'Authorization: {auth_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '

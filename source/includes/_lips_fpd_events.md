@@ -224,5 +224,3 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events' \
     }
 }
 ```
-#### Like the format of these responses?
-The Data Connect team would be happy to discuss creating a new `events` endpoint that combines the functionality of the `contact_interactions` endpoint but responds using this format.
