@@ -148,6 +148,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
+|referring_url| string | yes |URL of the referring page|
 |full_message| string | yes |full message of the form event|
 |message| string | yes| parsed message|
 |extra_fields| object | yes |extra fields|

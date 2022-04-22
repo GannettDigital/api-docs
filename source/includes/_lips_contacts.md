@@ -367,20 +367,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/eve
       "important": false,
       "read": false,
       "tags": [],
-      "contact": {
-        "id": 4471,
-        "first_name": "Janis",
-        "last_name": "Joplin",
-        "display_name": "Janis Joplin",
-        "email": "jj@gmail.com",
-        "phone_numbers": [
-          {
-            "phone_type": "work",
-            "phone_number": "+19736706472"
-          }
-        ],
-        "created_at": "2022-04-18T21:05:07.639Z"
-      },
       "form": {
         "full_message": "{}",
         "extra_fields": {
@@ -424,21 +410,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/eve
       "important": false,
       "read": false,
       "tags": [],
-      "contact": {
-        "id": 4471,
-        "first_name": "Janis",
-        "last_name": "Jopin",
-        "display_name": "jj@gmail.com",
-        "email": "jj@gmail.com",
-        "phone_numbers": [
-          {
-            "phone_type": "work",
-            "phone_number": "+1555555555"
-          }
-        ],
-        "created_at": "2022-04-18T21:05:07.639Z"
-      },
       "form": {
+        "referring_url": "https://www.google.com"
         "full_message": "{}",
         "extra_fields": {
           "email": "jj@gmail.com",
