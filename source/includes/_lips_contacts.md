@@ -72,6 +72,7 @@ The body of the API response will contain metadata and a JSON array of contact o
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
 |first_party_data | boolean | This contact has been flagged as being "first party data"|
 |status | String | Status of the contact|
+|preferred_contact_method | String | Preferred contact method of the contact|
 |archived_at | Datetime | The date of the archived contact|
 |page| Integer | no | the number of the contacts page|
 |page_size| Integer | no | the number of the size of the contacts array|
@@ -106,6 +107,7 @@ The body of the API response will contain metadata and a JSON array of contact o
                 "first",
                 "contact"
             ],
+            "preferred_contact_method": "mail",
             "phone_numbers": [
                 {
                     "phone_type": "smart",
@@ -169,6 +171,7 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
             "first",
             "contact"
         ],
+        "preferred_contact_method": "mail",
         "phone_numbers": [
             {
                 "phone_type": "work",
@@ -221,6 +224,8 @@ curl -L -X POST 'https://data-connect-lips.gannettdigital.com/contacts' \
         "postal": "1234",
         "country": "US",
         "email": "mail@mail.com",
+        "preferred_contact_method": "email",
+        "status": "pending",
         "phone_numbers": [
             {
                 "phone_type": "work",
