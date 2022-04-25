@@ -25,6 +25,8 @@ When using the GET method, the results can be filtered using these parameters:
 |`page_path_2`|No|Restricts results using an inclusive regex match of the second level path. Ex. `page_path_2=services` returns results for `/newark/service/*`, `/hoboken/service-center/*`, etc.|
 |`sort_by`|No|Applies only to Search Console data. Use "clicks", "impressions", "postion", or "ctr". Returns top 20 results. Default: "clicks"|
 |`page_size`|No|Applies ONLY to responses of reports `pages_by_pageview` and `top_landing_pages`. Default: 10|
+|`second_start_date`|No|Applies ONLY to responses of reports ` website_traffic` `pages_by_pageview`, and  `channel_performance`.|
+|`second_end_date`|No|Requires use of `second_start_date`. Will return `second_data_set` object or array. Applies ONLY to responses of reports ` website_traffic` `pages_by_pageview`, and  `channel_performance`.|
 
 
 Note: All filters use AND logic to match results.
@@ -33,7 +35,8 @@ Note: All filters use AND logic to match results.
 
 #### Website Traffic Metrics
 
-These are overall metrics that do not have any dimensions associated with them.
+These are overall metrics that do not have any dimensions associated with them. <br>
+Can return a second_data_set by using second_start_date and second_end_date params.
 
 | Metric | Description |
 |---|---|
@@ -70,6 +73,8 @@ Dimension: A boolean, either New Visitor or Returning Visitor, indicating if the
 
 Dimension: Channel Grouping, such as Organic, Paid Search, Direct, etc.
 
+Can return a second_data_set by using second_start_date and second_end_date params.
+
 | Metric | Description |
 |---|---|
 |`new_users`|The number of sessions marked as a user's first sessions.|
@@ -79,10 +84,15 @@ Dimension: Channel Grouping, such as Organic, Paid Search, Direct, etc.
 |`avg_session_duration`|The average duration (in seconds) of users' sessions.|
 |`pageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
 
+`second_data_set` can be returned by using `second_start_date` and `second_end_date` params.
+
 #### Pages by Page View
 
 Dimension: Page Path, the url of each page that was viewed
-Dimension2: Page Title, the title of the page that was viewed
+
+Dimension2: Page Title, the title of the page that was viewed'
+
+Can return a second_data_set by using second_start_date and second_end_date params.
 
 | Metric | Description |
 |---|---|
@@ -97,6 +107,7 @@ Dimension2: Page Title, the title of the page that was viewed
 #### Top Landing Pages
 
 Dimension: Page Path, the url of each page that was viewed
+
 Dimension2: Page Title, the title of the page that was viewed
 
 | Metric | Description |
@@ -138,6 +149,14 @@ Dimension: Users' city, derived from their IP addresses or Geographical IDs.
 |`avg_session_duration`|The average duration (in seconds) of users' sessions.|
 |`pageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
 
+#### Sessions by Day
+
+Dimension: NthDay, starting with the `start_date` of the report. Format: `YYYY-MM-DD`
+
+| Metric | Description |
+|---|---|
+|`sessions`|The total number of sessions.|
+
 #### Sessions by Month
 
 Dimension: Year/Month, starting with the beginning of the year prior to report end_date year, and going through the last available month of the end_date year.
@@ -149,481 +168,421 @@ Dimension: Year/Month, starting with the beginning of the year prior to report e
 ### Examples
 
 ```
-curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/google_analytics/USA_123456?start_date=2020-01-01&end_date=2020-01-03' \
---header 'Authorization: token 1b01Secret'
+curl --location --request GET 'https://data-connect-staging.gannettdigital.com/client_reports/google_analytics/TEST_1?start_date=2021-03-04&end_date=2021-03-04&page_size=1&second_start_date=2021-03-05&second_end_date=2021-03-05' \
+--header 'Authorization: reachanalyticsreportingservicetoken'
 ```
 
 # Example Response
 ```javascript
 {
-    "report_type": "google_analytics",
-    "report_date": "2020-04-03",
-    "start_date": "2020-01-01",
-    "end_date": "2020-01-03",
-    "global_master_advertiser_id": "USA_130964",
-    "view_id": "123954488",
-    "view_name": "BuenaVista",
-    "account_id": "79363368",
-    "account_name": "MyAccount",
-    "web_property_id": "UA-79363368-1",
-    "web_property_name": "MyWebSite",
-    "report_data": {
-        "reports": [
-            {
-                "type": "website_traffic",
-                "data": {
-                    "new_users": "24",
-                    "percent_new_sessions": "96.0",
-                    "bounce_rate": "56.00000000000001",
-                    "avg_session_duration": "27.6",
-                    "goal_completions_all": "0",
-                    "goal_conversion_rate_all": "0.0",
-                    "pageviews": "52",
-                    "pageviews_per_session": "2.08",
-                    "avg_time_on_page": "25.51851851851852",
-                    "avg_page_load_time": "5.209",
-                    "users": "24",
-                    "sessions": "25"
-                }
-            },
-            {
-                "type": "sessions_by_device",
-                "data": [
-                    {
-                        "dimension": "desktop",
-                        "sessions": "18"
-                    },
-                    {
-                        "dimension": "mobile",
-                        "sessions": "7"
-                    }
-                ]
-            },
-            {
-                "type": "user_type",
-                "data": [
-                    {
-                        "dimension": "New Visitor",
-                        "users": "24"
-                    },
-                    {
-                        "dimension": "Returning Visitor",
-                        "users": "1"
-                    }
-                ]
-            },
-            {
-                "type": "channel_performance",
-                "data": [
-                    {
-                        "dimension": "Organic Search",
-                        "new_users": "14",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "14",
-                        "bounce_rate": "28.57142857142857",
-                        "avg_session_duration": "46.785714285714285",
-                        "pageviews_per_session": "2.7142857142857144"
-                    },
-                    {
-                        "dimension": "Direct",
-                        "new_users": "8",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "8",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Paid Search",
-                        "new_users": "2",
-                        "percent_new_sessions": "66.66666666666666",
-                        "sessions": "3",
-                        "bounce_rate": "66.66666666666666",
-                        "avg_session_duration": "11.666666666666666",
-                        "pageviews_per_session": "2.0"
-                    }
-                ]
-            },
-            {
-                "type": "pages_by_pageview",
-                "data": [
-                    {
-                        "dimension": "/",
-                        "dimension2": "Home Page",
-                        "sessions": "18",
-                        "bounce_rate": "61.111111111111114",
-                        "entrances": "18",
-                        "pageviews": "22",
-                        "avg_time_on_page": "17.22222222222222",
-                        "exit_rate": "59.09090909090909"
-                    },
-                    {
-                        "dimension": "/contact-us/",
-                        "dimension2": "Contact Us",
-                        "sessions": "2",
-                        "bounce_rate": "50.0",
-                        "entrances": "2",
-                        "pageviews": "8",
-                        "avg_time_on_page": "5.5",
-                        "exit_rate": "50.0"
-                    },
-                    {
-                        "dimension": "/our-products/",
-                        "dimension2": "Products",
-                        "sessions": "2",
-                        "bounce_rate": "0.0",
-                        "entrances": "2",
-                        "pageviews": "7",
-                        "avg_time_on_page": "50.4",
-                        "exit_rate": "28.57142857142857"
-                    },
-                    {
-                        "dimension": "/our-services/",
-                        "dimension2": "Services",
-                        "sessions": "0",
-                        "bounce_rate": "0.0",
-                        "entrances": "0",
-                        "pageviews": "6",
-                        "avg_time_on_page": "7.75",
-                        "exit_rate": "33.33333333333333"
-                    },
-                    {
-                        "dimension": "/about-us/",
-                        "dimension2": "All About Us",
-                        "sessions": "0",
-                        "bounce_rate": "0.0",
-                        "entrances": "0",
-                        "pageviews": "2",
-                        "avg_time_on_page": "183.0",
-                        "exit_rate": "50.0"
-                    }
-                ]
-            },
-            {
-                "type": "top_landing_pages",
-                "data": [
-                    {
-                        "dimension": "/",
-                        "dimension2": "Home Page",
-                        "new_users": "18",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "18",
-                        "bounce_rate": "61.111111111111114",
-                        "avg_session_duration": "27.27777777777778",
-                        "pageviews_per_session": "2.0"
-                    },
-                    {
-                        "dimension": "/contact-us/",
-                        "dimension2": "Contact Us",
-                        "new_users": "2",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "2",
-                        "bounce_rate": "50.0",
-                        "avg_session_duration": "1.0",
-                        "pageviews_per_session": "1.5"
-                    },
-                    {
-                        "dimension": "/our-products/",
-                        "dimension2": "Products",
-                        "new_users": "2",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "2",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "81.0",
-                        "pageviews_per_session": "3.5"
-                    }
-                ]
-            },
-            {
-                "type": "top_source_medium",
-                "data": [
-                    {
-                        "dimension": "google / organic",
-                        "new_users": "12",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "12",
-                        "bounce_rate": "25.0",
-                        "avg_session_duration": "51.5",
-                        "pageviews_per_session": "2.6666666666666665"
-                    },
-                    {
-                        "dimension": "(direct) / (none)",
-                        "new_users": "8",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "8",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "reachlocal / cpc",
-                        "new_users": "2",
-                        "percent_new_sessions": "66.66666666666666",
-                        "sessions": "3",
-                        "bounce_rate": "66.66666666666666",
-                        "avg_session_duration": "11.666666666666666",
-                        "pageviews_per_session": "2.0"
-                    },
-                    {
-                        "dimension": "bing / organic",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "yahoo / organic",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "37.0",
-                        "pageviews_per_session": "5.0"
-                    }
-                ]
-            },
-            {
-                "type": "traffic_by_city",
-                "data": [
-                    {
-                        "dimension": "Cheyenne",
-                        "new_users": "3",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "3",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Seattle",
-                        "new_users": "3",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "3",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "60.333333333333336",
-                        "pageviews_per_session": "3.0"
-                    },
-                    {
-                        "dimension": "Des Moines",
-                        "new_users": "2",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "2",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Kent",
-                        "new_users": "2",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "2",
-                        "bounce_rate": "50.0",
-                        "avg_session_duration": "17.5",
-                        "pageviews_per_session": "2.5"
-                    },
-                    {
-                        "dimension": "Lakewood",
-                        "new_users": "1",
-                        "percent_new_sessions": "50.0",
-                        "sessions": "2",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "San Antonio",
-                        "new_users": "2",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "2",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Bainbridge Island",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "274.0",
-                        "pageviews_per_session": "4.0"
-                    },
-                    {
-                        "dimension": "Bremerton",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Dallas",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "36.0",
-                        "pageviews_per_session": "4.0"
-                    },
-                    {
-                        "dimension": "Gig Harbor",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "5.0",
-                        "pageviews_per_session": "2.0"
-                    },
-                    {
-                        "dimension": "Littlestown",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Los Angeles",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Poulsbo",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "37.0",
-                        "pageviews_per_session": "5.0"
-                    },
-                    {
-                        "dimension": "Puyallup",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "100.0",
-                        "avg_session_duration": "0.0",
-                        "pageviews_per_session": "1.0"
-                    },
-                    {
-                        "dimension": "Sequim",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "76.0",
-                        "pageviews_per_session": "4.0"
-                    },
-                    {
-                        "dimension": "Tacoma",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "44.0",
-                        "pageviews_per_session": "4.0"
-                    },
-                    {
-                        "dimension": "Truckee",
-                        "new_users": "1",
-                        "percent_new_sessions": "100.0",
-                        "sessions": "1",
-                        "bounce_rate": "0.0",
-                        "avg_session_duration": "2.0",
-                        "pageviews_per_session": "2.0"
-                    }
-                ]
-            },
-            {
-                "type": "sessions_by_month",
-                "data": [
-                    {
-                        "dimension": "201901",
-                        "sessions": "394"
-                    },
-                    {
-                        "dimension": "201902",
-                        "sessions": "336"
-                    },
-                    {
-                        "dimension": "201903",
-                        "sessions": "383"
-                    },
-                    {
-                        "dimension": "201904",
-                        "sessions": "507"
-                    },
-                    {
-                        "dimension": "201905",
-                        "sessions": "316"
-                    },
-                    {
-                        "dimension": "201906",
-                        "sessions": "425"
-                    },
-                    {
-                        "dimension": "201907",
-                        "sessions": "330"
-                    },
-                    {
-                        "dimension": "201908",
-                        "sessions": "367"
-                    },
-                    {
-                        "dimension": "201909",
-                        "sessions": "358"
-                    },
-                    {
-                        "dimension": "201910",
-                        "sessions": "390"
-                    },
-                    {
-                        "dimension": "201911",
-                        "sessions": "289"
-                    },
-                    {
-                        "dimension": "201912",
-                        "sessions": "295"
-                    },
-                    {
-                        "dimension": "202001",
-                        "sessions": "338"
-                    },
-                    {
-                        "dimension": "202002",
-                        "sessions": "357"
-                    },
-                    {
-                        "dimension": "202003",
-                        "sessions": "380"
-                    },
-                    {
-                        "dimension": "202004",
-                        "sessions": "302"
-                    },
-                    {
-                        "dimension": "202005",
-                        "sessions": "350"
-                    },
-                    {
-                        "dimension": "202006",
-                        "sessions": "372"
-                    },
-                    {
-                        "dimension": "202007",
-                        "sessions": "264"
-                    }
-                ]
-            }
+  "report_type": "google_analytics",
+  "report_date": "2022-04-14",
+  "start_date": "2021-03-04",
+  "end_date": "2021-03-04",
+  "global_master_advertiser_id": "TEST_1",
+  "view_id": "12345678",
+  "view_name": null,
+  "account_id": null,
+  "account_name": null,
+  "web_property_id": "1234567890",
+  "web_property_name": null,
+  "report_data": {
+    "reports": [
+      {
+        "type": "website_traffic",
+        "data": {
+          "new_users": "15",
+          "percent_new_sessions": "78.94736842105263",
+          "bounce_rate": "73.68421052631578",
+          "avg_session_duration": "19.894736842105264",
+          "goal_completions_all": "0",
+          "goal_conversion_rate_all": "0.0",
+          "pageviews": "24",
+          "pageviews_per_session": "1.263157894736842",
+          "avg_time_on_page": "75.6",
+          "avg_page_load_time": "0.0",
+          "users": "18",
+          "sessions": "19"
+        },
+        "second_data_set": {
+          "new_users": "16",
+          "percent_new_sessions": "84.21052631578947",
+          "bounce_rate": "57.89473684210527",
+          "avg_session_duration": "66.42105263157895",
+          "goal_completions_all": "0",
+          "goal_conversion_rate_all": "0.0",
+          "pageviews": "37",
+          "pageviews_per_session": "1.9473684210526316",
+          "avg_time_on_page": "70.16666666666667",
+          "avg_page_load_time": "0.0",
+          "users": "17",
+          "sessions": "19"
+        }
+      },
+      {
+        "type": "sessions_by_device",
+        "data": [
+          {
+            "dimension": "desktop",
+            "sessions": "13"
+          },
+          {
+            "dimension": "mobile",
+            "sessions": "6"
+          },
+          {
+            "dimension": "tablet",
+            "sessions": "0"
+          }
         ]
-    }
+      },
+      {
+        "type": "pages_by_pageview",
+        "data": [
+          {
+            "dimension": "/contact-us/",
+            "dimension2": "Contact Us | Screen Service",
+            "sessions": "2",
+            "bounce_rate": "100.0",
+            "entrances": "2",
+            "pageviews": "3",
+            "unique_page_views": "3",
+            "avg_time_on_page": "0.0",
+            "exit_rate": "100.0"
+          }
+        ],
+        "second_data_set": [
+          {
+            "dimension": "/contact-us/",
+            "dimension2": "Contact Us | Screen Service",
+            "sessions": "0",
+            "bounce_rate": "0.0",
+            "entrances": "0",
+            "pageviews": "1",
+            "unique_page_views": "1",
+            "avg_time_on_page": "19.0",
+            "exit_rate": "0.0"
+          }
+        ]
+      },
+      {
+        "type": "channel_performance",
+        "data": [
+          {
+            "dimension": "Organic Search",
+            "new_users": "5",
+            "percent_new_sessions": "55.55555555555556",
+            "sessions": "9",
+            "bounce_rate": "66.66666666666666",
+            "avg_session_duration": "19.88888888888889",
+            "pageviews_per_session": "1.3333333333333333"
+          },
+          {
+            "dimension": "Paid Search",
+            "new_users": "6",
+            "percent_new_sessions": "100.0",
+            "sessions": "6",
+            "bounce_rate": "66.66666666666666",
+            "avg_session_duration": "33.166666666666664",
+            "pageviews_per_session": "1.3333333333333333"
+          },
+          {
+            "dimension": "Direct",
+            "new_users": "4",
+            "percent_new_sessions": "100.0",
+            "sessions": "4",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          }
+        ],
+        "second_data_set": [
+          {
+            "dimension": "Organic Search",
+            "new_users": "6",
+            "percent_new_sessions": "66.66666666666666",
+            "sessions": "9",
+            "bounce_rate": "66.66666666666666",
+            "avg_session_duration": "54.888888888888886",
+            "pageviews_per_session": "1.7777777777777777"
+          },
+          {
+            "dimension": "Paid Search",
+            "new_users": "8",
+            "percent_new_sessions": "100.0",
+            "sessions": "8",
+            "bounce_rate": "50.0",
+            "avg_session_duration": "90.125",
+            "pageviews_per_session": "2.25"
+          },
+          {
+            "dimension": "Direct",
+            "new_users": "2",
+            "percent_new_sessions": "100.0",
+            "sessions": "2",
+            "bounce_rate": "50.0",
+            "avg_session_duration": "23.5",
+            "pageviews_per_session": "1.5"
+          }
+        ]
+      },
+      {
+        "type": "user_type",
+        "data": [
+          {
+            "dimension": "New Visitor",
+            "users": "15"
+          },
+          {
+            "dimension": "Returning Visitor",
+            "users": "4"
+          }
+        ]
+      },
+      {
+        "type": "top_landing_pages",
+        "data": [
+          {
+            "dimension": "/services/door-screens/",
+            "dimension2": "Door Screen Services in Los Angeles, CA",
+            "new_users": "2",
+            "percent_new_sessions": "66.66666666666666",
+            "sessions": "3",
+            "bounce_rate": "66.66666666666666",
+            "avg_session_duration": "17.333333333333332",
+            "pageviews_per_session": "1.0"
+          }
+        ]
+      },
+      {
+        "type": "top_source_medium",
+        "data": [
+          {
+            "dimension": "google / organic",
+            "new_users": "5",
+            "percent_new_sessions": "55.55555555555556",
+            "sessions": "9",
+            "bounce_rate": "66.66666666666666",
+            "avg_session_duration": "19.88888888888889",
+            "pageviews_per_session": "1.3333333333333333"
+          },
+          {
+            "dimension": "reachlocal / cpc",
+            "new_users": "6",
+            "percent_new_sessions": "100.0",
+            "sessions": "6",
+            "bounce_rate": "66.66666666666666",
+            "avg_session_duration": "33.166666666666664",
+            "pageviews_per_session": "1.3333333333333333"
+          },
+          {
+            "dimension": "(direct) / (none)",
+            "new_users": "4",
+            "percent_new_sessions": "100.0",
+            "sessions": "4",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          }
+        ]
+      },
+      {
+        "type": "traffic_by_city",
+        "data": [
+          {
+            "dimension": "Los Angeles",
+            "new_users": "9",
+            "percent_new_sessions": "81.81818181818183",
+            "sessions": "11",
+            "bounce_rate": "54.54545454545454",
+            "avg_session_duration": "34.36363636363637",
+            "pageviews_per_session": "1.4545454545454546"
+          },
+          {
+            "dimension": "Chicago",
+            "new_users": "1",
+            "percent_new_sessions": "100.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          },
+          {
+            "dimension": "Coffeyville",
+            "new_users": "1",
+            "percent_new_sessions": "100.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          },
+          {
+            "dimension": "Columbus",
+            "new_users": "1",
+            "percent_new_sessions": "100.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          },
+          {
+            "dimension": "Des Moines",
+            "new_users": "1",
+            "percent_new_sessions": "100.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          },
+          {
+            "dimension": "Istanbul",
+            "new_users": "1",
+            "percent_new_sessions": "100.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          },
+          {
+            "dimension": "Quezon City",
+            "new_users": "1",
+            "percent_new_sessions": "100.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          },
+          {
+            "dimension": "Santa Clarita",
+            "new_users": "0",
+            "percent_new_sessions": "0.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          },
+          {
+            "dimension": "West Hollywood",
+            "new_users": "0",
+            "percent_new_sessions": "0.0",
+            "sessions": "1",
+            "bounce_rate": "100.0",
+            "avg_session_duration": "0.0",
+            "pageviews_per_session": "1.0"
+          }
+        ]
+      },
+      {
+        "type": "sessions_by_day",
+        "data": [
+          {
+            "dimension": "2021-03-04",
+            "sessions": "19"
+          }
+        ]
+      },
+      {
+        "type": "sessions_by_month",
+        "data": [
+          {
+            "dimension": "202001",
+            "sessions": "439"
+          },
+          {
+            "dimension": "202002",
+            "sessions": "412"
+          },
+          {
+            "dimension": "202003",
+            "sessions": "341"
+          },
+          {
+            "dimension": "202004",
+            "sessions": "586"
+          },
+          {
+            "dimension": "202005",
+            "sessions": "997"
+          },
+          {
+            "dimension": "202006",
+            "sessions": "1065"
+          },
+          {
+            "dimension": "202007",
+            "sessions": "1159"
+          },
+          {
+            "dimension": "202008",
+            "sessions": "963"
+          },
+          {
+            "dimension": "202009",
+            "sessions": "866"
+          },
+          {
+            "dimension": "202010",
+            "sessions": "686"
+          },
+          {
+            "dimension": "202011",
+            "sessions": "1110"
+          },
+          {
+            "dimension": "202012",
+            "sessions": "939"
+          },
+          {
+            "dimension": "202101",
+            "sessions": "932"
+          },
+          {
+            "dimension": "202102",
+            "sessions": "924"
+          },
+          {
+            "dimension": "202103",
+            "sessions": "1079"
+          },
+          {
+            "dimension": "202104",
+            "sessions": "1158"
+          },
+          {
+            "dimension": "202105",
+            "sessions": "1329"
+          },
+          {
+            "dimension": "202106",
+            "sessions": "1358"
+          },
+          {
+            "dimension": "202107",
+            "sessions": "1279"
+          },
+          {
+            "dimension": "202108",
+            "sessions": "1357"
+          },
+          {
+            "dimension": "202109",
+            "sessions": "1707"
+          },
+          {
+            "dimension": "202110",
+            "sessions": "1268"
+          },
+          {
+            "dimension": "202111",
+            "sessions": "1398"
+          },
+          {
+            "dimension": "202112",
+            "sessions": "972"
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
