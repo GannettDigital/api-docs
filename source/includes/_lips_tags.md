@@ -13,8 +13,8 @@ Are activities associated with a contact or contact interaction. The tag is a st
 | GET `index` | /contact_interactions/#id/tags |
 | GET `index` | /contacts/#id/tags |
 | POST `create` | /tags |
-| POST `create` | /contact_interactions/#id |
-| POST `create` | /contacts/#id |
+| POST `create` | /contact_interactions/#id/tags |
+| POST `create` | /contacts/#id/tags |
 | PUT `update` | /tags/'tag' |
 | DELETE `destroy` | /tags/'tag' |
 | DELETE `destroy` | /contact_interactions/#id/tags/'tag' |
