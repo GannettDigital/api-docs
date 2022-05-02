@@ -62,18 +62,26 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
         ],
          "conversion_fences": [
              {
-                 "name": "Conversion Fence (Demo) 1",
-                 "conversion_fence_id": 1,
-                 "walk_ins": 17,
-                 "cpw": 1.00,
-                 "spend": 50.00
+                "name": "Conversion Fence (Demo) 1",
+                "conversion_fence_id": 1,
+                "global_master_campaign_id": -91190,
+                "cycle_id": -91191,
+                "campaign_name": "Gannett Display Campaign (Demo)",
+                "line_item_name": "Geofence 2",
+                "walk_ins": 17,
+                "cpw": 1.00,
+                "spend": 50.00
              },
              {
-                 "name": "Conversion Fence (Demo) 2",
-                 "conversion_fence_id": 2,
-                 "walk_ins": 17,
-                 "cpw": 1.00,
-                 "spend": 50.00
+                "name": "Conversion Fence (Demo) 2",
+                "conversion_fence_id": 2,
+                "global_master_campaign_id": 91166,
+                "cycle_id": 91167,
+                "campaign_name": "Display Campaign (Demo)",
+                "geofence_name": "Geofence 1",
+                "walk_ins": 17,
+                "cpw": 1.00,
+                "spend": 50.00
              }
         ]
     }
@@ -94,6 +102,11 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
 |---|---|---|---|
 |name | String | Name |
 |conversion_fence_id | Int | Identifier for Conversion Fence |
+|global_master_campaign_id | Int | MCID for Conversion Fence |
+|cycle_id | Int | Cycle id for Conversion Fence |
+|campaign_name | String | Campaign name for Conversion Fence |
+|geofence_name | String | Geofence name for Conversion Fence (non-Gannett campaigns only)|
+|line_item_name | String | Line item name for Conversion Fence (Gannet campaigns only) |
 |walk_ins | Int | Number of Walk-ins |
 |cpw | Float | Cost per walk-in |
 |spend | Float | Spend |

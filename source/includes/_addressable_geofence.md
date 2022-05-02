@@ -19,14 +19,10 @@ When using the GET method, the results can be filtered using these parameters:
 |`start_date`|Yes|Restricts the results to those occurring on or after this date.|
 |`end_date`|Yes|Restricts the results to those occurring on or before this date.|
 |`global_master_campaign_id[]`| no |Restrict results to one or more specific campaigns|
-|`publisher_plat_zipcode[]`|No|Specifies the zipcode+4 to filter by|
-|`conversion_fence[]`|No|Specifies the conversion_fence to filter by|
 |`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
-|`sort_by`|No|Specifies what column to sort by.  Valid columns are: `publisher_plat_zipcode`, `clicks`, `impressions`, and `ctr` <br><b>Default value: `publisher_plat_zipcode`</b>|
-|`sort_dir`|No|Specifies the sort direction.  Can be either `asc` or `desc` <br><b>Default value: `asc`</b>|
-
-*Note*: Maximum date range for this API is 31 days.
+|`sort_by`|No|Specifies what column to sort by.  Valid columns are: `walk_ins`, `name`, `cpw`, `spend` <br><b>Default value: `walk_ins`</b>|
+|`sort_dir`|No|Specifies the sort direction.  Can be either `asc` or `desc` <br><b>Default value: `desc`</b>|
 
 ### Response Data Details
 
