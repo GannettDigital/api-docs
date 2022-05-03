@@ -2,6 +2,8 @@
 <a name="lips_contact_interactions"></a>
 ## Contact Interactions API
 
+Also referred to as "events", *contact interactions* are activities associated with a contact.  The event may be a call, a form post, or chat event recorded by capture or a FPD event.
+
 ### Resource Overview
 
 | Method | URI Format |
@@ -158,6 +160,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
+|referring_url| string | yes |URL of the referring page|
 |full_message| string | yes |full message of the form event|
 |message| string | yes| parsed message|
 |extra_fields| object | yes |extra fields|

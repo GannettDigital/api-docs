@@ -7,10 +7,11 @@
 | Route | Method | URI Format |
 |---|---|---|
 | `index` | GET | /contacts |
-| `show` | GET | /contact/[id] |
+| `show` | GET | /contacts/[id] |
 | `create` | POST | /contacts |
-| `update` | PUT | /contact/[id] |
-| `destroy` | DELETE | /contact/[id] |
+| `update` | PUT | /contacts/[id] |
+| `destroy` | DELETE | /contacts/[id] |
+| `index` | GET | /contacts/[id]/events |
 
 #### GET Contacts(index)
 
@@ -325,3 +326,128 @@ curl -L -X DELETE 'https://data-connect-lips.gannettdigital.com/contacts/63807' 
 A successful response will have no response body and return a 200 HTTP response code.
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+## GET all Events for a given contact
+
+### Usage
+
+### Parameters
+When using this GET index method, the results will be filtered using these parameters:
+
+| Parameter | Required | Description |
+|---|---|---|
+|`per_page`|No|Restrict number of events in result <br><b>Default value: 25</b> |
+|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+
+### Response Description
+
+See [LIPS EVENTS](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_lips_events.md)
+#### Example Curl
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/events?page=1&per_page=2' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+
+#### Example Response
+
+```javascript
+{
+    "events": [
+        {
+  "contact_interactions": [
+    {
+      "id": 4960,
+      "sub_type": "FormPost",
+      "referrer_type": "OTHER",
+      "referrer_source": "ORGANIC",
+      "influencing_campaign": "",
+      "occurred_at": "2022-03-22T16:03:55.000Z",
+      "external_source": "capture",
+      "event_type": "FormEvent",
+      "visitor_id": "8c8c1b23-028c-41a7-99d5-0c13e3abc23c",
+      "important": false,
+      "read": false,
+      "tags": [],
+      "form": {
+        "full_message": "{}",
+        "extra_fields": {
+          "__requestverificationtoken": "FWR2fUuss1rm7-PFCJQlrEvzTU0PCqL2QTsB4QmWvch32lpiSYSzMQxq71se3WAeLO3q8HC1y6Ns7MX1QM_6gjt70nQ1",
+          "user.userid": "44339",
+          "user.address.validationattempts": "0",
+          "user.optin": "false",
+          "user.agreetorules": "false",
+          "captcha.key": "kRbMYO74DSeNPf//J97EAuBQYuJDqAOmhQ/BlM+Kq6VIvuNnGcqmZshylkZS3VtS",
+          "submit": "SUBMIT",
+          "first_name": "Janis",
+          "last_name": "Joplin",
+          "enter_your_e-mail_address_to_begin": "jj@gmail.com",
+          "address": "917 Somewhere St.",
+          "city": "Newton",
+          "state": "NJ",
+          "zip_code": "07860",
+          "phone": "(973) 670-6472",
+          "date_of_birth": "4/4/1990",
+          "pl_user_birthdate_month": "4",
+          "pl_user_birthdate_day": "4",
+          "pl_user_birthdate_year": "1990",
+          "pocono_mountains,pennsylvania": "Pennsylvania",
+          "earn_1_bonus_entry_\n____________________________yes,_i’d_like_to_receive_emails_with_special_offers_and_promotions_from_kalahari_resorts._you_may_opt-out_at_any_time.": "true",
+          "i_have_read_and_agree_to_be_bound_by_these_________official_rules": "true",
+          "captcha.value": "9LSTQR",
+          "page_post_url": "https://win.kalahariresorts.com/en-us/Register"
+        }
+      }
+    },
+    {
+      "id": 4926,
+      "sub_type": "FormPost",
+      "referrer_type": "OTHER",
+      "referrer_source": "ORGANIC",
+      "influencing_campaign": "",
+      "occurred_at": "2022-03-22T16:03:09.000Z",
+      "external_source": "capture",
+      "event_type": "FormEvent",
+      "visitor_id": "8c8c1b23-028c-41a7-99d5-000000000",
+      "important": false,
+      "read": false,
+      "tags": [],
+      "form": {
+        "referring_url": "https://www.google.com"
+        "full_message": "{}",
+        "extra_fields": {
+          "email": "jj@gmail.com",
+          "page_post_url": "https://win.kalahariresorts.com/en-us/LoginWithEmail"
+        }
+      }
+    }
+  ],
+  "page": 1,
+  "total_pages": 1,
+  "per_page": 25,
+  "totals": {
+    "events": 2,
+    "call_events": 0,
+    "form_events": 2,
+    "chat_events": 0
+  },
+  "unread": {
+    "events": 2,
+    "call_events": 0,
+    "form_events": 2,
+    "chat_events": 0
+  },
+  "channel": {
+    "display": 0,
+    "search": 0,
+    "social": 0,
+    "chat": 0,
+    "other": 0,
+    "none": 2
+  }
+}
+```
+

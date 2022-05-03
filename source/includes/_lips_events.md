@@ -1,243 +1,174 @@
 ### **Events**
 <a name="lips_events"></a>
+## Events API
 
-# Events API
-
-Also referred to as "contact interactions", *events* are activities associated with a contact.  The event may be a call, a form post, or a chat event recorded by capture.  It could also be created by posting to this API.
+Also referred to as "contact interactions", *events* are activities associated with a contact.  The event may be a call, a form post, or a chat event recorded by capture or a FPD event.
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /fpd_events |
-| GET `index` | /fpd_events/#id |
-| GET `index` | /contacts/#id/events |
-| POST `create` | /fpd_events |
-
-## Get Events for specific event type
-
-### GET FPD Events (Index)
+| GET `index` | /events |
+| GET `show` |events/:id|
+| PUT `update` | /events/:id |
 
 ### Usage
+Use GET to retrieve events that match the query params.
 
 ### Parameters
 When using the GET index method, the results will be filtered using these parameters:
 
 | Parameter | Required | Description |
 |---|---|---|
-|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
-|`per_page`|No|Restrict number of events in result <br><b>Default value: 25</b> |
+|`event_params[phone_numbers]`|No|String that restricts the contacts to one or more based on phone number|
+|`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid.|
+|`global_master_campaign_id`|No|Restrict results to one or more specific gmcid.|
+|`start_date`|No|Restricts the results to those occurring on or after this date|
+|`end_date`|No|Restricts the results to those occurring on or before this date|
+|`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+|`sort_by`|No|Specifies what column to sort by. Valid columns are: important<br><b>Default value: occurred_at</b> |
+|`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: asc</b> |
+|`event_type[]`|No|See chart below|
+|`channel[]`|No|Filters results by Event channel. Valid channels are: `search, display, social, chat, other, none`|
+|`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
 
-### Response Description
 
-| Field Name | Datatype | Description |
-|---|---|---|
-|`id`| integer | id of the event|
-|`call_recording_url`| String | url used to match the contact|
-|`email`| String | email used to match the contact|
-|`phone_number`| String | normalized phone number used to match the contact|
-|`page`| Integer | the number of the events page|
-|`per_page`| Integer | the number of events in each page|
-|`total_pages`| Integer | total number of pages|
+> * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`. Searching by `channel` will remove any event without a `wpc_id`.
+#### Event Type Filter
+Event Type | Explanation
+-- | --
+call | All CallEvents
+chat | All ChatEvents
+chat_sales | ChatEvents with a lead_type of sales. Ignored when used in combination with `chat`
+chat_service | ChatEvents with a lead_type of service. Ignored when used in combination with `chat`
+chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
+form | FormEvents with a sub_type of FormPost
+email | FormEvents with a sub_type of FormEmail
+fpd | All FpdEvents
 
-#### Example Curl
+### Examples:
+
+### GET (index)
 
 ```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events?global_master_advertiser_id=USA_1S' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1&event_params[phone_numbers]=+1243325' \
+  -H 'Accept: */*' \
+  -H 'Authorization: token 1b01Secret' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: SJNPPSecret'
+```
+> Response Description if query_params contains event_params
+
+
+```
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: SJNPPSecret'
 ```
 
-#### Example Response
-
-```javascript
-{
-    "fpd_events": [
-        {
-            "id": 3617,
-            "call_recording_url": null,
-            "phone_number": "+14406677553",
-            "email": null
-        }
-    ],
-    "page": 1,
-    "total_pages": 1,
-    "per_page": 25
-}
 ```
-
-## Show Single Event
-
-### Usage
-
-### Parameters
-
-| Parameter | Required | Description |
-|---|---|---|
-|`id`|Yes|The id of the record to retrieve|
-
-### Response Description
-
-| Field Name | Datatype | Description |
-|---|---|---|
-|`id`| integer | id of the event|
-|`event_type`| string | type of the event |
-|`visitor_id`| string | capture visitor_id |
-|`occurrence_time`| string | Time the event occurred |
-|`first_name`| string | First Name of the contact |
-|`last_name`| string | Last Name of the contact |
-|`address`| string | Street address of the contact |
-|`city`| string | City of the contact |
-|`state`| string | State/province of the contact |
-|`postal`| string | Zip Code of the contact |
-|`email`| string | Email address of the contact |
-|`phone_numbers`|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
-|`master_capaign_id`| string | ID of the Campaign that generated the event |
-|`master_advertiser_id`| string | ID of the Advertiser the event is for |
-|`influencing_campaign_id`| string | ID of the Campaign that influenced the event |
-|`wpc_id`| string | ID of the Web Puiblisher Campaign that generated the event |
-|`influencing_wpc_id`| string | ID of the Web Puiblisher Campaign that influenced the event |
-|`referrer_type`| string | Capture referrer type for the event |
-|`page_url`| string | Page URL for the event |
-
-#### Example Curl
-
-```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events/3636' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1&event_type[]=form&event_type[]=calls' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: SJNPPSecret'
 ```
+### events
+**Contact**
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|id| Integer | no | id of the contact|
+|first_name| String | yes | first name of the contact|
+|last_name| String | yes | last name of the contact|
+|display_name| String | yes | The display name of the event. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
+|email| String | yes | email of the contact|
+|company| String | yes | The company name for this contact|
+|title| String | yes | The title of the contact|
+|phone_numbers| String | yes | phone number data. ('phone_type' phone_type of the contact, 'phone_number' the normalized number of the phone number)|
+|created_at| Datetime | no | The date and time which this contact was created|
 
-#### Example Response
+**Interaction**
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|id| Integer | no | id of the interaction|
+|campaign_name| String | no | The name of the campaign that this event is attributed to|
+|global_master_advertiser_id| String | no | The global master advertiser id for this interaction|
+|global_master_campaign_id| String | no | The global master campaign id for this interaction|
+|sub_type| String | yes |Sub type of the campaign|
+|referrer_type| String | no | Paid, organic|
+|referrer_source| String | no | Domain the visitor came from|
+|influencing_campaign| String | yes | Campaign that influenced this interaction|
+|created_at| Datetime | yes | The date and time which this interaction was created|
+|occured_at| Datetime | yes |The date and time which this event occurred. This will usually be different than the date that the event was created.|
+|channel| String | yes | The acquisition channel responsible for the event|
+|event_type| String | no | The type of the event . Valid values are chat, call and form|
+|external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
+|read|boolean|No|Check if event is marked as read|
+|important|boolean|No|Check if event is marked as important|
 
-```javascript
-{
-    "event": {
-        "id": 3636,
-        "event_type": "FpdEvent",
-        "visitor_id": null,
-        "occurrence_time": "2021-01-08T00:00:00.000Z",
-        "first_name": null,
-        "last_name": null,
-        "address": null,
-        "city": null,
-        "state": null,
-        "postal": null,
-        "email": null,
-        "phone_numbers": [
-            {
-                "phone_type": "work",
-                "phone_number": "+14406677553"
-            }
-        ],
-        "master_campaign_id": null,
-        "master_advertiser_id": 186133,
-        "influencing_campaign_id": null,
-        "wpc_id": null,
-        "influencing_wpc_id": null,
-        "referrer_type": null,
-        "referrer_source": null,
-        "page_url": null
-    }
-}
-```
+**Totals**
 
-## GET All Events for a given contact (Index)
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|events| Integer | no | totals of events|
+|call_events| Integer | no | totals of call events|
+|form_events| Integer | no | totals of form events|
+|chat_events| Integer | no | totals of chat events|
 
-### Usage
+**Unread**
 
-### Parameters
-When using this GET index method, the results will be filtered using these parameters:
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|events| Integer | no | totals of unread events|
+|call_events| Integer | no | totals of unread call events|
+|form_events| Integer | no | totals of unread form events|
+|chat_events| Integer | no | totals of unread chat events|
 
-| Parameter | Required | Description |
-|---|---|---|
-|`per_page`|No|Restrict number of events in result <br><b>Default value: 25</b> |
-|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+**Channel**
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|channels| Integer | no | total events|
+|display| Integer | no | total events with `display` channel|
+|search| Integer | no |total events with `search` channel |
+|social| Integer | no | total events with `social` channel|
+|chat | Integer | no | total events with `chat` channel|
+|other | Integer | no | total events with `other` channel|
+|none | Integer | no | total events without channel|
 
-### Response Description
+**Call**
 
-| Field Name | Datatype | Description |
-|---|---|---|
-|`events`| array | array of events objects for the given contact |
-|`page`| Integer | the number of the events page|
-|`per_page`| Integer | the number of events in each page|
-|`total_pages`| Integer | total number of pages|
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|call_recording_url| String | yes | Only included when interaction is call|
+|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
 
-##### Event Object:
+**Form**
 
-| Field Name | Datatype | Description |
-|---|---|---|
-|`id`| integer | id of the event|
-|`event_type`| string | type of the event |
-|`visitor_id`| string | capture visitor_id |
-|`occurrence_time`| string | Time the event occurred |
-|`first_name`| string | First Name of the contact |
-|`last_name`| string | Last Name of the contact |
-|`address`| string | Street address of the contact |
-|`city`| string | City of the contact |
-|`state`| string | State/province of the contact |
-|`postal`| string | Zip Code of the contact |
-|`email`| string | Email address of the contact |
-|`phone_numbers`|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
-|`master_capaign_id`| string | ID of the Campaign that generated the event |
-|`master_advertiser_id`| string | ID of the Advertiser the event is for |
-|`influencing_campaign_id`| string | ID of the Campaign that influenced the event |
-|`wpc_id`| string | ID of the Web Puiblisher Campaign that generated the event |
-|`influencing_wpc_id`| string | ID of the Web Puiblisher Campaign that influenced the event |
-|`referrer_type`| string | Capture referrer type for the event |
-|`page_url`| string | Page URL for the event |
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|full_message| string | yes |full message of the form event|
+|message| string | yes| parsed message|
+|extra_fields| object | yes |extra fields|
 
-If `event_type` is FpdEvent, the following fields are also returned:
+**Chat**
 
-| Field Name | Datatype | Description |
-|---|---|---|
-|`call_recording_url`| String | url used to match the contact|
-|`phone_number`| String | normalized phone number used to match the contact|
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|provider| string | yes |chat provider(if missing assume Apex)|
+|transcript| object | yes |object of chat transcript|
+|summary| object | yes |A freeform text description of the chat.|
 
-If `event_type` is CallEvent, the following fields are also returned:
+**Transcript**
 
-| Field Name | Datatype | Description |
-|---|---|---|
-|`call_recording_url`| String | url used to match the contact|
-|`phone_number`| String | normalized phone number used to match the contact|
-|`call_duration` | String | duration of call in seconds |
-|`call_recording_url` | String | call recording url |
-|`caller_number` | String | Phone Number of the caller |
-|`dialed_number` | String | Phone Number the caller dialed |
-|`target_number` | String | Phone Number the call was redirected to|
-
-If `event_type` is ChatEvent, the following fields are also returned:
-
-| Field Name | Datatype | Description |
-|---|---|---|
-|`provider`| String | The chat provider |
-|`transcript`| String | Transcript of the chat|
-
-If `event_type` is FormEvent, the following fields are also returned:
-
-| Field Name | Datatype | Description |
-|---|---|---|
-|`referring_url` |String| URL of the referring page|
-|`cvt_type` |String| CVT Type|
-|`entry_type` |String| CVT Entry Type |
-|`page_cvt_id` |String| Page CVT ID |
-|`content` |String| Content of for fill (truncated to 80 chars) |
-|`extra_fields` |String| JSON of "extra fields" present on the form |
-
-#### Example Curl
-
-```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/events?page=1&per_page=2' \
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
-```
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|id| object | no |A sequential id of the line chat transcript. It uniquely identifies a line of the chat transcript within this event.|
+|timestamp| object | no |The date and time that the external chat API registered for this line of the chat transcript.|
+|form| object | no |The display name of the member of the chat who sent this message.|
+|message| object | no |The message body of this line of the chat transcript.|
 
 #### Example Response
 
@@ -245,146 +176,186 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/eve
 {
     "events": [
         {
-            "id": 3607,
-            "event_type": "CallEvent",
-            "visitor_id": null,
-            "occurrence_time": "2021-08-09T07:10:43.000Z",
-            "first_name": "Nedra",
-            "last_name": "Alston",
-            "address": null,
-            "city": "Sanford",
-            "state": "SC",
-            "postal": "29730",
-            "email": null,
-            "phone_numbers": [
-                {
-                    "phone_type": "work",
-                    "phone_number": "+14406677553"
-                }
-            ],
-            "master_campaign_id": 2425824,
-            "master_advertiser_id": 186133,
-            "influencing_campaign_id": null,
-            "wpc_id": null,
-            "influencing_wpc_id": null,
+            "id": 4314774,
+            "campaign_name": "LSS Test Campaign",
+            "global_master_advertiser_id": "USA_31253",
+            "global_master_campaign_id": "USA_3115232",
+            "sub_type": "Call"
+            "channel": "search",
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
-            "page_url": null,
-            "call_duration": 372,
-            "call_recording_url": "https://app.callcap.com/recording/14024_89_08_09_2021_09_04_31_306.mp3",
-            "caller_number": "440-667-7553",
-            "dialed_number": "803-888-4555",
-            "target_number": "951-336-2456"
+            "influencing_campaign": "",
+            "occurred_at": "2021-09-06T16:16:08.000Z",
+            "channel": "search",
+            "external_source": "capture",
+            "important": true,
+            "read": true,
+            "tags": [
+                "search",
+                "call"
+            ],
+            "contact": {
+                "id": 2197617,
+                "first_name": "S",
+                "last_name": "ELIGIO",
+                "display_name": "S ELIGIO",
+                "email": null,
+                "company": null,
+                "title": null,
+                "phone_numbers": [
+                    {
+                        "phone_type": "work",
+                        "phone_number": "+13184227453"
+                    }
+                ],
+                "created_at": "2021-09-04T01:21:27.394Z"
+            },
+            "call": {
+                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
+                "call_duration": 44
+            }
         },
         {
-            "id": 3636,
-            "event_type": "FpdEvent",
-            "visitor_id": null,
-            "occurrence_time": "2021-01-08T00:00:00.000Z",
-            "first_name": null,
-            "last_name": null,
-            "address": null,
-            "city": null,
-            "state": null,
-            "postal": null,
-            "email": null,
-            "phone_numbers": [
-                {
-                    "phone_type": "work",
-                    "phone_number": "+14406677553"
-                }
+            "id": 3871993,
+            "campaign_name": "LSS Test Campaign",
+            "global_master_advertiser_id": "USA_31253",
+            "global_master_campaign_id": "USA_3115232",
+            "sub_type": "Call"
+            "channel": "search",
+            "referrer_type": "UNKNOWN",
+            "referrer_source": "PAID",
+            "influencing_campaign": "",
+            "occurred_at": "2021-08-25T14:50:34.000Z",
+            "channel": "search",
+            "external_source": "capture",
+            "important": false,
+            "read": true,
+             "tags": [
+                "capture",
+                "call"
             ],
-            "master_campaign_id": null,
-            "master_advertiser_id": 186133,
-            "influencing_campaign_id": null,
-            "wpc_id": null,
-            "influencing_wpc_id": null,
-            "referrer_type": null,
-            "referrer_source": null,
-            "page_url": null,
-            "call_recording_url": null,
-            "phone_number": "+14406677553"
+            "contact": {
+                "id": 2197617,
+                "first_name": "S",
+                "last_name": "ELIGIO",
+                "display_name": "S ELIGIO",
+                "email": null,
+                "company": null,
+                "title": null,
+                "phone_numbers": [
+                    {
+                        "phone_type": "work",
+                        "phone_number": "+13184227453"
+                    }
+                ],
+               "created_at": "2021-09-04T01:21:27.394Z"
+            },
+            "call": {
+                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
+                "call_duration": 44
+            }
         }
     ],
     "page": 1,
     "total_pages": 1,
-    "per_page": 2
+    "per_page": 25,
+    "totals": {
+        "events": 3,
+        "call_events": 3,
+        "form_events": 0,
+        "chat_events": 0,
+    },
+    "unread": {
+       "events": 2,
+       "call_events": 2,
+       "form_events": 0,
+       "chat_events": 0
+    }
+    "channel": {
+       "display": 2,
+       "search": 0,
+       "social": 0,
+       "chat": 0,
+       "other": 0,
+       "none": 1
+    }
+
 }
 ```
-## POST Event for specific event type
+### GET (SHOW)
+Show a single event by id
 
-### POST FPD Event (Create)
-
-### Usage
-
-Call this endpoint to create an FPD event.  An attempt will be made to match the event to an existing contact using the provided parameters.  If no contact is found, one may be created, unless the value of the `skip_contact` parameter is "true".  At least one of these params must be provided for matching purposes:  `call_recording_url`, `email`, or `phone_number`.
-
-### Parameters
-When using the POST FPD Event create method, the following paramters are allowed:
-
-| Parameter | Required | Description |
-|---|---|---|
-|`global_master_advertiser_id`|Yes|Create the event for this advertiser|
-|`call_recording_url`|No|Match to a contact using this call_recording url|
-|`external_id`|No|The external id of the event, that's being used in other systems|
-|`email`|No|Match to a contact using this email address|
-|`phone_number`|No|Match to a contact using this phone number|
-|`occurrence_time`|No|Time the event occurred|
-|`skip_contact`|No|If "true", do not create a contact if no matching contact is found|
-
-### Response Description
-
-| Field Name | Datatype | Description |
-|---|---|---|
-|`event`| Object | Event Object (see above)|
-|`contact_id`| Integer | if of the contact if there was a match, or one was created|
-
-#### Example Curl
-
-```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events' \
-  --data-raw '{
-      "global_master_advertiser_id": "USA_186133",
-      "skip_contact": "true",
-      "phone_number": "+14406677553"
-  }'
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+#### Examples:
 ```
 
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events/1001
+```
 #### Example Response
 
-```javascript
+```json
 {
-    "event": {
-        "id": 3669,
-        "event_type": "FpdEvent",
-        "visitor_id": null,
-        "occurrence_time": "2021-01-09T00:00:00.000Z",
-        "first_name": null,
+    "id": 1001,
+    "campaign_name": "Boats | Boats | Boats",
+    "global_master_advertiser_id": "USA_31253",
+    "global_master_campaign_id": "USA_1234567",
+    "sub_type": "Call",
+    "referrer_type": "UNKNOWN",
+    "referrer_source": "PAID",
+    "influencing_campaign": "",
+    "occurred_at": "2022-02-18T15:14:42.000Z",
+    "channel": null,
+    "external_source": "capture",
+    "event_type": "CallEvent",
+    "important": false,
+    "read": false,
+    "contact": {
+        "id": 2000,
+        "first_name": "Unknown",
         "last_name": null,
-        "address": null,
-        "city": null,
-        "state": null,
-        "postal": null,
+        "display_name": "Unknown Somebody",
         "email": null,
-        "phone_numbers": [
-            {
-                "phone_type": "work",
-                "phone_number": "+14406677553"
-            }
-        ],
-        "master_campaign_id": null,
-        "master_advertiser_id": 186133,
-        "influencing_campaign_id": null,
-        "wpc_id": null,
-        "influencing_wpc_id": null,
-        "referrer_type": null,
-        "referrer_source": null,
-        "page_url": null,
-        "contact_id": 2626
+        "company": null,
+        "title": null,
+        "phone_numbers": [],
+        "created_at": "2022-02-23T13:35:56.855Z"
+    },
+    "call": {
+        "recording_url": "",
+        "duration": 5
     }
 }
 ```
+### PUT (UPDATE)
+
+Update an existing contact_interaction.
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|
+|read|boolean|No|Check if event is marked as read|
+|important|boolean|No|Check if event is marked as important|
+
+
+Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
+
+#### Examples:
+
+```
+curl --location --request PUT 'https://data-connect-lips.gannettdigital.com//events/1' \
+--header 'Authorization: {auth_token}' \
+--header 'Content-Type: application/json' \
+--data-raw '
+    {
+        "contact_interaction": { "important": false, "read": true}
+    }
+'
+```
+
+example success response (HTTP status 2xx):
+
+```
+{
+    "contact_interaction": "successfully updated!"
+}
+```
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
