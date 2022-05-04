@@ -6,7 +6,7 @@
 |---|---|
 | GET | /client_reports/conversion_zone_geofence/[gmaid]?[query_params] |
 
-Use GET to retrieve information for conversion zone geofences. Data can be returned for a GMAID for a specific date range determined by start_date and end_date.  The requirements for these parameters are described below.
+Use GET to retrieve information for conversion zone geofences. Data can be returned for a GMAID for a specific date range determined by start_date and end_date. Data is a roll-up of metrics for each conversion fence (grouped by campaign) across the given date range.
 
 *Note*: Only geofences with 1 or more walkins are included in this API.
 
@@ -21,7 +21,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`global_master_campaign_id[]`| no |Restrict results to one or more specific campaigns|
 |`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
-|`sort_by`|No|Specifies what column to sort by.  Valid columns are: `walk_ins`, `name`, `cpw`, `spend` <br><b>Default value: `walk_ins`</b>|
+|`sort_by`|No|Specifies what column to sort by.  Valid columns are: `walk_ins`, `conversion_fence_name`, `cpw`, `spend` <br><b>Default value: `walk_ins`</b>|
 |`sort_dir`|No|Specifies the sort direction.  Can be either `asc` or `desc` <br><b>Default value: `desc`</b>|
 
 
@@ -31,7 +31,7 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_105569?start_date=2016-12-01&end_date=2016-12-31
+https://api.localiqservices.com/client_reports/conversion_zone_geofence/TEST_1?start_date=2022-04-01&end_date=2022-04-30
 ```
 
 > Example Response
@@ -39,9 +39,9 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
 ```javascript
 {
     "api_name": "conversion_zone_geofence",
-    "api_run_date": "2020-11-19",
-    "start_date": "2020-11-01",
-    "end_date": "2020-11-30",
+    "api_run_date": "2022-11-19",
+    "start_date": "2022-04-01",
+    "end_date": "2022-04-30",
     "time_zone": "America/Los_Angeles",
     "currency": "USD",
     "global_master_advertiser_id": "TEST_1",
@@ -56,8 +56,8 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
         "totals": [
             {
                 "walk_ins": 34,
-                "cpw": 0.7,
-                "spend": 200.00
+                "cpw": 2.94,
+                "spend": 100.00
             }
         ],
          "conversion_fences": [
@@ -67,9 +67,8 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
                 "global_master_campaign_id": -91190,
                 "cycle_id": -91191,
                 "campaign_name": "Gannett Display Campaign (Demo)",
-                "line_item_name": "Geofence 2",
                 "walk_ins": 17,
-                "cpw": 1.00,
+                "cpw": 2.94,
                 "spend": 50.00
              },
              {
@@ -80,7 +79,7 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
                 "campaign_name": "Display Campaign (Demo)",
                 "geofence_name": "Geofence 1",
                 "walk_ins": 17,
-                "cpw": 1.00,
+                "cpw": 2.94,
                 "spend": 50.00
              }
         ]
@@ -106,7 +105,6 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
 |cycle_id | Int | Cycle id for Conversion Fence |
 |campaign_name | String | Campaign name for Conversion Fence |
 |geofence_name | String | Geofence name for Conversion Fence (non-Gannett campaigns only)|
-|line_item_name | String | Line item name for Conversion Fence (Gannet campaigns only) |
 |walk_ins | Int | Number of Walk-ins |
 |cpw | Float | Cost per walk-in |
 |spend | Float | Spend |
@@ -116,5 +114,5 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/USA_1055
 |---|---|---|
 |page | Int | Which page is returned |
 |page_size | Int | Conversion Zones Per Page |
-|total_count | Int | Total of conversion zones across all pages |
+|total_count | Int | Total of conversion zones (by campaign) across all pages |
 |total_pages | Int | Number of pages |
