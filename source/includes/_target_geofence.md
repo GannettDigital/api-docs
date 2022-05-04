@@ -77,6 +77,8 @@ https://api.localiqservices.com/client_reports/target_geofence/USA_105569?start_
         "target_geofences": [
             {
                 "name" : "Geofence 1",
+                "campaign_name" : "Campaign Name",
+                "global_master_campaign_id" : "TEST_12341",
                 "publisher_plat_zipcode": "55401",
                 "publisher_plat_city": "Minneapolis",
                 "publisher_plat_state": "MN",
@@ -113,6 +115,8 @@ https://api.localiqservices.com/client_reports/target_geofence/USA_105569?start_
 |publisher_plat_zipcode | String | Zip Code <b>(will be null for regular geofence campaigns)</b> |
 |publisher_plat_city | String | City <b>(will be null for regular geofence campaigns)</b> |
 |publisher_plat_state | String | State <b>(will be null for regular geofence campaigns)</b> |
+|campaign_name | String | Name of the geofence activity associated campaign |
+|global_master_campaign_id | String | The global master campaign id|
 |impressions | Float | Number of Impressions |
 |clicks | Int | Number of Clicks |
 |walk_ins | Int | Number of Walk-ins |
