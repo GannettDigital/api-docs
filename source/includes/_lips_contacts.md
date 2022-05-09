@@ -67,32 +67,32 @@ The body of the API response will contain metadata and a JSON array of contact o
 
 *Contact*
 
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|first_name| String | no | first name of the contact|
-|last_name| String | no | last name of the contact|
-|email| String | no | email of the contact|
-|address1| String | no | address of the contact|
-|address2| String | no | address of the contact|
-|city| String | no | city of the contact|
-|state| String | no | state of the contact|
-|postal| String | no | zip code of the contact|
-|country| String | no | country code of the contact|
-|duration| Integer | no | the phone call duration of the contact|
-|url| String | no | the recording_url of the contact's call|
-|phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+| Field Name | Datatype | Description |
+|---|---|---
+|first_name| String| first name of the contact|
+|last_name| String| last name of the contact|
+|email| String| email of the contact|
+|address1| String| address of the contact|
+|address2| String| address of the contact|
+|city| String| city of the contact|
+|state| String| state of the contact|
+|postal| String| zip code of the contact|
+|country| String| country code of the contact|
+|duration| Integer| the phone call duration of the contact|
+|url| String| the recording_url of the contact's call|
+|phone_number|Array|no|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
 |first_party_data | boolean | This contact has been flagged as being "first party data"|
 |status | String | Status of the contact|
 |preferred_contact_method | String | Preferred contact method of the contact|
 |archived_at | Datetime | The date of the archived contact|
-|page| Integer | no | the number of the contacts page|
-|page_size| Integer | no | the number of the size of the contacts array|
-|total_events| Integer | no | the number of contacts events|
-|total_call_event| Integer | no | the number of contacts call events|
-|total_fpd_event| Integer | no | the number of contacts fpd events|
-|total_form_event| Integer | no | the number of contacts form events|
-|total_chat_event| Integer | no | the number of contacts chat events|
-|total_pages| Integer | no | the number of contacts array total pages|
+|page| Integer| the number of the contacts page|
+|page_size| Integer| the number of the size of the contacts array|
+|total_events| Integer| the number of contacts events|
+|total_call_event| Integer| the number of contacts call events|
+|total_fpd_event| Integer| the number of contacts fpd events|
+|total_form_event| Integer| the number of contacts form events|
+|total_chat_event| Integer| the number of contacts chat events|
+|total_pages| Integer| the number of contacts array total pages|
 
 ##### Example Response
 
