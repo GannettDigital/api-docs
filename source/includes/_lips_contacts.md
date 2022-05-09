@@ -29,10 +29,11 @@ When using the GET index method, the results will be filtered using these parame
 |`search_term`|no|String (min. length 3) used to search for contacts using a full text search across first_name, last_name, email, and phone number|Ex. `?search_term=202` returns contacts with phone nubmers `(202)-555-5555`, `+1232025678`|
 |`first_char_first_name`|no|String that filters by first character in first name|`#`(starts with a digit) or one of `a-z` (case insensitive)|
 |`first_char_last_name`|no|String that filters by first character in last name|`#`(starts with a digit) or one of `a-z`(case insensitive)|
-|`start_date`|no|Datetime that filters by created_at. If no end_date given acts like created_at after|
-|`end_date`|no|Datetime that filters by created_at. If no start_date given acts like created_at before|
-|`tags`|no|Array of tag strings to filter by| Ex. `?tags[]=organic&tags[]=direct_site`|
-|`archived_only`|no|Boolean filter to include only archived contacts|Default: `false`
+|`start_date`|no|Datetime that filters by created_at. If no end_date given acts like `created_at after`|
+|`end_date`|no|Datetime that filters by created_at. If no start_date given acts like `created_at before`|
+|`tags`|no|Array of tag strings that will include any contact with one (or more) of the give tags| Ex. `?tags[]=organic&tags[]=direct_site`|
+|`has_all_tags`|no|Boolean filter that when used with `tags` filter to include only contacts that have all given tags| Default: `false`|
+|`archived_only`|no|Boolean filter to include only archived contacts| Default: `false`
 |`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name` Default: `created_at`|
 |`sort_direction`|no|Direction of sort_by|`asc`,`desc` Default: `desc`|
 |`page_size`|No|Restrict number of contacts in result|Default: 25|
