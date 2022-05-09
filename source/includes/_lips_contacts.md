@@ -80,11 +80,12 @@ The body of the API response will contain metadata and a JSON array of contact o
 |country| String| country code of the contact|
 |duration| Integer| the phone call duration of the contact|
 |url| String| the recording_url of the contact's call|
-|phone_number|Array|no|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
+|phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
 |first_party_data | boolean | This contact has been flagged as being "first party data"|
 |status | String | Status of the contact|
 |preferred_contact_method | String | Preferred contact method of the contact|
 |archived_at | Datetime | The date of the archived contact|
+|occurrence_time| Datetime | The time the contact was created_at in the upstream system (Capture, Zapier, etc.)|
 |page| Integer| the number of the contacts page|
 |page_size| Integer| the number of the size of the contacts array|
 |total_events| Integer| the number of contacts events|
