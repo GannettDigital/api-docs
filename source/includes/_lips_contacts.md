@@ -33,7 +33,7 @@ When using the GET index method, the results will be filtered using these parame
 |`end_date`|no|Datetime that filters by created_at. If no start_date given acts like `created_at before`|
 |`tags`|no|Array of tag strings that will include any contact with one (or more) of the give tags| Ex. `?tags[]=organic&tags[]=direct_site`|
 |`has_all_tags`|no|Boolean filter that when used with `tags` filter to include only contacts that have all given tags| Default: `false`|
-|`archived_only`|no|Boolean filter to include only archived contacts| Default: `false`
+|`archived`|no|Boolean filter to include ONLY archived contacts| Default: `false`
 |`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name` Default: `created_at`|
 |`sort_direction`|no|Direction of sort_by|`asc`,`desc` Default: `desc`|
 |`page_size`|No|Restrict number of contacts in result|Default: 25|
