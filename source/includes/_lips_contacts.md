@@ -85,7 +85,7 @@ The body of the API response will contain metadata and a JSON array of contact o
 |status | String | Status of the contact|
 |preferred_contact_method | String | Preferred contact method of the contact|
 |archived_at | Datetime | The date of the archived contact|
-|occurrence_time| Datetime | The time the contact was created_at in the upstream system (Capture, Zapier, etc.)|
+|created_at| Datetime | The time the contact was created_at in the upstream system (Capture, Zapier, etc.)|
 |page| Integer| the number of the contacts page|
 |page_size| Integer| the number of the size of the contacts array|
 |total_events| Integer| the number of contacts events|
@@ -132,7 +132,7 @@ The body of the API response will contain metadata and a JSON array of contact o
             "status": null,
             "archived_at": null,
             "first_party_data": false
-            "occurrence_time": "2022-02-23T14:53:03.000Z",
+            "created_at": "2022-02-23T14:53:03.000Z",
             "total_events": 1,
             "total_call": 1,
             "total_chat": 0,
@@ -196,7 +196,7 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
         "status": null,
         "archived_at": null,
         "first_party_data": false
-        "occurrence_time": "2022-02-23T14:53:03.000Z",
+        "created_at": "2022-02-23T14:53:03.000Z",
         "total_events": 1,
         "total_call": 1,
         "total_chat": 0,
