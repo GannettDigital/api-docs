@@ -27,8 +27,8 @@ When using the GET index method, the results will be filtered using these parame
 |`event_params[recording_url]`|no|String that restricts the contacts to one or more based on recording_url|
 |`event_params[phone_numbers]`|no|String that restricts the contacts to one or more based on phone number|
 |`search_term`|no|String (min. length 3) used to search for contacts using a full text search across first_name, last_name, email, and phone number|Ex. `?search_term=202` returns contacts with phone nubmers `(202)-555-5555`, `+1232025678`|
-|`first_char_first_name`|no|String that filters by first character in first name|`#`(starts with a digit) or one of `a-z` (case insensitive)|
-|`first_char_last_name`|no|String that filters by first character in last name|`#`(starts with a digit) or one of `a-z`(case insensitive)|
+|`first_name_char`|no|String that filters by first character in first name|`#`(starts with a digit) or one of `a-z` (case insensitive)|
+|`last_name_char`|no|String that filters by first character in last name|`#`(starts with a digit) or one of `a-z`(case insensitive)|
 |`start_date`|no|Datetime that filters by created_at. If no end_date given acts like `created_at after`|
 |`end_date`|no|Datetime that filters by created_at. If no start_date given acts like `created_at before`|
 |`tags`|no|Array of tag strings that will include any contact with one (or more) of the give tags| Ex. `?tags[]=organic&tags[]=direct_site`|
