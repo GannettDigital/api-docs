@@ -36,7 +36,7 @@ When using the GET index method, the results will be filtered using these parame
 |`archived`|no|Boolean filter to include ONLY archived contacts| Default: `false`
 |`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name` Default: `created_at`|
 |`sort_direction`|no|Direction of sort_by|`asc`,`desc` Default: `desc`|
-|`page_size`|No|Restrict number of contacts in result|Default: 25|
+|`per_page`|No|Restrict number of contacts in result|Default: 25|
 |`page`|No|Specifies which page of results to return|Default: 1|
 
 
