@@ -92,8 +92,8 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/TEST_1?s
 | Field Name | Datatype | Description |
 |---|---|---|
 |walk_ins | Int | Total Walk-ins across date range |
-|cpw | Float | yes | <b>NOTE: The field is Nullable!</b> Cost per walk-in |
-|spend | Float | yes | <b>NOTE: The field is Nullable!</b> Spend |
+|cpw | Float | <b>NOTE: The field is Nullable!</b> Cost per walk-in |
+|spend | Float | <b>NOTE: The field is Nullable!</b> Spend |
 
 ### Conversion Fences
 
