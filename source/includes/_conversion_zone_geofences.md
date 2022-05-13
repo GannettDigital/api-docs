@@ -98,7 +98,7 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/TEST_1?s
 ### Conversion Fences
 
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---
 |name | String | Name |
 |conversion_fence_id | Int | Identifier for Conversion Fence |
 |global_master_campaign_id | Int | MCID for Conversion Fence |
