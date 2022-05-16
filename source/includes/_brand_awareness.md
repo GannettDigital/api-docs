@@ -10,7 +10,7 @@ URI Format:             /client_reports/brand_awareness/[gmaid]?[query_params]
 #### Usage
 Use GET to retrieve information for the Brand Awareness report for a given advertiser.
 
-The data returned will include impressions and clicks for each interval, broken out by campaign type (chat, social, search, display, youtube, geofence, xmedia and email) as well as totals for that interval.  Note that display campaigns with web_publisher_id = 38 will count as facebook campaigns, not display campaigns.
+The data returned will include impressions and clicks for each interval, broken out by campaign type (chat, social, search, display, youtube, xmedia and email) as well as totals for that interval.  Note that display campaigns with web_publisher_id = 38 will count as facebook campaigns, not display campaigns.
 
 Totals across all the intervals are also provided, again broken out by campaign type, but also totals for all campaign types.
 
@@ -98,17 +98,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "emails": 19,
                     "web_events": 13,
                     "leads": 61
-                },
-                "geofence": {
-                    "impressions": 2342,
-                    "clicks": 30,
-                    "walk_ins": 50,
-                    "spend": 50.0,
-                    "calls": 12,
-                    "chats": 13,
-                    "emails": 16,
-                    "web_events": 13,
-                    "leads": 54
                 },
                 "facebook": {
                     "impressions": 2513,
@@ -229,21 +218,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls_connected": 16,
                 "average_call_length": 98.63,
                 "ctr": 1.19
-            },
-            "geofence": {
-                "impressions": 2342,
-                "clicks": 30,
-                "walk_ins": 50,
-                "spend": 50.0,
-                "calls": 12,
-                "chats": 13,
-                "emails": 16,
-                "web_events": 13,
-                "leads": 54,
-                "unique_calls": 12,
-                "calls_connected": 12,
-                "average_call_length": 76.58,
-                "ctr": 1.28
             },
             "facebook": {
                 "impressions": 2513,
