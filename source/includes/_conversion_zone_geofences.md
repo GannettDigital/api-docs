@@ -21,7 +21,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`global_master_campaign_id[]`| no |Restrict results to one or more specific campaigns|
 |`page_size`|No|Restrict number of keywords in result <br><b>Default value: 25</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
-|`sort_by`|No|Specifies what column to sort by.  Valid columns are: `walk_ins`, `conversion_fence_name`, `cpw`, `spend` <br><b>Default value: `walk_ins`</b>|
+|`sort_by`|No|Specifies what column to sort by.  Valid columns are: `walk_ins`, `name`, `cpw`, `spend` <br><b>Default value: `walk_ins`</b>|
 |`sort_dir`|No|Specifies the sort direction.  Can be either `asc` or `desc` <br><b>Default value: `desc`</b>|
 
 
