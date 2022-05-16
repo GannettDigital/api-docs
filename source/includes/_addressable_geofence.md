@@ -114,7 +114,7 @@ https://api.localiqservices.com/client_reports/addressable_geofence/USA_105569?s
 *Addressable Geofence*
 
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---
 |line_item_id | Int | Identifier for Line Item |
 |line_item_name | String | name of Line Item |
 |publisher_plat_zipcode | String | Zip Code |
@@ -129,7 +129,7 @@ https://api.localiqservices.com/client_reports/addressable_geofence/USA_105569?s
 *Conversion Fence*
 
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---
 |name | Int | Name |
 |conversion_fence_id | String | Identifier for Conversion Fence |
 |walk_ins | String | Number of Walk-ins |
