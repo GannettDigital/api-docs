@@ -1,4 +1,4 @@
-## Google Analytics
+## Google Analytics (Universal Analytics)
 
 ### Resource Overview
 
@@ -47,6 +47,7 @@ Can return a second_data_set by using second_start_date and second_end_date para
 |`goal_completions_all`|Total number of completions for all goals defined in the profile.|
 |`goal_conversion_rate_all`|The percentage of sessions which resulted in a conversion to at least one of the goals.|
 |`pageviews`|The total number of pageviews for the property.|
+|`unique_pageviews`|The total number of unique pageviews for the property.|
 |`pageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
 |`avg_time_on_page`|The average time users spent viewing this page or a set of pages.|
 |`avg_page_load_time`|The average time (in seconds) pages from the sample set take to load, from initiation of the pageview (e.g., a click on a page link) to load completion in the browser.|
@@ -159,7 +160,7 @@ Dimension: NthDay, starting with the `start_date` of the report. Format: `YYYY-M
 
 #### Sessions by Month
 
-Dimension: Year/Month, starting with the beginning of the year prior to report end_date year, and going through the last available month of the end_date year.
+Dimension: Year/Month, beginning 24 months prior to the requested start_date parameter.
 
 | Metric | Description |
 |---|---|
