@@ -153,6 +153,7 @@ Dimension: Users' city, derived from their IP addresses or Geographical IDs.
 #### Sessions by Day
 
 Dimension: NthDay, starting with the `start_date` of the report. Format: `YYYY-MM-DD`
+Can return a second_data_set by using second_start_date and second_end_date params.
 
 | Metric | Description |
 |---|---|
