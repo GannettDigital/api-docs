@@ -55,35 +55,27 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 Field|Type|Description
 |---------|--------|--------|
-|type | String|The type of the Contactinteraction. Valid values are Contact,CVT or Touchpoint|
 |visitor_id| String |The visitor id of the contact|
+|type | String|The type of the Contactinteraction. Valid values are Contact,CVT or Touchpoint|
 |sub_type|String|The type of the Contact/Contactinteraction. See below for options|
 |referrer_source | String |The traffic source that generated the Contact/Contactinteraction. See below for options|
+|referrer_type | String | The type of source the Contact/Contactinteraction came from.See below for options|
 |occurrence_time| Datetime | The date and time which this contact interaction occurred|
 |channel|String | The channel that generated the interaction
-|first_name| String | no | first name of the contact|
-|last_name| String | no | last name of the contact|
-|phone_work|yes|string|Normalized phone number of the lead|
-|address1| String | no | address of the contact|
-|city| String | no | city of the contact|
-|state| String | no | state of the contact|
-|postal| String | no | zip code of the contact|
-|email| String | no | email of the contact|
+|first_name| String |First name of the contact|
+|last_name| String |Last name of the contact|
+|phone_work|String|Normalized phone number of the lead|
+|company| String |Company of the contact|
+|display_name| String |The display name of the contact interaction.|
+|title| String | title of the contact|
+|preferred_contact_method| String | preferred contact method of the contact|
+|email| String | email of the contact|
 |master_campaign_id |String|Unique Identifier for Campaign|
 |campaign_name | String | The name of the campaign that this contact interaction is attributed to|
-|WPCID|String |The unique Identifier for web publisher Campaign that attributed to this contact interaction|
-|WPC_name|String |The name of the web publisher Campaign that attributed to this contact interaction|
-|influencing_CID|String| The unique Identifier for Campaign that influenced the contact interaction|
-|influencing_campaign_name|String| Thename of Campaign that influenced the contact interaction|
-|influencing_WPCID|String | The unique Identifier for the web publisher Campaign that influenced the contact interaction|
-|influencing_WPC_name|String | The name of the web publisher Campaign that influenced the contact interaction|
+|influencing_campaign_id|String| The id of Campaign that influenced the contact interaction|
 |page_url| String| The URL that the Contact/Contactinteraction was on when the contact event was generated|
-|referrer_type | Int | The type of source the Contact/Contactinteraction came from.See below for options|
-|referrer_url | String| The URL that the Contact/Contactinteraction came from|
-|chat_transcript|String|Transcript of the chat|
-|call_duration|yes|number|The duration of the call in seconds|
-|call_recording_url|yes|string|The URL address to an audio recording of the call|
-|extra_fields|JSON string|extra fields that may have accompanied a form post|
+|call_recording_url|String|The URL address to an audio recording of the call|
+|time_zone|String|Time zone|
 
 **Event Sub Type**
 Describes the type of event. They are Impression, Call, Chat, Email, Post, Visit, cvt, ChatInitiated, Consent, Facebook and Unavailable.
