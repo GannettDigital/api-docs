@@ -21,13 +21,23 @@ Use GET to retrieve contacts that match the query params.
 ##### Parameters
 When using the GET index method, the results will be filtered using these parameters:
 
-| Parameter | Required | Description |
-|---|---|---|
-|`event_params[recording_url]`|Yes|String that restricts the contacts to one or more based on recording_url|
-|`event_params[phone_numbers]`|Yes|String that restricts the contacts to one or more based on phone number|
+| Parameter | Required | Description | Possible Values
+|---|---|---|---|
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
-|`page_size`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
-|`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
+|`event_params[recording_url]`|no|String that restricts the contacts to one or more based on recording_url|
+|`event_params[phone_numbers]`|no|String that restricts the contacts to one or more based on phone number|
+|`search_term`|no|String (min. length 3) used to search for contacts using a full text search across first_name, last_name, email, and phone number|Ex. `?search_term=202` returns contacts with phone nubmers `(202)-555-5555`, `+1232025678`|
+|`first_name_char`|no|String that filters by first character in first name|`#`(starts with a digit) or one of `a-z` (case insensitive)|
+|`last_name_char`|no|String that filters by first character in last name|`#`(starts with a digit) or one of `a-z`(case insensitive)|
+|`start_date`|no|Datetime that filters by created_at. If no end_date given acts like `created_at after`|
+|`end_date`|no|Datetime that filters by created_at. If no start_date given acts like `created_at before`|
+|`tags`|no|Array of tag strings that will include any contact with one (or more) of the give tags| Ex. `?tags[]=organic&tags[]=direct_site`|
+|`has_all_tags`|no|Boolean filter that when used with `tags` filter to include only contacts that have all given tags| Default: `false`|
+|`archived`|no|Boolean filter to include ONLY archived contacts| Default: `false`
+|`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name` Default: `created_at`|
+|`sort_direction`|no|Direction of sort_by|`asc`,`desc` Default: `desc`|
+|`per_page`|No|Restrict number of contacts in result|Default: 25|
+|`page`|No|Specifies which page of results to return|Default: 1|
 
 
 If the event_params parameter is present, the response will also contain recording_url and duration.
@@ -57,32 +67,33 @@ The body of the API response will contain metadata and a JSON array of contact o
 
 *Contact*
 
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|first_name| String | no | first name of the contact|
-|last_name| String | no | last name of the contact|
-|email| String | no | email of the contact|
-|address1| String | no | address of the contact|
-|address2| String | no | address of the contact|
-|city| String | no | city of the contact|
-|state| String | no | state of the contact|
-|postal| String | no | zip code of the contact|
-|country| String | no | country code of the contact|
-|duration| Integer | no | the phone call duration of the contact|
-|url| String | no | the recording_url of the contact's call|
+| Field Name | Datatype | Description |
+|---|---|---
+|first_name| String| first name of the contact|
+|last_name| String| last name of the contact|
+|email| String| email of the contact|
+|address1| String| address of the contact|
+|address2| String| address of the contact|
+|city| String| city of the contact|
+|state| String| state of the contact|
+|postal| String| zip code of the contact|
+|country| String| country code of the contact|
+|duration| Integer| the phone call duration of the contact|
+|url| String| the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
 |first_party_data | boolean | This contact has been flagged as being "first party data"|
 |status | String | Status of the contact|
 |preferred_contact_method | String | Preferred contact method of the contact|
 |archived_at | Datetime | The date of the archived contact|
-|page| Integer | no | the number of the contacts page|
-|page_size| Integer | no | the number of the size of the contacts array|
-|total_events| Integer | no | the number of contacts events|
-|total_call_event| Integer | no | the number of contacts call events|
-|total_fpd_event| Integer | no | the number of contacts fpd events|
-|total_form_event| Integer | no | the number of contacts form events|
-|total_chat_event| Integer | no | the number of contacts chat events|
-|total_pages| Integer | no | the number of contacts array total pages|
+|created_at| Datetime | The time the contact was created_at in the upstream system (Capture, Zapier, etc.)|
+|page| Integer| the number of the contacts page|
+|page_size| Integer| the number of the size of the contacts array|
+|total_events| Integer| the number of contacts events|
+|total_call_event| Integer| the number of contacts call events|
+|total_fpd_event| Integer| the number of contacts fpd events|
+|total_form_event| Integer| the number of contacts form events|
+|total_chat_event| Integer| the number of contacts chat events|
+|total_pages| Integer| the number of contacts array total pages|
 
 ##### Example Response
 
@@ -121,7 +132,7 @@ The body of the API response will contain metadata and a JSON array of contact o
             "status": null,
             "archived_at": null,
             "first_party_data": false
-            "occurrence_time": "2022-02-23T14:53:03.000Z",
+            "created_at": "2022-02-23T14:53:03.000Z",
             "total_events": 1,
             "total_call": 1,
             "total_chat": 0,
@@ -185,7 +196,7 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
         "status": null,
         "archived_at": null,
         "first_party_data": false
-        "occurrence_time": "2022-02-23T14:53:03.000Z",
+        "created_at": "2022-02-23T14:53:03.000Z",
         "total_events": 1,
         "total_call": 1,
         "total_chat": 0,
