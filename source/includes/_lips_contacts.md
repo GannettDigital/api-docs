@@ -94,6 +94,9 @@ The body of the API response will contain metadata and a JSON array of contact o
 |total_form_event| Integer| the number of contacts form events|
 |total_chat_event| Integer| the number of contacts chat events|
 |total_pages| Integer| the number of contacts array total pages|
+|first_attribution_source| String| the first lead referrer source associated with the contact|
+|first_attribution_type| String| the first lead referrer type associated with the contact (when the referrer source is ORGANIC) and the campaign name associated with the lead (when the referrer source is PAID)|
+|last_lead_event_date| String| the last lead timestamp associated with the contact|
 
 ##### Example Response
 
@@ -137,7 +140,10 @@ The body of the API response will contain metadata and a JSON array of contact o
             "total_call": 1,
             "total_chat": 0,
             "total_form": 0,
-            "total_fpd": 0
+            "total_fpd": 0,
+            "first_attribution_source": "ORGANIC",
+            "first_attribution_type": "SEARCH",
+            "last_lead_event_date": "2021-10-06T06:45:06.000Z"
         }
     ],
     "page": 1,
@@ -201,7 +207,10 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
         "total_call": 1,
         "total_chat": 0,
         "total_form": 0,
-        "total_fpd": 0
+        "total_fpd": 0,
+        "first_attribution_source": "PAID",
+        "first_attribution_type": "SEM | Campaign | Name",
+        "last_lead_event_date": "2021-10-06T06:45:06.000Z"
     }
 }
 ```
