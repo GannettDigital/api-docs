@@ -210,7 +210,9 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
             "pause": 2509,
             "resume": 1327,
             "website_conversions": 2,
-            "walk_ins": 2
+            "walk_ins": 2,
+            "unique_households": 150,
+            "household_frequency": 313.5
         },
         "totals_per_interval": [
             {
@@ -291,6 +293,8 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
 |resume|Integer|Number of Resumed Video Views|
 |website_conversions|Integer|Number of Website Conversions|
 |walk_ins|Integer|Number of Walk Ins|
+|unique_households|Integer|Number of Unique Households|
+|household_frequency|Float|Impressions divided by Unique Households|
 
 <a name="vaintervals"></a>
 **Intervals Object**

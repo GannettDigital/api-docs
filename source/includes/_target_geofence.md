@@ -72,6 +72,9 @@ https://api.localiqservices.com/client_reports/target_geofence/USA_105569?start_
                 "cpw": 0.7
                 "cpm": 0.8, 
                 "spend": 0.9
+                "unique_households": 300,
+                "household_frequency": 26.6
+
             }
         ],
         "target_geofences": [
@@ -105,12 +108,14 @@ https://api.localiqservices.com/client_reports/target_geofence/USA_105569?start_
 |impressions | Int | Total impressions |
 |ctr | Float | Overall Click-through Rate |
 |walk_ins | Float | Total Walk-ins |
-|addressable_geofences | Int | yes | <b>NOTE: The field is Nullable!</b> Total count of Addressable Geofences |
+|target_geofences | Int | Total count of Target Geofences grouped by plat_zipcode |
+| unique_households | Int | Total count of Unique Households |
+| household_frequency | Float | Impressions divided by Unique Households |
 
 *Target Geofence*
 
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---|
 |name | String | Name of Geofence <b>(will be null for addressable campaigns)</b> |
 |publisher_plat_zipcode | String | Zip Code <b>(will be null for regular geofence campaigns)</b> |
 |publisher_plat_city | String | City <b>(will be null for regular geofence campaigns)</b> |
