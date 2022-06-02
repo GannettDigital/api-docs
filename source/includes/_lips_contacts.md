@@ -35,7 +35,7 @@ When using the GET index method, the results will be filtered using these parame
 |`has_all_tags`|no|Boolean filter that when used with `tags` filter to include only contacts that have all given tags| Default: `false`|
 |`archived`|no|Boolean filter to include ONLY archived contacts| Default: `false`
 |`status`|no|String that filters by exact match of status|
-|`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name` Default: `created_at`|
+|`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name`, `total_events` Default: `created_at`|
 |`sort_direction`|no|Direction of sort_by|`asc`,`desc` Default: `desc`|
 |`per_page`|No|Restrict number of contacts in result|Default: 25|
 |`page`|No|Specifies which page of results to return|Default: 1|
