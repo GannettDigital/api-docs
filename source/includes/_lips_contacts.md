@@ -26,7 +26,7 @@ When using the GET index method, the results will be filtered using these parame
 |`global_master_advertiser_id`|Yes|Restrict results to one or more specific gmaid|
 |`event_params[recording_url]`|no|String that restricts the contacts to one or more based on recording_url|
 |`event_params[phone_numbers]`|no|String that restricts the contacts to one or more based on phone number|
-|`search_term`|no|String (min. length 3) used to search for contacts using a full text search across first_name, last_name, email, and phone number|Ex. `?search_term=202` returns contacts with phone nubmers `(202)-555-5555`, `+1232025678`|
+|`search_term`|no|String used to search for contacts using a full text search across first_name, last_name, email, and phone number|Ex. `?search_term=202` returns contacts with phone nubmers `(202)-555-5555`, `+1232025678`|
 |`first_name_char`|no|String that filters by first character in first name|`#`(starts with a digit) or one of `a-z` (case insensitive)|
 |`last_name_char`|no|String that filters by first character in last name|`#`(starts with a digit) or one of `a-z`(case insensitive)|
 |`start_date`|no|Datetime that filters by created_at. If no end_date given acts like `created_at after`|
@@ -34,6 +34,7 @@ When using the GET index method, the results will be filtered using these parame
 |`tags`|no|Array of tag strings that will include any contact with one (or more) of the give tags| Ex. `?tags[]=organic&tags[]=direct_site`|
 |`has_all_tags`|no|Boolean filter that when used with `tags` filter to include only contacts that have all given tags| Default: `false`|
 |`archived`|no|Boolean filter to include ONLY archived contacts| Default: `false`
+|`status`|no|String that filters by exact match of status|
 |`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name` Default: `created_at`|
 |`sort_direction`|no|Direction of sort_by|`asc`,`desc` Default: `desc`|
 |`per_page`|No|Restrict number of contacts in result|Default: 25|
