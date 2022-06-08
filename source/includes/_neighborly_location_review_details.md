@@ -5,6 +5,7 @@
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/neighborly/location/[gmaid]/review_details?[query_params]
+| POST | /client_reports/neighborly/location |
 
 #### API Name: neighborly_location_review_details
 #### Usage
@@ -77,4 +78,30 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly
 |total_pages|Integer|How many pages are there left. |
 |details|Array|Review details for specified locations. [Details Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
 
+### POST
 
+Use POST with a JSON payload to create/update Neighborly location for a given advertiser.
+
+#### Examples
+
+```
+curl --location --request POST 'http://localhost:3001/client_reports/neighborly/location' \
+--header 'Authorization: reachanalyticsreportingservicetoken' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{apigee_key}}' \
+--header 'email: email@test.com' \
+--data-raw '{
+    "location_id": 23,
+    "gmaid": "TEST_2"
+}'
+```
+
+#### Example Response
+```javascript
+{
+    "location_id": 23,
+    "maid": 2,
+    "platform_id": 7,
+    "created_at": "2022-06-08T11:06:42.000Z",
+    "updated_at": "2022-06-08T11:38:15.000Z"
+}
