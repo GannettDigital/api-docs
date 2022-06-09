@@ -5,6 +5,7 @@
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/neighborly/location/[gmaid]/review_details?[query_params]
+| GET | /client_reports/neighborly/location/[query_params]
 | POST | /client_reports/neighborly/location |
 
 #### API Name: neighborly_location_review_details
@@ -77,6 +78,56 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly
 |page_size|Integer|The number of the elements in a page (request).|
 |total_pages|Integer|How many pages are there left. |
 |details|Array|Review details for specified locations. [Details Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
+
+
+#### Parameters
+
+When using the GET method, the results can be filtered using these parameters:
+
+| Parameter | Required | Description |
+|---|---|---|
+|page|No|Results page (defaults to 1)|
+|per_page|No|Results per page (defaults to 25)|
+|start_date|Yes|Restricts the results to those occurring on or after this date.|
+|end_date|Yes|Restricts the results to those occurring on or before this date.|
+|gmaid|no|Restricts the results to those occurring on gmaid.|
+
+#### Examples
+
+```
+curl --location --request GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly/location?start_date=06-06-2022&end_date=09-06-2022' \
+--header 'Authorization: r...' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{apigee_key}}' \
+--header 'email: email@test.com'
+```
+
+#### Example Response
+```javascript
+[
+    {
+        "location_id": 4,
+        "maid": 1,
+        "platform_id": 7,
+        "created_at": "2022-06-08T11:04:57.000Z",
+        "updated_at": "2022-06-08T11:06:28.000Z"
+    },
+    {
+        "location_id": 23,
+        "maid": 2,
+        "platform_id": 7,
+        "created_at": "2022-06-08T11:06:42.000Z",
+        "updated_at": "2022-06-08T11:38:15.000Z"
+    },
+    {
+        "location_id": 69,
+        "maid": 3,
+        "platform_id": 7,
+        "created_at": "2022-06-08T10:59:47.000Z",
+        "updated_at": "2022-06-08T10:59:47.000Z"
+    }
+]
+```
 
 ### POST
 
