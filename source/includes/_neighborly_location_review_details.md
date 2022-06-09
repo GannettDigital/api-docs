@@ -5,8 +5,8 @@
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/neighborly/location/[gmaid]/review_details?[query_params]
-| GET | /client_reports/neighborly/location/[query_params]
-| POST | /client_reports/neighborly/location |
+| GET | /client_reports/neighborly/locations/[query_params]
+| POST | /client_reports/neighborly/locations |
 
 #### API Name: neighborly_location_review_details
 #### Usage
@@ -95,7 +95,7 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl --location --request GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly/location?start_date=06-06-2022&end_date=09-06-2022' \
+curl --location --request GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly/locations?start_date=06-06-2022&end_date=09-06-2022' \
 --header 'Authorization: r...' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: {{apigee_key}}' \
@@ -136,7 +136,7 @@ Use POST with a JSON payload to create/update Neighborly location for a given ad
 #### Examples
 
 ```
-curl --location --request POST 'http://localhost:3001/client_reports/neighborly/location' \
+curl --location --request POST 'http://localhost:3001/client_reports/neighborly/locations' \
 --header 'Authorization: reachanalyticsreportingservicetoken' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: {{apigee_key}}' \
