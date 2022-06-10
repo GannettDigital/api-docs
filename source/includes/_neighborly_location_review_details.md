@@ -88,14 +88,12 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |page|No|Results page (defaults to 1)|
 |per_page|No|Results per page (defaults to 25)|
-|start_date|Yes|Restricts the results to those occurring on or after this date.|
-|end_date|Yes|Restricts the results to those occurring on or before this date.|
 |gmaid|no|Restricts the results to those occurring on gmaid.|
 
 #### Examples
 
 ```
-curl --location --request GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly/locations?start_date=06-06-2022&end_date=09-06-2022' \
+curl --location --request GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly/locations' \
 --header 'Authorization: r...' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: {{apigee_key}}' \
