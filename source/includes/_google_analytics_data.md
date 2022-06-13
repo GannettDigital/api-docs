@@ -170,7 +170,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
 ```javascript
 {
     "report_type": "google_analytics_data",
-    "report_date": "2022-06-01",
+    "report_date": "2022-06-07",
     "start_date": "2022-05-28",
     "end_date": "2022-05-30",
     "global_master_advertiser_id": "TEST_1",
@@ -184,46 +184,24 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "website_traffic",
                 "data": [
                     {
-                        "dimension": "date_range_1",
-                        "new_users": "148",
-                        "bounce_rate": "148",
-                        "average_session_duration": "148",
-                        "screenpageviews": "288",
-                        "screenpageviews_per_session": "288",
-                        "total_users": "288",
-                        "sessions": "288"
-                    },
-                    {
-                        "dimension": "date_range_0",
-                        "new_users": "66",
-                        "bounce_rate": "66",
-                        "average_session_duration": "66",
-                        "screenpageviews": "129",
-                        "screenpageviews_per_session": "129",
-                        "total_users": "129",
-                        "sessions": "129"
+                        "new_users": "76",
+                        "bounce_rate": "0.51086956521739135",
+                        "average_session_duration": "105.04572230434783",
+                        "screenpageviews": "143",
+                        "screenpageviews_per_session": "1.5543478260869565",
+                        "total_users": "81",
+                        "sessions": "92"
                     }
                 ],
                 "second_data_set": [
                     {
-                        "dimension": "date_range_1",
-                        "new_users": "0.37142857142857144",
-                        "bounce_rate": "0.37142857142857144",
-                        "average_session_duration": "0.37142857142857144",
-                        "screenpageviews": "1.6457142857142857",
-                        "screenpageviews_per_session": "1.6457142857142857",
-                        "total_users": "1.6457142857142857",
-                        "sessions": "1.6457142857142857"
-                    },
-                    {
-                        "dimension": "date_range_0",
-                        "new_users": "0.46835443037974683",
-                        "bounce_rate": "0.46835443037974683",
-                        "average_session_duration": "0.46835443037974683",
-                        "screenpageviews": "1.6329113924050633",
-                        "screenpageviews_per_session": "1.6329113924050633",
-                        "total_users": "1.6329113924050633",
-                        "sessions": "1.6329113924050633"
+                        "new_users": "110",
+                        "bounce_rate": "0.35658914728682173",
+                        "average_session_duration": "127.86980190697675",
+                        "screenpageviews": "216",
+                        "screenpageviews_per_session": "1.6744186046511629",
+                        "total_users": "117",
+                        "sessions": "129"
                     }
                 ]
             },
@@ -232,32 +210,14 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "data": [
                     {
                         "dimension": "mobile",
-                        "dimension2": "date_range_1",
-                        "sessions": "111"
+                        "sessions": "80"
                     },
                     {
                         "dimension": "desktop",
-                        "dimension2": "date_range_1",
-                        "sessions": "61"
-                    },
-                    {
-                        "dimension": "mobile",
-                        "dimension2": "date_range_0",
-                        "sessions": "51"
-                    },
-                    {
-                        "dimension": "desktop",
-                        "dimension2": "date_range_0",
-                        "sessions": "27"
+                        "sessions": "48"
                     },
                     {
                         "dimension": "tablet",
-                        "dimension2": "date_range_1",
-                        "sessions": "3"
-                    },
-                    {
-                        "dimension": "tablet",
-                        "dimension2": "date_range_0",
                         "sessions": "1"
                     }
                 ]
@@ -266,774 +226,166 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "pages_by_pageview",
                 "data": [
                     {
-                        "dimension": "/services/door-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "65",
-                        "bounce_rate": "65",
-                        "screenpageviews": "65",
-                        "user_engagement_duration": "65"
+                        "dimension": "/",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
+                        "sessions": "23",
+                        "bounce_rate": "0.60869565217391308",
+                        "screenpageviews": "27",
+                        "user_engagement_duration": "572"
                     },
                     {
-                        "dimension": "/",
-                        "dimension2": "date_range_1",
-                        "sessions": "66",
-                        "bounce_rate": "66",
-                        "screenpageviews": "66",
-                        "user_engagement_duration": "66"
+                        "dimension": "/services/door-screen-repair/",
+                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
+                        "sessions": "31",
+                        "bounce_rate": "0.45161290322580644",
+                        "screenpageviews": "33",
+                        "user_engagement_duration": "997"
                     },
                     {
                         "dimension": "/services/window-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "31",
-                        "bounce_rate": "31",
-                        "screenpageviews": "31",
-                        "user_engagement_duration": "31"
+                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
+                        "sessions": "25",
+                        "bounce_rate": "0.44",
+                        "screenpageviews": "29",
+                        "user_engagement_duration": "899"
                     },
                     {
                         "dimension": "/pricing/",
-                        "dimension2": "date_range_1",
-                        "sessions": "26",
-                        "bounce_rate": "26",
-                        "screenpageviews": "26",
-                        "user_engagement_duration": "26"
+                        "dimension2": "Request Pricing - Northridge Screen Services",
+                        "sessions": "10",
+                        "bounce_rate": "1",
+                        "screenpageviews": "10",
+                        "user_engagement_duration": "497"
                     },
                     {
-                        "dimension": "/",
-                        "dimension2": "date_range_0",
-                        "sessions": "23",
-                        "bounce_rate": "23",
-                        "screenpageviews": "23",
-                        "user_engagement_duration": "23"
+                        "dimension": "/areas/",
+                        "dimension2": "Areas Served - Northridge Screen Services",
+                        "sessions": "12",
+                        "bounce_rate": "0.75",
+                        "screenpageviews": "12",
+                        "user_engagement_duration": "367"
                     },
                     {
-                        "dimension": "/services/door-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "24",
-                        "bounce_rate": "24",
-                        "screenpageviews": "24",
+                        "dimension": "/services/screen-mesh-replacement/",
+                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
+                        "sessions": "10",
+                        "bounce_rate": "0.9",
+                        "screenpageviews": "10",
+                        "user_engagement_duration": "20"
+                    },
+                    {
+                        "dimension": "/products/sliding-screen-doors/",
+                        "dimension2": "Sliding Screen Door Products - Northridge Screen Services",
+                        "sessions": "1",
+                        "bounce_rate": "1",
+                        "screenpageviews": "1",
+                        "user_engagement_duration": "41"
+                    },
+                    {
+                        "dimension": "/about/",
+                        "dimension2": "About Us - Northridge Screen Services",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "screenpageviews": "2",
                         "user_engagement_duration": "24"
                     },
                     {
-                        "dimension": "/services/window-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "22",
-                        "bounce_rate": "22",
-                        "screenpageviews": "22",
-                        "user_engagement_duration": "22"
-                    },
-                    {
-                        "dimension": "/areas/",
-                        "dimension2": "date_range_1",
-                        "sessions": "18",
-                        "bounce_rate": "18",
-                        "screenpageviews": "18",
-                        "user_engagement_duration": "18"
-                    },
-                    {
-                        "dimension": "/areas/",
-                        "dimension2": "date_range_0",
-                        "sessions": "11",
-                        "bounce_rate": "11",
-                        "screenpageviews": "11",
-                        "user_engagement_duration": "11"
-                    },
-                    {
-                        "dimension": "/pricing/",
-                        "dimension2": "date_range_0",
-                        "sessions": "10",
-                        "bounce_rate": "10",
-                        "screenpageviews": "10",
-                        "user_engagement_duration": "10"
-                    },
-                    {
-                        "dimension": "/services/screen-mesh-replacement/",
-                        "dimension2": "date_range_1",
-                        "sessions": "9",
-                        "bounce_rate": "9",
-                        "screenpageviews": "9",
-                        "user_engagement_duration": "9"
-                    },
-                    {
-                        "dimension": "/services/screen-mesh-replacement/",
-                        "dimension2": "date_range_0",
-                        "sessions": "8",
-                        "bounce_rate": "8",
-                        "screenpageviews": "8",
-                        "user_engagement_duration": "8"
-                    },
-                    {
-                        "dimension": "/products/sliding-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "5",
-                        "bounce_rate": "5",
-                        "screenpageviews": "5",
-                        "user_engagement_duration": "5"
-                    },
-                    {
-                        "dimension": "/about/",
-                        "dimension2": "date_range_1",
-                        "sessions": "6",
-                        "bounce_rate": "6",
-                        "screenpageviews": "6",
-                        "user_engagement_duration": "6"
-                    },
-                    {
                         "dimension": "/contact/",
-                        "dimension2": "date_range_1",
-                        "sessions": "6",
-                        "bounce_rate": "6",
-                        "screenpageviews": "6",
-                        "user_engagement_duration": "6"
-                    },
-                    {
-                        "dimension": "/products/pet-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "5",
-                        "bounce_rate": "5",
-                        "screenpageviews": "5",
-                        "user_engagement_duration": "5"
+                        "dimension2": "Contact Us - Northridge Screen Services",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "screenpageviews": "2",
+                        "user_engagement_duration": "346"
                     },
                     {
                         "dimension": "/pricing/thanks/",
-                        "dimension2": "date_range_0",
+                        "dimension2": "Thank You - Northridge Screen Services",
                         "sessions": "5",
-                        "bounce_rate": "5",
-                        "screenpageviews": "5",
-                        "user_engagement_duration": "5"
-                    },
-                    {
-                        "dimension": "/products/security-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "3",
-                        "bounce_rate": "3",
-                        "screenpageviews": "3",
-                        "user_engagement_duration": "3"
-                    },
-                    {
-                        "dimension": "/products/swinging-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "3",
-                        "bounce_rate": "3",
-                        "screenpageviews": "3",
-                        "user_engagement_duration": "3"
-                    },
-                    {
-                        "dimension": "/areas/encino-screen-contractor/",
-                        "dimension2": "date_range_1",
-                        "sessions": "2",
-                        "bounce_rate": "2",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "2"
-                    },
-                    {
-                        "dimension": "/products/",
-                        "dimension2": "date_range_0",
-                        "sessions": "2",
-                        "bounce_rate": "2",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "2"
-                    },
-                    {
-                        "dimension": "/products/swinging-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "3",
-                        "bounce_rate": "3",
-                        "screenpageviews": "3",
-                        "user_engagement_duration": "3"
-                    },
-                    {
-                        "dimension": "/about/",
-                        "dimension2": "date_range_0",
-                        "sessions": "2",
-                        "bounce_rate": "2",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "2"
-                    },
-                    {
-                        "dimension": "/contact/",
-                        "dimension2": "date_range_0",
-                        "sessions": "2",
-                        "bounce_rate": "2",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "2"
-                    },
-                    {
-                        "dimension": "/pricing/thanks/",
-                        "dimension2": "date_range_1",
-                        "sessions": "2",
-                        "bounce_rate": "2",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "2"
-                    },
-                    {
-                        "dimension": "/areas/burbank-screen-contractor/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
                         "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/woodland-hills-sreen-service/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/simi-valley-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "2",
-                        "bounce_rate": "2",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "2"
-                    },
-                    {
-                        "dimension": "/areas/agoura-hills-screen-company/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/encino-screen-contractor/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/sherman-oaks-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/thousand-oaks-screen-services/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/contact/thanks/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/contact/thanks/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/pet-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/sliding-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/services/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/services/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/services/window-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/agoura-hills-screen-company/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/burbank-screen-contractor/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/sherman-oaks-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/simi-valley-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/thousand-oaks-screen-services/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/woodland-hills-sreen-service/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/products/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/products/security-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/services/window-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
+                        "screenpageviews": "4",
+                        "user_engagement_duration": "13"
                     }
                 ],
                 "second_data_set": [
                     {
-                        "dimension": "/services/door-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0.24615384615384617",
-                        "bounce_rate": "0.24615384615384617",
-                        "screenpageviews": "0.24615384615384617",
-                        "user_engagement_duration": "0.24615384615384617"
-                    },
-                    {
                         "dimension": "/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0.54545454545454541",
-                        "bounce_rate": "0.54545454545454541",
-                        "screenpageviews": "0.54545454545454541",
-                        "user_engagement_duration": "0.54545454545454541"
-                    },
-                    {
-                        "dimension": "/services/window-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0.35483870967741937",
-                        "bounce_rate": "0.35483870967741937",
-                        "screenpageviews": "0.35483870967741937",
-                        "user_engagement_duration": "0.35483870967741937"
-                    },
-                    {
-                        "dimension": "/pricing/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0.92307692307692313",
-                        "bounce_rate": "0.92307692307692313",
-                        "screenpageviews": "0.92307692307692313",
-                        "user_engagement_duration": "0.92307692307692313"
-                    },
-                    {
-                        "dimension": "/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0.60869565217391308",
-                        "bounce_rate": "0.60869565217391308",
-                        "screenpageviews": "0.60869565217391308",
-                        "user_engagement_duration": "0.60869565217391308"
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
+                        "sessions": "49",
+                        "bounce_rate": "0.51020408163265307",
+                        "screenpageviews": "58",
+                        "user_engagement_duration": "1859"
                     },
                     {
                         "dimension": "/services/door-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0.33333333333333331",
-                        "bounce_rate": "0.33333333333333331",
-                        "screenpageviews": "0.33333333333333331",
-                        "user_engagement_duration": "0.33333333333333331"
+                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
+                        "sessions": "43",
+                        "bounce_rate": "0.23255813953488372",
+                        "screenpageviews": "47",
+                        "user_engagement_duration": "1443"
                     },
                     {
                         "dimension": "/services/window-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0.40909090909090912",
-                        "bounce_rate": "0.40909090909090912",
-                        "screenpageviews": "0.40909090909090912",
-                        "user_engagement_duration": "0.40909090909090912"
-                    },
-                    {
-                        "dimension": "/areas/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0.83333333333333337",
-                        "bounce_rate": "0.83333333333333337",
-                        "screenpageviews": "0.83333333333333337",
-                        "user_engagement_duration": "0.83333333333333337"
-                    },
-                    {
-                        "dimension": "/areas/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0.81818181818181823",
-                        "bounce_rate": "0.81818181818181823",
-                        "screenpageviews": "0.81818181818181823",
-                        "user_engagement_duration": "0.81818181818181823"
+                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
+                        "sessions": "24",
+                        "bounce_rate": "0.375",
+                        "screenpageviews": "27",
+                        "user_engagement_duration": "958"
                     },
                     {
                         "dimension": "/pricing/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
+                        "dimension2": "Request Pricing - Northridge Screen Services",
+                        "sessions": "18",
+                        "bounce_rate": "0.88888888888888884",
+                        "screenpageviews": "22",
+                        "user_engagement_duration": "1096"
+                    },
+                    {
+                        "dimension": "/areas/",
+                        "dimension2": "Areas Served - Northridge Screen Services",
+                        "sessions": "17",
+                        "bounce_rate": "0.82352941176470584",
+                        "screenpageviews": "16",
+                        "user_engagement_duration": "444"
                     },
                     {
                         "dimension": "/services/screen-mesh-replacement/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
+                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
+                        "sessions": "7",
                         "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/services/screen-mesh-replacement/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0.875",
-                        "bounce_rate": "0.875",
-                        "screenpageviews": "0.875",
-                        "user_engagement_duration": "0.875"
+                        "screenpageviews": "7",
+                        "user_engagement_duration": "110"
                     },
                     {
                         "dimension": "/products/sliding-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
+                        "dimension2": "Sliding Screen Door Products - Northridge Screen Services",
+                        "sessions": "4",
                         "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
+                        "screenpageviews": "6",
+                        "user_engagement_duration": "257"
                     },
                     {
                         "dimension": "/about/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0.83333333333333337",
-                        "bounce_rate": "0.83333333333333337",
-                        "screenpageviews": "0.83333333333333337",
-                        "user_engagement_duration": "0.83333333333333337"
-                    },
-                    {
-                        "dimension": "/contact/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/pet-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0.8",
+                        "dimension2": "About Us - Northridge Screen Services",
+                        "sessions": "5",
                         "bounce_rate": "0.8",
-                        "screenpageviews": "0.8",
-                        "user_engagement_duration": "0.8"
-                    },
-                    {
-                        "dimension": "/pricing/thanks/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/security-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/swinging-screen-doors/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/encino-screen-contractor/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/swinging-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/about/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
+                        "screenpageviews": "5",
+                        "user_engagement_duration": "141"
                     },
                     {
                         "dimension": "/contact/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
+                        "dimension2": "Contact Us - Northridge Screen Services",
+                        "sessions": "5",
                         "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
+                        "screenpageviews": "5",
+                        "user_engagement_duration": "70"
                     },
                     {
                         "dimension": "/pricing/thanks/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
+                        "dimension2": "Thank You - Northridge Screen Services",
+                        "sessions": "2",
                         "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/burbank-screen-contractor/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/woodland-hills-sreen-service/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/simi-valley-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/agoura-hills-screen-company/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/encino-screen-contractor/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/sherman-oaks-screen-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/thousand-oaks-screen-services/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/contact/thanks/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/contact/thanks/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/pet-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/products/sliding-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/services/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/services/",
-                        "dimension2": "date_range_1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/services/window-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "1"
-                    },
-                    {
-                        "dimension": "/areas/agoura-hills-screen-company/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/burbank-screen-contractor/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/sherman-oaks-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/simi-valley-screen-repair/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/thousand-oaks-screen-services/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/areas/woodland-hills-sreen-service/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/products/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/products/security-screen-doors/",
-                        "dimension2": "date_range_0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
-                    },
-                    {
-                        "dimension": "/services/window-repair/",
-                        "dimension2": "date_range_1",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "screenpageviews": "0",
-                        "user_engagement_duration": "0"
+                        "screenpageviews": "2",
+                        "user_engagement_duration": "18"
                     }
                 ]
             },
@@ -1042,342 +394,300 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "data": [
                     {
                         "dimension": "Paid Other",
-                        "dimension2": "date_range_1",
-                        "new_users": "93",
-                        "total_users": "93",
-                        "sessions": "93",
-                        "bounce_rate": "93",
-                        "average_session_duration": "93",
-                        "screenpageviews_per_session": "93"
-                    },
-                    {
-                        "dimension": "Paid Other",
-                        "dimension2": "date_range_0",
-                        "new_users": "43",
-                        "total_users": "43",
-                        "sessions": "43",
-                        "bounce_rate": "43",
-                        "average_session_duration": "43",
-                        "screenpageviews_per_session": "43"
+                        "new_users": "53",
+                        "total_users": "57",
+                        "sessions": "65",
+                        "bounce_rate": "0.46153846153846156",
+                        "average_session_duration": "92.679046815384609",
+                        "screenpageviews_per_session": "1.5538461538461539"
                     },
                     {
                         "dimension": "Direct",
-                        "dimension2": "date_range_1",
-                        "new_users": "37",
-                        "total_users": "37",
-                        "sessions": "37",
-                        "bounce_rate": "37",
-                        "average_session_duration": "37",
-                        "screenpageviews_per_session": "37"
-                    },
-                    {
-                        "dimension": "Organic Search",
-                        "dimension2": "date_range_1",
-                        "new_users": "17",
-                        "total_users": "17",
-                        "sessions": "17",
-                        "bounce_rate": "17",
-                        "average_session_duration": "17",
-                        "screenpageviews_per_session": "17"
-                    },
-                    {
-                        "dimension": "Organic Search",
-                        "dimension2": "date_range_0",
-                        "new_users": "12",
-                        "total_users": "12",
-                        "sessions": "12",
-                        "bounce_rate": "12",
-                        "average_session_duration": "12",
-                        "screenpageviews_per_session": "12"
-                    },
-                    {
-                        "dimension": "Direct",
-                        "dimension2": "date_range_0",
                         "new_users": "10",
                         "total_users": "10",
                         "sessions": "10",
-                        "bounce_rate": "10",
-                        "average_session_duration": "10",
-                        "screenpageviews_per_session": "10"
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "Organic Search",
+                        "new_users": "12",
+                        "total_users": "14",
+                        "sessions": "16",
+                        "bounce_rate": "0.375",
+                        "average_session_duration": "227.5042755625",
+                        "screenpageviews_per_session": "1.9375"
                     },
                     {
                         "dimension": "Organic Social",
-                        "dimension2": "date_range_0",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Organic Social",
-                        "dimension2": "date_range_1",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Unassigned",
-                        "dimension2": "date_range_0",
-                        "new_users": "0",
-                        "total_users": "0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
                         "average_session_duration": "0",
-                        "screenpageviews_per_session": "0"
-                    },
-                    {
-                        "dimension": "Unassigned",
-                        "dimension2": "date_range_1",
-                        "new_users": "0",
-                        "total_users": "0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "0"
+                        "screenpageviews_per_session": "1"
                     }
                 ],
                 "second_data_set": [
                     {
                         "dimension": "Paid Other",
-                        "dimension2": "date_range_1",
-                        "new_users": "98",
-                        "total_users": "98",
-                        "sessions": "98",
-                        "bounce_rate": "98",
-                        "average_session_duration": "98",
-                        "screenpageviews_per_session": "98"
-                    },
-                    {
-                        "dimension": "Paid Other",
-                        "dimension2": "date_range_0",
-                        "new_users": "47",
-                        "total_users": "47",
-                        "sessions": "47",
-                        "bounce_rate": "47",
-                        "average_session_duration": "47",
-                        "screenpageviews_per_session": "47"
+                        "new_users": "66",
+                        "total_users": "70",
+                        "sessions": "78",
+                        "bounce_rate": "0.28205128205128205",
+                        "average_session_duration": "101.82979943589743",
+                        "screenpageviews_per_session": "1.5897435897435896"
                     },
                     {
                         "dimension": "Direct",
-                        "dimension2": "date_range_1",
-                        "new_users": "39",
-                        "total_users": "39",
-                        "sessions": "39",
-                        "bounce_rate": "39",
-                        "average_session_duration": "39",
-                        "screenpageviews_per_session": "39"
+                        "new_users": "28",
+                        "total_users": "31",
+                        "sessions": "33",
+                        "bounce_rate": "0.5757575757575758",
+                        "average_session_duration": "132.04673684848484",
+                        "screenpageviews_per_session": "1.6363636363636365"
                     },
                     {
                         "dimension": "Organic Search",
-                        "dimension2": "date_range_1",
-                        "new_users": "19",
-                        "total_users": "19",
-                        "sessions": "19",
-                        "bounce_rate": "19",
-                        "average_session_duration": "19",
-                        "screenpageviews_per_session": "19"
-                    },
-                    {
-                        "dimension": "Organic Search",
-                        "dimension2": "date_range_0",
-                        "new_users": "14",
-                        "total_users": "14",
-                        "sessions": "14",
-                        "bounce_rate": "14",
-                        "average_session_duration": "14",
-                        "screenpageviews_per_session": "14"
-                    },
-                    {
-                        "dimension": "Direct",
-                        "dimension2": "date_range_0",
-                        "new_users": "11",
-                        "total_users": "11",
-                        "sessions": "11",
-                        "bounce_rate": "11",
-                        "average_session_duration": "11",
-                        "screenpageviews_per_session": "11"
+                        "new_users": "15",
+                        "total_users": "15",
+                        "sessions": "17",
+                        "bounce_rate": "0.23529411764705882",
+                        "average_session_duration": "246.76104552941177",
+                        "screenpageviews_per_session": "2.1764705882352939"
                     },
                     {
                         "dimension": "Organic Social",
-                        "dimension2": "date_range_0",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Organic Social",
-                        "dimension2": "date_range_1",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Unassigned",
-                        "dimension2": "date_range_0",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Unassigned",
-                        "dimension2": "date_range_1",
-                        "new_users": "0",
-                        "total_users": "0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
                         "average_session_duration": "0",
-                        "screenpageviews_per_session": "0"
+                        "screenpageviews_per_session": "1"
                     }
                 ]
             },
             {
                 "type": "user_type",
-                "data": {
-                    "new_users": "66"
-                }
+                "data": [
+                    {
+                        "new_users": "76",
+                        "total_users": "81"
+                    }
+                ]
             },
             {
                 "type": "top_landing_pages",
                 "data": [
                     {
                         "dimension": "/",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
                         "new_users": "18",
-                        "total_users": "18",
-                        "sessions": "18",
-                        "bounce_rate": "18",
-                        "average_session_duration": "18",
-                        "screenpageviews_per_session": "18"
+                        "total_users": "20",
+                        "sessions": "20",
+                        "bounce_rate": "0.6",
+                        "average_session_duration": "68.4443926",
+                        "screenpageviews_per_session": "1.2"
                     },
                     {
                         "dimension": "/services/screen-mesh-replacement/",
+                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
                         "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "total_users": "2",
+                        "sessions": "7",
+                        "bounce_rate": "0.8571428571428571",
+                        "average_session_duration": "12.634247428571427",
                         "screenpageviews_per_session": "1"
                     },
                     {
-                        "dimension": "(not set)",
-                        "new_users": "0",
-                        "total_users": "0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "0"
-                    },
-                    {
                         "dimension": "/services/door-screen-repair/?scid=2231462&kw=926107&pub_cr_id=596522195991&device=m&network=g&targetid=kwd-112891863&loc_interest_ms=&loc_physical_ms=9031161&tc=EAIaIQobChMI1euC48yD-AIVcMLCBB2LpglGEAAYAiAAEgKU_PD_BwE&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
+                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
                         "new_users": "2",
                         "total_users": "2",
                         "sessions": "2",
-                        "bounce_rate": "2",
-                        "average_session_duration": "2",
-                        "screenpageviews_per_session": "2"
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1"
                     },
                     {
                         "dimension": "/products/swinging-screen-doors/",
+                        "dimension2": "Swinging Screen Door Products - Northridge Screen Services",
+                        "new_users": "1",
+                        "total_users": "2",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "/services/door-screen-repair/?scid=2231462&pub_cr_id=596522195991&rl_sitelink=1907125&device=m&network=g&targetid=kwd-112891863&loc_interest_ms=&loc_physical_ms=9030953&tc=Cj0KCQjw1tGUBhDXARIsAIJx01mL8Dbb1HTX6-eVPqxddmnrK6AO3PsdY24CWUUj29MFQjA0pnzXCUMaAgvPEALw_wcB&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
+                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
                         "new_users": "1",
                         "total_users": "1",
-                        "sessions": "1",
+                        "sessions": "2",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "average_session_duration": "0.7840265",
                         "screenpageviews_per_session": "1"
                     },
                     {
                         "dimension": "/services/window-screen-repair/?scid=2231462&kw=1908356&pub_cr_id=596522195901&device=m&network=g&targetid=kwd-26060426&loc_interest_ms=&loc_physical_ms=9030970&tc=Cj0KCQjw1tGUBhDXARIsAIJx01k09V_bujF5sEFTIfT8HFYILWvb87AGCOsqPPlpXUz8jKBdhkGPTBwaAifJEALw_wcB&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
+                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
                         "new_users": "1",
                         "total_users": "1",
-                        "sessions": "1",
+                        "sessions": "2",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "average_session_duration": "0",
                         "screenpageviews_per_session": "1"
                     },
                     {
                         "dimension": "/areas/",
+                        "dimension2": "Areas Served - Northridge Screen Services",
                         "new_users": "0",
-                        "total_users": "0",
-                        "sessions": "0",
-                        "bounce_rate": "0",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "0"
+                        "total_users": "2",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "average_session_duration": "163.4419075",
+                        "screenpageviews_per_session": "1"
                     },
                     {
                         "dimension": "/?scid=2231460&kw=7376897&pub_cr_id=77378299623496&network=o&device=c&targetid=kwd-77378358683618&loc_interest_ms=&loc_physical_ms=79874&tc=e791f25cb8fc1abd768790cf62c16fc4&rl_key=b2b54ebcc6535aaa4606a0b5a9e75c34",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "138.954958",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "/areas/?scid=2231462&cid=3718414&tc=Cj0KCQjw1tGUBhDXARIsAIJx01mTV-x8oQba-Y9GhPF9qj9E0xshO4n53GKDbn_1qc1pZrwrKJ01EFAaAgRlEALw_wcB&rl_key=46565de98920fd51419320748a0a2908&pub_cr_id=596522195991&rl_sitelink=1907126&dynamic_proxy=1&primary_serv=www.northridgescreen.com&device=m&network=g&targetid=kwd-112891863&loc_intere=",
+                        "dimension2": "Areas Served - Northridge Screen Services",
+                        "new_users": "1",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "102.570863",
                         "screenpageviews_per_session": "1"
                     },
                     {
                         "dimension": "/areas/?scid=2231462&pub_cr_id=596522195901&rl_sitelink=1907126&device=m&network=g&targetid=kwd-356817777259&loc_interest_ms=&loc_physical_ms=1014389&tc=CjwKCAjws8yUBhA1EiwAi_tpEeTCqlJpr2udZb-lrplbBUF5F1LsSn9NJpcJSOyTM0zGW58DImNjQhoCtiIQAvD_BwE&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
+                        "dimension2": "Areas Served - Northridge Screen Services",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "/areas/?scid=2231462&pub_cr_id=596522195991&rl_sitelink=1907126&device=m&network=g&targetid=kwd-3366576473&loc_interest_ms=&loc_physical_ms=9073456&tc=CjwKCAjwkMeUBhBuEiwA4hpqEDsQ1DAV9MMOxzo_VxTOU-dkYhtf1Hdyz5Sg-kikndfM5CfAnYzHGRoCg38QAvD_BwE&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "average_session_duration": "0",
                         "screenpageviews_per_session": "1"
                     }
                 ]
             },
             {
                 "type": "top_source_medium",
-                "data": []
+                "data": [
+                    {
+                        "dimension": "reachlocal / cpc",
+                        "new_users": "53",
+                        "total_users": "57",
+                        "sessions": "65",
+                        "bounce_rate": "0.46153846153846156",
+                        "average_session_duration": "92.679046815384609",
+                        "screenpageviews_per_session": "1.5538461538461539"
+                    },
+                    {
+                        "dimension": "google / organic",
+                        "new_users": "7",
+                        "total_users": "9",
+                        "sessions": "11",
+                        "bounce_rate": "0.36363636363636365",
+                        "average_session_duration": "159.34560490909092",
+                        "screenpageviews_per_session": "2.0909090909090908"
+                    },
+                    {
+                        "dimension": "(direct) / (none)",
+                        "new_users": "10",
+                        "total_users": "10",
+                        "sessions": "10",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "baidu / organic",
+                        "new_users": "2",
+                        "total_users": "2",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "yahoo / organic",
+                        "new_users": "2",
+                        "total_users": "2",
+                        "sessions": "2",
+                        "bounce_rate": "0",
+                        "average_session_duration": "915.4564695",
+                        "screenpageviews_per_session": "2.5"
+                    },
+                    {
+                        "dimension": "bing / organic",
+                        "new_users": "1",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "56.353816",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "facebook.com / referral",
+                        "new_users": "1",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1"
+                    }
+                ]
             },
             {
                 "type": "traffic_by_city",
                 "data": [
                     {
                         "dimension": "Los Angeles",
-                        "new_users": "47",
-                        "total_users": "47",
-                        "sessions": "47",
-                        "bounce_rate": "47",
-                        "average_session_duration": "47",
-                        "screenpageviews_per_session": "47"
+                        "new_users": "56",
+                        "total_users": "61",
+                        "sessions": "72",
+                        "bounce_rate": "0.4861111111111111",
+                        "average_session_duration": "101.68330751388891",
+                        "screenpageviews_per_session": "1.625"
                     },
                     {
                         "dimension": "(not set)",
                         "new_users": "6",
                         "total_users": "6",
                         "sessions": "6",
-                        "bounce_rate": "6",
-                        "average_session_duration": "6",
-                        "screenpageviews_per_session": "6"
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1"
                     },
                     {
                         "dimension": "Santa Clarita",
                         "new_users": "3",
                         "total_users": "3",
                         "sessions": "3",
-                        "bounce_rate": "3",
-                        "average_session_duration": "3",
-                        "screenpageviews_per_session": "3"
+                        "bounce_rate": "0.66666666666666663",
+                        "average_session_duration": "18.022299333333333",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "Camarillo",
+                        "new_users": "1",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "191.6186",
+                        "screenpageviews_per_session": "2"
                     },
                     {
                         "dimension": "Castaic",
@@ -1385,7 +695,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "average_session_duration": "3.288961",
                         "screenpageviews_per_session": "1"
                     },
                     {
@@ -1393,17 +703,17 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
+                        "bounce_rate": "0",
+                        "average_session_duration": "180.643275",
+                        "screenpageviews_per_session": "3"
                     },
                     {
                         "dimension": "Fitchburg",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "56.353816",
                         "screenpageviews_per_session": "1"
                     },
                     {
@@ -1412,7 +722,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "average_session_duration": "0",
                         "screenpageviews_per_session": "1"
                     },
                     {
@@ -1420,26 +730,26 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
+                        "bounce_rate": "0",
+                        "average_session_duration": "152.069558",
+                        "screenpageviews_per_session": "2"
                     },
                     {
                         "dimension": "Lancaster",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
-                        "screenpageviews_per_session": "1"
+                        "bounce_rate": "0",
+                        "average_session_duration": "463.831674",
+                        "screenpageviews_per_session": "3"
                     },
                     {
                         "dimension": "Moorpark",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "23.493197",
                         "screenpageviews_per_session": "1"
                     },
                     {
@@ -1448,7 +758,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "average_session_duration": "0",
                         "screenpageviews_per_session": "1"
                     },
                     {
@@ -1456,8 +766,8 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "1217.642332",
                         "screenpageviews_per_session": "1"
                     },
                     {
@@ -1466,7 +776,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "1",
-                        "average_session_duration": "1",
+                        "average_session_duration": "0",
                         "screenpageviews_per_session": "1"
                     }
                 ]
@@ -1476,7 +786,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "data": [
                     {
                         "dimension": "2022-05-30",
-                        "sessions": "28"
+                        "sessions": "41"
                     },
                     {
                         "dimension": "2022-05-29",
@@ -1492,11 +802,11 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "sessions_by_month",
                 "data": [
                     {
-                        "dimension": "0028",
-                        "sessions": "1357"
+                        "dimension": "202201",
+                        "sessions": "1328"
                     },
                     {
-                        "dimension": "0027",
+                        "dimension": "202112",
                         "sessions": "1309"
                     }
                 ]
