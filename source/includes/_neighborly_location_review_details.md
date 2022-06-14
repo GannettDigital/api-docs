@@ -4,7 +4,9 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/neighborly/location/[gmaid]/review_details?[query_params]
+| GET | /client_reports/neighborly/location/[gmaid]/review_details?[query_params] |
+| GET | /client_reports/neighborly/locations/[query_params] |
+| POST | /client_reports/neighborly/locations |
 
 #### API Name: neighborly_location_review_details
 #### Usage
@@ -24,21 +26,16 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly/location/GMAID/review_details' \
--H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neighborly/location/GMAID/review_details' \
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 #### Example Response
 ```javascript
 {
-    "report_type": "premium_listings/neighborly/review_details",
+    "report_type": "neighborly/location/review_details",
     "report_date": "2021-01-25",
     "report_data": {
-        "total_pages": 1,
-        "page_size": 50,
-        "page": 1,
         "details": [
             {
                 "$id": "1",
@@ -57,8 +54,12 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly
                 "reviewStarRating": 5,
                 "reviewSourceType": "Google"
             }
-        ]
-    }
+        ],
+        "total_pages": 1,
+        "page_size": 50,
+        "page": 1,
+    },
+    "global_master_advertiser_id": "GMAID"
 }
 ```
 |Field Name|Datatype|Description|
@@ -78,3 +79,72 @@ curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/neighborly
 |details|Array|Review details for specified locations. [Details Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
 
 
+#### Parameters
+
+When using the GET method, the results can be filtered using these parameters:
+
+| Parameter | Required | Description |
+|---|---|---|
+|page|No|Results page (defaults to 1)|
+|per_page|No|Results per page (defaults to 25)|
+|gmaid|no|Restricts the results to those occurring on gmaid.|
+
+#### Examples
+
+```
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neighborly/locations' \
+-H 'Authorization: TRUSTED_TOKEN'
+```
+
+#### Example Response
+```javascript
+[
+    {
+        "location_id": 4,
+        "maid": 1,
+        "platform_id": 7,
+        "created_at": "2022-06-08T11:04:57.000Z",
+        "updated_at": "2022-06-08T11:06:28.000Z"
+    },
+    {
+        "location_id": 23,
+        "maid": 2,
+        "platform_id": 7,
+        "created_at": "2022-06-08T11:06:42.000Z",
+        "updated_at": "2022-06-08T11:38:15.000Z"
+    },
+    {
+        "location_id": 69,
+        "maid": 3,
+        "platform_id": 7,
+        "created_at": "2022-06-08T10:59:47.000Z",
+        "updated_at": "2022-06-08T10:59:47.000Z"
+    }
+]
+```
+
+### POST
+
+Use POST with a JSON payload to create/update Neighborly location for a given advertiser.
+
+#### Examples
+
+```
+curl -L -X POST 'https://data-connect-prod.gannettdigital.com/client_reports/neighborly/locations' \
+-H 'Authorization: TRUSTED_TOKEN' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+    "location_id": 53627,
+    "gmaid": "TEST_10294"
+}'
+```
+
+#### Example Response
+```javascript
+{
+    "location_id": 53627,
+    "maid": 10294,
+    "platform_id": 7,
+    "created_at": "2022-06-08T11:06:42.000Z",
+    "updated_at": "2022-06-08T11:38:15.000Z"
+}
