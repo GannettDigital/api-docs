@@ -25,7 +25,7 @@ When using the GET index method, the results will be filtered using these parame
 |`global_master_campaign_id`|No|Restrict results to one or more specific gmcid.|
 |`start_date`|No|Restricts the results to those occurring on or after this date|
 |`end_date`|No|Restricts the results to those occurring on or before this date|
-|`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b> |
+|`per_page`|No|Restrict number of contacts in result <br><b>Default value: 25</b><br><b>Trusted callers default value: 100</b> |
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 |`sort_by`|No|Specifies what column to sort by. Valid columns are: important<br><b>Default value: occurred_at</b> |
 |`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: asc</b> |

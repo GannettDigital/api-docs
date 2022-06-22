@@ -20,7 +20,7 @@ Please note that the contact information in this endpoint is for linking the int
 ### Parameters
 
 Parameter | Required | Description
---------- | -------- |-------- | -----------
+---| ---|--- |
 global\_master\_advertiser\_id | yes | The global master advertiser id (for example, TEST_1).
 created\_after\_date | yes | Specifies the lower bound for the earliest date and time when searching for contacts.  All contacts returned in the response will have been created on or after this date.  The format expected is YYYY-MM-DD.
 created\_before\_date | yes | Specifies the upper bound for the latest date and time when searching for contacts.  All contacts returned in the response will have been created before this date.  The format expected is YYYY-MM-DD.
