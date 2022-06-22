@@ -132,7 +132,12 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                         "rank_lost_absolute_top_search_impression_share": 1,
                         "budget_lost_absolute_top_search_impression_share": 1
                     }
-                ]
+                ],
+                "search_impression_share": 1,
+                "top_search_impression_share": 1,
+                "absolute_top_search_impression_share": 1,
+                "rank_lost_absolute_top_search_impression_share": 1,
+                "budget_lost_absolute_top_search_impression_share": 1
             },
             {
                 "name": "Search Campaign (Demo)",
