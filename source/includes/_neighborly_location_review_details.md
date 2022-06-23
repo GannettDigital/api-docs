@@ -22,6 +22,8 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |`page`|No|Restricts the results to those occurring after the offset|
 |`page_size`|No|Restricts the number of locations that will be shown. (The max value of page_size is 50)|
+|`start_date`|No|Restricts the results to those occurring after the offset|
+|`end_date`|No|Restricts the number of locations that will be shown. (The max value of page_size is 50)|
 
 #### Examples
 
@@ -33,8 +35,10 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
 #### Example Response
 ```javascript
 {
-    "report_type": "neighborly/location/review_details",
+    "report_type": "neighborly/locations/review_details",
     "report_date": "2021-01-25",
+    "start_date": "2020-09-01",
+    "end_date": "2020-09-02",
     "report_data": {
         "details": [
             {
@@ -55,11 +59,16 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
                 "reviewSourceType": "Google"
             }
         ],
-        "total_pages": 1,
-        "page_size": 50,
-        "page": 1,
+        "total_reviews_of_date_range": 180,
+        "reviews_per_day": [
+            {
+                "$id": "52",
+                "day": "05/12/2022",
+                "reviewCount": 1
+            }
+        ]
     },
-    "global_master_advertiser_id": "GMAID"
+    "global_master_advertiser_id": "USA_1"
 }
 ```
 |Field Name|Datatype|Description|
@@ -77,6 +86,8 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
 |page_size|Integer|The number of the elements in a page (request).|
 |total_pages|Integer|How many pages are there left. |
 |details|Array|Review details for specified locations. [Details Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
+|reviews_per_day|Array|Reviews per day array. (ReviewsPerDay part of) [Details Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
+|total_reviews_of_date_range|Integer|The total reviews of date range. (TotalReviewsOfDateRange part of) [TotalReviewsOfDateRange Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
 
 
 #### Parameters
