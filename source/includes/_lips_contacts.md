@@ -37,7 +37,7 @@ When using the GET index method, the results will be filtered using these parame
 |`status`|no|String that filters by exact match of status|
 |`sort_by`|no|Column to sort by|`created_at`, `last_event`, `last_name`, `first_name`, `total_events` Default: `created_at`|
 |`sort_direction`|no|Direction of sort_by|`asc`,`desc` Default: `desc`|
-|`per_page`|No|Restrict number of contacts in result|Default: 25|
+|`per_page`|No|Restrict number of contacts in result|Default: 25 <br><b>Trusted callers default value: 100</b>|
 |`page`|No|Specifies which page of results to return|Default: 1|
 
 
