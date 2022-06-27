@@ -66,7 +66,10 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
                 "day": "05/12/2022",
                 "reviewCount": 1
             }
-        ]
+        ],
+        "page_size": 50,
+        "page": 1,
+        "total_pages": 1
     },
     "global_master_advertiser_id": "USA_1"
 }
