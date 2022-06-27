@@ -180,6 +180,9 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
             "campaign_name": "LSS Test Campaign",
             "global_master_advertiser_id": "USA_31253",
             "global_master_campaign_id": "USA_3115232",
+            "master_advertiser_id": 31253,
+            "platform_id": 1,
+            "platform": "USA",
             "sub_type": "Call"
             "channel": "search",
             "referrer_type": "UNKNOWN",
