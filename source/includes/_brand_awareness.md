@@ -32,10 +32,13 @@ To specify a date range:
 
 #### Example Local Dev Curls:
 ###### Retrieve data for a specific range of dates
+
 ```
 curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?start_date=2016-12-01&end_date=2016-12-31&type=report"
 ```
+
 ###### Retrieve data for a specific campaign starting on a certain date
+
 ```
 curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/USA_105569?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=report"
 ```
@@ -99,7 +102,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "web_events": 13,
                     "leads": 61
                 },
-                "facebook": {
+                "social": {
                     "impressions": 2513,
                     "clicks": 27,
                     "walk_ins": 30,
@@ -219,7 +222,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "average_call_length": 98.63,
                 "ctr": 1.19
             },
-            "facebook": {
+            "social": {
                 "impressions": 2513,
                 "clicks": 27,
                 "walk_ins": 30,
@@ -444,7 +447,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
 }
 ```
 
-```
 ###### Retrieve data for a specific range of dates
 ```
 curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?start_date=2016-12-01&end_date=2016-12-31&type=publisher"
@@ -453,7 +455,7 @@ curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3
 ```
 curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/brand_awareness/TEST_1?global_master_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31&type=publisher"
 ```
-```
+
 #### Response Description
 ```javascript
 {
