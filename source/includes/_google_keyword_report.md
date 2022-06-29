@@ -68,6 +68,11 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
             "ctr": 1.6,
             "keywords": 2
         },
+         "unattributed_totals": {
+            "clicks": 12,
+            "impressions": 62,
+            "ctr": 19.35
+        },
         "keywords": [
             {
                 "keyword": "Keyword (Demo) 1 Location (Demo) 1",
@@ -84,6 +89,14 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
                 "impressions": 682,
                 "first_page_cpc": 7.34,
                 "top_page_cpc":15
+            }
+        ],
+         "unattributed_keywords": [
+            {
+                "type": "search",
+                "clicks": 12,
+                "impressions": 62,
+                "ctr": 19.35
             }
         ]
     },
@@ -112,8 +125,10 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|keywords|Array|Array of [Keyword Object] (#keywordobject)|
-|totals|Object|[Total Object] (#totalobject)|
+|keywords|Array|Array of [Keyword Object](#keywordobject)|
+|unattributed_keywords|Array|Array of [Keyword Object](#unattributedkeywordobject)|
+|totals|Object|[Total Object](#totalobject)|
+|unattributed_totals|Object|[Total Object](#unattributedtotalobject)|
 
 <a name="keywordobject"></a>
 **Keyword Object**
@@ -127,6 +142,16 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 |impressions|Integer|Impressions for Keyword|
 |ctr|Float|Click through Rate for Keyword|
 
+<a name="unattributedkeyword"></a>
+**Unattributed Keyword Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|type|Integer|Keyword Type (search/display)|
+|clicks|Float|Clicks for Keyword|
+|impressions|Integer|Impressions for Keyword|
+|ctr|Float|Click through Rate for Keyword|
+
 <a name="totalobject"></a>
 **Totals Object**
 
@@ -135,5 +160,14 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 |keywords|Integer|Number of total keywords regardless of page|
 |clicks|Float|Overall Clicks|
 |media_cost|Float|cost|
+|impressions|Integer|Overall Impressions|
+|ctr|Float|Overall Click through Rate|
+
+<a name="unattributedtotalkeyword"></a>
+**Unattributed Totals Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|clicks|Float|Overall Clicks|
 |impressions|Integer|Overall Impressions|
 |ctr|Float|Overall Click through Rate|

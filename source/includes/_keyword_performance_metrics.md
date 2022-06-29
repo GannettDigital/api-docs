@@ -78,6 +78,11 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
             "ctr": 1.6,
             "keywords": 2
         },
+         "unattributed_totals": {
+            "clicks": 12,
+            "impressions": 62,
+            "ctr": 19.35
+        },
         "keywords": [
             {
                 "keyword": "Keyword (Demo) 1 Location (Demo) 1",
@@ -92,6 +97,14 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
                 "clicks": 11,
                 "impressions": 682,
                 "ctr": 1.61
+            }
+        ],
+        "unattributed_keywords": [
+            {
+                "type": "search",
+                "clicks": 12,
+                "impressions": 62,
+                "ctr": 19.35
             }
         ]
     },
@@ -120,7 +133,9 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 |Field Name|Datatype|Description|
 |---|---|---|
 |keywords|Keyword[]|[Array of Keyword](#keyword)|
+|unattributed_keywords|Keyword[]|[Array of Keyword](#unattributedkeyword)|
 |totals|Object|[Total Object](#totalkeyword)|
+|unattributed_totals|Object|[Total Object](#unattributedtotalkeyword)|
 
 <a name="keyword"></a>
 **Keyword Object**
@@ -133,12 +148,31 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 |impressions|Integer|Impressions for Keyword|
 |ctr|Float|Click through Rate for Keyword|
 
+<a name="unattributedkeyword"></a>
+**Unattributed Keyword Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|type|Integer|Keyword Type (search/display)|
+|clicks|Float|Clicks for Keyword|
+|impressions|Integer|Impressions for Keyword|
+|ctr|Float|Click through Rate for Keyword|
+
 <a name="totalkeyword"></a>
 **Totals Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
 |keywords|Integer|Number of total keywords regardless of page|
+|clicks|Float|Overall Clicks|
+|impressions|Integer|Overall Impressions|
+|ctr|Float|Overall Click through Rate|
+
+<a name="unattributedtotalkeyword"></a>
+**Unattributed Totals Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
 |clicks|Float|Overall Clicks|
 |impressions|Integer|Overall Impressions|
 |ctr|Float|Overall Click through Rate|
