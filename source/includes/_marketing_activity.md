@@ -168,6 +168,68 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 "total_forms": 0
             }
         },
+         "shopping": {
+            "intervals": [
+                {
+                    "start_date": "2021-05-22",
+                    "visits": 28,
+                    "chats": 0,
+                    "calls": 0,
+                    "forms": 0
+                },
+                {
+                    "start_date": "2021-05-23",
+                    "visits": 9,
+                    "chats": 0,
+                    "calls": 0,
+                    "forms": 0
+                },
+                {
+                    "start_date": "2021-05-24",
+                    "visits": 16,
+                    "chats": 0,
+                    "calls": 0,
+                    "forms": 0
+                }
+            ],
+             "totals": {
+                "total_visits": 53,
+                "total_calls": 0,
+                "total_chats": 0,
+                "total_forms": 0
+            }
+        },
+         "video": {
+            "intervals": [
+                {
+                    "start_date": "2021-05-22",
+                    "visits": 28,
+                    "chats": 0,
+                    "calls": 0,
+                    "forms": 0
+                },
+                {
+                    "start_date": "2021-05-23",
+                    "visits": 9,
+                    "chats": 0,
+                    "calls": 0,
+                    "forms": 0
+                },
+                {
+                    "start_date": "2021-05-24",
+                    "visits": 16,
+                    "chats": 0,
+                    "calls": 0,
+                    "forms": 0
+                }
+            ],
+             "totals": {
+                "total_visits": 53,
+                "total_calls": 0,
+                "total_chats": 0,
+                "total_forms": 0
+            }
+        },
         "directory": {
             "intervals": [],
              "totals": {
