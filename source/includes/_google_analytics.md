@@ -180,7 +180,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
   "report_type": "google_analytics",
   "report_date": "2022-04-14",
   "start_date": "2021-03-04",
-  "end_date": "2021-03-04",
+  "end_date": "2021-03-05",
   "global_master_advertiser_id": "TEST_1",
   "view_id": "12345678",
   "view_name": null,
@@ -480,6 +480,10 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
           {
             "dimension": "2021-03-04",
             "sessions": "19"
+          },
+          {
+            "dimension": "2021-03-05",
+            "sessions": "0"
           }
         ]
       },
