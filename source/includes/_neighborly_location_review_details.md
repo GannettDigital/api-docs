@@ -60,6 +60,7 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
             }
         ],
         "total_reviews_of_date_range": 180,
+        "total_reviews_overall": 180,
         "reviews_per_day": [
             {
                 "$id": "52",
@@ -91,6 +92,7 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
 |details|Array|Review details for specified locations. [Details Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
 |reviews_per_day|Array|Reviews per day array. (ReviewsPerDay part of) [Details Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
 |total_reviews_of_date_range|Integer|The total reviews of date range. (TotalReviewsOfDateRange part of) [TotalReviewsOfDateRange Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
+|total_reviews_overall|Integer|The total reviews. (TotalReviewsOverall part of) [TotalReviewsOfDateRange Object](https://api2-test-unifiedsyncplatform.dwyergroup.com/swagger/index.html)|
 
 
 #### Parameters
