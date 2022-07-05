@@ -126,6 +126,8 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
 ### POST
 
 Use POST with a JSON payload to create/update Neighborly location for a given advertiser.
+Required params: `location_id`, `gmaid` and `brand_code`.
+brand_code is required by the Google Analytics Report to allow for authentication across every gmaid of a given brand.
 
 #### Examples
 
@@ -135,7 +137,8 @@ curl -L -X POST 'https://data-connect-prod.gannettdigital.com/client_reports/nei
 -H 'Content-Type: application/json' \
 --data-raw '{
     "location_id": 53627,
-    "gmaid": "TEST_10294"
+    "gmaid": "TEST_10294",
+    "brand_code": "GUY"
 }'
 ```
 
@@ -145,6 +148,7 @@ curl -L -X POST 'https://data-connect-prod.gannettdigital.com/client_reports/nei
     "location_id": 53627,
     "maid": 10294,
     "platform_id": 7,
+    "brand_code": "GUY",
     "created_at": "2022-06-08T11:06:42.000Z",
     "updated_at": "2022-06-08T11:38:15.000Z"
 }
