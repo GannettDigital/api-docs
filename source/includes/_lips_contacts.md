@@ -83,7 +83,7 @@ The body of the API response will contain metadata and a JSON array of contact o
 |url| String| the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
 |first_party_data | boolean | This contact has been flagged as being "first party data"|
-|status | String | Status of the contact|
+|status | String | Status of the contact. Allowed values: `NEW OPEN PROSPECT IN_PROGRESS UNQUALIFIED ATTEMPTED_CONTACT CONNECTED CUSTOMER OTHER CONVERTED CLOSED` |
 |preferred_contact_method | String | Preferred contact method of the contact|
 |archived_at | Datetime | The date of the archived contact|
 |created_at| Datetime | The time the contact was created_at in the upstream system (Capture, Zapier, etc.)|
@@ -133,7 +133,7 @@ The body of the API response will contain metadata and a JSON array of contact o
                     "updated_at": "2021-07-16T12:43:32.000Z"
                 }
             ],
-            "status": null,
+            "status": "NEW",
             "archived_at": null,
             "first_party_data": false
             "created_at": "2022-02-23T14:53:03.000Z",
@@ -247,7 +247,7 @@ curl -L -X POST 'https://data-connect-lips.gannettdigital.com/contacts' \
         "country": "US",
         "email": "mail@mail.com",
         "preferred_contact_method": "email",
-        "status": "pending",
+        "status": "new",
         "phone_numbers": [
             {
                 "phone_type": "work",
@@ -314,6 +314,7 @@ curl -L -X PUT 'http://localhost:3000/contacts/1' \
         "postal": "1234",
         "country": "US",
         "email": "mail@mail.com",
+        "status": "OPEN"
         "phone_numbers": [
             {
                 "phone_type": "work",
