@@ -177,6 +177,7 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
         "master_advertiser_id": 1,
         "platform_id": 1,
         "platform": "USA",
+        "global_master_advertiser_id": "USA_1",
         "first_name": "M",
         "last_name": "Example",
         "address1": "asd",
