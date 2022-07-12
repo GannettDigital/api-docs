@@ -78,11 +78,6 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
             "ctr": 1.6,
             "keywords": 2
         },
-         "unattributed_totals": {
-            "clicks": 12,
-            "impressions": 62,
-            "ctr": 19.35
-        },
         "keywords": [
             {
                 "keyword": "Keyword (Demo) 1 Location (Demo) 1",
@@ -164,15 +159,6 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 |Field Name|Datatype|Description|
 |---|---|---|
 |keywords|Integer|Number of total keywords regardless of page|
-|clicks|Float|Overall Clicks|
-|impressions|Integer|Overall Impressions|
-|ctr|Float|Overall Click through Rate|
-
-<a name="unattributedtotalkeyword"></a>
-**Unattributed Totals Object**
-
-|Field Name|Datatype|Description|
-|---|---|---|
 |clicks|Float|Overall Clicks|
 |impressions|Integer|Overall Impressions|
 |ctr|Float|Overall Click through Rate|
