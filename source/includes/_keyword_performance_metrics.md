@@ -130,7 +130,6 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 |keywords|Keyword[]|[Array of Keyword](#keyword)|
 |unattributed_keywords|Keyword[]|[Array of Keyword](#unattributedkeyword)|
 |totals|Object|[Total Object](#totalkeyword)|
-|unattributed_totals|Object|[Total Object](#unattributedtotalkeyword)|
 
 <a name="keyword"></a>
 **Keyword Object**

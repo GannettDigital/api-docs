@@ -123,7 +123,6 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 |keywords|Array|Array of [Keyword Object](#keywordobject)|
 |unattributed_keywords|Array|Array of [Keyword Object](#unattributedkeywordobject)|
 |totals|Object|[Total Object](#totalobject)|
-|unattributed_totals|Object|[Total Object](#unattributedtotalobject)|
 
 <a name="keywordobject"></a>
 **Keyword Object**
