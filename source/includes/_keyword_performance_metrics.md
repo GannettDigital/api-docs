@@ -93,6 +93,14 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
                 "impressions": 682,
                 "ctr": 1.61
             }
+        ],
+        "unattributed_keywords": [
+            {
+                "type": "search",
+                "clicks": 12,
+                "impressions": 62,
+                "ctr": 19.35
+            }
         ]
     },
     "global_master_advertiser_id": "TEST_1",
@@ -120,6 +128,7 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 |Field Name|Datatype|Description|
 |---|---|---|
 |keywords|Keyword[]|[Array of Keyword](#keyword)|
+|unattributed_keywords|Keyword[]|[Array of Keyword](#unattributedkeyword)|
 |totals|Object|[Total Object](#totalkeyword)|
 
 <a name="keyword"></a>
@@ -128,6 +137,16 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 |Field Name|Datatype|Description|
 |---|---|---|
 |keyword|Integer|Keyword Name|
+|type|Integer|Keyword Type (search/display)|
+|clicks|Float|Clicks for Keyword|
+|impressions|Integer|Impressions for Keyword|
+|ctr|Float|Click through Rate for Keyword|
+
+<a name="unattributedkeyword"></a>
+**Unattributed Keyword Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
 |type|Integer|Keyword Type (search/display)|
 |clicks|Float|Clicks for Keyword|
 |impressions|Integer|Impressions for Keyword|

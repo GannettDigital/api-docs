@@ -85,6 +85,14 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
                 "first_page_cpc": 7.34,
                 "top_page_cpc":15
             }
+        ],
+         "unattributed_keywords": [
+            {
+                "type": "search",
+                "clicks": 12,
+                "impressions": 62,
+                "ctr": 19.35
+            }
         ]
     },
     "global_master_advertiser_id": "TEST_1",
@@ -112,8 +120,9 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|keywords|Array|Array of [Keyword Object] (#keywordobject)|
-|totals|Object|[Total Object] (#totalobject)|
+|keywords|Array|Array of [Keyword Object](#keywordobject)|
+|unattributed_keywords|Array|Array of [Keyword Object](#unattributedkeywordobject)|
+|totals|Object|[Total Object](#totalobject)|
 
 <a name="keywordobject"></a>
 **Keyword Object**
@@ -127,6 +136,16 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 |impressions|Integer|Impressions for Keyword|
 |ctr|Float|Click through Rate for Keyword|
 
+<a name="unattributedkeyword"></a>
+**Unattributed Keyword Object**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|type|Integer|Keyword Type (search/display)|
+|clicks|Float|Clicks for Keyword|
+|impressions|Integer|Impressions for Keyword|
+|ctr|Float|Click through Rate for Keyword|
+
 <a name="totalobject"></a>
 **Totals Object**
 
@@ -137,3 +156,4 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
 |media_cost|Float|cost|
 |impressions|Integer|Overall Impressions|
 |ctr|Float|Overall Click through Rate|
+
