@@ -51,6 +51,7 @@ https://api.localiqservices.com/client_reports/target_geofence/USA_105569?start_
     "api_run_date": "2020-11-19",
     "start_date": "2020-11-01",
     "end_date": "2020-11-30",
+    "earliet_date_availabe": "2020-10-01",
     "time_zone": "America/Los_Angeles",
     "currency": "USD",
     "global_master_advertiser_id": "TEST_1",
