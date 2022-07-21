@@ -42,6 +42,7 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/TEST_1?s
     "api_run_date": "2022-11-19",
     "start_date": "2022-04-01",
     "end_date": "2022-04-30",
+    "earliet_date_availabe": "2022-10-01",
     "time_zone": "America/Los_Angeles",
     "currency": "USD",
     "global_master_advertiser_id": "TEST_1",
