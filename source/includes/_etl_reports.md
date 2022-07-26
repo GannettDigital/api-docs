@@ -103,6 +103,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 ```javascript
 {
+    "page": 2,
+    "per_page": 1,
+    "total_pages": 0,
     "elt_jobs": [
         {
             "id": 1,
