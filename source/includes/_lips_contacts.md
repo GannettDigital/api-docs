@@ -79,6 +79,7 @@ The body of the API response will contain metadata and a JSON array of contact o
 |state| String| state of the contact|
 |postal| String| zip code of the contact|
 |country| String| country code of the contact|
+|company| String| company of the contact|
 |duration| Integer| the phone call duration of the contact|
 |url| String| the recording_url of the contact's call|
 |phone_number|Array|phone number data. ('phone_type' phone_type of the contact, 'normalized_number' the normalized number of the phone number, 'number' the number of the phone number record, 'created_at' when the phone number was created, 'updated_at' when the phone number was updated )|
