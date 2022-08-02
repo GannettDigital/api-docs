@@ -116,6 +116,7 @@ The body of the API response will contain metadata and a JSON array of contact o
             "state": "NJ",
             "postal": "1234",
             "country": "US",
+            "company": "company",
             "email": "mail@mail.com",
             "duration": 20,
             "recording_url": "url",
@@ -187,6 +188,7 @@ curl -L -X GET 'https://data-connect-lips.gannettdigital.com/contacts/1' -H 'Aut
         "postal": "1234",
         "country": "US",
         "email": "mail@mail.com",
+        "company": "company",
         "tags": [
             "first",
             "contact"
@@ -247,6 +249,7 @@ curl -L -X POST 'https://data-connect-lips.gannettdigital.com/contacts' \
         "postal": "1234",
         "country": "US",
         "email": "mail@mail.com",
+        "company": "company",
         "preferred_contact_method": "email",
         "status": "new",
         "phone_numbers": [
@@ -315,6 +318,7 @@ curl -L -X PUT 'http://localhost:3000/contacts/1' \
         "postal": "1234",
         "country": "US",
         "email": "mail@mail.com",
+        "company": "company",
         "status": "OPEN"
         "phone_numbers": [
             {
