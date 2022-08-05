@@ -343,12 +343,12 @@ Fields marked as required aren't necessarily required in the request, but are re
 #### Examples:
 
 ```
-curl --location --request PUT 'https://data-connect-lips.gannettdigital.com//events/1' \
+curl --location --request PUT 'https://data-connect-lips.gannettdigital.com/events/1' \
 --header 'Authorization: {auth_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '
     {
-        "contact_interaction": { "important": false, "read": true}
+        "event": { "important": false, "read": true}
     }
 '
 ```
@@ -357,7 +357,7 @@ example success response (HTTP status 2xx):
 
 ```
 {
-    "contact_interaction": "successfully updated!"
+    "event": "successfully updated!"
 }
 ```
 
