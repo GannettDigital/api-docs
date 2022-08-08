@@ -8,7 +8,7 @@
 
 Use GET to retrieve information for target geofences totals. Data can be returned for a GMAID for a specific date range determined by start_date and end_date.  The requirements for these parameters are described below.
 
-For paginated breakdown of data see <a name="target_geofences"></a>
+For paginated breakdown of target geofence data see [target_geofence](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_target_geofence.md)
 
 ### Parameters
 

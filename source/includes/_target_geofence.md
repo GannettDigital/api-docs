@@ -10,7 +10,7 @@ Use GET to retrieve information for target geofences. Data can be returned for a
 
 *Note*: Only geofences that more than 1 impression or more than 0 clicks or weighted_actions are included in this API.
 
-For calculated totals see <a name="target_geofence_totals"></a>
+For calculated totals see [target_geofence_totals](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_target_geofence_totals.md)
 ### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
