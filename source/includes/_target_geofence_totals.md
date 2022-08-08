@@ -76,6 +76,7 @@ https://api.localiqservices.com/client_reports/target_geofence_totals/USA_105569
 |cpc | Float | Cost Per Click |
 |cpw | Float | Cost Per Walk-in |
 |cpm | Float | Cost Per 1000 Impressions |
+|spend| Float| Spend |
 |walk_ins | Int | Total Walk-ins |
 |target_geofences | Int | Total count of Target Geofences grouped by plat_zipcode |
 | unique_households | Int | Total count of Unique Households |
