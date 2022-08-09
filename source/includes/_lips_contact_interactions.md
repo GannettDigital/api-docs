@@ -94,6 +94,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
 |email| String | yes | email of the contact|
 |company| String | yes | The company name for this contact|
+|notes| String | yes | Notes for this contact interaction|
 |title| String | yes | The title of the contact|
 |preferred_contact_method| String | yes | The preferred contact method of the contact|
 |phone_numbers| String | yes | phone number data. ('phone_type' phone_type of the contact, 'phone_number' the normalized number of the phone number)|
@@ -196,6 +197,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
             "influencing_campaign": "",
+            "notes": "some notes",
             "occurred_at": "2021-09-06T16:16:08.000Z",
             "channel": "search",
             "external_source": "capture",
@@ -237,6 +239,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
             "influencing_campaign": "",
+            "notes": "some notes",
             "occurred_at": "2021-08-25T14:50:34.000Z",
             "channel": "search",
             "external_source": "capture",
@@ -313,6 +316,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     "referrer_type": "UNKNOWN",
     "referrer_source": "PAID",
     "influencing_campaign": "",
+    "notes": "some notes",
     "occurred_at": "2022-02-18T15:14:42.000Z",
     "channel": null,
     "external_source": "capture",
@@ -344,6 +348,7 @@ Update an existing contact_interaction.
 |---|---|---|---|
 |read|boolean|No|Check if contact interaction is marked as read|
 |important|boolean|No|Check if contact interaction is marked as important|
+|notes|String|No|Notes for the contact interaction
 
 
 Fields marked as required aren't necessarily required in the request, but are required on the resulting object.
@@ -356,7 +361,7 @@ curl --location --request PUT 'https://data-connect-lips.gannettdigital.com/cont
 --header 'Content-Type: application/json' \
 --data-raw '
     {
-        "contact_interaction": { "important": false, "read": true}
+        "contact_interaction": { "important": false, "read": true, "notes": "some notes"}
     }
 '
 ```
