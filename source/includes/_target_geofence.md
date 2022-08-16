@@ -25,8 +25,6 @@ When using the GET method, the results can be filtered using these parameters:
 |`sort_by`|No|Specifies what column to sort by.  Valid columns are: `publisher_plat_zipcode`, `clicks`, `impressions`, and `ctr` <br><b>Default value: `publisher_plat_zipcode`</b>|
 |`sort_dir`|No|Specifies the sort direction.  Can be either `asc` or `desc` <br><b>Default value: `asc`</b>|
 
-*Note*: Maximum date range for this API is 31 days.
-
 ### Response Data Details
 
 > Retrieve data for a specific range of dates
