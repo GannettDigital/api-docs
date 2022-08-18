@@ -101,6 +101,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
 |referrer_type| String | no | Paid, organic|
 |referrer_source| String | no | Domain the visitor came from|
 |influencing_campaign| String | yes | Campaign that influenced this interaction|
+|notes| String | yes | Notes for this contact interaction|
 |created_at| Datetime | yes | The date and time which this interaction was created|
 |occured_at| Datetime | yes |The date and time which this event occurred. This will usually be different than the date that the event was created.|
 |channel| String | yes | The acquisition channel responsible for the event|
@@ -183,6 +184,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
             "master_advertiser_id": 31253,
             "platform_id": 1,
             "platform": "USA",
+            "notes": "some notes",
             "sub_type": "Call"
             "channel": "search",
             "referrer_type": "UNKNOWN",
@@ -305,6 +307,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events/1001
     "referrer_type": "UNKNOWN",
     "referrer_source": "PAID",
     "influencing_campaign": "",
+    "notes": "some notes",
     "occurred_at": "2022-02-18T15:14:42.000Z",
     "channel": null,
     "external_source": "capture",
