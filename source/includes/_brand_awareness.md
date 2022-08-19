@@ -66,6 +66,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 0,
                     "chats": 0,
                     "emails": 0,
+                    "qualified_web_events": 0,
                     "web_events": 0,
                     "leads": 0
                 },
@@ -77,6 +78,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 5,
                     "chats": 5,
                     "emails": 5,
+                    "qualified_web_events": 2,
                     "web_events": 7,
                     "leads": 22
                 },
@@ -88,6 +90,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 5,
                     "chats": 9,
                     "emails": 7,
+                    "qualified_web_events": 2,
                     "web_events": 5,
                     "leads": 26
                 },
@@ -99,6 +102,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 16,
                     "chats": 13,
                     "emails": 19,
+                    "qualified_web_events": 8,
                     "web_events": 13,
                     "leads": 61
                 },
@@ -110,6 +114,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 16,
                     "chats": 15,
                     "emails": 18,
+                    "qualified_web_events": 7,
                     "web_events": 10,
                     "leads": 59
                 },
@@ -121,6 +126,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 7,
                     "chats": 8,
                     "emails": 9,
+                    "qualified_web_events": 1,
                     "web_events": 5,
                     "leads": 29
                 },
@@ -132,6 +138,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 10,
                     "chats": 10,
                     "emails": 10,
+                    "qualified_web_events": 3,
                     "web_events": 5,
                     "leads": 30
                 },
@@ -143,6 +150,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 50,
                     "chats": 49,
                     "emails": 57,
+                    "qualified_web_events": 27,
                     "web_events": 43,
                     "leads": 194
                 }
@@ -170,6 +178,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls": 0,
                 "chats": 0,
                 "emails": 0,
+                "qualified_web_events": 0,
                 "web_events": 0,
                 "leads": 0,
                 "unique_calls": 0,
@@ -185,6 +194,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls": 5,
                 "chats": 5,
                 "emails": 5,
+                "qualified_web_events": 0,
                 "web_events": 7,
                 "leads": 22,
                 "unique_calls": 5,
@@ -200,6 +210,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls": 5,
                 "chats": 9,
                 "emails": 7,
+                "qualified_web_events": 0,
                 "web_events": 5,
                 "leads": 26,
                 "unique_calls": 5,
@@ -215,6 +226,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls": 16,
                 "chats": 13,
                 "emails": 19,
+                "qualified_web_events": 0,
                 "web_events": 13,
                 "leads": 61,
                 "unique_calls": 16,
@@ -230,6 +242,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls": 16,
                 "chats": 15,
                 "emails": 18,
+                "qualified_web_events": 0,
                 "web_events": 10,
                 "leads": 59,
                 "unique_calls": 16,
@@ -245,6 +258,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls": 7,
                 "chats": 8,
                 "emails": 9,
+                "qualified_web_events": 0,
                 "web_events": 5,
                 "leads": 29,
                 "unique_calls": 7,
@@ -260,6 +274,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 "calls": 10,
                 "chats": 10,
                 "emails": 10,
+                "qualified_web_events": 0,
                 "web_events": 5,
                 "leads": 30,
                 "unique_calls": 10,
@@ -305,6 +320,7 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                     "calls": 0,
                     "chats": 0,
                     "emails": 0,
+                    "qualified_web_events": 0,
                     "web_events": 0,
                     "leads": 0
                 },
