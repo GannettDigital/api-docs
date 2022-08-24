@@ -1,7 +1,5 @@
 ## Campaigns APIs
 
-
-
 <internal>### **Campaigns Search** </internal>
 
 <internal>### Resource Overview</internal>
