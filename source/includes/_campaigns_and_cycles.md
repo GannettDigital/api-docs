@@ -1,43 +1,46 @@
 ## Campaigns APIs
 
-<internal>
 
-### **Campaigns Search**
 
-### Resource Overview
+<internal>### **Campaigns Search** </internal>
 
-| Method | URI Format |
+<internal>### Resource Overview</internal>
+
+| <internal>Method | URI Format </internal>|
 |---|---|
 | GET | /client_reports/campaigns |
 
-A list of filtered Campaigns that match the provided query string.
+<internal>A list of filtered Campaigns that match the provided query string.</internal>
 
-### Parameters
+<internal>### Parameters</internal>
 
-When using the GET method, the results can be filtered using these parameters:
+<internal>When using the GET method, the results can be filtered using these parameters:</internal>
 
-| Param | Required? | Function |
+|<internal> Param | Required? | Function </internal>|
 |---|---|---|
 | query | Yes | Query string used to search for campaigns, minimum of 3 characters |
 | page | No | Pagination page |
-| platform_id|Integer|Yes|An id that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`) and 6 (`GBR`)|
+| platform_id|Yes|An integer that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`) and 6 (`GBR`)|
 
-### Response Data Details
+<internal>### Response Data Details</internal>
 
-> Retrieve data for a specific report_type
-
+<internal>> Retrieve data for a specific report_type</internal>
+<internal>
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
 ```
+</internal>
 
-> Retrieve data for a specific report_type as well as for running and stopped campaigns
-
+<internal>> Retrieve data for a specific report_type as well as for running and stopped campaigns</internal>
+<internal>
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
 ```
+</internal>
 
-> Example Response
+<internal>> Example Response</internal>
 
+<internal>
 ```json
 {
     "platform_id": 1,
@@ -104,8 +107,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.c
     ]
 }
 ```
+</internal>
 
-| Field Name | Datatype | Description |
+| <internal>Field Name | Datatype | Description</internal> |
 |---|---|---|
 |platform_id|String|Platform queried (1 for `USA`, 2 for `CAN`, 3 for `AUS` and 6 for `GBR`)|
 |query|String|Search string used (minimum of 3 characters)|
@@ -114,10 +118,10 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.c
 |total_pages|String|Total count of result pages|
 |campaigns|Object|[Search Campaigns Object](#campaigns_searchcampaigns)|
 
-<a name="campaigns_searchcampaigns"></a>
-**Search Campaigns Object**
+<internal><a name="campaigns_searchcampaigns"></a></internal>
+<internal>**Search Campaigns Object**</internal>
 
-| Field Name | Datatype | Description |
+|<internal> Field Name | Datatype | Description </internal>|
 |---|---|---|
 |global_master_advertiser_id|String|Identifier for advertiser|
 |global_master_campaign_id|String|Identifier for campaign|
@@ -128,8 +132,6 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.c
 |status|String|Status of campaign|
 |start_date|String|Campaign offer name|
 |end_date|String|Campaign offer name|
-
-</internal>|
 
 ### **Campaigns & Cycles**
 
