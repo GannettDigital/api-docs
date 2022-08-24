@@ -10,6 +10,7 @@ Use GET to retrieve information for target geofences. Data can be returned for a
 
 *Note*: Only geofences that more than 1 impression or more than 0 clicks or weighted_actions are included in this API.
 
+For calculated totals see [target_geofence_totals](https://github.com/GannettDigital/api-docs/blob/master/source/includes/_target_geofence_totals.md)
 ### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
@@ -61,21 +62,6 @@ https://api.localiqservices.com/client_reports/target_geofence/USA_105569?start_
     "sort_by": "clicks",
     "sort_dir": "desc",
     "report_data": {
-        "totals": [
-            {
-                "impressions": 7970,
-                "clicks": 56,
-                "walk_ins": 34,
-                "ctr": 0.5,
-                "cpc": 0.6,
-                "cpw": 0.7
-                "cpm": 0.8, 
-                "spend": 0.9
-                "unique_households": 300,
-                "household_frequency": 26.6
-
-            }
-        ],
         "target_geofences": [
             {
                 "name" : "Geofence 1",
@@ -98,19 +84,6 @@ https://api.localiqservices.com/client_reports/target_geofence/USA_105569?start_
     }
 }
 ```
-
-*Totals*
-
-| Field Name | Datatype | Description |
-|---|---|---|
-|clicks | Int | Total clicks |
-|impressions | Int | Total impressions |
-|ctr | Float | Overall Click-through Rate |
-|walk_ins | Float | Total Walk-ins |
-|target_geofences | Int | Total count of Target Geofences grouped by plat_zipcode |
-| unique_households | Int | Total count of Unique Households |
-| household_frequency | Float | Impressions divided by Unique Households |
-
 *Target Geofence*
 
 | Field Name | Datatype | Description |
