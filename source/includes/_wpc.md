@@ -23,7 +23,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`global_master_campaign_id[]`|Restrict results to one or more specific campaigns.|
 |`web_publisher_campaign_id[]`|Restrict results to one or more specific campaigns for a web publisher.|
 |`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
-|`campaign_type`|Restrict results to a single campaign type|
+|`campaign_types[]`|Restrict results based on a campaign type|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 
 ### Response Data Details
@@ -52,7 +52,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 > Retrieve data for a specific campaign cycle
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-"https://api.localiqservices.com/client_reports/wpc/TEST_1?campaign_type=search"
+"https://api.localiqservices.com/client_reports/wpc/TEST_1?campaign_types[]=search"
 ```
 > Retrieve data for campaigns that are stopped and running
 ```
