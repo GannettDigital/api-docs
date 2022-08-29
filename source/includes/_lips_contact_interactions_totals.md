@@ -2,13 +2,13 @@
 <a name="lips_contact_interactions_totals"></a>
 ## Contact Interactions API
 
-The totals of the "events", *contact interactions* are activities associated with a contact.  The event may be a call, a form post, or chat event recorded by capture or a FPD event.
+The totals of the "events", *contact interactions*. The event may be a call, a form post, or chat event recorded by capture or a FPD event. These activities could be associated with a contact
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /contact_interactions/{gmaid}/totals|
+| GET `index` | /contact_interactions/totals|
 
 ### Usage
 Use GET to retrieve contact interactions that match the query params.
@@ -16,12 +16,19 @@ Use GET to retrieve contact interactions that match the query params.
 ### Parameters
 You can find all of the filter params here: https://github.com/GannettDigital/api-docs/blob/master/source/includes/_lips_events.md
 
+The only additional parameter is:
+
+| Parameter | Required | Description |
+|---|---|---|
+|`contact_id`|No|Integer that restricts the contact_interactions/events totals and show them for a single contact|
+
+
 ### Examples:
 
 ### GET (index)
 
 ```
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions/USA_1/totals' \
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions/totals' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
@@ -56,39 +63,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |chat | Integer | no | total events with `chat` channel|
 |other | Integer | no | total events with `other` channel|
 |none | Integer | no | total events without channel|
-
-**Call**
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|call_recording_url| String | yes | Only included when interaction is call|
-|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
-
-**Form**
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|referring_url| string | yes |URL of the referring page|
-|full_message| string | yes |full message of the form event|
-|message| string | yes| parsed message|
-|extra_fields| object | yes |extra fields|
-
-**Chat**
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|provider| string | yes |chat provider(if missing assume Apex)|
-|transcript| object | yes |object of chat transcript|
-|summary| object | yes |A freeform text description of the chat.|
-
-**Transcript**
-
-| Field Name | Datatype | Nullable | Description |
-|---|---|---|---|
-|id| object | no |A sequential id of the line chat transcript. It uniquely identifies a line of the chat transcript within this contact interaction.|
-|timestamp| object | no |The date and time that the external chat API registered for this line of the chat transcript.|
-|form| object | no |The display name of the member of the chat who sent this message.|
-|message| object | no |The message body of this line of the chat transcript.|
 
 #### Example Response
 
