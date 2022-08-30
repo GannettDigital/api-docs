@@ -24,8 +24,6 @@ When using the GET method, the results can be filtered using these parameters:
 |start_date|Yes|Restricts the results to those occurring on or after this date|
 |end_date|Yes|Restricts the results to those occurring on or before this date|
 |gmaid|Yes|Restrict results to the specified Global Master Advertiser ID|
-|second_start_date|No|Add a `second_totals` node to all sections of the report when used with `second_end_date`|
-|second_end_date|No|Restricts the `second_totals` results to those occurring on or before this date when used with `second_start_date`|
 |global_master_campaign_id[]|No|Restrict results to the specified master campaign id|
 |interval_size|No|Return subtotals for the given intervals within the start-end time provided. Accepts calendar_month, calendar_week, or day (Default is day)|
 
@@ -313,12 +311,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
           "total_calls": 2,
           "total_chats": 0,
           "total_forms": 0
-        },
-        "second_totals": {
-          "total_visits": 0,
-          "total_calls": 2,
-          "total_chats": 0,
-          "total_forms": 0
         }
       }
     ],
@@ -344,23 +336,11 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "total_calls": 17,
         "total_chats": 0,
         "total_forms": 0
-      },
-      "second_totals": {
-        "total_visits": 0,
-        "total_calls": 5,
-        "total_chats": 0,
-        "total_forms": 0
       }
     },
     "social": {
       "intervals": [],
       "totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
-      },
-      "second_totals": {
         "total_visits": 0,
         "total_calls": 0,
         "total_chats": 0,
@@ -389,12 +369,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "total_calls": 29,
         "total_chats": 0,
         "total_forms": 0
-      },
-      "second_totals": {
-        "total_visits": 0,
-        "total_calls": 13,
-        "total_chats": 0,
-        "total_forms": 0
       }
     },
     "directory": {
@@ -404,23 +378,11 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "total_calls": 0,
         "total_chats": 0,
         "total_forms": 0
-      },
-      "second_totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
       }
     },
     "marketplace": {
       "intervals": [],
       "totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
-      },
-      "second_totals": {
         "total_visits": 0,
         "total_calls": 0,
         "total_chats": 0,
@@ -442,23 +404,11 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "total_calls": 2,
         "total_chats": 0,
         "total_forms": 0
-      },
-      "second_totals": {
-        "total_visits": 0,
-        "total_calls": 2,
-        "total_chats": 0,
-        "total_forms": 0
       }
     },
     "otherpaid": {
       "intervals": [],
       "totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
-      },
-      "second_totals": {
         "total_visits": 0,
         "total_calls": 0,
         "total_chats": 0,
@@ -469,12 +419,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
       "total_visits": 0,
       "total_calls": 76,
       "total_chats": 39,
-      "total_forms": 0
-    },
-    "second_totals": {
-      "total_visits": 0,
-      "total_calls": 33,
-      "total_chats": 12,
       "total_forms": 0
     }
   },
@@ -508,7 +452,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |other|Object|chat, visit, call, form counts attributed to organic sources (Other) [Other Object](#marketingactivityother)|
 |otherpaid|Object|chat, visit, call, form counts attributed to organic sources (Other paid) [Otherpaid Object](#marketingactivityotherpaid)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 
 
 <a name="chatcampaigns"></a>
@@ -527,7 +471,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 
 <a name="marketingactivitysearch"></a>
 **Search Object**
@@ -536,7 +480,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 <a name="marketingactivitysocial"></a>
 **Social Object**
 
@@ -544,7 +488,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 <a name="marketingactivitydirect"></a>
 **Direct Object**
 
@@ -552,7 +496,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 <a name="marketingactivitydirectory"></a>
 **Directory Object**
 
@@ -560,7 +504,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 <a name="marketingactivitymarketplace"></a>
 **Marketplace Object**
 
@@ -568,7 +512,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 <a name="marketingactivityother"></a>
 **Other Object**
 
@@ -576,7 +520,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 <a name="marketingactivityotherpaid"></a>
 **Otherpaid Object**
 
@@ -584,7 +528,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |---|---|---|
 |intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
 |totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-|second_totals|Object|Totals from the `second` date range(if provided) of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
+(#marketingactivitytotals)|
 <a name="marketingactivityintervals"></a>
 **Intervals Object**
 
