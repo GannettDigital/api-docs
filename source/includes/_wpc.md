@@ -49,7 +49,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.localiqservices.com/client_reports/wpc/TEST_1?web_publisher_campaign_id[]=USA_14&start_date=2016-10-01&end_date=2016-12-31"
 ```
-> Retrieve data for a specific campaign cycle
+> Retrieve data for a specific campaign type
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.localiqservices.com/client_reports/wpc/TEST_1?campaign_types[]=search"
