@@ -70,7 +70,7 @@ Dimension: A boolean, either New Visitor or Returning Visitor, indicating if the
 |---|---|
 |`users`|The total number of users for the requested time period.|
 
-#### Channel Performance
+<!-- #### Channel Performance
 
 Dimension: Channel Grouping, such as Organic, Paid Search, Direct, etc.
 
@@ -135,7 +135,7 @@ Medium: The type of referrals. For manual campaign tracking, it is the value of 
 |`sessions`|The total number of sessions.|
 |`bounce_rate`|The percentage of single-page session (i.e., session in which the person left the property from the first page).|
 |`avg_session_duration`|The average duration (in seconds) of users' sessions.|
-|`pageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
+|`pageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.| -->
 
 #### Traffic by City
 
@@ -235,156 +235,6 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
           {
             "dimension": "tablet",
             "sessions": "0"
-          }
-        ]
-      },
-      {
-        "type": "pages_by_pageview",
-        "data": [
-          {
-            "dimension": "/contact-us/",
-            "dimension2": "Contact Us | Screen Service",
-            "sessions": "2",
-            "bounce_rate": "100.0",
-            "entrances": "2",
-            "pageviews": "3",
-            "unique_page_views": "3",
-            "avg_time_on_page": "0.0",
-            "exit_rate": "100.0"
-          }
-        ],
-        "second_data_set": [
-          {
-            "dimension": "/contact-us/",
-            "dimension2": "Contact Us | Screen Service",
-            "sessions": "0",
-            "bounce_rate": "0.0",
-            "entrances": "0",
-            "pageviews": "1",
-            "unique_page_views": "1",
-            "avg_time_on_page": "19.0",
-            "exit_rate": "0.0"
-          }
-        ]
-      },
-      {
-        "type": "channel_performance",
-        "data": [
-          {
-            "dimension": "Organic Search",
-            "new_users": "5",
-            "percent_new_sessions": "55.55555555555556",
-            "sessions": "9",
-            "bounce_rate": "66.66666666666666",
-            "avg_session_duration": "19.88888888888889",
-            "pageviews_per_session": "1.3333333333333333"
-          },
-          {
-            "dimension": "Paid Search",
-            "new_users": "6",
-            "percent_new_sessions": "100.0",
-            "sessions": "6",
-            "bounce_rate": "66.66666666666666",
-            "avg_session_duration": "33.166666666666664",
-            "pageviews_per_session": "1.3333333333333333"
-          },
-          {
-            "dimension": "Direct",
-            "new_users": "4",
-            "percent_new_sessions": "100.0",
-            "sessions": "4",
-            "bounce_rate": "100.0",
-            "avg_session_duration": "0.0",
-            "pageviews_per_session": "1.0"
-          }
-        ],
-        "second_data_set": [
-          {
-            "dimension": "Organic Search",
-            "new_users": "6",
-            "percent_new_sessions": "66.66666666666666",
-            "sessions": "9",
-            "bounce_rate": "66.66666666666666",
-            "avg_session_duration": "54.888888888888886",
-            "pageviews_per_session": "1.7777777777777777"
-          },
-          {
-            "dimension": "Paid Search",
-            "new_users": "8",
-            "percent_new_sessions": "100.0",
-            "sessions": "8",
-            "bounce_rate": "50.0",
-            "avg_session_duration": "90.125",
-            "pageviews_per_session": "2.25"
-          },
-          {
-            "dimension": "Direct",
-            "new_users": "2",
-            "percent_new_sessions": "100.0",
-            "sessions": "2",
-            "bounce_rate": "50.0",
-            "avg_session_duration": "23.5",
-            "pageviews_per_session": "1.5"
-          }
-        ]
-      },
-      {
-        "type": "user_type",
-        "data": [
-          {
-            "dimension": "New Visitor",
-            "users": "15"
-          },
-          {
-            "dimension": "Returning Visitor",
-            "users": "4"
-          }
-        ]
-      },
-      {
-        "type": "top_landing_pages",
-        "data": [
-          {
-            "dimension": "/services/door-screens/",
-            "dimension2": "Door Screen Services in Los Angeles, CA",
-            "new_users": "2",
-            "percent_new_sessions": "66.66666666666666",
-            "sessions": "3",
-            "bounce_rate": "66.66666666666666",
-            "avg_session_duration": "17.333333333333332",
-            "pageviews_per_session": "1.0"
-          }
-        ]
-      },
-      {
-        "type": "top_source_medium",
-        "data": [
-          {
-            "dimension": "google / organic",
-            "new_users": "5",
-            "percent_new_sessions": "55.55555555555556",
-            "sessions": "9",
-            "bounce_rate": "66.66666666666666",
-            "avg_session_duration": "19.88888888888889",
-            "pageviews_per_session": "1.3333333333333333"
-          },
-          {
-            "dimension": "reachlocal / cpc",
-            "new_users": "6",
-            "percent_new_sessions": "100.0",
-            "sessions": "6",
-            "bounce_rate": "66.66666666666666",
-            "avg_session_duration": "33.166666666666664",
-            "pageviews_per_session": "1.3333333333333333"
-          },
-          {
-            "dimension": "(direct) / (none)",
-            "new_users": "4",
-            "percent_new_sessions": "100.0",
-            "sessions": "4",
-            "bounce_rate": "100.0",
-            "avg_session_duration": "0.0",
-            "pageviews_per_session": "1.0"
           }
         ]
       },
