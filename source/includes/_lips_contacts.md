@@ -11,6 +11,7 @@
 | `create` | POST | /contacts |
 | `update` | PUT | /contacts/[id] |
 | `destroy` | DELETE | /contacts/[id] |
+| `unarchive` | PUT | /contacts/[id]/unarchive |
 | `index` | GET | /contacts/[id]/events |
 
 #### GET Contacts(index)
@@ -353,6 +354,17 @@ The DELETE endpoint doesn't accept any request parameters other than the contact
 
 ```
 curl -L -X DELETE 'https://data-connect-lips.gannettdigital.com/contacts/63807' \
+-H 'Authorization: 1b01Secret'
+```
+
+A successful response will have no response body and return a 200 HTTP response code.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+##### PUT (unarchive)
+
+```
+curl -L -X PUT 'https://data-connect-lips.gannettdigital.com/contacts/63807/unarchive' \
 -H 'Authorization: 1b01Secret'
 ```
 

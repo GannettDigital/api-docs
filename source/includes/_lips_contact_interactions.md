@@ -11,6 +11,8 @@ Also referred to as "events", *contact interactions* are activities associated w
 | GET `index` | /contact_interactions? |
 | GET `show` |/contact_interactions/:id|
 | PUT `update` | /contact_interactions/:id |
+| DELETE `destroy` | /contact_interactions/:id |
+| PUT `unarchive` | /contact_interactions/:id/unarchive |
 
 ### Usage
 Use GET to retrieve contact interactions that match the query params.
@@ -32,6 +34,7 @@ When using the GET index method, the results will be filtered using these parame
 |`event_type[]`|No|See chart below|
 |`channel[]`|No|Filters results by Event channel. Valid channels are: `search, display, social, chat, other, none`|
 |`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
+|`archived`|No|Boolean filter to include ONLY archived events|
 
 
 > * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`. Searching by `channel` will remove any event without a `wpc_id`.
@@ -119,6 +122,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |read|boolean|No|Check if contact interaction is marked as read|
 |important|boolean|No|Check if contact interaction is marked as important|
 |page_url|String|No|The page_url associated with the interaction|
+|archived_at | Datetime | yes | The date of the archived interaction|
 
 
 **Totals**
@@ -373,5 +377,27 @@ example success response (HTTP status 2xx):
     "contact_interaction": "successfully updated!"
 }
 ```
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+### DELETE (destroy)
+
+```
+curl -L -X DELETE 'https://data-connect-lips.gannettdigital.com/contacts_interactions/1' \
+-H 'Authorization: 1b01Secret'
+```
+
+A successful response will have no response body and return a 200 HTTP response code.
+
+Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
+
+### PUT (unarchive)
+
+```
+curl -L -X PUT 'https://data-connect-lips.gannettdigital.com/contacts_interactions/1/unarchive' \
+-H 'Authorization: 1b01Secret'
+```
+
+A successful response will have no response body and return a 200 HTTP response code.
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
