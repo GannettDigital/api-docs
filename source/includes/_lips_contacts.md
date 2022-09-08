@@ -495,4 +495,3 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/eve
   }
 }
 ```
-
