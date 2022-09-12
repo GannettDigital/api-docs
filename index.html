@@ -443,18 +443,6 @@
                     <a href="#reporting-metric-apis-campaigns-apis" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Campaigns APIs</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
-                            <a href="#reporting-metric-apis-campaigns-apis-campaigns-search" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Campaigns Search</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#reporting-metric-apis-campaigns-apis-resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#reporting-metric-apis-campaigns-apis-parameters" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#reporting-metric-apis-campaigns-apis-response-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
                             <a href="#reporting-metric-apis-campaigns-apis-campaigns-amp-cycles" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Campaigns &amp; Cycles</strong></a>
                           </li>
                           <li class="toc-h3-li">
@@ -1861,192 +1849,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>privilege_level</td>
 <td>Number</td>
 <td>privilege level of the business user. PL3 is required to access HIPAA protected data.</td>
-</tr></tbody></table><h1 id='reporting-metric-apis'>Reporting Metric APIs</h1><p><a name="reporting_metric_apis"></a></p><h2 id='reporting-metric-apis-campaigns-apis'>Campaigns APIs</h2><p><internal></p><h3 id='reporting-metric-apis-campaigns-apis-campaigns-search' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Campaigns Search</strong></h3><h3 id='reporting-metric-apis-campaigns-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
-<th>Method</th>
-<th>URI Format</th>
-</tr>
-</thead><tbody><tr>
-<td>GET</td>
-<td>/client_reports/campaigns</td>
-</tr></tbody></table><p>A list of filtered Campaigns that match the provided query string.</p><h3 id='reporting-metric-apis-campaigns-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
-<th>Param</th>
-<th>Required?</th>
-<th>Function</th>
-</tr>
-</thead><tbody><tr>
-<td>query</td>
-<td>Yes</td>
-<td>Query string used to search for campaigns, minimum of 3 characters</td>
-</tr>
-<tr>
-<td>page</td>
-<td>No</td>
-<td>Pagination page</td>
-</tr>
-<tr>
-<td>platform_id</td>
-<td>Integer</td>
-<td>Yes</td>
-</tr></tbody></table><h3 id='reporting-metric-apis-campaigns-apis-response-data-details'>Response Data Details</h3>
-<blockquote>
-<p>Retrieve data for a specific report_type</p></blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
-</code></pre>
-<blockquote>
-<p>Retrieve data for a specific report_type as well as for running and stopped campaigns</p></blockquote>
-<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
-</code></pre>
-<blockquote>
-<p>Example Response</p></blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"platform_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCI"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">12529</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_834393"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55370"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA WA THRIFT MART"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C54323_GCI08146_WA WA THRIFT MART Brownwood TX"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-04"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-24"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_95569"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55369"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1264_COLLINS VISION CLINIC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1264_GCI0226481_COLLINS VISION CLINIC- Branded Content"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-15"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-13"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_23654"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55368"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MISSAUGA NATIONAL BANK"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1170_GCI0812638_Missauga National Bank - Digital - Q1 2022"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook Ads - Custom Solutions"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ended"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-31"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_876456"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55364"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LONE OAK DOG TRAINING"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6764_GCI0786222_LONE OAK DOG TRAINING - Campaign January"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-31"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_876456"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55363"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LONE OAK DOG TRAINING"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6764_GCI0786224_LONE OAK DOG TRAINING - Campaign February"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-01"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-28"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><table><thead><tr>
-<th>Field Name</th>
-<th>Datatype</th>
-<th>Description</th>
-</tr>
-</thead><tbody><tr>
-<td>platform_id</td>
-<td>String</td>
-<td>Platform queried (1 for <code>USA</code>, 2 for <code>CAN</code>, 3 for <code>AUS</code> and 6 for <code>GBR</code>)</td>
-</tr>
-<tr>
-<td>query</td>
-<td>String</td>
-<td>Search string used (minimum of 3 characters)</td>
-</tr>
-<tr>
-<td>page</td>
-<td>String</td>
-<td>Results page (defaults to 1)</td>
-</tr>
-<tr>
-<td>per_page</td>
-<td>String</td>
-<td>Results per page (defaults to 25)</td>
-</tr>
-<tr>
-<td>total_pages</td>
-<td>String</td>
-<td>Total count of result pages</td>
-</tr>
-<tr>
-<td>campaigns</td>
-<td>Object</td>
-<td><a href="#campaigns_searchcampaigns">Search Campaigns Object</a></td>
-</tr></tbody></table><p><a name="campaigns_searchcampaigns"></a>
-<strong>Search Campaigns Object</strong></p><table><thead><tr>
-<th>Field Name</th>
-<th>Datatype</th>
-<th>Description</th>
-</tr>
-</thead><tbody><tr>
-<td>global_master_advertiser_id</td>
-<td>String</td>
-<td>Identifier for advertiser</td>
-</tr>
-<tr>
-<td>global_master_campaign_id</td>
-<td>String</td>
-<td>Identifier for campaign</td>
-</tr>
-<tr>
-<td>master_advertiser_name</td>
-<td>String</td>
-<td>Identifier for advertiser</td>
-</tr>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>Identifier for campaign</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>Type of campaign</td>
-</tr>
-<tr>
-<td>source</td>
-<td>String</td>
-<td>Campaign offer name</td>
-</tr>
-<tr>
-<td>status</td>
-<td>String</td>
-<td>Status of campaign</td>
-</tr>
-<tr>
-<td>start_date</td>
-<td>String</td>
-<td>Campaign offer name</td>
-</tr>
-<tr>
-<td>end_date</td>
-<td>String</td>
-<td>Campaign offer name</td>
-</tr></tbody></table><p></internal>|</p><h3 id='reporting-metric-apis-campaigns-apis-campaigns-amp-cycles' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Campaigns &amp; Cycles</strong></h3><p><a name="campaigns_and_cycles"></a></p><h3 id='reporting-metric-apis-campaigns-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
+</tr></tbody></table><h1 id='reporting-metric-apis'>Reporting Metric APIs</h1><p><a name="reporting_metric_apis"></a></p><h2 id='reporting-metric-apis-campaigns-apis'>Campaigns APIs</h2><h3 id='reporting-metric-apis-campaigns-apis-campaigns-amp-cycles' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Campaigns &amp; Cycles</strong></h3><p><a name="campaigns_and_cycles"></a></p><h3 id='reporting-metric-apis-campaigns-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
 </tr>
@@ -6262,6 +6065,14 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
                 </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">682</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.61</span><span class="w">
             </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"unattributed_keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.35</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
@@ -6334,6 +6145,11 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 <td><a href="#keyword">Array of Keyword</a></td>
 </tr>
 <tr>
+<td>unattributed_keywords</td>
+<td>Keyword[]</td>
+<td><a href="#unattributedkeyword">Array of Keyword</a></td>
+</tr>
+<tr>
 <td>totals</td>
 <td>Object</td>
 <td><a href="#totalkeyword">Total Object</a></td>
@@ -6349,6 +6165,31 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 <td>Keyword Name</td>
 </tr>
 <tr>
+<td>type</td>
+<td>Integer</td>
+<td>Keyword Type (search/display)</td>
+</tr>
+<tr>
+<td>clicks</td>
+<td>Float</td>
+<td>Clicks for Keyword</td>
+</tr>
+<tr>
+<td>impressions</td>
+<td>Integer</td>
+<td>Impressions for Keyword</td>
+</tr>
+<tr>
+<td>ctr</td>
+<td>Float</td>
+<td>Click through Rate for Keyword</td>
+</tr></tbody></table><p><a name="unattributedkeyword"></a>
+<strong>Unattributed Keyword Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
 <td>type</td>
 <td>Integer</td>
 <td>Keyword Type (search/display)</td>
@@ -6522,7 +6363,12 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
                         </span><span class="s2">"rank_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
                     </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rank_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"budget_lost_absolute_top_search_impression_share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Campaign (Demo)"</span><span class="p">,</span><span class="w">
@@ -7177,6 +7023,14 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&amp;campai
                 </span><span class="s2">"first_page_cpc"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.34</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"top_page_cpc"</span><span class="p">:</span><span class="mi">15</span><span class="w">
             </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"unattributed_keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.35</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="p">,</span><span class="w">
@@ -7250,6 +7104,11 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&amp;campai
 <td>Array of <a href="#keywordobject">Keyword Object</a></td>
 </tr>
 <tr>
+<td>unattributed_keywords</td>
+<td>Array</td>
+<td>Array of <a href="#unattributedkeywordobject">Keyword Object</a></td>
+</tr>
+<tr>
 <td>totals</td>
 <td>Object</td>
 <td><a href="#totalobject">Total Object</a></td>
@@ -7278,6 +7137,31 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&amp;campai
 <td>media_cost</td>
 <td>Float</td>
 <td>cost</td>
+</tr>
+<tr>
+<td>impressions</td>
+<td>Integer</td>
+<td>Impressions for Keyword</td>
+</tr>
+<tr>
+<td>ctr</td>
+<td>Float</td>
+<td>Click through Rate for Keyword</td>
+</tr></tbody></table><p><a name="unattributedkeyword"></a>
+<strong>Unattributed Keyword Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>type</td>
+<td>Integer</td>
+<td>Keyword Type (search/display)</td>
+</tr>
+<tr>
+<td>clicks</td>
+<td>Float</td>
+<td>Clicks for Keyword</td>
 </tr>
 <tr>
 <td>impressions</td>
@@ -16851,6 +16735,9 @@ curl -X POST <span class="se">\</span>
 <blockquote>
 <p>Response</p></blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"page"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"per_page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"total_pages"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s2">"elt_jobs"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
