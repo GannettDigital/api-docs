@@ -164,7 +164,7 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param | Required? | Function |
 |---|---|---|
-| report_type | Required | Only campaigns appropriate for this type of report will be returned.  Allowed values are **facebook_campaign**, **display_activity**, **search_activity**, **youtube**, **campaigns_overview**, **keyword**, **google_keyword**, **geofence_summary**, **cvt**, and **addressable_geofence**|
+| report_type | Required | Only campaigns appropriate for this type of report will be returned.  Allowed values are **facebook_campaign**, **display_activity**, **search_activity**, **youtube**, **campaigns_overview**, **keyword**, **google_keyword**, **geofence_summary**, **cvt**, **wpc** and **addressable_geofence**|
 | global_master_campaign_id[] | Optional | Restrict results to one or more specific campaigns|
 | campaign_status[] | Optional | Restrict results to campaigns with given status values.  Allowed values are **running**, **stopped** and **ended**|
 
