@@ -42,7 +42,7 @@ includes:
   - youtube_campaign_metrics
 
   - traffic_metrics
-  - discovery
+  - marketing_activity
   - top_referrers
   - total_track
   - web_events_metrics
@@ -71,6 +71,7 @@ includes:
   - deprecated_apis
   - creative_ad_metrics
   - display_campaign_metrics
+  - discovery
   - lead_event_feed_service/overview
   - lead_event_feed_service/call_events/call_events_object
   - lead_event_feed_service/call_events/index
