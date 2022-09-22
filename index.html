@@ -595,7 +595,7 @@
                     <a href="#reporting-metric-apis-traffic-metric-apis" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Traffic Metric APIs</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
-                            <a href="#reporting-metric-apis-traffic-metric-apis-discovery" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Discovery</strong></a>
+                            <a href="#reporting-metric-apis-traffic-metric-apis-marketing-activity" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Marketing Activity</strong></a>
                           </li>
                           <li class="toc-h3-li">
                             <a href="#reporting-metric-apis-traffic-metric-apis-resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
@@ -892,6 +892,20 @@
                           </li>
                           <li class="toc-h3-li">
                             <a href="#deprecated-apis-display-campaign-metrics-old-response-data-details" class="toc-h3 toc-link" data-title="Deprecated APIs">Response Data Details</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="toc-h2-li">
+                    <a href="#deprecated-apis-discovery" class="toc-h2 toc-link" data-title="Deprecated APIs">Discovery</a>
+                      <ul class="toc-list-h3">
+                          <li class="toc-h3-li">
+                            <a href="#deprecated-apis-discovery-resource-overview" class="toc-h3 toc-link" data-title="Deprecated APIs">Resource Overview</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#deprecated-apis-discovery-parameters" class="toc-h3 toc-link" data-title="Deprecated APIs">Parameters</a>
+                          </li>
+                          <li class="toc-h3-li">
+                            <a href="#deprecated-apis-discovery-response-data-details" class="toc-h3 toc-link" data-title="Deprecated APIs">Response Data Details</a>
                           </li>
                       </ul>
                   </li>
@@ -1397,7 +1411,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </tr>
 <tr>
 <td>Traffic Metrics</td>
-<td><a href="#discovery">Discovery</a></td>
+<td><a href="#marketing_activity">Marketing Activity</a></td>
 <td>Basic metrics organized by traffic; paid (LOCALiQ &amp; others) and organic</td>
 </tr>
 <tr>
@@ -1877,7 +1891,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </thead><tbody><tr>
 <td>report_type</td>
 <td>Required</td>
-<td>Only campaigns appropriate for this type of report will be returned.  Allowed values are <strong>facebook_campaign</strong>, <strong>display_activity</strong>, <strong>search_activity</strong>, <strong>youtube</strong>, <strong>campaigns_overview</strong>, <strong>keyword</strong>, <strong>google_keyword</strong>, <strong>geofence_summary</strong>, <strong>cvt</strong>, and <strong>addressable_geofence</strong></td>
+<td>Only campaigns appropriate for this type of report will be returned.  Allowed values are <strong>facebook_campaign</strong>, <strong>display_activity</strong>, <strong>search_activity</strong>, <strong>youtube</strong>, <strong>campaigns_overview</strong>, <strong>keyword</strong>, <strong>google_keyword</strong>, <strong>geofence_summary</strong>, <strong>cvt</strong>, <strong>wpc</strong> and <strong>addressable_geofence</strong></td>
 </tr>
 <tr>
 <td>global_master_campaign_id[]</td>
@@ -9773,292 +9787,782 @@ https://api.localiqservices.com/client_reports/youtube/TEST_1?&amp;campaign_stat
 <td>Float</td>
 <td>No</td>
 <td>Total Effective Cost per Thousand Impressions</td>
-</tr></tbody></table><p><strong>Totals Per Interval Object</strong></p><p>This is an Interval object across all campaigns.</p><h2 id='reporting-metric-apis-traffic-metric-apis'>Traffic Metric APIs</h2><h3 id='reporting-metric-apis-traffic-metric-apis-discovery' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Discovery</strong></h3><p><a name="discovery"></a></p><p>This data is a count of each Capture event grouped by master campaign ID, referrer type, and referrer source.
-This API endpoint is used to populate the Marketing Activity Report in client center.</p><h3 id='reporting-metric-apis-traffic-metric-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
+</tr></tbody></table><p><strong>Totals Per Interval Object</strong></p><p>This is an Interval object across all campaigns.</p><h2 id='reporting-metric-apis-traffic-metric-apis'>Traffic Metric APIs</h2><h3 id='reporting-metric-apis-traffic-metric-apis-marketing-activity' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Marketing Activity</strong></h3><p><a name="marketing_activity"></a></p><h3 id='reporting-metric-apis-traffic-metric-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
 </tr>
 </thead><tbody><tr>
 <td>GET</td>
-<td>/capture_reports/discovery?[query_params]</td>
-</tr></tbody></table><h3 id='reporting-metric-apis-traffic-metric-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
+<td>/client_reports/marketing_activity/[gmaid]?[query_params]</td>
+</tr></tbody></table><p>Use GET to retrieve information from the Marketing activity API. Data can be returned for a GMAID by a specific date range determined by start date and end date.</p><p>Subtotals can be further aggregated given an interval, and will be totaled for day, calendar_week, or calendar_month. The first day of the interval will be used to denote the interval totals.</p><p>Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.</p><h3 id='reporting-metric-apis-traffic-metric-apis-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
 <th>Param</th>
 <th>Required</th>
 <th>Function</th>
 </tr>
 </thead><tbody><tr>
-<td>startTime</td>
+<td>start_date</td>
 <td>Yes</td>
-<td>Restricts the results to those occurring on or after this date and time. If time is not specified, startTime will be the beginning of the day in UTC (T00:00:00Z)</td>
+<td>Restricts the results to those occurring on or after this date</td>
 </tr>
 <tr>
-<td>endTime</td>
+<td>end_date</td>
 <td>Yes</td>
-<td>Restricts the results to those occurring on or before this date and time. If time is not specified, endTime will be the end of the day in UTC (T12:59:59Z)</td>
+<td>Restricts the results to those occurring on or before this date</td>
 </tr>
 <tr>
 <td>gmaid</td>
 <td>Yes</td>
-<td>Restrict results to the specified advertiser</td>
+<td>Restrict results to the specified Global Master Advertiser ID</td>
 </tr>
 <tr>
-<td>bucket</td>
+<td>global_master_campaign_id[]</td>
 <td>No</td>
-<td>place results in buckets</td>
-</tr></tbody></table><h3 id='reporting-metric-apis-traffic-metric-apis-response-data-details'>Response Data Details</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=TEST_1"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
-
-<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=TEST_1"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-
-<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=TEST_1'</span> <span class="se">\</span>
-  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+<td>Restrict results to the specified master campaign id</td>
+</tr>
+<tr>
+<td>interval_size</td>
+<td>No</td>
+<td>Return subtotals for the given intervals within the start-end time provided. Accepts calendar_month, calendar_week, or day (Default is day)</td>
+</tr></tbody></table><h3 id='reporting-metric-apis-traffic-metric-apis-response-data-details'>Response Data Details</h3>
+<blockquote>
+<p>Retrieve data for a specific range of dates</p></blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_date=2019-10-01&amp;end_date=2020-02-25'
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific master campaign id</p></blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_date=2019-10-01&amp;end_date=2020-02-25&amp;global_master_campaign_id[]=TEST_1' \
+</code></pre>
+<blockquote>
+<p>Retrieve data for a specific range of dates grouped by calendar week</p></blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_date=2019-10-01&amp;end_date=2020-02-25&amp;interval_size=calendar_week' \
+</code></pre>
+<blockquote>
+<p>Retrieve data with all options together with results below</p></blockquote>
+<pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_date=2019-10-01&amp;end_date=2020-02-25&amp;global_master_campaign_id[]=TEST_1&amp;interval_size=calendar_week' \
 </code></pre>
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"20180102-20180103"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180103-20180104"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180104-20180105"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180105-20180106"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180106-20180107"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180107-20180108"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180108-20180109"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180109-20180110"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180110-20180111"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"api_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"marketing_activity"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"api_run_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"interval_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"day"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"report_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_3212412"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SK | Slipknot Group | Heavy Metal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"offer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2101</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XMO"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"campaign_end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-06-24"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAID"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNKNOWN"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Call"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">],</span><span class="w">
-                        </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180111-20180112"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECT"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">35270</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"channels"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                             </span><span class="p">},</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                            </span><span class="s2">"social"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                             </span><span class="p">}</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEARCH"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">26108</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTHER"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">7002</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIAL"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6615</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONRLPAID"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEARCH"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3522</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECTORY"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONRLPAID"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTHER"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">561</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INFLUENCED"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECT"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">963</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">],</span><span class="w">
-                        </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
                     </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180112-20180113"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180113-20180114"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"20180114-20180114"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                 </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
             </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"social"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"direct"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+         </span><span class="s2">"shopping"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+         </span><span class="s2">"video"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"directory"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"marketplace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"otherpaid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+             </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"generated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-04T17:03:33Z"</span><span class="w">
+    </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_136048"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><p>The body of the API response depend on whether the bucket parameter is present.</p><p>Whether it&#39;s present or not, the response will contain a result object along with a generated_at field.</p><p>The generated_at field is the date and time the report was generated.</p><p>The result object will contain an array of count objects</p><table><thead><tr>
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"api_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"marketing_activity"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"api_run_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-20"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-01"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-19"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"interval_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"day"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"report_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_123"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM | Boats | Boats"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"offer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Engine Marketing"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"campaign_start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-26"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"campaign_end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-17"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"social"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"direct"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-17"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"directory"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"marketplace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"otherpaid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_123"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><table><thead><tr>
 <th>Field Name</th>
 <th>Datatype</th>
-<th>Nullable</th>
 <th>Description</th>
 </tr>
 </thead><tbody><tr>
-<td>group</td>
+<td>api_name</td>
 <td>String</td>
-<td>no</td>
-<td>INFLUENCED or ORGANIC</td>
+<td>Name of the API</td>
 </tr>
 <tr>
-<td>type</td>
+<td>api_run_date</td>
 <td>String</td>
-<td>no</td>
-<td>SEARCH, DIRECT, OTHER, UNKNOWN or SOCIAL</td>
+<td>Date report was run</td>
 </tr>
 <tr>
-<td>event_counts</td>
-<td>Array</td>
-<td>no</td>
-<td>An array of event_count objects</td>
+<td>start_date</td>
+<td>String</td>
+<td>Start date of report</td>
 </tr>
 <tr>
-<td>master_campaign_id</td>
+<td>end_date</td>
 <td>String</td>
-<td>Yes</td>
-<td>The campaign to which the events are attributed</td>
-</tr></tbody></table><p><strong>The event_count object</strong></p><table><thead><tr>
+<td>End date of report</td>
+</tr>
+<tr>
+<td>time_zone</td>
+<td>String</td>
+<td>Time Zone</td>
+</tr>
+<tr>
+<td>interval_size</td>
+<td>String</td>
+<td>Interval Size (&#39;none&#39;, &#39;day&#39;, &#39;calendar_week&#39; or &#39;calendar_month&#39;)</td>
+</tr>
+<tr>
+<td>report_data</td>
+<td>Object</td>
+<td>Report details. <a href="#marketingactivityreportdata">Report Data Object</a></td>
+</tr>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>String</td>
+<td>Global Master Advertiser ID</td>
+</tr></tbody></table><p><a name="marketingactivityreportdata"></a>
+<strong>Report Data Object</strong></p><table><thead><tr>
 <th>Field Name</th>
 <th>Datatype</th>
-<th>Nullable</th>
 <th>Description</th>
 </tr>
 </thead><tbody><tr>
-<td>type</td>
-<td>String</td>
-<td>no</td>
-<td>TouchPoint or Contact</td>
+<td>campaigns</td>
+<td>Object</td>
+<td>chat counts for chats attributed to paid campaigns. <a href="#marketingactivitycampaigns">Campaigns Object</a></td>
 </tr>
 <tr>
-<td>sub_type</td>
-<td>String</td>
-<td>no</td>
-<td>The type of event; Visit, Post, Chat or Call</td>
+<td>search</td>
+<td>Object</td>
+<td>chat, visit, call, form counts attributed to organic sources (Organic search) <a href="#marketingactivitysearch">Search Object</a></td>
 </tr>
 <tr>
-<td>count</td>
+<td>social</td>
+<td>Object</td>
+<td>chat, visit, call, form counts attributed to organic sources (Organic social) <a href="#marketingactivitysocial">Social Object</a></td>
+</tr>
+<tr>
+<td>direct</td>
+<td>Object</td>
+<td>chat, visit, call, form counts attributed to organic sources (Organic direct) <a href="#marketingactivitydirect">Direct Object</a></td>
+</tr>
+<tr>
+<td>directory</td>
+<td>Object</td>
+<td>chat, visit, call, form counts attributed to organic sources (Organic directory) <a href="#marketingactivitydirectory">Directory Object</a></td>
+</tr>
+<tr>
+<td>marketplace</td>
+<td>Object</td>
+<td>chat, visit, call, form counts attributed to marketplace sources (Marketplace) <a href="#marketingactivitymarketplace">Marketplace Object</a></td>
+</tr>
+<tr>
+<td>other</td>
+<td>Object</td>
+<td>chat, visit, call, form counts attributed to organic sources (Other) <a href="#marketingactivityother">Other Object</a></td>
+</tr>
+<tr>
+<td>otherpaid</td>
+<td>Object</td>
+<td>chat, visit, call, form counts attributed to organic sources (Other paid) <a href="#marketingactivityotherpaid">Otherpaid Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="chatcampaigns"></a>
+<strong>Campaigns Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>global_master_campaign_id</td>
+<td>String</td>
+<td>Identifier for campaign</td>
+</tr>
+<tr>
+<td>campaign_name</td>
+<td>String</td>
+<td>Name of campaign</td>
+</tr>
+<tr>
+<td>campaign_type</td>
+<td>String</td>
+<td>Type of campaign</td>
+</tr>
+<tr>
+<td>campaign_status</td>
+<td>String</td>
+<td>Status of campaign</td>
+</tr>
+<tr>
+<td>organization</td>
+<td>String</td>
+<td>Organization</td>
+</tr>
+<tr>
+<td>offer_id</td>
+<td>String</td>
+<td>Offer id of the campaign</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td>Source of the campaign</td>
+</tr>
+<tr>
+<td>campaign_start_date</td>
+<td>String</td>
+<td>Start date of campaign</td>
+</tr>
+<tr>
+<td>campaign_end_date</td>
+<td>String</td>
+<td>End date of campaign</td>
+</tr>
+<tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivitysearch"></a>
+<strong>Search Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivitysocial"></a>
+<strong>Social Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivitydirect"></a>
+<strong>Direct Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivitydirectory"></a>
+<strong>Directory Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivitymarketplace"></a>
+<strong>Marketplace Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivityother"></a>
+<strong>Other Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivityotherpaid"></a>
+<strong>Otherpaid Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>intervals</td>
+<td>Object</td>
+<td>Data for specified interval. <a href="#marketingactivityintervals">Intervals Object</a></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>Object</td>
+<td>Totals of vists, cals, chats and forms for each type <a href="#marketingactivitytotals">Totals Object</a></td>
+</tr>
+<tr>
+<td>(#marketingactivitytotals)</td>
+
+
+</tr></tbody></table><p><a name="marketingactivityintervals"></a>
+<strong>Intervals Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>start_date</td>
+<td>String</td>
+<td>Start date of interval</td>
+</tr>
+<tr>
+<td>visits</td>
 <td>Integer</td>
-<td>no</td>
-<td>The count of the number of events</td>
+<td>Number of total visits</td>
+</tr>
+<tr>
+<td>chats</td>
+<td>Integer</td>
+<td>Number of total chat</td>
+</tr>
+<tr>
+<td>calls</td>
+<td>Integer</td>
+<td>Number of total calls</td>
+</tr>
+<tr>
+<td>forms</td>
+<td>Integer</td>
+<td>Number of total forms and emails</td>
+</tr></tbody></table><p><a name="marketingactivitytotals"></a>
+<strong>Totals Object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>total_visits</td>
+<td>Integer</td>
+<td>Number of total visits</td>
+</tr>
+<tr>
+<td>total_calls</td>
+<td>Integer</td>
+<td>Number of total calls</td>
+</tr>
+<tr>
+<td>total_chats</td>
+<td>Integer</td>
+<td>Number of total chats</td>
+</tr>
+<tr>
+<td>total_forms</td>
+<td>Integer</td>
+<td>Number of total forms</td>
 </tr></tbody></table><h3 id='reporting-metric-apis-traffic-metric-apis-top-referrers' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Top Referrers</strong></h3><p><a name="top_referrers"></a></p><p>Describes the distribution of referrers for an advertiser for a given time period as well as attributing the source
 of the referral.  This API endpoint is the data source for the Traffic Detail Report report in client center.</p><h3 id='reporting-metric-apis-traffic-metric-apis-resource-overview-nbsp'>Resource Overview&nbsp;</h3><table><thead><tr>
 <th>Method</th>
@@ -17902,7 +18406,293 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='deprecated-apis-lead-events'>Lead Events</h2><p>Lead Event Feed Service is a HIPAA Compliant API that allows users to retrieve lead details for call, chat, web, and email events.</p><h3 id='deprecated-apis-lead-events-call-events'>Call Events</h3><p><strong><code>Call Events</code></strong> object returns call data for potential customers placing calls to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>DISCLAIMER</strong> - The update and delete methods of the API are no longer supported</p><p><strong>The Call Events Object</strong></p>
+</span></code></pre><h2 id='deprecated-apis-discovery'>Discovery</h2><p><a name="discovery"></a></p><p>This data is a count of each Capture event grouped by master campaign ID, referrer type, and referrer source.
+This API endpoint is used to populate the Marketing Activity Report in client center.</p><h3 id='deprecated-apis-discovery-resource-overview'>Resource Overview</h3><table><thead><tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody><tr>
+<td>GET</td>
+<td>/capture_reports/discovery?[query_params]</td>
+</tr></tbody></table><h3 id='deprecated-apis-discovery-parameters'>Parameters</h3><p>When using the GET method, the results can be filtered using these parameters:</p><table><thead><tr>
+<th>Param</th>
+<th>Required</th>
+<th>Function</th>
+</tr>
+</thead><tbody><tr>
+<td>startTime</td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or after this date and time. If time is not specified, startTime will be the beginning of the day in UTC (T00:00:00Z)</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or before this date and time. If time is not specified, endTime will be the end of the day in UTC (T12:59:59Z)</td>
+</tr>
+<tr>
+<td>gmaid</td>
+<td>Yes</td>
+<td>Restrict results to the specified advertiser</td>
+</tr>
+<tr>
+<td>bucket</td>
+<td>No</td>
+<td>place results in buckets</td>
+</tr></tbody></table><h3 id='deprecated-apis-discovery-response-data-details'>Response Data Details</h3><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=TEST_1"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bearer OAUTH_ACCESS_TOKEN'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Accept"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=TEST_1"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer OAUTH_ACCESS_TOKEN"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.localiqservices.com/capture_reports/discovery?startTime=2018-01-01T16:00:00Z&amp;endTime=2018-01-14T15:59:59Z&amp;bucket=1&amp;gmaid=TEST_1'</span> <span class="se">\</span>
+  --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Authorization: Bearer OAUTH_ACCESS_TOKEN'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p></blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"20180102-20180103"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180103-20180104"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180104-20180105"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180105-20180106"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180106-20180107"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180107-20180108"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180108-20180109"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180109-20180110"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180110-20180111"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAID"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNKNOWN"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Call"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180111-20180112"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECT"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">35270</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEARCH"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">26108</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTHER"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">7002</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIAL"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6615</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONRLPAID"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEARCH"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3522</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIC"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECTORY"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONRLPAID"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTHER"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">561</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INFLUENCED"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIRECT"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"event_counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TouchPoint"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">963</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180112-20180113"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180113-20180114"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"20180114-20180114"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-days"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"generated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-04T17:03:33Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><p>The body of the API response depend on whether the bucket parameter is present.</p><p>Whether it&#39;s present or not, the response will contain a result object along with a generated_at field.</p><p>The generated_at field is the date and time the report was generated.</p><p>The result object will contain an array of count objects</p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>group</td>
+<td>String</td>
+<td>no</td>
+<td>INFLUENCED or ORGANIC</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>no</td>
+<td>SEARCH, DIRECT, OTHER, UNKNOWN or SOCIAL</td>
+</tr>
+<tr>
+<td>event_counts</td>
+<td>Array</td>
+<td>no</td>
+<td>An array of event_count objects</td>
+</tr>
+<tr>
+<td>master_campaign_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>The campaign to which the events are attributed</td>
+</tr></tbody></table><p><strong>The event_count object</strong></p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>type</td>
+<td>String</td>
+<td>no</td>
+<td>TouchPoint or Contact</td>
+</tr>
+<tr>
+<td>sub_type</td>
+<td>String</td>
+<td>no</td>
+<td>The type of event; Visit, Post, Chat or Call</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Integer</td>
+<td>no</td>
+<td>The count of the number of events</td>
+</tr></tbody></table><h2 id='deprecated-apis-lead-events'>Lead Events</h2><p>Lead Event Feed Service is a HIPAA Compliant API that allows users to retrieve lead details for call, chat, web, and email events.</p><h3 id='deprecated-apis-lead-events-call-events'>Call Events</h3><p><strong><code>Call Events</code></strong> object returns call data for potential customers placing calls to inquire about offerings related to a particular campaign. The API allows you to retrieve call events individually or as list. You can also create, update and delete call events.</p><p><strong>DISCLAIMER</strong> - The update and delete methods of the API are no longer supported</p><p><strong>The Call Events Object</strong></p>
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
