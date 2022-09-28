@@ -1,4 +1,4 @@
-### **Discovery**
+## Discovery
 <a name="discovery"></a>
 
 This data is a count of each Capture event grouped by master campaign ID, referrer type, and referrer source.
