@@ -133,6 +133,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |call_events| Integer | no | totals of call events|
 |form_events| Integer | no | totals of form events|
 |chat_events| Integer | no | totals of chat events|
+|booking_events| Integer | no | totals of unread booking events|
 
 **Unread**
 
@@ -142,6 +143,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |call_events| Integer | no | totals of unread call events|
 |form_events| Integer | no | totals of unread form events|
 |chat_events| Integer | no | totals of unread chat events|
+|booking_events| Integer | no | totals of unread booking events|
 
 **Channel**
 | Field Name | Datatype | Nullable | Description |
@@ -283,12 +285,14 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
         "call_events": 3,
         "form_events": 0,
         "chat_events": 0,
+        "booking_events": 0,
     },
     "unread": {
        "events": 2,
        "call_events": 2,
        "form_events": 0,
        "chat_events": 0
+       "booking_events": 0
     }
     "channel": {
        "display": 2,
