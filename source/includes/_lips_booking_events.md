@@ -8,16 +8,16 @@ Also referred to as "contact interactions", *events* are activities associated w
 
 | Method | URI Format |
 |---|---|
-| GET `show` |events/:id|
-| PUT `update` | /events/:id |
-| PUT `update` | /events/:id/unarchive |
-| DELETE `destroy` | /events/:id |
+| GET `show` |booking_events/:id|
+| PUT `update` | /booking_events/:id |
+| PUT `update` | /booking_events/:id/unarchive |
+| DELETE `destroy` | /booking_events/:id |
 
 ### Usage
-Use GET to retrieve events that match the query params.
+Use GET to retrieve booking events that match the query params.
 
 ### GET (SHOW)
-Show a single event by id
+Show a single booking event by id
 
 #### Examples:
 ```
