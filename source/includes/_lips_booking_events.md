@@ -8,21 +8,18 @@ Also referred to as "contact interactions", *events* are activities associated w
 
 | Method | URI Format |
 |---|---|
-| GET `show` |booking_events/:id|
-| PUT `update` | /booking_events/:id |
-| PUT `update` | /booking_events/:id/unarchive |
-| DELETE `destroy` | /booking_events/:id |
-
-### Usage
-Use GET to retrieve booking events that match the query params.
+| GET `show` |booking_events/:booking_id|
+| PUT `update` | /booking_events/:booking_id |
+| PUT `update` | /booking_events/:booking_id/unarchive |
+| DELETE `destroy` | /booking_events/:booking_id |
 
 ### GET (SHOW)
-Show a single booking event by id
+Show a single booking event by booking_id which is a string value
 
 #### Examples:
 ```
 
-curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/booking_events/1
+curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/booking_events/123-asd
 ```
 #### Example Response
 
@@ -55,7 +52,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/booking_events/1
         "created_at": "2022-02-23T13:35:56.855Z"
     },
     "booking": {
-        "booking_id": "1",
+        "booking_id": "123-asd",
         "extra_fields": {
             "city": null,
             "region": null,
@@ -88,7 +85,7 @@ Fields marked as required aren't necessarily required in the request, but are re
 #### Examples:
 
 ```
-curl --location --request PUT 'https://data-connect-lips.gannettdigital.com/booking_events/1' \
+curl --location --request PUT 'https://data-connect-lips.gannettdigital.com/booking_events/123-asd' \
 --header 'Authorization: {auth_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '
@@ -109,7 +106,7 @@ example success response (HTTP status 2xx):
 ### DELETE (destroy)
 
 ```
-curl -L -X DELETE 'https://data-connect-lips.gannettdigital.com/booking_events/1' \
+curl -L -X DELETE 'https://data-connect-lips.gannettdigital.com/booking_events/123-asd' \
 -H 'Authorization: 1b01Secret'
 ```
 
@@ -120,7 +117,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 ### PUT (unarchive)
 
 ```
-curl -L -X PUT 'https://data-connect-lips.gannettdigital.com/booking_events/1/unarchive' \
+curl -L -X PUT 'https://data-connect-lips.gannettdigital.com/booking_events/123-asd/unarchive' \
 -H 'Authorization: 1b01Secret'
 ```
 
