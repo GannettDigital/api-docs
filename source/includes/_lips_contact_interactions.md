@@ -82,6 +82,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   -H 'x-api-key: SJNPPSecret'
 ```
 
+
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&tags[]=foo' \
   -H 'Accept: */*' \
@@ -118,7 +119,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |created_at| Datetime | yes | The date and time which this interaction was created|
 |occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
 |channel| String | yes | The acquisition channel responsible for the contact interaction|
-|event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
+|event_type| String | no | The type of the contact interaction . Valid values are chat, call, form and booking|
 |external_source| String | no | External Source tells us if this interaction came to us from Capture (through the pubsub) or through the LIPS API(Zapier, FPD, Entrata etc.|
 |tags| Array(String)| the tags attached to the contact interaction|
 |read|boolean|No|Check if contact interaction is marked as read|
