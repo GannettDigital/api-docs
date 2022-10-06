@@ -111,21 +111,6 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/TEST_1?s
 |cpw | Float | Cost per walk-in |
 |spend | Float | Spend |
 
-### Conversion Zip Code Fences
-
-| Field Name | Datatype | Description |
-|---|---|---
-|name | String | Name |
-|conversion_fence_id | Int | Identifier for Conversion Fence |
-|global_master_campaign_id | Int | MCID for Conversion Fence |
-|cycle_id | Int | Cycle id for Conversion Fence |
-|campaign_name | String | Campaign name for Conversion Fence |
-|geofence_name | String | Geofence name for Conversion Fence (non-Gannett campaigns only)|
-|walk_ins | Int | Number of Walk-ins |
-|cpw | Float | Cost per walk-in |
-|spend | Float | Spend |
-|zip_code | Int | zip_code |
-
 ### Paging
 
 | Field Name | Datatype | Description |
