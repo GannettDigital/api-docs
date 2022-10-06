@@ -84,31 +84,6 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/TEST_1?s
                 "cpw": 2.94,
                 "spend": 50.00
              }
-        ],
-        "conversion_zip_code_fences": [
-             {
-                "name": "Conversion Fence (Demo) 1",
-                "conversion_fence_id": 1,
-                "global_master_campaign_id": -91190,
-                "cycle_id": -91191,
-                "campaign_name": "Gannett Display Campaign (Demo)",
-                "walk_ins": 17,
-                "cpw": 2.94,
-                "spend": 50.00,
-                "zip_code": 21331
-             },
-             {
-                "name": "Conversion Fence (Demo) 2",
-                "conversion_fence_id": 2,
-                "global_master_campaign_id": 91166,
-                "cycle_id": 91167,
-                "campaign_name": "Display Campaign (Demo)",
-                "geofence_name": "Geofence 1",
-                "walk_ins": 17,
-                "cpw": 2.94,
-                "spend": 50.00,
-                "zip_code": 42144
-             }
         ]
     }
 }
