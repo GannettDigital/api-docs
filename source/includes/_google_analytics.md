@@ -189,7 +189,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
   "web_property_id": "1234567890",
   "web_property_name": null,
   "report_data": {
-    "reports": [
+    [
       {
         "type": "website_traffic",
         "data": {
