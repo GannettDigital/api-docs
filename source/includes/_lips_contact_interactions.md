@@ -168,7 +168,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|booking_id| String | no | the external id of the booking event |
+|booking_id| String | no | the external id (appointment token) of the Appointment. Used Internally to retrieve additional data about the Appointment. |
 |extra_fields| object | yes |extra fields|
 
 **Form**
