@@ -35,6 +35,7 @@ When using the GET index method, the results will be filtered using these parame
 |`channel[]`|No|Filters results by Event channel. Valid channels are: `search, display, social, chat, other, none`|
 |`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
 |`archived`|No|Boolean filter to include ONLY archived events|
+|`booking_id`|No|Filters the booking events based on the external booking_id|
 
 
 > * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`. Searching by `channel` will remove any event without a `wpc_id`.
@@ -43,6 +44,7 @@ Event Type | Explanation
 -- | --
 call | All CallEvents
 chat | All ChatEvents
+booking | All BookingEvents
 chat_sales | ChatEvents with a lead_type of sales. Ignored when used in combination with `chat`
 chat_service | ChatEvents with a lead_type of service. Ignored when used in combination with `chat`
 chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
@@ -80,6 +82,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   -H 'x-api-key: SJNPPSecret'
 ```
 
+
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&tags[]=foo' \
   -H 'Accept: */*' \
@@ -116,7 +119,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |created_at| Datetime | yes | The date and time which this interaction was created|
 |occured_at| Datetime | yes |The date and time which this contact interaction occurred. This will usually be different than the date that the contact interaction was created.|
 |channel| String | yes | The acquisition channel responsible for the contact interaction|
-|event_type| String | no | The type of the contact interaction . Valid values are chat, call and form|
+|event_type| String | no | The type of the contact interaction . Valid values are chat, call, form and booking|
 |external_source| String | no | External Source tells us if this interaction came to us from Capture (through the pubsub) or through the LIPS API(Zapier, FPD, Entrata etc.|
 |tags| Array(String)| the tags attached to the contact interaction|
 |read|boolean|No|Check if contact interaction is marked as read|
@@ -162,6 +165,13 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |---|---|---|---|
 |call_recording_url| String | yes | Only included when interaction is call|
 |call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
+
+**Booking**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|booking_id| String | no | the external id (appointment token) of the Appointment. Used Internally to retrieve additional data about the Appointment. |
+|extra_fields| object | yes |extra fields|
 
 **Form**
 

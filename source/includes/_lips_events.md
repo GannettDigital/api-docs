@@ -32,6 +32,7 @@ When using the GET index method, the results will be filtered using these parame
 |`event_type[]`|No|See chart below|
 |`channel[]`|No|Filters results by Event channel. Valid channels are: `search, display, social, chat, other, none`|
 |`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
+|`booking_id`|No|Filters the booking events based on the external booking_id|
 
 
 > * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`. Searching by `channel` will remove any event without a `wpc_id`.
@@ -40,6 +41,7 @@ Event Type | Explanation
 -- | --
 call | All CallEvents
 chat | All ChatEvents
+booking | All BookingEvents
 chat_sales | ChatEvents with a lead_type of sales. Ignored when used in combination with `chat`
 chat_service | ChatEvents with a lead_type of service. Ignored when used in combination with `chat`
 chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
@@ -105,7 +107,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
 |created_at| Datetime | yes | The date and time which this interaction was created|
 |occured_at| Datetime | yes |The date and time which this event occurred. This will usually be different than the date that the event was created.|
 |channel| String | yes | The acquisition channel responsible for the event|
-|event_type| String | no | The type of the event . Valid values are chat, call and form|
+|event_type| String | no | The type of the event. Valid values are chat, call, form and booking|
 |external_source| String | no | External Source tells us if this interaction came to us from FPD, Yardi etc|
 |read|boolean|No|Check if event is marked as read|
 |important|boolean|No|Check if event is marked as important|
@@ -145,6 +147,13 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
 |---|---|---|---|
 |call_recording_url| String | yes | Only included when interaction is call|
 |call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
+
+**Booking**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|booking_id| String | no | the external id (appointment token) of the Appointment. Used Internally to retrieve additional data about the Appointment. |
+|extra_fields| object | yes |extra fields|
 
 **Form**
 
