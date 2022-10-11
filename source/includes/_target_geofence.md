@@ -25,6 +25,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 |`sort_by`|No|Specifies what column to sort by.  Valid columns are: `publisher_plat_zipcode`, `clicks`, `impressions`, and `ctr` <br><b>Default value: `publisher_plat_zipcode`</b>|
 |`sort_dir`|No|Specifies the sort direction.  Can be either `asc` or `desc` <br><b>Default value: `asc`</b>|
+|`zip_code`|No|Specifies the zip code of conversion fence (not zip+4).</b>|
 
 ### Response Data Details
 
