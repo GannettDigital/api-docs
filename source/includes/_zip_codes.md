@@ -6,7 +6,7 @@
 |---|---|
 | GET | /client_reports/zip_codes/[gmaid]?[query_params] |
 
-Use GET to retrieve zip code. Data can be returned for a GMAID for a specific date range determined by start_date and end_date. Data is an array with all zip codes for, which have at least one walk in.
+Use GET to retrieve zip code. Data can be returned for a GMAID for a specific date range determined by start_date and end_date. Data is an array with all zip codes for, which have at least one walk in. This is a 5-digit zipcode that can be used in a zipcode filters in the target_geofence and conversion_zone_geofence report requests.
 
 ### Parameters
 
@@ -41,8 +41,8 @@ https://api.localiqservices.com/client_reports/zip_codes/TEST_1?start_date=2022-
     "global_master_advertiser_id": "USA_258209",
     "report_data": {
         "zip_codes": [
-            "5555-1234",
-            "5555-2345"
+            54194,
+            54195
         ]
     }
 }
