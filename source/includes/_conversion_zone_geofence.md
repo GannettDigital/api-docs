@@ -23,6 +23,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`page`|No|Specifies which page of results to return <br><b>Default value: 1</b>|
 |`sort_by`|No|Specifies what column to sort by.  Valid columns are: `walk_ins`, `name`, `cpw`, `spend` <br><b>Default value: `walk_ins`</b>|
 |`sort_dir`|No|Specifies the sort direction.  Can be either `asc` or `desc` <br><b>Default value: `desc`</b>|
+|`zip_code`|No|Specifies the zip code of conversion fence.</b>|
 
 
 ### Response Data Details
@@ -111,6 +112,7 @@ https://api.localiqservices.com/client_reports/conversion_zone_geofence/TEST_1?s
 |spend | Float | Spend |
 
 ### Paging
+
 | Field Name | Datatype | Description |
 |---|---|---|
 |page | Int | Which page is returned |
