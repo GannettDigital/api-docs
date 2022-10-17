@@ -357,4 +357,4 @@ Field | Type | Description
 sub_type | String | The subtype of the form.  Valid values are **FormPost** and **FormEmail**.
 full_message | String | The full form message
 subject | String | **The field is nullable** |
-extra_fields | Array of String | **The field is nullable** |
+extra_fields | JSON Object with custom attributes | **The field is nullable** |
