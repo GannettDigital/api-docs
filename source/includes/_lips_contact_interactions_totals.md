@@ -76,7 +76,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
         "call_events": 3,
         "form_events": 0,
         "chat_events": 0,
-        "lsa_events": 0,
         "booking_events": 0,
         "lsa_events": 0
     },
