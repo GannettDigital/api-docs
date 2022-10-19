@@ -45,6 +45,7 @@ Event Type | Explanation
 call | All CallEvents
 chat | All ChatEvents
 booking | All BookingEvents
+lsa | All LsaEvents
 chat_sales | ChatEvents with a lead_type of sales. Ignored when used in combination with `chat`
 chat_service | ChatEvents with a lead_type of service. Ignored when used in combination with `chat`
 chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
@@ -137,6 +138,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |form_events| Integer | no | totals of form events|
 |chat_events| Integer | no | totals of chat events|
 |booking_events| Integer | no | totals of unread booking events|
+|lsa_events| Integer | no | totals of unread lsa events|
 
 **Unread**
 
@@ -147,6 +149,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |form_events| Integer | no | totals of unread form events|
 |chat_events| Integer | no | totals of unread chat events|
 |booking_events| Integer | no | totals of unread booking events|
+|lsa_events| Integer | no | totals of unread lsa events|
 
 **Channel**
 | Field Name | Datatype | Nullable | Description |
@@ -172,6 +175,15 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |---|---|---|---|
 |booking_id| String | no | the external id (appointment token) of the Appointment. Used Internally to retrieve additional data about the Appointment. |
 |extra_fields| object | yes |extra fields|
+
+**Lsa**
+
+| Field Name | Datatype | Nullable | Description |
+|---|---|---|---|
+|charged| integer | no |Could be one or zero.|
+|customer_name| string | yes| Name of the customer.|
+|lead_type| string | yes |Could be one of `MESSAGE`, `PHONE_CALL`, `BOOKING`|
+|lead_price| integer | yes |The price of lead|
 
 **Form**
 
