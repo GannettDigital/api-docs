@@ -100,6 +100,25 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "ctr": 0.0,
                 "cpc": 0,
                 "cpl": 0,
+                "form_submissions_ct": 410,
+                "form_submissions_vt": 417,
+                "priority_page_views_ct": 213,
+                "priority_page_views_vt": 186,
+                "website_visits_vt": 192,
+                "walk_ins": 0,
+                "video_full_screen": 197,
+                "video_mute": 195,
+                "video_unmute": 188,
+                "video_pause": 206,
+                "video_resume": 190,
+                "video_views": 186,
+                "video_played_to_25_pct": 195,
+                "video_played_to_50_pct": 183,
+                "video_played_to_75_pct": 191,
+                "completed_views": 218,
+                "video_complete_rate": 117.2,
+                "view_thru_rate": 0.91,
+                "cost_per_view": 1.0,
                 "intervals": [
                     {
                         "start_date": "2020-09-11",
@@ -115,7 +134,26 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "spend": 0.0,
                         "ctr": 0.0,
                         "cpc": 0,
-                        "cpl": 0
+                        "cpl": 0,
+                        "form_submissions_ct": 24,
+                        "form_submissions_vt": 23,
+                        "priority_page_views_ct": 10,
+                        "priority_page_views_vt": 10,
+                        "website_visits_vt": 9,
+                        "walk_ins": 0,
+                        "video_full_screen": 6,
+                        "video_mute": 6,
+                        "video_unmute": 14,
+                        "video_pause": 7,
+                        "video_resume": 5,
+                        "video_views": 13,
+                        "video_played_to_25_pct": 12,
+                        "video_played_to_50_pct": 16,
+                        "video_played_to_75_pct": 6,
+                        "completed_views": 16,
+                        "video_complete_rate": 123.08,
+                        "view_thru_rate": 1.26,
+                        "cost_per_view": 1.0
                     }
                 ]
             },
@@ -143,6 +181,25 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "ctr": 3.4,
                 "cpc": 4.11,
                 "cpl": 7.19,
+                "form_submissions_ct": 410,
+                "form_submissions_vt": 417,
+                "priority_page_views_ct": 213,
+                "priority_page_views_vt": 186,
+                "website_visits_vt": 192,
+                "walk_ins": 0,
+                "video_full_screen": 197,
+                "video_mute": 195,
+                "video_unmute": 188,
+                "video_pause": 206,
+                "video_resume": 190,
+                "video_views": 186,
+                "video_played_to_25_pct": 195,
+                "video_played_to_50_pct": 183,
+                "video_played_to_75_pct": 191,
+                "completed_views": 218,
+                "video_complete_rate": 117.2,
+                "view_thru_rate": 0.91,
+                "cost_per_view": 1.0,
                 "intervals": [
                     {
                         "start_date": "2020-09-11",
@@ -158,7 +215,26 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "spend": 28.74,
                         "ctr": 3.4,
                         "cpc": 4.11,
-                        "cpl": 7.19
+                        "cpl": 7.19,
+                        "form_submissions_ct": 24,
+                        "form_submissions_vt": 23,
+                        "priority_page_views_ct": 10,
+                        "priority_page_views_vt": 10,
+                        "website_visits_vt": 9,
+                        "walk_ins": 0,
+                        "video_full_screen": 6,
+                        "video_mute": 6,
+                        "video_unmute": 14,
+                        "video_pause": 7,
+                        "video_resume": 5,
+                        "video_views": 13,
+                        "video_played_to_25_pct": 12,
+                        "video_played_to_50_pct": 16,
+                        "video_played_to_75_pct": 6,
+                        "completed_views": 16,
+                        "video_complete_rate": 123.08,
+                        "view_thru_rate": 1.26,
+                        "cost_per_view": 1.0
                     }
                 ]
             }
@@ -188,6 +264,25 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | spend | Float | Total Spend for Interval |
 | ctr | Float | Click-through Rate for Interval |
 | cpc | Float | Cost Per Click for Interval |
+|form_submissions_ct|Float|Total For Submission Click Through for Campaign|
+|form_submissions_vt|Float|Total Form Submission View Through for Campaign|
+|priority_page_views_ct|Float|Total Priority Page View Click Through for Campaign|
+|priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
+|website_visits_vt|Float|Total Website Visits View Through for Campaign|
+|walk_ins|Float|Total Walk-ins for Interval|
+|video_full_screen|Float|Number of Full-Screen Video Views <br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Total Completed Views for Campaign|
+|video_complete_rate|Float|Total Video Completion Rate|
+|view_thru_rate|Float|Total View-Through Rate|
+|cost_per_view|Float|Cost per View|
 
 **Intervals Array**
 
@@ -205,3 +300,22 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | spend | Float | Total Spend for Interval |
 | ctr | Float | Click-through Rate for Interval |
 | cpc | Float | Cost Per Click for Interval |
+|form_submissions_ct|Float|Total For Submission Click Through for Campaign|
+|form_submissions_vt|Float|Total Form Submission View Through for Campaign|
+|priority_page_views_ct|Float|Total Priority Page View Click Through for Campaign|
+|priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
+|website_visits_vt|Float|Total Website Visits View Through for Campaign|
+|walk_ins|Float|Total Walk-ins for Interval|
+|video_full_screen|Float|Number of Full-Screen Video Views <br>**The field is nullable**|
+|video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
+|video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
+|video_pause|Float|Number of Paused Video Views<br>**The field is nullable**|
+|video_resume|Float|Number of Resumed Video Views<br>**The field is nullable**|
+|video_views|Float|Number of Video Views|
+|video_played_to_25_pct|Float|Number of Video Views Played to 25 percent<br>**The field is nullable**|
+|video_played_to_50_pct|Float|Number of Video Views Played to 50 percent<br>**The field is nullable**|
+|video_played_to_75_pct|Float|Number of Video Views Played to 75 percent<br>**The field is nullable**|
+|completed_views|Float|Total Completed Views for Campaign|
+|video_complete_rate|Float|Total Video Completion Rate|
+|view_thru_rate|Float|Total View-Through Rate|
+|cost_per_view|Float|Cost per View|
