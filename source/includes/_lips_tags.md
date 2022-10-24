@@ -51,7 +51,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/tags?global_maste
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ``` 
 
 #### Example Response
@@ -110,7 +109,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/tags' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response
@@ -178,7 +176,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/tag/foo' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response
@@ -236,7 +233,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/tag
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response
@@ -279,7 +275,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/232/tags
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response
@@ -331,7 +326,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response
@@ -374,7 +368,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response

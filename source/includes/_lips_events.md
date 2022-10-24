@@ -59,8 +59,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
+
 > Response Description if query_params contains event_params
 
 
@@ -69,7 +69,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 ```
@@ -77,7 +76,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 ### events
 **Contact**

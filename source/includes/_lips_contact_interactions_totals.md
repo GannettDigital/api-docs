@@ -32,7 +32,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 **Totals**

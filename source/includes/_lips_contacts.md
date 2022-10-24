@@ -394,7 +394,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/eve
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response

@@ -39,7 +39,6 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 Response Description
@@ -110,7 +109,6 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response
@@ -166,7 +164,6 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
 ```
 
 #### Example Response
