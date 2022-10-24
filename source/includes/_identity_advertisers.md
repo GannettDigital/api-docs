@@ -35,7 +35,7 @@ When using the GET index method, the results will be filtered using these parame
 #### GET (index)
 
 ```
-curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?[query_params]' \
+curl -L -g -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/advertisers?[query_params]' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json'
@@ -105,7 +105,7 @@ Response Description
 ```
 
 ```
-curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&business_id[]=15' \
+curl -L -g -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/advertisers?platform_id[]=USA&business_id[]=15' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json'
@@ -160,7 +160,7 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
 ```
 
 ```
-curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&active_state[]=0' \
+curl -L -g -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/advertisers?platform_id[]=USA&active_state[]=0' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json'
@@ -208,7 +208,7 @@ This API should be used to retrieve information about an advertiser, i.e. name a
 > Retrieve data for a specific advertiser
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers/TEST_1' \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/advertisers/TEST_1' \
 -H 'Accept: application/json'
 -H 'Authorization: TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
