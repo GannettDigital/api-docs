@@ -46,7 +46,7 @@ When using the GET index method, the results will be filtered using these parame
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events?global_master_advertiser_id=USA_1S' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response
@@ -107,7 +107,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events?global
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events/3636' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response
@@ -184,7 +184,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/fpd_events' \
   }'
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response

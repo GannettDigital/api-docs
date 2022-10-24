@@ -38,7 +38,7 @@ When using the GET index method, the results will be filtered using these parame
 curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?[query_params]' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 Response Description
@@ -108,7 +108,7 @@ Response Description
 curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&business_id[]=15' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response
@@ -163,7 +163,7 @@ curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertis
 curl -L -g -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers?platform_id[]=USA&active_state[]=0' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response
@@ -209,7 +209,7 @@ This API should be used to retrieve information about an advertiser, i.e. name a
 
 ```
 curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/advertisers/TEST_1' \
--H 'Accept: application/json' \
+-H 'Accept: application/json'
 -H 'Authorization: TOKEN' \
 -H 'x-api-key: APIGEE_KEY'
 ```

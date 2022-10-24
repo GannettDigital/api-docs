@@ -58,7 +58,7 @@ fpd | All FpdEvents
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1&event_params[phone_numbers]=+1243325' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 > Response Description if query_params contains event_params
@@ -68,14 +68,14 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_mas
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/events?global_master_advertiser_id=USA_1&event_type[]=form&event_type[]=calls' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 ### events
 **Contact**
@@ -369,7 +369,7 @@ Fields marked as required aren't necessarily required in the request, but are re
 ```
 curl --location --request PUT 'https://data-connect-lips.gannettdigital.com/events/1' \
 --header 'Authorization: {auth_token}' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: application/json'
 --data-raw '
     {
         "event": { "important": false, "read": true}

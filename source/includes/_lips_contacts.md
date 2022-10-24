@@ -239,7 +239,7 @@ The POST body is simply a contact object without an id.
 ```
 curl -L -X POST 'https://data-connect-lips.gannettdigital.com/contacts' \
 -H 'Authorization: 1b01Secret' \
--H 'Content-Type: application/json' \
+-H 'Content-Type: application/json'
 --data-raw '{
     "contact": {
         "master_advertiser_id": 1,
@@ -312,7 +312,7 @@ The PUT body is simply a contact object without an id.
 ```
 curl -L -X PUT 'http://localhost:3000/contacts/1' \
 -H 'Authorization: 1b01Secret' \
--H 'Content-Type: application/json' \
+-H 'Content-Type: application/json'
 --data-raw '{
     "contact": {
         "first_name": "M",
@@ -393,7 +393,7 @@ See [LIPS EVENTS](https://github.com/GannettDigital/api-docs/blob/master/source/
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/events?page=1&per_page=2' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response
