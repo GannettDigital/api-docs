@@ -17,10 +17,9 @@ Get all existing products.
 example request:
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/product \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/product \
 -H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 example successful response (HTTP status 200):

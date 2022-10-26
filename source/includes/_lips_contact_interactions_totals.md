@@ -31,8 +31,7 @@ The only additional parameter is:
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions/totals' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 
 **Totals**

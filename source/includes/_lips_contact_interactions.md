@@ -61,8 +61,7 @@ fpd | All FpdEvents
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&event_params[phone_numbers]=+1243325' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 > Response Description if query_params contains event_params
 
@@ -71,16 +70,14 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 
 ```
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&event_type[]=form&event_type[]=calls' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 
 
@@ -88,8 +85,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interactions?global_master_advertiser_id=USA_1&tags[]=foo' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 ### Contact Interactions
 **Contact**

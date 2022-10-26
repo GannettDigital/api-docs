@@ -393,8 +393,7 @@ See [LIPS EVENTS](https://github.com/GannettDigital/api-docs/blob/master/source/
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/events?page=1&per_page=2' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response

@@ -50,8 +50,7 @@ When using the GET tags index method, the following paramters are allowed:
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/tags?global_master_advertiser_id=TEST_1&tags[]=Third' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ``` 
 
 #### Example Response
@@ -109,8 +108,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/tags' \
   }'
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response
@@ -177,8 +175,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/tag/foo' \
   }'
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json'
 ```
 
 #### Example Response
@@ -235,8 +232,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/2626/tags' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json' 
 ```
 
 #### Example Response
@@ -278,8 +274,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contacts/232/tags
   }'
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json' 
 ```
 
 #### Example Response
@@ -330,8 +325,7 @@ Error responses will have an appropriate 4xx HTTP response code along with a JSO
 curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interaction/2626/tags' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json' 
 ```
 
 #### Example Response
@@ -373,8 +367,7 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
   }'
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: SJNPPSecret'
+  -H 'Content-Type: application/json' 
 ```
 
 #### Example Response

@@ -15,10 +15,9 @@ The data returned will include information about the business which corresponds 
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/business/GMAID' \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/premium_listings/business/GMAID' \
 -H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 #### Example Response

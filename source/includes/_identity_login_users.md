@@ -45,10 +45,9 @@ Get an existing user.
 example request:
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users?first_name=Slim&last_name=Sha&email=scas \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/login_users?first_name=Slim&last_name=Sha&email=scas \
 -H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 example success response (HTTP status 2xx):
@@ -143,10 +142,9 @@ Get an existing login user.
 example request:
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/8 \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/login_users/8 \
 -H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 example success response (HTTP status 2xx):
@@ -234,10 +232,9 @@ Create a login user.
 example request:
 
 ```
-curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users' \
+curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/login_users' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '   "user": {
         "email": "email@gmail.com",
@@ -294,10 +291,9 @@ Fields marked as required aren't necessarily required in the request, but are re
 example request:
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1' \
+curl -L -X PUT 'https://data-connect-prod.gannettdigital.com/v3/identities/login_users/1' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 --data-raw '{
     "user": {
         "first_name": "Bono"
@@ -374,10 +370,9 @@ Delete an existing login user.
 example request:
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1' \
+curl -L -X DELETE 'https://data-connect-prod.gannettdigital.com/v3/identities/login_users/1' \
 -H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 Upon a successful request (HTTP status 2xx), the response body will be empty.
@@ -398,10 +393,9 @@ Create a client center user.
 example request:
 
 ```
-curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1/client_center_user' \
+curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/login_users/1/client_center_user' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '   "client_center_user_id": {
         "platform_id": 1
@@ -426,10 +420,9 @@ UPDATE a client center user.
 example request:
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/users/1' \
+curl -L -X PUT 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/1/users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY' \
 -H 'Content-Type: application/json' \
 --data-raw '   "client_center_user_id": {
         "external_id": 45
@@ -447,10 +440,9 @@ Delete an existing Client Center user.
 example request:
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/login_users/1/client_center_users/1' \
+curl -L -X DELETE 'https://data-connect-prod.gannettdigital.com/v3/identities/login_users/1/client_center_users/1' \
 -H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 Upon a successful request (HTTP status 2xx), the response body will be empty.

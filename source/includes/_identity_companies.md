@@ -62,7 +62,7 @@ Get an existing company.
 example request:
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/companies \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 ```
@@ -140,7 +140,7 @@ Get an existing company.
 example request:
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/8 \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/8 \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 ```
@@ -230,7 +230,7 @@ Create a company.
 example request:
 
 ```
-curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies' \
+curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/companies' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'Content-Type: application/json' \
@@ -324,7 +324,7 @@ Update a company.
 example request:
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/12' \
+curl -L -X PUT 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/12' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'Content-Type: application/json' \
@@ -383,7 +383,7 @@ Delete a company.
 example request:
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1' \
+curl -L -X DELETE 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 ```
@@ -404,7 +404,7 @@ Create a company login user.
 example request:
 
 ```
-curl -L -X POST 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users' \
+curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/1/login_users' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'Content-Type: application/json' \
@@ -429,7 +429,7 @@ UPDATE a company login user.
 example request:
 
 ```
-curl -L -X PUT 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users/1' \
+curl -L -X PUT 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'Content-Type: application/json' \
@@ -449,7 +449,7 @@ Delete an existing Company user.
 example request:
 
 ```
-curl -L -X DELETE 'https://api.gcion.com/apgb2b-reporting/v3/identities/companies/1/login_users/1' \
+curl -L -X DELETE 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/1/login_users/1' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 ```

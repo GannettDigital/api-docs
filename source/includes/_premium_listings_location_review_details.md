@@ -27,10 +27,9 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl -L -X GET 'https://api.gcion.com/apgb2b-reporting/client_reports/premium_listings/location/ID/review_details' \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/premium_listings/location/ID/review_details' \
 -H 'Accept: application/json' \
--H 'Authorization: TRUSTED_TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 #### Example Response
