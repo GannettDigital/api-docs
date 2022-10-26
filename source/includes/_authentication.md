@@ -246,7 +246,7 @@ If you need to check if you have a Business User created or need to reset your p
 <a name="access_to_hippa_data"></a>
 ### Access to HIPAA data
 
-The business user must have “Agency Customer” role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response. Please reach your accoungt team  to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
+The business user must have “Agency Customer” role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response. Please reach your account team  to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
 This control applies to APIs that provide data that are classified as HIPAA and protected by law.
 
 ### **API Rate Limits**

@@ -239,7 +239,7 @@ The POST body is simply a contact object without an id.
 ```
 curl -L -X POST 'https://data-connect-lips.gannettdigital.com/contacts' \
 -H 'Authorization: 1b01Secret' \
--H 'Content-Type: application/json'
+-H 'Content-Type: application/json' \
 --data-raw '{
     "contact": {
         "master_advertiser_id": 1,
@@ -312,7 +312,7 @@ The PUT body is simply a contact object without an id.
 ```
 curl -L -X PUT 'http://localhost:3000/contacts/1' \
 -H 'Authorization: 1b01Secret' \
--H 'Content-Type: application/json'
+-H 'Content-Type: application/json' \
 --data-raw '{
     "contact": {
         "first_name": "M",

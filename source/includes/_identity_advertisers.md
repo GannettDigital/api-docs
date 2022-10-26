@@ -209,9 +209,8 @@ This API should be used to retrieve information about an advertiser, i.e. name a
 
 ```
 curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/advertisers/TEST_1' \
--H 'Accept: application/json'
--H 'Authorization: TOKEN' \
--H 'x-api-key: APIGEE_KEY'
+-H 'Accept: application/json' \
+-H 'Authorization: TOKEN'
 ```
 
 > Example Response

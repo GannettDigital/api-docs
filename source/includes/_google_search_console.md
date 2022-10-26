@@ -69,7 +69,7 @@ Dimension: Query, country search originated from.
 ### Examples
 
 ```
-curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/google_search_console/USA_123456?start_date=2020-01-01&end_date=2020-01-03' \
+curl --location --request GET 'https://data-connect-prod.gannettdigital.com/client_reports/google_search_console/USA_123456?start_date=2020-01-01&end_date=2020-01-03' \
 --header 'Authorization: token 1b01Secret'
 ```
 

@@ -34,9 +34,8 @@ A list of sites that the particular advertiser has verified in the Google Search
 ### Examples
 
 ```
-curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/google_site_urls/TEST_1' \
---header 'Authorization: secret' \
---header 'x-api-key: secret'
+curl --location --request GET 'https://data-connect-prod.gannettdigital.com/client_reports/google_site_urls/TEST_1' \
+--header 'Authorization: secret'
 ```
 
 # Example Response

@@ -384,7 +384,7 @@ Fields marked as required aren't necessarily required in the request, but are re
 ```
 curl --location --request PUT 'https://data-connect-lips.gannettdigital.com/contact_interactions/1' \
 --header 'Authorization: {auth_token}' \
---header 'Content-Type: application/json'
+--header 'Content-Type: application/json' \
 --data-raw '
     {
         "contact_interaction": { "important": false, "read": true, "notes": "some notes"}

@@ -91,7 +91,6 @@ For each Neighborly brand only the last configuration created (by any gmaid with
 ```
 curl --location --request POST 'localhost:3001/client_reports/oauth/google' \
 --header 'Authorization: token reachanalyticsreportingservicetoken' \
---header 'x-api-key: {{apigee_api_key}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"gmaid": "USA_130964",
