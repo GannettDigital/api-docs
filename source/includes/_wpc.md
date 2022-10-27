@@ -87,6 +87,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "geo_type": "National",
                 "start_date": "2021-01-11",
                 "end_date": "2021-01-15",
+                "display_name": "Geofence","display_name": "Geofence"
                 "impressions": 2,
                 "clicks": 0,
                 "click_to_calls": 0,
@@ -253,6 +254,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | end_date | String | WPC End Date |
 | channel | String | Channel of WPC |
 | geo_type | String | Geo Type of WPC |
+| display_name | String | metadata value of offer |
 | impressions | Int | Total Impressions for Campaign |
 | clicks | Float | Total Clicks for Interval |
 | calls | Float | Total Calls for Interval |
