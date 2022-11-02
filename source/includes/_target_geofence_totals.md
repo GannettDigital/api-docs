@@ -20,6 +20,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`end_date`|Yes|Restricts the results to those occurring on or before this date.|
 |`global_master_campaign_id[]`| no |Restrict results to one or more specific campaigns|
 |`publisher_plat_zipcode[]`|No|Specifies the zipcode+4 to filter by|
+|`zip_code`|No|Specifies the zip code of conversion fence (not zip+4)|
 
 ### Response Data Details
 
