@@ -42,38 +42,45 @@ The paths array contains can contain many paths objects. Below are definitions f
 
 ```javascript
 {
-    "report_type": "zip_codes",
-    "report_date": "2022-10-06",
+    "report_type": "lead_paths",
+    "report_date": "2022-11-04",
     "earliest_date_available": null,
-    "start_date": "2022-10-01",
-    "end_date": "2022-10-11",
+    "start_date": "2020-09-11",
+    "end_date": "2023-09-11",
     "time_zone": "America/Los_Angeles",
-    "global_master_advertiser_id": "USA_258209",
+    "global_master_advertiser_id": "USA_2246",
+    "lead_event_id": [],
     "report_data": {
-        "events_without_path": 5,
-        "paths":  [
+        "paths": [
             {
-                "count": 1,
-                "event": {
-                    "event_count": 1,
-                    "event_type": "Visit",
-                    "referrer_source": "Paid",
-                    "referrer_type": null,
-                    "web_publisher_campaign_id": 1234
-                },
-                "unique_visitor_count": 1
+                "count": 15,
+                "visits": null,
+                "unique_visitor_count": 0
             },
             {
                 "count": 1,
-                "event": {
-                    "event_count": 1,
-                    "event_type": "Visit",
-                    "referrer_source": "Organic",
-                    "referrer_type": "Search",
-                    "web_publisher_campaign_id": null
-                },
+                "visits": [
+                    {
+                        "event_count": 1,
+                        "referrer_source": "Organic",
+                        "referrer_type": "Other",
+                        "web_publisher_campaign_id": null
+                    }
+                ],
                 "unique_visitor_count": 1
             },
+            {
+                "count": 3,
+                "visits": [
+                    {
+                        "event_count": 1,
+                        "referrer_source": "Paid",
+                        "referrer_type": null,
+                        "web_publisher_campaign_id": "USA_1234"
+                    }
+                ],
+                "unique_visitor_count": 2
+            }
         ]
     }
 }
@@ -83,39 +90,42 @@ The paths array contains can contain many paths objects. Below are definitions f
 
 ```javascript
 {
-    "report_type": "zip_codes",
-    "report_date": "2022-10-06",
+    "report_type": "lead_paths",
+    "report_date": "2022-11-04",
     "earliest_date_available": null,
-    "start_date": "2022-10-01",
-    "end_date": "2022-10-11",
+    "start_date": "2020-09-11",
+    "end_date": "2023-09-11",
     "time_zone": "America/Los_Angeles",
-    "global_master_advertiser_id": "USA_258209",
+    "global_master_advertiser_id": "USA_2246",
+    "lead_event_id": [
+        "ea32cd1s-4d19-12aa-bb12-3d1234567ab0",
+        "ab12cd3d-4b24-45aa-cc67-8d1234567ab0"
+    ],
     "report_data": {
-        "events_without_path": 5,
-        "paths":  [
+        "paths": [
             {
-                "count": 1,
-                "event": {
-                    "event_count": 1,
-                    "event_type": "Visit",
-                    "referrer_source": "Paid",
-                    "referrer_type": null,
-                    "web_publisher_campaign_id": 1234
-                },
-                "lead_event_id": "42f10f2c-84b6-445c-8991-82dfaff65285",
-                "lead_occurrence_time": "2018-02-20T23:58:19.000Z"
+                "visits": [
+                    {
+                        "event_count": 1,
+                        "referrer_source": "Paid",
+                        "referrer_type": null,
+                        "web_publisher_campaign_id": "USA_611439"
+                    }
+                ],
+                "lead_occurrence_time": "2022-07-12T00:08:57.000Z",
+                "lead_event_id": "ea32cd1s-4d19-12aa-bb12-3d1234567ab0"
             },
             {
-                "count": 1,
-                "event": {
-                    "event_count": 1,
-                    "event_type": "Visit",
-                    "referrer_source": "Organic",
-                    "referrer_type": "Search",
-                    "web_publisher_campaign_id": null
-                },
-                "lead_event_id": "42f10f2c-84b6-445c-8992-82dfaff65285",
-                "lead_occurrence_time": "2018-02-20T23:50:19.000Z"
+                "visits": [
+                    {
+                        "event_count": 1,
+                        "referrer_source": "Organic",
+                        "referrer_type": "Other",
+                        "web_publisher_campaign_id": null
+                    }
+                ],
+                "lead_occurrence_time": "2022-09-15T12:05:20.000Z",
+                "lead_event_id": "ab12cd3d-4b24-45aa-cc67-8d1234567ab0"
             }
         ]
     }
