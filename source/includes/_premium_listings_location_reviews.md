@@ -4,7 +4,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings/location/[id]/reviews?[query_params]
+| GET | /client_reports/premium_listings/[gmaid]/location/[id]/reviews?[query_params]
 
 #### API Name: premium_listings_location_reviews
 #### Usage
