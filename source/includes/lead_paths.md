@@ -29,7 +29,7 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.localiqservices.com/client_reports/lead_paths?start_date=2018-01-01&end_date=2020-01-14&gmaid=USA_142687
+https://api.localiqservices.com/client_reports/lead_paths/USA_1234?start_date=2020-09-11&end_date=2023-09-11
 ```
 
 > Response Description
@@ -48,7 +48,7 @@ The paths array contains can contain many paths objects. Below are definitions f
     "start_date": "2020-09-11",
     "end_date": "2023-09-11",
     "time_zone": "America/Los_Angeles",
-    "global_master_advertiser_id": "USA_2246",
+    "global_master_advertiser_id": "USA_1234",
     "lead_event_id": [],
     "report_data": {
         "paths": [
@@ -87,6 +87,15 @@ The paths array contains can contain many paths objects. Below are definitions f
 ```
 
 ##### Example Response with lead_event_ids
+
+> Retrieve data for a specific lead_event_ids
+
+```
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.localiqservices.com/client_reports/lead_paths/USA_123?lead_event_ids[]=ea32cd1s-4d19-12aa-bb12-3d1234567ab0&lead_event_ids[]=ab12cd3d-4b24-45aa-cc67-8d1234567ab0
+```
+
+> Response Description
 
 ```javascript
 {
