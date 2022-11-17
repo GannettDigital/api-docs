@@ -136,6 +136,30 @@ top_referrers | Array | No | An array of top referrer objects
 
 **The top referrer object**
 
+|Field Name|Datatype|Description|
+|---|---|---|
+|api_name|String|Name of the API|
+|api_run_date|String|Date report was run|
+|start_date|String|Start date of report|
+|end_date|String|End date of report|
+|time_zone|String|Time Zone|
+|interval_size|String|Interval Size ('none', 'day', 'calendar_week' or 'calendar_month')|
+|report_data|Object|[Report Data Object](#topreferrerreportdata)
+
+<a id="topreferrerreportdata"></a>
+**Report Data Object**
+
+
+Field Name | Datatype | Nullable | Description
+---------- | -------- | -------- | -----------
+name | String | Yes | The type of campaign SEARCH, OTHER, DIRECT
+master_campaign_id | String | Yes | The master campaign id
+is_paid | boolean | No | Is the campaign a paid campaign
+top_referrers | Array | No | An array of [top referrer objects](#array-of-top-referrers)
+
+<a id="array-of-top-referrers"></a>
+**Array of top referrers**
+
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
 referrer_host | String | No | The hostname
