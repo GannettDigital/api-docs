@@ -1,7 +1,5 @@
-### **Tags**
+## Tags
 <a name="lips_tags"></a>
-
-# Tags API
 
 Are activities associated with a contact or contact interaction. The tag is a string that is attached to a given contact or interaction. It could also be created by posting to this API.
 
