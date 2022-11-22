@@ -1,6 +1,5 @@
-### **Contact Interactions Totals**
+## Contact Interactions Totals
 <a name="lips_contact_interactions_totals"></a>
-## Contact Interactions Totals API
 
 The totals of the "events", *contact interactions*. The event may be a call, a form post, or chat event recorded by capture or a FPD event. These activities could be associated with a contact
 

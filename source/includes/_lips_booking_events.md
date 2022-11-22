@@ -1,6 +1,5 @@
-### **BookingEvents**
+## Booking Events
 <a name="lips_booking_events"></a>
-## Booking Events API
 
 Also referred to as "contact interactions", *events* are activities associated with a contact.  The event is a booking event.
 

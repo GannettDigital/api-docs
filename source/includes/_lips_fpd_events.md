@@ -1,7 +1,5 @@
-### **FPD Events**
-<a name="lips_fpd_events"></a>
-
 # FPD Events API
+<a name="lips_fpd_events"></a>
 
 Also referred to as "contact interactions", *events* are activities associated with a contact.  The event may be a call, a form post, or a chat event recorded by capture.  It could also be created by posting to this API.
 
