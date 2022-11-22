@@ -1,6 +1,5 @@
-### **Contacts**
+## Contacts
 <a name="lips_contacts"></a>
-## Contacts API
 
 ### Resource Overview
 

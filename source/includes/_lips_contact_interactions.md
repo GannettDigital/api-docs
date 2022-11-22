@@ -1,6 +1,5 @@
-### **Contact Interactions**
+## Contact Interactions
 <a name="lips_contact_interactions"></a>
-## Contact Interactions API
 
 Also referred to as "events", *contact interactions* are activities associated with a contact.  The event may be a call, a form post, or chat event recorded by capture or a FPD event.
 
