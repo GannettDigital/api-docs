@@ -33,6 +33,21 @@ When using the GET index method, the results will be filtered using these parame
 |`sort_by`|No|Specifies what column to sort by. Valid columns are: important<br><b>Default value: occurred_at</b> |
 |`sort_dir`|No|Specifies the sort direction. Can be either asc or desc <br><b>Default value: asc</b> |
 
+> * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`. Searching by `channel` will remove any event without a `wpc_id`.
+#### Event Type Filter
+Event Type | Explanation
+-- | --
+call | All CallEvents
+chat | All ChatEvents
+booking | All BookingEvents
+lsa | All LsaEvents
+chat_sales | ChatEvents with a lead_type of sales. Ignored when used in combination with `chat`
+chat_service | ChatEvents with a lead_type of service. Ignored when used in combination with `chat`
+chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
+form | FormEvents with a sub_type of FormPost
+email | FormEvents with a sub_type of FormEmail
+fpd | All FpdEvents
+
 ### Examples:
 
 ### GET (index)
