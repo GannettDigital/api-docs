@@ -125,17 +125,8 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
 }
 ```
 
-The body of the API response is an array of source objects.
-
-Field Name | Datatype | Nullable | Description
----------- | -------- | -------- | -----------
-name | String | Yes | The type of campaign SEARCH, OTHER, DIRECT
-master_campaign_id | String | Yes | The master campaign id
-is_paid | boolean | No | Is the campaign a paid campaign
-top_referrers | Array | No | An array of top referrer objects
-
-**The top referrer object**
-
+The main body of the API response is found in the report_data object.
+**Base Object**
 |Field Name|Datatype|Description|
 |---|---|---|
 |api_name|String|Name of the API|
@@ -148,8 +139,11 @@ top_referrers | Array | No | An array of top referrer objects
 
 <a id="topreferrerreportdata"></a>
 **Report Data Object**
+Field Name | Datatype | Nullable | Description
+---------- | -------- | -------- | -----------
+sources | Array | Yes | An array of source objects
 
-
+**Source Object**
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
 name | String | Yes | The type of campaign SEARCH, OTHER, DIRECT
@@ -159,7 +153,6 @@ top_referrers | Array | No | An array of [top referrer objects](#array-of-top-re
 
 <a id="array-of-top-referrers"></a>
 **Array of top referrers**
-
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
 referrer_host | String | No | The hostname
