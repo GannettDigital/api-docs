@@ -48,7 +48,7 @@ Get an existing company.
 |address2|string|The second address of the company|
 |city|string|The city of the advertiser|
 |province|string|The province of the advertiser|
-|postal_code|integer|the postal code of the advertiser|
+|postal_code|string|the postal code of the advertiser|
 |country|string|The country of the advertiser|
 |phone_number|string|The phone number of the advertiser|
 |phone_type|string|The phone type of the advertiser|
@@ -82,7 +82,7 @@ example success response (HTTP status 2xx):
     "address2": "Old str 11",
     "city": "Chicago",
     "province": "Chicago",
-    "postal_code": 2312,
+    "postal_code": "2312",
     "country": "USA",
     "phone_number": "+123456",
     "phone_type": "type",
@@ -126,7 +126,7 @@ Get an existing company.
 |address2|string|The second address of the company|
 |city|string|The city of the advertiser|
 |province|string|The province of the advertiser|
-|postal_code|integer|the postal code of the advertiser|
+|postal_code|string|the postal code of the advertiser|
 |country|string|The country of the advertiser|
 |phone_number|string|The phone number of the advertiser|
 |phone_type|string|The phone type of the advertiser|
@@ -160,7 +160,7 @@ example success response (HTTP status 2xx):
     "address2": "Old str 11",
     "city": "Chicago",
     "province": "Chicago",
-    "postal_code": 2312,
+    "postal_code": "2312",
     "country": "USA",
     "phone_number": "+123456",
     "phone_type": "type",
@@ -217,7 +217,7 @@ Create a company.
 |address2|string|No|The second address of the company|
 |city|string|No|The city of the advertiser|
 |province|string|No|The province of the advertiser|
-|postal_code|integer|No|the postal code of the advertiser|
+|postal_code|string|No|the postal code of the advertiser|
 |country|string|No|The country of the advertiser|
 |phone_number|string|No|The phone number of the advertiser|
 |phone_type|string|No|The phone type of the advertiser|
@@ -243,7 +243,7 @@ curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/comp
         "address2": "Old str 11",
         "city": "Chicago",
         "province": "Chicago",
-        "postal_code": 2312,
+        "postal_code": "2312",
         "country": "USA",
         "phone_number": "+123456",
         "phone_type": "type",
@@ -270,7 +270,7 @@ example success response (HTTP status 2xx):
     "address2": "Old str 11",
     "city": "Chicago",
     "province": "Chicago",
-    "postal_code": 2312,
+    "postal_code": "2312",
     "country": "USA",
     "phone_number": "+123456",
     "phone_type": "type",
@@ -312,7 +312,7 @@ Update a company.
 |address2|string|No|The second address of the company|
 |city|string|No|The city of the advertiser|
 |province|string|No|The province of the advertiser|
-|postal_code|integer|No|the postal code of the advertiser|
+|postal_code|string|No|the postal code of the advertiser|
 |country|string|No|The country of the advertiser|
 |phone_number|string|No|The phone number of the advertiser|
 |phone_type|string|No|The phone type of the advertiser|
@@ -348,7 +348,7 @@ example success response (HTTP status 2xx):
     "address2": "Old str 11",
     "city": "Chicago",
     "province": "Chicago",
-    "postal_code": 2312,
+    "postal_code": "2312",
     "country": "USA",
     "phone_number": "+123456",
     "phone_type": "type",
