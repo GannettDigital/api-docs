@@ -18,16 +18,15 @@ When using the GET method, the results can be filtered using these parameters:
 |-----------|-----|---|
 | start_date | Yes | Restricts the results to those occurring on or after this date and time. |
 | end_date | Yes | Restricts the results to those occurring on or before this date and time. |
-| gmaid | Yes | Restrict results to the specified advertiser |
-|interval_size|No|Return subtotals for the given intervals within the start-end time provided. Accepts calendar_month, calendar_week, or day (Default is day)|
 
 ### Response Data Details&nbsp;
 
 
 ```shell
-curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/top_referrer/TEST_1?start_date=2022-11-10&end_date=2022-11-15&interval_size=calendar_week' \
---header 'Authorization: xxx' \
---header 'x-api-key: xxx'
+curl --request GET \
+  --url 'https://api.localiqservices.com/client_reports/top_referrers/TEST_1??start_date=2016-12-01&end_date=2016-12-31' \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
 ```
 
 > Example Response
@@ -39,7 +38,6 @@ curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/clie
     "start_date": "2022-11-10",
     "end_date": "2022-11-15",
     "time_zone": "America/Los_Angeles",
-    "interval_size": "calendar_week",
     "global_master_advertiser_id": "TEST_1",
     "report_data": {
         "sources": [
@@ -134,7 +132,6 @@ The main body of the API response is found in the report_data object.
 |start_date|String|Start date of report|
 |end_date|String|End date of report|
 |time_zone|String|Time Zone|
-|interval_size|String|Interval Size ('none', 'day', 'calendar_week' or 'calendar_month')|
 |report_data|Object|[Report Data Object](#topreferrerreportdata)
 
 <a id="topreferrerreportdata"></a>
