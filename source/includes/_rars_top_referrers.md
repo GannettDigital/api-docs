@@ -23,9 +23,10 @@ When using the GET method, the results can be filtered using these parameters:
 
 
 ```shell
-curl --location --request GET 'https://api-stage.gcion.com/apgb2b-reporting/client_reports/top_referrer/TEST_1?start_date=2022-11-10&end_date=2022-11-15' \
---header 'Authorization: xxx' \
---header 'x-api-key: xxx'
+curl --request GET \
+  --url 'https://api.localiqservices.com/client_reports/top_referrers/TEST_1??start_date=2016-12-01&end_date=2016-12-31' \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
 ```
 
 > Example Response
