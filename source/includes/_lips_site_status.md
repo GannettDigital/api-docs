@@ -22,24 +22,9 @@ https://data-connect-lips.ganettdigital.com/site_status/TEST_1
 
 ```javascript
 {
-    "report_type": "site_status",
-    "report_date": "2022-11-23",
-    "time_zone": "America/Los_Angeles",
-    "global_master_advertiser_id": "USA_258209",
-    "report_data": {
-        "call": {
-            "first_event": "2020-11-24T14:27:50.000+00:00",
-            "last_event": "2022-11-18T17:16:46.000+00:00"
-        },
-        "form": {
-            "first_event": "2021-01-12T19:31:14.000+00:00",
-            "last_event": "2022-11-09T11:06:52.000+00:00"
-        },
-        "chat": {
-            "first_event": "2020-11-28T16:55:02.000+00:00",
-            "last_event": "2021-01-14T21:55:02.000+00:00"
-        },
+    "site_status": {
         "active": "Active"
-    }
+    },
+    "global_master_advertiser_id": "TEST_1"
 }
 ```
