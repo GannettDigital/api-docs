@@ -29,18 +29,28 @@ curl --request GET \
 > > Example Response
 
 ```json
-[
-    {
-        "domain": "example.com",
-        "count": 80
-    },
-    {
-        "domain": "admin.example.com",
-        "count": 1
-    },
-    {
-        "domain": "www.example.com",
-        "count": 1281
-    }
-]
+{
+  "api_name": "unique_domain",
+  "api_run_date": "2022-12-12",
+  "start_date": "2022-11-28",
+  "end_date": "2022-12-12",
+  "time_zone": "America/Los_Angeles",
+  "report_data": {
+    "domains": [
+      {
+        "domain": "facebook.com",
+        "count": 97
+      },
+      {
+        "domain": "fifa.com",
+        "count": 61
+      },
+      {
+        "domain": "google.com",
+        "count": 57
+      }
+    ]
+  },
+  "global_master_advertiser_id": "TEST_1"
+}
 ```
