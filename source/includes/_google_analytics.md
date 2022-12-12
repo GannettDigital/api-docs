@@ -92,6 +92,8 @@ Dimension: Year/Month, beginning 24 months prior to the requested start_date par
 |---|---|
 |`sessions`|The total number of sessions.|
 
+#### Special Feature - Segment
+A single segment "filter" can be applied across all reports in this response by updating the segment_id value in the google_api_configurations table. All Neighborly gmaids have a special segment applied through a special mapping table.
 ### Examples
 
 ```
