@@ -108,6 +108,8 @@ Medium: The type of referrals. For manual campaign tracking, it is the value of 
 |`avg_session_duration`|The average duration (in seconds) of users' sessions.|
 |`pageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
 
+#### Special Feature - Segment
+A single segment "filter" can be applied across all reports in this response by updating the segment_id value in the google_api_configurations table. All Neighborly gmaids have a special segment applied through a special mapping table.
 ### Examples
 
 ```
