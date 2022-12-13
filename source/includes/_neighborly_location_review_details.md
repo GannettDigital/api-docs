@@ -146,6 +146,7 @@ Required attributes: `location_id`, `gmaid` and `brand_code`.
 Optional attributes: `friendly_name`, `external_project_id`, `segment_id`
 Brand_code is required by the Google Analytics Report to allow for authentication across every gmaid of a given brand.
 If a segment_id is included this will also update any existing Google API configuration for the given gmaid.
+**Important** The last updated gmaid for a given brand is used to configure and make all Google Analytics calls for every gmaid in that brand.
 
 #### Examples
 
