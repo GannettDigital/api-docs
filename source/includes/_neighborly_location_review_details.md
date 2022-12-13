@@ -144,8 +144,8 @@ curl -L -X GET 'https://data-connect-prod.gannettdigital.com/client_reports/neig
 Use POST with a JSON payload to create/update Neighborly location for a given advertiser.
 Required attributes: `location_id`, `gmaid` and `brand_code`.
 Optional attributes: `friendly_name`, `external_project_id`, `segment_id`
-brand_code is required by the Google Analytics Report to allow for authentication across every gmaid of a given brand.
-If segment_id is include this will force a permenant update of any existing Google API configuration for the given gmaid. 
+Brand_code is required by the Google Analytics Report to allow for authentication across every gmaid of a given brand.
+If a segment_id is included this will force a permenant update of any existing Google API configuration for the given gmaid. 
 
 #### Examples
 
