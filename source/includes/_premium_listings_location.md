@@ -4,7 +4,7 @@
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/premium_listings/location/[id]
+| GET | /client_reports/premium_listings/[gmaid]/location/[id]
 
 #### API Name: premoum_listings_location
 #### Usage
