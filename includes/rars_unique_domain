@@ -1,0 +1,58 @@
+<h2 id='unique-domain'>Unique Domain</h2><p>Returns a list of unique domains that are being tracked for a given advertiser in the past 14 days. The data returned is a list of unique domains along with corresponding visit counts.</p><h3 id='unique-domain-resource-overview'>Resource Overview</h3><table><thead><tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody><tr>
+<td>GET</td>
+<td>/client_reports/unique_domain/[gmaid]</td>
+</tr></tbody></table><h3 id='unique-domain-response-body'>Response Body</h3><p>The body of the API response is an array of unique domain objects.</p><table><thead><tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>domain</td>
+<td>String</td>
+<td>no</td>
+<td>The unique domain corresponding to the count</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Integer</td>
+<td>no</td>
+<td>The total visit counts to the specified domain in the last 14 days.</td>
+</tr></tbody></table><pre class="highlight plaintext"><code>curl --request GET \
+  --url 'https://api.localiqservices.com/client_reports/unique_domain/TEST_1' \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
+</code></pre>
+<blockquote>
+<blockquote>
+<p>Example Response</p></blockquote>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"api_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_domain"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"api_run_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"report_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">97</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fifa.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">57</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
