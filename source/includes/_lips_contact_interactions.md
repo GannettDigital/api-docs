@@ -106,8 +106,13 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
 |id| Integer | no | id of the interaction|
-|campaign_name| String | no | The name of the campaign that this contact interaction is attributed to|
-|global_master_campaign_id| String | no | An string global master campaign id for this interaction|
+|campaign_name| String | yes | The name of the campaign that this contact interaction is attributed to|
+|global_master_advertiser_id| String | no | The global master advertiser id for this interaction ('USA_123') |
+|global_master_campaign_id| String | yes | The global master campaign id for this interaction  ('USA_567') |
+|master_advertiser_id| Integer | no | The master advertiser id for this interaction (123) |
+|master_campaign_id| Integer | yes | The master campaign id for this interaction (567) |
+|platform_id| Integer | yes | The numeric identifier of the platform for this interaction (Valid platform ids are: 1 (`USA`), 2 (`CAN`), 3 (`AUS`), 6 (`GBR`) and 7 (`TEST`)) |
+|platform_id| Integer | yes | The string identifier of the platform for this interaction |
 |sub_type| String | yes |Sub type of the campaign|
 |referrer_type| String | no | Paid, organic|
 |referrer_source| String | no | Domain the visitor came from|
