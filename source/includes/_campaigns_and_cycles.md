@@ -24,6 +24,7 @@
 
 <internal>> Retrieve data for a specific report_type</internal>
 <internal>
+    
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
 ```
@@ -31,6 +32,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.c
 
 <internal>> Retrieve data for a specific report_type as well as for running and stopped campaigns</internal>
 <internal>
+    
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
 ```
@@ -39,6 +41,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.c
 <internal>> Example Response</internal>
 
 <internal>
+    
 ```json
 {
     "platform_id": 1,
@@ -104,6 +107,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.c
         }
     ]
 }
+    
 ```
 </internal>
 
