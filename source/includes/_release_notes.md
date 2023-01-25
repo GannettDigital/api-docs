@@ -63,7 +63,7 @@
 
 |API(s) Updated|Description|
 |---|---|
-|LOCALiQ App on Zapier|Upgrade. No change to functionality |
+|LocaliQ App on Zapier|Upgrade. No change to functionality |
 
 ### May 26th, 27th, 2021
 **Release Notes**

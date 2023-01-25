@@ -7,7 +7,7 @@
 |---|---|
 |GET|/client_reports/video_activity/[gmaid]?[query_params]|
 
-This is a Video Activity API that can be used by customers that have display campaigns from either the ReachLocal or Gannett brand. Data is returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below. When data is unavailable, corresponding property will not be present in the response. For example, if we do not have data for a creative, it will not be present in the response.
+This is a Video Activity API that can be used by customers that have display campaigns from either the LocaliQ or Gannett brand. Data is returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below. When data is unavailable, corresponding property will not be present in the response. For example, if we do not have data for a creative, it will not be present in the response.
 
 ### Parameters&nbsp;
 

@@ -259,8 +259,8 @@ Describes the traffic source of  the visitor.
 | Field Name | Description |
 |---|---|
 |Organic|Visitor's came to the site organically|
-|Paid|Visitor's came to the site through a LOCALiQ campaign link|
-|NonRLPaid|Visitor's came to the site through a paid link but is not LOCALiQ|
+|Paid|Visitor's came to the site through a LocaliQ campaign link|
+|NonRLPaid|Visitor's came to the site through a paid link but is not LocaliQ|
 |Unavailable|Cannot be determined|
 
 **Referrer Type**

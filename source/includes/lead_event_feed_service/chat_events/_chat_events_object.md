@@ -99,7 +99,7 @@ global_master_advertiser_id | String   | no | Global Master Advertiser Id.
 global_master_campaign_id   | String   | no | Global Master Campaign Id.
 note                        | String   | no | Event note.
 classification              | Integer  | no | Event classification: unclassified, sale, lead, inquiry, or other.
-platform                    | String   | no | Reach Local platform.
+platform                    | String   | no | LocaliQ platform.
 campaign_id                 | String   | no | Campaign Id.
 read                        | Boolean  | no | Indicates if the event has been read.
 flagged                     | Boolean  | no | Allows user to flag an event.
