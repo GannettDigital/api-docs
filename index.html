@@ -1863,7 +1863,76 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>privilege_level</td>
 <td>Number</td>
 <td>privilege level of the business user. PL3 is required to access HIPAA protected data.</td>
-</tr></tbody></table><h1 id='reporting-metric-apis'>Reporting Metric APIs</h1><p><a name="reporting_metric_apis"></a></p><h2 id='reporting-metric-apis-campaigns-apis'>Campaigns APIs</h2><h3 id='reporting-metric-apis-campaigns-apis-campaigns-amp-cycles' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Campaigns &amp; Cycles</strong></h3><p><a name="campaigns_and_cycles"></a></p><h3 id='reporting-metric-apis-campaigns-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
+</tr></tbody></table><h1 id='reporting-metric-apis'>Reporting Metric APIs</h1><p><a name="reporting_metric_apis"></a></p><h2 id='reporting-metric-apis-campaigns-apis'>Campaigns APIs</h2><p>
+<internal></p><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
+</code></pre><p></internal></p><p>
+<internal></p><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
+</code></pre><p></internal></p><p><internal></p><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"platform_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">12529</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_834393"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55370"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA WA THRIFT MART"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C54323_GCI08146_WA WA THRIFT MART Brownwood TX"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-04"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-24"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_95569"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55369"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1264_COLLINS VISION CLINIC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1264_GCI0226481_COLLINS VISION CLINIC- Branded Content"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-13"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_23654"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55368"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MISSAUGA NATIONAL BANK"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1170_GCI0812638_Missauga National Bank - Digital - Q1 2022"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook Ads - Custom Solutions"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ended"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-31"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_876456"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55364"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LONE OAK DOG TRAINING"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6764_GCI0786222_LONE OAK DOG TRAINING - Campaign January"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-31"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_876456"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55363"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LONE OAK DOG TRAINING"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6764_GCI0786224_LONE OAK DOG TRAINING - Campaign February"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-01"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-28"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><p></internal></p><h3 id='reporting-metric-apis-campaigns-apis-campaigns-amp-cycles' class='api_header' style='padding-top: 0.5em;padding-bottom: 0.5em;'><strong>Campaigns &amp; Cycles</strong></h3><p><a name="campaigns_and_cycles"></a></p><h3 id='reporting-metric-apis-campaigns-apis-resource-overview'>Resource Overview</h3><table><thead><tr>
 <th>Method</th>
 <th>URI Format</th>
 </tr>
