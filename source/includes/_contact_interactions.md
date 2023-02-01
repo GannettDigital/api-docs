@@ -72,50 +72,44 @@ curl --request GET \
     "global_master_advertiser_id": "TEST_1",
     "page": 1,
     "total_pages": 5,
-    "next_page_location": "https://api.qa.localiqservices.com/crm/contact_interactions?created_after_date=2019-01-01&created_before_date=2019-01-10&global_master_advertiser_id=TEST_1&page=2",
+    "next_page_location": "https://api.localiqservices.com/crm/contact_interactions?created_after_date=2019-01-01&created_before_date=2023-02-10&global_master_advertiser_id=TEST_1&page=2",
     "contact_interactions": [
         {
-            "campaign_id": 26330,
-            "master_campaign_id": "2705608",
-            "campaign_name": "Direct Site Traffic",
-            "id": 1013941,
-            "created_at": "2019-01-07T12:46:17-08:00",
-            "occured_at": "2019-01-07T12:46:14-08:00",
+            "campaign_id": 400904,
+            "campaign_name": "Organic Search",
+            "id": 755428239,
+            "created_at": "2023-01-04T15:31:11-08:00",
+            "occured_at": "2023-01-04T15:28:46-08:00",
+            "read_at": "2023-01-05T10:59:42-08:00",
             "tags": [
-                "Direct Site Traffic",
-                "Facebook | Danziger | Mesothelioma"
+                "Call Lead",
+                "Organic Search"
             ],
-            "event_type": "form",
-            "contact_id": 9941,
+            "event_type": "call",
+            "contact_id": 432323455,
             "status": "pending_contact",
-            "display_name": "asdf",
+            "display_name": "Flintstone, Fred",
             "contact": {
                 "status": "pending_contact",
-                "id": 9941,
-                "created_at": "2017-11-16T11:11:04-08:00",
+                "id": 432323455,
+                "created_at": "2023-01-04T15:31:11-08:00",
                 "tags": [
-                    "Direct Site Traffic"
+                    "Organic Search"
                 ],
-                "first_name": "asdf",
-                "last_name": "",
-                "email": "asdf@asdf.com",
-                "phone_work": "asdf",
-                "company": "Slate Quarry",
-                "address1": "123 Rubble Street",
-                "address2": "Suite 1",
-                "city": "Bedrock",
-                "state": "AZ",
-                "postal": "86046",
-                "country": "USA"
+                "first_name": "Fred",
+                "last_name": "Flintstone",
+                "company": "",
+                "phone_work": "+12627071229",
+                "address1": "1234 Elm Street",
+                "city": "Peoria",
+                "state": "IL",
+                "postal": "53095"
             },
-            "form": {
-                "sub_type": "FormEmail",
-                "subject": "Hey",
-                "full_message": "Message:\nasdf",
-                "message": "asdf",
-                "extra_fields": {}
-            },
-            "archived_at": "2019-01-08T12:46:14-08:00"
+            "call": {
+                "occured_at": "2023-01-04T15:28:46-08:00",
+                "recording_url": "https://webservice.telmetrics.com/filedownload.ashx/bb01bae3-f6d4-4e1b-b295-481e92a7dd5e/2697305168.mp3",
+                "duration": "00:55"
+            }
         },
         {
             "campaign_id": 26330,
@@ -125,7 +119,7 @@ curl --request GET \
             "occured_at": "2019-01-07T13:26:05-08:00",
             "tags": [
                 "Direct Site Traffic",
-                "Facebook | Danziger | Mesothelioma"
+                "Facebook"
             ],
             "event_type": "form",
             "contact_id": 9941,
@@ -160,132 +154,213 @@ curl --request GET \
             "archived_at": "2019-01-08T13:26:05-08:00"
         },
         {
-            "campaign_id": 26330,
-            "campaign_name": "Direct Site Traffic",
-            "id": 1015321,
-            "created_at": "2019-01-08T13:43:31-08:00",
-            "occured_at": "2019-01-08T13:43:27-08:00",
+            "campaign_id": 48127271,
+            "master_campaign_id": "390971619",
+            "campaign_name": "GCI | SA Smart | Squirrel Feed",
+            "id": 185074076,
+            "created_at": "2022-12-25T12:37:57-05:00",
+            "occured_at": "2022-12-25T12:37:55-05:00",
             "tags": [
-                "Direct Site Traffic",
-                "Facebook | Danziger | Mesothelioma"
+                "Facebook Lead",
+                "Form Lead",
+                "GCI | SA Smart | Squirrel Feed"
             ],
             "event_type": "form",
-            "contact_id": 869271,
+            "contact_id": 91774815,
             "status": "pending_contact",
-            "display_name": "Victer",
+            "display_name": "Pez, Dispenser",
             "contact": {
                 "status": "pending_contact",
-                "id": 869271,
-                "created_at": "2019-01-08T13:43:31-08:00",
+                "id": 91774815,
+                "created_at": "2022-12-25T12:37:57-05:00",
                 "tags": [
-                    "Direct Site Traffic"
+                    "GCI | SA Smart | Squirrel Feed"
                 ],
-                "first_name": "Victer",
-                "last_name": "",
-                "email": "victer@j.com",
-                "phone_work": "",
-                "company": "Slate Quarry",
-                "address1": "234 Rubble Street",
-                "address2": "Suite 2",
-                "city": "Bedrock",
-                "state": "AZ",
-                "postal": "86046",
-                "country": "USA"
+                "first_name": "Dispenser",
+                "last_name": "Pez",
+                "phone_work": "5555555095",
+                "postal": "90732",
+                "email": "pez@gmail.com"
             },
             "form": {
-                "sub_type": "FormEmail",
-                "subject": "Hello",
-                "full_message": "Message:\nhi",
-                "message": "hi",
-                "extra_fields": {}
-            },
-            "archived_at": "2019-01-09T13:26:05-08:00"
+                "sub_type": "FormPost",
+                "full_message": "",
+                "extra_fields": {
+                    "fullName": "Dispenser Pez",
+                    "zip_code": "90732",
+                    "full_name": "Dispenser Pez",
+                    "phone_number": "5555555095",
+                    "are_you_the_homeowner?": "Yes",
+                    "email": "pez@gmail.com"
+                }
+            }
         },
         {
-            "campaign_id": 26330,
-            "campaign_name": "Direct Site Traffic",
-            "id": 1016011,
-            "created_at": "2019-01-09T10:18:41-08:00",
-            "occured_at": "2019-01-09T10:18:37-08:00",
+            "campaign_id": 28002633,
+            "campaign_name": "Organic Search",
+            "id": 1876526262,
+            "created_at": "2023-01-30T07:51:07-08:00",
+            "occured_at": "2023-01-30T07:51:05-08:00",
             "tags": [
-                "Direct Site Traffic",
-                "Facebook | Danziger | Mesothelioma"
+                "Chat Lead",
+                "Organic Search",
+                "Sales Chat"
             ],
-            "event_type": "form",
-            "contact_id": 869921,
+            "event_type": "chat",
+            "contact_id": 9293472379,
             "status": "pending_contact",
-            "display_name": "Webtest",
+            "display_name": "Geddy Lee",
             "contact": {
                 "status": "pending_contact",
-                "id": 869921,
-                "created_at": "2019-01-09T10:18:41-08:00",
+                "id": 9293472379,
+                "created_at": "2023-01-30T07:51:07-08:00",
                 "tags": [
-                    "Direct Site Traffic"
+                    "Organic Search"
                 ],
-                "first_name": "Webtest",
-                "last_name": "",
-                "email": "webtest@l.com",
-                "phone_work": "",
-                "company": "Slate Quarry",
-                "address1": "345 Rubble Street",
-                "address2": "Suite 3",
-                "city": "Bedrock",
-                "state": "AZ",
-                "postal": "86046",
-                "country": "USA"
+                "first_name": "Geddy",
+                "last_name": "Lee",
+                "email": "bass_player@yahoo.com",
+                "phone_work": "262-555-0147",
+                "company": "Border Foods"
             },
-            "form": {
-                "sub_type": "FormEmail",
-                "subject": "Good morning",
-                "full_message": "Message:\nhi",
-                "message": "hi",
-                "extra_fields": {}
-            },
-            "archived_at": "2019-01-10T10:18:37-08:00"
-        },
-        {
-            "campaign_id": 26330,
-            "campaign_name": "Direct Site Traffic",
-            "id": 1016031,
-            "created_at": "2019-01-09T10:20:49-08:00",
-            "occured_at": "2019-01-09T10:20:46-08:00",
-            "tags": [
-                "Direct Site Traffic",
-                "Facebook | Danziger | Mesothelioma"
-            ],
-            "event_type": "form",
-            "contact_id": 869931,
-            "status": "pending_contact",
-            "display_name": "b",
-            "contact": {
-                "status": "pending_contact",
-                "id": 869931,
-                "created_at": "2019-01-09T10:20:49-08:00",
-                "tags": [
-                    "Direct Site Traffic"
-                ],
-                "first_name": "b",
-                "last_name": "",
-                "email": "b@l.com",
-                "phone_work": "",
-                "company": "Slate Quarry",
-                "address1": "456 Rubble Street",
-                "address2": "Suite 4",
-                "city": "Bedrock",
-                "state": "AZ",
-                "postal": "86046",
-                "country": "USA"
-            },
-            "form": {
-                "sub_type": "FormEmail",
-                "subject": "Good afternoon",
-                "full_message": "Message:\nhi",
-                "message": "hi",
-                "extra_fields": {}
-            },
-            "archived_at": "2019-01-10T10:18:37-08:00"
+            "chat": {
+                "summary": "Hello, I’m a Virtual Assistant ready to help. How can I help you?\r\nI need a ride to the gig.\r\nFor over 20 years, our commitment to customer service has made us the most professional transportation company on the North Shore of Boston. We have secured a reputation of outstanding dedication and service with our thousands of satisfied customers. Which of our services are you interested in?\r\nI need a ride to the gig.\r\nWe would be happy to help you. What is the date of your event?\r\nFebruary 10.2023\r\nThank you. May I have your name?\r\nGeddy\r\nThanks Geddy. How can we get in touch?\r\nEmail Me\r\nMay I have your email address?\r\n<a href='mailto:bass_player' target='blank'>bass_player@yahoo.com</a>\r\nMay we also have your phone number, to better follow up with you?\r\nSure\r\nPlease provide your phone number below.\r\n262-555-0147\r\nThank you. Is there anything else we should know?\r\nNo. Thank you \r\nThank you for contacting us. My staff will follow up with you.Have a great day!\r\n",
+                "transcript": [
+                    {
+                        "id": 1,
+                        "timestamp": "1/30/2023 10:50:06 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "Hello, I’m a Virtual Assistant ready to help. How can I help you?"
+                    },
+                    {
+                        "id": 2,
+                        "timestamp": "1/30/2023 10:50:09 AM",
+                        "from": "Visitor:",
+                        "message": "I need a ride to the gig."
+                    },
+                    {
+                        "id": 3,
+                        "timestamp": "1/30/2023 10:50:09 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "For over 20 years, our commitment to customer service has made us the most professional transportation company on the North Shore of Lake Superior. We have secured a reputation of outstanding dedication and service with our hundreds of satisfied customers. Which of our services are you interested in?"
+                    },
+                    {
+                        "id": 4,
+                        "timestamp": "1/30/2023 10:50:31 AM",
+                        "from": "Visitor:",
+                        "message": "I need a ride to the gig."
+                    },
+                    {
+                        "id": 5,
+                        "timestamp": "1/30/2023 10:50:31 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "We offer limousines, SUVs, and party buses that can fit up to 32 guests. We offer a wide variety of new vehicles that always leave our garage looking impeccable, as a luxury vehicle should. Our chauffeurs are always dressed appropriately, black suit and black tie or for formal events, a full tuxedo to add an air of distinction to your special occasion. Please tell me a bit about what you’re looking for."
+                    },
+                    {
+                        "id": 6,
+                        "timestamp": "1/30/2023 10:51:22 AM",
+                        "from": "Visitor:",
+                        "message": "I need a ride to the gig."
+                    },
+                    {
+                        "id": 7,
+                        "timestamp": "1/30/2023 10:51:22 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "We would be happy to help you. What is the date of your event?"
+                    },
+                    {
+                        "id": 8,
+                        "timestamp": "1/30/2023 10:51:40 AM",
+                        "from": "Visitor:",
+                        "message": "February 10.2023"
+                    },
+                    {
+                        "id": 9,
+                        "timestamp": "1/30/2023 10:51:41 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "Thank you. May I have your name?"
+                    },
+                    {
+                        "id": 10,
+                        "timestamp": "1/30/2023 10:51:50 AM",
+                        "from": "Visitor:",
+                        "message": "Geddy"
+                    },
+                    {
+                        "id": 11,
+                        "timestamp": "1/30/2023 10:51:50 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "Thanks Geddy. How can we get in touch?"
+                    },
+                    {
+                        "id": 12,
+                        "timestamp": "1/30/2023 10:52:00 AM",
+                        "from": "Visitor:",
+                        "message": "Email Me"
+                    },
+                    {
+                        "id": 13,
+                        "timestamp": "1/30/2023 10:52:00 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "May I have your email address?"
+                    },
+                    {
+                        "id": 14,
+                        "timestamp": "1/30/2023 10:52:12 AM",
+                        "from": "Visitor:",
+                        "message": "bass_player@yahoo.com"
+                    },
+                    {
+                        "id": 15,
+                        "timestamp": "1/30/2023 10:52:13 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "May we also have your phone number, to better follow up with you?"
+                    },
+                    {
+                        "id": 16,
+                        "timestamp": "1/30/2023 10:52:22 AM",
+                        "from": "Visitor:",
+                        "message": "Sure"
+                    },
+                    {
+                        "id": 17,
+                        "timestamp": "1/30/2023 10:52:22 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "Please provide your phone number below."
+                    },
+                    {
+                        "id": 18,
+                        "timestamp": "1/30/2023 10:52:35 AM",
+                        "from": "Visitor:",
+                        "message": "262-555-0147"
+                    },
+                    {
+                        "id": 19,
+                        "timestamp": "1/30/2023 10:52:36 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "Thank you. Is there anything else we should know?"
+                    },
+                    {
+                        "id": 20,
+                        "timestamp": "1/30/2023 10:53:01 AM",
+                        "from": "Visitor:",
+                        "message": "No. Thank you"
+                    },
+                    {
+                        "id": 21,
+                        "timestamp": "1/30/2023 10:53:01 AM",
+                        "from": "Virtual Assistant:",
+                        "message": "Thank you for contacting us. My staff will follow up with you.Have a great day!"
+                    },
+                    {
+                        "id": 22,
+                        "timestamp": "1/30/2023 10:53:04 AM",
+                        "from": "System:",
+                        "message": "The chat session has ended."
+                    }
+                ]
+            }
         }
-        ...
     ]
 }
 ```

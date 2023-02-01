@@ -27,7 +27,11 @@ Webhook Components:
 - Which lead types should trigger a webhook?
   - Leads can be filtered to only send Calls, only Chats, only Forms & Emails, or any combination of these three options.
 - Payload Format
-  - The format that we will send the data in. This can either be sent in JSON, which is the standard format, or in ADF/XML.
-- The webhook can be set to Active by checking the box next to "Active". If left unchecked, the webhook will not send data.
+  - The [structure of the data in the webhook](#lead-info-apis-webhooks-contacts-lead-apis-response-data-details-nbsp) is the same as that returned by the API. This can either be sent in JSON, which is the standard format, or in ADF/XML.
+- The webhook can be set to Active by checking the box next to "Active". If left unchecked, the webhook will not send data.  Webhooks that continually fail will be automatically set to "Inactive".
 
 All leads for an advertiser will be sent through the webhook and cannot be filtered by a specific campaign.
+
+<aside class="warning">
+The structure of the webhook (payload) is not customizable.  Unfortunately, there isn't a standard industry lead payload.  For example, the format of the Hubspot API is different than the Salesforce API.  An example of the differences is <b>first_name</b> and <b>firstName</b>.  Both contain the first name of the lead, but the two fields are not compatible.  A webhook that is pointed directly at a CRM API will most likely not work because the payloads are not compatible.  Users of the webhook will need to create their own adapter layer to translate the LocalIQ payload format to the destination format, or use an adapter tool such as <a href='/#lead-info-apis-webhooks-localiq-app-on-zapier'>Zapier</a>.
+</aside>
