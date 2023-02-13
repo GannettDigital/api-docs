@@ -42,8 +42,7 @@ includes:
   - youtube_campaign_metrics
 
   - traffic_metrics
-  - marketing_activity
-  - top_referrers
+  - top_referrer
   - total_track
   - web_events_metrics
   - cross_media_optimization
@@ -56,6 +55,7 @@ includes:
   - edge_webhook
   - crm_webhooks
   - lead_metrics
+  - marketing_activity
   - chat_summary
   - lead_detail
   - lsa_campaigns
@@ -65,8 +65,6 @@ includes:
   - fpd
   - capture_external_event_fpd
   - capture_external_event_chat
-  - etl_reports
-  - etl_reports/etl_lead_attribution
 
   - deprecated_apis
   - creative_ad_metrics
@@ -106,7 +104,7 @@ search: false
 
 # Introduction
 
-<aside class="notice"><b>10/30/2020:</b> We have updated the format of our documentation. Please update your bookmarks. Thank you.</aside>
+<aside class="notice"><b>02/13/2023:</b> We have updated our documentation. Please refer to the release notes for details.</aside>
 
 Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.
 
