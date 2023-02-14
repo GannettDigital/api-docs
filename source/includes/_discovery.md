@@ -4,6 +4,10 @@
 This data is a count of each Capture event grouped by master campaign ID, referrer type, and referrer source.
 This API endpoint is used to populate the Marketing Activity Report in client center.
 
+<aside class="warning">
+This API will be removed on June 1, 2023.  It has been replaced with the <a href="#marketing_activity">marketing activity API<a> which has greatly improved organization and performance.
+</aside>
+
 ### Resource Overview
 
 | Method | URI Format |
@@ -16,10 +20,10 @@ When using the GET method, the results can be filtered using these parameters:
 
 |Param|Required|Function|
 |---|---|---|
-|startTime|Yes|Restricts the results to those occurring on or after this date and time. If time is not specified, startTime will be the beginning of the day in UTC (T00:00:00Z)|
-|endTime|Yes|Restricts the results to those occurring on or before this date and time. If time is not specified, endTime will be the end of the day in UTC (T12:59:59Z)|
-|gmaid|Yes|Restrict results to the specified advertiser|
-|bucket|No|place results in buckets|
+|startTime|Yes| Restricts the results to those occurring on or after this date and time. If time is not specified, startTime will be the beginning of the day in UTC (T00:00:00Z) |
+|endTime|Yes| Restricts the results to those occurring on or before this date and time. If time is not specified, endTime will be the end of the day in UTC (T12:59:59Z) |
+|gmaid|Yes| Restrict results to the specified advertiser |
+|bucket|No| place results in buckets|
 
 ### Response Data Details
 

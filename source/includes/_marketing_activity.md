@@ -435,7 +435,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |end_date|String|End date of report|
 |time_zone|String|Time Zone|
 |interval_size|String|Interval Size ('none', 'day', 'calendar_week' or 'calendar_month')|
-|report_data|Object|Report details. [Report Data Object](#marketingactivityreportdata)|
+|report_data|[Report Data Object](#marketingactivityreportdata)|Report details |
 |global_master_advertiser_id|String|Global Master Advertiser ID|
 
 <a name="marketingactivityreportdata"></a>
@@ -443,16 +443,15 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|campaigns|Object|chat counts for chats attributed to paid campaigns. [Campaigns Object](#marketingactivitycampaigns)|
-|search|Object|chat, visit, call, form counts attributed to organic sources (Organic search) [Search Object](#marketingactivitysearch)|
-|social|Object|chat, visit, call, form counts attributed to organic sources (Organic social) [Social Object](#marketingactivitysocial)|
-|direct|Object|chat, visit, call, form counts attributed to organic sources (Organic direct) [Direct Object](#marketingactivitydirect)|
-|directory|Object|chat, visit, call, form counts attributed to organic sources (Organic directory) [Directory Object](#marketingactivitydirectory)|
-|marketplace|Object|chat, visit, call, form counts attributed to marketplace sources (Marketplace) [Marketplace Object](#marketingactivitymarketplace)|
-|other|Object|chat, visit, call, form counts attributed to organic sources (Other) [Other Object](#marketingactivityother)|
-|otherpaid|Object|chat, visit, call, form counts attributed to organic sources (Other paid) [Otherpaid Object](#marketingactivityotherpaid)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|campaigns|[Campaigns Object](#marketingactivitycampaigns)|chat counts for chats attributed to paid campaigns |
+|search|[Search Object](#marketingactivitysearch)|chat, visit, call, form counts attributed to organic search sources |
+|social|[Social Object](#marketingactivitysocial)|chat, visit, call, form counts attributed to organic social sources |
+|direct|[Direct Object](#marketingactivitydirect)|chat, visit, call, form counts attributed to organic direct sources |
+|directory|[Directory Object](#marketingactivitydirectory)|chat, visit, call, form counts attributed to organic directory sources |
+|marketplace|[Marketplace Object](#marketingactivitymarketplace)|chat, visit, call, form counts attributed to marketplace sources |
+|other|[Other Object](#marketingactivityother)|chat, visit, call, form counts attributed to other organic sources |
+|otherpaid|[Otherpaid Object](#marketingactivityotherpaid)|chat, visit, call, form counts attributed to organic sources |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
 
 
 <a name="chatcampaigns"></a>
@@ -469,66 +468,64 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |source|String|Source of the campaign|
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
 
 <a name="marketingactivitysearch"></a>
 **Search Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
 <a name="marketingactivitysocial"></a>
 **Social Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+
 <a name="marketingactivitydirect"></a>
 **Direct Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+
 <a name="marketingactivitydirectory"></a>
 **Directory Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+
 <a name="marketingactivitymarketplace"></a>
-**Marketplace Object**
+**Marketplace Object (Deprecated)**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+
 <a name="marketingactivityother"></a>
 **Other Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+
 <a name="marketingactivityotherpaid"></a>
 **Otherpaid Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
-|intervals|Object|Data for specified interval. [Intervals Object](#marketingactivityintervals)|
-|totals|Object|Totals of vists, cals, chats and forms for each type [Totals Object](#marketingactivitytotals)|
-(#marketingactivitytotals)|
+|intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+
 <a name="marketingactivityintervals"></a>
 **Intervals Object**
 

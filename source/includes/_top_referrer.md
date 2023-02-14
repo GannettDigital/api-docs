@@ -1,5 +1,5 @@
-### **Top Referrers**
-<a name="top_referrers"></a>
+### **Top Referrer**
+<a name="top_referrer"></a>
 
 Describes the distribution of referrers for an advertiser for a given time period as well as attributing the source
 of the referral.  This API endpoint is the data source for the Traffic Detail Report report in client center.
@@ -9,6 +9,11 @@ of the referral.  This API endpoint is the data source for the Traffic Detail Re
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/top_referrer/[gmaid]?[query_params] |
+| GET | /capture_reports/top-referrers?[query_params] |
+
+<aside class="warning">
+The URL path <b>/capture_reports/top-referrers?[query_params]</b> has been deprecated and will be removed on June 1, 2023.
+</aside>
 
 ### Parameters&nbsp;
 
@@ -24,7 +29,7 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```shell
 curl --request GET \
-  --url 'https://api.localiqservices.com/client_reports/top_referrers/TEST_1??start_date=2016-12-01&end_date=2016-12-31' \
+  --url 'https://api.localiqservices.com/client_reports/top_referrer/TEST_1??start_date=2016-12-01&end_date=2016-12-31' \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
 ```
@@ -123,24 +128,30 @@ curl --request GET \
 }
 ```
 
+
 The main body of the API response is found in the report_data object.
+
 **Base Object**
-|Field Name|Datatype|Description|
+
+| Field Name | Datatype | Description |
 |---|---|---|
 |api_name|String|Name of the API|
 |api_run_date|String|Date report was run|
 |start_date|String|Start date of report|
 |end_date|String|End date of report|
 |time_zone|String|Time Zone|
-|report_data|Object|[Report Data Object](#topreferrerreportdata)
+|report_data|[Report Data Object](#topreferrerreportdata)| Report details |
 
 <a id="topreferrerreportdata"></a>
 **Report Data Object**
+
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
-sources | Array | Yes | An array of source objects
+sources | Array | Yes | An array of [source objects](#top-referrers-source)|  
 
+<a id="top-referrers-source"></a>
 **Source Object**
+
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
 name | String | Yes | The type of campaign SEARCH, OTHER, DIRECT
@@ -149,7 +160,8 @@ is_paid | boolean | No | Is the campaign a paid campaign
 top_referrers | Array | No | An array of [top referrer objects](#array-of-top-referrers)
 
 <a id="array-of-top-referrers"></a>
-**Array of top referrers**
+**Top referrer object**
+
 Field Name | Datatype | Nullable | Description
 ---------- | -------- | -------- | -----------
 referrer_host | String | No | The hostname
