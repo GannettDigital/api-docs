@@ -52,7 +52,7 @@ Can return a second_data_set by using second_start_date and second_end_date para
 |`active_users`|The number of distinct users who visited the site.|
 #### Sessions by Device
 
-Dimension: The type of device: desktop, tablet, or mobile.
+Dimension1: The type of device: desktop, tablet, or mobile.
 
 | Metric | Description |
 |---|---|
@@ -60,7 +60,7 @@ Dimension: The type of device: desktop, tablet, or mobile.
 
 #### Traffic by City
 
-Dimension: Users' city, derived from their IP addresses or Geographical IDs.
+Dimension1: Users' city, derived from their IP addresses or Geographical IDs.
 
 | Metric | Description |
 |---|---|
@@ -76,7 +76,7 @@ Dimension: Users' city, derived from their IP addresses or Geographical IDs.
 
 #### Sessions by Day
 
-Dimension: NthDay, starting with the `start_date` of the report. Format: `YYYY-MM-DD`
+Dimension1: NthDay, starting with the `start_date` of the report. Format: `YYYY-MM-DD`
 Can return a second_data_set by using second_start_date and second_end_date params.
 
 | Metric | Description |
@@ -86,7 +86,7 @@ Can return a second_data_set by using second_start_date and second_end_date para
 
 #### Sessions by Month
 
-Dimension: Year/Month, beginning 24 months prior to the requested start_date parameter.
+Dimension1: Year/Month, beginning 24 months prior to the requested start_date parameter.
 
 | Metric | Description |
 |---|---|
@@ -150,15 +150,15 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "sessions_by_device",
                 "data": [
                     {
-                        "dimension": "mobile",
+                        "dimension1": "mobile",
                         "sessions": "53"
                     },
                     {
-                        "dimension": "desktop",
+                        "dimension1": "desktop",
                         "sessions": "46"
                     },
                     {
-                        "dimension": "tablet",
+                        "dimension1": "tablet",
                         "sessions": "6"
                     }
                 ]
@@ -167,7 +167,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "traffic_by_city",
                 "data": [
                     {
-                        "dimension": "Los Angeles",
+                        "dimension1": "Los Angeles",
                         "new_users": "47",
                         "total_users": "55",
                         "sessions": "62",
@@ -179,7 +179,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screen_page_views": "100"
                     },
                     {
-                        "dimension": "(not set)",
+                        "dimension1": "(not set)",
                         "new_users": "6",
                         "total_users": "6",
                         "sessions": "6",
@@ -191,7 +191,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screen_page_views": "8"
                     },
                     {
-                        "dimension": "San Francisco",
+                        "dimension1": "San Francisco",
                         "new_users": "4",
                         "total_users": "4",
                         "sessions": "4",
@@ -203,7 +203,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screen_page_views": "5"
                     },
                     {
-                        "dimension": "Columbus",
+                        "dimension1": "Columbus",
                         "new_users": "3",
                         "total_users": "3",
                         "sessions": "3",
@@ -215,7 +215,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screen_page_views": "3"
                     },
                     {
-                        "dimension": "Glendale",
+                        "dimension1": "Glendale",
                         "new_users": "3",
                         "total_users": "3",
                         "sessions": "3",
@@ -227,7 +227,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screen_page_views": "3"
                     },
                     {
-                        "dimension": "Santa Clarita",
+                        "dimension1": "Santa Clarita",
                         "new_users": "3",
                         "total_users": "3",
                         "sessions": "3",
@@ -244,24 +244,24 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "sessions_by_day",
                 "data": [
                     {
-                        "dimension": "2022-05-02",
+                        "dimension1": "2022-05-02",
                         "sessions": "55",
                         "engaged_sessions": "32"
                     },
                     {
-                        "dimension": "2022-05-03",
+                        "dimension1": "2022-05-03",
                         "sessions": "48",
                         "engaged_sessions": "30"
                     }
                 ],
                 "second_data_set": [
                     {
-                        "dimension": "2022-05-04",
+                        "dimension1": "2022-05-04",
                         "sessions": "48",
                         "engaged_sessions": "24"
                     },
                     {
-                        "dimension": "2022-05-05",
+                        "dimension1": "2022-05-05",
                         "sessions": "42",
                         "engaged_sessions": "16"
                     }
@@ -271,11 +271,11 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "sessions_by_month",
                 "data": [
                     {
-                        "dimension": "202204",
+                        "dimension1": "202204",
                         "sessions": "1309"
                     },
                     {
-                        "dimension": "202205",
+                        "dimension1": "202205",
                         "sessions": "138"
                     }
                 ]
