@@ -33,7 +33,7 @@ Note: All filters use AND logic to match results.
 
 #### User Type
 
-Dimension: A boolean, either New Visitor or Returning Visitor, indicating if the users are new or returning.
+Dimension1: A boolean, either New Visitor or Returning Visitor, indicating if the users are new or returning.
 
 | Metric | Description |
 |---|---|
@@ -62,7 +62,7 @@ Can return a second_data_set by using second_start_date and second_end_date para
 
 #### Pages by Page View
 
-Dimension: Page Path, the url of each page that was viewed
+Dimension1: Page Path, the url of each page that was viewed
 
 Dimension2: Page Title, the title of the page that was viewed'
 
@@ -77,7 +77,7 @@ Can return a second_data_set by using second_start_date and second_end_date para
 
 #### Top Landing Pages
 
-Dimension: Page Path, the url of each page that was viewed
+Dimension1: Page Path, the url of each page that was viewed
 
 Dimension2: Page Title, the title of the page that was viewed
 
@@ -96,7 +96,8 @@ Dimension2: Page Title, the title of the page that was viewed
 
 #### Top Source Medium
 
-Dimension: source/medium, where:
+Dimension1: source/medium, where:
+Dimension2: medium, where:
 
 Source: The source of referrals. For manual campaign tracking, it is the value of the utm_source campaign tracking parameter. For AdWords autotagging, it is google. If you use neither, it is the domain of the source (e.g., document.referrer) referring the users. It may also contain a port address. If users arrived without a referrer, its value is (direct).
 
@@ -111,11 +112,11 @@ Medium: The type of referrals. For manual campaign tracking, it is the value of 
 |`average_session_duration`|The average duration (in seconds) of users' sessions.|
 |`screenpageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
 #### Event by Count
-Dimension: Event Name
+Dimension1: Event Name
 
 | Metric | Description |
 |---|---|
-|`event_count`|The count of events.|
+|`event_count`|The count of top 20 events.|
 ### Examples
 
 ```
@@ -150,7 +151,8 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "top_landing_pages",
                 "data": [
                     {
-                        "dimension": "/",
+                        "dimension1": "/",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
                         "new_users": "16",
                         "total_users": "20",
                         "sessions": "25",
@@ -162,7 +164,73 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engagement_rate": "0.32"
                     },
                     {
-                        "dimension": "/products/",
+                        "dimension1": "/",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
+                        "new_users": "14",
+                        "total_users": "21",
+                        "sessions": "24",
+                        "bounce_rate": "0.625",
+                        "average_session_duration": "14.87196",
+                        "screenpageviews_per_session": "1.125",
+                        "screen_page_views": "27",
+                        "engaged_sessions": "9",
+                        "engagement_rate": "0.375"
+                    },
+                    {
+                        "dimension1": "/",
+                        "dimension2": "Request Pricing - Northridge Screen Services",
+                        "new_users": "0",
+                        "total_users": "4",
+                        "sessions": "4",
+                        "bounce_rate": "0.75",
+                        "average_session_duration": "77.8287065",
+                        "screenpageviews_per_session": "1.25",
+                        "screen_page_views": "5",
+                        "engaged_sessions": "1",
+                        "engagement_rate": "0.25"
+                    },
+                    {
+                        "dimension1": "/",
+                        "dimension2": "About Us - Northridge Screen Services",
+                        "new_users": "0",
+                        "total_users": "2",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "average_session_duration": "28.5431205",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "2",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/",
+                        "dimension2": "About Us - Northridge Screen Services",
+                        "new_users": "0",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "1",
+                        "average_session_duration": "52.129252",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "1",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/",
+                        "dimension2": "Request Pricing - Northridge Screen Services",
+                        "new_users": "0",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "1",
+                        "average_session_duration": "352.729579",
+                        "screenpageviews_per_session": "2",
+                        "screen_page_views": "2",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/products/",
+                        "dimension2": "Screen Products - Northridge Screen Services",
                         "new_users": "3",
                         "total_users": "4",
                         "sessions": "4",
@@ -174,7 +242,21 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engagement_rate": "0.5"
                     },
                     {
-                        "dimension": "(not set)",
+                        "dimension1": "/products/",
+                        "dimension2": "Screen Products - Northridge Screen Services",
+                        "new_users": "0",
+                        "total_users": "0",
+                        "sessions": "0",
+                        "bounce_rate": "0",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "0",
+                        "screen_page_views": "0",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "(not set)",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
                         "new_users": "0",
                         "total_users": "2",
                         "sessions": "3",
@@ -186,7 +268,21 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engagement_rate": "0"
                     },
                     {
-                        "dimension": "/?scid=2231460&kw=3824523&pub_cr_id=77515725231473&network=o&device=c&targetid=kwd-27336883929&loc_interest_ms=&loc_physical_ms=80221&tc=0ddc9f0158101bd2874afd7081ec79da&rl_key=b2b54ebcc6535aaa4606a0b5a9e75c34",
+                        "dimension1": "(not set)",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
+                        "new_users": "0",
+                        "total_users": "0",
+                        "sessions": "0",
+                        "bounce_rate": "0",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "0",
+                        "screen_page_views": "0",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/?scid=2231460&kw=3824523&pub_cr_id=77515725231473&network=o&device=c&targetid=kwd-27336883929&loc_interest_ms=&loc_physical_ms=80221&tc=0ddc9f0158101bd2874afd7081ec79da&rl_key=b2b54ebcc6535aaa4606a0b5a9e75c34",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
                         "new_users": "2",
                         "total_users": "2",
                         "sessions": "2",
@@ -198,7 +294,21 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engagement_rate": "0.5"
                     },
                     {
-                        "dimension": "/about/",
+                        "dimension1": "/?scid=2231460&kw=3824523&pub_cr_id=77515725231473&network=o&device=c&targetid=kwd-27336883929&loc_interest_ms=&loc_physical_ms=80221&tc=0ddc9f0158101bd2874afd7081ec79da&rl_key=b2b54ebcc6535aaa4606a0b5a9e75c34",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
+                        "new_users": "0",
+                        "total_users": "0",
+                        "sessions": "0",
+                        "bounce_rate": "0",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "0",
+                        "screen_page_views": "0",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/about/",
+                        "dimension2": "About Us - Northridge Screen Services",
                         "new_users": "2",
                         "total_users": "2",
                         "sessions": "2",
@@ -210,7 +320,21 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engagement_rate": "1"
                     },
                     {
-                        "dimension": "/areas/sherman-oaks-screen-repair/",
+                        "dimension1": "/about/",
+                        "dimension2": "About Us - Northridge Screen Services",
+                        "new_users": "2",
+                        "total_users": "2",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "2",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/areas/sherman-oaks-screen-repair/",
+                        "dimension2": "Sherman Oaks - Mobile Screen Service | Windows, Doors",
                         "new_users": "2",
                         "total_users": "2",
                         "sessions": "2",
@@ -222,7 +346,21 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engagement_rate": "1"
                     },
                     {
-                        "dimension": "/areas/",
+                        "dimension1": "/areas/sherman-oaks-screen-repair/",
+                        "dimension2": "Sherman Oaks - Mobile Screen Service | Windows, Doors",
+                        "new_users": "1",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "1",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/areas/",
+                        "dimension2": "Areas Served - Northridge Screen Services",
                         "new_users": "0",
                         "total_users": "2",
                         "sessions": "2",
@@ -234,12 +372,39 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engagement_rate": "0.5"
                     },
                     {
-                        "dimension": "/areas/encino-screen-contractor/",
+                        "dimension1": "/areas/",
+                        "dimension2": "Areas Served - Northridge Screen Services",
+                        "new_users": "0",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "1",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
+                    },
+                    {
+                        "dimension1": "/areas/encino-screen-contractor/",
+                        "dimension2": "Encino Screen Services: Repair or Replace Window Screens",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "0",
                         "average_session_duration": "348.581973",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "1",
+                        "engaged_sessions": "1",
+                        "engagement_rate": "1"
+                    },
+                    {
+                        "dimension1": "/areas/encino-screen-contractor/",
+                        "dimension2": "Encino Screen Services: Repair or Replace Window Screens",
+                        "new_users": "1",
+                        "total_users": "1",
+                        "sessions": "1",
+                        "bounce_rate": "0",
+                        "average_session_duration": "1091.155678",
                         "screenpageviews_per_session": "1",
                         "screen_page_views": "1",
                         "engaged_sessions": "1",
@@ -251,7 +416,8 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "top_source_medium",
                 "data": [
                     {
-                        "dimension": "reachlocal / cpc",
+                        "dimension1": "reachlocal / cpc",
+                        "dimension2": "cpc",
                         "new_users": "65",
                         "total_users": "68",
                         "sessions": "72",
@@ -260,7 +426,18 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screenpageviews_per_session": "1.6111111111111112"
                     },
                     {
-                        "dimension": "(direct) / (none)",
+                        "dimension1": "reachlocal / cpc",
+                        "dimension2": "cpc",
+                        "new_users": "43",
+                        "total_users": "44",
+                        "sessions": "47",
+                        "bounce_rate": "0.44680851063829785",
+                        "average_session_duration": "128.8252785319149",
+                        "screenpageviews_per_session": "1.8085106382978724"
+                    },
+                    {
+                        "dimension1": "(direct) / (none)",
+                        "dimension2": "(none)",
                         "new_users": "13",
                         "total_users": "15",
                         "sessions": "20",
@@ -269,7 +446,18 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screenpageviews_per_session": "1"
                     },
                     {
-                        "dimension": "google / organic",
+                        "dimension1": "(direct) / (none)",
+                        "dimension2": "(none)",
+                        "new_users": "9",
+                        "total_users": "11",
+                        "sessions": "13",
+                        "bounce_rate": "0.61538461538461542",
+                        "average_session_duration": "27.934996307692305",
+                        "screenpageviews_per_session": "1.1538461538461537"
+                    },
+                    {
+                        "dimension1": "google / organic",
+                        "dimension2": "organic",
                         "new_users": "13",
                         "total_users": "16",
                         "sessions": "20",
@@ -278,7 +466,18 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screenpageviews_per_session": "1.7"
                     },
                     {
-                        "dimension": "baidu / organic",
+                        "dimension1": "google / organic",
+                        "dimension2": "organic",
+                        "new_users": "10",
+                        "total_users": "13",
+                        "sessions": "15",
+                        "bounce_rate": "0.13333333333333333",
+                        "average_session_duration": "81.367205533333333",
+                        "screenpageviews_per_session": "1.7333333333333334"
+                    },
+                    {
+                        "dimension1": "baidu / organic",
+                        "dimension2": "organic",
                         "new_users": "3",
                         "total_users": "3",
                         "sessions": "3",
@@ -287,7 +486,18 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screenpageviews_per_session": "1"
                     },
                     {
-                        "dimension": "bing / organic",
+                        "dimension1": "baidu / organic",
+                        "dimension2": "organic",
+                        "new_users": "0",
+                        "total_users": "0",
+                        "sessions": "0",
+                        "bounce_rate": "0",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "0"
+                    },
+                    {
+                        "dimension1": "bing / organic",
+                        "dimension2": "organic",
                         "new_users": "2",
                         "total_users": "2",
                         "sessions": "2",
@@ -296,13 +506,34 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "screenpageviews_per_session": "1"
                     },
                     {
-                        "dimension": "duckduckgo / organic",
+                        "dimension1": "bing / organic",
+                        "dimension2": "organic",
+                        "new_users": "0",
+                        "total_users": "0",
+                        "sessions": "0",
+                        "bounce_rate": "0",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "0"
+                    },
+                    {
+                        "dimension1": "duckduckgo / organic",
+                        "dimension2": "organic",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "0",
                         "average_session_duration": "223.211849",
                         "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension1": "duckduckgo / organic",
+                        "dimension2": "organic",
+                        "new_users": "0",
+                        "total_users": "0",
+                        "sessions": "0",
+                        "bounce_rate": "0",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "0"
                     }
                 ]
             },
@@ -310,79 +541,162 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "pages_by_pageview",
                 "data": [
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
                         "sessions": "34",
                         "bounce_rate": "0.52941176470588236",
                         "screenpageviews": "38",
                         "user_engagement_duration": "472"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
+                        "sessions": "31",
+                        "bounce_rate": "0.41935483870967744",
+                        "screenpageviews": "36",
+                        "user_engagement_duration": "1067"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
+                        "sessions": "29",
+                        "bounce_rate": "0.44827586206896552",
+                        "screenpageviews": "32",
+                        "user_engagement_duration": "1234"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Areas Served - Northridge Screen Services",
+                        "sessions": "13",
+                        "bounce_rate": "0.84615384615384615",
+                        "screenpageviews": "16",
+                        "user_engagement_duration": "712"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Request Pricing - Northridge Screen Services",
+                        "sessions": "14",
+                        "bounce_rate": "0.9285714285714286",
+                        "screenpageviews": "15",
+                        "user_engagement_duration": "947"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "About Us - Northridge Screen Services",
+                        "sessions": "5",
+                        "bounce_rate": "0.6",
+                        "screenpageviews": "5",
+                        "user_engagement_duration": "398"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
+                        "sessions": "4",
+                        "bounce_rate": "0.75",
+                        "screenpageviews": "3",
+                        "user_engagement_duration": "22"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Sliding Screen Door Products - Northridge Screen Services",
+                        "sessions": "3",
+                        "bounce_rate": "1",
+                        "screenpageviews": "3",
+                        "user_engagement_duration": "27"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Screen Products - Northridge Screen Services",
+                        "sessions": "2",
+                        "bounce_rate": "1",
+                        "screenpageviews": "2",
+                        "user_engagement_duration": "79"
+                    },
+                    {
+                        "dimension1": "",
+                        "dimension2": "Thank You - Northridge Screen Services",
+                        "sessions": "0",
+                        "bounce_rate": "0",
+                        "screenpageviews": "0",
+                        "user_engagement_duration": "0"
                     }
                 ],
                 "second_data_set": [
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
                         "sessions": "35",
                         "bounce_rate": "0.37142857142857144",
                         "screenpageviews": "43",
                         "user_engagement_duration": "1400"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
                         "sessions": "30",
                         "bounce_rate": "0.7",
                         "screenpageviews": "32",
                         "user_engagement_duration": "710"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
                         "sessions": "16",
                         "bounce_rate": "0.75",
                         "screenpageviews": "17",
                         "user_engagement_duration": "296"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Request Pricing - Northridge Screen Services",
                         "sessions": "7",
                         "bounce_rate": "1",
                         "screenpageviews": "9",
                         "user_engagement_duration": "1436"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Screen Products - Northridge Screen Services",
                         "sessions": "6",
                         "bounce_rate": "0.66666666666666663",
                         "screenpageviews": "7",
                         "user_engagement_duration": "279"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Areas Served - Northridge Screen Services",
                         "sessions": "6",
                         "bounce_rate": "1",
                         "screenpageviews": "6",
                         "user_engagement_duration": "117"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Sliding Screen Door Products - Northridge Screen Services",
                         "sessions": "4",
                         "bounce_rate": "1",
                         "screenpageviews": "6",
                         "user_engagement_duration": "261"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Thank You - Northridge Screen Services",
                         "sessions": "5",
                         "bounce_rate": "1",
                         "screenpageviews": "5",
                         "user_engagement_duration": "20"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "About Us - Northridge Screen Services",
                         "sessions": "3",
                         "bounce_rate": "1",
                         "screenpageviews": "3",
                         "user_engagement_duration": "25"
                     },
                     {
-                        "dimension": "",
+                        "dimension1": "",
+                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
                         "sessions": "3",
                         "bounce_rate": "1",
                         "screenpageviews": "3",
@@ -394,7 +708,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "channel_performance",
                 "data": [
                     {
-                        "dimension": "Paid Other",
+                        "dimension1": "Paid Other",
                         "new_users": "65",
                         "total_users": "68",
                         "sessions": "72",
@@ -407,7 +721,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "active_users": "68"
                     },
                     {
-                        "dimension": "Organic Search",
+                        "dimension1": "Organic Search",
                         "new_users": "13",
                         "total_users": "16",
                         "sessions": "18",
@@ -420,7 +734,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "active_users": "16"
                     },
                     {
-                        "dimension": "Direct",
+                        "dimension1": "Direct",
                         "new_users": "9",
                         "total_users": "11",
                         "sessions": "13",
@@ -435,7 +749,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 ],
                 "second_data_set": [
                     {
-                        "dimension": "Paid Other",
+                        "dimension1": "Paid Other",
                         "new_users": "43",
                         "total_users": "44",
                         "sessions": "47",
@@ -448,7 +762,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "active_users": "44"
                     },
                     {
-                        "dimension": "Organic Search",
+                        "dimension1": "Organic Search",
                         "new_users": "16",
                         "total_users": "19",
                         "sessions": "23",
@@ -461,7 +775,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "active_users": "19"
                     },
                     {
-                        "dimension": "Direct",
+                        "dimension1": "Direct",
                         "new_users": "13",
                         "total_users": "15",
                         "sessions": "20",
@@ -479,28 +793,52 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "events_by_count",
                 "data": [
                     {
-                        "dimension": "page_view",
+                        "dimension1": "page_view",
                         "event_count": "160"
                     },
                     {
-                        "dimension": "user_engagement",
+                        "dimension1": "page_view",
+                        "event_count": "142"
+                    },
+                    {
+                        "dimension1": "user_engagement",
                         "event_count": "115"
                     },
                     {
-                        "dimension": "session_start",
+                        "dimension1": "user_engagement",
+                        "event_count": "84"
+                    },
+                    {
+                        "dimension1": "session_start",
                         "event_count": "103"
                     },
                     {
-                        "dimension": "first_visit",
+                        "dimension1": "session_start",
+                        "event_count": "90"
+                    },
+                    {
+                        "dimension1": "first_visit",
                         "event_count": "87"
                     },
                     {
-                        "dimension": "scroll",
+                        "dimension1": "first_visit",
+                        "event_count": "72"
+                    },
+                    {
+                        "dimension1": "scroll",
                         "event_count": "19"
                     },
                     {
-                        "dimension": "click",
+                        "dimension1": "scroll",
+                        "event_count": "19"
+                    },
+                    {
+                        "dimension1": "click",
                         "event_count": "1"
+                    },
+                    {
+                        "dimension1": "click",
+                        "event_count": "0"
                     }
                 ]
             }

@@ -103,7 +103,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
 ```javascript
 {
     "report_type": "google_analytics_data",
-    "report_date": "2022-06-07",
+    "report_date": "2023-02-20",
     "start_date": "2022-05-02",
     "end_date": "2022-05-03",
     "global_master_advertiser_id": "TEST_1",
@@ -112,7 +112,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
     "web_property_id": null,
     "web_property_name": null,
     "report_data": {
-        [
+        "reports": [
             {
                 "type": "website_traffic",
                 "data": [
@@ -151,15 +151,15 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "data": [
                     {
                         "dimension": "mobile",
-                        "sessions": "80"
+                        "sessions": "53"
                     },
                     {
                         "dimension": "desktop",
-                        "sessions": "48"
+                        "sessions": "46"
                     },
                     {
                         "dimension": "tablet",
-                        "sessions": "1"
+                        "sessions": "6"
                     }
                 ]
             },
@@ -201,6 +201,42 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "engaged_sessions": "1",
                         "engagement_rate": "0.25",
                         "screen_page_views": "5"
+                    },
+                    {
+                        "dimension": "Columbus",
+                        "new_users": "3",
+                        "total_users": "3",
+                        "sessions": "3",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "1",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0",
+                        "screen_page_views": "3"
+                    },
+                    {
+                        "dimension": "Glendale",
+                        "new_users": "3",
+                        "total_users": "3",
+                        "sessions": "3",
+                        "bounce_rate": "0.66666666666666663",
+                        "average_session_duration": "15.985063000000002",
+                        "screenpageviews_per_session": "1",
+                        "engaged_sessions": "1",
+                        "engagement_rate": "0.33333333333333331",
+                        "screen_page_views": "3"
+                    },
+                    {
+                        "dimension": "Santa Clarita",
+                        "new_users": "3",
+                        "total_users": "3",
+                        "sessions": "3",
+                        "bounce_rate": "0",
+                        "average_session_duration": "177.781235",
+                        "screenpageviews_per_session": "2",
+                        "engaged_sessions": "3",
+                        "engagement_rate": "1",
+                        "screen_page_views": "6"
                     }
                 ]
             },
@@ -234,7 +270,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
             {
                 "type": "sessions_by_month",
                 "data": [
-                      {
+                    {
                         "dimension": "202204",
                         "sessions": "1309"
                     },
