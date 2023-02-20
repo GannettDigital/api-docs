@@ -50,9 +50,13 @@ Can return a second_data_set by using second_start_date and second_end_date para
 |`new_users`|The number of sessions marked as a user's first sessions.|
 |`total_users`|The number of sessions marked as sessions for all users.|
 |`sessions`|The total number of sessions.|
-|`bounce_rate`|The percentage of single-page session (i.e., session in which the person left the property from the first page).|
 |`average_session_duration`|The average duration (in seconds) of users' sessions.|
 |`screenpageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
+|`engaged_sessions`|The total number of engaged sessions for the requested time period.|
+|`engagement_rate`|The number of engaged sessions divided by the total number of sessions over a specified time period displayed as a percentage.|
+|`event_count`|The count of events.|
+|`active_users`|The number of distinct users who visited the site.|
+|`page_views`|The total number of Page Views for the requested time period.|
 
 `second_data_set` can be returned by using `second_start_date` and `second_end_date` params.
 
@@ -68,7 +72,7 @@ Can return a second_data_set by using second_start_date and second_end_date para
 |---|---|
 |`sessions`|The total number of sessions.|
 |`bounce_rate`|The percentage of single-page session (i.e., session in which the person left the property from the first page).|
-|`screenpageviews`|The total number of pageviews for the property.|
+|`screen_page_views`|The total number of pageviews for the property.|
 |`user_engagement_duration`|The average time users spent viewing this page or a set of pages.|
 
 #### Top Landing Pages
@@ -85,6 +89,10 @@ Dimension2: Page Title, the title of the page that was viewed
 |`bounce_rate`|The percentage of single-page session (i.e., session in which the person left the property from the first page).|
 |`average_session_duration`|The average duration (in seconds) of users' sessions.|
 |`screenpageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
+|`engaged_sessions`|The total number of engaged sessions for the requested time period.|
+|`engagement_rate`|The number of engaged sessions divided by the total number of sessions over a specified time period displayed as a percentage.|
+|`page_views`|The total number of Page Views for the requested time period.|
+
 
 #### Top Source Medium
 
@@ -102,7 +110,12 @@ Medium: The type of referrals. For manual campaign tracking, it is the value of 
 |`bounce_rate`|The percentage of single-page session (i.e., session in which the person left the property from the first page).|
 |`average_session_duration`|The average duration (in seconds) of users' sessions.|
 |`screenpageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
+#### Event by Count
+Dimension: Event Name
 
+| Metric | Description |
+|---|---|
+|`event_count`|The count of events.|
 ### Examples
 
 ```
@@ -113,10 +126,10 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
 # Example Response
 ```javascript
 {
-    "report_type": "google_analytics_data",
-    "report_date": "2022-06-07",
-    "start_date": "2022-05-28",
-    "end_date": "2022-05-30",
+    "report_type": "google_analytics_data_pages",
+    "report_date": "2023-02-20",
+    "start_date": "2022-05-02",
+    "end_date": "2022-05-03",
     "global_master_advertiser_id": "TEST_1",
     "account_id": null,
     "account_name": null,
@@ -125,257 +138,11 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
     "report_data": {
         "reports": [
             {
-                "type": "pages_by_pageview",
-                "data": [
-                    {
-                        "dimension": "/",
-                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
-                        "sessions": "23",
-                        "bounce_rate": "0.60869565217391308",
-                        "screenpageviews": "27",
-                        "user_engagement_duration": "572"
-                    },
-                    {
-                        "dimension": "/services/door-screen-repair/",
-                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
-                        "sessions": "31",
-                        "bounce_rate": "0.45161290322580644",
-                        "screenpageviews": "33",
-                        "user_engagement_duration": "997"
-                    },
-                    {
-                        "dimension": "/services/window-screen-repair/",
-                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
-                        "sessions": "25",
-                        "bounce_rate": "0.44",
-                        "screenpageviews": "29",
-                        "user_engagement_duration": "899"
-                    },
-                    {
-                        "dimension": "/pricing/",
-                        "dimension2": "Request Pricing - Northridge Screen Services",
-                        "sessions": "10",
-                        "bounce_rate": "1",
-                        "screenpageviews": "10",
-                        "user_engagement_duration": "497"
-                    },
-                    {
-                        "dimension": "/areas/",
-                        "dimension2": "Areas Served - Northridge Screen Services",
-                        "sessions": "12",
-                        "bounce_rate": "0.75",
-                        "screenpageviews": "12",
-                        "user_engagement_duration": "367"
-                    },
-                    {
-                        "dimension": "/services/screen-mesh-replacement/",
-                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
-                        "sessions": "10",
-                        "bounce_rate": "0.9",
-                        "screenpageviews": "10",
-                        "user_engagement_duration": "20"
-                    },
-                    {
-                        "dimension": "/products/sliding-screen-doors/",
-                        "dimension2": "Sliding Screen Door Products - Northridge Screen Services",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "screenpageviews": "1",
-                        "user_engagement_duration": "41"
-                    },
-                    {
-                        "dimension": "/about/",
-                        "dimension2": "About Us - Northridge Screen Services",
-                        "sessions": "2",
-                        "bounce_rate": "1",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "24"
-                    },
-                    {
-                        "dimension": "/contact/",
-                        "dimension2": "Contact Us - Northridge Screen Services",
-                        "sessions": "2",
-                        "bounce_rate": "1",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "346"
-                    },
-                    {
-                        "dimension": "/pricing/thanks/",
-                        "dimension2": "Thank You - Northridge Screen Services",
-                        "sessions": "5",
-                        "bounce_rate": "1",
-                        "screenpageviews": "4",
-                        "user_engagement_duration": "13"
-                    }
-                ],
-                "second_data_set": [
-                    {
-                        "dimension": "/",
-                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
-                        "sessions": "49",
-                        "bounce_rate": "0.51020408163265307",
-                        "screenpageviews": "58",
-                        "user_engagement_duration": "1859"
-                    },
-                    {
-                        "dimension": "/services/door-screen-repair/",
-                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
-                        "sessions": "43",
-                        "bounce_rate": "0.23255813953488372",
-                        "screenpageviews": "47",
-                        "user_engagement_duration": "1443"
-                    },
-                    {
-                        "dimension": "/services/window-screen-repair/",
-                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
-                        "sessions": "24",
-                        "bounce_rate": "0.375",
-                        "screenpageviews": "27",
-                        "user_engagement_duration": "958"
-                    },
-                    {
-                        "dimension": "/pricing/",
-                        "dimension2": "Request Pricing - Northridge Screen Services",
-                        "sessions": "18",
-                        "bounce_rate": "0.88888888888888884",
-                        "screenpageviews": "22",
-                        "user_engagement_duration": "1096"
-                    },
-                    {
-                        "dimension": "/areas/",
-                        "dimension2": "Areas Served - Northridge Screen Services",
-                        "sessions": "17",
-                        "bounce_rate": "0.82352941176470584",
-                        "screenpageviews": "16",
-                        "user_engagement_duration": "444"
-                    },
-                    {
-                        "dimension": "/services/screen-mesh-replacement/",
-                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
-                        "sessions": "7",
-                        "bounce_rate": "1",
-                        "screenpageviews": "7",
-                        "user_engagement_duration": "110"
-                    },
-                    {
-                        "dimension": "/products/sliding-screen-doors/",
-                        "dimension2": "Sliding Screen Door Products - Northridge Screen Services",
-                        "sessions": "4",
-                        "bounce_rate": "1",
-                        "screenpageviews": "6",
-                        "user_engagement_duration": "257"
-                    },
-                    {
-                        "dimension": "/about/",
-                        "dimension2": "About Us - Northridge Screen Services",
-                        "sessions": "5",
-                        "bounce_rate": "0.8",
-                        "screenpageviews": "5",
-                        "user_engagement_duration": "141"
-                    },
-                    {
-                        "dimension": "/contact/",
-                        "dimension2": "Contact Us - Northridge Screen Services",
-                        "sessions": "5",
-                        "bounce_rate": "1",
-                        "screenpageviews": "5",
-                        "user_engagement_duration": "70"
-                    },
-                    {
-                        "dimension": "/pricing/thanks/",
-                        "dimension2": "Thank You - Northridge Screen Services",
-                        "sessions": "2",
-                        "bounce_rate": "1",
-                        "screenpageviews": "2",
-                        "user_engagement_duration": "18"
-                    }
-                ]
-            },
-            {
-                "type": "channel_performance",
-                "data": [
-                    {
-                        "dimension": "Paid Other",
-                        "new_users": "53",
-                        "total_users": "57",
-                        "sessions": "65",
-                        "bounce_rate": "0.46153846153846156",
-                        "average_session_duration": "92.679046815384609",
-                        "screenpageviews_per_session": "1.5538461538461539"
-                    },
-                    {
-                        "dimension": "Direct",
-                        "new_users": "10",
-                        "total_users": "10",
-                        "sessions": "10",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Organic Search",
-                        "new_users": "12",
-                        "total_users": "14",
-                        "sessions": "16",
-                        "bounce_rate": "0.375",
-                        "average_session_duration": "227.5042755625",
-                        "screenpageviews_per_session": "1.9375"
-                    },
-                    {
-                        "dimension": "Organic Social",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
-                    }
-                ],
-                "second_data_set": [
-                    {
-                        "dimension": "Paid Other",
-                        "new_users": "66",
-                        "total_users": "70",
-                        "sessions": "78",
-                        "bounce_rate": "0.28205128205128205",
-                        "average_session_duration": "101.82979943589743",
-                        "screenpageviews_per_session": "1.5897435897435896"
-                    },
-                    {
-                        "dimension": "Direct",
-                        "new_users": "28",
-                        "total_users": "31",
-                        "sessions": "33",
-                        "bounce_rate": "0.5757575757575758",
-                        "average_session_duration": "132.04673684848484",
-                        "screenpageviews_per_session": "1.6363636363636365"
-                    },
-                    {
-                        "dimension": "Organic Search",
-                        "new_users": "15",
-                        "total_users": "15",
-                        "sessions": "17",
-                        "bounce_rate": "0.23529411764705882",
-                        "average_session_duration": "246.76104552941177",
-                        "screenpageviews_per_session": "2.1764705882352939"
-                    },
-                    {
-                        "dimension": "Organic Social",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
-                    }
-                ]
-            },
-            {
                 "type": "user_type",
                 "data": [
                     {
-                        "new_users": "76",
-                        "total_users": "81"
+                        "new_users": "87",
+                        "total_users": "95"
                     }
                 ]
             },
@@ -384,103 +151,99 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "data": [
                     {
                         "dimension": "/",
-                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
-                        "new_users": "18",
+                        "new_users": "16",
                         "total_users": "20",
-                        "sessions": "20",
-                        "bounce_rate": "0.6",
-                        "average_session_duration": "68.4443926",
-                        "screenpageviews_per_session": "1.2"
+                        "sessions": "25",
+                        "bounce_rate": "0.68",
+                        "average_session_duration": "63.31445588",
+                        "screenpageviews_per_session": "1.2",
+                        "screen_page_views": "30",
+                        "engaged_sessions": "8",
+                        "engagement_rate": "0.32"
                     },
                     {
-                        "dimension": "/services/screen-mesh-replacement/",
-                        "dimension2": "Screen Mesh Replacement Service - Northridge Screen Services",
-                        "new_users": "1",
+                        "dimension": "/products/",
+                        "new_users": "3",
+                        "total_users": "4",
+                        "sessions": "4",
+                        "bounce_rate": "0.5",
+                        "average_session_duration": "59.0484045",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "4",
+                        "engaged_sessions": "2",
+                        "engagement_rate": "0.5"
+                    },
+                    {
+                        "dimension": "(not set)",
+                        "new_users": "0",
                         "total_users": "2",
-                        "sessions": "7",
-                        "bounce_rate": "0.8571428571428571",
-                        "average_session_duration": "12.634247428571427",
-                        "screenpageviews_per_session": "1"
+                        "sessions": "3",
+                        "bounce_rate": "1",
+                        "average_session_duration": "0",
+                        "screenpageviews_per_session": "0",
+                        "screen_page_views": "0",
+                        "engaged_sessions": "0",
+                        "engagement_rate": "0"
                     },
                     {
-                        "dimension": "/services/door-screen-repair/?scid=2231462&kw=926107&pub_cr_id=596522195991&device=m&network=g&targetid=kwd-112891863&loc_interest_ms=&loc_physical_ms=9031161&tc=EAIaIQobChMI1euC48yD-AIVcMLCBB2LpglGEAAYAiAAEgKU_PD_BwE&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
-                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
+                        "dimension": "/?scid=2231460&kw=3824523&pub_cr_id=77515725231473&network=o&device=c&targetid=kwd-27336883929&loc_interest_ms=&loc_physical_ms=80221&tc=0ddc9f0158101bd2874afd7081ec79da&rl_key=b2b54ebcc6535aaa4606a0b5a9e75c34",
                         "new_users": "2",
                         "total_users": "2",
                         "sessions": "2",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
+                        "bounce_rate": "0.5",
+                        "average_session_duration": "252.613272",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "2",
+                        "engaged_sessions": "1",
+                        "engagement_rate": "0.5"
                     },
                     {
-                        "dimension": "/products/swinging-screen-doors/",
-                        "dimension2": "Swinging Screen Door Products - Northridge Screen Services",
-                        "new_users": "1",
+                        "dimension": "/about/",
+                        "new_users": "2",
                         "total_users": "2",
                         "sessions": "2",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
+                        "bounce_rate": "0",
+                        "average_session_duration": "151.7678885",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "2",
+                        "engaged_sessions": "2",
+                        "engagement_rate": "1"
                     },
                     {
-                        "dimension": "/services/door-screen-repair/?scid=2231462&pub_cr_id=596522195991&rl_sitelink=1907125&device=m&network=g&targetid=kwd-112891863&loc_interest_ms=&loc_physical_ms=9030953&tc=Cj0KCQjw1tGUBhDXARIsAIJx01mL8Dbb1HTX6-eVPqxddmnrK6AO3PsdY24CWUUj29MFQjA0pnzXCUMaAgvPEALw_wcB&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
-                        "dimension2": "Door Screen Repair Service - Northridge Screen Services",
-                        "new_users": "1",
-                        "total_users": "1",
+                        "dimension": "/areas/sherman-oaks-screen-repair/",
+                        "new_users": "2",
+                        "total_users": "2",
                         "sessions": "2",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0.7840265",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "/services/window-screen-repair/?scid=2231462&kw=1908356&pub_cr_id=596522195901&device=m&network=g&targetid=kwd-26060426&loc_interest_ms=&loc_physical_ms=9030970&tc=Cj0KCQjw1tGUBhDXARIsAIJx01k09V_bujF5sEFTIfT8HFYILWvb87AGCOsqPPlpXUz8jKBdhkGPTBwaAifJEALw_wcB&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
-                        "dimension2": "Window Screen Repair Service - Northridge Screen Services",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "2",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
+                        "bounce_rate": "0",
+                        "average_session_duration": "46.89256",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "2",
+                        "engaged_sessions": "2",
+                        "engagement_rate": "1"
                     },
                     {
                         "dimension": "/areas/",
-                        "dimension2": "Areas Served - Northridge Screen Services",
                         "new_users": "0",
                         "total_users": "2",
                         "sessions": "2",
-                        "bounce_rate": "1",
-                        "average_session_duration": "163.4419075",
-                        "screenpageviews_per_session": "1"
+                        "bounce_rate": "0.5",
+                        "average_session_duration": "454.7344615",
+                        "screenpageviews_per_session": "1.5",
+                        "screen_page_views": "3",
+                        "engaged_sessions": "1",
+                        "engagement_rate": "0.5"
                     },
                     {
-                        "dimension": "/?scid=2231460&kw=7376897&pub_cr_id=77378299623496&network=o&device=c&targetid=kwd-77378358683618&loc_interest_ms=&loc_physical_ms=79874&tc=e791f25cb8fc1abd768790cf62c16fc4&rl_key=b2b54ebcc6535aaa4606a0b5a9e75c34",
-                        "dimension2": "Northridge Screen - Mobile Screen Service in Los Angeles",
+                        "dimension": "/areas/encino-screen-contractor/",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "0",
-                        "average_session_duration": "138.954958",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "/areas/?scid=2231462&cid=3718414&tc=Cj0KCQjw1tGUBhDXARIsAIJx01mTV-x8oQba-Y9GhPF9qj9E0xshO4n53GKDbn_1qc1pZrwrKJ01EFAaAgRlEALw_wcB&rl_key=46565de98920fd51419320748a0a2908&pub_cr_id=596522195991&rl_sitelink=1907126&dynamic_proxy=1&primary_serv=www.northridgescreen.com&device=m&network=g&targetid=kwd-112891863&loc_intere=",
-                        "dimension2": "Areas Served - Northridge Screen Services",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "102.570863",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "/areas/?scid=2231462&pub_cr_id=596522195901&rl_sitelink=1907126&device=m&network=g&targetid=kwd-356817777259&loc_interest_ms=&loc_physical_ms=1014389&tc=CjwKCAjws8yUBhA1EiwAi_tpEeTCqlJpr2udZb-lrplbBUF5F1LsSn9NJpcJSOyTM0zGW58DImNjQhoCtiIQAvD_BwE&rl_key=a056aa03e42000b9ff0d2064c4fea4ab",
-                        "dimension2": "Areas Served - Northridge Screen Services",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
+                        "average_session_duration": "348.581973",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "1",
+                        "engaged_sessions": "1",
+                        "engagement_rate": "1"
                     }
                 ]
             },
@@ -489,66 +252,255 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "data": [
                     {
                         "dimension": "reachlocal / cpc",
-                        "new_users": "53",
-                        "total_users": "57",
-                        "sessions": "65",
-                        "bounce_rate": "0.46153846153846156",
-                        "average_session_duration": "92.679046815384609",
-                        "screenpageviews_per_session": "1.5538461538461539"
-                    },
-                    {
-                        "dimension": "google / organic",
-                        "new_users": "7",
-                        "total_users": "9",
-                        "sessions": "11",
-                        "bounce_rate": "0.36363636363636365",
-                        "average_session_duration": "159.34560490909092",
-                        "screenpageviews_per_session": "2.0909090909090908"
+                        "new_users": "65",
+                        "total_users": "68",
+                        "sessions": "72",
+                        "bounce_rate": "0.3888888888888889",
+                        "average_session_duration": "178.05985377777779",
+                        "screenpageviews_per_session": "1.6111111111111112"
                     },
                     {
                         "dimension": "(direct) / (none)",
-                        "new_users": "10",
-                        "total_users": "10",
-                        "sessions": "10",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
+                        "new_users": "13",
+                        "total_users": "15",
+                        "sessions": "20",
+                        "bounce_rate": "0.9",
+                        "average_session_duration": "11.81041705",
                         "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "google / organic",
+                        "new_users": "13",
+                        "total_users": "16",
+                        "sessions": "20",
+                        "bounce_rate": "0.55",
+                        "average_session_duration": "160.68857340000002",
+                        "screenpageviews_per_session": "1.7"
                     },
                     {
                         "dimension": "baidu / organic",
-                        "new_users": "2",
-                        "total_users": "2",
-                        "sessions": "2",
+                        "new_users": "3",
+                        "total_users": "3",
+                        "sessions": "3",
                         "bounce_rate": "1",
                         "average_session_duration": "0",
                         "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "yahoo / organic",
-                        "new_users": "2",
-                        "total_users": "2",
-                        "sessions": "2",
-                        "bounce_rate": "0",
-                        "average_session_duration": "915.4564695",
-                        "screenpageviews_per_session": "2.5"
                     },
                     {
                         "dimension": "bing / organic",
+                        "new_users": "2",
+                        "total_users": "2",
+                        "sessions": "2",
+                        "bounce_rate": "0",
+                        "average_session_duration": "52.3927185",
+                        "screenpageviews_per_session": "1"
+                    },
+                    {
+                        "dimension": "duckduckgo / organic",
                         "new_users": "1",
                         "total_users": "1",
                         "sessions": "1",
                         "bounce_rate": "0",
-                        "average_session_duration": "56.353816",
+                        "average_session_duration": "223.211849",
                         "screenpageviews_per_session": "1"
+                    }
+                ]
+            },
+            {
+                "type": "pages_by_pageview",
+                "data": [
+                    {
+                        "dimension": "",
+                        "sessions": "34",
+                        "bounce_rate": "0.52941176470588236",
+                        "screenpageviews": "38",
+                        "user_engagement_duration": "472"
+                    }
+                ],
+                "second_data_set": [
+                    {
+                        "dimension": "",
+                        "sessions": "35",
+                        "bounce_rate": "0.37142857142857144",
+                        "screenpageviews": "43",
+                        "user_engagement_duration": "1400"
                     },
                     {
-                        "dimension": "facebook.com / referral",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
+                        "dimension": "",
+                        "sessions": "30",
+                        "bounce_rate": "0.7",
+                        "screenpageviews": "32",
+                        "user_engagement_duration": "710"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "16",
+                        "bounce_rate": "0.75",
+                        "screenpageviews": "17",
+                        "user_engagement_duration": "296"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "7",
                         "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
+                        "screenpageviews": "9",
+                        "user_engagement_duration": "1436"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "6",
+                        "bounce_rate": "0.66666666666666663",
+                        "screenpageviews": "7",
+                        "user_engagement_duration": "279"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "6",
+                        "bounce_rate": "1",
+                        "screenpageviews": "6",
+                        "user_engagement_duration": "117"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "4",
+                        "bounce_rate": "1",
+                        "screenpageviews": "6",
+                        "user_engagement_duration": "261"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "5",
+                        "bounce_rate": "1",
+                        "screenpageviews": "5",
+                        "user_engagement_duration": "20"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "3",
+                        "bounce_rate": "1",
+                        "screenpageviews": "3",
+                        "user_engagement_duration": "25"
+                    },
+                    {
+                        "dimension": "",
+                        "sessions": "3",
+                        "bounce_rate": "1",
+                        "screenpageviews": "3",
+                        "user_engagement_duration": "27"
+                    }
+                ]
+            },
+            {
+                "type": "channel_performance",
+                "data": [
+                    {
+                        "dimension": "Paid Other",
+                        "new_users": "65",
+                        "total_users": "68",
+                        "sessions": "72",
+                        "average_session_duration": "178.05985377777779",
+                        "screenpageviews_per_session": "1.6111111111111112",
+                        "screen_page_views": "116",
+                        "engaged_sessions": "44",
+                        "engagement_rate": "0.61111111111111116",
+                        "event_count": "354",
+                        "active_users": "68"
+                    },
+                    {
+                        "dimension": "Organic Search",
+                        "new_users": "13",
+                        "total_users": "16",
+                        "sessions": "18",
+                        "average_session_duration": "67.8060046111111",
+                        "screenpageviews_per_session": "1.6111111111111112",
+                        "screen_page_views": "29",
+                        "engaged_sessions": "13",
+                        "engagement_rate": "0.72222222222222221",
+                        "event_count": "88",
+                        "active_users": "16"
+                    },
+                    {
+                        "dimension": "Direct",
+                        "new_users": "9",
+                        "total_users": "11",
+                        "sessions": "13",
+                        "average_session_duration": "27.934996307692305",
+                        "screenpageviews_per_session": "1.1538461538461537",
+                        "screen_page_views": "15",
+                        "engaged_sessions": "5",
+                        "engagement_rate": "0.38461538461538464",
+                        "event_count": "42",
+                        "active_users": "11"
+                    }
+                ],
+                "second_data_set": [
+                    {
+                        "dimension": "Paid Other",
+                        "new_users": "43",
+                        "total_users": "44",
+                        "sessions": "47",
+                        "average_session_duration": "128.8252785319149",
+                        "screenpageviews_per_session": "1.8085106382978724",
+                        "screen_page_views": "85",
+                        "engaged_sessions": "26",
+                        "engagement_rate": "0.55319148936170215",
+                        "event_count": "244",
+                        "active_users": "44"
+                    },
+                    {
+                        "dimension": "Organic Search",
+                        "new_users": "16",
+                        "total_users": "19",
+                        "sessions": "23",
+                        "average_session_duration": "153.98994582608697",
+                        "screenpageviews_per_session": "1.6086956521739131",
+                        "screen_page_views": "37",
+                        "engaged_sessions": "12",
+                        "engagement_rate": "0.52173913043478259",
+                        "event_count": "106",
+                        "active_users": "19"
+                    },
+                    {
+                        "dimension": "Direct",
+                        "new_users": "13",
+                        "total_users": "15",
+                        "sessions": "20",
+                        "average_session_duration": "11.81041705",
+                        "screenpageviews_per_session": "1",
+                        "screen_page_views": "20",
+                        "engaged_sessions": "2",
+                        "engagement_rate": "0.1",
+                        "event_count": "58",
+                        "active_users": "15"
+                    }
+                ]
+            },
+            {
+                "type": "events_by_count",
+                "data": [
+                    {
+                        "dimension": "page_view",
+                        "event_count": "160"
+                    },
+                    {
+                        "dimension": "user_engagement",
+                        "event_count": "115"
+                    },
+                    {
+                        "dimension": "session_start",
+                        "event_count": "103"
+                    },
+                    {
+                        "dimension": "first_visit",
+                        "event_count": "87"
+                    },
+                    {
+                        "dimension": "scroll",
+                        "event_count": "19"
+                    },
+                    {
+                        "dimension": "click",
+                        "event_count": "1"
                     }
                 ]
             }

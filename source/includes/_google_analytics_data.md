@@ -46,7 +46,10 @@ Can return a second_data_set by using second_start_date and second_end_date para
 |`screenpageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
 |`total_users`|The total number of users for the requested time period.|
 |`sessions`|The total number of sessions.|
-
+|`engaged_sessions`|The total number of engaged sessions for the requested time period.|
+|`engagement_rate`|The number of engaged sessions divided by the total number of sessions over a specified time period displayed as a percentage.|
+|`event_count`|The count of events.|
+|`active_users`|The number of distinct users who visited the site.|
 #### Sessions by Device
 
 Dimension: The type of device: desktop, tablet, or mobile.
@@ -67,6 +70,9 @@ Dimension: Users' city, derived from their IP addresses or Geographical IDs.
 |`bounce_rate`|The percentage of single-page session (i.e., session in which the person left the property from the first page).|
 |`average_session_duration`|The average duration (in seconds) of users' sessions.|
 |`screenpageviews_per_session`|The average number of pages viewed during a session, including repeated views of a single page.|
+|`engaged_sessions`|The total number of engaged sessions for the requested time period.|
+|`engagement_rate`|The number of engaged sessions divided by the total number of sessions over a specified time period displayed as a percentage.|
+|`page_views`|The total number of Page Views for the requested time period.|
 
 #### Sessions by Day
 
@@ -76,6 +82,7 @@ Can return a second_data_set by using second_start_date and second_end_date para
 | Metric | Description |
 |---|---|
 |`sessions`|The total number of sessions.|
+|`engaged_sessions`|The total number of engaged sessions for the requested time period.|
 
 #### Sessions by Month
 
@@ -97,8 +104,8 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
 {
     "report_type": "google_analytics_data",
     "report_date": "2022-06-07",
-    "start_date": "2022-05-28",
-    "end_date": "2022-05-30",
+    "start_date": "2022-05-02",
+    "end_date": "2022-05-03",
     "global_master_advertiser_id": "TEST_1",
     "account_id": null,
     "account_name": null,
@@ -110,24 +117,32 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "website_traffic",
                 "data": [
                     {
-                        "new_users": "76",
-                        "bounce_rate": "0.51086956521739135",
-                        "average_session_duration": "105.04572230434783",
-                        "screenpageviews": "143",
-                        "screenpageviews_per_session": "1.5543478260869565",
-                        "total_users": "81",
-                        "sessions": "92"
+                        "new_users": "87",
+                        "bounce_rate": "0.39805825242718446",
+                        "average_session_duration": "139.84439327184464",
+                        "engaged_sessions": "62",
+                        "engagement_rate": "0.60194174757281549",
+                        "event_count": "484",
+                        "active_users": "95",
+                        "screenpageviews": "160",
+                        "screenpageviews_per_session": "1.5533980582524272",
+                        "total_users": "95",
+                        "sessions": "103"
                     }
                 ],
                 "second_data_set": [
                     {
-                        "new_users": "110",
-                        "bounce_rate": "0.35658914728682173",
-                        "average_session_duration": "127.86980190697675",
-                        "screenpageviews": "216",
-                        "screenpageviews_per_session": "1.6744186046511629",
-                        "total_users": "117",
-                        "sessions": "129"
+                        "new_users": "72",
+                        "bounce_rate": "0.55555555555555558",
+                        "average_session_duration": "109.25294651111109",
+                        "engaged_sessions": "40",
+                        "engagement_rate": "0.44444444444444442",
+                        "event_count": "408",
+                        "active_users": "78",
+                        "screenpageviews": "142",
+                        "screenpageviews_per_session": "1.5777777777777777",
+                        "total_users": "78",
+                        "sessions": "90"
                     }
                 ]
             },
@@ -153,129 +168,39 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "data": [
                     {
                         "dimension": "Los Angeles",
-                        "new_users": "56",
-                        "total_users": "61",
-                        "sessions": "72",
-                        "bounce_rate": "0.4861111111111111",
-                        "average_session_duration": "101.68330751388891",
-                        "screenpageviews_per_session": "1.625"
+                        "new_users": "47",
+                        "total_users": "55",
+                        "sessions": "62",
+                        "bounce_rate": "0.35483870967741937",
+                        "average_session_duration": "134.87618256451611",
+                        "screenpageviews_per_session": "1.6129032258064515",
+                        "engaged_sessions": "40",
+                        "engagement_rate": "0.64516129032258063",
+                        "screen_page_views": "100"
                     },
                     {
                         "dimension": "(not set)",
                         "new_users": "6",
                         "total_users": "6",
                         "sessions": "6",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Santa Clarita",
-                        "new_users": "3",
-                        "total_users": "3",
-                        "sessions": "3",
                         "bounce_rate": "0.66666666666666663",
-                        "average_session_duration": "18.022299333333333",
-                        "screenpageviews_per_session": "1"
+                        "average_session_duration": "48.999008",
+                        "screenpageviews_per_session": "1.3333333333333333",
+                        "engaged_sessions": "2",
+                        "engagement_rate": "0.33333333333333331",
+                        "screen_page_views": "8"
                     },
                     {
-                        "dimension": "Camarillo",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "191.6186",
-                        "screenpageviews_per_session": "2"
-                    },
-                    {
-                        "dimension": "Castaic",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "3.288961",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Danbury",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "180.643275",
-                        "screenpageviews_per_session": "3"
-                    },
-                    {
-                        "dimension": "Fitchburg",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "56.353816",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Fort Worth",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Glendale",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "152.069558",
-                        "screenpageviews_per_session": "2"
-                    },
-                    {
-                        "dimension": "Lancaster",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "463.831674",
-                        "screenpageviews_per_session": "3"
-                    },
-                    {
-                        "dimension": "Moorpark",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "23.493197",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "San Jose",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "San Marino",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "0",
-                        "average_session_duration": "1217.642332",
-                        "screenpageviews_per_session": "1"
-                    },
-                    {
-                        "dimension": "Thousand Oaks",
-                        "new_users": "1",
-                        "total_users": "1",
-                        "sessions": "1",
-                        "bounce_rate": "1",
-                        "average_session_duration": "0",
-                        "screenpageviews_per_session": "1"
+                        "dimension": "San Francisco",
+                        "new_users": "4",
+                        "total_users": "4",
+                        "sessions": "4",
+                        "bounce_rate": "0.75",
+                        "average_session_duration": "33.87304925",
+                        "screenpageviews_per_session": "1.25",
+                        "engaged_sessions": "1",
+                        "engagement_rate": "0.25",
+                        "screen_page_views": "5"
                     }
                 ]
             },
@@ -283,29 +208,39 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                 "type": "sessions_by_day",
                 "data": [
                     {
-                        "dimension": "2022-05-30",
-                        "sessions": "41"
+                        "dimension": "2022-05-02",
+                        "sessions": "55",
+                        "engaged_sessions": "32"
                     },
                     {
-                        "dimension": "2022-05-29",
-                        "sessions": "27"
+                        "dimension": "2022-05-03",
+                        "sessions": "48",
+                        "engaged_sessions": "30"
+                    }
+                ],
+                "second_data_set": [
+                    {
+                        "dimension": "2022-05-04",
+                        "sessions": "48",
+                        "engaged_sessions": "24"
                     },
                     {
-                        "dimension": "2022-05-28",
-                        "sessions": "24"
+                        "dimension": "2022-05-05",
+                        "sessions": "42",
+                        "engaged_sessions": "16"
                     }
                 ]
             },
             {
                 "type": "sessions_by_month",
                 "data": [
-                    {
-                        "dimension": "202201",
-                        "sessions": "1328"
+                      {
+                        "dimension": "202204",
+                        "sessions": "1309"
                     },
                     {
-                        "dimension": "202112",
-                        "sessions": "1309"
+                        "dimension": "202205",
+                        "sessions": "138"
                     }
                 ]
             }
