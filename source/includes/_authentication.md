@@ -251,7 +251,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 
 ### **API Rate Limits**
 
-ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.
+LocaliQ enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.
 
 If you exceed the rate limit allowance, your request will be rejected. An ```HTTP 429 (Too Many Requests)​``` response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.
 
