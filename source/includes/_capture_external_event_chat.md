@@ -2,7 +2,7 @@
 
 ### Resource Overview
 
-The Capture External Event - Chat endpoint is used to send chat events to LOCALiQ.
+The Capture External Event - Chat endpoint is used to send chat events to LocaliQ.
 
 
 | Method | URI Format |
@@ -137,7 +137,7 @@ This section defines the data parameter JSON hash:
 |Data Field|Required|Description|
 |---|---|---|
 |provider|yes|The name of the service provider|
-|visitId|yes|The Reach Local visitId of the chat user|
+|visitId|yes|The LocaliQ visitId of the chat user|
 |chatDuration|yes|The duration of the chat in seconds|
 |chatSummary|yes|A summary of the chat|
 |chatTextFull|yes|The full transcript of the chat|

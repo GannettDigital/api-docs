@@ -10,11 +10,11 @@ Note: Business user’s access to advertiser’s data (GMAIDs) is maintained thr
 
 ## Step 1: Request API Access
 
-The first step is to register your application with Reach Local. Please contact your account manager, DMC or [LOCALiQ API Support](mailto:apiservices@localiq.com) to request API access.
+The first step is to register your application with LocaliQ. Please contact your account manager, DMC or [LocaliQ API Support](mailto:apiservices@localiq.com) to request API access.
 
 You will get a response within 1 business day. The response email will contain a Client Id and a Client Secret token.
 
-* The Client Id token is a public identifier for your application that will differentiate it amongst other Reach Local API integrations.
+* The Client Id token is a public identifier for your application that will differentiate it amongst other LocaliQ API integrations.
 
 * The client secret is a secret known only to the application and the authorization server.
 
@@ -32,7 +32,7 @@ Through a browser initiate the authorization with your Client Id and Client Secr
 
 Please enter your [business user credentials](#business_user_credentials).
 
-The user (login email) being used for API authentication must be a business user in the LOCALiQ platform and have access to the GMAID that will be used in the API
+The user (login email) being used for API authentication must be a business user in the LocaliQ platform and have access to the GMAID that will be used in the API
 
 ![login screen](/images/login.png)
 
@@ -240,7 +240,7 @@ The email address used to obtain the OAuth Access token must be associated with 
 <a name="business_user_credentials"></a>
 ### Business user credentials
 
-The user (login email) being used for API authentication must be a business user in the LOCALiQ platform and have access to the GMAID that will be used in the API. Business User credentials are provided to you by your account team during account creation. These credentials allow you to access the account data through the APIs as well as the Client Center.
+The user (login email) being used for API authentication must be a business user in the LocaliQ platform and have access to the GMAID that will be used in the API. Business User credentials are provided to you by your account team during account creation. These credentials allow you to access the account data through the APIs as well as the Client Center.
 If you need to check if you have a Business User created or need to reset your password, you can navigate to ReachSecurePay (https://reachsecurepay.com/client/index.php) and enter your email address. If you encounter the error message “Email Address is invalid” or “Email Address not found”, please contact your account management team. If you progress to the login screen, you can select “Create a new password” which will either send you a password reset email or allow you to set your password manually (this will only occur if your password has never been set).
 
 <a name="access_to_hippa_data"></a>
@@ -251,7 +251,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 
 ### **API Rate Limits**
 
-ReachLocal enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.
+LocaliQ enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.
 
 If you exceed the rate limit allowance, your request will be rejected. An ```HTTP 429 (Too Many Requests)​``` response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.
 

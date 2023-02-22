@@ -7,7 +7,7 @@
 > Example Response
 
 ```json
-{ "error": "invalid_grant", "error_description": "The provided authorization credentials are invalid. Refer to documentation at https://reachlocal.github.io/api-docs/#error-codes for further information." }
+{ "error": "invalid_grant", "error_description": "The provided authorization credentials are invalid. Refer to documentation at https://doc.api.localiq.com/#error-codes for further information." }
 ```
 
 Invalid grant error messages occurs when either:

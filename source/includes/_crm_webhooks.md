@@ -2,7 +2,7 @@
 
 **Register via API**
 
-**Webhook option:** We also have a Webhook to receive contacts in real time as they are recorded in the LOCALiQ platform. Our endpoint enables registration for webhook callbacks when new contacts or contact interactions occur. It requires the following parameters for a successful response: GMAID (advertiser ID).
+**Webhook option:** We also have a Webhook to receive contacts in real time as they are recorded in the LocaliQ platform. Our endpoint enables registration for webhook callbacks when new contacts or contact interactions occur. It requires the following parameters for a successful response: GMAID (advertiser ID).
 
 **Zapier App:** The contact webhook is available as an integration on the Zapier marketplace. https://zapier.com/apps/localiq/integrations
 

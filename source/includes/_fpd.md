@@ -3,9 +3,9 @@
 
 
 
-![FPD](/images/fpd-overview_page_3.jpg)
-![FPD](/images/fpd-overview_page_4.jpg)
-![FPD](/images/fpd-overview_page_6.jpg)
+![FPD](/images/fpd-overview_page_3.png)
+![FPD](/images/fpd-overview_page_4.png)
+![FPD](/images/fpd-overview_page_6.png)
 
 
 The following APIs and Apps make it easy for you to send us First Party Data and for us to infuse that data into your marketing campaigns

@@ -125,7 +125,7 @@ We have 3 major approaches for providing data: APIs, Webhooks and Integration ap
 
   - Event driven interface to the data – automated exchange based on specific event or rules occurring
 
-  - Webhooks for contact creation on the LOCALiQ platform
+  - Webhooks for contact creation on the LocaliQ platform
 
   - Webhooks for interactions occurring on your campaign; call, chat, web & email events.
 
@@ -138,6 +138,6 @@ We have 3 major approaches for providing data: APIs, Webhooks and Integration ap
 
   - FranConnect Integration
 
-This site describes the resources that make up the LOCALiQ reporting REST API offerings. For questions or general information, please contact us at:
+This site describes the resources that make up the LocaliQ reporting REST API offerings. For questions or general information, please contact us at:
 
-**LOCALiQ API Support**: [apiservices@localiq.com](mailto:apiservices@localiq.com)
+**LocaliQ API Support**: [apiservices@localiq.com](mailto:apiservices@localiq.com)

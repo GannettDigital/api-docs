@@ -25,12 +25,12 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
  
 <internal>
 | gmaid |No|Identifier for advertiser|
-| advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LOCALiQ data construct used for internal purposes|
-| cobrand_id |No|An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LOCALiQ data construct used for internal purposes|
+| advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LocaliQ data construct used for internal purposes|
+| cobrand_id |No|An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LocaliQ data construct used for internal purposes|
 | exclude_inactive | No | Returns only active advertisers <br><b>Default value: true</b>|
-| advertiser_code |No|Non-unique identifier. This is an internal LOCALiQ data construct used for internal purposes|
-| business_category |No|LOCALiQ’s categorization of the client’s business e.g. Home & Home improvement, Real Estate, Automotive-For Sale etc|
-| business_sub_category |No|LOCALiQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
+| advertiser_code |No|Non-unique identifier. This is an internal LocaliQ data construct used for internal purposes|
+| business_category |No|LocaliQ’s categorization of the client’s business e.g. Home & Home improvement, Real Estate, Automotive-For Sale etc|
+| business_sub_category |No|LocaliQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
 | advertiser_name |No|Restrict results to one or more specific advertiser with the given advertiser name|
 | business_name |No|Restrict results to one or more specific advertiser with the given business name|
 </internal>
@@ -283,7 +283,7 @@ business_user_id | Number | The unique business_user id that is the primary user
 privilege_level | Number | privilege level.
 advertiser_id | Number | The advertiser_id for this advertiser.  Not necessarily the same as the numerical portion of the gmaid.
 active_state | Number | 0: Advertiser not active.  1: Advertiser not active, but in grace period.  2: Advertiser is active.
-cobrand_name | Number | Name given to a collection of of business or BID.  This is an internal LOCALiQ data construct used to aggregate like businesses e.g. partner, Gannett etc.
+cobrand_name | Number | Name given to a collection of of business or BID.  This is an internal LocaliQ data construct used to aggregate like businesses e.g. partner, Gannett etc.
 cobrand_id | Number | An ID used to  uniquely identify a cobrand.
 
 **User**

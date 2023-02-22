@@ -8,7 +8,7 @@
 |GET|/client_reports/unified_display/[gmaid]?[query_params]|
 
 
-This is a Display Metrics API that can be used by customers that have Display campaigns from either the ReachLocal or Gannett brand. Data is returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below. All metrics are reported at the creative level, and aggregated at the Interval/Campaign level for ReachLocal brand or Line Item level for the Gannett brand. When data is unavailable, corresponding property will not be present in the response. For example, if we do not have data for a creative_type or creative_size, it will not be present in the response.
+This is a Display Metrics API that can be used by customers that have Display campaigns from either the LocaliQ or Gannett brand. Data is returned for a GMAID for a specific date range determined by start_date and end_date. Data can also be returned in specified intervals by using the interval_size param. The requirements for these parameters are described below. All metrics are reported at the creative level, and aggregated at the Interval/Campaign level for LocaliQ brand or Line Item level for the Gannett brand. When data is unavailable, corresponding property will not be present in the response. For example, if we do not have data for a creative_type or creative_size, it will not be present in the response.
 
 **Note:** Please note in some cases, the response might not have all of the creatives used in the campaign. This scenario is apparent when the total metrics for the campaign does not match the sum of the same metrics across every creative within the campaigns.
 
