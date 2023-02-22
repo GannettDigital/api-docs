@@ -114,6 +114,8 @@ Medium: The type of referrals. For manual campaign tracking, it is the value of 
 #### Event by Count
 Dimension1: Event Name
 
+Can return a second_data_set by using second_start_date and second_end_date params.
+
 | Metric | Description |
 |---|---|
 |`event_count`|The count of top 20 events.|
@@ -797,12 +799,30 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "event_count": "160"
                     },
                     {
-                        "dimension1": "page_view",
-                        "event_count": "142"
-                    },
-                    {
                         "dimension1": "user_engagement",
                         "event_count": "115"
+                    },
+                    {
+                        "dimension1": "session_start",
+                        "event_count": "103"
+                    },
+                    {
+                        "dimension1": "first_visit",
+                        "event_count": "87"
+                    },
+                    {
+                        "dimension1": "scroll",
+                        "event_count": "19"
+                    },
+                    {
+                        "dimension1": "click",
+                        "event_count": "0"
+                    }
+                ],
+                "second_data_set": [
+                    {
+                        "dimension1": "page_view",
+                        "event_count": "142"
                     },
                     {
                         "dimension1": "user_engagement",
@@ -810,15 +830,7 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                     },
                     {
                         "dimension1": "session_start",
-                        "event_count": "103"
-                    },
-                    {
-                        "dimension1": "session_start",
                         "event_count": "90"
-                    },
-                    {
-                        "dimension1": "first_visit",
-                        "event_count": "87"
                     },
                     {
                         "dimension1": "first_visit",
@@ -829,16 +841,8 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
                         "event_count": "19"
                     },
                     {
-                        "dimension1": "scroll",
-                        "event_count": "19"
-                    },
-                    {
                         "dimension1": "click",
                         "event_count": "1"
-                    },
-                    {
-                        "dimension1": "click",
-                        "event_count": "0"
                     }
                 ]
             }
