@@ -25,7 +25,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`channel[]`|Restrict results to one or more specific wpc channel. Allowed values are `search`, `display`, `social`, `chat`, `other`, and `shopping`|
 |`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
 |`campaign_types[]`|Restrict results based on a campaign type|
-|`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
+|`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval) or `none` to remove intervals entirely from the response.|
 
 ### Response Data Details
 
