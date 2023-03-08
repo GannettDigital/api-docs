@@ -198,9 +198,10 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
+|lead_type| string | yes |Could be one of `Sales`, `Service`, `Other`, `Active`, `Lead`|
 |provider| string | yes |chat provider(if missing assume Apex)|
+|referring_url| string | yes |URL of the referring page|
 |transcript| object | yes |object of chat transcript|
-|summary| object | yes |A freeform text description of the chat.|
 
 **Transcript**
 
@@ -302,28 +303,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
     "page": 1,
     "total_pages": 1,
     "per_page": 25,
-    "totals": {
-        "events": 3,
-        "call_events": 3,
-        "form_events": 0,
-        "chat_events": 0,
-        "booking_events": 0,
-    },
-    "unread": {
-       "events": 2,
-       "call_events": 2,
-       "form_events": 0,
-       "chat_events": 0
-       "booking_events": 0
-    }
-    "channel": {
-       "display": 2,
-       "search": 0,
-       "social": 0,
-       "chat": 0,
-       "other": 0,
-       "none": 1
-    }
 
 }
 ```
