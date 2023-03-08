@@ -16,6 +16,7 @@ includes:
   - trouble_shooting_errors
 
   - release_notes
+  - release_notes_2021
 
   - api_overview
 
