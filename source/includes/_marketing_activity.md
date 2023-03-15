@@ -81,18 +81,21 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 "intervals": [
                     {
                         "start_date": "2021-05-24",
+                        "bookings": 7,
                         "visits": 6,
                         "chats": 0,
                         "calls": 0,
                         "forms": 0,
                         "channels": {
                             "search": {
+                                "bookings": 3,
                                 "visits": 5,
                                 "chats": 0,
                                 "calls": 0,
                                 "forms": 0
                             },
                             "social": {
+                              "bookings": 0,
                               "visits": 1,
                               "chats": 0,
                               "calls": 0,
@@ -101,18 +104,20 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                         }
                     }
                 ],
-                 "totals": {
+              "totals": {
+                "total_bookings": 3,
                 "total_visits": 12,
                 "total_calls": 0,
                 "total_chats": 0,
                 "total_forms": 0
-            }
+              }
             }
         ],
         "search": {
             "intervals": [
                 {
                     "start_date": "2021-05-22",
+                    "bookings": 0,
                     "visits": 0,
                     "chats": 1,
                     "calls": 0,
@@ -120,6 +125,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 }
             ],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 0,
                 "total_calls": 0,
                 "total_chats": 1,
@@ -129,6 +135,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "social": {
             "intervals": [],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 0,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -139,6 +146,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             "intervals": [
                 {
                     "start_date": "2021-05-22",
+                    "bookings": 0,
                     "visits": 28,
                     "chats": 0,
                     "calls": 0,
@@ -146,6 +154,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 },
                 {
                     "start_date": "2021-05-23",
+                    "bookings": 0,
                     "visits": 9,
                     "chats": 0,
                     "calls": 0,
@@ -153,6 +162,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 },
                 {
                     "start_date": "2021-05-24",
+                    "bookings": 0,
                     "visits": 16,
                     "chats": 0,
                     "calls": 0,
@@ -160,6 +170,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 }
             ],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 53,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -170,6 +181,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             "intervals": [
                 {
                     "start_date": "2021-05-22",
+                    "bookings": 0,
                     "visits": 28,
                     "chats": 0,
                     "calls": 0,
@@ -177,6 +189,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 },
                 {
                     "start_date": "2021-05-23",
+                    "bookings": 0,
                     "visits": 9,
                     "chats": 0,
                     "calls": 0,
@@ -184,6 +197,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 },
                 {
                     "start_date": "2021-05-24",
+                    "bookings": 0,
                     "visits": 16,
                     "chats": 0,
                     "calls": 0,
@@ -191,6 +205,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 }
             ],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 53,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -201,6 +216,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             "intervals": [
                 {
                     "start_date": "2021-05-22",
+                    "bookings": 0,
                     "visits": 28,
                     "chats": 0,
                     "calls": 0,
@@ -208,6 +224,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 },
                 {
                     "start_date": "2021-05-23",
+                    "bookings": 0,
                     "visits": 9,
                     "chats": 0,
                     "calls": 0,
@@ -215,6 +232,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 },
                 {
                     "start_date": "2021-05-24",
+                    "bookings": 0,
                     "visits": 16,
                     "chats": 0,
                     "calls": 0,
@@ -222,6 +240,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 }
             ],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 53,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -231,6 +250,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "directory": {
             "intervals": [],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 0,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -240,6 +260,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "marketplace": {
             "intervals": [],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 0,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -249,6 +270,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "other": {
             "intervals": [],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 0,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -258,6 +280,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         "otherpaid": {
             "intervals": [],
              "totals": {
+                "total_bookings": 0,
                 "total_visits": 0,
                 "total_calls": 0,
                 "total_chats": 0,
@@ -265,6 +288,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             }
         },
         "totals": {
+            "total_bookings": 0,
             "total_visits": 79,
             "total_calls": 0,
             "total_chats": 1,
@@ -274,158 +298,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
     "global_master_advertiser_id": "USA_136048"
 }
 ```
-
-
-<internal>Example Response (with second date range)</internal>
-
-```json
-{
-  "api_name": "marketing_activity",
-  "api_run_date": "2022-04-20",
-  "start_date": "2020-12-01",
-  "end_date": "2020-12-19",
-  "time_zone": "America/Los_Angeles",
-  "interval_size": "day",
-  "report_data": {
-    "campaigns": [
-      {
-        "global_master_campaign_id": "USA_123",
-        "campaign_name": "SEM | Boats | Boats",
-        "campaign_type": "search",
-        "organization": "reachlocal",
-        "offer_id": 1,
-        "source": "Search Engine Marketing",
-        "campaign_start_date": "2021-10-26",
-        "campaign_end_date": null,
-        "intervals": [
-          {
-            "start_date": "2020-12-18",
-            "visits": 0,
-            "chats": 0,
-            "calls": 2,
-            "forms": 0
-          }
-        ],
-        "totals": {
-          "total_visits": 0,
-          "total_calls": 2,
-          "total_chats": 0,
-          "total_forms": 0
-        }
-      }
-    ],
-    "search": {
-      "intervals": [
-        {
-          "start_date": "2020-12-17",
-          "visits": 0,
-          "chats": 0,
-          "calls": 12,
-          "forms": 0
-        },
-        {
-          "start_date": "2020-12-18",
-          "visits": 0,
-          "chats": 0,
-          "calls": 5,
-          "forms": 0
-        }
-      ],
-      "totals": {
-        "total_visits": 0,
-        "total_calls": 17,
-        "total_chats": 0,
-        "total_forms": 0
-      }
-    },
-    "social": {
-      "intervals": [],
-      "totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
-      }
-    },
-    "direct": {
-      "intervals": [
-        {
-          "start_date": "2020-12-17",
-          "visits": 0,
-          "chats": 0,
-          "calls": 16,
-          "forms": 0
-        },
-        {
-          "start_date": "2020-12-18",
-          "visits": 0,
-          "chats": 0,
-          "calls": 13,
-          "forms": 0
-        }
-      ],
-      "totals": {
-        "total_visits": 0,
-        "total_calls": 29,
-        "total_chats": 0,
-        "total_forms": 0
-      }
-    },
-    "directory": {
-      "intervals": [],
-      "totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
-      }
-    },
-    "marketplace": {
-      "intervals": [],
-      "totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
-      }
-    },
-    "other": {
-      "intervals": [
-        {
-          "start_date": "2020-12-18",
-          "visits": 0,
-          "chats": 0,
-          "calls": 2,
-          "forms": 0
-        }
-      ],
-      "totals": {
-        "total_visits": 0,
-        "total_calls": 2,
-        "total_chats": 0,
-        "total_forms": 0
-      }
-    },
-    "otherpaid": {
-      "intervals": [],
-      "totals": {
-        "total_visits": 0,
-        "total_calls": 0,
-        "total_chats": 0,
-        "total_forms": 0
-      }
-    },
-    "totals": {
-      "total_visits": 0,
-      "total_calls": 76,
-      "total_chats": 39,
-      "total_forms": 0
-    }
-  },
-  "global_master_advertiser_id": "USA_123"
-}
-```
-
 
 |Field Name|Datatype|Description|
 |---|---|---|
@@ -444,14 +316,14 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |campaigns|[Campaigns Object](#marketingactivitycampaigns)|chat counts for chats attributed to paid campaigns |
-|search|[Search Object](#marketingactivitysearch)|chat, visit, call, form counts attributed to organic search sources |
-|social|[Social Object](#marketingactivitysocial)|chat, visit, call, form counts attributed to organic social sources |
-|direct|[Direct Object](#marketingactivitydirect)|chat, visit, call, form counts attributed to organic direct sources |
-|directory|[Directory Object](#marketingactivitydirectory)|chat, visit, call, form counts attributed to organic directory sources |
-|marketplace|[Marketplace Object](#marketingactivitymarketplace)|chat, visit, call, form counts attributed to marketplace sources |
-|other|[Other Object](#marketingactivityother)|chat, visit, call, form counts attributed to other organic sources |
-|otherpaid|[Otherpaid Object](#marketingactivityotherpaid)|chat, visit, call, form counts attributed to organic sources |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|search|[Search Object](#marketingactivitysearch)|chat, booking, visit, call, form counts attributed to organic search sources |
+|social|[Social Object](#marketingactivitysocial)|chat, booking, visit, call, form counts attributed to organic social sources |
+|direct|[Direct Object](#marketingactivitydirect)|chat, booking, visit, call, form counts attributed to organic direct sources |
+|directory|[Directory Object](#marketingactivitydirectory)|chat, booking, visit, call, form counts attributed to organic directory sources |
+|marketplace|[Marketplace Object](#marketingactivitymarketplace)|chat, booking, visit, call, form counts attributed to marketplace sources |
+|other|[Other Object](#marketingactivityother)|chat, booking, visit, call, form counts attributed to other organic sources |
+|otherpaid|[Otherpaid Object](#marketingactivityotherpaid)|chat, booking, visit, call, form counts attributed to organic sources |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 
 <a name="chatcampaigns"></a>
@@ -469,7 +341,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 <a name="marketingactivitysearch"></a>
 **Search Object**
@@ -477,14 +349,14 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 <a name="marketingactivitysocial"></a>
 **Social Object**
 
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 <a name="marketingactivitydirect"></a>
 **Direct Object**
@@ -492,7 +364,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 <a name="marketingactivitydirectory"></a>
 **Directory Object**
@@ -500,7 +372,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 <a name="marketingactivitymarketplace"></a>
 **Marketplace Object (Deprecated)**
@@ -508,7 +380,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 <a name="marketingactivityother"></a>
 **Other Object**
@@ -516,7 +388,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 <a name="marketingactivityotherpaid"></a>
 **Otherpaid Object**
@@ -524,7 +396,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |intervals|[Intervals Object](#marketingactivityintervals)|Data for specified interval |
-|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, cals, chats and forms for each type |
+|totals|[Totals Object](#marketingactivitytotals)|Totals of vists, calls, bookings, chats and forms for each type |
 
 <a name="marketingactivityintervals"></a>
 **Intervals Object**
@@ -532,6 +404,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 |Field Name|Datatype|Description|
 |---|---|---|
 |start_date|String|Start date of interval|
+|bookings|Integer|Number of total bookings|
 |visits|Integer|Number of total visits|
 |chats|Integer|Number of total chat|
 |calls|Integer|Number of total calls|
@@ -542,6 +415,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 
 |Field Name|Datatype|Description|
 |---|---|---|
+|total_bookings|Integer|Number of total bookings|
 |total_visits|Integer|Number of total visits|
 |total_calls|Integer|Number of total calls|
 |total_chats|Integer|Number of total chats|
