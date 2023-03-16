@@ -1,4 +1,4 @@
-## Unique Domain
+## Unique Domains
 
 Returns a list of unique domains that are being tracked for a given advertiser in the past 14 days. The data returned is a list of unique domains along with corresponding visit counts.
 
@@ -6,7 +6,7 @@ Returns a list of unique domains that are being tracked for a given advertiser i
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/unique_domain/[gmaid] |
+| GET | /client_reports/unique_domains/[gmaid] |
 
 
 ### Response Body
@@ -21,7 +21,7 @@ count | Integer | no | The total visit counts to the specified domain in the las
 
 ```
 curl --request GET \
-  --url 'https://api.localiqservices.com/client_reports/unique_domain/TEST_1' \
+  --url 'https://api.localiqservices.com/client_reports/unique_domains/TEST_1' \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
 ```
