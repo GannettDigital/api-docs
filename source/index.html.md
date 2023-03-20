@@ -111,9 +111,7 @@ Our mission is to enable your growth and satisfaction through flexible access to
 
 We have 3 major approaches for providing data: APIs, Webhooks and Integration apps.
 
-<img alt='API' src='/images/api.png' height=180 width=180 />
-<img alt='Webhook' src='/images/webhook_icon.png' height=180 width=180 />
-<img alt='Integration' src='/images/integration.png' height=180 width=180 />
+<img alt='API' src='/images/image_bar.png' />
 
 **API**
 
