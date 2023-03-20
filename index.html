@@ -841,9 +841,7 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <aside class="notice"><b>02/13/2023:</b> We have updated our documentation. Please refer to the release notes for details.</aside>
-<p>Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.</p><p>We have 3 major approaches for providing data: APIs, Webhooks and Integration apps.</p><p><img alt='API' src='images/api.png' height=180 width=180 />
-<img alt='Webhook' src='images/webhook_icon.png' height=180 width=180 />
-<img alt='Integration' src='images/integration.png' height=180 width=180 /></p><p><strong>API</strong></p><ul><li><p>Interface to the data – through a request &amp; response interchange between applications</p></li>
+<p>Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.</p><p>We have 3 major approaches for providing data: APIs, Webhooks and Integration apps.</p><p><img alt='API' src='images/image_bar.png' /></p><p><strong>API</strong></p><ul><li><p>Interface to the data – through a request &amp; response interchange between applications</p></li>
 <li><p>APIs that serve up metrics for your Search, Display, and Social Campaigns. There are also APIs that serve up campaign level metrics independent of the product. <br></p></li>
 </ul><p><strong>Webhooks</strong></p><ul><li><p>Event driven interface to the data – automated exchange based on specific event or rules occurring</p></li>
 <li><p>Webhooks for contact creation on the LocaliQ platform</p></li>
@@ -1017,6 +1015,14 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </thead><tbody><tr>
 <td><a href="#search_campaign_metrics">Search Activity</a></td>
 <td>Chat metrics attributed to the campaigns were not updating.</td>
+</tr>
+<tr>
+<td><a href="#top_referrer">Top Referrers</a></td>
+<td>Added campaign name to source objects</td>
+</tr>
+<tr>
+<td><a href="#marketing_activity">Marketing Activity</a></td>
+<td>Added bookings count to Marketing API</td>
 </tr>
 <tr>
 <td>N/A</td>
@@ -14218,18 +14224,21 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"channels"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                             </span><span class="s2">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                                 </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
                                 </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                                 </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                                 </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                             </span><span class="p">},</span><span class="w">
                             </span><span class="s2">"social"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                               </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                               </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                               </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14238,18 +14247,20 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                         </span><span class="p">}</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
-                 </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14257,6 +14268,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -14266,6 +14278,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         </span><span class="s2">"social"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14276,6 +14289,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14283,6 +14297,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14290,6 +14305,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14297,6 +14313,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14307,6 +14324,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14314,6 +14332,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14321,6 +14340,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14328,6 +14348,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14338,6 +14359,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14345,6 +14367,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14352,6 +14375,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14359,6 +14383,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14368,6 +14393,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         </span><span class="s2">"directory"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14377,6 +14403,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         </span><span class="s2">"marketplace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14386,6 +14413,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14395,6 +14423,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         </span><span class="s2">"otherpaid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -14402,6 +14431,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w">
             </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -14409,151 +14439,6 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_136048"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"api_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"marketing_activity"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"api_run_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-20"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-01"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-19"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"interval_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"day"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"report_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_123"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM | Boats | Boats"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"offer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Engine Marketing"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"campaign_start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-26"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"campaign_end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-17"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"social"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"direct"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-17"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"directory"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"marketplace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"otherpaid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_forms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><table><thead><tr>
 <th>Field Name</th>
@@ -14613,42 +14498,42 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>search</td>
 <td><a href="#marketingactivitysearch">Search Object</a></td>
-<td>chat, visit, call, form counts attributed to organic search sources</td>
+<td>chat, booking, visit, call, form counts attributed to organic search sources</td>
 </tr>
 <tr>
 <td>social</td>
 <td><a href="#marketingactivitysocial">Social Object</a></td>
-<td>chat, visit, call, form counts attributed to organic social sources</td>
+<td>chat, booking, visit, call, form counts attributed to organic social sources</td>
 </tr>
 <tr>
 <td>direct</td>
 <td><a href="#marketingactivitydirect">Direct Object</a></td>
-<td>chat, visit, call, form counts attributed to organic direct sources</td>
+<td>chat, booking, visit, call, form counts attributed to organic direct sources</td>
 </tr>
 <tr>
 <td>directory</td>
 <td><a href="#marketingactivitydirectory">Directory Object</a></td>
-<td>chat, visit, call, form counts attributed to organic directory sources</td>
+<td>chat, booking, visit, call, form counts attributed to organic directory sources</td>
 </tr>
 <tr>
 <td>marketplace</td>
 <td><a href="#marketingactivitymarketplace">Marketplace Object</a></td>
-<td>chat, visit, call, form counts attributed to marketplace sources</td>
+<td>chat, booking, visit, call, form counts attributed to marketplace sources</td>
 </tr>
 <tr>
 <td>other</td>
 <td><a href="#marketingactivityother">Other Object</a></td>
-<td>chat, visit, call, form counts attributed to other organic sources</td>
+<td>chat, booking, visit, call, form counts attributed to other organic sources</td>
 </tr>
 <tr>
 <td>otherpaid</td>
 <td><a href="#marketingactivityotherpaid">Otherpaid Object</a></td>
-<td>chat, visit, call, form counts attributed to organic sources</td>
+<td>chat, booking, visit, call, form counts attributed to organic sources</td>
 </tr>
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="chatcampaigns"></a>
 <strong>Campaigns Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14708,7 +14593,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivitysearch"></a>
 <strong>Search Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14723,7 +14608,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivitysocial"></a>
 <strong>Social Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14738,7 +14623,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivitydirect"></a>
 <strong>Direct Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14753,7 +14638,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivitydirectory"></a>
 <strong>Directory Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14768,7 +14653,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivitymarketplace"></a>
 <strong>Marketplace Object (Deprecated)</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14783,7 +14668,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivityother"></a>
 <strong>Other Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14798,7 +14683,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivityotherpaid"></a>
 <strong>Otherpaid Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14813,7 +14698,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <tr>
 <td>totals</td>
 <td><a href="#marketingactivitytotals">Totals Object</a></td>
-<td>Totals of vists, cals, chats and forms for each type</td>
+<td>Totals of vists, calls, bookings, chats and forms for each type</td>
 </tr></tbody></table><p><a name="marketingactivityintervals"></a>
 <strong>Intervals Object</strong></p><table><thead><tr>
 <th>Field Name</th>
@@ -14824,6 +14709,11 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <td>start_date</td>
 <td>String</td>
 <td>Start date of interval</td>
+</tr>
+<tr>
+<td>bookings</td>
+<td>Integer</td>
+<td>Number of total bookings</td>
 </tr>
 <tr>
 <td>visits</td>
@@ -14851,6 +14741,11 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <th>Description</th>
 </tr>
 </thead><tbody><tr>
+<td>total_bookings</td>
+<td>Integer</td>
+<td>Number of total bookings</td>
+</tr>
+<tr>
 <td>total_visits</td>
 <td>Integer</td>
 <td>Number of total visits</td>
