@@ -5,8 +5,9 @@
 |API(s) Updated|Description|
 |---|---|
 |[Search Activity](#search_campaign_metrics)|Chat metrics attributed to the campaigns were not updating. |
+|[Top Referrers](#top_referrer)| Added campaign name to source objects |
+|[Marketing Activity](#marketing_activity)| Added bookings count to Marketing API |
 |N/A|Internal API updates |
-
 
 ### February
 
