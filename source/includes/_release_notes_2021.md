@@ -53,5 +53,5 @@ All APIs|General Performance Updates; no impact to the response or usuage of the
 |---|---|
 |Social Ads|API update to suppot a new optional param;include_full_channel|
 |All APIs|General Performance Updates; no impact to the response or usuage of the API|
-|NA|Fix to reset campaign name to name of the current cycle. Please refer to the communication on the issue or reach apiservices@localiq.com for information|
+|NA|Fix to reset campaign name to name of the current cycle.|
 |Identity|General Performance Updates; no impact to the response or usuage of the API|

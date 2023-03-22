@@ -139,4 +139,4 @@ We have 3 major approaches for providing data: APIs, Webhooks and Integration ap
 
 This site describes the resources that make up the LocaliQ reporting REST API offerings. For questions or general information, please contact us at:
 
-**LocaliQ API Support**: [apiservices@localiq.com](mailto:apiservices@localiq.com)
+**LocaliQ API Support**: Contact your LocaliQ account representative.
