@@ -10,7 +10,7 @@ Note: Business user’s access to advertiser’s data (GMAIDs) is maintained thr
 
 ## Step 1: Request API Access
 
-The first step is to register your application with LocaliQ. Please contact your account manager, DMC or [LocaliQ API Support](mailto:apiservices@localiq.com) to request API access.
+The first step is to register your application with LocaliQ. Please contact your account manager or DMC to request API access.
 
 You will get a response within 1 business day. The response email will contain a Client Id and a Client Secret token.
 
