@@ -844,6 +844,9 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 |video_p100_watched_actions|Int|No|Total Videos Watched to 100 percent for Interval|
 |offline_conversion_purchases|Int|No|Total Offline Conversion Purchases for Interval|
 |offline_conversion_purchases_value|Int|No|Total Offline Conversion Purchase Value for Interval|
+|omni_purchase_actions|Int|No| Purchases Value for Interval |
+|omni_purchase_purchase_roas|Int|No| Purchase ROAS for Interval |
+|omni_purchase_action_values|Int|No| Purchase Conversion Value for Interval |
 |cpc|Int|No|Total Cost per Click for Interval|
 |cpm|Int|No|Total Cost per Milli for Interval|
 |ctr|Int|No|Total Click Through Rate for Interval|
@@ -877,6 +880,9 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 |video_p100_watched_actions|Int|No|Total Videos Watched to 100 percent|
 |offline_conversion_purchases|Int|No|Total Offline Conversion Purchases|
 |offline_conversion_purchases_value|Int|No|Total Offline Conversion Purchase Value|
+|omni_purchase_actions|Int|No| Total Purchases Value |
+|omni_purchase_purchase_roas|Int|No| Total Purchase ROAS |
+|omni_purchase_action_values|Int|No| Total Purchase Conversion Value |
 |cpc|Int|No|Total Cost per Click|
 |cpm|Int|No|Total Cost per Milli|
 |ctr|Int|No|Total Click Through Rate|
