@@ -283,6 +283,9 @@
                     <a href="#release-notes-2023" class="toc-h2 toc-link" data-title="Release Notes">2023</a>
                       <ul class="toc-list-h3">
                           <li class="toc-h3-li">
+                            <a href="#release-notes-2023-april" class="toc-h3 toc-link" data-title="Release Notes">April</a>
+                          </li>
+                          <li class="toc-h3-li">
                             <a href="#release-notes-2023-march" class="toc-h3 toc-link" data-title="Release Notes">March</a>
                           </li>
                           <li class="toc-h3-li">
@@ -1008,7 +1011,18 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <blockquote>
 <p>Example Response</p></blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_authorized"</span><span class="p">,</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are not permitted to perform this action."</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-2023'>2023</h2><h3 id='release-notes-2023-march'>March</h3><table><thead><tr>
+</span></code></pre><p><strong>HIPAA Permissions</strong></p><p>The business user must be set up to allow access to HIPAA information to access HIPAA data through the API. You can reach your account team to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.</p><p>This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p><p>The business user must have &quot;Agency Customer&quot; role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response.</p><h1 id='release-notes'>Release Notes</h1><h2 id='release-notes-2023'>2023</h2><h3 id='release-notes-2023-april'>April</h3><table><thead><tr>
+<th>API(s) Updated</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>N/A</td>
+<td>Updated support and onboarding documentation</td>
+</tr>
+<tr>
+<td><a href="#reporting-metric-apis-social-apis">SocialAds Campaign Metrics</a></td>
+<td>Added purchase conversion metrics for shopping campaigns</td>
+</tr></tbody></table><h3 id='release-notes-2023-march'>March</h3><table><thead><tr>
 <th>API(s) Updated</th>
 <th>Description</th>
 </tr>
@@ -8490,6 +8504,24 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 <td>Total Offline Conversion Purchase Value for Interval</td>
 </tr>
 <tr>
+<td>omni_purchase_actions</td>
+<td>Int</td>
+<td>No</td>
+<td>Purchases Value for Interval</td>
+</tr>
+<tr>
+<td>omni_purchase_purchase_roas</td>
+<td>Int</td>
+<td>No</td>
+<td>Purchase ROAS for Interval</td>
+</tr>
+<tr>
+<td>omni_purchase_action_values</td>
+<td>Int</td>
+<td>No</td>
+<td>Purchase Conversion Value for Interval</td>
+</tr>
+<tr>
 <td>cpc</td>
 <td>Int</td>
 <td>No</td>
@@ -8661,6 +8693,24 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 <td>Int</td>
 <td>No</td>
 <td>Total Offline Conversion Purchase Value</td>
+</tr>
+<tr>
+<td>omni_purchase_actions</td>
+<td>Int</td>
+<td>No</td>
+<td>Total Purchases Value</td>
+</tr>
+<tr>
+<td>omni_purchase_purchase_roas</td>
+<td>Int</td>
+<td>No</td>
+<td>Total Purchase ROAS</td>
+</tr>
+<tr>
+<td>omni_purchase_action_values</td>
+<td>Int</td>
+<td>No</td>
+<td>Total Purchase Conversion Value</td>
 </tr>
 <tr>
 <td>cpc</td>
