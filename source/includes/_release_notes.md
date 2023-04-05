@@ -1,6 +1,12 @@
 # Release Notes
 
 ## 2023
+### April
+|API(s) Updated|Description|
+|---|---|
+| N/A | Updated support and onboarding documentation |
+|[SocialAds Campaign Metrics](#reporting-metric-apis-social-apis) | Added purchase conversion metrics for shopping campaigns |
+
 ### March
 |API(s) Updated|Description|
 |---|---|
