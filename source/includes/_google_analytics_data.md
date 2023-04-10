@@ -38,7 +38,6 @@ Can return a second_data_set by using second_start_date and second_end_date para
 | Metric | Description |
 |---|---|
 |`new_users`|The number of sessions marked as a user's first sessions.|
-|`percent_new_sessions`|The percentage of sessions by users who had never visited the property before.|
 |`bounce_rate`|The percentage of single-page session (i.e., session in which the person left the property from the first page).|
 |`average_session_duration`|The average duration (in seconds) of users' sessions.|
 |`screenpageviews`|The total number of pageviews for the property.|
