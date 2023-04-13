@@ -30,13 +30,13 @@ Note: All filters use AND logic to match results.
 
 ### Metrics
 
-#### User Type
+#### Sessions By User Type
 
-Dimension1: A boolean, either New Visitor or Returning Visitor, indicating if the users are new or returning.
+Dimension1: New Vs Returning Visitor -- one of: new, returning, (not set)
 
 | Metric | Description |
 |---|---|
-|`new_users`|The total number of new users for the requested time period.|
+|`sessions`|The total number of sessions.|
 
 #### Channel Performance
 
