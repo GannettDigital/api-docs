@@ -54,6 +54,7 @@ All campaign data for the account will be provided including both Paid Media and
   - YouTube
   - CVT/Web Events
   - Email
+  - Shopping
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
 
 ### Parameters&nbsp;
