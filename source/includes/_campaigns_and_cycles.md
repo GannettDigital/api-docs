@@ -415,6 +415,23 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                     "goal_type": "CPL"
                 }
             ]
+        },
+        {
+            "name":"Shopping Campaign (Demo)",
+            "global_master_campaign_id":"TEST_73432",
+            "campaign_type":"shopping",
+            "organization":"reachlocal",
+            "status":"running",
+            "has_addressable_geofence":false,
+            "has_cvt":false,"has_video":false,
+            "offer_name":"Shopping","off_platform_activity":false,
+            "cycles":[
+                {"campaign_cycle":"TEST_73433",
+                 "start_date":"2023-04-13",
+                 "end_date":null,
+                 "name":"Shopping Campaign (Demo)"
+                }
+            ]
         }
     ]
 }

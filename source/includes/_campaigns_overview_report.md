@@ -406,6 +406,27 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "budget": 0.0
                     }
                 ]
+            },
+            {
+                "name":"Shopping Campaign (Demo)",
+                "global_master_campaign_id":"TEST_73432",
+                "type":"shopping",
+                "source":"Shopping",
+                "start_date":"2023-04-13",
+                "end_dat": null,
+                "status":"running",
+                "cycles":[
+                    {
+                        "campaign_cycle":"TEST_73433",
+                        "start_date":"2023-04-13",
+                        "end_date":null,
+                        "impressions": 0,
+                        "clicks": 0,
+                        "leads": null,
+                        "spend": 0.0,
+                        "budget": 0.0
+                    }
+                ]
             }
         ],
         "totals": {
