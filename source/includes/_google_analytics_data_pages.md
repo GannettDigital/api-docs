@@ -34,6 +34,8 @@ Note: All filters use AND logic to match results.
 
 Dimension1: New Vs Returning Visitor -- one of: new, returning, (not set)
 
+Can return a second_data_set by using second_start_date and second_end_date params.
+
 | Metric | Description |
 |---|---|
 |`sessions`|The total number of sessions.|
@@ -140,11 +142,33 @@ curl --location --request GET 'https://data-connect-staging.gannettdigital.com/c
     "report_data": {
         "reports": [
             {
-                "type": "user_type",
+                "type": "sessions_by_user_type",
                 "data": [
                     {
-                        "new_users": "87",
-                        "total_users": "95"
+                        "dimension1": "new",
+                        "sessions": "177"
+                    },
+                    {
+                        "dimension1": "returning",
+                        "sessions": "34"
+                    },
+                    {
+                        "dimension1": "(not set)",
+                        "sessions": "11"
+                    }
+                ],
+                "second_data_set": [
+                    {
+                        "dimension1": "new",
+                        "sessions": "210"
+                    },
+                    {
+                        "dimension1": "returning",
+                        "sessions": "39"
+                    },
+                    {
+                        "dimension1": "(not set)",
+                        "sessions": "19"
                     }
                 ]
             },
