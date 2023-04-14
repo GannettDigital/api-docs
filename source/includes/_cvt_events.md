@@ -24,6 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`global_master_campaign_id[]`|No|Restricts results to all campaigns with given master campaign id|
 |`interval_size`|No|Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`campaign_status[]`|No|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` or `ended`|
+|`campaign_types[]`|No| Restricts results to campaigns of given type, valid types: `search`, `display`, `other`, `totaltrack_web`, `totaltrack_phone`, `totaltrack_web_phone`, `chat`, `xmedia`|
 
 
 To specify a date range:

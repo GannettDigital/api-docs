@@ -26,6 +26,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
 |`campaign_types[]`|Restrict results based on a campaign type|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval) or `none` to remove intervals entirely from the response.|
+|`campaign_types[]`|No| Restricts results to campaigns of given type, valid types: `search`, `display`, `other`, `totaltrack_web`, `totaltrack_phone`, `totaltrack_web_phone`, `chat`, `xmedia`, `emial`, `shopping`|
 
 ### Response Data Details
 

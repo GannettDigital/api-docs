@@ -25,6 +25,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`include_cycles`| Set to true or false on whether to include cycle nesting.  Default value is false|
 |`channels[]`|Specifies which channels to filter results by. Valid channels are `search`, `display`, `social`, `chat` and `other`|
+|`campaign_types[]`|Default: `xmedia` (can be used to return other campaign types)|
 |<internal> markup_type|Only supported value is 'percentage' </internal>|
 |<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
 
