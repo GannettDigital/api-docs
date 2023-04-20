@@ -18,8 +18,8 @@ When using the GET method, the results can be filtered using these parameters:
 |`start_date`|When GMCID not present|Restricts the results to those occurring on or after this date|
 |`end_date`|When GMCID not present|Restricts the results to those occurring on or before this date|
 |`global_master_campaign_id[]`|No|Restricts results to all campaigns with given master campaign id|
-|`sort_by`|No|Determines what attribute to sort by. Possible values: broadcast_date, quantity, opens, opens_pc, views, views_pc, clicks, clicks_pc, ctor, or ctvr  <br>**Default value: broadcast_date**|
-|`sort_dir`|No|Determines what direction to sort results by.  Possible values: asc or desc <br>**Default value: desc**|
+|`order_by`|No|Determines what attribute to order by. Possible values: broadcast_date, quantity, opens, opens_pc, views, views_pc, clicks, clicks_pc, ctor, or ctvr  <br>**Default value: broadcast_date**|
+|`order_dir`|No|Determines what direction to order results by.  Possible values: asc or desc <br>**Default value: desc**|
 
 ### Response Data Details
 
