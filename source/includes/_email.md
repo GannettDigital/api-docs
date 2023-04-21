@@ -5,7 +5,7 @@
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/v2/email/[gmaid]/campaigns?[query_params] |
-| GET | /client_reports/v2/email/[gmaid]/campaigns/[global_master_campaign_id] |
+| GET | /client_reports/v2/email/[gmaid]/campaigns/[external_campaign_id] |
 
 This is an Email Metrics API that can be used by customers that have Email campaigns.
 
@@ -34,7 +34,7 @@ https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns?start_d
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/TEST_15231
+https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/10390
 ```
 
 > Example Response Index
@@ -99,21 +99,21 @@ https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/TEST_15
             "goals": [],
             "external_campaigns": [
                 {
-                    "external_campaign_id": 4048365,
-                    "external_campaign_name": "Demo Campaign Name",
+                    "external_campaign_id": 10390,
+                    "external_campaign_name": "Demo Campaign 1",
                     "from_line": "Demo From Line",
                     "subject_line": "Demo Subject",
-                    "broadcast_date": "2023-03-24",
-                    "quantity": 9999,
-                    "opens": 1456,
-                    "opens_pc": 14.56,
-                    "screenshot_url": "https://api.demo.url/screenshot/2.jpg",
-                    "views": 1456,
-                    "views_pc": 14.56,
-                    "clicks": 282,
-                    "clicks_pc": 2.82,
-                    "ctor": 19.37,
-                    "ctvr": 19.37
+                    "broadcast_date": "2023-04-01",
+                    "quantity": 6053,
+                    "opens": 1591,
+                    "opens_pc": 26.28,
+                    "screenshot_url": "http://cdn.screenshot-test.com/394-285-202102058.png",
+                    "views": 1591,
+                    "views_pc": 26.28,
+                    "clicks": 322,
+                    "clicks_pc": 5.32,
+                    "ctor": 2024.0,
+                    "ctvr": 2024.0
                 }
             ]
         }
@@ -121,109 +121,73 @@ https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/TEST_15
 }
 ```
 
-> Example Response for GMCID Show
+> Example Response for Show
 
 ```json
-
-
-
 {
     "api_name": "email",
-    "api_run_date": "2023-04-19",
+    "api_run_date": "2023-04-21",
     "global_master_advertiser_id": "TEST_1",
     "advertiser_name": "Advertiser (Demo)",
-    "campaign": {
-        "global_master_campaign_id": "TEST_15231",
-        "name": "Email Campaign (Demo)",
-        "type": "email",
-        "status": "running",
-        "goals": [],
-        "external_campaigns": [
+    "external_campaign": {
+        "external_campaign_id": 10390,
+        "external_campaign_name": "Demo Campaign 1",
+        "from_line": "Demo From Line",
+        "subject_line": "Demo Subject",
+        "broadcast_date": "2023-04-01",
+        "quantity": 6053,
+        "opens": 1591,
+        "opens_pc": 26.28,
+        "screenshot_url": "http://cdn.screenshot-test.com/394-285-202102058.png",
+        "views": 1591,
+        "views_pc": 26.28,
+        "clicks": 322,
+        "clicks_pc": 5.32,
+        "ctor": 2024.0,
+        "ctvr": 2024.0,
+        "devices": {
+            "desktop": 161,
+            "mobile": 161
+        },
+        "links": [
             {
-                "external_campaign_id": 15231,
-                "external_campaign_name": "Demo Campaign Name",
-                "from_line": "Demo From Line",
-                "subject_line": "Demo Subject",
-                "broadcast_date": "2023-03-19",
-                "quantity": 9999,
-                "opens": 1536,
-                "opens_pc": 15.36,
-                "screenshot_url": "https://api.demo.url/screenshot/1.jpg",
-                "views": 1536,
-                "views_pc": 15.36,
-                "clicks": 213,
-                "clicks_pc": 2.13,
-                "ctor": 13.87,
-                "ctvr": 13.87,
-                "devices": {
-                    "desktop": 527,
-                    "mobile": 254
+                "index": 1,
+                "clicks": 107,
+                "clicks_pc": 5.3,
+                "width": 2490,
+                "height": 377,
+                "position": {
+                    "left": 5485,
+                    "top": 377
                 },
-                "links": [
-
-                    {
-                        "index": 1,
-                        "clicks": 31,
-                        "clicks_pc": 0.11,
-                        "width": 140,
-                        "height": 42,
-                        "position": {
-                            "left": 42,
-                            "top": 23
-                        },
-                        "link_pc": 3.96,
-                        "url": "demo_url.com"
-                    },
-                    {
-                        "index": 2,
-                        "clicks": 53,
-                        "clicks_pc": 0.18,
-                        "width": 0,
-                        "height": 0,
-                        "position": {
-                            "left": 0,
-                            "top": 0
-                        },
-                        "link_pc": 6.78,
-                        "url": "demo_url.com"
-                    }
-                ]
+                "link_pc": 33.23,
+                "url": "demo_url.com"
             },
             {
-                "external_campaign_id": 4048365,
-                "external_campaign_name": "Demo Campaign Name",
-                "from_line": "Demo From Line",
-                "subject_line": "Demo Subject",
-                "broadcast_date": "2023-03-24",
-                "quantity": 9999,
-                "opens": 1456,
-                "opens_pc": 14.56,
-                "screenshot_url": "https://api.demo.url/screenshot/2.jpg",
-                "views": 1456,
-                "views_pc": 14.56,
-                "clicks": 282,
-                "clicks_pc": 2.82,
-                "ctor": 19.37,
-                "ctvr": 19.37,
-                "devices": {
-                    "desktop": 117,
-                    "mobile": 85
+                "index": 2,
+                "clicks": 107,
+                "clicks_pc": 5.3,
+                "width": 2490,
+                "height": 377,
+                "position": {
+                    "left": 5485,
+                    "top": 377
                 },
-                "links": [
-                    {
-                        "index": 1,
-                        "clicks": 4,
-                        "clicks_pc": 0.06,
-                        "width": 140,
-                        "height": 42,
-                        "position": {
-                            "left": 42,
-                            "top": 23
-                        },
-                        "link_pc": 1.98,
-                        "url": "demo_url.com"
-                    }
-                ]
+                "link_pc": 33.23,
+                "url": "demo_url.com"
+            },
+            {
+                "index": 3,
+                "clicks": 107,
+                "clicks_pc": 5.3,
+                "width": 2490,
+                "height": 377,
+                "position": {
+                    "left": 5485,
+                    "top": 377
+                },
+                "link_pc": 33.23,
+                "url": "demo_url.com"
             }
         ]
     }
