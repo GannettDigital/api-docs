@@ -159,6 +159,7 @@ If using the `campaigns_overview` report_type, all campaign data for the account
   - CVT/Web Events
   - Xmedia
   - Email
+  - Shopping
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
 - For search_activity, unified_display, and facebook_campaigns report_types, xmedia campaign types are included.
 
@@ -412,6 +413,23 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 {
                     "goal_type_id": 2,
                     "goal_type": "CPL"
+                }
+            ]
+        },
+        {
+            "name":"Shopping Campaign (Demo)",
+            "global_master_campaign_id":"TEST_73432",
+            "campaign_type":"shopping",
+            "organization":"reachlocal",
+            "status":"running",
+            "has_addressable_geofence":false,
+            "has_cvt":false,"has_video":false,
+            "offer_name":"Shopping","off_platform_activity":false,
+            "cycles":[
+                {"campaign_cycle":"TEST_73433",
+                 "start_date":"2023-04-13",
+                 "end_date":null,
+                 "name":"Shopping Campaign (Demo)"
                 }
             ]
         }

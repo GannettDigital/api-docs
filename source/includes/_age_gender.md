@@ -22,6 +22,8 @@ When using the GET method, the results can be filtered using these parameters:
 |`end_date`|Restricts the results to those ocurring on or before this date.|
 |`global_master_campaign_id[]`|Restrict results to one or more specific campaigns|
 |`campaign_status[]`|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
+|`campaign_types[]`|Default: `display`, `edge`, `other`, `xmedia` (can be used to return other campaign types)|
+
 
 To specify a date range:
 

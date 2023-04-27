@@ -54,6 +54,7 @@ All campaign data for the account will be provided including both Paid Media and
   - YouTube
   - CVT/Web Events
   - Email
+  - Shopping
 - Offer-based campaigns include any campaign that is not Paid Media and will have a `campaign_type` of `other`. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.
 
 ### Parameters&nbsp;
@@ -400,6 +401,27 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "end_date": null,
                         "impressions": 26743,
                         "clicks": 332,
+                        "leads": null,
+                        "spend": 0.0,
+                        "budget": 0.0
+                    }
+                ]
+            },
+            {
+                "name":"Shopping Campaign (Demo)",
+                "global_master_campaign_id":"TEST_73432",
+                "type":"shopping",
+                "source":"Shopping",
+                "start_date":"2023-04-13",
+                "end_dat": null,
+                "status":"running",
+                "cycles":[
+                    {
+                        "campaign_cycle":"TEST_73433",
+                        "start_date":"2023-04-13",
+                        "end_date":null,
+                        "impressions": 0,
+                        "clicks": 0,
                         "leads": null,
                         "spend": 0.0,
                         "budget": 0.0
