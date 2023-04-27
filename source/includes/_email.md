@@ -149,6 +149,13 @@ https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/10390
             "desktop": 161,
             "mobile": 161
         },
+        "browsers": {
+            "ie": 114,
+            "chrome": 114,
+            "firefox": 114,
+            "safari": 114,
+            "other": 114
+        },
         "links": [
             {
                 "index": 1,
@@ -231,6 +238,7 @@ https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/10390
 |from_line|Object|From Line for email|
 |subject_line|Object|Subject line for email|
 |devices|Device[]|[Array of Device](#deviceemail)|
+|browsers|Browser[]|[Array of Browser](#browseremail)|
 |links|Link[]|[Array of Link](#linkemail)|
 |screenshot_url|String|Link to the campaign screenshot url|
 
@@ -241,6 +249,17 @@ https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/10390
 |---|---|---|
 | goal_type_id | Integer | goal type id |
 | goal_type | String | goal type name |
+
+<a name="browseremail"></a>
+**Browser**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|ie|Integer|Number of clicks from Microsoft browsers (Includes Internet Explorer, Edge and any future browsers from Microsoft)|
+|chrome|Integer|Number of clicks from Chrome|
+|firefox|Integer|Number of clicks from Firefox|
+|safari|Integer|Number of clicks from Safari|
+|other|Integer|Number of clicks from browsers not listed|
 
 <a name="linkemail"></a>
 **Link**
