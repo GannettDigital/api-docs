@@ -1,11 +1,11 @@
 ### **Email**
+<a name="email"></a>
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET | /client_reports/email/[gmaid]/campaigns?[query_params] |
-| GET | /client_reports/email/[gmaid]/campaigns/[global_master_campaign_id] |
-
+| GET | /client_reports/v2/email/[gmaid]/campaigns?[query_params] |
+| GET | /client_reports/v2/email/[gmaid]/campaigns/[external_campaign_id] |
 
 This is an Email Metrics API that can be used by customers that have Email campaigns.
 
@@ -15,12 +15,11 @@ When using the GET method, the results can be filtered using these parameters:
 
 |Parameter|Required|Description|
 |---|---|---|
-|start_date|When GMCID not present|Restricts the results to those occurring on or after this date|
-|end_date|When GMCID not present|Restricts the results to those occurring on or before this date|
-|page|No|Determines the page to return <br>**Default value is 1**|
-|page_size|No|Determines how many campaigns are returned per page <br>**Default value: 25**|
-|sort_by|No|Determines what attribute to sort by. Possible values: broadcast_date, quantity, opens, opens_pc, views, views_pc, clicks, clicks_pc, ctor, or ctvr  <br>**Default value: broadcast_date**|
-|sort_dir|No|Determines what direction to sort results by.  Possible values: asc or desc <br>**Default value: desc**|
+|`start_date`|When GMCID not present|Restricts the results to those occurring on or after this date|
+|`end_date`|When GMCID not present|Restricts the results to those occurring on or before this date|
+|`global_master_campaign_id[]`|No|Restricts results to all campaigns with given master campaign id|
+|`order_by`|No|Determines what attribute to order by. Possible values: broadcast_date, quantity, opens, opens_pc, views, views_pc, clicks, clicks_pc, ctor, or ctvr  <br>**Default value: broadcast_date**|
+|`order_dir`|No|Determines what direction to order results by.  Possible values: asc or desc <br>**Default value: desc**|
 
 ### Response Data Details
 
@@ -28,14 +27,14 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.localiqservices.com/client_reports/email/TEST_1/campaigns?start_date=2020-10-01&end_date=2020-10-10
+https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns?start_date=2020-10-01&end_date=2020-10-10
 ```
 
 > Retrieve data for a specific campaign
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
+https://api.localiqservices.com/client_reports/v2/email/TEST_1/campaigns/10390
 ```
 
 > Example Response Index
@@ -43,11 +42,9 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
 ```json
 {
     "api_name": "email",
-    "api_run_date": "2020-11-02",
-    "earliest_date_available": "2020-10-15",
-    "start_date": "2020-10-01",
-    "end_date": "2020-10-16",
-    "time_zone": "America/Los_Angeles",
+    "api_run_date": "2023-04-19",
+    "start_date": "2023-03-17",
+    "end_date": "2023-04-17",
     "global_master_advertiser_id": "TEST_1",
     "advertiser_name": "Advertiser (Demo)",
     "campaigns": [
@@ -57,64 +54,100 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
             "type": "email",
             "status": "running",
             "goals": [],
-            "external_campaign_id": 15231,
-            "external_campaign_name": "Demo Campaign Name",
-            "broadcast_date": "2020-10-15",
-            "quantity": 2911,
-            "opens": 1150,
-            "opens_pc": 0.0,
-            "screenshot_url": "https://api.demo.url/screenshot/1.jpg",
-            "views": 281,
-            "views_pc": 0.0,
-            "clicks": 570,
-            "clicks_pc": 0.0,
-            "ctor": 0.1843,
-            "ctvr": 0.1843,
-            "from_line": "Demo From Line",
-            "subject_line": "Demo Subject"
+            "external_campaigns": [
+                {
+                    "external_campaign_id": 15231,
+                    "external_campaign_name": "Demo Campaign Name",
+                    "from_line": "Demo From Line",
+                    "subject_line": "Demo Subject",
+                    "broadcast_date": "2023-03-19",
+                    "quantity": 9999,
+                    "opens": 1536,
+                    "opens_pc": 15.36,
+                    "screenshot_url": "https://api.demo.url/screenshot/1.jpg",
+                    "views": 1536,
+                    "views_pc": 15.36,
+                    "clicks": 213,
+                    "clicks_pc": 2.13,
+                    "ctor": 13.87,
+                    "ctvr": 13.87
+                },
+                {
+                    "external_campaign_id": 15232,
+                    "external_campaign_name": "Demo Campaign Name",
+                    "from_line": "Demo From Line",
+                    "subject_line": "Demo Subject",
+                    "broadcast_date": "2023-03-20",
+                    "quantity": 9999,
+                    "opens": 1456,
+                    "opens_pc": 14.56,
+                    "screenshot_url": "https://api.demo.url/screenshot/2.jpg",
+                    "views": 1456,
+                    "views_pc": 14.56,
+                    "clicks": 282,
+                    "clicks_pc": 2.82,
+                    "ctor": 19.37,
+                    "ctvr": 19.37
+                }
+            ]
+        },
+        {
+            "global_master_campaign_id": "TEST_4048365",
+            "name": "Email Campaign (Demo)",
+            "type": "email",
+            "status": "running",
+            "goals": [],
+            "external_campaigns": [
+                {
+                    "external_campaign_id": 10390,
+                    "external_campaign_name": "Demo Campaign 1",
+                    "from_line": "Demo From Line",
+                    "subject_line": "Demo Subject",
+                    "broadcast_date": "2023-04-01",
+                    "quantity": 6053,
+                    "opens": 1591,
+                    "opens_pc": 26.28,
+                    "screenshot_url": "http://cdn.screenshot-test.com/394-285-202102058.png",
+                    "views": 1591,
+                    "views_pc": 26.28,
+                    "clicks": 322,
+                    "clicks_pc": 5.32,
+                    "ctor": 2024.0,
+                    "ctvr": 2024.0
+                }
+            ]
         }
-    ],
-    "page": 1,
-    "page_size": 25,
-    "total_pages": 1
+    ]
 }
 ```
 
-> Example Response for GMCID Show
+> Example Response for Show
 
 ```json
 {
     "api_name": "email",
-    "api_run_date": "2020-11-02",
-    "earliest_date_available": "2020-10-15",
-    "start_date": null,
-    "end_date": null,
-    "time_zone": "America/Los_Angeles",
+    "api_run_date": "2023-04-21",
     "global_master_advertiser_id": "TEST_1",
     "advertiser_name": "Advertiser (Demo)",
-    "campaigns": {
-        "global_master_campaign_id": "TEST_15231",
-        "name": "Email Campaign (Demo)",
-        "type": "email",
-        "status": "running",
-        "goals": [],
-        "external_campaign_id": 15231,
-        "external_campaign_name": "Demo Campaign Name",
-        "broadcast_date": "2020-10-15",
-        "quantity": 2911,
-        "opens": 1150,
-        "opens_pc": 0.0,
-        "views": 281,
-        "views_pc": 0.0,
-        "clicks": 570,
-        "clicks_pc": 0.0,
-        "ctor": 0.1843,
-        "ctvr": 0.1843,
+    "external_campaign": {
+        "external_campaign_id": 10390,
+        "external_campaign_name": "Demo Campaign 1",
         "from_line": "Demo From Line",
         "subject_line": "Demo Subject",
+        "broadcast_date": "2023-04-01",
+        "quantity": 6053,
+        "opens": 1591,
+        "opens_pc": 26.28,
+        "screenshot_url": "http://cdn.screenshot-test.com/394-285-202102058.png",
+        "views": 1591,
+        "views_pc": 26.28,
+        "clicks": 322,
+        "clicks_pc": 5.32,
+        "ctor": 2024.0,
+        "ctvr": 2024.0,
         "devices": {
-            "desktop": 285,
-            "mobile": 285
+            "desktop": 161,
+            "mobile": 161
         },
         "browsers": {
             "ie": 114,
@@ -125,59 +158,45 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
         },
         "links": [
             {
-                "external_campaign_id": 15231,
-                "campaign_id": 15231,
-                "platform_id": 7,
                 "index": 1,
-                "clicks": 190,
-                "clicks_pc": 0.0,
-                "width": 300,
-                "height": 241,
+                "clicks": 107,
+                "clicks_pc": 5.3,
+                "width": 2490,
+                "height": 377,
                 "position": {
-                    "left": 20,
-                    "top": 40
+                    "left": 5485,
+                    "top": 377
                 },
-                "url": "demo_url.com",
-                "created_at": "2020-10-30T18:57:49.000Z",
-                "updated_at": "2020-10-30T18:57:49.000Z"
+                "link_pc": 33.23,
+                "url": "demo_url.com"
             },
             {
-                "external_campaign_id": 15231,
-                "campaign_id": 15231,
-                "platform_id": 7,
                 "index": 2,
-                "clicks": 190,
-                "clicks_pc": 0.0,
-                "width": 300,
-                "height": 241,
+                "clicks": 107,
+                "clicks_pc": 5.3,
+                "width": 2490,
+                "height": 377,
                 "position": {
-                    "left": 20,
-                    "top": 40
+                    "left": 5485,
+                    "top": 377
                 },
-                "url": "demo_url.com",
-                "created_at": "2020-10-30T18:57:49.000Z",
-                "updated_at": "2020-10-30T18:57:49.000Z"
+                "link_pc": 33.23,
+                "url": "demo_url.com"
             },
             {
-                "external_campaign_id": 15231,
-                "campaign_id": 15231,
-                "platform_id": 7,
                 "index": 3,
-                "clicks": 190,
-                "width": 300,
-                "height": 241,
+                "clicks": 107,
+                "clicks_pc": 5.3,
+                "width": 2490,
+                "height": 377,
                 "position": {
-                    "left": 20,
-                    "top": 40
+                    "left": 5485,
+                    "top": 377
                 },
-                "clicks_pc": 0.0,
-                "url": "demo_url.com",
-                "created_at": "2020-10-30T18:57:49.000Z",
-                "updated_at": "2020-10-30T18:57:49.000Z"
+                "link_pc": 33.23,
+                "url": "demo_url.com"
             }
-        ],
-        "screenshot_url": "https://api.demo.url/screenshot/1.jpg",
-        "pdf_base64": "base64 pdf"
+        ]
     }
 }
 ```
@@ -222,7 +241,6 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
 |browsers|Browser[]|[Array of Browser](#browseremail)|
 |links|Link[]|[Array of Link](#linkemail)|
 |screenshot_url|String|Link to the campaign screenshot url|
-|pdf_base64|String|Base64 encoded pdf of report|
 
 <a name="goalsemail"></a>
 **Goals**
@@ -231,6 +249,17 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
 |---|---|---|
 | goal_type_id | Integer | goal type id |
 | goal_type | String | goal type name |
+
+<a name="browseremail"></a>
+**Browser**
+
+|Field Name|Datatype|Description|
+|---|---|---|
+|ie|Integer|Number of clicks from Microsoft browsers (Includes Internet Explorer, Edge and any future browsers from Microsoft)|
+|chrome|Integer|Number of clicks from Chrome|
+|firefox|Integer|Number of clicks from Firefox|
+|safari|Integer|Number of clicks from Safari|
+|other|Integer|Number of clicks from browsers not listed|
 
 <a name="linkemail"></a>
 **Link**
@@ -253,14 +282,3 @@ https://api.localiqservices.com/client_reports/email/TEST_1/campaigns/TEST_15231
 |---|---|---|
 |desktop|Integer|Number of clicks for Desktop users|
 |mobile|Integer|Number of clicks for Mobile users|
-
-<a name="browseremail"></a>
-**Browser**
-
-|Field Name|Datatype|Description|
-|---|---|---|
-|ie|Integer|Number of clicks from Internet Explorer|
-|chrome|Integer|Number of clicks from Chrome|
-|firefox|Integer|Number of clicks from Firefox|
-|safari|Integer|Number of clicks from Safari|
-|other|Integer|Number of clicks from browsers not listed|
