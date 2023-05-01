@@ -1017,6 +1017,14 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </tr>
 </thead><tbody><tr>
 <td>N/A</td>
+<td>Internal API updates</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Added shopping as a recognized campaign type</td>
+</tr>
+<tr>
+<td>N/A</td>
 <td>Updated support and onboarding documentation</td>
 </tr>
 <tr>
@@ -1778,6 +1786,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <li>CVT/Web Events</li>
 <li>Xmedia</li>
 <li>Email</li>
+<li>Shopping</li>
 </ul></li>
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
 <li>For search_activity, unified_display, and facebook_campaigns report_types, xmedia campaign types are included.</li>
@@ -2036,6 +2045,23 @@ This control applies to APIs that provide data that are classified as HIPAA and 
                     </span><span class="s2">"goal_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPL"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Shopping Campaign (Demo)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="s2">"TEST_73432"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"campaign_type"</span><span class="p">:</span><span class="s2">"shopping"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organization"</span><span class="p">:</span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_addressable_geofence"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_cvt"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">"has_video"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offer_name"</span><span class="p">:</span><span class="s2">"Shopping"</span><span class="p">,</span><span class="s2">"off_platform_activity"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cycles"</span><span class="p">:[</span><span class="w">
+                </span><span class="p">{</span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="s2">"TEST_73433"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"start_date"</span><span class="p">:</span><span class="s2">"2023-04-13"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"end_date"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Shopping Campaign (Demo)"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2212,6 +2238,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <li>YouTube</li>
 <li>CVT/Web Events</li>
 <li>Email</li>
+<li>Shopping</li>
 </ul></li>
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
 </ul><h3 id='reporting-metric-apis-campaigns-apis-parameters-nbsp'>Parameters&nbsp;</h3><p>None</p><h3 id='reporting-metric-apis-campaigns-apis-response-data-details-nbsp'>Response Data Details&nbsp;</h3>
@@ -2544,6 +2571,27 @@ This control applies to APIs that provide data that are classified as HIPAA and 
                         </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">26743</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">332</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Shopping Campaign (Demo)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"global_master_campaign_id"</span><span class="p">:</span><span class="s2">"TEST_73432"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"shopping"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"Shopping"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start_date"</span><span class="p">:</span><span class="s2">"2023-04-13"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"end_dat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cycles"</span><span class="p">:[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"campaign_cycle"</span><span class="p">:</span><span class="s2">"TEST_73433"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="s2">"2023-04-13"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end_date"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"leads"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"spend"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
@@ -2898,6 +2946,11 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <tr>
 <td>campaign_status[]</td>
 <td>Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped</td>
+
+</tr>
+<tr>
+<td>campaign_type[]</td>
+<td>Restrict results to all campaigns of given type. Valid values are display, gannett_display, xmedia</td>
 
 </tr>
 <tr>
@@ -9969,6 +10022,10 @@ The URL path <b>/capture_reports/top-referrers?[query_params]</b> has been depre
 <td>Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
+<td>campaign_types[]</td>
+<td>Restrict results to campaigns of given type.  Valid types: totaltrack_web, totaltrack_phone, totaltrack_web_phone</td>
+</tr>
+<tr>
 <td>campaign_cycle</td>
 <td>Restrict results to a single campaign cycle</td>
 </tr>
@@ -10409,6 +10466,11 @@ https://api.localiqservices.com/client_reports/total_track/TEST_1?global_master_
 <td>campaign_status[]</td>
 <td>No</td>
 <td>Restrict results to all campaigns with given status values.  Allowed values are running, stopped or ended</td>
+</tr>
+<tr>
+<td>campaign_types[]</td>
+<td>No</td>
+<td>Restricts results to campaigns of given type, valid types: search, display, other, totaltrack_web, totaltrack_phone, totaltrack_web_phone, chat, xmedia</td>
 </tr></tbody></table><p>To specify a date range:</p><ul><li>Specify start_date and end_date.</li>
 </ul><h3 id='reporting-metric-apis-traffic-metric-apis-response-data-details-nbsp-nbsp-nbsp'>Response Data Details&nbsp;&nbsp;&nbsp;</h3>
 <blockquote>
@@ -10910,6 +10972,10 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 <td>Restrict results to all campaigns with given status values.  Allowed values are <code>running</code>, <code>stopped</code> and <code>ended</code></td>
 </tr>
 <tr>
+<td><code>campaign_types[]</code></td>
+<td>Default: <code>xmedia</code> (can be used to return other campaign types)</td>
+</tr>
+<tr>
 <td><code>campaign_cycle</code></td>
 <td>Restrict results to a single campaign cycle</td>
 </tr>
@@ -11314,6 +11380,10 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <tr>
 <td><code>channels[]</code></td>
 <td>Specifies which channels to filter results by. Valid channels are <code>search</code>, <code>display</code>, <code>social</code>, <code>chat</code> and <code>other</code></td>
+</tr>
+<tr>
+<td><code>campaign_types[]</code></td>
+<td>Default: <code>xmedia</code> (can be used to return other campaign types)</td>
 </tr></tbody></table><h3 id='reporting-metric-apis-cross-media-optimization-xmo-response-data-details'>Response Data Details</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p></blockquote>
@@ -12506,6 +12576,22 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.41</span><span class="p">,</span>
                 <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">1.67</span><span class="p">,</span>
                 <span class="s2">"cpl"</span><span class="p">:</span> <span class="mf">1.25</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"channel"</span><span class="p">:</span> <span class="s2">"lsa"</span><span class="p">,</span>
+                <span class="s2">"impressions"</span><span class="p">:</span> <span class="mi">2917</span><span class="p">,</span>
+                <span class="s2">"clicks"</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+                <span class="s2">"click_to_calls"</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+                <span class="s2">"calls"</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+                <span class="s2">"qualified_web_events"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">"non_qualified_web_events"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">"emails"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+                <span class="s2">"chats"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+                <span class="s2">"leads"</span><span class="p">:</span> <span class="mi">58</span><span class="p">,</span>
+                <span class="s2">"spend"</span><span class="p">:</span> <span class="mf">58.38</span><span class="p">,</span>
+                <span class="s2">"ctr"</span><span class="p">:</span> <span class="mf">1.06</span><span class="p">,</span>
+                <span class="s2">"cpc"</span><span class="p">:</span> <span class="mf">1.88</span><span class="p">,</span>
+                <span class="s2">"cpl"</span><span class="p">:</span> <span class="mf">1.01</span>
             <span class="p">},</span>
             <span class="p">{</span>
                 <span class="s2">"channel"</span><span class="p">:</span> <span class="s2">"chat"</span><span class="p">,</span>
@@ -17088,6 +17174,10 @@ curl -X POST <span class="se">\</span>
 <td>Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped</td>
 </tr>
 <tr>
+<td>campaign_types[]</td>
+<td>Default: <code>display</code> (can be used to return other campaign types)</td>
+</tr>
+<tr>
 <td>campaign_cycle</td>
 <td>Restrict results to a single campaign cycle</td>
 </tr>
@@ -17347,6 +17437,10 @@ https://api.localiqservices.com/client_reports/display_creative/TEST_1?&amp;camp
 <tr>
 <td>interval_size</td>
 <td>Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval)</td>
+</tr>
+<tr>
+<td>campaign_types[]</td>
+<td>Default: <code>display</code> (can be used to return other campaign types)</td>
 </tr>
 <tr>
 <td>include_cycles</td>
