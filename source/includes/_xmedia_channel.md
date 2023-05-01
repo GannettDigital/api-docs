@@ -655,6 +655,22 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "cpl": 1.25
             },
             {
+                "channel": "lsa",
+                "impressions": 2917,
+                "clicks": 31,
+                "click_to_calls": 32,
+                "calls": 32,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 13,
+                "chats": 13,
+                "leads": 58,
+                "spend": 58.38,
+                "ctr": 1.06,
+                "cpc": 1.88,
+                "cpl": 1.01
+            },
+            {
                 "channel": "chat",
                 "impressions": 217,
                 "clicks": 5,
