@@ -1,13 +1,19 @@
 # Release Notes
 
 ## 2023
+### May
+|API(s) Updated|Description|
+|---|---|
+| N/A | Internal API updates |
+|[Contact Interactions/Leads](#reporting-metric-apis-social-apis) | Added target_number |
+
 ### April
 |API(s) Updated|Description|
 |---|---|
 | N/A | Internal API updates |
 | N/A | Added shopping as a recognized campaign type |
 | N/A | Updated support and onboarding documentation |
-|[SocialAds Campaign Metrics](#reporting-metric-apis-social-apis) | Added purchase conversion metrics for shopping campaigns |
+|[SocialAds Campaign Metrics](#contact_interactions) | Added purchase conversion metrics for shopping campaigns |
 
 ### March
 |API(s) Updated|Description|
