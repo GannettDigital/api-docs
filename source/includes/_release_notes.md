@@ -1,6 +1,12 @@
 # Release Notes
 
 ## 2023
+### May
+|API(s) Updated|Description|
+|---|---|
+| N/A | Internal API updates |
+|[Contact Interactions/Leads](#contact_interactions) | Added target_number |
+
 ### April
 |API(s) Updated|Description|
 |---|---|
