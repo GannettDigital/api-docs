@@ -108,7 +108,8 @@ curl --request GET \
             "call": {
                 "occured_at": "2023-01-04T15:28:46-08:00",
                 "recording_url": "https://webservice.telmetrics.com/filedownload.ashx/bb01bae3-f6d4-4e1b-b295-481e92a7dd5e/2697305168.mp3",
-                "duration": "00:55"
+                "duration": "00:55",
+                "target_number": "5555551234"
             }
         },
         {
@@ -423,6 +424,7 @@ Field | Type | Description
 occured_at | Datetime | The date and time that the call occurred.
 duration | Integer | The duration of the call in seconds.
 recording_url | String | The URL address to an audio recording of the call.
+target_number | String | The phone number that the call was forwarded to.
 
 <a name="formfill"></a>
 **Form Fill**
