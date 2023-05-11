@@ -18,7 +18,9 @@ Subtotals can be further aggregated given an interval, and will be totaled for d
 
 Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.
 
-<internal>Web_publisher_campaigns array will show the WPCS(offer name) with it's subtotatals attributed to that chat within a campaign (for only trusted users).</internal>
+<% if false %>
+Web_publisher_campaigns array will show the WPCS(offer name) with it's subtotatals attributed to that chat within a campaign (for only trusted users).
+<% end %>
 
 ### Parameters
 
@@ -360,12 +362,10 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
     "global_master_advertiser_id": "TEST_1"
 }
 ```
-
-
-<internal>Example Response</internal>
+<% if false %>
+Example Response
 
 ```json
-<internal>
 {
     "api_name": "chat_summary",
     "api_run_date": "2020-03-18",
@@ -544,9 +544,8 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
     },
     "global_master_advertiser_id": "USA_172716"
 }
-</internal>
 ```
-
+<% end %>
 
 |Field Name|Datatype|Description|
 |---|---|---|
@@ -582,7 +581,9 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 |campaign_start_date|String|Start date of campaign|
 |campaign_end_date|String|End date of campaign|
 |intervals|Object|Data for specified interval. [Intervals Object](#chatintervals)|
-|<internal>web_publisher_campaigns|Array|array of web_publisher_campaign objects [Web Publisher Campaign Object](#webpublishercampaign)</internal>|
+<% if false %>
+|web_publisher_campaigns|Array|array of web_publisher_campaign objects [Web Publisher Campaign Object](#webpublishercampaign)|
+<% end %>
 
 <a name="chatorganic"></a>
 **Organic Object**
@@ -626,12 +627,11 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 |chat_other|Integer|Number of chats marked as 'other'|
 |call_connect|Integer|Subset of chats that initiated a call connect|
 
-<internal>
+<% if false %>
 <a name="webpublishercampaign"></a>
 **Web Publisher Campaign Object**
-</internal>
 
-|<internal>Field Name|Datatype|Description</internal>|
+|Field Name|Datatype|Description|
 |---|---|---|
 |web_publisher_campaign_id|Integer|Id of web publisher campaign|
 |name|String|Name of web publisher campaign|
@@ -642,3 +642,4 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 |external_account_name|String|Name of external account|
 |channel|String|Channel of the web publisher campaign|
 |intervals|Array|Data for specified interval. [Intervals Object](#chatintervals)|
+<% end %>

@@ -27,8 +27,10 @@ When using the GET method, the results can be filtered using these parameters:
 |campaign_types[]|Default: `display` (can be used to return other campaign types)|
 |campaign_cycle|Restrict results to a single campaign cycle|
 |interval_size| Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval)|
-|<internal> markup_type|Optional unless markup_value present. Only supported value is 'percentage' </internal>|
-|<internal> markup_value| Optional unless markup_type present. "cost" fields (spend,CPC,CPM) will be marked up by this pecentage </internal>|
+<% if false %>
+|markup_type|Optional unless markup_value present. Only supported value is 'percentage' |
+|markup_value| Optional unless markup_type present. "cost" fields (spend,CPC,CPM) will be marked up by this pecentage |
+<% end %>
 
 To specify a date range:
 

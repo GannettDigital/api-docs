@@ -25,8 +25,10 @@ When using the GET method, the results can be filtered using these parameters:
 |interval_size|Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval)|
 |geofence[]|Restrict results to the given geofence ids.  Geofence ids can be found in the available_geofences section. This should be a comma separated string. Ex: geofence[]=1,2|
 |conversion_fence[]|Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section. This should be a comma separated string. Ex: conversion_fence[]=1,2|
-|<internal> markup_type|Only supported value is 'percentage' </internal>|
-|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
+<% if false %>
+|markup_type|Only supported value is 'percentage' |
+|markup_value|"cost" fields (spend & budget) will be marked up by this pecentage |
+<% end %>
 
 *Note*: Maximum date range for this API is 31 days.
 

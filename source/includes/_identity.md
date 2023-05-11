@@ -23,7 +23,7 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 | page| No | Return a specified page of results. <br><b>Default value: 1</b> |
 | page_size | No | Number of results per page <br><b>Default value: 5000</b> |
  
-<internal>
+<% if false %>
 | gmaid |No|Identifier for advertiser|
 | advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LocaliQ data construct used for internal purposes|
 | cobrand_id |No|An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LocaliQ data construct used for internal purposes|
@@ -33,7 +33,7 @@ Get a list of advertisers filtered by query params. This endpoint also returns a
 | business_sub_category |No|LocaliQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
 | advertiser_name |No|Restrict results to one or more specific advertiser with the given advertiser name|
 | business_name |No|Restrict results to one or more specific advertiser with the given business name|
-</internal>
+<% end %>
 
 ### Response Data Details
 

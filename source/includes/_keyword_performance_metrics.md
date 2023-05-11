@@ -28,8 +28,10 @@ When using the GET method, the results can be filtered using these parameters:
 |sort_by|No|Specifies what column to sort by.  Valid columns are: keyword, clicks, impressions, and ctr <br>**Default value: keyword**|
 |sort_dir|No|Specifies the sort direction.  Can be either asc or desc <br>**Default value: asc**|
 |types[]|No|Specifies the campaign type of keyword.  Can be search, display or xmedia. Ex: types[]=display,search,xmedia <br>**Default value: search**|
-|<internal> markup_type|Only supported value is 'percentage' </internal>|
-|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
+<% if false %>
+|markup_type|Only supported value is 'percentage' |
+|markup_value|"cost" fields (spend & budget) will be marked up by this pecentage |
+<% end %>
 
 ### Response Data Details&nbsp;&nbsp;
 

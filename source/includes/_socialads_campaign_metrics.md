@@ -27,8 +27,10 @@ When using the GET method, the results can be filtered using these parameters:
 |focus| Optional.  Value must be `goal` |
 |goal_type_ids[]| Optional.  Focus must be specified as `goal`.  Must be an array of valid goal_type_ids |
 |include_full_channel|Optional, default: false.  Includes all metrics for the social channel.  Xmedia campaigns will only contain metrics that are categorized as social, rather than full campaign metrics.|
-|<internal> markup_type|Only supported value is 'percentage' </internal>|
-|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
+<% if false %>
+|markup_type|Only supported value is 'percentage' |
+|markup_value|"cost" fields (spend & budget) will be marked up by this pecentage |
+<% end %>
 
 **To specify a date range**
 
