@@ -424,7 +424,9 @@ Field | Type | Description
 occured_at | Datetime | The date and time that the call occurred.
 duration | Integer | The duration of the call in seconds.
 recording_url | String | The URL address to an audio recording of the call.
-target_number | String | The call target.
+target_number | String | the business's phone number that rang.
+dialed_umber | String | the tracking number that was shown to the user
+caller_number | String | the caller's phone number
 
 <a name="formfill"></a>
 **Form Fill**
