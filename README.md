@@ -18,7 +18,7 @@ bundle exec middleman server
 Run locally using Docker
 
 ```shell
-docker run --rm --name slate -p 4567:4567 -v $(pwd)/source:/srv/slate/source slatedocs/slate serve
+docker-compose up --build
 ```
 
 and access your site at http://localhost:4567 until you stop the running container process.
