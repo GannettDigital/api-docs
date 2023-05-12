@@ -13,7 +13,9 @@ Subtotals can be further aggregated given an interval, and will be totaled for d
 
 Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.
 
-<internal>Web_publisher_campaigns array will show the WPCS(offer name) with it's subtotals attributed to that chat within a campaign (for only trusted users).</internal>
+<% if false %>
+Web_publisher_campaigns array will show the WPCS(offer name) with it's subtotals attributed to that chat within a campaign (for only trusted users).
+<% end %>
 
 ### Parameters
 

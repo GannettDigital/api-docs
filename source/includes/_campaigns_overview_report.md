@@ -41,7 +41,6 @@ The campaign list section will list all (running, stopped and ended) campaigns w
   - Spend
   - Budget Amount
   - Opens for Email Campaigns
-  <internal> - Off Platform Activity: Will be true in cases when campaigns are missing expected WPER data.</internal>
 
 All campaign data for the account will be provided including both Paid Media and Offer-based campaigns.
 
@@ -60,13 +59,13 @@ All campaign data for the account will be provided including both Paid Media and
 ### Parameters&nbsp;
 
 None
-
-| <internal> Param | Required | Function </internal> |
+<% if false %>
+| Param | Required | Function |
 |---|---|---|
 |start_date| No | Restricts the results to those ocurring on or after this date|
 |markup_type| No |  Only supported value is 'percentage' |
 |markup_value| No | "cost" fields (spend & budget) will be marked up by this pecentage |
-
+<% end %>
 
 ### Response Data Details&nbsp;
 
@@ -504,7 +503,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |leads|Integer|Total Leads for cycle|
 |spend|Integer|Total Spend/Cost of cycle|
 |budget|Integer|Total Budget of cycle|
-|<internal>off_platform_activity|Boolean|True if activity detected in last 30 days</internal>|
+<% if false %>
+|off_platform_activity|Boolean|True if activity detected in last 30 days|
+<% end %>
 |opens|Integer|Total Opens for cycle (Email Campaigns Only)|
 |quantity|Integer|Total Quantity for cycle. (Email Campaigns Only)|
 |views|Integer|Total Views of cycle. (Email Campaigns Only)|

@@ -24,8 +24,10 @@ When using the GET method, the results can be filtered using these parameters:
 |campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |campaign_cycle|Restrict results to a single campaign cycle|
 |interval_size|Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval)|
-|<internal> markup_type|Only supported value is 'percentage' </internal>|
-|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
+<% if false %>
+|markup_type|Only supported value is 'percentage' |
+|markup_value|"cost" fields (spend & budget) will be marked up by this pecentage |
+<% end %>
 
 To specify a date range:
 

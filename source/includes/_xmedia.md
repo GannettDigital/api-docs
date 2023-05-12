@@ -26,8 +26,10 @@ When using the GET method, the results can be filtered using these parameters:
 |`campaign_cycle`|Restrict results to a single campaign cycle|
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`include_cycles`|Set to true or false on whether to include cycle nesting.  Default value is false.|
-|<internal> markup_type|Only supported value is 'percentage' </internal>|
-|<internal> markup_value|"cost" fields (spend & budget) will be marked up by this pecentage </internal>|
+<% if false %>
+|`markup_type`|Only supported value is 'percentage' |
+|`markup_value`|"cost" fields (spend & budget) will be marked up by this pecentage |
+<% end %>
 
 ### Response Data Details
 

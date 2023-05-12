@@ -18,9 +18,9 @@ ETL (Extract-Transform-Load) reports are reports that can generate a large amoun
 
 Use POST to schedule an ETL job.  The `report_type` and `report_params` params in the POST data are both required.  The contents of `report_params` will vary by report type, and will be validated immediately.  The details for specific ETL reports are found in following sections.
 
-<internal>
+<% if false %>
 The valid report types are `etl_keyword_report` and `etl_lead_attritbution_report`.
-</internal>
+<% end %>
 
 > Example POST request to create ETL Report Job
 
