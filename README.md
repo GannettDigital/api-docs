@@ -6,7 +6,7 @@ Public facing documentation for the DataConnect APIs
 
 - *Team Multi-User Chat:* https://usatnetwork-product.slack.com/messages/client-center
 - *Confluence:* https://confluence.gannett.com/display/LIQAP/DataConnect
-- *Jira:* https://jira.gannett.com/browse/ANALYTICS
+- *Jira:* https://jira.gannett.com/browse/EDGE
 
 ### Set Up
 Run locally

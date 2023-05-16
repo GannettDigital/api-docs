@@ -1,4 +1,4 @@
-**References**: [ANALYTICS-0000](https://jira.gannett.com/browse/ANALYTICS-0000)
+**References**: [EDGE-0000](https://jira.gannett.com/browse/ANALYTICS-EDGE)
 
 **Code PR**: https://github.com/GannettDigital/
 
