@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>API Reference</title>
 
-    <style>
+    <style media="screen">
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
@@ -146,47 +146,36 @@
 }
 .highlight .vc {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight .nn {
   color: #ffffff;
-  background-color: #272822;
-}
-.highlight .nl {
-  color: #ffffff;
-  background-color: #272822;
 }
 .highlight .ni {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight .bp {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight .vg {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight .vi {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight .nv, .highlight .vm {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight .w {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight {
   color: #ffffff;
-  background-color: #272822;
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
-  background-color: #272822;
+}
+.highlight .nl {
+  color: #f92672;
 }
 .highlight .ow {
   color: #f92672;
@@ -207,9 +196,93 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-2f51f7f0.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-57422ee3.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch-6cbf1af5.js"></script>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-a63ca12e.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-262f60bf.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-1cade70b.js"></script>
+
   </head>
 
   <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;java&quot;]">
@@ -220,13 +293,13 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1c411ece.png" class="logo" alt="" />
+      <img src="images/logo-b0bc8c6b.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="java">java</a>
         </div>
-      <div id="toc" class="toc-list-h1">
+      <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
@@ -236,102 +309,25 @@
           <li>
             <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#step-1-request-api-access" class="toc-h2 toc-link" data-title="Getting Started">Step 1: Request API Access</a>
+                  <li>
+                    <a href="#step-1-request-api-access" class="toc-h2 toc-link" data-title="Step 1: Request API Access">Step 1: Request API Access</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#step-2-authorization-authentication" class="toc-h2 toc-link" data-title="Getting Started">Step 2: Authorization/Authentication</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-get-auth-token-strong" class="toc-h3 toc-link" data-title="Getting Started"><strong>Get Auth Token</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#user-login-method" class="toc-h3 toc-link" data-title="Getting Started">User Login Method</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#direct-access-method" class="toc-h3 toc-link" data-title="Getting Started">Direct Access Method</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-request-new-access-token-strong" class="toc-h3 toc-link" data-title="Getting Started"><strong>Request New Access Token</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-security-considerations-strong" class="toc-h3 toc-link" data-title="Getting Started"><strong>Security Considerations</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#token-security" class="toc-h3 toc-link" data-title="Getting Started">Token Security</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#business-user-credentials" class="toc-h3 toc-link" data-title="Getting Started">Business user credentials</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#access-to-hipaa-data" class="toc-h3 toc-link" data-title="Getting Started">Access to HIPAA data</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-api-rate-limits-strong" class="toc-h3 toc-link" data-title="Getting Started"><strong>API Rate Limits</strong></a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#step-2-authorization-authentication" class="toc-h2 toc-link" data-title="Step 2: Authorization/Authentication">Step 2: Authorization/Authentication</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#troubleshooting-errors" class="toc-h2 toc-link" data-title="Getting Started">Troubleshooting Errors</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#400-bad-request" class="toc-h3 toc-link" data-title="Getting Started">400 - Bad Request</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#401-unauthorized" class="toc-h3 toc-link" data-title="Getting Started">401 - Unauthorized</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#403-forbidden" class="toc-h3 toc-link" data-title="Getting Started">403 - Forbidden</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#troubleshooting-errors" class="toc-h2 toc-link" data-title="Troubleshooting Errors">Troubleshooting Errors</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#release-notes" class="toc-h1 toc-link" data-title="Release Notes">Release Notes</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#2023" class="toc-h2 toc-link" data-title="Release Notes">2023</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#may" class="toc-h3 toc-link" data-title="Release Notes">May</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#april" class="toc-h3 toc-link" data-title="Release Notes">April</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#march" class="toc-h3 toc-link" data-title="Release Notes">March</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#february" class="toc-h3 toc-link" data-title="Release Notes">February</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#2023" class="toc-h2 toc-link" data-title="2023">2023</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#2021" class="toc-h2 toc-link" data-title="Release Notes">2021</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#july" class="toc-h3 toc-link" data-title="Release Notes">July</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#june" class="toc-h3 toc-link" data-title="Release Notes">June</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#may" class="toc-h3 toc-link" data-title="Release Notes">May</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#april" class="toc-h3 toc-link" data-title="Release Notes">April</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#march" class="toc-h3 toc-link" data-title="Release Notes">March</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#february" class="toc-h3 toc-link" data-title="Release Notes">February</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#january" class="toc-h3 toc-link" data-title="Release Notes">January</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#2021" class="toc-h2 toc-link" data-title="2021">2021</a>
                   </li>
               </ul>
           </li>
@@ -341,514 +337,88 @@
           <li>
             <a href="#identity-apis" class="toc-h1 toc-link" data-title="Identity APIs">Identity APIs</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#identity-api" class="toc-h2 toc-link" data-title="Identity APIs">Identity API</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Identity APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Identity APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Identity APIs">Response Data Details</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#identity-api" class="toc-h2 toc-link" data-title="Identity API">Identity API</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#reporting-metric-apis" class="toc-h1 toc-link" data-title="Reporting Metric APIs">Reporting Metric APIs</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#campaigns-apis" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Campaigns APIs</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-campaigns-amp-cycles-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Campaigns &amp; Cycles</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-campaigns-overview-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Campaigns Overview</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-campaigns-totals-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Campaigns Totals</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details  </a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#campaigns-apis" class="toc-h2 toc-link" data-title="Campaigns APIs">Campaigns APIs</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#display-apis" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Display APIs</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-display-campaign-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Display Campaign Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-geofence-campaign-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>GeoFence Campaign Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details:</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#display-apis" class="toc-h2 toc-link" data-title="Display APIs">Display APIs</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#search-apis" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Search APIs</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-keyword-performance-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Keyword Performance Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-search-campaign-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Search Campaign Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-google-keyword-performance-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Google Keyword Performance</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-google-search-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Google Search Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-nbsp-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-nbsp-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#search-apis" class="toc-h2 toc-link" data-title="Search APIs">Search APIs</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#social-apis" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Social APIs</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-socialads-campaign-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>SocialAds Campaign Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-youtube-campaign-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>YouTube Campaign Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details </a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#social-apis" class="toc-h2 toc-link" data-title="Social APIs">Social APIs</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#traffic-metric-apis" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Traffic Metric APIs</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-top-referrer-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Top Referrer</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-totaltrack-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>TotalTrack</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-web-event-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>Web Event Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details   </a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#traffic-metric-apis" class="toc-h2 toc-link" data-title="Traffic Metric APIs">Traffic Metric APIs</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#cross-media-optimization-xmo" class="toc-h2 toc-link" data-title="Reporting Metric APIs">Cross Media Optimization (XMO)</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-xmo-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>XMO Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-xmo-channel-metrics-strong" class="toc-h3 toc-link" data-title="Reporting Metric APIs"><strong>XMO Channel Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#cycles-array" class="toc-h3 toc-link" data-title="Reporting Metric APIs">Cycles Array</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#wpc-object" class="toc-h3 toc-link" data-title="Reporting Metric APIs">WPC Object</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#cross-media-optimization-xmo" class="toc-h2 toc-link" data-title="Cross Media Optimization (XMO)">Cross Media Optimization (XMO)</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#lead-info-apis-webhooks" class="toc-h1 toc-link" data-title="Lead Info APIs/Webhooks">Lead Info APIs/Webhooks</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#contacts-lead-apis" class="toc-h2 toc-link" data-title="Lead Info APIs/Webhooks">Contacts/Lead APIs</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-contacts-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>Contacts</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-contact-interactions-leads-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>Contact Interactions/Leads</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details </a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#contacts-lead-apis" class="toc-h2 toc-link" data-title="Contacts/Lead APIs">Contacts/Lead APIs</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#crm-webhooks" class="toc-h2 toc-link" data-title="Lead Info APIs/Webhooks">CRM Webhooks</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#client-center-webhook" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Client Center Webhook</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#custom-webhook" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Custom Webhook</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#webhook-payload" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Webhook Payload</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#crm-webhooks" class="toc-h2 toc-link" data-title="CRM Webhooks">CRM Webhooks</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#lead-metric-apis" class="toc-h2 toc-link" data-title="Lead Info APIs/Webhooks">Lead Metric APIs</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#strong-marketing-activity-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>Marketing Activity</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-chat-summary-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>Chat Summary</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-lead-details-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>Lead Details</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details  </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-lsa-campaign-metrics-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>LSA Campaign Metrics</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp-nbsp-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details   </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-lsa-campaign-metrics-rollup-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>LSA Campaign Metrics Rollup</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#strong-lsa-lead-details-strong" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks"><strong>LSA Lead Details</strong></a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Resource Overview </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Parameters </a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details-nbsp" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Response Data Details </a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#lead-metric-apis" class="toc-h2 toc-link" data-title="Lead Metric APIs">Lead Metric APIs</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#localiq-app-on-zapier" class="toc-h2 toc-link" data-title="Lead Info APIs/Webhooks">LocaliQ App on Zapier®</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#localiq-account-on-zapier" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">LocaliQ Account on Zapier</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#creating-a-zap" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Creating a Zap?</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#contact-interactions" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Contact Interactions</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#contacts" class="toc-h3 toc-link" data-title="Lead Info APIs/Webhooks">Contacts</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#localiq-app-on-zapier" class="toc-h2 toc-link" data-title="LocaliQ App on Zapier®">LocaliQ App on Zapier®</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#first-party-data-api-apps" class="toc-h1 toc-link" data-title="First Party Data API/Apps">First Party Data API/Apps</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#capture-external-events-confirmed-calls" class="toc-h2 toc-link" data-title="First Party Data API/Apps">Capture External Events - Confirmed Calls</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Parameters</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#capture-external-events-confirmed-calls" class="toc-h2 toc-link" data-title="Capture External Events - Confirmed Calls">Capture External Events - Confirmed Calls</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#capture-external-events-chat" class="toc-h2 toc-link" data-title="First Party Data API/Apps">Capture External Events - Chat</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="First Party Data API/Apps">Parameters</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#capture-external-events-chat" class="toc-h2 toc-link" data-title="Capture External Events - Chat">Capture External Events - Chat</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#deprecated-apis" class="toc-h1 toc-link" data-title="Deprecated APIs">Deprecated APIs</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#creative-ad-metrics" class="toc-h2 toc-link" data-title="Deprecated APIs">Creative/Ad Metrics</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Deprecated APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Deprecated APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Deprecated APIs">Response Data Details</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#creative-ad-metrics" class="toc-h2 toc-link" data-title="Creative/Ad Metrics">Creative/Ad Metrics</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#display-campaign-metrics-old" class="toc-h2 toc-link" data-title="Deprecated APIs">Display Campaign Metrics Old</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Deprecated APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Deprecated APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Deprecated APIs">Response Data Details</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#display-campaign-metrics-old" class="toc-h2 toc-link" data-title="Display Campaign Metrics Old">Display Campaign Metrics Old</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#discovery" class="toc-h2 toc-link" data-title="Deprecated APIs">Discovery</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#resource-overview" class="toc-h3 toc-link" data-title="Deprecated APIs">Resource Overview</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Deprecated APIs">Parameters</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#response-data-details" class="toc-h3 toc-link" data-title="Deprecated APIs">Response Data Details</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#discovery" class="toc-h2 toc-link" data-title="Discovery">Discovery</a>
                   </li>
-                  <li class="toc-h2-li">
-                    <a href="#lead-events" class="toc-h2 toc-link" data-title="Deprecated APIs">Lead Events</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#call-events" class="toc-h3 toc-link" data-title="Deprecated APIs">Call Events</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#chat-events" class="toc-h3 toc-link" data-title="Deprecated APIs">Chat Events</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#email-events" class="toc-h3 toc-link" data-title="Deprecated APIs">Email Events</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#leads" class="toc-h3 toc-link" data-title="Deprecated APIs">Leads</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#user-info" class="toc-h3 toc-link" data-title="Deprecated APIs">User Info</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#web-events" class="toc-h3 toc-link" data-title="Deprecated APIs">Web Events</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#lead-events" class="toc-h2 toc-link" data-title="Lead Events">Lead Events</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#error-codes" class="toc-h1 toc-link" data-title="Error Codes">Error Codes</a>
               <ul class="toc-list-h2">
-                  <li class="toc-h2-li">
-                    <a href="#troubleshooting-errors" class="toc-h2 toc-link" data-title="Error Codes">Troubleshooting Errors</a>
-                      <ul class="toc-list-h3">
-                          <li class="toc-h3-li">
-                            <a href="#400-bad-request" class="toc-h3 toc-link" data-title="Error Codes">400 - Bad Request</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#401-unauthorized" class="toc-h3 toc-link" data-title="Error Codes">401 - Unauthorized</a>
-                          </li>
-                          <li class="toc-h3-li">
-                            <a href="#403-forbidden" class="toc-h3 toc-link" data-title="Error Codes">403 - Forbidden</a>
-                          </li>
-                      </ul>
+                  <li>
+                    <a href="#troubleshooting-errors" class="toc-h2 toc-link" data-title="Troubleshooting Errors">Troubleshooting Errors</a>
                   </li>
               </ul>
           </li>
-      </div>
+      </ul>
         <ul class="toc-footer">
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
@@ -917,7 +487,7 @@
 </ul>
 <h2 id='step-2-authorization-authentication'>Step 2: Authorization/Authentication</h2>
 <p>The second step involves receiving an Authorization token, which is then used to request an Access and Refresh token. <strong>There are two ways to receive an Authorization token: User login method and Direct access method.</strong></p>
-<h3 id='strong-get-auth-token-strong'><strong>Get Auth Token</strong></h3><h3 id='user-login-method'>User Login Method</h3>
+<h3 id='get-auth-token'><strong>Get Auth Token</strong></h3><h3 id='user-login-method'>User Login Method</h3>
 <p>Through a browser initiate the authorization with your Client Id and Client Secret tokens [Step 1] and your REDIRECT_URI (the redirect URI is where all API related responses will be sent)</p>
 
 <p><code>https://api.localiqservices.com/oauth/authorize?client_id=[CLIENT_ID]&amp;response_type=code&amp;redirect_uri=[REDIRECT_URI]</code></p>
@@ -1030,7 +600,7 @@
   </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5d59deea16599eb316a63989a9974568da4f5570e7ef9969c693f0b1ce1052cb"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495549720</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='strong-request-new-access-token-strong'><strong>Request New Access Token</strong></h3>
+</span></code></pre></div><h3 id='request-new-access-token'><strong>Request New Access Token</strong></h3>
 <ul>
 <li><p>The Access token should be passed in the authorization header for all API requests. This Access token expires every 2 hours. If the token has expired, all API calls will receive a 401 HTTP status code response.</p></li>
 <li><p>You can request a new Access token by using the Refresh token. It is very important that you save the Refresh token for this purpose. If your Refresh token is lost, you would have to authenticate and authorize again [Step 1 and Step 2] to obtain a new Access token and Refresh token.</p></li>
@@ -1084,7 +654,7 @@
     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1504822139</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='strong-security-considerations-strong'><strong>Security Considerations</strong></h3><h3 id='token-security'>Token Security</h3>
+</span></code></pre></div><h3 id='security-considerations'><strong>Security Considerations</strong></h3><h3 id='token-security'>Token Security</h3>
 <p>Refresh tokens are long-lived.</p>
 
 <p>This means when you must store it securely to keep it from being used by potential attacker. For this reason, it is not safe to store them in the browser. If a Refresh token is leaked, it may be used to obtain new Access tokens (and access protected resources) until it is blacklisted.</p>
@@ -1104,7 +674,7 @@ If you need to check if you have a Business User created or need to reset your p
 <h3 id='access-to-hipaa-data'>Access to HIPAA data</h3>
 <p>The business user must have “Agency Customer” role to use the lead APIs. If the API response has PII and the advertiser falls under the HIPAA category, the API will check for this role in order to provide PII information in the response. Please reach your account team  to check and/or edit privileges on your business user. Please follow the needed due diligence when adding HIPAA privileges to your business user account since the implications of it are far beyond API access to data.
 This control applies to APIs that provide data that are classified as HIPAA and protected by law.</p>
-<h3 id='strong-api-rate-limits-strong'><strong>API Rate Limits</strong></h3>
+<h3 id='api-rate-limits'><strong>API Rate Limits</strong></h3>
 <p>LocaliQ enforces API rate limits for its REST APIs. Rate limit configuration consists of a per second request limit. Limits are set to 20 requests/second.</p>
 
 <p>If you exceed the rate limit allowance, your request will be rejected. An <code>HTTP 429 (Too Many Requests)​</code> response will be returned. Clients must back off until the end of the current rate limit window before making any more requests.</p>
@@ -1596,6 +1166,18 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>Number of results per page <br><b>Default value: 5000</b></td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+| gmaid |No|Identifier for advertiser|
+| advertiser_id |No|This is an ID assigned to a client at the time of sale. This is an internal LocaliQ data construct used for internal purposes|
+| cobrand_id |No|An ID used to uniquely identify a cobrand; given to a collection of of business or BID. This is an internal LocaliQ data construct used for internal purposes|
+| exclude_inactive | No | Returns only active advertisers <br><b>Default value: true</b>|
+| advertiser_code |No|Non-unique identifier. This is an internal LocaliQ data construct used for internal purposes|
+| business_category |No|LocaliQ’s categorization of the client’s business e.g. Home &amp; Home improvement, Real Estate, Automotive-For Sale etc|
+| business_sub_category |No|LocaliQ’s sub categorization within client’s business category. e.g. Real Estate -- Inspection, Real Estate -- Appraisers, Automobile Dealer (General - New), Automobile Dealer (General - Used) etc|
+| advertiser_name |No|Restrict results to one or more specific advertiser with the given advertiser name|
+| business_name |No|Restrict results to one or more specific advertiser with the given business name|
+&lt;% end %&gt;</p>
 <h3 id='response-data-details'>Response Data Details</h3><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
@@ -1966,9 +1548,228 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </tbody></table>
 <h1 id='reporting-metric-apis'>Reporting Metric APIs</h1>
 <p><a name="reporting_metric_apis"></a></p>
-<h2 id='campaigns-apis'>Campaigns APIs</h2><h3 id='strong-campaigns-amp-cycles-strong'><strong>Campaigns &amp; Cycles</strong></h3>
+<h2 id='campaigns-apis'>Campaigns APIs</h2>
+<p>&lt;% if false %&gt;</p>
+<h3 id='campaigns-search'><strong>Campaigns Search</strong></h3><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/campaigns</td>
+</tr>
+</tbody></table>
+
+<p>A list of filtered Campaigns that match the provided query string.</p>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required?</th>
+<th>Function</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>Yes</td>
+<td>Query string used to search for campaigns, minimum of 3 characters</td>
+</tr>
+<tr>
+<td>page</td>
+<td>No</td>
+<td>Pagination page</td>
+</tr>
+<tr>
+<td>platform_id</td>
+<td>Yes</td>
+<td>An integer that indicates the client center plaform in which the login user has a registration Valid platform ids are: 1 (<code>USA</code>), 2 (<code>CAN</code>), 3 (<code>AUS</code>) and 6 (<code>GBR</code>)</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-details'>Response Data Details</h3>
+<blockquote>
+<p>Retrieve data for a specific report_type</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
+</code></pre></div>
+<blockquote>
+<p>Retrieve data for a specific report_type as well as for running and stopped campaigns</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" https://api.localiqservices.com/client_reports/campaigns?query=gci'
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"platform_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCI"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">12529</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_834393"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55370"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA WA THRIFT MART"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C54323_GCI08146_WA WA THRIFT MART Brownwood TX"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-04"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-24"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_95569"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55369"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1264_COLLINS VISION CLINIC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1264_GCI0226481_COLLINS VISION CLINIC- Branded Content"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-15"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-13"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_23654"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55368"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MISSAUGA NATIONAL BANK"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1170_GCI0812638_Missauga National Bank - Digital - Q1 2022"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook Ads - Custom Solutions"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ended"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-31"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_876456"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55364"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LONE OAK DOG TRAINING"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6764_GCI0786222_LONE OAK DOG TRAINING - Campaign January"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-31"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_876456"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_-55363"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"master_advertiser_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LONE OAK DOG TRAINING"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6764_GCI0786224_LONE OAK DOG TRAINING - Campaign February"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gannett_display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gannett Display"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-01"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-28"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>platform_id</td>
+<td>String</td>
+<td>Platform queried (1 for <code>USA</code>, 2 for <code>CAN</code>, 3 for <code>AUS</code> and 6 for <code>GBR</code>)</td>
+</tr>
+<tr>
+<td>query</td>
+<td>String</td>
+<td>Search string used (minimum of 3 characters)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>String</td>
+<td>Results page (defaults to 1)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>String</td>
+<td>Results per page (defaults to 25)</td>
+</tr>
+<tr>
+<td>total_pages</td>
+<td>String</td>
+<td>Total count of result pages</td>
+</tr>
+<tr>
+<td>campaigns</td>
+<td>Object</td>
+<td><a href="#campaigns_searchcampaigns">Search Campaigns Object</a></td>
+</tr>
+</tbody></table>
+
+<p><a name="campaigns_searchcampaigns"></a>
+<strong>Search Campaigns Object</strong></p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>global_master_advertiser_id</td>
+<td>String</td>
+<td>Identifier for advertiser</td>
+</tr>
+<tr>
+<td>global_master_campaign_id</td>
+<td>String</td>
+<td>Identifier for campaign</td>
+</tr>
+<tr>
+<td>master_advertiser_name</td>
+<td>String</td>
+<td>Identifier for advertiser</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Identifier for campaign</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>Type of campaign</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td>Campaign offer name</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Status of campaign</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>Campaign offer name</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>Campaign offer name</td>
+</tr>
+</tbody></table>
+
+<p>&lt;% end %&gt;</p>
+<h3 id='campaigns-amp-cycles'><strong>Campaigns &amp; Cycles</strong></h3>
 <p><a name="campaigns_and_cycles"></a></p>
-<h3 id='resource-overview'>Resource Overview</h3>
+<h3 id='resource-overview-2'>Resource Overview</h3>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -2003,7 +1804,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
 <li>For search_activity, unified_display, and facebook_campaigns report_types, xmedia campaign types are included.</li>
 </ul>
-<h3 id='parameters'>Parameters</h3>
+<h3 id='parameters-2'>Parameters</h3>
 <p>When using the GET method, the results can be filtered using these parameters:</p>
 
 <table><thead>
@@ -2029,7 +1830,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>Restrict results to campaigns with given status values.  Allowed values are <strong>running</strong>, <strong>stopped</strong> and <strong>ended</strong></td>
 </tr>
 </tbody></table>
-<h3 id='response-data-details'>Response Data Details</h3>
+<h3 id='response-data-details-2'>Response Data Details</h3>
 <blockquote>
 <p>Retrieve data for a specific report_type</p>
 </blockquote>
@@ -2443,7 +2244,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>Name(Type) of goal type</td>
 </tr>
 </tbody></table>
-<h3 id='strong-campaigns-overview-strong'><strong>Campaigns Overview</strong></h3>
+<h3 id='campaigns-overview'><strong>Campaigns Overview</strong></h3>
 <p><a name="campaigns_overview"></a></p>
 <h3 id='resource-overview-nbsp'>Resource Overview&nbsp;</h3>
 <table><thead>
@@ -2519,7 +2320,14 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <li>Offer-based campaigns include any campaign that is not Paid Media and will have a <code>campaign_type</code> of <code>other</code>. Examples of offer-based campaigns could be a Website or Client Center Organic Tracking campaign.</li>
 </ul>
 <h3 id='parameters-nbsp'>Parameters&nbsp;</h3>
-<p>None</p>
+<p>None
+&lt;% if false %&gt;
+| Param | Required | Function |
+|---|---|---|
+|start_date| No | Restricts the results to those ocurring on or after this date|
+|markup_type| No |  Only supported value is &#39;percentage&#39; |
+|markup_value| No | &quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 <h3 id='response-data-details-nbsp'>Response Data Details&nbsp;</h3>
 <blockquote>
 <p>The following command returns an example JSON structure:</p>
@@ -3125,10 +2933,13 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 </tr>
 </tbody></table>
 
-<p>|opens|Integer|Total Opens for cycle (Email Campaigns Only)|
+<p>&lt;% if false %&gt;
+|off_platform_activity|Boolean|True if activity detected in last 30 days|
+&lt;% end %&gt;
+|opens|Integer|Total Opens for cycle (Email Campaigns Only)|
 |quantity|Integer|Total Quantity for cycle. (Email Campaigns Only)|
 |views|Integer|Total Views of cycle. (Email Campaigns Only)|</p>
-<h3 id='strong-campaigns-totals-strong'><strong>Campaigns Totals</strong></h3>
+<h3 id='campaigns-totals'><strong>Campaigns Totals</strong></h3>
 <p><a name="campaigns_totals"></a></p>
 <h3 id='resource-overview-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;</h3>
 <table><thead>
@@ -3233,7 +3044,7 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td>Total leads for all campaigns</td>
 </tr>
 </tbody></table>
-<h2 id='display-apis'>Display APIs</h2><h3 id='strong-display-campaign-metrics-strong'><strong>Display Campaign Metrics</strong></h3>
+<h2 id='display-apis'>Display APIs</h2><h3 id='display-campaign-metrics'><strong>Display Campaign Metrics</strong></h3>
 <p><a name="unified_display"></a></p>
 <h3 id='resource-overview-nbsp'>Resource Overview&nbsp;</h3>
 <table><thead>
@@ -3308,6 +3119,11 @@ This control applies to APIs that provide data that are classified as HIPAA and 
 <td></td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|markup_type| Only supported value is &#39;percentage&#39;|%&gt;
+|markup_value|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage|
+&lt;% end %&gt;</p>
 <h3 id='response-data-details-nbsp'>Response Data Details&nbsp;</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
@@ -5579,7 +5395,7 @@ https://api.localiqservices.com/client_reports/unified_display/TEST_1?start_date
 <td>Cost per View</td>
 </tr>
 </tbody></table>
-<h3 id='strong-geofence-campaign-metrics-strong'><strong>GeoFence Campaign Metrics</strong></h3>
+<h3 id='geofence-campaign-metrics'><strong>GeoFence Campaign Metrics</strong></h3>
 <p><a name="geofence_campaign_metrics"></a></p>
 <h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -5636,6 +5452,11 @@ and broken down by geofence and conversion_fence.</p>
 <td>Restrict results to the given conversion fence ids.  Conversion Fence ids can be found in the available_conversion_fences section. This should be a comma separated string. Ex: conversion_fence[]=1,2</td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|markup_type|Only supported value is &#39;percentage&#39; |
+|markup_value|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 
 <p><em>Note</em>: Maximum date range for this API is 31 days.</p>
 <h3 id='response-data-details'>Response Data Details:</h3>
@@ -6448,7 +6269,7 @@ https://api.localiqservices.com/client_reports/geofence_summary/TEST_1?&amp;goef
 <td>Conversion Fence Name</td>
 </tr>
 </tbody></table>
-<h2 id='search-apis'>Search APIs</h2><h3 id='strong-keyword-performance-metrics-strong'><strong>Keyword Performance Metrics</strong></h3>
+<h2 id='search-apis'>Search APIs</h2><h3 id='keyword-performance-metrics'><strong>Keyword Performance Metrics</strong></h3>
 <p><a name="keyword_performance_metrics"></a></p>
 <h3 id='resource-overview-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;</h3>
 <table><thead>
@@ -6524,6 +6345,11 @@ https://api.localiqservices.com/client_reports/geofence_summary/TEST_1?&amp;goef
 <td>Specifies the campaign type of keyword.  Can be search, display or xmedia. Ex: types[]=display,search,xmedia <br><strong>Default value: search</strong></td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|markup_type|Only supported value is &#39;percentage&#39; |
+|markup_value|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 <h3 id='response-data-details-nbsp-nbsp'>Response Data Details&nbsp;&nbsp;</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
@@ -6782,7 +6608,7 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 <td>Overall Click through Rate</td>
 </tr>
 </tbody></table>
-<h3 id='strong-search-campaign-metrics-strong'><strong>Search Campaign Metrics</strong></h3>
+<h3 id='search-campaign-metrics'><strong>Search Campaign Metrics</strong></h3>
 <p><a name="search_campaign_metrics"></a></p>
 <h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -6842,6 +6668,11 @@ https://api.localiqservices.com/client_reports/keyword/TEST_1?types[]=display,se
 <td>Optional, default: false.  Includes all metrics for the search channel.  Xmedia campaigns will only contain metrics that belong to the search channel, rather than full campaign metrics.</td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|markup_type|Only supported value is &#39;percentage&#39; |
+|markup_value|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage 
+&lt;% end %&gt;</p>
 
 <p>To specify a date range:</p>
 
@@ -7572,7 +7403,7 @@ https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_mas
 <td>Data for specified interval. <a href="#searchintervals">Intervals Array.</a></td>
 </tr>
 </tbody></table>
-<h3 id='strong-google-keyword-performance-strong'><strong>Google Keyword Performance</strong></h3><h3 id='resource-overview-nbsp-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;&nbsp;</h3>
+<h3 id='google-keyword-performance'><strong>Google Keyword Performance</strong></h3><h3 id='resource-overview-nbsp-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;&nbsp;</h3>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -7907,7 +7738,7 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&amp;campai
 <td>Overall Click through Rate</td>
 </tr>
 </tbody></table>
-<h3 id='strong-google-search-metrics-strong'><strong>Google Search Metrics</strong></h3><h3 id='resource-nbsp-overview'>Resource&nbsp;Overview</h3>
+<h3 id='google-search-metrics'><strong>Google Search Metrics</strong></h3><h3 id='resource-nbsp-overview'>Resource&nbsp;Overview</h3>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -8245,7 +8076,7 @@ https://api.localiqservices.com/client_reports/google_search_activity/TEST_1?glo
 <strong>Totals Per Interval Object</strong></p>
 
 <p>This is an Interval object across all campaigns.</p>
-<h2 id='social-apis'>Social APIs</h2><h3 id='strong-socialads-campaign-metrics-strong'><strong>SocialAds Campaign Metrics</strong></h3>
+<h2 id='social-apis'>Social APIs</h2><h3 id='socialads-campaign-metrics'><strong>SocialAds Campaign Metrics</strong></h3>
 <p><a name="socialads_campaign_metrics"></a></p>
 <h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -8313,6 +8144,11 @@ https://api.localiqservices.com/client_reports/google_search_activity/TEST_1?glo
 <td>Optional, default: false.  Includes all metrics for the social channel.  Xmedia campaigns will only contain metrics that are categorized as social, rather than full campaign metrics.</td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|markup_type|Only supported value is &#39;percentage&#39; |
+|markup_value|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 
 <p><strong>To specify a date range</strong></p>
 
@@ -9904,7 +9740,7 @@ https://api.localiqservices.com/client_reports/facebook_campaign/TEST_1?start_da
 <p><strong>Totals Per Interval Object</strong></p>
 
 <p>This is an Interval object across all campaigns.</p>
-<h3 id='strong-youtube-campaign-metrics-strong'><strong>YouTube Campaign Metrics</strong></h3>
+<h3 id='youtube-campaign-metrics'><strong>YouTube Campaign Metrics</strong></h3>
 <p><a name="youtube_campaign_metrics"></a></p>
 <h3 id='resource-overview-nbsp'>Resource Overview&nbsp;</h3>
 <table><thead>
@@ -9957,6 +9793,11 @@ and also broken out by age, gender, and device type.</p>
 <td>Use calendar_month or calendar_week to roll up the data points into calendar intervals (default is 1 day per interval)</td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|markup_type|Only supported value is &#39;percentage&#39; |
+|markup_value|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 
 <p>To specify a date range:</p>
 
@@ -10796,7 +10637,7 @@ https://api.localiqservices.com/client_reports/youtube/TEST_1?&amp;campaign_stat
 <p><strong>Totals Per Interval Object</strong></p>
 
 <p>This is an Interval object across all campaigns.</p>
-<h2 id='traffic-metric-apis'>Traffic Metric APIs</h2><h3 id='strong-top-referrer-strong'><strong>Top Referrer</strong></h3>
+<h2 id='traffic-metric-apis'>Traffic Metric APIs</h2><h3 id='top-referrer'><strong>Top Referrer</strong></h3>
 <p><a name="top_referrer"></a></p>
 
 <p>Describes the distribution of referrers for an advertiser for a given time period as well as attributing the source
@@ -11063,7 +10904,7 @@ The URL path <b>/capture_reports/top-referrers?[query_params]</b> has been depre
 <td>The count of referrals from the specified host</td>
 </tr>
 </tbody></table>
-<h3 id='strong-totaltrack-strong'><strong>TotalTrack</strong></h3>
+<h3 id='totaltrack'><strong>TotalTrack</strong></h3>
 <p><a name="total_track"></a></p>
 <h3 id='resource-overview-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;</h3>
 <table><thead>
@@ -11569,7 +11410,7 @@ https://api.localiqservices.com/client_reports/total_track/TEST_1?global_master_
 <p><strong>Totals Per Interval Object</strong></p>
 
 <p>This is an Interval object across all campaigns.</p>
-<h3 id='strong-web-event-metrics-strong'><strong>Web Event Metrics</strong></h3>
+<h3 id='web-event-metrics'><strong>Web Event Metrics</strong></h3>
 <p><a name="web_event_metrics"></a></p>
 <h3 id='resource-overview-nbsp-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;&nbsp;</h3>
 <table><thead>
@@ -12152,7 +11993,7 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 <td>A Request or Submit marked as high-value</td>
 </tr>
 </tbody></table>
-<h2 id='cross-media-optimization-xmo'>Cross Media Optimization (XMO)</h2><h3 id='strong-xmo-metrics-strong'><strong>XMO Metrics</strong></h3>
+<h2 id='cross-media-optimization-xmo'>Cross Media Optimization (XMO)</h2><h3 id='xmo-metrics'><strong>XMO Metrics</strong></h3>
 <p><a name="xmo_metrics"></a></p>
 <h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -12212,6 +12053,11 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 <td>Set to true or false on whether to include cycle nesting.  Default value is false.</td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|<code>markup_type</code>|Only supported value is &#39;percentage&#39; |
+|<code>markup_value</code>|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 <h3 id='response-data-details'>Response Data Details</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
@@ -12603,7 +12449,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>Cost Per Click for Interval</td>
 </tr>
 </tbody></table>
-<h3 id='strong-xmo-channel-metrics-strong'><strong>XMO Channel Metrics</strong></h3>
+<h3 id='xmo-channel-metrics'><strong>XMO Channel Metrics</strong></h3>
 <p><a name="xmo_channel"></a></p>
 <h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -12665,6 +12511,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>Default: <code>xmedia</code> (can be used to return other campaign types)</td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|<code>markup_type</code>|Only supported value is &#39;percentage&#39; |
+| <code>markup_value</code>|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 <h3 id='response-data-details'>Response Data Details</h3>
 <blockquote>
 <p>Retrieve data for a specific range of dates</p>
@@ -14082,7 +13933,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <li>Contacts</li>
 <li>Contact Interactions</li>
 </ul>
-<h2 id='contacts-lead-apis'>Contacts/Lead APIs</h2><h3 id='strong-contacts-strong'><strong>Contacts</strong></h3>
+<h2 id='contacts-lead-apis'>Contacts/Lead APIs</h2><h3 id='contacts'><strong>Contacts</strong></h3>
 <p><a name="contacts"></a></p>
 
 <p><strong>Summary:</strong> This HIPAA Compliant endpoint supports integration with CRM products. It returns all contacts (first name, last name, email and/or phone number) generated by a campaign for an advertiser. The response is organized by campaigns with the contacts nested within. Please note that the response also includes the associated contact and its meta data.</p>
@@ -14377,7 +14228,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>The date and time which this contact was archived.<br><strong>The field is nullable</strong></td>
 </tr>
 </tbody></table>
-<h3 id='strong-contact-interactions-leads-strong'><strong>Contact Interactions/Leads</strong></h3>
+<h3 id='contact-interactions-leads'><strong>Contact Interactions/Leads</strong></h3>
 <p><a name="contact_interactions"></a></p>
 
 <p><strong>Summary:</strong> This HIPAA Compliant endpoint supports integration with CRM products. It returns all interactions (or leads) generated by a campaign for an advertiser. The response is organized by campaigns with the interactions nested within. Please note that the response also includes the associated contact and its meta data.</p>
@@ -15914,7 +15765,7 @@ A response status code of 404 indicates that the webhook ID was not found.</p>
 <td>extra fields <br><strong>The field is nullable</strong></td>
 </tr>
 </tbody></table>
-<h2 id='lead-metric-apis'>Lead Metric APIs</h2><h3 id='strong-marketing-activity-strong'><strong>Marketing Activity</strong></h3>
+<h2 id='lead-metric-apis'>Lead Metric APIs</h2><h3 id='marketing-activity'><strong>Marketing Activity</strong></h3>
 <p><a name="marketing_activity"></a></p>
 <h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -15934,6 +15785,10 @@ A response status code of 404 indicates that the webhook ID was not found.</p>
 <p>Subtotals can be further aggregated given an interval, and will be totaled for day, calendar_week, or calendar_month. The first day of the interval will be used to denote the interval totals.</p>
 
 <p>Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.</p>
+
+<p>&lt;% if false %&gt;
+Web_publisher_campaigns array will show the WPCS(offer name) with it&#39;s subtotals attributed to that chat within a campaign (for only trusted users).
+&lt;% end %&gt;</p>
 <h3 id='parameters'>Parameters</h3>
 <p>When using the GET method, the results can be filtered using these parameters:</p>
 
@@ -16641,7 +16496,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <td>Number of total forms</td>
 </tr>
 </tbody></table>
-<h3 id='strong-chat-summary-strong'><strong>Chat Summary</strong></h3>
+<h3 id='chat-summary'><strong>Chat Summary</strong></h3>
 <p><a name="chat_summary"></a></p>
 <h3 id='resource-overview'>Resource Overview</h3>
 <table><thead>
@@ -16665,6 +16520,10 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
 <p>Subtotals can be further aggregated given an interval, and will be totaled for day, calendar_week, or calendar_month. The first day of the interval will be used to denote the interval totals.</p>
 
 <p>Use the master_campaign_id parameter to limit the results to a single Master Campaign ID.</p>
+
+<p>&lt;% if false %&gt;
+Web_publisher_campaigns array will show the WPCS(offer name) with it&#39;s subtotatals attributed to that chat within a campaign (for only trusted users).
+&lt;% end %&gt;</p>
 <h3 id='parameters'>Parameters</h3>
 <p>When using the GET method, the results can be filtered using these parameters:</p>
 
@@ -17024,6 +16883,189 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
     </span><span class="nl">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST_1"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<p>&lt;% if false %&gt;
+Example Response</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"api_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chat_summary"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"api_run_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-18"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-14"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-29"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"interval_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"day"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"report_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_1777858"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange Paper CHAT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chat"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ended"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-07"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-03"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-19"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"global_master_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2705608"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange Paper TEST DO NOT DELETE - ALVIN"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reachlocal"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-11"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-14"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-25"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"web_publisher_campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"web_publisher_campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_2808669"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google DMA"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"tactic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-02"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"external_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1990521940</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"external_account_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_B1_A136048_1@reachlocal.biz"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-02"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-04"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-06"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-08"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-09"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"organic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-14"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-24"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"otherpaid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-12"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"non_lead_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"chat_other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"call_connect"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"global_master_advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA_172716"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>&lt;% end %&gt;</p>
+
 <table><thead>
 <tr>
 <th>Field Name</th>
@@ -17156,6 +17198,10 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 <td>Data for specified interval. <a href="#chatintervals">Intervals Object</a></td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|web_publisher_campaigns|Array|array of web_publisher_campaign objects <a href="#webpublishercampaign">Web Publisher Campaign Object</a>|
+&lt;% end %&gt;</p>
 
 <p><a name="chatorganic"></a>
 <strong>Organic Object</strong></p>
@@ -17294,7 +17340,67 @@ https://api.localiqservices.com/client_reports/chat_summary/TEST_1?start_date=20
 <td>Subset of chats that initiated a call connect</td>
 </tr>
 </tbody></table>
-<h3 id='strong-lead-details-strong'><strong>Lead Details</strong></h3>
+
+<p>&lt;% if false %&gt;
+<a name="webpublishercampaign"></a>
+<strong>Web Publisher Campaign Object</strong></p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>web_publisher_campaign_id</td>
+<td>Integer</td>
+<td>Id of web publisher campaign</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of web publisher campaign</td>
+</tr>
+<tr>
+<td>tactic</td>
+<td>String</td>
+<td>Tactic of web publisher campaign</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>Start date of web publisher campaign</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>End date of web publisher campaign</td>
+</tr>
+<tr>
+<td>external_account_id</td>
+<td>String</td>
+<td>External account id</td>
+</tr>
+<tr>
+<td>external_account_name</td>
+<td>String</td>
+<td>Name of external account</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>String</td>
+<td>Channel of the web publisher campaign</td>
+</tr>
+<tr>
+<td>intervals</td>
+<td>Array</td>
+<td>Data for specified interval. <a href="#chatintervals">Intervals Object</a></td>
+</tr>
+</tbody></table>
+
+<p>&lt;% end %&gt;</p>
+<h3 id='lead-details'><strong>Lead Details</strong></h3>
 <p><a name="lead_details"></a></p>
 <h3 id='resource-overview-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;</h3>
 <table><thead>
@@ -17682,7 +17788,7 @@ https://api.localiqservices.com/client_reports/lead_detail/TEST_1?&amp;campaign_
 <td>Name of cycle</td>
 </tr>
 </tbody></table>
-<h3 id='strong-lsa-campaign-metrics-strong'><strong>LSA Campaign Metrics</strong></h3>
+<h3 id='lsa-campaign-metrics'><strong>LSA Campaign Metrics</strong></h3>
 <p><a name="lsa_campaigns"></a></p>
 <h3 id='resource-overview-nbsp-nbsp-nbsp'>Resource Overview&nbsp;&nbsp;&nbsp;</h3>
 <table><thead>
@@ -17998,7 +18104,7 @@ https://api.localiqservices.com/client_reports/google_local_service_ads/TEST_1?s
 <td>Total Cost</td>
 </tr>
 </tbody></table>
-<h3 id='strong-lsa-campaign-metrics-rollup-strong'><strong>LSA Campaign Metrics Rollup</strong></h3>
+<h3 id='lsa-campaign-metrics-rollup'><strong>LSA Campaign Metrics Rollup</strong></h3>
 <p><a name="lsa_campaign_rollup"></a></p>
 <h3 id='resource-overview-nbsp'>Resource Overview&nbsp;</h3>
 <table><thead>
@@ -18225,7 +18331,7 @@ https://api.localiqservices.com/leads/lsa_events/campaign_rollup?start_date=2020
 <td>The price for the charged leads</td>
 </tr>
 </tbody></table>
-<h3 id='strong-lsa-lead-details-strong'><strong>LSA Lead Details</strong></h3>
+<h3 id='lsa-lead-details'><strong>LSA Lead Details</strong></h3>
 <p><a name="lsa_leads"></a></p>
 <h3 id='resource-overview-nbsp'>Resource Overview&nbsp;</h3>
 <table><thead>
@@ -19394,6 +19500,11 @@ curl <span class="nt">-X</span> POST <span class="se">\</span>
 </tr>
 </tbody></table>
 
+<p>&lt;% if false %&gt;
+|markup_type|Optional unless markup_value present. Only supported value is &#39;percentage&#39; |
+|markup_value| Optional unless markup_type present. &quot;cost&quot; fields (spend,CPC,CPM) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
+
 <p>To specify a date range:</p>
 
 <ul>
@@ -19684,6 +19795,11 @@ https://api.localiqservices.com/client_reports/display_creative/TEST_1?&amp;camp
 <td>Set to true or false on whether to include cycle nesting.<br><strong>Default value is false</strong></td>
 </tr>
 </tbody></table>
+
+<p>&lt;% if false %&gt;
+|markup_type|Only supported value is &#39;percentage&#39; |
+|markup_value|&quot;cost&quot; fields (spend &amp; budget) will be marked up by this pecentage |
+&lt;% end %&gt;</p>
 
 <p>To specify a date range:</p>
 
