@@ -10,6 +10,7 @@ The API accepts the request parameters listed below and is grouped by the interv
 | `end_date` | yes | Restricts the results to those occurring on or before this date. |
 |`campaign_status[]`|no|Restrict results to all campaigns with given status values.  Allowed values are `running`, `stopped` and `ended`|
 |`campaign_types[]`|no|Restricts results to campaigns of given type, valid types: `display`, `gannett_display`, `xmedia`
+|`global_master_campaign_id[]`|no|Restricts results to campaigns matching the global_master_campaign_id(s) passed in the prameter list, e.g. `global_master_campaign_id[]=USA_-9865327`
 
 #### HTTP Request
 GET https:// api.localiqservices.com/client_reports/gustav_daily_creative_metrics
