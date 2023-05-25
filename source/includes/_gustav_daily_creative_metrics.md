@@ -79,7 +79,14 @@ curl -L -g -X GET 'http://localhost:3001/client_reports/gustav_daily_creative_me
             "slide10_clicks": 6,
             "slide10_visible": 55850,
             "slide10_engagement": 0,
-            "total_slide_views": 43207135
+            "total_slide_views": 43207135,
+            "replay":103,
+            "replay25":68,
+            "replay50":61,
+            "replay75":59,
+            "replay100":57,
+            "video_completion_rate":2,
+            "video_replay_rate":0
         },
         "benchmark": {
             "play": 242,
@@ -169,7 +176,14 @@ curl -L -g -X GET 'http://localhost:3001/client_reports/gustav_daily_creative_me
                 "slide10_clicks": 6,
                 "slide10_visible": 55850,
                 "slide10_engagement": 0,
-                "total_slide_views": 43207135
+                "total_slide_views": 43207135,
+                "replay":103,
+                "replay25":68,
+                "replay50":61,
+                "replay75":59,
+                "replay100":57,
+                "video_completion_rate":2,
+                "video_replay_rate":0
             },
             {
                 "start_date": "2021-06-02",
@@ -217,7 +231,14 @@ curl -L -g -X GET 'http://localhost:3001/client_reports/gustav_daily_creative_me
                 "slide10_clicks": 6,
                 "slide10_visible": 55850,
                 "slide10_engagement": 0,
-                "total_slide_views": 43207135
+                "total_slide_views": 43207135,
+                "replay":103,
+                "replay25":68,
+                "replay50":61,
+                "replay75":59,
+                "replay100":57,
+                "video_completion_rate":2,
+                "video_replay_rate":0
             },
             {
                 "start_date": "2021-06-03",
@@ -265,7 +286,14 @@ curl -L -g -X GET 'http://localhost:3001/client_reports/gustav_daily_creative_me
                 "slide10_clicks": 6,
                 "slide10_visible": 55850,
                 "slide10_engagement": 0,
-                "total_slide_views": 43207135
+                "total_slide_views": 43207135,
+                "replay":103,
+                "replay25":68,
+                "replay50":61,
+                "replay75":59,
+                "replay100":57,
+                "video_completion_rate":2,
+                "video_replay_rate":0
             },
             {
                 "start_date": "2021-06-04",
@@ -313,7 +341,14 @@ curl -L -g -X GET 'http://localhost:3001/client_reports/gustav_daily_creative_me
                 "slide10_clicks": 6,
                 "slide10_visible": 55850,
                 "slide10_engagement": 0,
-                "total_slide_views": 43207135
+                "total_slide_views": 43207135,
+                "replay":103,
+                "replay25":68,
+                "replay50":61,
+                "replay75":59,
+                "replay100":57,
+                "video_completion_rate":2,
+                "video_replay_rate":0
             },
             {
                 "start_date": "2021-06-05",
@@ -361,7 +396,14 @@ curl -L -g -X GET 'http://localhost:3001/client_reports/gustav_daily_creative_me
                 "slide10_clicks": 6,
                 "slide10_visible": 55850,
                 "slide10_engagement": 0,
-                "total_slide_views": 43207135
+                "total_slide_views": 43207135,
+                "replay":103,
+                "replay25":68,
+                "replay50":61,
+                "replay75":59,
+                "replay100":57,
+                "video_completion_rate":2,
+                "video_replay_rate":0
             }
         ]
     },
