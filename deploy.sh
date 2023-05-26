@@ -19,10 +19,6 @@ Options:
       --push-only          Only push but not build
 "
 
-if [ -e "CNAME" ]; then
-  cp CNAME build
-fi
-
 run_build() {
   bundle exec middleman build --clean
 }
@@ -118,6 +114,10 @@ main() {
   if [[ -z `ls -A "$deploy_directory" 2> /dev/null` && -z $allow_empty ]]; then
     echo "Deploy directory '$deploy_directory' is empty. Aborting. If you're sure you want to deploy an empty tree, use the --allow-empty / -e flag." >&2
     return 1
+  fi
+
+  if [ -e "CNAME" ]; then
+    cp CNAME build
   fi
 
   if git ls-remote --exit-code $repo "refs/heads/$deploy_branch" ; then
