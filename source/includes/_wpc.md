@@ -107,6 +107,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "ctr": 1.56,
                 "cpc": 0.0,
                 "cpl": 0,
+                "cpm": 0,
                 "roas": 0,
                 "intervals": [
                     {
@@ -125,6 +126,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "ctr": 1.56,
                         "cpc": 0.0,
                         "cpl": 0,
+                        "cpm": 0,
                         "roas": 0
                     }
                 ]
@@ -158,6 +160,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "ctr": 1.14,
                 "cpc": 0.0,
                 "cpl": 0,
+                "cpm": 0,
                 "roas": 0,
                 "intervals": [
                     {
@@ -176,6 +179,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "ctr": 1.14,
                         "cpc": 0.0,
                         "cpl": 0,
+                        "cpm": 0,
                         "roas": 0
                     }
                 ]
@@ -209,6 +213,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "ctr": 1.87,
                 "cpc": 0.0,
                 "cpl": 0,
+                "cpm": 0,
                 "roas": 0,
                 "intervals": [
                     {
@@ -227,6 +232,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "ctr": 1.87,
                         "cpc": 0.0,
                         "cpl": 0,
+                        "cpm": 0,
                         "roas": 0
                     }
                 ]
@@ -260,6 +266,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | roas | Float | Customer Revenue / Spend for Campaign (shopping only|
 | ctr | Float | Click-through Rate for Campaign |
 | cpc | Float | Cost Per Click for Campaign |
+| cpm | Float | Cost Per Milli for Campaign |
 |form_submissions_ct|Float|Total For Submission Click Through for Campaign|
 |form_submissions_vt|Float|Total Form Submission View Through for Campaign|
 |priority_page_views_ct|Float|Total Priority Page View Click Through for Campaign|
@@ -296,6 +303,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | spend | Float | Total Spend for Interval |
 | ctr | Float | Click-through Rate for Interval |
 | cpc | Float | Cost Per Click for Interval |
+| cpm | Float | Cost Per Milli for Interval |
 | customer_revenue | Float | Total Customer Revenue for Interval (shopping only) |
 | roas | Float | Customer Revenue / Spend for Interval (shopping only|
 |form_submissions_ct|Float|Total For Submission Click Through for Campaign|
