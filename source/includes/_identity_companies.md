@@ -32,6 +32,7 @@ When using the GET index method, the results will be filtered using these parame
 |`url`|No|Specifies a url that will be used for searching a companies|
 |`login_user_id`|No|Specifies a login user id, based on which a search of a companies wil be performed|
 |`login_user_email`|No|Specifies a login user email, based on which a search of a companies wil be performed|
+|`is_sales`|No|If "true" returns companies marked as sales. If "false" returns companies marked as not sales|
 
 Get an existing company.
 
@@ -58,11 +59,13 @@ Get an existing company.
 |url|string|url address of the company|
 |login_users|Array|Array of login_users, that the company is associated with|
 |sic_code|integer|Integer of 2 - 4 digits|
+|is_sales|boolean|Company mared as sales.|
+|google_place_id|string|The Google place ID|
 
 example request:
 
 ```
-curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/companies \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/companies' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 ```
@@ -134,13 +137,15 @@ Get an existing company.
 |fax|integer|fax address of the company|
 |email|string|email address of the company|
 |url|string|url address of the company|
+|is_sales|boolean|Company mared as sales.|
+|google_place_id|string|The Google place ID|
 |login_users|Array|Array of login_users, that the company is associated with|
 |products|Array|Array of this companies products|
 
 example request:
 
 ```
-curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/8 \
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/v3/identities/companies/8' \
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 ```
@@ -171,6 +176,8 @@ example success response (HTTP status 2xx):
     "is_freemium": true,
     "sic_code": 123,
     "primary_login_user_id": 1,
+    "is_sales": true,
+    "google_place_id": "54321",
     "login_users": [
         {
             "id": 1,
@@ -226,6 +233,8 @@ Create a company.
 |email|string|Yes|email address of the company|
 |url|string|No|url address of the company|
 |login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
+|is_sales|boolean|Company mared as sales.|
+|google_place_id|string|The Google place ID|
 
 example request:
 
@@ -251,7 +260,9 @@ curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/comp
         "fax": "123456",
         "email": "email@gmail.com",
         "url": "http://www.some_company.com",
-        "login_user_id": 1
+        "login_user_id": 1,
+        "is_sales": true,
+        "google_place_id": "54321
     }'
 ```
 

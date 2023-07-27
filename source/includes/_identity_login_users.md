@@ -236,7 +236,7 @@ curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/logi
 -H 'Accept: application/json' \
 -H 'Authorization: TRUSTED_TOKEN' \
 -H 'Content-Type: application/json' \
---data-raw '   "user": {
+--data-raw '{"login_user": {
         "email": "email@gmail.com",
         "first_name": "Slim",
         "last_name": "Shady",
@@ -247,7 +247,7 @@ curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/logi
             "test2": "test"
         },
         "ldap_id": "qwerty123"
-    }'
+    }}'
 ```
 
 example success response (HTTP status 2xx):
