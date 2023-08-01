@@ -32,7 +32,7 @@ When using the GET index method, the results will be filtered using these parame
 |`url`|No|Specifies a url that will be used for searching a companies|
 |`login_user_id`|No|Specifies a login user id, based on which a search of a companies wil be performed|
 |`login_user_email`|No|Specifies a login user email, based on which a search of a companies wil be performed|
-|`is_sales`|No|If "true" returns companies marked as sales. If "false" returns companies marked as not sales|
+|`sales`|No|If "true" returns companies marked as sales. If "false" returns companies marked as not sales|
 
 Get an existing company.
 
