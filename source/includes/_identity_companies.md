@@ -59,7 +59,7 @@ Get an existing company.
 |url|string|url address of the company|
 |login_users|Array|Array of login_users, that the company is associated with|
 |sic_code|integer|Integer of 2 - 4 digits|
-|sales|boolean|Company mared as sales.|
+|sales|boolean|Company marked as sales.|
 |google_place_id|string|The Google place ID|
 
 example request:
@@ -233,7 +233,7 @@ Create a company.
 |email|string|Yes|email address of the company|
 |url|string|No|url address of the company|
 |login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
-|sales|boolean|Company mared as sales.|
+|sales|boolean|Company marked as sales.|
 |google_place_id|string|The Google place ID|
 
 example request:
