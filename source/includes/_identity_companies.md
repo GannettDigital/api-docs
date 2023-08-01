@@ -137,7 +137,7 @@ Get an existing company.
 |fax|integer|fax address of the company|
 |email|string|email address of the company|
 |url|string|url address of the company|
-|sales|boolean|Company mared as sales.|
+|sales|boolean|Company marked as sales.|
 |google_place_id|string|The Google place ID|
 |login_users|Array|Array of login_users, that the company is associated with|
 |products|Array|Array of this companies products|
