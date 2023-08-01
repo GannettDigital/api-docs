@@ -59,7 +59,7 @@ Get an existing company.
 |url|string|url address of the company|
 |login_users|Array|Array of login_users, that the company is associated with|
 |sic_code|integer|Integer of 2 - 4 digits|
-|is_sales|boolean|Company mared as sales.|
+|sales|boolean|Company mared as sales.|
 |google_place_id|string|The Google place ID|
 
 example request:
@@ -137,7 +137,7 @@ Get an existing company.
 |fax|integer|fax address of the company|
 |email|string|email address of the company|
 |url|string|url address of the company|
-|is_sales|boolean|Company mared as sales.|
+|sales|boolean|Company mared as sales.|
 |google_place_id|string|The Google place ID|
 |login_users|Array|Array of login_users, that the company is associated with|
 |products|Array|Array of this companies products|
@@ -176,7 +176,7 @@ example success response (HTTP status 2xx):
     "is_freemium": true,
     "sic_code": 123,
     "primary_login_user_id": 1,
-    "is_sales": true,
+    "sales": true,
     "google_place_id": "54321",
     "login_users": [
         {
@@ -233,7 +233,7 @@ Create a company.
 |email|string|Yes|email address of the company|
 |url|string|No|url address of the company|
 |login_user_id|Integer|Yes|An id of a login user, that the company is associated with|
-|is_sales|boolean|Company mared as sales.|
+|sales|boolean|Company mared as sales.|
 |google_place_id|string|The Google place ID|
 
 example request:
@@ -261,7 +261,7 @@ curl -L -X POST 'https://data-connect-prod.gannettdigital.com/v3/identities/comp
         "email": "email@gmail.com",
         "url": "http://www.some_company.com",
         "login_user_id": 1,
-        "is_sales": true,
+        "sales": true,
         "google_place_id": "54321
     }'
 ```
