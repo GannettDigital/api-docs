@@ -35,6 +35,8 @@ When using the GET index method, the results will be filtered using these parame
 |`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
 |`archived`|No|Boolean filter to include ONLY archived events|
 |`booking_id`|No|Filters the booking events based on the external booking_id|
+|`external_id`|No|Filters on an external_id registered by an external app. Should be used in conjunction with external_app_id|
+|`external_app_id`|No|Filters on an e external app. Should be used in conjunction with external_id|
 
 
 > * Results are always sorted by `occurred_at DESC`, if we provide `sort_by` and `sort_dir` it will order by params first and then by `occurred_at DESC`.  Default is `occurred_at DESC`. Searching by `channel` will remove any event without a `wpc_id`.
