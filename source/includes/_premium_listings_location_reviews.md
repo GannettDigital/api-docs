@@ -25,15 +25,16 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl --location 'https://api.localiqservices.com/client_reports/premium_listings/USA_92131/location/2800302/reviews' \
---header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/premium_listings/location/ID/reviews' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 #### Example Response
 ```javascript
 {
     "report_type": "premium_listings/location/reviews",
-    "report_date": "2023-08-11",
+    "report_date": "2021-01-25",
     "report_data": {
         "facebook": {
             "status": "SUCCESS",
@@ -55,101 +56,44 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                 "countByRating": [
                     {
                         "rating": 5,
-                        "count": 13,
-                        "replied": 3
+                        "count": 100,
+                        "replied": 0
                     },
                     {
                         "rating": 1,
-                        "count": 6,
-                        "replied": 4
+                        "count": 41,
+                        "replied": 0
                     },
                     {
                         "rating": 4,
-                        "count": 1,
+                        "count": 11,
+                        "replied": 0
+                    },
+                    {
+                        "rating": 2,
+                        "count": 2,
                         "replied": 0
                     }
                 ],
-                "interactionCount": 25,
+                "interactionCount": 179,
                 "matchedLocationsCount": 1,
-                "ratingCount": 20,
-                "repliedCount": 7,
-                "unreadInteractionCount": 25,
+                "ratingCount": 154,
+                "repliedCount": 0,
+                "unreadInteractionCount": 179,
                 "unreadInteractions": [
                     {
-                        "id": 350934068,
-                        "dateCreated": "2023-02-15T22:56:41.000+01:00",
-                        "lastUpdated": "2023-06-27T04:42:18.000+02:00",
-                        "actionDate": "2023-03-11T00:35:46.000+01:00",
-                        "threadActionDate": "2023-03-11T00:35:46.000+01:00",
-                        "data": "Always courteous, professional customer service.  A little pricey, but what isn't these days.",
+                        "id": 211448498,
+                        "dateCreated": "2021-01-08T14:35:10.000+01:00",
+                        "lastUpdated": "2021-01-09T14:09:18.000+01:00",
+                        "actionDate": "2021-01-05T04:28:52.000+01:00",
+                        "threadActionDate": "2021-01-05T04:28:52.000+01:00",
+                        "data": "STAY AWAY FROM THIS COMPANY! They don't stand behind work, and instead hide behind the \"act of God\" clause even though their salesperson claimed this fence could withstand Hurricane 2 force winds. The fence was about 2 weeks old and with a simple Tropical Storm the fence started to come apart on one side and our double gate broke. Nobody else in my neighborhood sustained any damages but yet they wanted to charges another $1000 to replace the gates. They wouldn't even meet us half way! Service has been terrible.",
                         "type": "REVIEW",
                         "directoryType": "GOOGLE",
                         "connectStatus": "CONNECTED",
-                        "directLink": "https://search.google.com/local/reviews?placeid=ChIJBS9E3GQwxYkRheWdnuEDFf8",
-                        "rating": 5.0,
-                        "locationId": 2800302,
-                        "replyByOwner": false,
-                        "read": false,
-                        "supportsReply": true,
-                        "supportsLike": false,
-                        "supportsUnlike": false,
-                        "supportedFlagTypes": [],
-                        "countLikes": null,
-                        "countComments": 1,
-                        "countViews": null,
-                        "authorImage": "https://lh3.googleusercontent.com/a-/AD_cMMRa8Bc1yUOPX3Z2Zx_aH5sJ7ttudOY5LmFRLyto4odsIuc=s120-c-rp-mo-ba4-br100",
-                        "liked": false,
-                        "flagged": false,
-                        "hasRepliesInApprovalNeeded": false,
-                        "status": "VALID",
-                        "replyMaxLength": 4096,
-                        "author": "T F",
-                        "secondaryData": null
-                    },
-                    {
-                        "id": 350934068,
-                        "dateCreated": "2023-02-15T22:56:41.000+01:00",
-                        "lastUpdated": "2023-06-27T04:42:18.000+02:00",
-                        "actionDate": "2023-03-11T00:35:46.000+01:00",
-                        "threadActionDate": "2023-03-11T00:35:46.000+01:00",
-                        "data": "Always courteous, professional customer service.  A little pricey, but what isn't these days.",
-                        "type": "REVIEW",
-                        "directoryType": "GOOGLE",
-                        "connectStatus": "CONNECTED",
-                        "directLink": "https://search.google.com/local/reviews?placeid=ChIJBS9E3GQwxYkRheWdnuEDFf8",
-                        "rating": 5.0,
-                        "locationId": 2800302,
-                        "replyByOwner": false,
-                        "read": false,
-                        "supportsReply": true,
-                        "supportsLike": false,
-                        "supportsUnlike": false,
-                        "supportedFlagTypes": [],
-                        "countLikes": null,
-                        "countComments": 1,
-                        "countViews": null,
-                        "authorImage": "https://lh3.googleusercontent.com/a-/AD_cMMRa8Bc1yUOPX3Z2Zx_aH5sJ7ttudOY5LmFRLyto4odsIuc=s120-c-rp-mo-ba4-br100",
-                        "liked": false,
-                        "flagged": false,
-                        "hasRepliesInApprovalNeeded": false,
-                        "status": "VALID",
-                        "replyMaxLength": 4096,
-                        "author": "T F",
-                        "secondaryData": null
-                    },
-                    {
-                        "id": 350119455,
-                        "dateCreated": "2023-02-13T16:58:42.000+01:00",
-                        "lastUpdated": "2023-06-27T04:42:18.000+02:00",
-                        "actionDate": "2023-02-13T16:48:18.000+01:00",
-                        "threadActionDate": "2023-02-13T16:48:18.000+01:00",
-                        "data": "A very rude employee named Liz called requesting payment.  Liz was annoyed with questions and was not able to answer questions in a manner that 1. Was respectful 2. Was competent. Billing practices and filling schedules seem unscrupulous and haphazard. The $100 minimum is exploitation when tank sizes don’t support that even at a full fill.  This is on top astronomically expensive prices that are more than $1 from EIA averages.  Nothing supports this higher cost other than greed.  Stay away.",
-                        "type": "REVIEW",
-                        "directoryType": "GOOGLE",
-                        "connectStatus": "CONNECTED",
-                        "directLink": "https://search.google.com/local/reviews?placeid=ChIJBS9E3GQwxYkRheWdnuEDFf8",
+                        "directLink": "https://search.google.com/local/reviews?placeid=ChIJuduHGsUm2YgRVkAaYlFwcnc",
                         "rating": 1.0,
-                        "locationId": 2800302,
+                        "locationId": 2741576,
                         "replyByOwner": false,
                         "read": false,
                         "supportsReply": true,
@@ -157,15 +101,74 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                         "supportsUnlike": false,
                         "supportedFlagTypes": [],
                         "countLikes": null,
-                        "countComments": 1,
+                        "countComments": 0,
                         "countViews": null,
-                        "authorImage": "https://lh3.googleusercontent.com/a/AAcHTtca4Cd8EFUNVYbVenomwrH8FUqBCoTYvhUoWArjkkug=s120-c-rp-mo-br100",
+                        "authorImage": "https://lh3.googleusercontent.com/-dw-gvw_8SUc/AAAAAAAAAAI/AAAAAAAAAWM/AMZuuckXTWvXKMpNdyf0O7qZy-p0Boy9Xw/c0x00000000-cc-rp/photo.jpg",
                         "liked": false,
                         "flagged": false,
                         "hasRepliesInApprovalNeeded": false,
                         "status": "VALID",
-                        "replyMaxLength": 4096,
-                        "author": "james James",
+                        "author": "Karen Cerrato",
+                        "secondaryData": null
+                    },
+                    {
+                        "id": 211448499,
+                        "dateCreated": "2021-01-08T14:35:10.000+01:00",
+                        "lastUpdated": "2021-01-09T14:09:18.000+01:00",
+                        "actionDate": "2020-11-24T20:53:31.000+01:00",
+                        "threadActionDate": "2020-11-24T20:53:31.000+01:00",
+                        "data": null,
+                        "type": "REVIEW",
+                        "directoryType": "GOOGLE",
+                        "connectStatus": "CONNECTED",
+                        "directLink": "https://search.google.com/local/reviews?placeid=ChIJuduHGsUm2YgRVkAaYlFwcnc",
+                        "rating": 4.0,
+                        "locationId": 2741576,
+                        "replyByOwner": false,
+                        "read": false,
+                        "supportsReply": true,
+                        "supportsLike": false,
+                        "supportsUnlike": false,
+                        "supportedFlagTypes": [],
+                        "countLikes": null,
+                        "countComments": 0,
+                        "countViews": null,
+                        "authorImage": "https://lh4.googleusercontent.com/-IIzUVu9oQYA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmVDtU5g5oPoZLX5EYxpOKkNUJ5AQ/c0x00000000-cc-rp/photo.jpg",
+                        "liked": false,
+                        "flagged": false,
+                        "hasRepliesInApprovalNeeded": false,
+                        "status": "VALID",
+                        "author": "jon ricco",
+                        "secondaryData": null
+                    },
+                    {
+                        "id": 211448500,
+                        "dateCreated": "2021-01-08T14:35:10.000+01:00",
+                        "lastUpdated": "2021-01-09T14:09:18.000+01:00",
+                        "actionDate": "2020-11-01T20:19:26.000+01:00",
+                        "threadActionDate": "2020-11-01T20:19:26.000+01:00",
+                        "data": "Very unprofessional! Horrible Customer Service, very rude staff I would never recommend this Company STAY AWAY!",
+                        "type": "REVIEW",
+                        "directoryType": "GOOGLE",
+                        "connectStatus": "CONNECTED",
+                        "directLink": "https://search.google.com/local/reviews?placeid=ChIJuduHGsUm2YgRVkAaYlFwcnc",
+                        "rating": 1.0,
+                        "locationId": 2741576,
+                        "replyByOwner": false,
+                        "read": false,
+                        "supportsReply": true,
+                        "supportsLike": false,
+                        "supportsUnlike": false,
+                        "supportedFlagTypes": [],
+                        "countLikes": null,
+                        "countComments": 0,
+                        "countViews": null,
+                        "authorImage": "https://lh3.googleusercontent.com/a-/AOh14Gi0R1UHNC_GXJPrZiKYMrX3VhwhWyhPfCS5-TCn_A=c0x00000000-cc-rp",
+                        "liked": false,
+                        "flagged": false,
+                        "hasRepliesInApprovalNeeded": false,
+                        "status": "VALID",
+                        "author": "Kenny Aldazoro",
                         "secondaryData": null
                     }
                 ]
@@ -184,7 +187,7 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                 "unreadInteractions": []
             }
         },
-        "yelp": {
+        "yelp_api":{
             "status": "SUCCESS",
             "response": {
                 "averageRating": 0.0,
