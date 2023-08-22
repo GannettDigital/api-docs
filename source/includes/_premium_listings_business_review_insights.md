@@ -25,260 +25,61 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl --location 'https://api.localiqservices.com/client_reports/premium_listings/business/USA_92131/review_insights?start_date=2023-7-12&end_date=2023-8-10' \
---header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/premium_listings/business/GMAID/review_insights' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 #### Example Response
 ```javascript
 {
-    "report_type": "premium_listings/business/review_insights",
-    "report_date": "2023-08-11",
-    "global_master_advertiser_id": "USA_92131",
+    "report_type": "premium_listings/review_insights",
+    "report_date": "2020-04-03",
+    "global_master_advertiser_id": "USA_130964",
     "report_data": {
-        "facebook": {
-            "averageRatingByPeriod": [],
-            "interactionCountByPeriod": [],
-            "totalRatingCount": 0
+        "facebook":{
+            "averageRatingByPeriod":[
+                {
+                    "period": "2010-11-23",
+                    "value": 3.0
+                },
+                {
+                    "period": "2013-06-05",
+                    "value": 2.0
+                }
+            ],
+            "interactionCountByPeriod":[
+                {
+                    "period": "2010-06-10",
+                    "count": 1
+                },
+                {
+                    "period": "2010-10-13",
+                    "count": 1
+                }
+            ]
         },
-        "google": {
-            "averageRatingByPeriod": [
+       "google":{
+            "averageRatingByPeriod":[
                 {
-                    "period": "2023-07-12",
-                    "value": 5.0
+                    "period": "2010-11-23",
+                    "value": 3.0
                 },
                 {
-                    "period": "2023-07-13",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-14",
-                    "value": 4.17
-                },
-                {
-                    "period": "2023-07-15",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-16",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-17",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-18",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-19",
-                    "value": 4.29
-                },
-                {
-                    "period": "2023-07-20",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-21",
-                    "value": 4.2
-                },
-                {
-                    "period": "2023-07-22",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-23",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-24",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-25",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-26",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-27",
-                    "value": 4.2
-                },
-                {
-                    "period": "2023-07-28",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-29",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-30",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-07-31",
-                    "value": 4.71
-                },
-                {
-                    "period": "2023-08-01",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-08-02",
-                    "value": 3.5
-                },
-                {
-                    "period": "2023-08-03",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-08-04",
-                    "value": 4.17
-                },
-                {
-                    "period": "2023-08-05",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-08-07",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-08-08",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-08-09",
-                    "value": 5.0
-                },
-                {
-                    "period": "2023-08-10",
-                    "value": 4.2
+                    "period": "2013-06-05",
+                    "value": 2.0
                 }
             ],
-            "interactionCountByPeriod": [
+            "interactionCountByPeriod":[
                 {
-                    "period": "2023-07-12",
-                    "count": 11
+                    "period": "2010-06-10",
+                    "count": 1
                 },
                 {
-                    "period": "2023-07-13",
-                    "count": 7
-                },
-                {
-                    "period": "2023-07-14",
-                    "count": 6
-                },
-                {
-                    "period": "2023-07-15",
-                    "count": 6
-                },
-                {
-                    "period": "2023-07-16",
-                    "count": 6
-                },
-                {
-                    "period": "2023-07-17",
-                    "count": 4
-                },
-                {
-                    "period": "2023-07-18",
-                    "count": 4
-                },
-                {
-                    "period": "2023-07-19",
-                    "count": 7
-                },
-                {
-                    "period": "2023-07-20",
-                    "count": 3
-                },
-                {
-                    "period": "2023-07-21",
-                    "count": 5
-                },
-                {
-                    "period": "2023-07-22",
-                    "count": 4
-                },
-                {
-                    "period": "2023-07-23",
-                    "count": 3
-                },
-                {
-                    "period": "2023-07-24",
-                    "count": 6
-                },
-                {
-                    "period": "2023-07-25",
-                    "count": 7
-                },
-                {
-                    "period": "2023-07-26",
-                    "count": 5
-                },
-                {
-                    "period": "2023-07-27",
-                    "count": 5
-                },
-                {
-                    "period": "2023-07-28",
-                    "count": 9
-                },
-                {
-                    "period": "2023-07-29",
-                    "count": 3
-                },
-                {
-                    "period": "2023-07-30",
-                    "count": 5
-                },
-                {
-                    "period": "2023-07-31",
-                    "count": 14
-                },
-                {
-                    "period": "2023-08-01",
-                    "count": 2
-                },
-                {
-                    "period": "2023-08-02",
-                    "count": 14
-                },
-                {
-                    "period": "2023-08-03",
-                    "count": 4
-                },
-                {
-                    "period": "2023-08-04",
-                    "count": 6
-                },
-                {
-                    "period": "2023-08-05",
-                    "count": 3
-                },
-                {
-                    "period": "2023-08-07",
-                    "count": 7
-                },
-                {
-                    "period": "2023-08-08",
-                    "count": 11
-                },
-                {
-                    "period": "2023-08-09",
-                    "count": 6
-                },
-                {
-                    "period": "2023-08-10",
-                    "count": 5
+                    "period": "2010-10-13",
+                    "count": 1
                 }
-            ],
-            "totalRatingCount": 176
+            ]
         }
     }
 }

@@ -26,70 +26,42 @@ When using the GET method, the results can be filtered using these parameters:
 #### Examples
 
 ```
-curl --location 'https://api.localiqservices.com/client_reports/premium_listings/USA_92131/location/2800302/insights' \
---header 'Authorization: Bearer OAUTH_ACCESS_TOKEN'
+curl -L -X GET 'https://data-connect-prod.gannettdigital.com/premium_listings/location/ID/insights' \
+-H 'Accept: application/json' \
+-H 'Authorization: TRUSTED_TOKEN'
 ```
 
 #### Example Response
 ```javascript
 {
     "report_type": "premium_listings/location/insights",
-    "report_date": "2023-08-11",
+    "report_date": "2020-04-03",
     "report_data": {
-        "facebook": {
-            "metrics": []
+        "facebook":{
+            "metrics":[]
         },
-        "google": {
+        "yelp":{
+            "metrics":[]
+        },
+        "bing":{
+            "metrics":[]
+        },
+       "google":{
             "metrics": [
                 {
                     "name": "QUERIES_CHAIN",
                     "data": [
                         {
-                            "period": "2023-08-04",
+                            "period": "2020-04-19",
                             "count": 0
                         },
                         {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "QUERIES_DIRECT",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
+                            "period": "2020-04-20",
                             "count": 0
                         },
                         {
-                            "period": "2023-08-05",
+                            "period": "2020-04-21",
                             "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "QUERIES_INDIRECT",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 0
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "VIEWS_MAPS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 6
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 5
                         }
                     ]
                 },
@@ -97,12 +69,12 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                     "name": "VIEWS_SEARCH",
                     "data": [
                         {
-                            "period": "2023-08-04",
-                            "count": 26
+                            "period": "2020-04-01",
+                            "count": 19
                         },
                         {
-                            "period": "2023-08-05",
-                            "count": 22
+                            "period": "2020-04-02",
+                            "count": 20
                         }
                     ]
                 },
@@ -110,24 +82,14 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                     "name": "ACTIONS_WEBSITE",
                     "data": [
                         {
-                            "period": "2023-08-04",
-                            "count": 6
+                            "period": "2020-04-01",
+                            "count": 1
                         },
                         {
-                            "period": "2023-08-05",
-                            "count": 9
-                        }
-                    ]
-                },
-                {
-                    "name": "ACTIONS_PHONE",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 10
+                            "period": "2020-04-02",
+                            "count": 1
                         },
-                        {
-                            "period": "2023-08-05",
+                        
                             "count": 0
                         }
                     ]
@@ -136,11 +98,11 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                     "name": "ACTIONS_DRIVING_DIRECTIONS",
                     "data": [
                         {
-                            "period": "2023-08-04",
+                            "period": "2020-04-01",
                             "count": 2
                         },
                         {
-                            "period": "2023-08-05",
+                            "period": "2020-04-02",
                             "count": 0
                         }
                     ]
@@ -149,12 +111,12 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                     "name": "PHOTOS_VIEWS_MERCHANT",
                     "data": [
                         {
-                            "period": "2023-08-04",
-                            "count": 0
+                            "period": "2020-04-01",
+                            "count": 56
                         },
                         {
-                            "period": "2023-08-05",
-                            "count": 0
+                            "period": "2020-04-02",
+                            "count": 48
                         }
                     ]
                 },
@@ -162,11 +124,11 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                     "name": "PHOTOS_VIEWS_CUSTOMERS",
                     "data": [
                         {
-                            "period": "2023-08-04",
+                            "period": "2020-04-01",
                             "count": 0
                         },
                         {
-                            "period": "2023-08-05",
+                            "period": "2020-04-02",
                             "count": 0
                         }
                     ]
@@ -175,11 +137,15 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                     "name": "LOCAL_POST_VIEWS_SEARCH",
                     "data": [
                         {
-                            "period": "2023-08-04",
+                            "period": "2020-04-01",
                             "count": 0
                         },
                         {
-                            "period": "2023-08-05",
+                            "period": "2020-04-02",
+                            "count": 0
+                        },
+                        {
+                            "period": "2020-04-03",
                             "count": 0
                         }
                     ]
@@ -188,165 +154,20 @@ curl --location 'https://api.localiqservices.com/client_reports/premium_listings
                     "name": "LOCAL_POST_ACTIONS_CALL_TO_ACTION",
                     "data": [
                         {
-                            "period": "2023-08-04",
+                            "period": "2020-04-01",
                             "count": 0
                         },
                         {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_IMPRESSIONS_DESKTOP_MAPS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 3
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 1
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_IMPRESSIONS_MOBILE_MAPS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 3
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 4
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_IMPRESSIONS_DESKTOP_SEARCH",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 13
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 3
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_IMPRESSIONS_MOBILE_SEARCH",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 13
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 19
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_CONVERSATIONS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
+                            "period": "2020-04-02",
                             "count": 0
                         },
                         {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_DIRECTION_REQUESTS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 2
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "CALL_CLICKS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 10
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "WEBSITE_CLICKS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 6
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 9
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_BOOKINGS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
+                            "period": "2020-04-03",
                             "count": 0
                         },
-                        {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_FOOD_ORDERS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 0
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
-                    ]
-                },
-                {
-                    "name": "BUSINESS_FOOD_MENU_CLICKS",
-                    "data": [
-                        {
-                            "period": "2023-08-04",
-                            "count": 0
-                        },
-                        {
-                            "period": "2023-08-05",
-                            "count": 0
-                        }
                     ]
                 }
             ]
-        },
-        "bing": {
-            "metrics": []
-        },
-        "yelp": {
-            "metrics": []
         }
     }
 }
