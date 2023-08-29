@@ -8,7 +8,7 @@
 
 #### API Name: business
 #### Usage
-Use GET to retrieve business data for a GMAID, that comes from the Premium Listing Reporting API.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve business data for a GMAID, that comes from the Premium Listing Reporting API.
 
 The data returned will include information about the business which corresponds to the gmaid. 
 

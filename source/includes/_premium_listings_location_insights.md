@@ -8,7 +8,7 @@
 
 #### API Name: premium_listings_location_insights
 #### Usage
-Use GET to retrieve location insights data , that comes from the Premium Listing Reporting API.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
+Use GET to retrieve location insights data , that comes from the Premium Listing Reporting API.
 
 This report will show one of facebook, google, bing, yelp_api (or all of them) metrics for the particular id for.
 

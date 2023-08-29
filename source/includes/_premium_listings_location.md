@@ -8,8 +8,7 @@
 
 #### API Name: premoum_listings_location
 #### Usage
-Use GET to retrieve location data, that comes from the Premium Listing Reporting API and will be returned for an id.  Only "trusted" tokens are accepted - this report cannot be called through an API gateway.
-
+Use GET to retrieve location data, that comes from the Premium Listing Reporting API and will be returned for an id.
 
 #### Examples
 
