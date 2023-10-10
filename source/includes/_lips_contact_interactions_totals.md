@@ -44,6 +44,7 @@ chat_other | ChatEvents with a lead type of other. Ignored when used in combina
 form | FormEvents with a sub_type of FormPost
 email | FormEvents with a sub_type of FormEmail
 fpd | All FpdEvents
+diy_post | FormEvents with a sub_type of DIYPost
 
 ### Examples:
 
