@@ -43,6 +43,9 @@ chat_service | ChatEvents with a lead_type of service. Ignored when used in com
 chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
 form | FormEvents with a sub_type of FormPost
 email | FormEvents with a sub_type of FormEmail
+dyipost | FormEvents with a sub_type of DIYFORMPOST
+facebook | FormEvents with a sub_type of Facebook
+promotion | FormEvents with a sub_type of Promotion
 fpd | All FpdEvents
 
 ### Examples:
