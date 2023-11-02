@@ -13,8 +13,6 @@ Use GET to retrieve information for the Gannett Display report for a given adver
 The report will contains impressions, clicks, and ctr broken down by day or month.
 It will also contain the overall universal interaction, universal interaction time, hover, and attention quality for the date range of the report.
 
-Note: Moat Metrics are not supported after December 31, 2019. Any requests for date ranges after this will not include moat metrics. Date ranges that span beyond December 31, 2019 will show calculations based on start_date through December 31, 2019.
-
 #### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
@@ -74,12 +72,6 @@ curl -g -H "Authorization: token reachanalyticsreportingservicetoken"  "localhos
                 ]
             }
         ],
-        "moat_metrics": {
-            "universal_interaction_rate": 0.27,             // Universal Interaction Rate
-            "universal_interaction_time": 14.61,            // Universal Interaction Time
-            "hover_rate": 0.68,                             // Hover Rate
-            "attention_quality": 0.39                       // Attention Quality
-        },
         "totals": {
             "impressions": 12821,                           // Total impressions for report
             "clicks": 18,                                   // Total Clicks for report
