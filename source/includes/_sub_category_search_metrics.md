@@ -1,12 +1,28 @@
-# Sub Category Search Metrics
+## Sub Category Search Metrics
 
-This report returns the benchmark statistical results of a given business sub category.
-
-Example Request:
+#### Resource Overview
 
 ```
-client_reports/sub_category_search_metrics?business_sub_category=101
+Available Methods:      GET
+URI Format:             /client_reports/sub_category_search_metrics/[gmaid]?[query_params]
 ```
+
+#### Usage
+Use GET to retrieve search metric stat report for a given advertiser and business sub category id
+
+#### Parameters
+
+When using the GET method, the results can be filtered using these parameters:
+
+| Param | Function | Required|Default|
+|---|---|---|---|
+|`business_sub_category_id`|Returns the search metrics for the existing business sub category id| `REQUIRED`||
+|`global_master_campaign_id[]`|Restrict results to one or more specific campaigns| `OPTIONAL`|all gmcids for advertiser|
+
+#### Example Local Dev Curls:
+###### Retrieve data for a given GMAID and business sub category id
+```
+curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/sub_category_search_metrics/USA_105569?business_sub_category_id=101
 
 Report data is returned as JSON e.g.:
 
@@ -14,7 +30,7 @@ Report data is returned as JSON e.g.:
 {
   "report_type": "sub_category_search_metrics",
   "report_data": {
-    "sub_category_search_metrics": {
+    "business_sub_category": {
         "cp_click_avg": 1.3923322,
         "cp_click_std_dev": 0.6058227,
         "cp_click_median": 1.2725656,
@@ -52,6 +68,16 @@ Report data is returned as JSON e.g.:
         "budget_83": 3000.0000000,
         "last_modified": "2023-05-04 19:01:08"
       }
+  }
+}
+```
+if there is no data found, the below empty node will be returned:
+
+```json
+{
+  "report_type": "sub_category_search_metrics",
+  "report_data": {
+    "business_sub_category": {}
   }
 }
 ```
