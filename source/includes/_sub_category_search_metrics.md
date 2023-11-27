@@ -1,4 +1,4 @@
-## Sub Category Search Metrics for Business
+## Search Metrics for Business Sub Categories
 
 #### Resource Overview
 
@@ -11,13 +11,16 @@ URI Format:             /client_reports/sub_category_search_metrics/[gmaid]?[que
 
 Use GET to retrieve search metric stat report for a given advertiser and business sub category id
 
+### Business Category - Campaign Table Associations
+![Business Sub Category Campaign Associations](/images/business_sub_category_associations.png)
+
 #### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
 
 | Param                         | Function                                           | Required   | Default                   |
 | ----------------------------- | -------------------------------------------------- | ---------- | ------------------------- |
-| `campaign_id[]`               | Returns the search metrics for a given campaign id | `REQUIRED` |                           |
+| `campaign_id[]`               | Returns the search metrics for campaign_id list    | `REQUIRED` |                           |
 | `global_master_campaign_id[]` | Restrict results to one or more specific campaigns | `OPTIONAL` | all gmcids for advertiser |
 
 #### Example Local Dev Curls:
