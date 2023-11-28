@@ -11,8 +11,10 @@ URI Format:             /client_reports/sub_category_search_metrics/[gmaid]?[que
 
 Use GET to retrieve search metric stat report for a given advertiser and business sub category id
 
+<% if false %>
 ### Business Category - Campaign Table Associations
-![Business Sub Category Campaign Associations](/images/business_sub_category_associations.png)
+![Business Sub Category Campaign Associations](https://github.com/GannettDigital/api-docs/blob/EDGE-9198-SubCategorySearchMetrics/source/images/business_sub_category_associations.png)
+<% end %>
 
 #### Parameters
 
@@ -23,12 +25,13 @@ When using the GET method, the results can be filtered using these parameters:
 | `campaign_id[]`               | Returns the search metrics for campaign_id list    | `REQUIRED` |                           |
 | `global_master_campaign_id[]` | Restrict results to one or more specific campaigns | `OPTIONAL` | all gmcids for advertiser |
 
-#### Example Local Dev Curls:
+#### Example Dev Curls:
 
 ###### Retrieve data for a given GMAID and campaign_id (list)
 
 ```
-curl -H "Authorization: token reachanalyticsreportingservicetoken"  "localhost:3001/client_reports/sub_category_search_metrics/TEST_1?campaign_id[]=USA_1234&campaign_id[]=USA_5678
+curl --location --request GET 'https://data-connect-staging.gannettdigital.com/client_reports/sub_category_search_metrics/TEST_1?global_master_campaign_id[]=USA_1234&global_master_campaign_id[]=USA_5678' \
+--header 'Authorization: reachanalyticsreportingservicetoken'
 ```
 
 Report data is returned as JSON e.g.:
@@ -39,12 +42,12 @@ Report data is returned as JSON e.g.:
   "report_data": {
     "campaigns": [
       {
-        "campaign_id": "USA_1234",
-        "campaign_name": "Winter 2023 Services",
+        "id": "USA_1234",
+        "name": "Winter 2023 Services",
         "search_metrics": [
           {
-            "business_sub_category_id": 109,
-            "business_sub_category_name": "Pet Adoption",
+            "id": 109,
+            "sub_category_name": "Pet Adoption",
             "cp_click_avg": 1.3923322,
             "cp_click_std_dev": 0.6058227,
             "cp_click_median": 1.2725656,
@@ -83,8 +86,8 @@ Report data is returned as JSON e.g.:
             "last_modified": "2023-05-04 19:01:08"
           },
           {
-            "business_sub_category_id": 114,
-            "business_sub_category_name": "Photography",
+            "id": 114,
+            "sub_category_name": "Photography",
             "cp_click_avg": 1.3923322,
             "cp_click_std_dev": 0.6058227,
             "cp_click_median": 1.2725656,
@@ -129,13 +132,12 @@ Report data is returned as JSON e.g.:
 }
 ```
 
-if there is no campaign found, the below empty campaign array will be returned:
+if there is no campaign found, a response 403 will be returned with this body:
 
 ```json
 {
   "report_type": "sub_category_search_metrics",
-  "report_data": {
-    "campaigns": []
+   "message": "one or more invalid campaigns specified (does not exist, or not valid for this advertiser)"
   }
 }
 ```
