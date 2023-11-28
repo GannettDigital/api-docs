@@ -22,8 +22,7 @@ When using the GET method, the results can be filtered using these parameters:
 
 | Param                         | Function                                           | Required   | Default                   |
 | ----------------------------- | -------------------------------------------------- | ---------- | ------------------------- |
-| `campaign_id[]`               | Returns the search metrics for campaign_id list    | `REQUIRED` |                           |
-| `global_master_campaign_id[]` | Restrict results to one or more specific campaigns | `OPTIONAL` | all gmcids for advertiser |
+| `global_master_campaign_id[]` | Returns the search metrics for campaign_id list    | `REQUIRED` |                           |
 
 #### Example Dev Curls:
 
@@ -46,8 +45,8 @@ Report data is returned as JSON e.g.:
         "name": "Winter 2023 Services",
         "search_metrics": [
           {
-            "id": 109,
-            "sub_category_name": "Pet Adoption",
+            "business_sub_category_id": 109,
+            "business_sub_category_name": "Pet Adoption",
             "cp_click_avg": 1.3923322,
             "cp_click_std_dev": 0.6058227,
             "cp_click_median": 1.2725656,
@@ -86,8 +85,8 @@ Report data is returned as JSON e.g.:
             "last_modified": "2023-05-04 19:01:08"
           },
           {
-            "id": 114,
-            "sub_category_name": "Photography",
+            "business_sub_category_id": 114,
+            "business_sub_category_name": "Photography",
             "cp_click_avg": 1.3923322,
             "cp_click_std_dev": 0.6058227,
             "cp_click_median": 1.2725656,
