@@ -15,9 +15,7 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |start_date|Yes|Restricts the results to those occurring on or after this date|
 |end_date|Yes|Restricts the results to those occurring on or before this date|
-|interval_size|No|Specifies the type of interval: day, calendar_week, or calendar_month <br>**Default value: day**|
 |global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
-|campaign_cycle|Restrict results to a single campaign cycle|
 |campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 
 #### Response Data Details&nbsp;
@@ -44,8 +42,6 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
             {
                 "name": "GCI0732132141-01_Audience_Auto",
                 "global_master_campaign_id": "TEST_1001",
-                "start_date": "2021-12-15",
-                "end_date": "2022-12-14",
                 "type": "gannett",
                 "status": "running",
                 "metrics": {
@@ -101,7 +97,7 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
 |keyword_updates|Integer|Total Keyword updates|
 |keyword_deletes|Integer|Total Keyword deletes|
 |manual_adjustments|Integer|Total Manual Adjustments|
-|automatic_adjustments|Integer|Total Automatic Adjustments|
+|automated_adjustments|Integer|Total Automated Adjustments|
 
 <a name="vacampaigns"></a>
 **Campaigns Object**
@@ -127,4 +123,4 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
 |keyword_updates|Integer|Keyword updates|
 |keyword_deletes|Integer|Keyword deletes|
 |manual_adjustments|Integer|Manual Adjustments|
-|automatic_adjustments|Integer|Automatic Adjustments|
+|automated_adjustments|Integer|Automated Adjustments|
