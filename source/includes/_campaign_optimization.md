@@ -15,8 +15,8 @@ When using the GET method, the results can be filtered using these parameters:
 |---|---|---|
 |start_date|Yes|Restricts the results to those occurring on or after this date|
 |end_date|Yes|Restricts the results to those occurring on or before this date|
-|global_master_campaign_id[]|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
-|campaign_status[]|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
+|global_master_campaign_id[]|No|Restrict results to one or more specific campaigns. This should be a comma separated string. Ex: global_master_campaign_id[]=TEST_1,TEST_2|
+|campaign_status[]|No|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 
 #### Response Data Details&nbsp;
 
@@ -24,7 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 
 ```
 curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
-https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=2021-12-15&end_date=2022-01-15
+https://api.localiqservices.com/client_reports/campaign_optimizations/TEST_1?start_date=2021-12-15&end_date=2022-01-15
 ```
 
 > Example Response
@@ -76,17 +76,17 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
 |start_date|String|Start Date|
 |end_date|String|End Date|
 |global_master_advertiser_id|String|Identifier for Advertiser|
-|report_data|Object|[Report Data Object (with Campaigns)](#vacampaignsreportdata)|
+|report_data|Object|[Report Data Object (with Campaigns)](#campaign_optimization_data)|
 
 <a name="campaign_optimization_data"></a>
 **Optimization Data Object (with Campaigns)**
 
 |Field Name|Datatype|Description|
 |---|---|---|---|
-|totals|Object|Object of totals details. [Totals Object](#vatotals)|
-|campaigns|Object|Object of campaigns details. [Campaigns Object](#vacampaigns)|
+|totals|Object|Object of totals details. [Totals Object](#opttotals)|
+|campaigns|Object|Object of campaigns details. [Campaigns Object](#optcampaigns)|
 
-<a name="vatotals"></a>
+<a name="opttotals"></a>
 **Totals Object**
 
 |Field Name|Datatype|Description|
@@ -99,7 +99,7 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
 |manual_adjustments|Integer|Total Manual Adjustments|
 |automated_adjustments|Integer|Total Automated Adjustments|
 
-<a name="vacampaigns"></a>
+<a name="optcampaigns"></a>
 **Campaigns Object**
 
 |Field Name|Datatype|Description|
@@ -107,7 +107,7 @@ https://api.localiqservices.com/client_reports/video_activity/TEST_1?start_date=
 |name|String|Campaign Name|
 |global_master_campaign_id|String|Unique Identifier for Campaign|
 |start_date|String|Campaign Start Date|
-|end_date|String|Campaign End Date<br>**The field is nullable**|
+|end_date|String|Campaign End Date|
 |type|String|Type of Campaign|
 |status|String|Status of Campaign|
 |metrics|Object|Object of metrics details. [Campaign Optimizatiom Metrics Object](#campaignmetrics)|
