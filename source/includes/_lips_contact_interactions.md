@@ -169,10 +169,15 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 
 **Call**
 
+only included when interaction is call
+
 | Field Name | Datatype | Nullable | Description |
 |---|---|---|---|
-|call_recording_url| String | yes | Only included when interaction is call|
-|call_duration| Integer | yes | Length of call in seconds -- only included when interaction is call|
+|call_recording_url| String | yes | Call recording URL.  Use this to access the call recording. |
+|call_duration| Integer | yes | Length of call in seconds |
+|target_number| String | yes | In instances where a client has phone replacement tracking provisioned, the target_phone value is the phone number that was displayed on the client website. |
+|caller_number| String | yes | The caller's phone number |
+|dialed_number| String | yes | The dialed phone number |
 
 **Booking**
 
