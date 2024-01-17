@@ -7,7 +7,7 @@
 |---|---|
 | GET | /client_reports/xmedia/[gmaid]?[query_params] |
 
-Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns. 
+Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns.
 
 The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. Please note chats will be reported as 0 in this API. Please use the XMO channel metrics API to get the chat counts. The total leads are based on all web events.
 
@@ -110,6 +110,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "start_date": "2020-07-01",
                         "impressions": 1184,
                         "clicks": 18,
+                        "views": 18,
                         "calls": 9,
                         "web_events": 7,
                         "qualified_web_events": 3,
@@ -126,6 +127,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
         "totals": {
             "impressions": 1184.0,
             "clicks": 18,
+            "views": 18,
             "calls": 9,
             "web_events": 7,
             "qualified_web_events": 3,
@@ -141,6 +143,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "start_date": "2020-07-01",
                 "impressions": 1184,
                 "clicks": 18,
+                "views": 18,
                 "calls": 9,
                 "web_events": 7,
                 "qualified_web_events": 3,
@@ -184,6 +187,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | start_date | String| Campaign Start Date |
 | impressions | Int | Total Impressions for Campaign |
 | clicks | Float | Total Clicks for Interval |
+| views | Float | Total Views for Interval |
 | calls | Float | Total Calls for Interval |
 | web_events | Int | Total Web Events for Interval |
 | qualified_web_events | Int | Total lead-generating CVT/Web Events for Interval |
@@ -200,6 +204,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |---|---|---|
 | impressions | Int | Total Impressions |
 | clicks | Float | Total Clicks |
+| views | Float | Total Views |
 | calls | Float| Total Calls |
 | web_events | Int | Total Web Events |
 | qualified_web_events | Int | Total lead-generating CVT/Web Events |
@@ -212,12 +217,12 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 
 **Totals Per Interval Object**
 
-
 | Field Name | Datatype | Description |
 |---|---|---|
 |start_date | String | Start Date of interval |
 | impressions | Int | Total Impressions for Campaign |
 | clicks | Float | Total Clicks for Interval |
+| views | Float | Total Views for Interval |
 | calls | Float | Total Calls for Interval |
 | web_events | Int  | Total Web Events for Interval |
 | qualified_web_events | Int | No | Total lead-generating CVT/Web Events for Interval |
