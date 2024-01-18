@@ -43,19 +43,20 @@ When using the GET index method, the results will be filtered using these parame
 #### Event Type Filter
 Event Type | Explanation
 -- | --
+booking | All BookingEvents
 call | All CallEvents
 chat | All ChatEvents
-booking | All BookingEvents
-lsa | All LsaEvents
+chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
 chat_sales | ChatEvents with a lead_type of sales. Ignored when used in combination with `chat`
 chat_service | ChatEvents with a lead_type of service. Ignored when used in combination with `chat`
-chat_other | ChatEvents with a lead type of other. Ignored when used in combination with `chat`
-form | FormEvents with a sub_type of FormPost
-email | FormEvents with a sub_type of FormEmail
 dyipost | FormEvents with a sub_type of DIYFORMPOST
+email | FormEvents with a sub_type of FormEmail
 facebook | FormEvents with a sub_type of Facebook
-promotion | FormEvents with a sub_type of Promotion
+form | FormEvents with a sub_type of FormPost
 fpd | All FpdEvents
+lsa | All LsaEvents
+promotion | FormEvents with a sub_type of Promotion
+sms | FormEvents with a sub_type of SMSRequest
 
 ### Examples:
 
