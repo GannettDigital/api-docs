@@ -98,12 +98,8 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |id| Integer | no | id of the contact|
 |first_name| String | yes | first name of the contact|
 |last_name| String | yes | last name of the contact|
-|display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or ph number of the visitor|
+|display_name| String | yes | The display name of the contact interaction. This a concatination of the first name and last name if available else it is the email or phone number of the visitor|
 |email| String | yes | email of the contact|
-|company| String | yes | The company name for this contact|
-|notes| String | yes | Notes for this contact interaction|
-|title| String | yes | The title of the contact|
-|preferred_contact_method| String | yes | The preferred contact method of the contact|
 |phone_numbers| String | yes | phone number data. ('phone_type' phone_type of the contact, 'phone_number' the normalized number of the phone number)|
 |created_at| Datetime | no | The date and time which this contact was created|
 
@@ -127,9 +123,6 @@ curl -L -g -X GET 'https://data-connect-lips.ganettdigital.com/contact_interacti
 |channel| String | yes | The acquisition channel responsible for the contact interaction|
 |event_type| String | no | The type of the contact interaction . Valid values are chat, call, form and booking|
 |external_source| String | no | External Source tells us if this interaction came to us from Capture (through the pubsub) or through the LIPS API(Zapier, FPD, Entrata etc.|
-|tags| Array(String)| the tags attached to the contact interaction|
-|read|boolean|No|Check if contact interaction is marked as read|
-|important|boolean|No|Check if contact interaction is marked as important|
 |page_url|String|No|The page_url associated with the interaction|
 |archived_at | Datetime | yes | The date of the archived interaction|
 
@@ -236,37 +229,24 @@ only included when interaction is call
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
             "influencing_campaign": "",
-            "notes": "some notes",
             "occurred_at": "2021-09-06T16:16:08.000Z",
             "channel": "search",
             "external_source": "capture",
-            "important": true,
-            "read": true,
-            "tags": [
-                "search",
-                "call"
-            ],
            "page_url": "www.example.com",
             "contact": {
-                "id": 2197617,
-                "first_name": "S",
-                "last_name": "ELIGIO",
-                "display_name": "S ELIGIO",
-                "email": null,
-                "company": null,
-                "title": null,
-                "preferred_contact_method": "email",
+                "first_name": "Tinisha",
+                "last_name": "Champlin",
+                "display_name": "Tinisha Champlin",
+                "email": "cameron@kshlerin-anderson.example",
                 "phone_numbers": [
                     {
                         "phone_type": "work",
-                        "phone_number": "+13184227453"
+                        "phone_number": "+19893643647 x241"
                     }
-                ],
-                "created_at": "2021-09-04T01:21:27.394Z"
+                ]
             },
             "call": {
-                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
-                "call_duration": 44
+                "recording_url": "http://google.com/marinda.schuppe.mp3"
             }
         },
         {
@@ -278,35 +258,19 @@ only included when interaction is call
             "referrer_type": "UNKNOWN",
             "referrer_source": "PAID",
             "influencing_campaign": "",
-            "notes": "some notes",
             "occurred_at": "2021-08-25T14:50:34.000Z",
             "channel": "search",
             "external_source": "capture",
-            "important": false,
-            "read": true,
-            "tags": [
-                "capture",
-                "call"
-            ],
             "contact": {
-                "id": 2197617,
-                "first_name": "S",
-                "last_name": "ELIGIO",
-                "display_name": "S ELIGIO",
-                "email": null,
-                "company": null,
-                "title": null,
-                "phone_numbers": [
-                    {
-                        "phone_type": "work",
-                        "phone_number": "+13184227453"
-                    }
-                ],
-               "created_at": "2021-09-04T01:21:27.394Z"
+                "first_name": "Shavonda",
+                "last_name": "Hilpert",
+                "display_name": "Shavonda Hilpert",
+                "email": "bruno_ohara@schaefer.example"
             },
-            "call": {
-                "call_recording_url": "https://webservice.telmetrics.com/filedownload.ashx/a6426573-5120-4077-9d71-ac5e7f65bcc220384.mp3",
-                "call_duration": 44
+            "chat": {
+                "lead_type": "Service",
+                "referring_url": "http://fifa.com/catarina",
+                "transcript": []
             }
         }
     ],
