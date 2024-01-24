@@ -24,7 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`campaign_cycle`| Restrict results to a single campaign cycle |
 |`interval_size`| Use `calendar_month` or `calendar_week` to roll up the data points into calendar intervals (default is 1 day per interval)|
 |`include_cycles`| Set to true or false on whether to include cycle nesting.  Default value is false|
-|`channels[]`|Specifies which channels to filter results by. Valid channels are `search`, `display`, `social`, `chat` and `other`|
+|`channels[]`|Specifies which channels to filter results by. Valid channels are `search`, `display`, `social`, `chat`, `video` and `other`|
 |`campaign_types[]`|Default: `xmedia` (can be used to return other campaign types)|
 <% if false %>
 |`markup_type`|Only supported value is 'percentage' |
@@ -114,6 +114,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cycles | Cycle[] | Array of Cycles |
 | impressions | Int | Total Impressions for Campaign |
 | clicks | Float | Total Clicks for Campaign |
+| views | Float | Total Views for Campaign which is the Clicks if Publisher_ID is 65 |
 | click_to_calls | Int | Total Click-to-Calls for Campaign. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
 | calls | Int |Total Calls for Campaign | A non-lead generating CVT/Web Event
 | qualified_web_events | Int | Total Lead Generating CVT/Web Events for Campaign |
@@ -165,6 +166,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | external_account_name | String | External Account Name for WPC |
 | impressions | Int  | Total Impressions for WPC |
 | clicks | Float | Total Clicks for WPC |
+| views | Float | Total Views for WPC |
 | click_to_calls | Int | Total Click-to-Calls for WPC. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
 | calls | Int | Total Calls for WPC |
 | qualified_web_events | Int | Total Lead Generating CVT/Web Events for WPC |
@@ -186,6 +188,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | start_date | String | Start Date for Interval |
 | impressions | Int | Total Impressions for Interval |
 | clicks | Float | Total Clicks for Interval |
+| views | Float | Total Views for Interval |
 | click_to_calls | Int  | Total Click-to-Calls for Interval. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
 | calls | Int | Total Calls for Interval |
 | qualified_web_events | Int | Total Lead Generating CVT/Web Events for Interval |
@@ -205,6 +208,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |---|---|---|
 | impressions | Int | Total Impressions |
 | clicks | Float | Total Clicks |
+| views | Float | Total Views |
 | click_to_calls | Int | Total Click-to-Calls. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
 | calls | Int | Total Calls |
 | qualified_web_events | Int | Total Lead Generating CVT/Web Events |
@@ -225,6 +229,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | start_date | String | Campaign Start Date |
 | impressions | Int  | Total Impressions for Interval |
 | clicks | Float | Total Clicks for Interval |
+| views | Float | Total Views for Interval |
 | click_to_calls | Int | Total Click-to-Calls for Interval. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
 | calls | Int  | Total Calls for Interval |
 | qualified_web_events | Int  | Total Lead Generating CVT/Web Events for Interval |
@@ -245,6 +250,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | channel | String | Channel Name |
 | impressions | Int | Total Impressions for Channel |
 | clicks | Float  | Total Clicks for Channel |
+| views | Float  | Total Views for Channel |
 | click_to_calls | Int | Total Click-to-Calls for Channel. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
 | calls | Int  | Total Calls for Channel |
 | qualified_web_events | Int  | Total Lead Generating CVT/Web Events for Channel |
@@ -266,6 +272,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | publisher | String | Publisher Name |
 | impressions | Int | Total Impressions for Publisher |
 | clicks | Float  | Total Clicks for Publisher |
+| views | Float  | Total Views for Publisher |
 | click_to_calls | Int | Total Click-to-Calls for Publisher. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.  |
 | calls | Int  | Total Calls for Publisher |
 | qualified_web_events | Int  | Total Lead Generating CVT/Web Events for Publisher |
@@ -312,6 +319,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 ],
                 "impressions": 1069,
                 "clicks": 17,
+                "views": 8,
                 "click_to_calls": 10,
                 "calls": 10,
                 "qualified_web_events": 2,
@@ -330,6 +338,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "end_date": null,
                         "impressions": 1069,
                         "clicks": 17,
+                        "views": 8,
                         "click_to_calls": 10,
                         "calls": 10,
                         "qualified_web_events": 2,
@@ -354,6 +363,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                 "external_account_name": "test",
                                 "impressions": 213,
                                 "clicks": 3,
+                                "views": 3,
                                 "click_to_calls": 2,
                                 "calls": 2,
                                 "qualified_web_events": 0,
@@ -370,6 +380,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                         "start_date": "2020-09-15",
                                         "impressions": 213,
                                         "clicks": 3,
+                                        "views": 3,
                                         "click_to_calls": 2,
                                         "calls": 2,
                                         "qualified_web_events": 0,
@@ -396,6 +407,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                 "external_account_name": "test",
                                 "impressions": 213,
                                 "clicks": 3,
+                                "views": 3,
                                 "click_to_calls": 2,
                                 "calls": 2,
                                 "qualified_web_events": 0,
@@ -412,6 +424,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                         "start_date": "2020-09-15",
                                         "impressions": 213,
                                         "clicks": 3,
+                                        "views": 3,
                                         "click_to_calls": 2,
                                         "calls": 2,
                                         "qualified_web_events": 0,
@@ -438,6 +451,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                 "external_account_name": "test",
                                 "impressions": 213,
                                 "clicks": 3,
+                                "views": 3,
                                 "click_to_calls": 2,
                                 "calls": 2,
                                 "qualified_web_events": 0,
@@ -454,6 +468,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                         "start_date": "2020-09-15",
                                         "impressions": 213,
                                         "clicks": 3,
+                                        "views": 3,
                                         "click_to_calls": 2,
                                         "calls": 2,
                                         "qualified_web_events": 0,
@@ -480,6 +495,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                 "external_account_name": "test",
                                 "impressions": 213,
                                 "clicks": 3,
+                                "views": 3,
                                 "click_to_calls": 2,
                                 "calls": 2,
                                 "qualified_web_events": 0,
@@ -496,6 +512,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                         "start_date": "2020-09-15",
                                         "impressions": 213,
                                         "clicks": 3,
+                                        "views": 3,
                                         "click_to_calls": 2,
                                         "calls": 2,
                                         "qualified_web_events": 0,
@@ -522,6 +539,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                 "external_account_name": "test",
                                 "impressions": 217,
                                 "clicks": 5,
+                                "views": 3,
                                 "click_to_calls": 2,
                                 "calls": 2,
                                 "qualified_web_events": 2,
@@ -538,6 +556,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                                         "start_date": "2020-09-15",
                                         "impressions": 217,
                                         "clicks": 5,
+                                        "views": 3,
                                         "click_to_calls": 2,
                                         "calls": 2,
                                         "qualified_web_events": 2,
@@ -560,6 +579,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
         "totals": {
             "impressions": 1069,
             "clicks": 17,
+            "views": 8,
             "click_to_calls": 10,
             "calls": 10,
             "qualified_web_events": 2,
@@ -577,6 +597,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "start_date": "2020-09-15",
                 "impressions": 1069,
                 "clicks": 17,
+                "views": 8,
                 "click_to_calls": 10,
                 "calls": 10,
                 "qualified_web_events": 2,
@@ -595,6 +616,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "channel": "search",
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -611,6 +633,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "channel": "display",
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -627,6 +650,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "channel": "other",
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -643,6 +667,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "channel": "social",
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -659,6 +684,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "channel": "lsa",
                 "impressions": 2917,
                 "clicks": 31,
+                "views": 3,
                 "click_to_calls": 32,
                 "calls": 32,
                 "qualified_web_events": 0,
@@ -675,6 +701,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "channel": "chat",
                 "impressions": 217,
                 "clicks": 5,
+                "views": 5,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 2,
@@ -686,7 +713,23 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "ctr": 2.3,
                 "cpc": 1.0,
                 "cpl": 0.42
-            }
+            },
+                "channel": "video",
+                "impressions": 580,
+                "clicks": 6,
+                "views": 6,
+                "click_to_calls": 6,
+                "calls": 6,
+                "qualified_web_events": 0,
+                "non_qualified_web_events": 0,
+                "emails": 3,
+                "chats": 3,
+                "leads": 12,
+                "spend": 12.51,
+                "ctr": 1.03,
+                "cpc": 2.09,
+                "cpl": 1.04
+            },
         ],
         "totals_by_publisher": [
             {
@@ -694,6 +737,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "publisher_id": 1,
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -711,6 +755,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "publisher_id": 49,
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -728,6 +773,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "publisher_id": 65,
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -745,6 +791,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "publisher_id": 38,
                 "impressions": 213,
                 "clicks": 3,
+                "views": 3,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 0,
@@ -762,6 +809,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "publisher_id": 1400,
                 "impressions": 217,
                 "clicks": 5,
+                "views": 5,
                 "click_to_calls": 2,
                 "calls": 2,
                 "qualified_web_events": 2,
