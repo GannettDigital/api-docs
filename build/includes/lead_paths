@@ -1,0 +1,266 @@
+<h2 id='lead-paths'>Lead Paths</h2><h3 id='resource-overview'>Resource Overview</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>URI Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/client_reports/lead_paths/[gmaid]?[query_params]</td>
+</tr>
+</tbody></table>
+
+<p>Use GET to retrieve information for the Lead Paths API.  Data can be returned for a GMAID for a specific date range determined by start_date and end_date. The requirements for these parameters are described below.</p>
+
+<p>Given a GMAID and a date range, the API will return the lead paths, path_ids, number of path occurrences, and how many unique visitors per lead path.</p>
+
+<p>When passed lead_event_ids, the API will return the lead paths, lead_event_id, lead_occurrence_time, and path_id of the lead_event_ids passed in.</p>
+<h3 id='parameters'>Parameters</h3>
+<p>When using the GET method, the results can be filtered using these parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or after this date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Yes</td>
+<td>Restricts the results to those occurring on or before this date.</td>
+</tr>
+<tr>
+<td><code>lead_event_ids[]</code></td>
+<td>No</td>
+<td>Restrict results to the specified lead_event_ids</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-details'>Response Data Details</h3>
+<blockquote>
+<p>Retrieve data for a specific range of dates</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.localiqservices.com/client_reports/lead_paths/USA_1234?start_date=2020-09-11&amp;end_date=2023-09-11
+</code></pre></div>
+<blockquote>
+<p>Response Description</p>
+</blockquote>
+
+<p>The paths array contains can contain many paths objects. Below are definitions for the properties of a paths object.</p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<h5 id='example-response-without-lead_event_ids'>Example Response without lead_event_ids</h5><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">report_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">lead_paths</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">report_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2022-11-04</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">earliest_date_available</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-11</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">end_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2023-09-11</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">time_zone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">America/Los_Angeles</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">global_master_advertiser_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USA_1234</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">lead_event_id</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="dl">"</span><span class="s2">report_data</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">paths</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">visits</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">unique_visitor_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">visits</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="dl">"</span><span class="s2">event_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_source</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Organic</span><span class="dl">"</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Other</span><span class="dl">"</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">web_publisher_campaign_id</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="dl">"</span><span class="s2">unique_visitor_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">visits</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="dl">"</span><span class="s2">event_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_source</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Paid</span><span class="dl">"</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_type</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">web_publisher_campaign_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USA_1234</span><span class="dl">"</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="dl">"</span><span class="s2">unique_visitor_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h5 id='example-response-with-lead_event_ids'>Example Response with lead_event_ids</h5>
+<blockquote>
+<p>Retrieve data for a specific lead_event_ids</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
+https://api.localiqservices.com/client_reports/lead_paths/USA_123?lead_event_ids[]=ea32cd1s-4d19-12aa-bb12-3d1234567ab0&amp;lead_event_ids[]=ab12cd3d-4b24-45aa-cc67-8d1234567ab0
+</code></pre></div>
+<blockquote>
+<p>Response Description</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">report_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">lead_paths</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">report_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2022-11-04</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">earliest_date_available</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-11</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">end_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2023-09-11</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">time_zone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">America/Los_Angeles</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">global_master_advertiser_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USA_2246</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">lead_event_id</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="dl">"</span><span class="s2">ea32cd1s-4d19-12aa-bb12-3d1234567ab0</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">ab12cd3d-4b24-45aa-cc67-8d1234567ab0</span><span class="dl">"</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">report_data</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">paths</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">visits</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="dl">"</span><span class="s2">event_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_source</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Paid</span><span class="dl">"</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_type</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">web_publisher_campaign_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USA_611439</span><span class="dl">"</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="dl">"</span><span class="s2">lead_occurrence_time</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2022-07-12T00:08:57.000Z</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">lead_event_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ea32cd1s-4d19-12aa-bb12-3d1234567ab0</span><span class="dl">"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">visits</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="dl">"</span><span class="s2">event_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_source</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Organic</span><span class="dl">"</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">referrer_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Other</span><span class="dl">"</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">web_publisher_campaign_id</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="dl">"</span><span class="s2">lead_occurrence_time</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2022-09-15T12:05:20.000Z</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">lead_event_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ab12cd3d-4b24-45aa-cc67-8d1234567ab0</span><span class="dl">"</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h3 id='paths'>Paths</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>Int</td>
+<td>no</td>
+<td>Number of occurrences of path</td>
+</tr>
+<tr>
+<td>path</td>
+<td>String</td>
+<td>no</td>
+<td>A concatenation of the events of a path.</td>
+</tr>
+<tr>
+<td>unique_visitor_count</td>
+<td>Int</td>
+<td>no</td>
+<td>Number of unique visitors for the lead path.</td>
+</tr>
+<tr>
+<td>lead_event_id</td>
+<td>String</td>
+<td>no</td>
+<td>The lead_event_id of the path.</td>
+</tr>
+</tbody></table>
+<h3 id='events'>Events</h3>
+<p>A path consists of a collection of events.  An event contains the number of times it occurred in succession, the Referrer Source and the Referrer Type. Below are definitions for the properties of an event object.
+<em><strong>Note</strong>: If an event object is empty, there was no lead path/tracking for the lead_event_id</em></p>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Datatype</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>event_count</td>
+<td>Int</td>
+<td>no</td>
+<td>Number of occurrences of the event in a row</td>
+</tr>
+<tr>
+<td>referrer_source</td>
+<td>String</td>
+<td>yes</td>
+<td>Referrering source of the Event.</td>
+</tr>
+<tr>
+<td>referrer_type</td>
+<td>Int</td>
+<td>yes</td>
+<td>Referrer Type of Event.</td>
+</tr>
+</tbody></table>
+<h5 id='referrer-sources'>Referrer Sources</h5>
+<table><thead>
+<tr>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Organic</td>
+</tr>
+<tr>
+<td>Paid</td>
+</tr>
+<tr>
+<td>NonRLPaid</td>
+</tr>
+<tr>
+<td>Unavailable</td>
+</tr>
+</tbody></table>
+<h5 id='referrer-types'>Referrer Types</h5>
+<table><thead>
+<tr>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Display</td>
+</tr>
+<tr>
+<td>Search</td>
+</tr>
+<tr>
+<td>Social</td>
+</tr>
+<tr>
+<td>Directory</td>
+</tr>
+<tr>
+<td>Other</td>
+</tr>
+<tr>
+<td>Direct</td>
+</tr>
+<tr>
+<td>Unavailable</td>
+</tr>
+</tbody></table>
