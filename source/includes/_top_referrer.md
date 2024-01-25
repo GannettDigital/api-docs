@@ -9,11 +9,6 @@ of the referral.  This API endpoint is the data source for the Traffic Detail Re
 | Method | URI Format |
 |---|---|
 | GET | /client_reports/top_referrer/[gmaid]?[query_params] |
-| GET | /capture_reports/top-referrers?[query_params] |
-
-<aside class="warning">
-The URL path <b>/capture_reports/top-referrers?[query_params]</b> has been deprecated and will be removed on June 1, 2023.
-</aside>
 
 ### Parameters&nbsp;
 
