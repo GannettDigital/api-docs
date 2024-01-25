@@ -33,3 +33,12 @@
 | Discovery | This API was previously denoted as deprecated.  It remains deprecated, and will be removed on June 1, 2023.  The [marketing activity API](#marketing_activity) has the same information in an easier to understand format |
 | Lead Events (LEFS) | This API was previously denoted as deprecated.  It remains deprecated, and will be removed on June 1, 2023.  The [contact interactions API](#lead-info-apis-webhooks-contacts-lead-apis-contact-interactions-leads) has more information and an easier to understand format |
 |N/A|Refreshed branding of this site|
+
+## 2024
+### January
+|API(s) Updated|Description|
+|---|---|
+|[Marketing Activity](#marketing_activity) | Added support for SMS channel |
+|[Contact Interactions](#lips_contact_interactions) | Added support for SMS channel |
+|[XMO Metrics](#xmo_metrics) | Added support for video channel |
+|[XMO Channel Metrics](#xmo_channel) | Added support for video channel |

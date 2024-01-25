@@ -79,7 +79,7 @@ search: false
 
 # Introduction
 
-<aside class="notice"><b>05/09/2023:</b> We have updated our documentation. Please refer to the release notes for details.</aside>
+<aside class="notice"><b>01/25/2024:</b> We have updated our documentation. Please refer to the release notes for details.</aside>
 
 Our mission is to enable your growth and satisfaction through flexible access to digital marketing reporting data.
 
