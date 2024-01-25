@@ -11745,7 +11745,7 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 </tr>
 </tbody></table>
 
-<p>Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns. </p>
+<p>Use GET to retrieve campaign performance metrics for the Cross Media Optimization (XMO) campaigns.</p>
 
 <p>The data returned will include impressions, leads, clicks, calls, qualified_web_events, web_events, emails, chats and totals of the leads. Please note chats will be reported as 0 in this API. Please use the XMO channel metrics API to get the chat counts. The total leads are based on all web events.</p>
 <h3 id='parameters'>Parameters</h3>
@@ -11866,6 +11866,7 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
                         <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-07-01</span><span class="dl">"</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1184</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -11882,6 +11883,7 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
         <span class="dl">"</span><span class="s2">totals</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
             <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mf">1184.0</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -11897,6 +11899,7 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
                 <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-07-01</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1184</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -12003,6 +12006,11 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 <td>Total Clicks for Interval</td>
 </tr>
 <tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for Interval</td>
+</tr>
+<tr>
 <td>calls</td>
 <td>Float</td>
 <td>Total Calls for Interval</td>
@@ -12067,6 +12075,11 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 <td>clicks</td>
 <td>Float</td>
 <td>Total Clicks</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views</td>
 </tr>
 <tr>
 <td>calls</td>
@@ -12138,6 +12151,11 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 <td>clicks</td>
 <td>Float</td>
 <td>Total Clicks for Interval</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for Interval</td>
 </tr>
 <tr>
 <td>calls</td>
@@ -12240,7 +12258,7 @@ https://api.localiqservices.com/client_reports/cvt_events/TEST_1?start_date=2019
 </tr>
 <tr>
 <td><code>channels[]</code></td>
-<td>Specifies which channels to filter results by. Valid channels are <code>search</code>, <code>display</code>, <code>social</code>, <code>chat</code> and <code>other</code></td>
+<td>Specifies which channels to filter results by. Valid channels are <code>search</code>, <code>display</code>, <code>social</code>, <code>chat</code>, <code>video</code> and <code>other</code></td>
 </tr>
 <tr>
 <td><code>campaign_types[]</code></td>
@@ -12453,6 +12471,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>clicks</td>
 <td>Float</td>
 <td>Total Clicks for Campaign</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for Campaign which is the Clicks if Publisher_ID is 65</td>
 </tr>
 <tr>
 <td>click_to_calls</td>
@@ -12672,6 +12695,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>Total Clicks for WPC</td>
 </tr>
 <tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for WPC</td>
+</tr>
+<tr>
 <td>click_to_calls</td>
 <td>Int</td>
 <td>Total Click-to-Calls for WPC. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.</td>
@@ -12759,6 +12787,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>Total Clicks for Interval</td>
 </tr>
 <tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for Interval</td>
+</tr>
+<tr>
 <td>click_to_calls</td>
 <td>Int</td>
 <td>Total Click-to-Calls for Interval. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.</td>
@@ -12834,6 +12867,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>clicks</td>
 <td>Float</td>
 <td>Total Clicks</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views</td>
 </tr>
 <tr>
 <td>click_to_calls</td>
@@ -12918,6 +12956,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>Total Clicks for Interval</td>
 </tr>
 <tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for Interval</td>
+</tr>
+<tr>
 <td>click_to_calls</td>
 <td>Int</td>
 <td>Total Click-to-Calls for Interval. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.</td>
@@ -13000,6 +13043,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>Total Clicks for Channel</td>
 </tr>
 <tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for Channel</td>
+</tr>
+<tr>
 <td>click_to_calls</td>
 <td>Int</td>
 <td>Total Click-to-Calls for Channel. This is the count of clicks associated with a phone call.  Calls to the same campaign from the same number are counted as one click_to_call.</td>
@@ -13080,6 +13128,11 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
 <td>clicks</td>
 <td>Float</td>
 <td>Total Clicks for Publisher</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Float</td>
+<td>Total Views for Publisher</td>
 </tr>
 <tr>
 <td>click_to_calls</td>
@@ -13172,6 +13225,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="p">],</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1069</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -13190,6 +13244,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                         <span class="dl">"</span><span class="s2">end_date</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1069</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+                        <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                         <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -13214,6 +13269,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                 <span class="dl">"</span><span class="s2">external_account_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13230,6 +13286,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                         <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-15</span><span class="dl">"</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                        <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13256,6 +13313,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                 <span class="dl">"</span><span class="s2">external_account_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13272,6 +13330,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                         <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-15</span><span class="dl">"</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                        <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13298,6 +13357,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                 <span class="dl">"</span><span class="s2">external_account_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13314,6 +13374,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                         <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-15</span><span class="dl">"</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                        <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13340,6 +13401,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                 <span class="dl">"</span><span class="s2">external_account_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13356,6 +13418,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                         <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-15</span><span class="dl">"</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                        <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13382,6 +13445,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                 <span class="dl">"</span><span class="s2">external_account_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">217</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -13398,6 +13462,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                                         <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-15</span><span class="dl">"</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">217</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                                        <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                                         <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -13420,6 +13485,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
         <span class="dl">"</span><span class="s2">totals</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
             <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1069</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -13437,6 +13503,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">start_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-09-15</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1069</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -13455,6 +13522,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">search</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13471,6 +13539,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">display</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13487,6 +13556,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">other</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13503,6 +13573,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">social</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13519,6 +13590,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">lsa</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2917</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13535,6 +13607,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">chat</span><span class="dl">"</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">217</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -13546,7 +13619,23 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">ctr</span><span class="dl">"</span><span class="p">:</span> <span class="mf">2.3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">cpc</span><span class="dl">"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">cpl</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.42</span>
-            <span class="p">}</span>
+            <span class="p">},</span>
+                <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">video</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">580</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">non_qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">emails</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">chats</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">leads</span><span class="dl">"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">spend</span><span class="dl">"</span><span class="p">:</span> <span class="mf">12.51</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">ctr</span><span class="dl">"</span><span class="p">:</span> <span class="mf">1.03</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">cpc</span><span class="dl">"</span><span class="p">:</span> <span class="mf">2.09</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">cpl</span><span class="dl">"</span><span class="p">:</span> <span class="mf">1.04</span>
+            <span class="p">},</span>
         <span class="p">],</span>
         <span class="dl">"</span><span class="s2">totals_by_publisher</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
@@ -13554,6 +13643,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">publisher_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13571,6 +13661,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">publisher_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">49</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13588,6 +13679,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">publisher_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13605,6 +13697,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">publisher_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">213</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -13622,6 +13715,7 @@ curl -H &quot;Authorization: Bearer OAUTH_ACCESS_TOKEN&quot; \
                 <span class="dl">"</span><span class="s2">publisher_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1400</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">impressions</span><span class="dl">"</span><span class="p">:</span> <span class="mi">217</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">clicks</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">click_to_calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">calls</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="dl">"</span><span class="s2">qualified_web_events</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -15602,6 +15696,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15609,6 +15704,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                         </span><span class="nl">"channels"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                             </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                                 </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                                 </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
                                 </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                                 </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15616,6 +15712,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                             </span><span class="p">},</span><span class="w">
                             </span><span class="nl">"social"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                               </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                               </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                               </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                               </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15626,6 +15723,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">],</span><span class="w">
               </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15638,6 +15736,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15646,6 +15745,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="p">],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -15656,6 +15756,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15667,6 +15768,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15675,6 +15777,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15683,6 +15786,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15691,6 +15795,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="p">],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15702,6 +15807,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15710,6 +15816,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15718,6 +15825,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15726,6 +15834,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="p">],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15737,6 +15846,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-22"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15745,6 +15855,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-23"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15753,6 +15864,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-24"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15761,6 +15873,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="p">],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15771,6 +15884,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15781,6 +15895,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15791,6 +15906,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15801,6 +15917,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
             </span><span class="nl">"intervals"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
              </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -15809,6 +15926,7 @@ https://api.localiqservices.com/client_reports/marketing_activity/TEST_1?start_d
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"total_bookings"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_sms"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
             </span><span class="nl">"total_visits"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w">
             </span><span class="nl">"total_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="nl">"total_chats"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
