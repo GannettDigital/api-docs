@@ -24,7 +24,7 @@ When using the GET method, the results can be filtered using these parameters:
 |campaign_status[]|No|Restrict results to all campaigns with given status values.  Allowed values are running, stopped and ended`. This should be a comma separated string. Ex: campaign_status[]=running,stopped|
 |page_size|No|Restrict number of keywords in result.<br>**Default value: 15** |
 |page|No|Specifies which page of results to return.<br>**Default value: 1** | |
-|sort_by|No|Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc. <br>**Default value: keyword**|
+|sort_by|No|Specifies what column to sort by.  Valid columns are: keyword, clicks, media cost, impressions, avg_position, first_page_cpc, top_page_cpc, str. <br>**Default value: keyword**|
 |sort_dir|No|Specifies the sort direction.  Can be either asc or desc. <br>**Default value: asc**|
 
 ### Response Data Details&nbsp;&nbsp;&nbsp;
@@ -75,7 +75,8 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
                 "media_cost": 0,
                 "impressions": 383,
                 "first_page_cpc": 7.34,
-                "top_page_cpc": 16
+                "top_page_cpc": 16,
+                "ctr": 1.6
             },
             {
                 "keyword": "Keyword (Demo) 2 Location (Demo) 2",
@@ -83,7 +84,8 @@ https://api.localiqservices.com/client_reports/google_keyword/TEST_1?&campaign_s
                 "media_cost": 0,
                 "impressions": 682,
                 "first_page_cpc": 7.34,
-                "top_page_cpc":15
+                "top_page_cpc":15,
+                "ctr": 1.6
             }
         ],
          "unattributed_keywords": [
