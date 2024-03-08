@@ -35,6 +35,7 @@ When using the GET index method, the results will be filtered using these parame
 |`call_duration`|No|Filters CallEvents by call_duration that is >= given value.|
 |`archived`|No|Boolean filter to include ONLY archived events|
 |`booking_id`|No|Filters the booking events based on the external booking_id|
+|`conversation_id`|No|Filters the form events based on the form post sms conversation_id|
 |`external_id`|No|Filters on an external_id registered by an external app. Should be used in conjunction with external_app_id|
 |`external_app_id`|No|Filters on an e external app. Should be used in conjunction with external_id|
 
@@ -195,7 +196,8 @@ only included when interaction is call
 |---|---|---|---|
 |referring_url| string | yes |URL of the referring page|
 |full_message| string | yes |full message of the form event|
-|message| string | yes| parsed message|
+|message| string | yes | parsed message|
+|conversation_id| string | yes | The conversation id of the form post sms event|
 |extra_fields| object | yes |extra fields|
 
 **Chat**
