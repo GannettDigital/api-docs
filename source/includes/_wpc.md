@@ -62,6 +62,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 "https://api.localiqservices.com/client_reports/wpc/TEST_1?campaign_status[]=running&campaign_status[]=stopped&start_date=2016-10-01&end_date=2016-12-31"
 ```
 
+CHANGE THIS RESPONSE
 >  Example Response
 
 ```javascript
@@ -287,6 +288,7 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |view_thru_rate|Float|Total View-Through Rate|
 |cost_per_view|Float|Cost per View|
 
+CHANGE THIS RESPONSE
 **Intervals Array**
 
 | Field Name | Datatype | Description |
