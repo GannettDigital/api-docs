@@ -119,7 +119,20 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "leads": 25,
                         "spend": 25.0,
                         "ctr": 1.52,
-                        "cpc": 1.39
+                        "cpc": 1.39,
+                        "link_clicks": 0,
+                        "post_engagements": 0,
+                        "targeted_display_form_submissions": 0,
+                        "form_submissions_ct": 0,
+                        "form_submissions_vt": 0,
+                        "priority_page_views_ct": 0,
+                        "priority_page_views_vt": 0,
+                        "website_visits_vt": 0,
+                        "walk_ins": 0,
+                        "engagements": 0,
+                        "engagement_rate": 0,
+                        "cost_per_engagement": 0,
+                        "page_engagements": 0
                     }
                 ]
             }
@@ -136,7 +149,20 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
             "leads": 25,
             "spend": 25.0,
             "ctr": 1.52,
-            "cpc": 1.39
+            "cpc": 1.39,
+            "link_clicks": 0,
+            "post_engagements": 0,
+            "targeted_display_form_submissions": 0,
+            "form_submissions_ct": 0,
+            "form_submissions_vt": 0,
+            "priority_page_views_ct": 0,
+            "priority_page_views_vt": 0,
+            "website_visits_vt": 0,
+            "walk_ins": 0,
+            "engagements": 0,
+            "engagement_rate": 0,
+            "cost_per_engagement": 0,
+            "page_engagements": 0
         },
         "totals_per_interval": [
             {
@@ -152,7 +178,20 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "leads": 25,
                 "spend": 25.0,
                 "ctr": 1.52,
-                "cpc": 1.39
+                "cpc": 1.39,
+                "link_clicks": 0,
+                "post_engagements": 0,
+                "targeted_display_form_submissions": 0,
+                "form_submissions_ct": 0,
+                "form_submissions_vt": 0,
+                "priority_page_views_ct": 0,
+                "priority_page_views_vt": 0,
+                "website_visits_vt": 0,
+                "walk_ins": 0,
+                "engagements": 0,
+                "engagement_rate": 0,
+                "cost_per_engagement": 0,
+                "page_engagements": 0
             }
         ]
     }
@@ -197,6 +236,19 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | spend | Float | Total Spend for Interval |
 | ctr | Float | Click-through Rate for Interval |
 | cpc | Float | Cost Per Click for Interval |
+| link_clicks | Int | Total link clicks for Interval |
+| post_engagements | Float | Total post engagements for a Interval |
+| post_engagements | Float | Total page engagements for a Interval|
+| targeted_display_form_submissions | Float | Total targeted display form submissions for Interval |
+| form_submissions_ct |Float|Total For Submission Click Through for Interval|
+| form_submissions_vt |Float|Total Form Submission View Through for Interval|
+| priority_page_views_ct |Float|Total Priority Page View Click Through for Interval|
+| priority_page_views_vt |Float|Total Priority Page View Through for Interval|
+| website_visits_vt |Float|Total Website Visits View Through for Interval|
+| walk_ins |Float|Total Walk-ins for Interval|
+| engagements |Float|Total engagements for Interval|
+| engagement_rate |Float|Total engagement rate for Interval|
+| cost_per_engagement |Float|Total cost per engagement for Interval|
 
 **Totals Object**
 
@@ -214,6 +266,19 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | spend | Float | Total Spend |
 | ctr | Float | Overall Click-through Rate |
 | cpc | Float | Overall Cost Per Click |
+| link_clicks | Int | Total link clicks for WPC |
+| post_engagements | Float | Total post engagements for a WPC |
+| post_engagements | Float | Total page engagements for a WPC|
+| targeted_display_form_submissions | Float | Total targeted display form submissions for WPC |
+| form_submissions_ct |Float|Total For Submission Click Through for WPC|
+| form_submissions_vt |Float|Total Form Submission View Through for WPC|
+| priority_page_views_ct |Float|Total Priority Page View Click Through for WPC|
+| priority_page_views_vt |Float|Total Priority Page View Through for WPC|
+| website_visits_vt |Float|Total Website Visits View Through for WPC|
+| walk_ins |Float|Total Walk-ins for WPC|
+| engagements |Float|Total engagements for WPC|
+| engagement_rate |Float|Total engagement rate for WPC|
+| cost_per_engagement |Float|Total cost per engagement for WPC|
 
 **Totals Per Interval Object**
 
@@ -232,5 +297,18 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | spend | Float | Total Spend for Interval |
 | ctr | Float | Click-through Rate for Interval |
 | cpc | Float | Cost Per Click for Interval |
+| link_clicks | Int | Total link clicks for Interval |
+| post_engagements | Float | Total post engagements for a Interval |
+| post_engagements | Float | Total page engagements for a Interval|
+| targeted_display_form_submissions | Float | Total targeted display form submissions for Interval |
+| form_submissions_ct |Float|Total For Submission Click Through for Interval|
+| form_submissions_vt |Float|Total Form Submission View Through for Interval|
+| priority_page_views_ct |Float|Total Priority Page View Click Through for Interval|
+| priority_page_views_vt |Float|Total Priority Page View Through for Interval|
+| website_visits_vt |Float|Total Website Visits View Through for Interval|
+| walk_ins |Float|Total Walk-ins for Interval|
+| engagements |Float|Total engagements for Interval|
+| engagement_rate |Float|Total engagement rate for Interval|
+| cost_per_engagement |Float|Total cost per engagement for Interval|
 
 
