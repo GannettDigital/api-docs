@@ -109,6 +109,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "cpl": 0,
                 "cpm": 0,
                 "roas": 0,
+                "link_clicks": 0,
+                "post_engagements": 0,
+                "page_engagements": 0,
                 "intervals": [
                     {
                         "start_date": "2023-04-17",
@@ -128,6 +131,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "cpl": 0,
                         "cpm": 0,
                         "roas": 0
+                        "link_clicks": 0,
+                        "post_engagements": 0,
+                        "page_engagements": 0,
                     }
                 ]
             },
@@ -162,6 +168,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "cpl": 0,
                 "cpm": 0,
                 "roas": 0,
+                "link_clicks": 0,
+                "post_engagements": 0,
+                "page_engagements": 0,
                 "intervals": [
                     {
                         "start_date": "2023-04-17",
@@ -180,7 +189,10 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "cpc": 0.0,
                         "cpl": 0,
                         "cpm": 0,
-                        "roas": 0
+                        "roas": 0,
+                        "link_clicks": 0,
+                        "post_engagements": 0,
+                        "page_engagements": 0,
                     }
                 ]
             },
@@ -215,6 +227,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                 "cpl": 0,
                 "cpm": 0,
                 "roas": 0,
+                "link_clicks": 0,
+                "post_engagements": 0,
+                "page_engagements": 0,
                 "intervals": [
                     {
                         "start_date": "2023-04-17",
@@ -233,7 +248,10 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
                         "cpc": 0.0,
                         "cpl": 0,
                         "cpm": 0,
-                        "roas": 0
+                        "roas": 0,
+                        "link_clicks": 0,
+                        "post_engagements": 0,
+                        "page_engagements": 0,
                     }
                 ]
             }
@@ -273,6 +291,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
 |website_visits_vt|Float|Total Website Visits View Through for Campaign|
 |walk_ins|Float|Total Walk-ins for Campaign|
+|link_clicks|Float|Total Link clicks Campaign|
+|post_engagements|Float|Total post engagements for Campaign|
+|page_engagements|Float|Total page engagements for Campaign|
 |video_full_screen|Float|Number of Full-Screen Video Views <br>**The field is nullable**|
 |video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
 |video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
@@ -312,6 +333,9 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 |priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
 |website_visits_vt|Float|Total Website Visits View Through for Campaign|
 |walk_ins|Float|Total Walk-ins for Interval|
+|link_clicks|Float|Total Link clicks Campaign|
+|post_engagements|Float|Total post engagements for Campaign|
+|page_engagements|Float|Total page engagements for Campaign|
 |video_full_screen|Float|Number of Full-Screen Video Views <br>**The field is nullable**|
 |video_mute|Float|Number of Muted Video Views<br>**The field is nullable**|
 |video_unmute|Float|Number of Unmuted Video Views<br>**The field is nullable**|
