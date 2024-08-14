@@ -287,8 +287,10 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpm | Float | Cost Per Milli for Campaign |
 |form_submissions_ct|Float|Total For Submission Click Through for Campaign|
 |form_submissions_vt|Float|Total Form Submission View Through for Campaign|
+|form_submissions|Float|Total Form Submission for Campaign|
 |priority_page_views_ct|Float|Total Priority Page View Click Through for Campaign|
 |priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
+|priority_page_views |Float|Total Priority Page for Campaign|
 |website_visits_vt|Float|Total Website Visits View Through for Campaign|
 |walk_ins|Float|Total Walk-ins for Campaign|
 |link_clicks|Float|Total Link clicks Campaign|
@@ -326,11 +328,13 @@ curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN" \
 | cpc | Float | Cost Per Click for Interval |
 | cpm | Float | Cost Per Milli for Interval |
 | customer_revenue | Float | Total Customer Revenue for Interval (shopping only) |
-| roas | Float | Customer Revenue / Spend for Interval (shopping only|
+| roas | Float | Customer Revenue / Spend for Interval (shopping only)|
 |form_submissions_ct|Float|Total For Submission Click Through for Campaign|
 |form_submissions_vt|Float|Total Form Submission View Through for Campaign|
+|form_submissions|Float|Total Form Submission for Campaign|
 |priority_page_views_ct|Float|Total Priority Page View Click Through for Campaign|
 |priority_page_views_vt|Float|Total Priority Page View Through for Campaign|
+|priority_page_views |Float|Total Priority Page for Campaign|
 |website_visits_vt|Float|Total Website Visits View Through for Campaign|
 |walk_ins|Float|Total Walk-ins for Interval|
 |link_clicks|Float|Total Link clicks Campaign|
