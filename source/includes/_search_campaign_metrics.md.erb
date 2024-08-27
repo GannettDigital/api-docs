@@ -40,35 +40,35 @@ To specify a date range:
 > Retrieve data for a specific range of dates
 
 ```
-curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.localiqservices.com/client_reports/search_activity/TEST_1?start_date=2016-12-01&end_date=2016-12-31"
 ```
 
 >  Retrieve data for a specific campaign starting on a certain date
 
 ```
-curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31"
 ```
 
 > Retrieve data for a specific campaign cycle
 
 ```
-curl -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
+curl -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.localiqservices.com/client_reports/search_activity/TEST_1?campaign_cycle=TEST_1"
 ```
 
 >  Retrieve data for campaigns that are stopped and running
 
 ```
-curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.localiqservices.com/client_reports/search_activity/TEST_1?&campaign_status[]=running,stopped&start_date=2016-10-01&end_date=2016-12-31"
 ```
 
 >  Retrieve data for a specific campaign starting on a certain date with cycle nesting
 
 ```
-curl -g -H "Authorization: Bearer Bearer OAUTH_ACCESS_TOKEN \
+curl -g -H "Authorization: Bearer OAUTH_ACCESS_TOKEN \
 https://api.localiqservices.com/client_reports/search_activity/TEST_1?global_master_campaign_id[]=TEST_1&start_date=2016-10-01&end_date=2016-12-31&include_cycles=true"
 ```
 
