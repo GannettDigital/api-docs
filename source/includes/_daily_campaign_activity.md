@@ -238,6 +238,7 @@ https://api.localiqservices.com/client_reports/daily_campaign_activity/TEST_1?&c
 |start_date|String|Start date for campaign|
 |end_date|String|End date for campaign|
 |type|String|Type of campaign|
+|source|String|source of campaign|
 |status|String|Status of campaign|
 |intervals|Array|Data for specified interval. [Intervals Array.](#searchintervals)|
 
