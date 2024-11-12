@@ -20,6 +20,7 @@ When using the GET method, the results can be filtered using these parameters:
 |`end_date`|Yes|Restricts the results to those occurring on or before this date.|
 |`gmaid`|Yes|Restrict results to the specified Global Master Advertiser ID|
 |`sort_by`|No|Returns top 20 results. Allowed values: `clicks, impressions, postion, ctr.` Default: `clicks`|
+|`query_contains`|No|Returns results related to branded search terms. It's active ONLY for the QUERY dimension.|
 
 ### Metrics
 
