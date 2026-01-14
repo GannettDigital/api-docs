@@ -31,7 +31,7 @@ curl -L -g -X GET '/property/petpolicy' \
 |errorMessage| String |
 |details| Array of details |
 
-**Office Hours**
+**Pet Policy**
 
 |petId| Integer |
 |petPropertyId| Integer |

@@ -1,23 +1,23 @@
-## RentCafe Property Details
-<a name="RentCafe Property Details"></a>
+## RentCafe Property Marketing Details
+<a name="RentCafe Property Marketing Details"></a>
 
-Returns property listing information.
+Returns property office marketing details.
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /property/details|
+| GET `index` | /property/marketingdetails|
 
 ### Usage
-Use GET to retrieve the property details.
+Use GET to retrieve the property marketing details.
 
 ### Examples:
 
 ### GET (index)
 
 ```
-curl -L -g -X GET '/property/details' \
+curl -L -g -X GET '/property/marketingdetails' \
   -H 'Accept: */*' \
   -H 'Authorization: token 1b01Secret' \
   -H 'Content-Type: application/json'
@@ -31,7 +31,7 @@ curl -L -g -X GET '/property/details' \
 |errorMessage| String |
 |details| Array of details |
 
-**Details**
+**Marketing Hours**
 
 |name| String |
 |address| String |
@@ -49,18 +49,7 @@ curl -L -g -X GET '/property/details' \
 |propertyId| Integer |
 |propertyVideoEmbedCode| String |
 |propertyVirtualTourUrl| String |
-|apartmentSettings| Array of apartment settings |
 
-**Apartment settings**
-
-|revenueManagementEnabled| Bool |
-|availabilityDaysFromUserMoveIn| Integer |
-|daysAfterUnitAvailableMoveInPossibleStart| Integer |
-|daysAfterUnitAvailableMoveInPossibleEnd| Integer |
-|daysFromCurrentDateMoveInRestrictedForAvailableUnits| Integer |
-|monthsAvailabilityRestrictedTo| Integer |
-|percentRentOverMaxToIncludeApartmentSearch| Integer |
-|maxApartmentsDisplayed| Integer |
 
 
 #### Example Response
@@ -86,17 +75,7 @@ curl -L -g -X GET '/property/details' \
       "voyagerPropertyCode": "string",
       "propertyId": 0,
       "propertyVideoEmbedCode": "string",
-      "propertyVirtualTourUrl": "string",
-      "apartmentSettings": {
-        "revenueManagementEnabled": true,
-        "availabilityDaysFromUserMoveIn": 0,
-        "daysAfterUnitAvailableMoveInPossibleStart": 0,
-        "daysAfterUnitAvailableMoveInPossibleEnd": 0,
-        "daysFromCurrentDateMoveInRestrictedForAvailableUnits": 0,
-        "monthsAvailabilityRestrictedTo": 0,
-        "percentRentOverMaxToIncludeApartmentSearch": 0,
-        "maxApartmentsDisplayed": 0
-      }
+      "propertyVirtualTourUrl": "string"
     }
   ]
 }
