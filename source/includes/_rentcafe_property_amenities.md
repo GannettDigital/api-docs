@@ -7,7 +7,7 @@ Returns default and custom amenity details.
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /property/amenities|
+| GET | /property/amenities|
 
 ### Usage
 Use GET to retrieve the property amenities.
@@ -18,8 +18,8 @@ Use GET to retrieve the property amenities.
 
 ```
 curl -L -g -X GET '/property/amenities' \
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
 ```
 
@@ -51,12 +51,12 @@ curl -L -g -X GET '/property/amenities' \
   |featuredAmenity| Integer | 1 if its featured amenity and 0 if its not featured amenity. |
 
 **Image data**
-
-|imageUrl| String |
-|imageAltText| String |
-|imageType| String |
-|svgCode| String |
-
+  | Field Name | Datatype |
+  |---|---|
+  |imageUrl| String |
+  |imageAltText| String |
+  |imageType| String |
+  |svgCode| String |
 
 #### Example Response
 
@@ -90,5 +90,6 @@ curl -L -g -X GET '/property/amenities' \
     }
   ]
 }
+```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.

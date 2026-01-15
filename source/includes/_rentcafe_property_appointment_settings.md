@@ -12,7 +12,7 @@ propertyConcurrentEventNumber is included in this API and is an important settin
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /property/appointmentsettings|
+| GET | /property/appointmentsettings|
 
 ### Usage
 Use GET to retrieve the property appointment settings.
@@ -23,8 +23,8 @@ Use GET to retrieve the property appointment settings.
 
 ```
 curl -L -g -X GET '/property/appointmentsettings' \
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
 ```
 
@@ -123,5 +123,6 @@ curl -L -g -X GET '/property/appointmentsettings' \
     "hideFloorPlanAndUnitSelection": true
   }
 }
+```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.

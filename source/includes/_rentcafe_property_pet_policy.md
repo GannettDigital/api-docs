@@ -7,7 +7,7 @@ Returns property office pet policy.
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /property/petpolicy|
+| GET | /property/petpolicy|
 
 ### Usage
 Use GET to retrieve the property pet policy details.
@@ -18,8 +18,8 @@ Use GET to retrieve the property pet policy details.
 
 ```
 curl -L -g -X GET '/property/petpolicy' \
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
 ```
 
@@ -76,5 +76,6 @@ curl -L -g -X GET '/property/petpolicy' \
     }
   ]
 }
+```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.

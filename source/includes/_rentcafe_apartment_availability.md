@@ -1,13 +1,13 @@
 ## RentCafe Apartment Availability
 <a name="RentCafe Apartment Availability"></a>
 
-Returns property office pet policy.
+Returns property apartment availability.
 
 ### Resource Overview
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /apartmentavailability|
+| GET | /apartmentavailability|
 
 ### Usage
 Use GET to retrieve the apartment availability
@@ -21,10 +21,7 @@ When using the GET index method, the results will be filtered using these parame
 |`numberOfBeds`|No|Number of bedrooms|
 |`numberOfBaths`|No|Number of bathrooms (append .50 for half baths)|
 |`apartmentName`|No|Voyager unit code. For example: 1101|
-|`sortOrder`|No|Fields by which apartments are sorted. Options are: floorPlanName, apartmentName, beds, baths, maximumRent, and
-minimumRent. Type ASC or DESC to denote ascending or descending sort order. Apartments are sorted by the first field, then the second field, and so on. Separate fields with a comma
-and no space.
-For example, sortOrder=floorplanName ASC,beds DESC results in the following: Alpha floor plan: 3-bedroom apartment, Alpha floor plan: 2-bedroom apartment, Beta floor plan: 3-bedroom apartment|
+|`sortOrder`|No|Fields by which apartments are sorted. Options are: floorPlanName, apartmentName, beds, baths, maximumRent, and minimumRent. Type ASC or DESC to denote ascending or descending sort order. Apartments are sorted by the first field, then the second field, and so on. Separate fields with a comma and no space. For example, sortOrder=floorplanName ASC,beds DESC results in the following: Alpha floor plan: 3-bedroom apartment, Alpha floor plan: 2-bedroom apartment, Beta floor plan: 3-bedroom apartment |
 |`floorPlanID`|No|RentCafe floor plan identifier number. For example: 431187|
 |`availableDate`|No|Latest available date. US Date Format: MM/DD/YYYY|
 |`showAllUnit`|No|If true, returns all units irrespective of the unit status. If false, returns available units.|
@@ -37,8 +34,8 @@ For example, sortOrder=floorplanName ASC,beds DESC results in the following: Alp
 
 ```
 curl -L -g -X GET '/apartmentavailability' \
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
 ```
 
@@ -125,5 +122,6 @@ curl -L -g -X GET '/apartmentavailability' \
     }
   ]
 }
+```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.

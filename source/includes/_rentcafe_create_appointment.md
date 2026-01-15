@@ -11,7 +11,7 @@ Note that source validation is enabled for this endpoint. The activation of sour
 
 | Method | URI Format |
 |---|---|
-| POST `create` | /appointments|
+| POST | /appointments|
 
 ### Usage
 Use POST to create an appointment
@@ -28,12 +28,9 @@ When using the POST create method, you will be using these parameters:
 |`phone`|No|The phone number collected from the prospect. RentCafe inserts this phone number into either a home phone, cellphone, or office phone field in the client’s database, based on the client’s RentCafe setup. Phone number can be up to 17 digits long.|
 |`apptDate`|Yes|Date for the prospect’s scheduled appointment.  Dates use the format: mm/dd/yyyy (for example, 01/31/2024)|
 |`apptTime`|Yes|Time of the prospect’s schedule appointment. Times use the format: hh:mmAM/PM (For example, “01:30PM”)|
-|`apartmentName`|No|The apartment to have linked to the appointment.
-If the apartmentName provided is valid for that tour type, then the Appointment record will indicate which unit was shown.  If the apartmentName provided is not a valid unit for that tour type, a 406 error will be returned.  The getpropertyconfiguration endpoint can be used to get the list of valid sgtUnits to use in the apartmentName field for noting the unit associated with self-guided tours.|
+|`apartmentName`|No|The apartment to have linked to the appointment. If the apartmentName provided is valid for that tour type, then the Appointment record will indicate which unit was shown.  If the apartmentName provided is not a valid unit for that tour type, a 406 error will be returned.  The getpropertyconfiguration endpoint can be used to get the list of valid sgtUnits to use in the apartmentName field for noting the unit associated with self-guided tours.|
 |`agent`|No|The leasing agent assigned to the prospect. If not provided, the default agent assigned to the property will be used. If no default agent exists, the agent will be “Property Website”|
-|`message`|No|Additional details provided by the prospect when scheduling the appointment.
-Max=255 characters for all non-Voyager 7S properties
-Max=2000 characters if property is on Voyager 7S|
+|`message`|No|Additional details provided by the prospect when scheduling the appointment. Max=255 characters for all non-Voyager 7S properties Max=2000 characters if property is on Voyager 7S|
 |`source`|No|Primary marketing source that you want to credit on the prospect's record. This should match the client's marketing source for the property. If not supplied, the default property website source will be used. If no default property website source exists, the source will be 'Property Website'. Max characters=50|
 |`result`|No|The contact result to have linked to the creation of the prospect|
 |`desiredMoveinDate`|No|Date when the prospect wants to move in. Dates use the format: mm/dd/yyyy|
@@ -46,20 +43,18 @@ Max=2000 characters if property is on Voyager 7S|
 |`city`|No|City. Max=30 characters|
 |`zipCode`|No|ZIP code. Max=12 characters|
 |`country`|No|Country code. Max=2 characters|
-|`subscribeToEmails`|No|Indicates if the prospect would like to be subscribed to receive email notifications from the property through RentCafe. This field will only apply to clients who have been selected to request confirmation from prospects to send marketing emails.
-When true, indicates the prospect is interested in receiving in receiving email notifications from RentCafe
-When false (or when no value is provided), prospect has opted out of receiving email notifications|
-
 
 ### Examples:
 
 ### POST (create)
 
 ```
-curl -L -g -X POST '/apartmentavailability' \
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
+curl -L -g -X POST '/appointments' \
+  -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
+--data '{
+    ...
+}'
 ```
 
 **Response**
@@ -100,5 +95,6 @@ curl -L -g -X POST '/apartmentavailability' \
     "apartmentName": "string"
   }
 }
+```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.

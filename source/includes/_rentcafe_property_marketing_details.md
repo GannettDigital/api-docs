@@ -7,7 +7,7 @@ Returns property office marketing details.
 
 | Method | URI Format |
 |---|---|
-| GET `index` | /property/marketingdetails|
+| GET | /property/marketingdetails|
 
 ### Usage
 Use GET to retrieve the property marketing details.
@@ -18,8 +18,8 @@ Use GET to retrieve the property marketing details.
 
 ```
 curl -L -g -X GET '/property/marketingdetails' \
-  -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
 ```
 
@@ -60,7 +60,7 @@ curl -L -g -X GET '/property/marketingdetails' \
 **Amenities**
 
 | Field Name | Datatype | Description |
-|---|---|---|---|
+|---|---|---|
 |amenityName| String | Amenity name. Example :"Second Floor" |
 |description1| String | Amenity description |
 |amenityId| Integer | Amenity Id. Example :51641396 |
@@ -187,5 +187,6 @@ curl -L -g -X GET '/property/marketingdetails' \
     }
   ]
 }
+```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.
