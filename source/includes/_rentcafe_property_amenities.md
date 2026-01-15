@@ -26,28 +26,29 @@ curl -L -g -X GET '/property/amenities' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |amenities| Array of amenities |
 
-**Amenities**
+  **Amenities**
 
-|amenityName| String |
-|description1| String |
-|amenityId| Integer |
-|amenityMasterId| Integer |
-|customAmenityName| String |
-|iorder| Integer |
-|floorPlanAmenityFlag| String |
-|propertyAmenityFlag| String |
-|link| String |
-|customAmenityType| String |
-|imageURL| String |
-|caption| String |
-|imageAltText| String |
-|amenityImageInfo| Array of image data |
-|featuredAmenity| Integer |
+  | Field Name | Datatype | Description |
+  |---|---|---|
+  |amenityName| String | Amenity name. Example :"Second Floor" |
+  |description1| String | Amenity description |
+  |amenityId| Integer | Amenity Id. Example :51641396 |
+  |amenityMasterId| Integer | Amenity category id. Example :131 |
+  |customAmenityName| String | Customized name for amenity. |
+  |iorder| Integer | Order in which you want to amenity to be displayed. |
+  |floorPlanAmenityFlag| String | this is set if that amenity is floorplan amenity. |
+  |propertyAmenityFlag| String | This is set if that amenity is property amenity. |
+  |link| String | The link mapped for this amenity. |
+  |customAmenityType| String | The amenity type |
+  |imageURL| String | Amenity image url.|
+  |imageAltText| String | Amenity image alt text. |
+  |amenityImageInfo| Array of image data | A list of images associated to the amenity |
+  |featuredAmenity| Integer | 1 if its featured amenity and 0 if its not featured amenity. |
 
 **Image data**
 

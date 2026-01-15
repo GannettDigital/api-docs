@@ -26,18 +26,20 @@ curl -L -g -X GET '/images/property' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |images| Array of images |
 
 **Images**
 
-|id| Integer |
-|title| String |
-|imageURL| String |
-|caption| String |
-|altText| String |
+| Field Name | Datatype | Description |
+|---|---|---|
+|id| Integer | Unique numeric code for image |
+|title| String | Image title. Example : "Title":"Apartments in Tonopah | Cityview Towers | Patio" |
+|imageURL| String | Image url |
+|caption| String | Image caption. Example : "Caption":"Pool View" |
+|altText| String | Alt text of the image. Example : "AltText":"North Facing Patio" |
 
 
 #### Example Response

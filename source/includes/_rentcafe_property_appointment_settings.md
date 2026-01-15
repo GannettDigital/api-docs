@@ -31,7 +31,7 @@ curl -L -g -X GET '/property/appointmentsettings' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |appointmentTypes| Appointment types object |
@@ -41,39 +41,47 @@ curl -L -g -X GET '/property/appointmentsettings' \
 
 **Appointment types**
 
-|guidedTourEnabled| Bool |
-|selfGuidedTourEnabled| Bool |
-|liveVideoTourEnabled| Bool |
-|virtualTourEnabled| Bool |
-|useAdvancedTimeslotScheduling| Bool |
+| Field Name | Datatype | Description |
+|---|---|---|
+|guidedTourEnabled| Bool | Indicates if guided tours are enabled. Example: "guidedTourEnabled": true |
+|selfGuidedTourEnabled| Bool | Indicates if self-guided tours are enabled. Example: "selfGuidedTourEnabled": true |
+|liveVideoTourEnabled| Bool | Indicates if live video tours are enabled. Example: "liveVideoTourEnabled": true |
+|virtualTourEnabled| Bool | Indicates if 360/video tours are enabled. Example: "virtualTourEnabled": true |
+|useAdvancedTimeslotScheduling| Bool | Indicates if advanced timeslot scheduling is enabled. Example: "useAdvancedTimeslotScheduling": true |
 
 **General settings**
 
-|allowPropertyLevelConcurrentEvent| Bool |
-|propertyConcurrentEventNumber| Integer |
-|scheduleFromDays| Integer |
-|scheduleToDays| Integer |
-|consecutiveAppointmentBuffer| Integer |
-|minimumScheduleNotice| Integer |
-|maxMarketingSiteAppointmentsPerUser| Integer |
-|displayMoveInDateField| Bool |
-|moveInDateRequired| Bool |
-|appointmentAvailabilityAPIEnabled| Bool |
-|sendNewGuestEmailsThroughAPI| Bool |
-|useCRMBlackouts| Bool |
+| Field Name | Datatype | Description |
+|---|---|---|
+|allowPropertyLevelConcurrentEvent| Bool | Indicates if property level concurrent events are allowed. If true, this setting will overwrite the concurrent event setting for each of the tour types. Example: "allowPropertyLevelConcurrentEvent": true |
+|propertyConcurrentEventNumber| Integer | If property level concurrent events are allowed, what number are allowed in the same slot. Example: "propertyConcurrentEventNumber": 4 |
+|scheduleFromDays| Integer | number of days from current date that appointments can be scheduled. Example: "scheduleFromDays": 0 |
+|scheduleToDays| Integer | Maximum number of days from current date that appointments can be scheduled. If both this and ScheduleToDays are blank in the Property's setup, this field will default to 90 days. Example: "scheduleToDays": 30 |
+|consecutiveAppointmentBuffer| Integer | Minutes required between consecutive appointments. If 0, we will allow consecutive appointments. Example: "consecutiveAppointmentBuffer": 30 |
+|minimumScheduleNotice| Integer | Minimum minutes in advance required for scheduling appointments. If this field is blank in the Property's setup, it defaults to 30. Example: "minimumScheduleNotice": 60 |
+|maxMarketingSiteAppointmentsPerUser| Integer | Maximum number of appointments allowed per user from marketing site. If this field is blank in the Property's setup, it defaults to 1. Example: "maxAppointmentsPerUser": 3 |
+|displayMoveInDateField| Bool | Indicates if the move-in date field should be displayed. Example: "displayMoveInDateField": true |
+|moveInDateRequired| Bool | Indicates if the move-in date field is required. Example: "moveInDateRequired": true |
+|appointmentAvailabilityAPIEnabled| Bool | Indicates if the appointment availability API is enabled. Example: "appointmentAvailabilityAPIEnabled": true |
+|sendNewGuestEmailsThroughAPI| Bool | Indicates if marketing API should send emails for new guests. Example: "sendNewGuestEmails": true |
+|useCRMBlackouts| Bool | Indicates if CRM blackouts should be used. Example: "useCRMBlackouts": true |
 
 **Guided tour settings**
 
-|appointmentLength| Integer |
-|restrictToOfficeHours| Bool |
-|concurrentEvents| Integer |
-|displayBedroomsField| Bool |
-|bedroomsFieldRequired| Bool |
+| Field Name | Datatype | Description |
+|---|---|---|
+|appointmentLength| Integer | Length of guided and live video tour appointments in minutes. If this field is blank in the Property's setup, it defaults to 30. Example: "appointmentLength": 60 |
+|restrictToOfficeHours| Bool | Indicates if appointments must be within office hours. Example: "restrictToOfficeHours": true |
+|concurrentEvents| Integer | Number of concurrent events allowed. If this field is blank in the Property's setup, it defaults to 1. Example: "concurrentEvents": 2 |
+|displayBedroomsField| Bool | Indicates if the number of bedrooms field should be displayed. Example: "displayBedroomsField": true |
+|bedroomsFieldRequired| Bool | Indicates if the number of bedrooms field is required. Example: "bedroomsFieldRequired": true |
 
 **Self Guided tour settings**
 
-|appointmentLength| Integer |
-|hideFloorPlanAndUnitSelection| Bool |
+| Field Name | Datatype | Description |
+|---|---|---|
+|appointmentLength| Integer | Length of self-guided tour appointments in minutes. If this field is blank in the Property's setup, it defaults to 30. Example: "appointmentLength": 45 |
+|hideFloorPlanAndUnitSelection| Bool | Indicates if floor plan and unit selection should be hidden. Example: "hideFloorPlanAndUnitSelection": false |
 
 
 #### Example Response

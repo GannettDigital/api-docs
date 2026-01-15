@@ -26,28 +26,29 @@ curl -L -g -X GET '/property/petpolicy' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |details| Array of details |
 
 **Pet Policy**
 
-|petId| Integer |
-|petPropertyId| Integer |
-|petType| String |
-|petTypeorder| Integer |
-|sComment| String |
-|iMaxAllowed| String |
-|dDeposit| Integer |
-|dFee| Integer |
-|dRent| Integer |
-|dWeight| Integer |
-|dWeight| Integer |
-|dFeeMax| Integer |
-|dFeeMin| Integer |
-|bPetCare| String |
-|restrictions| String |
+| Field Name | Datatype | Description |
+|---|---|---|
+|petId| Integer | Rentcafe Pet Policy Id. Example : "petId": 1467115 |
+|petPropertyId| Integer | Rentcafe property id. Example :"petPropertyId": 1087796 |
+|petType| String | Cats allowed - 1,Dogs allowed - 2,PetFriendly - 3,NotAllowed - 4. Example : "petType": "2 |
+|petTypeorder| Integer | Pet type order. Example : "petTypeorder": 2 |
+|sComment| String | Pet policy related comment. Example : "sComment": "Big dogs only." |
+|iMaxAllowed| String | Max pets allowed. Example : "iMaxAllowed": "1" |
+|dDeposit| Integer | Pet deposit. Example : "dDeposit": 20 |
+|dFee| Integer | Pet fee. Example "dFee": 10 |
+|dRent| Integer | Pet rent. Example : "dRent": 15 |
+|dWeight| Integer | Pet weight. Example : "dWeight": 150 |
+|dFeeMax| Integer | Maximum pet fee. Example : "dFeeMax": 30 |
+|dFeeMin| Integer | Minimum pet fee. Example : "dFeeMin": 30 |
+|bPetCare| String | 0 - Pet care is not available , 1- Pet care is available. Example : "bPetCare": "0" |
+|restrictions| String | Pet restrictions if any. Example "restrictions": "No breed restrictions!" |
 
 
 #### Example Response

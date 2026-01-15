@@ -45,41 +45,42 @@ curl -L -g -X GET '/apartmentavailability' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |apartmentAvailabilities| Array of apartment availability details |
 
 **Apartment availability**
-
-|propertyId| Integer |
-|voyagerPropertyId| Integer |
-|voyagerPropertyCode| String |
-|floorplanId| Integer |
-|floorplanName| String |
-|apartmentId| Integer |
-|apartmentName| String |
-|beds| Integer |
-|baths| Integer |
-|sqft| Integer |
-|sqM| Integer |
-|minimumRent| Integer |
-|maximumRent| Integer |
-|deposit| Integer |
-|applyOnlineURL| String |
-|unitImageURLs| String |
-|unitImageURLsArray| Array of url strings|
-|unitImageAltText| String |
-|specials| String |
-|amenities| String |
-|availableDate| String |
-|publishDate| String |
-|delayApplicationInHours| String |
-|unitStatus| String |
-|unitEmbedVideo| String |
-|unitVirtualTourUrl| String |
-|minimumRentLeaseTerm| Integer |
-|maximumRentLeaseTerm| Integer |
+| Field Name | Datatype | Description |
+|---|---|---|
+|propertyId| Integer | RentCafe property identifier number. Example : "PropertyId":"20006" |
+|voyagerPropertyId| Integer | Voyager property identifier number. Example : "VoyagerPropertyId":"30" |
+|voyagerPropertyCode| String | Voyager property code. Example : "VoyagerPropertyCode":"resnv02" |
+|floorplanId| Integer | RentCafe floor plan identifier number. Example : "FloorPlanId":"431183" | 
+|floorplanName| String | RentCafe floor plan name. Example : "FloorPlanName":"Birch" |
+|apartmentId| Integer | RentCafe apartment identifier number. Example : "ApartmentId":"90915" |
+|apartmentName| String | Apartment name. Example : "ApartmentName":"1107" |
+|beds| Integer | Number of bedrooms in the apartment. Example : "Beds":1 |
+|baths| Float | Number of bathrooms in the apartment. Example : "Baths":1.5 |
+|sqft| Integer | Apartment area in square feet. Example : "SqFt":"950" |
+|sqM| Integer | Apartment area in square meter. Example : "SqM":"95" |
+|minimumRent| Integer | 1: Appears when the "For Fully Occupied Floor Plans display" property setting is set to "Call for Details." Example : "MinimumRent":"1200" |
+|maximumRent| Integer | -1: Appears when the "For Fully Occupied Floor Plans display" property setting is set to "Call for Details.". Example : "MaximumRent":"1700" |
+|deposit| Integer | partment deposit. Example : "Deposit":"500" |
+|applyOnlineURL| String | Apply online url |
+|unitImageURLs| String | Apartment image URLs separated with commas |
+|unitImageURLsArray| Array of url strings| Apartment image URLs presented as an array of strings |
+|unitImageAltText| String | Unit image alt text. Example : "UnitImageAltText":"One Bed One Bath Unit" |
+|specials| String | Specials separated by carets (^). Example : "Specials":"Free Rent Offer for 2022 - 3 Months^Free Rent Offer for 2022 - 6 Months" |
+|amenities| String | Amenities separated by carets (^). "Amenities":"Pool View^Fireplace" |
+|availableDate| String | If apartment is available before current date, current date is displayed. Example : "AvailableDate":"3/15/2022" |
+|publishDate| String | The date in which the apartment is to be published for marketing. If there is no date, then the apartment can be immediately published. Example : "PublishDate": "07/22/2024" |
+|delayApplicationInHours| String | The number of hours to delay an apartment from receiving applications after it has been published. In the scenarios that there is no publish date or the parameter value is empty/zero, then there is no need to delay applications for the unit. Example : "DelayApplicationInHours": "36" |
+|unitStatus| String | Unit Status. Example : "Vacant Unrented Not Ready" |
+|unitEmbedVideo| String | Unit Embed Video code. Example: "UnitEmbedVideo" |
+|unitVirtualTourUrl| String | Unit virtual tour URL. |
+|minimumRentLeaseTerm| Integer | The minimum lease term that applies to the minimum rent. Example: "minimumRentLeaseTerm": 3 |
+|maximumRentLeaseTerm| Integer | The maximum lease term that applies to the maximum rent. Example: "maximumRentLeaseTerm": 18 |
 
 
 

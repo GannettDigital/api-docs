@@ -26,41 +26,45 @@ curl -L -g -X GET '/property/details' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |details| Array of details |
 
 **Details**
 
-|name| String |
-|address| String |
-|city| String |
-|state| String |
-|zipcode| String |
-|url| String |
-|description| String |
-|email| String |
-|phone| String |
-|latitude| Integer |
-|longitude| Integer |
-|propertyCode| String |
-|voyagerPropertyCode| String |
-|propertyId| Integer |
-|propertyVideoEmbedCode| String |
-|propertyVirtualTourUrl| String |
-|apartmentSettings| Array of apartment settings |
+| Field Name | Datatype | Description |
+|---|---|---|
+|name| String | Rentcafe property name. Example : "name": "Cityview Towers" |
+|address| String | Property address. Example : "address": "10135 100 St NW" |
+|city| String | Property city. Example : "city": "goleta" |
+|state| String | Property state. Example : "state": "CA" |
+|zipcode| String | Property zipcode |
+|url| String | Property site url |
+|description| String | Property description. Example : "description": "The Cityview Towers is a landmark in residential living." |
+|email| String | Property email |
+|phone| String | Property phone. Example : "phone": "(800) 866-8880" |
+|latitude| Integer | Property latitude. Example : "latitude": 53.542018 |
+|longitude| Integer | Property longitude. Example : "latitude": -113.489784 |
+|propertyCode| String | Rentcafe property code. Example : "propertyCode": "p1062918" |
+|voyagerPropertyCode| String | Voyager property code. Example : "voyagerPropertyCode": "saphire" |
+|propertyId| Integer | Rentcafe property id. Example : "propertyId": 1087796 |
+|propertyVideoEmbedCode| String | Property video embed code. Example : "PropertyVideoEmbedCode" |
+|propertyVirtualTourUrl| String | Property virtual tour URL. Example : "PropertyVirtualTourUrl":"https://www.rentcafe.com/virtualtour/12345" |
+|apartmentSettings| Array | Array of apartment settings |
 
 **Apartment settings**
 
-|revenueManagementEnabled| Bool |
-|availabilityDaysFromUserMoveIn| Integer |
-|daysAfterUnitAvailableMoveInPossibleStart| Integer |
-|daysAfterUnitAvailableMoveInPossibleEnd| Integer |
-|daysFromCurrentDateMoveInRestrictedForAvailableUnits| Integer |
-|monthsAvailabilityRestrictedTo| Integer |
-|percentRentOverMaxToIncludeApartmentSearch| Integer |
-|maxApartmentsDisplayed| Integer |
+| Field Name | Datatype | Description |
+|---|---|---|
+|revenueManagementEnabled| Bool | Is this property enabled for Revenue Management |
+|availabilityDaysFromUserMoveIn| Integer | The number of days past a prospect's preferred move-in date that apartments are available. For a value other than 0, prospects are required to complete the Move-in date field if they want to search for apartments. |
+|daysAfterUnitAvailableMoveInPossibleStart| Integer | he number of days after apartments become available applicants may select move-in dates. This is in addition to the number of days needed to make the apartments ready in Voyager. |
+|daysAfterUnitAvailableMoveInPossibleEnd| Integer | The number of days after apartments become available applicants must select move-in dates before. This is effectively the maximum number of days that available apartments remain vacant for. |
+|daysFromCurrentDateMoveInRestrictedForAvailableUnits| Integer | The number of days from the current date move-in day selection for units will be available. If unit is available after this number of days from current date, prospect must move in on available date. |
+|monthsAvailabilityRestrictedTo| Integer | Number of months before which apartments must be available in order to be displayed on the property marketing website and Prospect Portal. |
+|percentRentOverMaxToIncludeApartmentSearch| Integer | The percentage by which the maximum rent amount is extended from prospect search maximum rent. This setting displays more apartments to prospects without requiring them to change their maximum rent amount. |
+|maxApartmentsDisplayed| Integer | The max number of apartments displayed to prospects. Value not applicable and thus Null for Single Family Homes. |
 
 
 #### Example Response

@@ -65,7 +65,7 @@ curl -L -g -X POST '/apartmentavailability' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |prospectInfo| Prospect info object|
@@ -73,6 +73,7 @@ curl -L -g -X POST '/apartmentavailability' \
 **Prospect Info**
 
 | Field Name | Datatype | Description|
+|---|---|---|
 |rentcafeProspectId| Integer | RentCafe prospect identifier number. Example : "RentcafeProspectId":"67895345" |
 |voyProspectId| Integer |Voyager prospect identifier number. Example : "voyProspectId":"45786" |
 |voyProspectCode| String | Voyager prospect code. Example : "voyProspectCode":"p0064678" |

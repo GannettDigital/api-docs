@@ -26,39 +26,41 @@ curl -L -g -X GET '/floorplans' \
 **Response**
 
 | Field Name | Datatype |
-|---|---|---|---|
+|---|---|
 |errorCode| Integer |
 |errorMessage| String |
 |floorplans| Array of floorplans |
 
 **Floorplans**
 
-|propertyId| Integer |
-|floorplanId| Integer |
-|floorplanName| String |
-|minimumSQFT| Integer |
-|maximumSQFT| Integer |
-|minimumSQM| Integer |
-|maximumSQM| Integer |
-|minimumRent| Integer |
-|maximumRent| Integer |
-|minimumDeposit| Integer |
-|maximumDeposit| Integer |
-|availableUnitsCount| Integer |
-|availabilityURL| String |
-|floorplanImageURL| String |
-|floorplanImageURLArray| Array of Strings |
-|floorplanImageName| String |
-|floorplanImageAltText| String |
-|propertyShowsSpecials| Integer |
-|floorplanHasSpecials| Integer |
-|unitTypeMapping| String |
-|beds| Integer |
-|baths| Integer |
-|tour360EmbedCode| String |
-|fpVideoEmbedCode| String |
-|propertyVideoEmbedCode| String |
-|floorplanVirtualTourUrl| String |
+| Field Name | Datatype | Description |
+|---|---|---|
+|propertyId| Integer | RentCafe property identifier number |
+|floorplanId| Integer | RentCafe floor plan identifier number |
+|floorplanName| String | Rentcafe floor plan name. Example : "A9X16" | 
+|minimumSQFT| Integer | Floor plan minimum area in sqft. Example : 144 |
+|maximumSQFT| Integer | Floor plan maximum area in sqft. Example : 144 |
+|minimumSQM| Integer | Floor plan minimum area in sqm. Example : 144 |
+|maximumSQM| Integer | Floor plan maximum area in sqm. Example : 144 |
+|minimumRent| Integer | Floor plan minimum rent.-1: Appears when the "For Fully Occupied Floor Plans display" property setting is set to "Call for Details." Example : 76 |
+|maximumRent| Integer | Floor plan maximum rent.-1: Appears when the "For Fully Occupied Floor Plans display" property setting is set to "Call for Details." Example : 76 |
+|minimumDeposit| Integer | Floor plan minimum deposit. Example : 15 |
+|maximumDeposit| Integer | Floor plan maximum deposit. Example : 15 |
+|availableUnitsCount| Integer | The number of units available to rent for the floor plan Example : 20 |
+|availabilityURL| String | Availability Url |
+|floorplanImageURL| String | Floor plan image url |
+|floorplanImageURLArray| Array of Strings | Floorplan image URLs presented as an array of strings |
+|floorplanImageName| String | Floor plan image name. Example :"A9X1600.JPG" |
+|floorplanImageAltText| String | Floor plan image alt text. Example :"" |
+|propertyShowsSpecials| Integer | -1: Leasing specials do not appear on apartment availability page, 0: Leasing specials appear on apartment availability page. Example :0 |
+|floorplanHasSpecials| Integer | -1: Floor plan is associated with specials, 0: Floor plan is not associated with specials. Example :0 |
+|unitTypeMapping| String | Unit types mapped to the floor plan. Example : "ut000003" |
+|beds| Integer | Floorplan bedrooms |
+|baths| Integer | Floorplan bathrooms |
+|tour360EmbedCode| String | 360 Tour Embed Code. |
+|fpVideoEmbedCode| String | Floor Plan Video Embed Code. |
+|propertyVideoEmbedCode| String | Property Video Embed Code. |
+|floorplanVirtualTourUrl| String | Floorplan virtual tour URL. |
 
 
 #### Example Response
