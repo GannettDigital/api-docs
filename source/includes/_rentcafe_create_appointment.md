@@ -1,5 +1,5 @@
-## RentCafe Apartment Availability
-<a name="RentCafe Apartment Availability"></a>
+## RentCafe Create Appointment
+<a name="RentCafe Create Appointment"></a>
 
 Creates an appointment on the property’s calendar and either adds a new Guest Card or matches and updates an existing Guest Card.
 Endpoint returns only those properties which are flagged by the client for either RentCafe.com ILS or Corporate Listing in RentCafe Site Manager (returns a 204- Undocumented error if neither are selected for a property).
