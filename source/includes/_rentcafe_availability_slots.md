@@ -17,9 +17,9 @@ Use GET to retrieve the available slots.
 ### GET (index)
 
 ```
-curl -L -g -X GET '/appointments/availableslots"' \
+curl -L -g -X GET '/appointments/availableslots' \
   -H 'Accept: */*' \
-  -H 'Authorization: token 1b01Secret' \
+  -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
 ```
 
@@ -37,7 +37,7 @@ curl -L -g -X GET '/appointments/availableslots"' \
 |---|---|---|
 |propertyId| Integer | RentCafe property identifier number |
 |startTime| String | Available slot Start time. Example : "StartTime": "8/1/2022 10:00:00 AM" |
-|endTime| String | Available slot End time. Example : "StartTime": "8/1/2022 10:00:00 AM" |
+|endTime| String | Available slot End time. Example : "endTime": "8/1/2022 10:30:00 AM" |
 |slotType| String | Tour Type of each timeslot|
 |tourType| Array of String | Indicates the specific tour types that apply to the timeslot. Example : "TourType":["Guided Tour", "Live Video Tour"] |
 
@@ -48,7 +48,7 @@ curl -L -g -X GET '/appointments/availableslots"' \
 {
   "errorCode": 200,
   "errorMessage": "string",
-  "images": [
+  "availableSlots": [
     {
       "propertyId": 0,
       "startTime": "string",
