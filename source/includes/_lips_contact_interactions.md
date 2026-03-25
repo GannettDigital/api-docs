@@ -53,6 +53,7 @@ chat_service | ChatEvents with a lead_type of service. Ignored when used in com
 dyipost | FormEvents with a sub_type of DIYFORMPOST
 email | FormEvents with a sub_type of FormEmail
 facebook | FormEvents with a sub_type of Facebook
+tiktok | FormEvents with a sub_type of Tiktok
 form | FormEvents with a sub_type of FormPost
 fpd | All FpdEvents
 lsa | All LsaEvents
