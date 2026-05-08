@@ -12,12 +12,18 @@ Returns RentCafe available slots.
 ### Usage
 Use GET to retrieve the available slots.
 
+### Parameters
+
+| Parameter | Required | Description |
+|---|---|---|
+|`noOfDays`| No | The number of days in the future for which available appointment slots will be returned. For example, a value of `1` will return available appointments for today and tomorrow. Value cannot be greater than 90. If left blank, returns available timeslots for the next 90 days. If the property is configured to display fewer days than requested, the property's configured maximum will be used instead. |
+
 ### Examples:
 
 ### GET (index)
 
 ```
-curl -L -g -X GET '/appointments/availableslots' \
+curl -L -g -X GET '/appointments/availableslots?noOfDays=7' \
   -H 'Accept: */*' \
   -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
