@@ -30,7 +30,7 @@ When using the GET index method, the results will be filtered using these parame
 
 ### Authorization
 
-These endpoints accept two authorization mechanisms, supplied through the `Authorization` request header:
+This endpoint accepts two authorization mechanisms, supplied through the `Authorization` request header:
 
 * **Trusted header (recommended):** send the trusted value provided by LocaliQ in the `Authorization` header and identify the property with the required `propertyId` request parameter.
 * **GUID token (deprecated):** send `Authorization: token <guid>`, where the GUID is mapped to a single property. This mechanism is retained for backward compatibility only; new integrations should use the trusted header. When a GUID is provided, the `propertyId` parameter is ignored.
