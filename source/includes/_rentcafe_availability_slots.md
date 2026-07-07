@@ -18,11 +18,29 @@ Use GET to retrieve the available slots.
 |---|---|---|
 |`noOfDays`| No | The number of days in the future for which available appointment slots will be returned. For example, a value of `1` will return available appointments for today and tomorrow. Value cannot be greater than 90. If left blank, returns available timeslots for the next 90 days. If the property is configured to display fewer days than requested, the property's configured maximum will be used instead. |
 
+### Authorization
+
+These endpoints accept two authorization mechanisms, supplied through the `Authorization` request header:
+
+* **Trusted header (recommended):** send the trusted value provided by LocaliQ in the `Authorization` header and identify the property with the required `propertyId` request parameter.
+* **GUID token (deprecated):** send `Authorization: token <guid>`, where the GUID is mapped to a single property. This mechanism is retained for backward compatibility only; new integrations should use the trusted header. When a GUID is provided, the `propertyId` parameter is ignored.
+
+| Parameter | Required | Description |
+|---|---|---|
+|`propertyId`| Yes, with the trusted header | RentCafe property code identifying the target property. Alphanumeric, 1–32 characters. Example: `p1682239`. Ignored when the deprecated GUID token is used. |
+
 ### Examples:
 
 ### GET (index)
 
 ```
+# Trusted header (recommended)
+curl -L -g -X GET '/appointments/availableslots?propertyId=p1682239&noOfDays=7' \
+  -H 'Accept: */*' \
+  -H 'Authorization: <trusted-authorization-value>' \
+  -H 'Content-Type: application/json'
+
+# GUID token (deprecated)
 curl -L -g -X GET '/appointments/availableslots?noOfDays=7' \
   -H 'Accept: */*' \
   -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
@@ -66,5 +84,6 @@ curl -L -g -X GET '/appointments/availableslots?noOfDays=7' \
     }
   ]
 }
+```
 
 Error responses will have an appropriate 4xx HTTP response code along with a JSON body indicating what went wrong.

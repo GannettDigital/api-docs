@@ -44,14 +44,34 @@ When using the POST create method, you will be using these parameters:
 |`zipCode`|No|ZIP code. Max=12 characters|
 |`country`|No|Country code. Max=2 characters|
 
+### Authorization
+
+This endpoint accepts two authorization mechanisms, supplied through the `Authorization` request header:
+
+* **Trusted header (recommended):** send the trusted value provided by LocaliQ in the `Authorization` header and identify the property with the required `propertyId` request parameter (supplied on the query string).
+* **GUID token (deprecated):** send `Authorization: token <guid>`, where the GUID is mapped to a single property. This mechanism is retained for backward compatibility only; new integrations should use the trusted header. When a GUID is provided, the `propertyId` parameter is ignored.
+
+| Parameter | Required | Description |
+|---|---|---|
+|`propertyId`| Yes, with the trusted header | RentCafe property code identifying the target property. Alphanumeric, 1–32 characters. Example: `p1682239`. Ignored when the deprecated GUID token is used. |
+
 ### Examples:
 
 ### POST (create)
 
 ```
+# Trusted header (recommended)
+curl -L -g -X POST '/appointments?propertyId=p1682239' \
+  -H 'Authorization: <trusted-authorization-value>' \
+  -H 'Content-Type: application/json' \
+--data '{
+    ...
+}'
+
+# GUID token (deprecated)
 curl -L -g -X POST '/appointments' \
   -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
-  -H 'Content-Type: application/json'
+  -H 'Content-Type: application/json' \
 --data '{
     ...
 }'

@@ -28,11 +28,29 @@ When using the GET index method, the results will be filtered using these parame
 |`showPublishOnCorpSite`|No|Property's listing status on the Corporate Apartment Search (CAS) site: -1: Property listed on CAS. 0: Property not listed on CAS.|
 |`city`|No|City, state zip city name and 2-character state code separated by a comma with no space and 5-digit ZIP code. For example: Goleta, CA 93117|
 
+### Authorization
+
+These endpoints accept two authorization mechanisms, supplied through the `Authorization` request header:
+
+* **Trusted header (recommended):** send the trusted value provided by LocaliQ in the `Authorization` header and identify the property with the required `propertyId` request parameter.
+* **GUID token (deprecated):** send `Authorization: token <guid>`, where the GUID is mapped to a single property. This mechanism is retained for backward compatibility only; new integrations should use the trusted header. When a GUID is provided, the `propertyId` parameter is ignored.
+
+| Parameter | Required | Description |
+|---|---|---|
+|`propertyId`| Yes, with the trusted header | RentCafe property code identifying the target property. Alphanumeric, 1–32 characters. Example: `p1682239`. Ignored when the deprecated GUID token is used. |
+
 ### Examples:
 
 ### GET (index)
 
 ```
+# Trusted header (recommended)
+curl -L -g -X GET '/apartmentavailability?propertyId=p1682239' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: <trusted-authorization-value>' \
+  -H 'Content-Type: application/json'
+
+# GUID token (deprecated)
 curl -L -g -X GET '/apartmentavailability' \
   -H 'Accept: application/json' \
   -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \

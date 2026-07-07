@@ -13,6 +13,17 @@ supported in this endpoint.
 ### Usage
 Use GET to retrieve the floor plans.
 
+### Authorization
+
+These endpoints accept two authorization mechanisms, supplied through the `Authorization` request header:
+
+* **Trusted header (recommended):** send the trusted value provided by LocaliQ in the `Authorization` header and identify the property with the required `propertyId` request parameter.
+* **GUID token (deprecated):** send `Authorization: token <guid>`, where the GUID is mapped to a single property. This mechanism is retained for backward compatibility only; new integrations should use the trusted header. When a GUID is provided, the `propertyId` parameter is ignored.
+
+| Parameter | Required | Description |
+|---|---|---|
+|`propertyId`| Yes, with the trusted header | RentCafe property code identifying the target property. Alphanumeric, 1–32 characters. Example: `p1682239`. Ignored when the deprecated GUID token is used. |
+
 #### Parameters
 
 When using the GET method, the results can be filtered using these parameters:
@@ -26,7 +37,14 @@ When using the GET method, the results can be filtered using these parameters:
 ### GET (index)
 
 ```
-curl -L -g -X GET '/images/property' \
+# Trusted header (recommended)
+curl -L -g -X GET '/images/units?propertyId=p1682239' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: <trusted-authorization-value>' \
+  -H 'Content-Type: application/json'
+
+# GUID token (deprecated)
+curl -L -g -X GET '/images/units' \
   -H 'Accept: application/json' \
   -H 'Authorization: token 3959a0c5-3e37-4900-8c45-7046fec1e659' \
   -H 'Content-Type: application/json'
